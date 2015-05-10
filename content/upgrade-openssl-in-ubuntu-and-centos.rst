@@ -9,8 +9,7 @@ Upgrade openssl in Ubuntu and CentOS
 
 **Upgrade OpenSSL in Ubuntu and CentOS**
 
-[caption id="" align="aligncenter" width="640"]\ |OpenSSL Heartbleed|
-OpenSSL Heartbleed[/caption]
+|OpenSSL Heartbleed|
 
 Hope you know about openssl heartbleed bug. Don't know about, no problem
 go through it `http://heartbleed.com/ <http://heartbleed.com>`__ . The
@@ -18,49 +17,62 @@ point here is you should upgrade your openssl. Because of this bug all
 linux variants release the patch for openssl. Here the steps for upgrade
 openssl both ubuntu and centos.
 
-**How to find I am using affected version...?**
+How to find I am using affected version...?
+-------------------------------------------
 
-In ubuntu:
-          
+**In ubuntu:**
 
-| Run this command
-|  [bash]openssl version -a[/bash]
-|  There you can find "built on" date. If that date is older than Apr 7.
-  Then you are using older version. You should upgrade your version.
-|  [bash]
-|  OpenSSL 1.0.1 14 Mar 2012
-|  built on: Wed Jan 8 20:45:51 UTC 2014
-|  [/bash]
 
-In CentOS:
-          
+Run this command
+
+.. code-block:: bash
+
+	openssl version -a
+
+There you can find "built on" date. If that date is older than Apr 7.
+Then you are using older version. You should upgrade your version.
+
+.. code-block:: text
+
+	OpenSSL 1.0.1 14 Mar 2012
+	built on: Wed Jan 8 20:45:51 UTC 2014
+
+
+**In CentOS:**
+
 
 Same as above.
 
-[caption id="" align="aligncenter" width="598"]\ |Open SSL Old Version|
-OpenSSL Old Version[/caption]
+|Open SSL Old Version|
 
-**How to upgrade openssl..?**
+How to upgrade openssl..?
+-------------------------
 
-In Ubuntu:
+**In Ubuntu:**
           
 
-| [bash]
-|  sudo apt-get update
-|  sudo apt-get install libssl1.0.0 openssl -y
-|  [/bash]
+.. code-block:: bash
 
-In CentOS:
+	sudo apt-get update
+	sudo apt-get install libssl1.0.0 openssl -y
+
+
+**In CentOS:**
           
 
-| [bash]
-|  sudo yum update
-|  sudo yum update openssl -y
-|  [/bash]
-|  **How to check am I upgarded..?**
-|  [bash]openssl version -a \| grep built[/bash]
-|  [caption id="" align="aligncenter" width="603"]\ |OpenSSL New
-  Version| OpenSSL New Version[/caption]
+.. code-block:: bash
+
+	sudo yum update
+	sudo yum update openssl -y
+
+How to check am I upgarded..?
+-----------------------------
+
+.. code-block:: bash
+
+	openssl version -a | grep built
+
+|OpenSSL New Version|
 
 The date should greater than or equal to Apr 7.
 

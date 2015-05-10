@@ -9,8 +9,7 @@ How to access external java libraries with in pentaho
 
 **How to access external libraries with in pentaho..?**
 
-[caption id="" align="aligncenter" width="480"]\ |Java Component in ETL
-Flow| Java Component in Pentaho[/caption]
+|Java Component in ETL Flow|
 
 Pentaho Data Integration Tool (PDI) is mainly used for Extraction,
 Transformation, Load (ETL). They have their own
