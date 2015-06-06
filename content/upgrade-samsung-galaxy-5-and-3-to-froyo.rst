@@ -8,13 +8,11 @@ Upgrade Samsung Galaxy 5 and 3 to Froyo
 
 **How to Upgrade your android to 2.2**
 
-[caption id="" align="aligncenter" width="400"]\ |image0| Galaxy 5 and 3
-with 2.2[/caption]
+|image0| 
 
-I am going to give steps for how to updagrade your Samsung Galaxy 3
-(GT-I5800) and Samsung Galaxy 5 (GT-I5503) phone OS Android 2.1 (Eclair)
-to Android 2.2 (Froyo). I tested these steps myself. So feel free to
-use. It will surely work for Asia / India users.
+Galaxy 5 and 3 with 2.2
+
+I am going to give steps for how to updagrade your Samsung Galaxy 3 (GT-I5800) and Samsung Galaxy 5 (GT-I5503) phone OS Android 2.1 (Eclair) to Android 2.2 (Froyo). I tested these steps myself. So feel free to use. It will surely work for Asia / India users.
 
 The Hardware Requirement are:
 
@@ -28,105 +26,83 @@ The Software Requirement are:
 -  OPS file
 -  Firmware file
 
-The OPS file and Firmware are varies depends upon your Handset. First
-download the required files.
+The OPS file and Firmware are varies depends upon your Handset. First download the required files.
 
 **For Galaxy 5:**
 
-| ODIN -
-  `S5570\_Odin\_Multi\_Downloader\_v4.38.exe <http://goo.gl/ba7Pj>`__
-|  OPS file - `EUROPA\_v1.0.ops <http://goo.gl/00kbE>`__
-|  Firmware -
-  `I5503DXJP8\_I5503DXJP7\_I5503OLBJP7.tar.gz <http://goo.gl/LYhdu>`__
+* ODIN - `S5570\_Odin\_Multi\_Downloader\_v4.38.exe <http://bit.ly/1dTykIG>`__
+* OPS file - `EUROPA\_v1.0.ops <http://bit.ly/1HRLlcZ>`__
+* Firmware - `I5503DXJP8\_I5503DXJP7\_I5503OLBJP7.tar.gz <http://bit.ly/1AQYje3>`__
 
 **For Galaxy 3:**
 
-| ODIN -
-  `S5570\_Odin\_Multi\_Downloader\_v4.38.exe <http://goo.gl/ba7Pj>`__
-|  OPS File - `apollo\_0531.zip <http://goo.gl/OIBjq>`__
-|  Firmware - `I5801DDJP6\_I5801ODDJP6\_INU.zip <http://goo.gl/xt8hi>`__
+* ODIN - `S5570\_Odin\_Multi\_Downloader\_v4.38.exe <http://bit.ly/1dTykIG>`__
+* OPS File - `apollo\_0531.zip <http://bit.ly/1Jy3DnL>`__
+* Firmware - `I5801DDJP6\_I5801ODDJP6\_INU.zip <http://bit.ly/1F0PVn7>`__
 
-Before start Backup your contacts and everything. Because Upgrade will
-delete everything from your mobile not from sd card.
+Before start Backup your contacts and everything. Because Upgrade will delete everything from your mobile not from sd card.
 
-[caption id="" align="aligncenter" width="400"]\ |image1| How to start
-mobile in downloading mode[/caption]
+|image1| 
+
+Image of How to start mobile in downloading mode.
 
 **Steps:**
 
--  Clean your existing data. Goto to Settings → Privacy → Factory data
-   Reset
+-  Clean your existing data. Goto to Settings → Privacy → Factory data Reset
 -  Remove your SIM and SD card
 -  Run that ODIN exe. Some times it requires Admin privileges.
--  Power off your mobile. Start your mobile as Downloading mode. For
-   that Press Volume Down + Home Button [Center Button] + Power Button
+-  Power off your mobile. 
+-  Start your mobile as Downloading mode. For that Press Volume Down + Home Button [Center Button] + Power Button
 -  Connect to USB. Now ODIN detected your mobile in COM port.
 -  Check the "One Package" Check box and Check all boxes in Options.
 -  Select your OPS File.
--  Select your firmware. Extract that rar file and select tar file with
-   in that.
+-  Select your firmware. Extract that rar file and select tar file with in that.
 -  Click start button.
 
-.. raw:: html
+|image2| 
+How to setup / Settings
 
-   <div>
+|image3|
+Upgrading
 
-[caption id="" align="alignnone" width="400"]\ |image2| How to setup /
-Settings[/caption]
+It will automatically reboot after finish. Rebooting takes 5-10 min don't panic, please be patient. Then unplug your mobile. Yeah you are successfully upgraded to Froyo...!!
 
-.. raw:: html
+|image4|
+Rebooting
 
-   </div>
-
-.. raw:: html
-
-   <div>
-
-[caption id="" align="alignnone" width="301"]\ |image3|
-Upgrading[/caption]
-
-It will automatically reboot after finish. Rebooting takes 5-10 min
-don't panic, please be patient. Then unplug your mobile. Yeah you are
-successfully upgraded to Froyo...!!
-
-[caption id="" align="aligncenter" width="300"]\ |image4|
-Rebooting[/caption]
-
-[caption id="" align="aligncenter" width="400"]\ |image5| Success ..
-Upgraded[/caption]
+|image5| 
+Success .. Upgraded
 
 Note: Click on the images for large view.
 
-| My configuration:
-|  Windows 7 PC
-|  ODIN v4.38
-|  Galaxy 5 and Galaxy 3
-|  I am from India
+My configuration:
 
-To find firmware and OPS for your mobile:
-http://www.samfirmware.com/fwandroid.htm
+  - Windows 7 PC
+  - ODIN v4.38
+  - Galaxy 5 and Galaxy 3
+  - I am from India
 
-**FAQ:**
+To find firmware and OPS for your mobile: http://www.samfirmware.com/fwandroid.htm
 
-After upgraded gprs is not working..?
+FAQ:
+====
 
-Setup manual APN settings or Delete your APN's and reset. It will 100%
-work. But I am not facing any wifi problem.
+**After upgraded gprs is not working..?**
 
-My Phone is not detected..?
+Setup manual APN settings or Delete your APN's and reset. It will 100% work. But I am not facing any wifi problem.
 
-Before start upgrading install USB driver for samsung. You can download
-from here \ http://goo.gl/223cK
+**My Phone is not detected..?**
 
-How to root my phone..?
+Before start upgrading install USB driver for samsung. You can download from here http://goo.gl/223cK
 
--  Download SuperOneClick latest version from
-   `here <http://goo.gl/sD1KY>`__
+**How to root my phone..?**
+
+-  Download SuperOneClick latest version from `here <http://goo.gl/sD1KY>`__
 -  Select Exploit as "GingerBreak"
 -  Make sure you phone is detected
 -  Press Root button
 
-Fix for samsung logo only showing..?
+**Fix for samsung logo only showing..?**
 
 Follow the same process before rebooting a recovery window displaying 3
 options.
@@ -137,22 +113,21 @@ options.
 
 Now your phone not struct in samsung logo.
 
-How to upgraded to 2.3 ..?
+**How to upgraded to 2.3 ..?**
 
-I have upgraded to 2.3.7 (CyanogenMod) by following this
-link \ http://t.co/4wI6FSmk
+I have upgraded to 2.3.7 (CyanogenMod) by following this link \ http://t.co/4wI6FSmk
 
-How to upgraded to 4.0.4 ..?
+**How to upgraded to 4.0.4 ..?**
 
-I have written a post to upgrade our Galaxy 5 to Android Ice Cream
-Sandwich \ http://www.arulraj.net/?p=472
+I have written a post to upgrade our Galaxy 5 to Android Ice Cream Sandwich \ http://www.arulraj.net/2012/07/upgrade-samsung-galaxy-5-to-ice-cream-sandwich.html
 
-How to go back to 2.1 ..?
+**How to go back to 2.1 ..?**
 
 First you have to find your firmware version
 
-[caption id="" align="aligncenter" width="305"]\ |image6| Firmware
-version[/caption]
+|image6|
+
+Firmware version
 
 -  Go to Settings → About phone note down your baseband version
 -  Try to get your firmware from internet. Or use this
@@ -161,17 +136,6 @@ version[/caption]
    firmware (Galaxy 5). Password for zip file is “samfirmware.com”
 -  Use the same ODIN and OPS file and follow the same steps above.
 
-.. raw:: html
-
-   <div>
-
-.. raw:: html
-
-   </div>
-
-.. raw:: html
-
-   </div>
 
 .. |image0| image:: https://lh3.googleusercontent.com/-8yr0vIMYWGk/TjuxF4bMH5I/AAAAAAAAAqI/b_ar3tGzFeI/s400/Galaxy-5-and-3.jpg
    :target: https://lh3.googleusercontent.com/-8yr0vIMYWGk/TjuxF4bMH5I/AAAAAAAAAqI/b_ar3tGzFeI/s800/Galaxy-5-and-3.jpg

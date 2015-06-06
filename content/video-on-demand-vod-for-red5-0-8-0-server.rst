@@ -17,7 +17,7 @@ Nowadays video on demand application available in latest red5 servers.
 The vod webapp is not available in  old version less than red5-1.0.0.
 Here I will give you the link to download for vod app for older red5.
 
-Download vod webapp `vod.zip <http://download.arulraj.net/common/vod.zip>`__
+Download vod webapp `vod.zip <http://files.arulraj.net/code/java/red5/vod.zip>`__
 
 -  Download the above zip file
 -  Extract the zip file

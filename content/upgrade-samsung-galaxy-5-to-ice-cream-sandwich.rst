@@ -9,172 +9,69 @@ Upgrade Samsung Galaxy 5 to Ice Cream Sandwich
 
 **How to upgrade to Android 4.0.4**
 
-[caption id="" align="aligncenter" width="400"]\ |image0| Android 4.0.4
-for Galaxy 5[/caption]
+|image0|
 
-This time I come with Android 4.0.4 (Ice Cream Sandwich). Hope you are
-all already upgraded your galaxy to Froyo by following
-my earlier \ `post <http://www.arulraj.net/2011/08/upgrade-samsung-galaxy-5-and-3-to-froyo.html>`__\ .
-Others no worries its the time for 4.0.4. The upgradation of 4.0.4 is
-much easier than earlier and no more complicated steps.
+This time I come with Android 4.0.4 (Ice Cream Sandwich). Hope you are all already upgraded your galaxy to Froyo by following my earlier \ `post <http://www.arulraj.net/2011/08/upgrade-samsung-galaxy-5-and-3-to-froyo.html>`__\ . Others no worries its the time for 4.0.4. The upgradation of 4.0.4 is much easier than earlier and no more complicated steps.
 
-Important:
+**Important:**
 
-This is not a official firmware from samsung like 2.2. Its created
-by \ `CyanogenMod <http://en.wikipedia.org/wiki/CyanogenMod>`__.
-I personally tested myself in my mobile most of the things works fine so
-feel free to use.
+This is not a official firmware from samsung like 2.2. Its created by `CyanogenMod <http://en.wikipedia.org/wiki/CyanogenMod>`__. I personally tested myself in my mobile most of the things works fine so feel free to use.
 
-Requirements:
+**Requirements:**
 
 -  A windows PC
 -  USB cable
--  Samsung Galaxy 5 (GT-I5503) mobile :)
+-  Samsung Galaxy 5 (GT-I5503) mobile 😄
 
 Download the below files.
 
-.. raw:: html
+* ODIN – `S5570\_Odin\_Multi\_Downloader\_v4.38.exe <http://bit.ly/1dTykIG>`__
 
-   <div style="padding-left: 30px;">
+* OPS file – `EUROPA\_v1.0.ops <http://bit.ly/1HRLlcZ>`__
 
-ODIN
-– `S5570\_Odin\_Multi\_Downloader\_v4.38.exe <http://goo.gl/ba7Pj>`__
-OPS file – `EUROPA\_v1.0.ops <http://goo.gl/00kbE>`__
+* ClockworkMod Recovery – `recovery-clockwork-5.5.0.4-galaxy5.tar <http://bit.ly/1KLcKR0>`__
 
-.. raw:: html
+* Firmware 4.0.4 – `update-cm-9-20120608-MADTEAM-galaxy5-signed.zip <http://bit.ly/1F0MLQi>`__
 
-   </div>
+* Google apps – `gapps-ics-small-20120429.zip <http://bit.ly/1dTyNuC>`__
 
-.. raw:: html
+Before start Backup your contacts and everything. Because Upgrade will delete everything from your mobile not from sd card. 
 
-   <div style="padding-left: 30px;">
-
-ClockworkMod Recovery
-– `recovery-clockwork-5.5.0.4-galaxy5.tar <http://goo.gl/O3pjc>`__
-
-.. raw:: html
-
-   </div>
-
-.. raw:: html
-
-   <div style="padding-left: 30px;">
-
-Firmware 4.0.4
-– `update-cm-9-20120608-MADTEAM-galaxy5-signed.zip <http://goo.gl/JVUek>`__
-
-.. raw:: html
-
-   </div>
-
-.. raw:: html
-
-   <div style="padding-left: 30px;">
-
-Google apps – \ `gapps-ics-small-20120429.zip <http://goo.gl/jRYD8>`__
-
-.. raw:: html
-
-   </div>
-
-Before start Backup your contacts and everything. Because Upgrade will
-delete everything from your mobile not from sd card. There are two phase
-
-.. raw:: html
-
-   <div>
+There are two phase
 
 #. Boot your mobile in recovery mode
 #. Install firmware and Google Apps
 
-.. raw:: html
-
-   <div>
 
 **Clockworkmod Recovery:**
 
-.. raw:: html
-
-   </div>
-
-.. raw:: html
-
-   <div style="padding-left: 30px;">
-
 For this you need ODIN and recovery-clockwork-5.5.0.4-galaxy5.tar.
 
-.. raw:: html
-
-   </div>
-
-.. raw:: html
-
-   <div style="padding-left: 30px;">
-
-[caption id="" align="alignnone" width="325"]\ |image1| How to
-Downloading mode[/caption]
+|image1|
 
 Steps:
+------
 
--  Copy Firmware and Google Apps files to your sd card. We will use that
-   in next phase.
--  Power off your mobile and Start your mobile in downloading mode.  For
-   that Press Volume Down + Home Button [Center Button] + Power Button.
+-  Copy Firmware and Google Apps files to your sd card. We will use that in next phase.
+-  Power off your mobile and Start your mobile in downloading mode.  For that Press Volume Down + Home Button [Center Button] + Power Button.
 -  Run that ODIN exe.
 -  Connect to USB. Now ODIN detected your mobile in COM port.
 -  Check the “One Package” Check box and Check all boxes in Options.
 -  Select your OPS File.
--  Select recovery-clockwork-5.5.0.4-galaxy5.tar
+-  Select :code:`recovery-clockwork-5.5.0.4-galaxy5.tar`
 -  Press Start button
 
-.. raw:: html
+|image2|
 
-   <div>
+Now your mobile is automatically restart. It will show you a recovery screen. 
 
-[caption id="" align="aligncenter" width="600"]\ |image2| ODIN for
-recovery[/caption]
-
-.. raw:: html
-
-   </div>
-
-.. raw:: html
-
-   </div>
-
-.. raw:: html
-
-   </div>
-
-Now your mobile is automatically restart. It will show you a recovery
-screen. Phase 2 starts
+Phase 2 starts
 
 **Install Firmware and Google Apps:**
 
-.. raw:: html
-
-   <div>
-
-[caption id="" align="aligncenter" width="300"]\ |image3| ClockworkMod
-Recovery Screen[/caption]
-
-.. raw:: html
-
-   </div>
-
-.. raw:: html
-
-   <div>
+|image3|
 
 **Steps:**
-
-.. raw:: html
-
-   </div>
-
-.. raw:: html
-
-   <div>
 
 -  Cleanup
 
@@ -193,15 +90,14 @@ Recovery Screen[/caption]
 
    -  Select Install zip from sd card
    -  Select Choose a zip file
-   -  Select update-cm-9-20120608-MADTEAM-galaxy5-signed.zip from your
-      sd card.
+   -  Select :code:`update-cm-9-20120608-MADTEAM-galaxy5-signed.zip` from your sd card.
    -  Press yes
 
 -  Install Google Apps
 
    -  Again Select Install zip from sd card
    -  Select Choose a zip file
-   -  Select gapps-ics-small-20120429.zip from your sd card
+   -  Select :code:`gapps-ics-small-20120429.zip` from your sd card
    -  Press yes
 
 -  Final
@@ -213,116 +109,46 @@ Recovery Screen[/caption]
 
 -  You are done... First time boot takes more time. So Don't Panic
 
-.. raw:: html
-
-   </div>
-
-.. raw:: html
-
-   <div>
-
 Images:
 
-.. raw:: html
 
-   </div>
+Image of Cleanup - Advanced - Wipe Dalvik and Battery stats
 
-.. raw:: html
+|image4|
 
-   <div>
+Install Firmware from zip
 
-[caption id="" align="alignnone" width="400"]\ |image4| Cleanup -
-Advanced - Wipe Dalvik and Battery stats[/caption]
+|image5|
 
-.. raw:: html
+Install Google apps from zip
 
-   </div>
+|image6|
 
-.. raw:: html
+Ice Cream Sandwich in Galaxy 5
 
-   <div>
+|image7|
 
-[caption id="" align="alignnone" width="400"]\ |image5| Install Firmware
-from zip[/caption]
+FAQ:
+====
 
-.. raw:: html
-
-   </div>
-
-[caption id="" align="alignnone" width="400"]\ |image6| Install Google
-apps from zip[/caption]
-
-.. raw:: html
-
-   <div>
-
-[caption id="" align="alignnone" width="400"]\ |image7| Ice Cream
-Sandwich in Galaxy 5[/caption]
-
-.. raw:: html
-
-   </div>
-
-.. raw:: html
-
-   <div>
-
-.. raw:: html
-
-   </div>
-
-.. raw:: html
-
-   <div>
-
-** FAQ:**
-
-.. raw:: html
-
-   </div>
-
-Most of the default applications are not available..?
+**Most of the default applications are not available..?**
 
 Yes. Most common application like Gmail, Maps, youtube are not there.
 You need to download and install from market.
 
-.. raw:: html
-
-   <div>
-
-.. raw:: html
-
-   </div>
-
-I want to root my phone..?
+**I want to root my phone..?**
 
 No need. By default its rooted :)
 
-.. raw:: html
-
-   <div>
-
-.. raw:: html
-
-   </div>
-
-After upgraded FM is not working..?
+**After upgraded FM is not working..?**
 
 This is a bug in this firmware.
 
-.. raw:: html
+**How to revert back to Original..?**
 
-   <div>
+Simple. Follow this post http://www.arulraj.net/2011/08/upgrade-samsung-galaxy-5-and-3-to-froyo.html
 
-.. raw:: html
-
-   </div>
-
-How to revert back to Original..?
-
-Simple. Follow this post \ http://www.arulraj.net/?p=372
-
-ref: \ `http://madteam.co/news/2012/05/guide-cyanogenmod-installation-guide-for-galaxy-5/ <http://goo.gl/dZQtg>`__
+Reference: \ `http://madteam.co/news/2012/05/guide-cyanogenmod-installation-guide-for-galaxy-5/ <http://goo.gl/dZQtg>`__
 
 update 11th Sep 2012:
 
