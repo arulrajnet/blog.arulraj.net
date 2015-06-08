@@ -9,20 +9,15 @@ Flex videodisplay fullscreen like youtube
 
 **Videodisplay in whole screen / Full screen particular component**
 
-After a long time I came with a new post in flex. Yes fullscreen in
-flex..!!! Fullscreening a whole app is very simple. You can
-full screening by simply changing the display state of your application.
-But it will be tricky if you are try to fullscreen a particular
-component in an application. In this post I am taking videodisplay
-component in a video chat application.
+After a long time I came with a new post in flex. Yes fullscreen in flex..!!! Fullscreening a whole app is very simple. You can full screening by simply changing the display state of your application. But it will be tricky if you are try to fullscreen a particular component in an application. In this post I am taking videodisplay component in a video chat application.
 
-Still you can fullscreen a component using fullScreenSourceRect property
-of stage.
+Still you can fullscreen a component using ``fullScreenSourceRect`` property of stage.
+
+.. code-block:: as3
 
     stage.fullScreenSourceRect = new Rectangle (0,0,320,240);
 
-But It is like zooming a component. Its not good such as videodisplay
-component. So I came up with an idea. Here its
+But It is like zooming a component. Its not good such as videodisplay component. So I came up with an idea. Here its
 
 -  Get that object of element which you are going to make fullscreen.
 -  Remove it from parent object.
@@ -31,25 +26,23 @@ component. So I came up with an idea. Here its
 -  While existing from fullscreen remove from stage and add back to
    parent component.
 
-| [as3]
-|  protected function
-  fullScreenButton\_clickHandler(event:MouseEvent):void
-|  {
-|  var liveVideo:Object = liveVideoDisplay.getChildByName("liveVideo");
-|  videoBox.removeElement(liveVideoDisplay);
-|  stage.addChild(liveVideoDisplay);
-|  stage.displayState = StageDisplayState.FULL\_SCREEN;
-|  liveVideo.width = stage.width;
-|  liveVideo.height = stage.height;
-|  stage.addEventListener(FullScreenEvent.FULL\_SCREEN,
-  fullScreenHandler);
-|  }
-|  [/as3]
+.. code-block:: as3
 
-`View
-source <http://www.arulraj.net/labs/flash/example/fullscreen/srcview/>`__
-is enabled.
+   protected function fullScreenButton_clickHandler(event: MouseEvent): void {
+    var liveVideo: Object = liveVideoDisplay.getChildByName("liveVideo");
+    videoBox.removeElement(liveVideoDisplay);
+    stage.addChild(liveVideoDisplay);
+    stage.displayState = StageDisplayState.FULL_SCREEN;
+    liveVideo.width = stage.width;
+    liveVideo.height = stage.height;
+    stage.addEventListener(FullScreenEvent.FULL_SCREEN, fullScreenHandler);
+   }
 
-[iframe
-src="http://www.arulraj.net/labs/flash/example/fullscreen/fullscreen.html"
-width="610" height="300"]
+`View source <http://files.arulraj.net/code/flash/example/fullscreen/srcview/>`__ is enabled.
+
+
+.. raw:: html
+
+	<iframe src="http://files.arulraj.net/code/flash/example/fullscreen/fullscreen.html"
+	width="610" height="300">
+	</iframe>

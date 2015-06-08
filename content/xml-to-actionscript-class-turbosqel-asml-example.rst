@@ -11,14 +11,14 @@ XML to Actionscript class Turbosqel / ASML example
 
 I found a useful third party actionscript libraris from githup https://github.com/turbosqel. I mostly used these as3SupportLib and ASML lib all of my flex projects. But initially I were struggle to find out the example over the internet. So I am writing here one of the feature of that libraries. 
 
-I am going to explain how to assign value to some variables from remote
-xml.
+I am going to explain how to assign value to some variables from remote xml.
 
-[iframe
-src="http://arulraj.net/labs/flash/example/ASMLExample/ASMLExample.html"
-width="270" height="250"]
+.. raw:: html
 
-[`View Source <http://arulraj.net/labs/flash/example/ASMLExample/srcview/index.html>`__ Enabled]
+	<embed src="http://files.arulraj.net/code/flash/example/ASMLExample/ASMLExample.html" width="270" height="250">
+	</embed>
+
+[`View Source <http://files.arulraj.net/code/flash/example/ASMLExample/srcview/index.html>`__ Enabled]
 
 Below code snippet for loading xml from server using as3SupportLib
 
@@ -46,4 +46,4 @@ The below code snippet for XML to Object
 
 For that works that config.xml should be written in certain way. Here is the doc for how to write xml https://github.com/turbosqel/ASML/blob/master/README.textile
 
-My XML is here http://arulraj.net/labs/flash/example/ASMLExample/config.xml
+My XML is here http://files.arulraj.net/code/flash/example/ASMLExample/config.xml

@@ -11,11 +11,7 @@ Upgrade openssl in Ubuntu and CentOS
 
 |OpenSSL Heartbleed|
 
-Hope you know about openssl heartbleed bug. Don't know about, no problem
-go through it `http://heartbleed.com/ <http://heartbleed.com>`__ . The
-point here is you should upgrade your openssl. Because of this bug all
-linux variants release the patch for openssl. Here the steps for upgrade
-openssl both ubuntu and centos.
+Hope you know about openssl heartbleed bug. Don't know about, no problem go through it `http://heartbleed.com/ <http://heartbleed.com>`__ . The point here is you should upgrade your openssl. Because of this bug all linux variants release the patch for openssl. Here the steps for upgrade openssl both ubuntu and centos.
 
 How to find I am using affected version...?
 -------------------------------------------
@@ -76,7 +72,7 @@ How to check am I upgarded..?
 
 The date should greater than or equal to Apr 7.
 
-Hey..!!! you are done. Happy secure linuxing... :D
+Hey..!!! you are done. Happy secure linuxing... 😄
 
 .. |OpenSSL Heartbleed| image:: http://4.bp.blogspot.com/-E5NogEilRNs/U0X3gzGooiI/AAAAAAAAVpo/ZZUTzTD_tuk/s640/openssl-logo-bug.png
    :target: http://4.bp.blogspot.com/-E5NogEilRNs/U0X3gzGooiI/AAAAAAAAVpo/ZZUTzTD_tuk/s1600/openssl-logo-bug.png
