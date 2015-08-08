@@ -7,58 +7,26 @@ Dos2Unix / Unix2Dos in ubuntu
 :slug: dos2unix-unix2dos-in-ubuntu
 :status: published
 
-By default ubuntu does not have dos2unix and unix2dos commands. But they
-provide some alternative commands. Those are fromdos and todos.
-sometimes its hard to switch to new commands. You can solve this issue
-by creating soft/symbolic links. Here its how to do.
+By default ubuntu does not have dos2unix and unix2dos commands. But they provide some alternative commands. Those are fromdos and todos. sometimes its hard to switch to new commands. You can solve this issue by creating soft / symbolic links. Here its how to do.
 
-[caption id="" align="aligncenter" width="400" caption="command
-creation"]\ |image0|\ [/caption]
+|image0| command creation
 
-First you have to find the location for "fromdos". Below command will
-return the location
+First you have to find the location for "fromdos". Below command will return the location
 
-.. raw:: html
+.. code-block:: bash
 
-   <address>
+	which fromdos
 
-which fromdos
 
-.. raw:: html
+Then you have to create a soft/symbolic link for that location with the name "dos2unix"
 
-   </address>
-   <address>
+.. code-block:: bash
 
- 
-
-.. raw:: html
-
-   </address>
-
-Then you have to create a soft/symbolic link for that location with the
-name "dos2unix"
-
-.. raw:: html
-
-   <address>
-
-sudo ln -s /usr/bin/fromdos /usr/bin/dos2unix
-
-.. raw:: html
-
-   </address>
-   <address>
-
- 
-
-.. raw:: html
-
-   </address>
+	sudo ln -s /usr/bin/fromdos /usr/bin/dos2unix
 
 Follow the same steps for unix2dos.
 
-To know more about symbolic/soft and hard links `click
-here <http://stackoverflow.com/questions/185899/what-is-the-difference-between-a-symbolic-link-and-a-hard-link>`__
+To know more about symbolic/soft and hard links `click here <http://stackoverflow.com/questions/185899/what-is-the-difference-between-a-symbolic-link-and-a-hard-link>`__
 
 .. |image0| image:: http://2.bp.blogspot.com/-jElTSUvs3NU/TkFvZUAJY6I/AAAAAAAAArE/dPCEYt8KI04/s400/dos2unix.png
    :target: http://2.bp.blogspot.com/-jElTSUvs3NU/TkFvZUAJY6I/AAAAAAAAArE/dPCEYt8KI04/s400/dos2unix.png
