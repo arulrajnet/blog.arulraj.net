@@ -5,8 +5,8 @@
   path = pelican-themes
   url = https://github.com/getpelican/pelican-themes
 [submodule "my-pelican-themes/ghostly"]
-	path = my-pelican-themes/ghostly
-	url = https://github.com/rodms10/ghostly
+  path = my-pelican-themes/ghostly
+  url = https://github.com/rodms10/ghostly
 [submodule "my-pelican-themes/pelican-vapor-theme"]
-	path = my-pelican-themes/pelican-vapor-theme
-	url = https://github.com/gperetin/pelican-vapor-theme
+  path = my-pelican-themes/pelican-vapor-theme
+  url = https://github.com/gperetin/pelican-vapor-theme
