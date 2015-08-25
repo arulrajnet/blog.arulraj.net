@@ -42,3 +42,5 @@ touch /etc/machine-info
 echo "PRETTY_HOSTNAME=device-name" | sudo tee -a /etc/machine-info
 
 sudo service bluetooth restart
+
+### add swap memory
