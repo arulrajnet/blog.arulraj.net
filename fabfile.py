@@ -19,7 +19,7 @@ env.cloudfiles_api_key = 'my_rackspace_api_key'
 env.cloudfiles_container = 'my_cloudfiles_container'
 
 # Pelican conf
-theme_path = 'pelican-octopress-theme'
+theme_path = 'pelican-themes/octopress'
 
 def clean():
     if os.path.isdir(DEPLOY_PATH):
