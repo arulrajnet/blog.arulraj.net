@@ -113,8 +113,16 @@ FEED_FEEDBURNER = 'ArulBlog'
 
 ### Plugins
 
-PLUGIN_PATH = 'pelican-plugins'
-PLUGINS = ['sitemap', 'neighbors', 'related_posts', 'post_stats']
+PLUGIN_PATH = [
+  'pelican-plugins',
+]
+PLUGINS = [
+  'sitemap', 
+  'neighbors', 
+  'related_posts', 
+  'post_stats',
+  'assets',
+]
 
 # Sitemap
 SITEMAP = {

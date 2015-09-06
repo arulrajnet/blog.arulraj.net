@@ -1,47 +1,31 @@
 :title: How to get TNEB Service Details without capcha
 :slug: how-to-get-tneb-service-details-without-capcha
-:date: 2015-07-23 11:45:47
-:tags: 
-:category: 
+:date: 2015-09-06 21:03:28
+:tags: javascript
+:category: Tools
 :author: Arul
 :lang: en
-:status: draft
+:status: published
 :summary: 
 
+To get direct link for find your usage from TNEB give your service number in the below form and press submit. 
+
+**TNEB Usage permlink Form**
+
+.. raw:: html
+
+  <iframe width="100%" height="400" src="//jsfiddle.net/arulraj1985/0dfht8L2/embedded/result" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
 
 
-VEFOR0VEQ098fDI2NXx8MDA1fHwxODQw
+How its works
+#############
 
+- For example, the service no is 265 / 005 / 1234 
 
+- It will take your service no and do base64 of "TANGEDCO||265||005||1234" is VEFOR0VEQ098fDI2NXx8MDA1fHwxMjM0
 
-092650051840
+- Then base64 of Region(09) is OQ==
 
-curl 'http://tneb.tnebnet.org/newlt/consumerwise_gmc_report.php' --data 'encserno=VEFOR0VEQ098fDI2NXx8MDA1fHwxODQw&rsno=OQ==' --compressed 
+- Then finally URL is http://tneb.tnebnet.org/newlt/consumerwise_gmc_report.php?encserno=VEFOR0VEQ098fDI2NXx8MDA1fHwxMjM0&rsno=OQ==
 
-base64 of "TANGEDCO||265||005||1840" is VEFOR0VEQ098fDI2NXx8MDA1fHwxODQw
-
-base64 of "09" is OQ==
-
-curl 'http://tneb.tnebnet.org/newlt/consumerwise_gmc_report.php' --data 'encserno=VEFOR0VEQ098fDI2NXx8MDA1fHwxODQw&rsno=OQ==' --compressed
-
-http://tneb.tnebnet.org/newlt/consumerwise_gmc_report.php?encserno=VEFOR0VEQ098fDI2NXx8MDA1fHwxODQw&rsno=OQ==
-
-
-http://coderstoolbox.net/string/#!encoding=base64&action=decode&charset=us_ascii
-
-
-TANGEDCO||256||723||4417
-
-
-http://tneb.tnebnet.org/newlt/consumerwise_gmc_report.php?encserno=VEFOR0VEQ098fDI1Nnx8NzIzfHw0NDE3&rsno=OQ==
-
-
-
-Toget all email id from tangetco
-
-
-https://www.tnebnet.org/awp/userRegister?execution=e2s1
-
-Forgot password. Then fill consumer number.
-
-it will display the email id with submit button. don't do the submit button. 
+You can find the source code from here https://jsfiddle.net/arulraj1985/0dfht8L2/
