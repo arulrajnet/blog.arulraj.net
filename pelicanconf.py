@@ -113,9 +113,10 @@ FEED_FEEDBURNER = 'ArulBlog'
 
 ### Plugins
 
-PLUGIN_PATH = [
+PLUGIN_PATHS = [
   'pelican-plugins',
 ]
+
 PLUGINS = [
   'sitemap', 
   'neighbors', 

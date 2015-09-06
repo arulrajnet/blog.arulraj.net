@@ -6,7 +6,6 @@
 :author: Arul
 :lang: en
 :status: published
-:summary: 
 
 To get direct link for find your usage from TNEB give your service number in the below form and press submit. 
 
