@@ -16,6 +16,7 @@ First Install latest greatest youtube-dl
 .. code-block:: bash
 
   sudo pip install --upgrade youtube-dl
+  OR
   sudo apt-get install youtube-dl
 
 As per todoy the version is 2015.09.09. To get version ``youtube-dl --version``
