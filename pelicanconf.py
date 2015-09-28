@@ -26,9 +26,9 @@ AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
 
 # Blogroll
-LINKS = (('Githup', 'http://githup.com/arulrajnet'),
+LINKS = (('Github', 'http://github.com/arulrajnet'),
          ('Python.org', 'http://python.org/'),
-         ('Gist', 'http://gist.githup.com/arulrajnet'),
+         ('Gist', 'http://gist.github.com/arulrajnet'),
          ('Twitter', 'http://twitter.com/arulrajnet'),)
 
 # Social widget
