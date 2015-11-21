@@ -58,6 +58,7 @@ DEFAULT_METADATA = {
 EXTRA_PATH_METADATA = {
     'assets/robots.txt': {'path': 'robots.txt'},
     'assets/favicon.ico': {'path': 'favicon.ico'},
+    'assets/css/better_responsive_images.css': {'path': 'css/custom.css'},
 }
 
 # Post and Pages path 
@@ -123,6 +124,7 @@ PLUGINS = [
   'related_posts', 
   'post_stats',
   'assets',
+  'better_figures_and_images',
 ]
 
 # Sitemap
@@ -136,3 +138,9 @@ SITEMAP = {
 
 # Read time - Medium like
 X_MIN_READ = False
+
+# Setting for the better_figures_and_images plugin
+RESPONSIVE_IMAGES = True
+
+# This is not working
+CUSTOM_CSS = 'css/custom.css'
