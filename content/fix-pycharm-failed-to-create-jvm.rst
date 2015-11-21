@@ -42,7 +42,7 @@ you have to download and install the 64bit JDK from http://java.com/
 
 Then open Control Panel → Edit Environmental Variable for Your Account
 
-In User variables set "PYCHARM\_SDK" and path will be your 64 bit java
+In User variables set ``PYCHARM_SDK`` and path will be your 64 bit java
 version
 
 |pycharm env variable|
@@ -50,7 +50,7 @@ version
 **Create properties file:**
 
 For 64bit you have to create separate properties file for that.  Create
-file named as "pycharm64.exe.vmoptions" in the root directory of IDE
+file named as ``pycharm64.exe.vmoptions`` in the root directory of IDE
 
 .. code-block::text
   -server
@@ -73,17 +73,17 @@ IDE should start with the pycharm.bat file.
 This fix will work for other IDE such as WebStrom, PhpStrom, IntelliJ
 and RubyMine from jetbrains also.
 
-Basically you have to create "*<product>64.exe.vmoptions*\ " file. Set the 64bit Java environmental variable for that IDE. Then start the "*<product>.bat*\ " file
+Basically you have to create ``<product>64.exe.vmoptions`` file. Set the 64bit Java environmental variable for that IDE. Then start the  ``<product>.bat`` file
 
 **Environmental Variable for Different product:**
 
--  IDEA\_JDK for IntelliJ IDEA
--  WEBIDE\_JDK for PhpStorm and WebStorm
--  PYCHARM\_JDK for PyCharm
--  RUBYMINE\_SDK for RubyMine
+-  IDEA_JDK for IntelliJ IDEA
+-  WEBIDE_JDK for PhpStorm and WebStorm
+-  PYCHARM_JDK for PyCharm
+-  RUBYMINE_SDK for RubyMine
 
 To know about what environmental variable have to use, open
-*<product>.bat* file. Then you will get to know.
+``<product>.bat`` file. Then you will get to know.
 
 |image3|
 

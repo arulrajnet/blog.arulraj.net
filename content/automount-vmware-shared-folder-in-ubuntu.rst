@@ -9,45 +9,39 @@ Automount vmware shared folder in ubuntu
 
 **How to fix shared folder automount problem in vmware ..?**
 
-I am using vmware player for last several years. But I am not tested
-their shared folder features. To share your host os folder with vm you
-have to install "vmware tools" on guest os. Installing vmware tools is
-very simple.
+I am using vmware player for last several years. But I am not tested their shared folder features. To share your host os folder with vm you have to install "vmware tools" on guest os. Installing vmware tools is very simple.
 
 **Checking vmware module :**
 
-    sudo lsmod \| grep vmhgfs
+.. code-block:: bash
+
+    sudo lsmod | grep vmhgfs
 
 It should return some values something like shown on image.
 
-[caption id="" align="aligncenter" width="320"]\ |lsmode| List
-modules[/caption]
+|lsmode| List modules
 
 If not you have to install vmware tools.
 
 **Installing vmware tools :**
 
--  Goto Player → Manage → Install vmware Tools . Now Vmware Tools is
-   mounted as CDROM with in VM
+-  Goto Player → Manage → Install vmware Tools . Now Vmware Tools is mounted as CDROM with in VM
 
-[caption id="" align="aligncenter" width="320"]\ |vmware tools install|
-Install VMware Tools[/caption]
+|vmware tools install| Install VMware Tools
 
 -  Extract Your VmwareTools-9.2.0-799703.tar.gz file to somewhere.
 -  Goto "vmware-tools-distrib" folder path in terminal
 -  Then run this command "./vmware-install.pl"
 -  Just press enter for all the questions asked while installing
 
-[caption id="" align="aligncenter" width="320"]\ |Install vmware| Vmware
-Install[/caption]
+|Install vmware| Vmware Install
 
 **Add shared folder for VM:**
 
 -  Goto Player → Manage → Virtual Machine Settings
 -  In Options tab you can find the Shared Folders
 
-[caption id="" align="aligncenter" width="320"]\ |image3| Shared
-Folder[/caption]
+|image3| Shared Folder
 
 -  Then reboot your machine
 
@@ -59,19 +53,20 @@ shown with in "/mnt/hgfs/" folder. So here is the fix for that.
 There is a startup script called "open-vm-tools" with in /etc/init.d/
 folder. Just add the below line in the start function.
 
+.. code-block:: bash
+
     mount -t vmhgfs .host:/ /mnt/hgfs
 
 Then restart the service "sudo service open-vm-tools restart".
 
-[caption id="" align="aligncenter" width="320"]\ |image4| open-vm-tools
-startup[/caption]
+|image4| open-vm-tools startup
 
 **My Environmental :**
 
 | Product : Vmware Player version 5.0.0 build-812388
-|  Vmware Tools: VmwareTools-9.2.0-799703
-|  Guest OS : Ubuntu 12.04 LTS 32 bit
-|  Host OS : Windows 7 64 bit
+| Vmware Tools: VmwareTools-9.2.0-799703
+| Guest OS : Ubuntu 12.04 LTS 32 bit
+| Host OS : Windows 7 64 bit
 
 .. |lsmode| image:: http://1.bp.blogspot.com/-scGjIUU5lA4/UjdQ4ODFgPI/AAAAAAAAVYA/M6Dqv5mdewQ/s320/lsmode.PNG
    :target: http://1.bp.blogspot.com/-scGjIUU5lA4/UjdQ4ODFgPI/AAAAAAAAVYA/M6Dqv5mdewQ/s1600/lsmode.PNG

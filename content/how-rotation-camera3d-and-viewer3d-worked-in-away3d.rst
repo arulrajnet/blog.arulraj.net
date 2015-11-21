@@ -1,15 +1,16 @@
 How rotation camera3d and viewer3d worked in Away3d
 ###################################################
 :date: 2010-02-07 06:54
-:author: arul
+:author: Arul
 :category: Flash
 :tags: Animation, Flash, Programming, how to
 :slug: how-rotation-camera3d-and-viewer3d-worked-in-away3d
 
 **Rotation in Away3D Flash engine**
 
-|image0|\ In this blog entry we are going to learn about How the
-Rotation and camera3d and viewer3d in away3d flash engine.
+|image0|
+
+In this blog entry we are going to learn about How the Rotation and camera3d and viewer3d in away3d flash engine.
 
 Red line = x-axis
 
@@ -17,68 +18,57 @@ Blue line = y-axis
 
 Green Line = z-axis
 
-How Rotation works ..?
+**How Rotation works ..?**
 
-Rotation in away3d based on the three axis . Those are x.y and z.  the
-component is rotated take any one of this axis as a center then rotated.
-In my `last
-post <http://arulraj.net/2010/02/my-first-3d-flash-animation.html>`__\ the
-sphere is rotated along with x axis. In that example the axis is like
-that (see below )
+Rotation in away3d based on the three axis . Those are x.y and z.  the component is rotated take any one of this axis as a center then rotated. In my `last post <http://arulraj.net/2010/02/my-first-3d-flash-animation.html>`__\  the sphere is rotated along with x axis. In that example the axis is like that (see below )
 
-` <http://www.sharedaa.com/labs/flash/away3d/singlerotate.swf>`__
+.. raw:: html
 
-[plain]
+	<embed src="http://files.arulraj.net/code/flash/away3d/singlerotate.swf" width="600" height="400">
+	</embed>
 
-sphere.rotationX = sphere.x + 1;
+.. code-block:: text
 
-[/plain]
+	sphere.rotationX = sphere.x + 1;
 
 The sphere takes x axis as a center and rotate like above...
 
-In this example we add two or more components in the ObjectContainer3D
-then rotate this objects. In this example we are going to learn about
-how camera3D and Viewer3D works.
+In this example we add two or more components in the ObjectContainer3D then rotate this objects. In this example we are going to learn about how camera3D and Viewer3D works.
 
-` <http://www.sharedaa.com/labs/flash/away3d/away3drotate.swf>`__
+.. raw:: html
 
-| How Camera3D works ..?
-|  |image1|
+	<embed src="http://files.arulraj.net/code/flash/away3d/away3drotate.swf" width="600" height="400">
+	</embed>
 
-Camera3d = real camera
+**How Camera3D works ..?**
 
-view3d = lens the viewr of the camara
+|image1|
 
-renderer = recording in real cam
+	Camera3d = real camera
 
-scen3d = what we seen
+	view3d = lens the viewr of the camara
 
-This diagram explained in `Papervision3d
-Essential <http://books.sharedaa.com/2010/02/papervision3d-essentials.html>`__
-book.. In this diagram your clearly understood about camera3d.
+	renderer = recording in real cam
 
-If we assume Camera 3d is like a real camera . we assume it is with in
-our application in invisible mode.
+	scen3d = what we seen
 
-The viewerport (view3d) is an lens or what you are view using the
-camera.
+This diagram explained in `Papervision3d Essential <http://books.sharedaa.com/2010/02/papervision3d-essentials.html>`__ book.. In this diagram your clearly understood about camera3d.
 
-The render engine is recording engine in the real camera. In the real
-camera If  we start the record then only we can see the changes
-otherwise not. Like same as in camera3d we called
+If we assume Camera 3d is like a real camera . we assume it is with in our application in invisible mode.
 
-*viewer.render()*
+The viewerport (view3d) is an lens or what you are view using the camera.
 
-method each time if anything changed in the components. In the real
-camara If any person is not inside the seen they are not come in the
-flim. Same as in the scene3d if we not add add any components in the
-scene 3d objects  it is not visible.
+The render engine is recording engine in the real camera. In the real camera If  we start the record then only we can see the changes otherwise not. Like same as in camera3d we called
 
-How Viewer3D Works ..?
+.. code-block:: plain
 
-Download the source code `click
-here <http://sites.google.com/site/arulraj1985/list-of-files/Away3drotate.zip?attredirects=0&d=1>`__\ (compatible
-for Flashdevelop IDE)
+	viewer.render()
+
+method each time if anything changed in the components. In the real camara If any person is not inside the seen they are not come in the flim. Same as in the scene3d if we not add add any components in the scene 3d objects  it is not visible.
+
+**How Viewer3D Works ..?**
+
+Download the source code `click here <http://sites.google.com/site/arulraj1985/list-of-files/Away3drotate.zip?attredirects=0&d=1>`__\  (compatible for Flashdevelop IDE)
 
 .. |image0| image:: http://4.bp.blogspot.com/_X5tq9y9xv2s/S26cXkz167I/AAAAAAAAALs/45u4Luu4aRE/s400/away3d+rotation+example.jpg
    :target: http://4.bp.blogspot.com/_X5tq9y9xv2s/S26cXkz167I/AAAAAAAAALs/45u4Luu4aRE/s1600-h/away3d+rotation+example.jpg
