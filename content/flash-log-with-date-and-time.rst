@@ -8,171 +8,120 @@ Flash Log with date and time
 
 **Flash trace with Date and Time**
 
-.. raw:: html
-
-   <div class="separator" style="clear: both; text-align: center;">
-
 |image0|
 
-.. raw:: html
-
-   </div>
-
-.. raw:: html
-
-   <div class="separator" style="clear: both; text-align: left;">
-
-When i am work with a Difficult Flex application its hard to find which
-log is come first and which one come second in the flashlog trace. I
-searching for any log4j api like in flex. Yes i got.. Flex have that
-inbuit. Here i share that how to i use in my project... The Class is
-"**TraceTarget**\ "... Using that class you can trace your log in
-different way like Debug, Info, Warn and Error.. Here is My example
-
-.. raw:: html
-
-   </div>
-
-.. raw:: html
-
-   <div class="separator" style="clear: both; text-align: left;">
+When i am work with a Difficult Flex application its hard to find which log is come first and which one come second in the flashlog trace. I searching for any log4j api like in flex. Yes i got.. Flex have that inbuit. Here i share that how to i use in my project... The Class is "**TraceTarget**\ "... Using that class you can trace your log in different way like Debug, Info, Warn and Error.. Here is My example
 
 .. raw:: html
 
    <object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" width="300" height="150" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,40,0">
-
-.. raw:: html
-
-   <embed type="application/x-shockwave-flash" width="300" height="150" src="http://arulraj.net/wp-content/uploads/2010/11/sharedaaExample.swf">
-   </embed>
+      <embed type="application/x-shockwave-flash" width="300" height="150" src="http://files.arulraj.net/code/flash/example/LogExample/logexample.swf">
+      </embed>
    </object>
 
-.. raw:: html
 
-   </div>
+**sharedaaExample.mxml**
 
-.. raw:: html
+.. code-block:: mxml
 
-   <div class="separator" style="clear: both; text-align: left;">
+   <?xml version="1.0" encoding="UTF-8"?>
+   <mx:Application xmlns:mx="http://www.adobe.com/2006/mxml" xmlns:sharedaa="com.sharedaa.\*" creationComplete="creationComplete()" preinitialize="initLogging()">
+     <mx:Script>
+     <![CDATA[
+      import mx.logging.Log;
+      import mx.logging.ILogger;
+      import mx.logging.LogEventLevel;
+      import mx.logging.targets.TraceTarget;
+      import flash.ui.ContextMenu;
+      import flash.ui.ContextMenuItem;
+      import flash.net.navigateToURL;
+      import flash.net.URLRequest;
 
-sharedaaExample.mxml
+      import flash.events.ContextMenuEvent;
 
-.. raw:: html
+      import flash.display.StageDisplayState;
 
-   </div>
+      private var chatContextMenu: ContextMenu;
 
-| [xml]
-|  <?xml version="1.0" encoding="utf-8"?>
-|  <mx:Application xmlns:mx="http://www.adobe.com/2006/mxml"
-|  xmlns:sharedaa="com.sharedaa.\*"
-|  creationComplete="creationComplete()"
-|  preinitialize="initLogging()">
-|  <mx:Script><![CDATA[
-|  import mx.logging.Log;
-|  import mx.logging.ILogger;
-|  import mx.logging.LogEventLevel;
+      private function initLogging(): void {
+        // Create a target.
+        var logTarget: TraceTarget = new TraceTarget();
 
-import mx.logging.targets.TraceTarget;
+        // Log only messages for the following packages
+        logTarget.filters = ["com.sharedaa.\*"];
 
-| import flash.ui.ContextMenu;
-|  import flash.ui.ContextMenuItem;
-|  import flash.net.navigateToURL;
-|  import flash.net.URLRequest;
+        // Log all log levels.
+        logTarget.level = LogEventLevel.ALL;
 
-import flash.events.ContextMenuEvent;
+        // Add date, time, category, and log level to the output.
+        logTarget.includeDate = true;
+        logTarget.includeTime = true;
+        logTarget.includeCategory = true;
+        logTarget.includeLevel = true;
 
-import flash.display.StageDisplayState;
+        // Begin logging.
+        Log.addTarget(logTarget);
+      }
 
-private var chatContextMenu:ContextMenu;
+      private function addContextMenu(): void {
+        chatContextMenu = new ContextMenu();
+        chatContextMenu.hideBuiltInItems();
+        var item: ContextMenuItem = new ContextMenuItem("www.arulraj.net");
+        item.addEventListener("menuItemSelect", openNewWindow);
+        chatContextMenu.customItems.push(item);
+        this.contextMenu = chatContextMenu;
+      }
 
-| private function initLogging():void {
-|  // Create a target.
-|  var logTarget:TraceTarget = new TraceTarget();
+      private function openNewWindow(event: ContextMenuEvent): void {
+        navigateToURL(new URLRequest("http://www.arulraj.net"), "\_blank");
+      }
 
-| // Log only messages for the following packages
-|  logTarget.filters=["com.sharedaa.\*"];
-
-| // Log all log levels.
-|  logTarget.level = LogEventLevel.ALL;
-
-| // Add date, time, category, and log level to the output.
-|  logTarget.includeDate = true;
-|  logTarget.includeTime = true;
-|  logTarget.includeCategory = true;
-|  logTarget.includeLevel = true;
-
-| // Begin logging.
-|  Log.addTarget(logTarget);
-|  }
-
-| private function addContextMenu():void {
-|  chatContextMenu = new ContextMenu();
-|  chatContextMenu.hideBuiltInItems();
-|  var item:ContextMenuItem = new ContextMenuItem("www.arulraj.net");
-|  item.addEventListener("menuItemSelect",openNewWindow);
-|  chatContextMenu.customItems.push(item);
-|  this.contextMenu = chatContextMenu;
-|  }
-
-| private function openNewWindow(event:ContextMenuEvent):void {
-|  navigateToURL(new URLRequest("http://www.arulraj.net"),"\_blank");
-|  }
-
-| private function creationComplete():void {
-|  addContextMenu();
-|  main.initMain();
-|  main.printLog();
-|  }
-|  ]]></mx:Script>
-|  <mx:Canvas id="sharedaa">
-|  <mx:Canvas id="mainCanvas" x="0" y="0">
-|  <sharedaa:Main x="0" y="0" id="main">
-|  </sharedaa:Main>
-|  <mx:Label text="Example for Trace with Time" />
-|  </mx:Canvas>
-|  </mx:Canvas>
-|  </mx:Application>
-|  [/xml]
+      private function creationComplete(): void {
+        addContextMenu();
+        main.initMain();
+        main.printLog();
+      }      
+      ]]>
+     </mx:Script>
+     <mx:Canvas id="sharedaa">
+       <mx:Canvas id="mainCanvas" x="0" y="0">
+         <sharedaa:Main x="0" y="0" id="main" />
+         <mx:Label text="Example for Trace with Time" />
+       </mx:Canvas>
+     </mx:Canvas>
+   </mx:Application>
 
 And the Actionscript file is
 
-Main.as
+**Main.as**
 
-| [as3]
-|  package com.sharedaa {
+.. code-block:: as3
 
-| import mx.containers.VBox;
-|  import mx.logging.Log;
-|  import mx.logging.ILogger;
+   package com.sharedaa {
 
-public class Main extends VBox {
+     import mx.containers.VBox;
+     import mx.logging.Log;
+     import mx.logging.ILogger;
 
-private static var LOG:ILogger = Log.getLogger('com.sharedaa.Main');
+     public class Main extends VBox {
 
-| public function initMain():void {
-|  LOG.debug("intialize main");
-|  }
+       private static var LOG: ILogger = Log.getLogger('com.sharedaa.Main');
 
-| public function printLog():void {
-|  LOG.info("This is a info log");
-|  LOG.debug("here is a debug log");
-|  LOG.warn("display your warnings here");
-|  LOG.error("This is a error");
-|  }
+       public function initMain(): void {
+         LOG.debug("intialize main");
+       }
 
-| }
-|  }
-|  [/as3]
-
-.. raw:: html
-
-   <div class="separator" style="clear: both; text-align: center;">
+       public function printLog(): void {
+         LOG.info("This is a info log");
+         LOG.debug("here is a debug log");
+         LOG.warn("display your warnings here");
+         LOG.error("This is a error");
+       }
+     }
+   }
 
 |image1|
 
-.. raw:: html
-
-   </div>
 
 If you know better than this reply your ideas in comments...
 

@@ -9,55 +9,41 @@ Unlock huawei datacard e303s
 
 **How to unlock huawei datacard / dongle e303s**
 
-[caption id="" align="aligncenter" width="320"]\ |Aircel datacard|
-huawei e303s datacard[/caption]
+|Aircel datacard|
 
-Now we are going to learn about how to unlock huawei datacard / dongle /
-modem. This is totally free. You are going to unlock by yourself without
-paying any single penny of yours. Some websites claiming money for this.
-Do not follow them. You can do by yourself without anyone help. Believe
-in yours. :)
+Now we are going to learn about how to unlock huawei datacard / dongle / modem. This is totally free. You are going to unlock by yourself without paying any single penny of yours. Some websites claiming money for this. Do not follow them. You can do by yourself without anyone help. Believe in yours. 😄
 
-Why we need to unlock..? what is the use of that..?
+**Why we need to unlock..? what is the use of that..?**
 
-If you are bought this device from any internet service provider they
-locked that device with particular network SIM. So you can't use any
-other network with this device. If you unlocked that device you can
-enjoy 3g with any SIM.
+If you are bought this device from any internet service provider they locked that device with particular network SIM. So you can't use any other network with this device. If you unlocked that device you can enjoy 3g with any SIM.
 
-I bought this device e303s from Aircel in chennai for Rs.1600 - 3 month
-- 6GB - prepaid
+I bought this device e303s from Aircel in chennai for Rs.1600 - 3 month - 6GB - prepaid
 
-What is needed to unlock..? Its hard to get one..?
+**What is needed to unlock..? Its hard to get one..?**
 
-Basically you need an **unlock code** for that. Earlier huawei modems
-are using different algorithm. That is easy to hack. Even some software
-tools available to find out the code. Now all modems follow new
-algorithm.
+Basically you need an **unlock code** for that. Earlier huawei modems are using different algorithm. That is easy to hack. Even some software tools available to find out the code. Now all modems follow new algorithm.
 
-How can I found my device follows new algorithm or old algorithm..?
+**How can I found my device follows new algorithm or old algorithm..?**
 
-If you modem IMEI starts with **86\*\* . **\ Then that is the new
-algorithm. This tutorial for new algorithm modems only.
+If you modem IMEI starts with **86\*\* . **\ Then that is the new algorithm. This tutorial for new algorithm modems only.
 
 **How to get the unlock code of modem..?**
 
-There are two ways to get your unlock code. Be prepared with your IMEI
-no of device.
+There are two ways to get your unlock code. Be prepared with your IMEI no of device.
 
 First one:
+----------
 
 Post your IMEI no in this forum thread
 `http://forum.gsmhosting.com/vbb/f88/huawei-unlock-codes-request-only-here-v3-1707247/index100.html <http://bit.ly/1fTA4iX>`__ .
 You can get your unlock code instantly. Below is mine.
 
-[caption id="" align="aligncenter" width="320"]\ |Huawei unlock code
-forum thread| GSM Hosting Forum thread[/caption]
+|Huawei unlock code forum thread|
 
 Second one:
+-----------
 
-Follow this link
-`http://huaweicodecalculator.com/new-algo/ <http://bit.ly/1fTA0zM>`__
+Follow this link `http://huaweicodecalculator.com/new-algo/ <http://bit.ly/1fTA0zM>`__
 
 -  Login with your Google account
 -  Give your IMEI no and model then press calculate button
@@ -66,18 +52,17 @@ Follow this link
 -  Use **NEW ALGO CODE** if your IMEI start with 86\* (For e303s use New
    Algo code)
 
-[caption id="" align="aligncenter" width="320"]\ |Unlock code using new
-algorithm| Unlock code using code calculator[/caption]
+|Unlock code using new algorithm|
 
-So I got the unlock code what next..?
+**So I got the unlock code what next..?**
 
 Download Below files
 
--  Mobile Partner - `Mobile Partner.zip <http://bit.ly/17H4xsp>`__
--  Dashboard Update
-   - `UTPS23.001.07.04.910\_mobile\_partner\_dashboard\_update.zip <http://bit.ly/H8KE7e>`__
+-  Mobile Partner - `Mobile Partner.zip <http://bit.ly/1crfGWT>`__
+-  Dashboard Update - `UTPS23.001.07.04.910\_mobile\_partner\_dashboard\_update.zip <http://bit.ly/1crfYNu>`__
 
 Steps:
+------
 
 -  Extract Mobile Partner and run setup.exe
 -  Open Mobile partner Once installation done.
@@ -85,31 +70,23 @@ Steps:
 -  Plug your datacard into PC
 -  Now you can see the popup for enter unlock code.
 
-[caption id="" align="aligncenter" width="320"]\ |Unlock code popup|
-Unlock code popup[/caption]
+|Unlock code popup|
 
-Then enter your code and press Ok. wait for sometime. Now it will detect
-your new network. If not try again.
+Then enter your code and press Ok. wait for sometime. Now it will detect your new network. If not try again.
 
 Note: You can attempt only 10 times.
 
-Now you can enjoy with any network. I tested with Tata DoCoMo, BSNL,
-AirTel and Vodafone
+Now you can enjoy with any network. I tested with Tata DoCoMo, BSNL, AirTel and Vodafone
 
-[caption id="" align="aligncenter" width="320"]\ |Tata DoCoMo in Aircel
-e303s| Tata DoCoMo in Aircel e303s[/caption]
+|Tata DoCoMo in Aircel e303s|
 
 Yeah you are done...!!!! Congrats Mate...!!!
 
-Now what next..? (OPTIONAL)
+**Now what next..? (OPTIONAL)**
 
-Yes. If you want to remove the aircel default dashboard with in your
-data card follow this.
+Yes. If you want to remove the aircel default dashboard with in your data card follow this.
 
-You are unlocked your device but still aircel dashboard within your
-device. So aircel dashboard will be installed while you freshly
-connected with any machine. Now we are going to change that to Huawei
-Mobile partner dashboard. This is purely optional.
+You are unlocked your device but still aircel dashboard within your device. So aircel dashboard will be installed while you freshly connected with any machine. Now we are going to change that to Huawei Mobile partner dashboard. This is purely optional.
 
 -  Extract
    that UTPS23.001.07.04.910\_mobile\_partner\_dashboard\_update.zip
@@ -125,8 +102,7 @@ Mobile partner dashboard. This is purely optional.
 
 |image8|
 
-[caption id="" align="aligncenter" width="320"]\ |Successfully updated|
-Successfully updated[/caption]
+|Successfully updated|
 
 |image10|
 

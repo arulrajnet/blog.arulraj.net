@@ -18,6 +18,8 @@ env.cloudfiles_username = 'my_rackspace_username'
 env.cloudfiles_api_key = 'my_rackspace_api_key'
 env.cloudfiles_container = 'my_cloudfiles_container'
 
+# Pelican conf
+theme_path = 'pelican-themes/octopress'
 
 def clean():
     if os.path.isdir(DEPLOY_PATH):
@@ -25,14 +27,14 @@ def clean():
         local('mkdir {deploy_path}'.format(**env))
 
 def build():
-    local('pelican -s pelicanconf.py')
+    local('pelican -s pelicanconf.py -t %s' % theme_path)
 
 def rebuild():
     clean()
     build()
 
 def regenerate():
-    local('pelican -r -s pelicanconf.py')
+    local('pelican -r -s pelicanconf.py -t %s' % theme_path)
 
 def serve():
     os.chdir(env.deploy_path)
@@ -51,7 +53,7 @@ def reserve():
     serve()
 
 def preview():
-    local('pelican -s publishconf.py')
+    local('pelican -s publishconf.py -t %s' % theme_path)
 
 def cf_upload():
     rebuild()
@@ -63,7 +65,7 @@ def cf_upload():
 
 @hosts(production)
 def publish():
-    local('pelican -s publishconf.py')
+    preview()
     project.rsync_project(
         remote_dir=dest_path,
         exclude=".DS_Store",
@@ -71,3 +73,8 @@ def publish():
         delete=True,
         extra_opts='-c',
     )
+
+
+def s3_upload():
+    preview()
+    local('s3cmd sync ./output/ s3://www.arulraj.net/ --acl-public --delete-removed --guess-mime-type')

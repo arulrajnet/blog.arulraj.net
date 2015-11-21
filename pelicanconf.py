@@ -26,9 +26,9 @@ AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
 
 # Blogroll
-LINKS = (('Githup', 'http://githup.com/arulrajnet'),
+LINKS = (('Github', 'http://github.com/arulrajnet'),
          ('Python.org', 'http://python.org/'),
-         ('Gist', 'http://gist.githup.com/arulrajnet'),
+         ('Gist', 'http://gist.github.com/arulrajnet'),
          ('Twitter', 'http://twitter.com/arulrajnet'),)
 
 # Social widget
@@ -58,6 +58,7 @@ DEFAULT_METADATA = {
 EXTRA_PATH_METADATA = {
     'assets/robots.txt': {'path': 'robots.txt'},
     'assets/favicon.ico': {'path': 'favicon.ico'},
+    'assets/css/better_responsive_images.css': {'path': 'css/custom.css'},
 }
 
 # Post and Pages path 
@@ -113,8 +114,18 @@ FEED_FEEDBURNER = 'ArulBlog'
 
 ### Plugins
 
-PLUGIN_PATH = 'pelican-plugins'
-PLUGINS = ['sitemap', 'neighbors', 'related_posts', 'post_stats']
+PLUGIN_PATHS = [
+  'pelican-plugins',
+]
+
+PLUGINS = [
+  'sitemap', 
+  'neighbors', 
+  'related_posts', 
+  'post_stats',
+  'assets',
+  'better_figures_and_images',
+]
 
 # Sitemap
 SITEMAP = {
@@ -127,3 +138,9 @@ SITEMAP = {
 
 # Read time - Medium like
 X_MIN_READ = False
+
+# Setting for the better_figures_and_images plugin
+RESPONSIVE_IMAGES = True
+
+# This is not working
+CUSTOM_CSS = 'css/custom.css'

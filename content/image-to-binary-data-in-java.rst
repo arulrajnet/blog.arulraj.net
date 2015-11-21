@@ -158,9 +158,6 @@ for your reference
     }
   }
  }
-.. raw:: html
-
-   </div>
 
 .. raw:: html
 

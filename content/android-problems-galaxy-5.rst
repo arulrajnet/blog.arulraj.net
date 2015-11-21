@@ -6,380 +6,95 @@ Android problems - Galaxy 5
 :tags: android
 :slug: android-problems-galaxy-5
 
-Here some of the problems are hardware dependent and some are OS
-dependent. But still those are not fixed in the latest version of
-android. But still they have major share in smartphone
-`market <http://news.cnet.com/8301-13506_3-20051610-17.html>`__ :(
+Here some of the problems are hardware dependent and some are OS dependent. But still those are not fixed in the latest version of android. But still they have major share in smartphone `market <http://news.cnet.com/8301-13506_3-20051610-17.html>`__ 😃
 
-The problems in my mobile only. It may vary for your mobile. Some
-problems are resolved and some could not.
+The problems in my mobile only. It may vary for your mobile. Some problems are resolved and some could not.
 
 **My Specification:**
 
-| Model - Samsung GT-I5503 a.k.a Samsung Galaxy 5
-|  Version - Android 2.1 Eclair
-|  Firmware - 2.1-Update1
+
+.. code-block:: text
+
+   Model - Samsung GT-I5503 a.k.a Samsung Galaxy 5
+   Version - Android 2.1 Eclair
+   Firmware - 2.1-Update1
+
 
 Can not delete multiple contacts:
 
 There is no option to delete more than one contacts. If you want to delete 10 contacts you should go with one by one.
 
-.. raw:: html
-
-   <div class="separator" style="clear: both; text-align: center;">
-
 |image0|
-
-.. raw:: html
-
-   </div>
 
 Doesn't sync with google contacts groups:
 
 I have contact groups in gmail contacts, but its not synced with my mobile contacts. Now all gmail contacts in one group.
 
-.. raw:: html
-
-   <div class="separator" style="clear: both; text-align: center;">
-
 |image1|
-
-.. raw:: html
-
-   </div>
 
 Contact image not shown when dialing:
 
 The contact image is not shown when I calling to someone. The image came once they attend the call. But not a problem in incoming call, always image came.
 
-.. raw:: html
-
-   <div class="separator" style="clear: both; text-align: center;">
-
 |image2|
 
-.. raw:: html
+The most of the contacts related problems seems to be solved in Froyo. I need to update my OS version. But samsung does not provide update for Galaxy 5 😔
 
-   </div>
-
-.. raw:: html
-
-   <div class="separator" style="clear: both; text-align: left;">
-
-The most of the contacts related problems seems to be solved in Froyo. I
-need to update my OS version. But samsung does not provide update for
-Galaxy 5 :(
-
-.. raw:: html
-
-   </div>
-
-.. raw:: html
-
-   <div class="separator" style="clear: both;">
-
-.. raw:: html
-
-   </div>
-
-.. raw:: html
-
-   <div class="separator" style="clear: both; text-align: left;">
 
 Can not connect with ad-hoc network:
 
-.. raw:: html
+This is the most known android `issue <http://code.google.com/p/android/issues/detail?id=82>`__. If you use `wifi analyzer <https://market.android.com/details?id=com.farproc.wifi.analyzer>`__ it will detect the ad-hoc network. but in the Settings → Wireless and Networks not even detect the network.
 
-   </div>
-
-.. raw:: html
-
-   <div class="separator" style="clear: both; text-align: left;">
-
-.. raw:: html
-
-   </div>
-
-.. raw:: html
-
-   <div class="separator" style="clear: both; text-align: left;">
-
-This is the most known android
-`issue <http://code.google.com/p/android/issues/detail?id=82>`__. If you
-use `wifi
-analyzer <https://market.android.com/details?id=com.farproc.wifi.analyzer>`__
-it will detect the ad-hoc network. but in the Settings → Wireless and
-Networks not even detect the network.
-
-.. raw:: html
-
-   </div>
-
-.. raw:: html
-
-   <div class="separator" style="clear: both; text-align: left;">
 
 Could not detect your location:
 
-.. raw:: html
 
-   </div>
-
-.. raw:: html
-
-   <div class="separator" style="clear: both; text-align: left;">
-
-I solved this problem. When i try to to find "My Location" in Latitude.
-It always says "Your current location is temporarily unavailable."
-
-.. raw:: html
-
-   </div>
-
-.. raw:: html
-
-   <div class="separator" style="clear: both; text-align: center;">
+I solved this problem. When i try to to find "My Location" in Latitude. It always says "Your current location is temporarily unavailable."
 
 |image3|
 
-.. raw:: html
-
-   </div>
-
-.. raw:: html
-
-   <div class="separator" style="clear: both; text-align: left;">
-
-Goto Settings → Location and Security → Check both Use wireless networks
-and Use GPS satellites. Thats it
-
-.. raw:: html
-
-   </div>
-
-.. raw:: html
-
-   <div class="separator" style="clear: both; text-align: center;">
+Goto Settings → Location and Security → Check both Use wireless networks and Use GPS satellites. Thats it
 
 |image4|
 
 Sometimes showing wrong time:
 
-Sometimes my mobile shows correct time and sometimes it shows current
-time + 5:30 hours. Finally i solved this. The issue because of getting
-the time from GSM network.
+Sometimes my mobile shows correct time and sometimes it shows current time + 5:30 hours. Finally i solved this. The issue because of getting the time from GSM network.
 
 Goto Settings → Date and Time → uncheck the Automatic
 
-.. raw:: html
-
-   <div class="separator" style="clear: both; text-align: center;">
-
 |image5|
 
-.. raw:: html
-
-   </div>
-
-.. raw:: html
-
-   <div class="separator" style="clear: both; text-align: left;">
 
 Proxy only for browser not for applications:
-
-.. raw:: html
-
-   </div>
-
-.. raw:: html
-
-   <div class="separator" style="clear: both; text-align: left;">
-
-.. raw:: html
-
-   </div>
-
-.. raw:: html
-
-   <div class="separator" style="clear: both; text-align: left;">
 
 Actually I set proxy for wifi network, But the proxy is works only for browser not for application you installed.
 
 To Set proxy Goto Settings → Wireless and networks → WiFi Settings → Advanced
 
-.. raw:: html
-
-   </div>
-
-.. raw:: html
-
-   <div class="separator" style="clear: both; text-align: left;">
-
-.. raw:: html
-
-   </div>
-
-.. raw:: html
-
-   <div class="separator" style="clear: both; text-align: left;">
-
-.. raw:: html
-
-   <div style="text-align: left;" dir="ltr">
-
-.. raw:: html
-
-   <div class="separator" style="clear: both; text-align: center;">
-
 |image6|
 
-.. raw:: html
-
-   </div>
 
 Sync Issue:
 
-If any issue came in syncing. That application is not working any more.
-I had a problem in syncing in calendar. After that calendar application
-is not opening. Its works after successfully synced. For sync Goto
-Setting → Accounts and Sync
-
-.. raw:: html
-
-   <div class="separator" style="clear: both; text-align: center;">
+If any issue came in syncing. That application is not working any more. I had a problem in syncing in calendar. After that calendar application is not opening. Its works after successfully synced. For sync Goto Setting → Accounts and Sync
 
 |image7|
 
-.. raw:: html
-
-   </div>
-
-.. raw:: html
-
-   <div class="separator" style="clear: both;">
-
 Bluetooth headset is not supported:
 
-.. raw:: html
-
-   </div>
-
-.. raw:: html
-
-   <div class="separator" style="clear: both;">
-
-.. raw:: html
-
-   </div>
-
-.. raw:: html
-
-   <div class="separator" style="clear: both;">
-
-There is no option to connect my bluetooth headset. Even my LG KG195
-supports bluetooth headset. :P
-
-.. raw:: html
-
-   </div>
-
-.. raw:: html
-
-   <div class="separator" style="clear: both;">
-
-.. raw:: html
-
-   </div>
-
-.. raw:: html
-
-   <div class="separator" style="clear: both;">
+There is no option to connect my bluetooth headset. Even my LG KG195 supports bluetooth headset. 😜
 
 Auto Reboot:
 
-.. raw:: html
 
-   </div>
+This is a big headache. it will automatically reboot if more process run at a same time :oops:
 
-.. raw:: html
+Finally I came to a conclusion I need to update my OS version and samsung firmware. It will solve most of my problem.  Anyone successfully update OS / firmware for Galaxy 5..?
 
-   <div class="separator" style="clear: both;">
-
-.. raw:: html
-
-   </div>
-
-.. raw:: html
-
-   <div class="separator" style="clear: both;">
-
-This is a big headache. it will automatically reboot if more process run
-at a same time :oops:
-
-.. raw:: html
-
-   </div>
-
-.. raw:: html
-
-   <div class="separator" style="clear: both;">
-
-Finally I came to a conclusion I need to update my OS version and
-samsung firmware. It will solve most of my problem.  Anyone successfully
-update OS / firmware for Galaxy 5..?
-
-.. raw:: html
-
-   </div>
-
-.. raw:: html
-
-   </div>
-
-.. raw:: html
-
-   </div>
-
-.. raw:: html
-
-   </div>
-
-.. raw:: html
-
-   <div class="separator" style="clear: both;">
-
-.. raw:: html
-
-   </div>
-
-.. raw:: html
-
-   <div class="separator" style="clear: both;">
-
-Last 6 months this post draft today only got the time to finish and
-post. :)
-
-.. raw:: html
-
-   </div>
-
-.. raw:: html
-
-   <div class="separator" style="clear: both;">
-
-.. raw:: html
-
-   </div>
-
-.. raw:: html
-
-   <div class="separator" style="clear: both;">
+Last 6 months this post draft today only got the time to finish and post. 😄
 
 Share your android experience in comments...
-
-.. raw:: html
-
-   </div>
 
 .. |image0| image:: http://4.bp.blogspot.com/-KH60R4Err7w/Teh6HZO4LPI/AAAAAAAAAoE/NAHpDWfzUTA/s400/contact-delete.png
    :target: http://4.bp.blogspot.com/-KH60R4Err7w/Teh6HZO4LPI/AAAAAAAAAoE/NAHpDWfzUTA/s1600/contact-delete.png

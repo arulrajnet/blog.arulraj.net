@@ -7,65 +7,49 @@ Shared media files with other users in linux
 :slug: shared-media-files-with-other-users-in-linux
 :status: published
 
-          I think everyone might come across this problem. How to share
-your Music and Videos with other users in linux machine..? For mine (
-username is *arul *) I have all music and videos in my home folder. I
-want to share those with others ( username is *friends *) in the same
-machine. You can ask, by changing the permission of all files with in
-folder can solve this issue.
+I think everyone might come across this problem. How to share your Music and Videos with other users in linux machine..? For mine (username is *arul* ) I have all music and videos in my home folder. I want to share those with others ( username is *friends* ) in the same machine. You can ask, by changing the permission of all files with in folder can solve this issue.
 
-        Yes you are correct. But this is a partial solution. When you
-add / create new files with in that folder it have the old permissions.
-To solve this issue, create / add file with particular permission in
-that folder. Here is it how to do that.
+Yes you are correct. But this is a partial solution. When you add / create new files with in that folder it have the old permissions. To solve this issue, create / add file with particular permission in that folder. Here is it how to do that.
 
-**First you have create new group. **\ This is an optional one, you can
-use anyone of your old group. For me I created a new group called
-"media". Assign this group to user whom want you share.
+**First you have create new group. ** This is an optional one, you can use anyone of your old group. For me I created a new group called "media". Assign this group to user whom want you share.
 
-    | arul@arul-laptop:~$ sudo groupadd media
-    |  arul@arul-laptop:~$ sudo usermod -a -G media friends
-    |  arul@arul-laptop:~$ groups friends
+.. code-block:: bash
 
-In second command option "-a" is important. Then only this group is
-append to the existing group list otherwise all sub-groups are removed.
-The final command will display the user is belong to which are the
-groups. You can also do this using GUI. Goto System → Administration →
-Users and Groups
+    sudo groupadd media
+    sudo usermod -a -G media friends
+    groups friends
 
-[caption id="" align="aligncenter" width="400" caption="Add new group
-and assigned to users"]\ |image0|\ [/caption]
+In second command option "-a" is important. Then only this group is append to the existing group list otherwise all sub-groups are removed. The final command will display the user is belong to which are the groups. You can also do this using GUI. Goto System → Administration → Users and Groups
 
-Change group to "media" for existing files and folder with in which
-directory you want to share.
+|image0| Add new group and assigned to users
 
-    | arul@arul-laptop:~$ sudo chgrp -R media Music/
-    |  arul@arul-laptop:~$ sudo chmod g+s -R Music/
-    |  arul@arul-laptop:~$ sudo chmod 755 -R Music/
+Change group to "media" for existing files and folder with in which directory you want to share.
 
-In command "-R" for recursive operations. It will change all folders and
-subfolders files. Second command for **set group id for Music and sub
-directory.** Final command for RWX access for user and RX access for
-group, others for existing files.
+.. code-block:: bash
 
-Now when you create a new directory with in Music. The "media" group is
-assigned to that folder. it will look like
+    sudo chgrp -R media Music/
+    sudo chmod g+s -R Music/
+    sudo chmod 755 -R Music/
 
-    | arul@arul-laptop:~/Music$ mkdir sample
-    |  arul@arul-laptop:~/Music$ ll
-    |  drwxr-sr-x 2 arul media 4096 2011-08-19 00:06 sample
+In command "-R" for recursive operations. It will change all folders and subfolders files. Second command for **set group id for Music and sub directory.** Final command for RWX access for user and RX access for group, others for existing files.
 
-[caption id="" align="aligncenter" width="400" caption="Music folder
-list view"]\ |image1|\ [/caption]
+Now when you create a new directory with in Music. The "media" group is assigned to that folder. it will look like
 
-Now login as other user. create symbolic link for media folder for easy
-access.
+.. code-block:: bash
 
-friends@arul-laptop:~/Music$ ln -s /home/arul/Music ./"music on arul"
+    arul@arul-laptop:~/Music$ mkdir sample
+    arul@arul-laptop:~/Music$ ll
+    drwxr-sr-x 2 arul media 4096 2011-08-19 00:06 sample
 
-To know more about File permission view
-`this <https://help.ubuntu.com/community/FilePermissions>`__ ubuntu help
-page.
+|image1| Music folder list view
+
+Now login as other user. create symbolic link for media folder for easy access.
+
+.. code-block:: bash
+
+    friends@arul-laptop:~/Music$ ln -s /home/arul/Music ./"music on arul"
+
+To know more about File permission view `this <https://help.ubuntu.com/community/FilePermissions>`__ ubuntu help page.
 
 .. |image0| image:: http://3.bp.blogspot.com/-pcMtYOBwgNw/Tk1IGvf9TFI/AAAAAAAAArM/aG_-IY2tIoI/s400/added%2Bnew%2Bgroup.png
    :target: http://3.bp.blogspot.com/-pcMtYOBwgNw/Tk1IGvf9TFI/AAAAAAAAArM/aG_-IY2tIoI/s1600/added%2Bnew%2Bgroup.png
