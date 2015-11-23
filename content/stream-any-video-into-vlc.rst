@@ -9,7 +9,11 @@
 
 You can stream any online like youtube, vimeo, facebook, dailymotion, etc., video into your VLC / mplayer using youtube-dl. Here I will explain how to do that.
 
-|stream-to-vlc|
+.. figure:: http://1.bp.blogspot.com/-oE3JlsHUyPE/VfMISTKA3TI/AAAAAAAAWWY/7oGiGoyFx5Q/s320/stream-to-vlc.png
+  :target: http://1.bp.blogspot.com/-oE3JlsHUyPE/VfMISTKA3TI/AAAAAAAAWWY/7oGiGoyFx5Q/s1600/stream-to-vlc.png
+  :align: center
+  :alt: Streaming in VLC using youtube-dl
+
 
 First Install latest greatest youtube-dl
 
@@ -36,7 +40,3 @@ You can also set up a function in your ~/.bash_aliases file like
   }
 
 Referred from https://github.com/rg3/youtube-dl/issues/2124#issuecomment-32429104
-
-
-.. |stream-to-vlc| image:: http://1.bp.blogspot.com/-oE3JlsHUyPE/VfMISTKA3TI/AAAAAAAAWWY/7oGiGoyFx5Q/s320/stream-to-vlc.png
-  :target: http://1.bp.blogspot.com/-oE3JlsHUyPE/VfMISTKA3TI/AAAAAAAAWWY/7oGiGoyFx5Q/s1600/stream-to-vlc.png
