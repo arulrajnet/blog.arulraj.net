@@ -43,8 +43,6 @@ Username :  leave blank
 
 Password : leave blank
 
-yeah..! You are done. Go to the Browser it will open the AirtelLive home
-page
+yeah..! You are done. Go to the Browser it will open the AirtelLive home page
 
-Download phone suite for LG KG 195 `Click
-here <http://softwares.sharedaa.com/2010/02/lg-kg195-phone-suite.html>`__
+Download phone suite for LG KG 195 `Click here <http://softwares.sharedaa.com/2010/02/lg-kg195-phone-suite.html>`__

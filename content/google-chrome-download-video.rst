@@ -5,6 +5,7 @@ Google chrome Download video
 :category: Browser
 :tags: Browser, hacking, ubuntu, Flash, Linux
 :slug: google-chrome-download-video
+:disqus_identifier: google_chrome_download_video
 
 The most video content web sites use flash player as them video player. In Linux you can download streaming videos without any third party tools. Previously the videos which you are watching by default its stored in /tmp directory. You can copy the video from there. But in the google chrome or Chromium browser by default its come with a flash player. If you using that flash player the video is not downloaded in /tmp directory. They are using there own intelligence to prevent this. Here we are going to see a simple hack to download videos in google chrome . Steps are
 

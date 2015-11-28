@@ -23,12 +23,12 @@ Java offline Documentation
 
 *In windows*
 
-Extract that ``C:\\Program Files\\Java\\jdk1.6.0\_10\\src.zip`` to ``src`` folder then
+Extract that ``C:\Program Files\Java\jdk1.6.0_10\src.zip`` to ``src`` folder then
 
 .. code-block:: bat
 
   cd src
-  dir /s /b \*.java > files.txt
+  dir /s /b *.java > files.txt
   javadoc -J-Xmx756m @files.txt
 
 *In Linux*
@@ -36,7 +36,7 @@ Extract that ``C:\\Program Files\\Java\\jdk1.6.0\_10\\src.zip`` to ``src`` folde
 .. code-block:: sh
 
   cd /usr/local/java/jdk1.6.10
-  find -r \*.java > files.txt
+  find -r *.java > files.txt
   javadoc -J-Xmx756m @files.txt
 
 .. |image0| image:: http://www.lsdoc.org/webcm/lsdoc_org.nsf/lsdoc_javadoc1.gif

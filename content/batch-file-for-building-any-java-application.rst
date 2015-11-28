@@ -10,42 +10,40 @@ Batch file for building any java application
 
 |image0|
 
-What is batch file.....?
+**What is batch file...?**
 
 In DOS, OS/2, and Microsoft Windows, a batch file is a text file
 containing a series of commands intended to be executed by the command
 interpreter. Article on
 `wikipedia <http://en.wikipedia.org/wiki/Batch_file>`__
 
-This batch file contains the set of instruction to build a any java
-application. To get the good result you follow the below folder
-structure..
+This batch file contains the set of instruction to build a any java application. To get the good result you follow the below folder structure..
 
-For example C:\\apache-tomcat-6.0.18\\webapps contains the many java web
+For example C:\apache-tomcat-6.0.18\webapps contains the many java web
 application. place this batch file in webapps folder.
 
-    -  The java files in webapps\\<PROJECT\_NAME>\\src\\  folder. With
-       in the src folder u can follw the java package structure.
-    -  The jar files for your application in
-       webapps\\<PROJECT\_HOME>\\lib folder.
-    -  Then run that batch file like
+  -  The java files in webapps\<PROJECT_NAME>\src\  folder. With
+     in the src folder u can follw the java package structure.
+  -  The jar files for your application in
+     webapps\<PROJECT_HOME>\lib folder.
+  -  Then run that batch file like
 
-C:\\apache-tomcat-6.0.18\\webapps>build.bat Library
+C:\apache-tomcat-6.0.18\webapps> build.bat Library
 
-    -  Here the Library is your project Home. you can use this bat file
-       anywhere not only for tomcat webapps folder.
+  -  Here the Library is your project Home. you can use this bat file
+     anywhere not only for tomcat webapps folder.
 
 Environment Variable Prequisites:
 
-    #. JAVA\_HOME       Must point at your Java Development Kit
-       installation.
-    #. JAVA\_OPTS       (Optional) Java runtime options.
-    #. CATALINA\_HOME        (Optional) May point at your Catalina
-       "build" directory.
+  #. JAVA_HOME       Must point at your Java Development Kit
+     installation.
+  #. JAVA_OPTS       (Optional) Java runtime options.
+  #. CATALINA_HOME        (Optional) May point at your Catalina
+     "build" directory.
 
-How to set JAVA\_HOME ...?
+**How to set JAVA_HOME ...?**
 
-JAVA\_HOME basically known as Java Environmental Variable.Refers from
+JAVA_HOME basically known as Java Environmental Variable.Refers from
 `web <http://confluence.atlassian.com/display/CONF26/Set+JAVA_HOME+variable+in+Windows>`__
 
 If you already know the install path for the Java or Software
@@ -64,52 +62,50 @@ path by following these instructions:
 
 Once you have identified the JDK install path:
 
-    #. Right click on the **My Computer** icon on your desktop and
-       select properties
-    #. Click the **Advanced** Tab
-    #. Click the **Environment Variables** button
-    #. Under System Variable, click **New**
-    #. Enter the variable name as ``JAVA_HOME``
-    #. Enter the variable value as the install path for the Development
-       Kit
-    #. Click OK
-    #. Click Apply Changes
+  #. Right click on the **My Computer** icon on your desktop and
+     select properties
+  #. Click the **Advanced** Tab
+  #. Click the **Environment Variables** button
+  #. Under System Variable, click **New**
+  #. Enter the variable name as ``JAVA_HOME``
+  #. Enter the variable value as the install path for the Development
+     Kit
+  #. Click OK
+  #. Click Apply Changes
 
 |image1|
 
-What is JAVA\_OPTS .......?
+**What is JAVA_OPTS ...?**
 
-This JAVA\_OPTS may increase your server performance. For example
+This JAVA_OPTS may increase your server performance. For example
 
-`` set JAVA_OPTS=-Xms128 -Xmx512``
+``set JAVA_OPTS=-Xms128 -Xmx512``
 
-| The two extra parameters specified via JAVA\_OPTS are as follows:
-|  -Xms - the amount of memory that the JVM starts with.
-|  -Xmx - the maximum memory that the JVM may have.
+The two extra parameters specified via JAVA_OPTS are as follows:
+  -Xms - the amount of memory that the JVM starts with.
+  -Xmx - the maximum memory that the JVM may have.
 
-List of Java Hotspot Option
-`Here <http://java.sun.com/javase/technologies/hotspot/vmoptions.jsp>`__.
+List of Java Hotspot Option `Here <http://java.sun.com/javase/technologies/hotspot/vmoptions.jsp>`__.
 
-What is CATALINA\_HOME......?
+**What is CATALINA_HOME...?**
 
-Set an environment variable CATALINA\_HOME to the path of the directory
+Set an environment variable CATALINA_HOME to the path of the directory
 into which you have installed Tomcat.
 
 For example :
 
-set CATALINA\_HOME\ ``=``\ C:\\apache-tomcat-6.0.18
+``set CATALINA_HOME = C:\apache-tomcat-6.0.18``
 
-How this Batch File works ......?
+**How this Batch File works ...?**
 
-| Get the all jar files from <PROJECT\_HOME>\\lib folder and set this as
-  classpath.
-|  Then compile all java files inside the src folder. and build the
-  class files inside the <PROJECT\_HOME>\\WEB-INF Folder.
+  Get the all jar files from <PROJECT_HOME>\lib folder and set this as classpath.
+  
+  Then compile all java files inside the src folder. and build the
+  class files inside the <PROJECT_HOME>\WEB-INF Folder.
 
-How to Download this Batch file ......?
+**How to Download this Batch file ...?**
 
-You can download this batch file from
-`Here <http://arulraj1985.googlepages.com/build.bat>`__.
+You can download this batch file from `Here <http://arulraj1985.googlepages.com/build.bat>`__.
 
 http://arulraj1985.googlepages.com/build.bat
 

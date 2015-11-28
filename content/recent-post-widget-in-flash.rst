@@ -6,23 +6,20 @@ Recent Post Widget in Flash
 :tags: Flash, Recent Post, Widget
 :slug: recent-post-widget-in-flash
 
-The widget is shows like that... This is the Beta version only..
-Unfortunately it supports only for feed burner feed... I will update
-this soon...
+The widget is shows like that... This is the Beta version only.. Unfortunately it supports only for feed burner feed... I will update this soon...
 
-`See this
-Link <http://sharedaa.com/images/Arul/RssReader.swf?feedUrl=http://feeds2.feedburner.com/blogspot/TLLQ?format=xml&feedItems=12&bgcolor=D8D7CC&border=BDBCB6&title=Recent+Books>`__
+`See this Link <http://sharedaa.com/images/Arul/RssReader.swf?feedUrl=http://feeds2.feedburner.com/blogspot/TLLQ?format=xml&feedItems=12&bgcolor=D8D7CC&border=BDBCB6&title=Recent+Books>`__
 
 How to use... Use the Below script...
 
-| <center><embed
-|  pluginspage="http://www.macromedia.com/go/getflashplayer"
-  quality="high" align="" flashvars=""
-  type="application/x-shockwave-flash" height="400"
-  src="http://sharedaa.com/images/Arul/RssReader.swf?feedUrl=http://feeds2.feedburner.com/blogspot/TLLQ?format=xml&feedItems=12&bgcolor=D8D7CC&border=BDBCB6&title=Recent+Books"
-  bgcolor="#FFFFFF" width="500" name="RssReader"></embed></center>
+.. code-block:: html
 
-Variabels ..
+  <center>
+    <embed pluginspage="http://www.macromedia.com/go/getflashplayer" quality="high" align="" flashvars="" type="application/x-shockwave-flash" height="400" src="http://sharedaa.com/images/Arul/RssReader.swf?feedUrl=http://feeds2.feedburner.com/blogspot/TLLQ?format=xml&feedItems=12&bgcolor=D8D7CC&border=BDBCB6&title=Recent+Books" bgcolor="#FFFFFF" width="500" name="RssReader">
+    </embed>
+  </center>
+
+**Variabels**
 
 feedUrl - URL of the Feed
 
