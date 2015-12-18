@@ -143,4 +143,4 @@ X_MIN_READ = False
 RESPONSIVE_IMAGES = True
 
 # This is not working
-CUSTOM_CSS = 'css/custom.css'
+CUSTOM_CSS = '/css/custom.css'
