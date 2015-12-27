@@ -1,46 +1,74 @@
 :title: Ubuntu Hidden Features You Need
 :slug: ubuntu-hidden-features-you-need
-:date: 2015-07-30 07:43:27
-:tags: 
-:category: 
+:date: 2015-12-23 14:31:16
+:tags: linux, tips, ubuntu
+:category: ubuntu
 :author: arul
 :lang: en
 :status: draft
-:summary: 
 
 you may refer this is as things to do after ubuntu installation. 
 
 After first install to make it more usuable follow the things. 
 
-### Privacy
+Things you should do after install ubuntu.
 
-sudo apt-get remove unity-lens-shopping
+###Privacy
 
-127.0.0.1   productsearch.ubuntu.com
+When ever you search for the file or application. The results also added from amazon, wiki etc., There are different options to remove that feature
 
-add this in /etc/hosts
+.. code-block:: bash
+
+  echo "127.0.0.1   productsearch.ubuntu.com" | sudo tee -a /etc/hosts
+
+OR
 
 All Settings --> Privacy --> Search then OFF Include online search results
 
+I Prefered to use this.
 
-### Networing
+OR
 
-Bluetooth enable receive files
+.. code-block:: bash
+
+  sudo apt-get remove unity-lens-shopping
+
+###Networing
+
+**Bluetooth enable receive files**
 
 Personal File Sharing --> Receive Files over Bluetooth --> Check Two check boxes. 
 
-change bluetooth SSID name
+**change bluetooth SSID name**
 
-it always show ubuntu-0 to change that. in bluetooth control panel there is no option.
+it always show ubuntu-0 to change that. In bluetooth control panel there is no option.
 
-sudo hciconfig hci0 name 'Device Name' - this is temp change
+.. code-block:: bash
+
+  sudo hciconfig hci0 name 'device-name' - this is temp change
 
 http://askubuntu.com/questions/80960/how-to-change-bluetooth-device-name
 
-touch /etc/machine-info
+replace "device-name" with yours.
 
-echo "PRETTY_HOSTNAME=device-name" | sudo tee -a /etc/machine-info
+.. code-block:: bash
 
-sudo service bluetooth restart
+  echo "PRETTY_HOSTNAME=device-name" | sudo tee -a /etc/machine-info
+  sudo service bluetooth restart
 
-### add swap memory
+Image of bluetooth settings.
+
+###Check for additional drivers
+
+
+###Install flash player with chrome
+
+.. code-block:: bash
+
+  sudo apt-get update
+  sudo apt-get install chromium-browser pepperflashplugin-nonfree
+  sudo update-pepperflashplugin-nonfree --install
+
+###Add swap memory
+
+I faced chrome always hanging. After adding swap space I m not face that issue.
