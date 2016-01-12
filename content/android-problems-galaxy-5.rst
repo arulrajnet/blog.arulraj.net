@@ -5,6 +5,7 @@ Android problems - Galaxy 5
 :category: Mobile
 :tags: android
 :slug: android-problems-galaxy-5
+:disqus_identifier: android_problems_galaxy_5
 
 Here some of the problems are hardware dependent and some are OS dependent. But still those are not fixed in the latest version of android. But still they have major share in smartphone `market <http://news.cnet.com/8301-13506_3-20051610-17.html>`__ 😃
 

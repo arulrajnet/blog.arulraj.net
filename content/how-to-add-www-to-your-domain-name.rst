@@ -8,13 +8,11 @@ How to add www to your domain name
 
 **How to add www to your domain name**
 
-** **
+|image0|
 
-|image0|\ Before going to the htaccess . You need to answer my question,
-The question is
+Before going to the htaccess . You need to answer my question, The question is
 
-Do you think arulraj.net and www.arulraj.net both are different domain
-name or same ..?
+**Do you think arulraj.net and www.arulraj.net both are different domain name or same ..?**
 
 ya. we (humans) know both are points the same web page. But the search
 engine robots assume this both are different one. As a result duplicate
@@ -23,26 +21,26 @@ search engine friendly web pages.
 
 Now the topic,
 
-How to add www in front of your domain name ..?
+**How to add www in front of your domain name ..?**
 
-For this you are aware of
-`htaccess <http://en.wikipedia.org/wiki/Htaccess>`__\ file and where it
-is located. htaccess - Hypertext Access
+For this you are aware of `htaccess <http://en.wikipedia.org/wiki/Htaccess>`__ file and where it is located. 
+
+htaccess - Hypertext Access
 
 The file located in root directory of your domain name .
 
-For example : */home/<username>/public\_html/<domain dir
-name>/.htaccess*
+For example : */home/<username>/public_html/<domain dir name>/.htaccess*
 
 That above structure in Bluehost.Now add this line to your .htaccess
 file
 
-| [text]
-|  RewriteEngine On
-|  RewriteBase /
-|  RewriteCond %{HTTP\_HOST} ^sharedaa\\.com$ [NC]
-|  RewriteRule ^(.\*)$ http://www.sharedaa.com/$1 [R=301,L]
-|  [/text]
+.. code-block:: text
+
+  RewriteEngine On
+  RewriteBase /
+  RewriteCond %{HTTP\_HOST} ^sharedaa\\.com$ [NC]
+  RewriteRule ^(.*)$ http://www.sharedaa.com/$1 [R=301,L]
+
 
 Now anyone type sharedaa.com in browser it is automatically redirect to
 www.sharedaa.com
@@ -53,36 +51,36 @@ One of your page is indexed in search engine. You remove the page, at
 this time you want to redirect to home page. how to do this.Add the
 below line to your htaccess file.
 
-| [text]
-|  RewriteCond %{REQUEST\_FILENAME} !-f
-|  RewriteCond %{REQUEST\_FILENAME} !-d
-|  RewriteRule . /index.php [L]</pre>
-|  [/text]
+.. code-block:: text
+
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule . /index.php [L]
+
 
 The final .htaccess file will be
 
-| [php]
-|  # Use PHP5CGI as default
-|  AddHandler application/x-httpd-php5 .php
+.. code-block:: text
 
-| # BEGIN
-|  <IfModule mod\_rewrite.c>
-|  RewriteEngine On
-|  RewriteBase /
-|  RewriteCond %{HTTP\_HOST} ^sharedaa\\.com$ [NC]
-|  RewriteRule ^(.\*)$ http://www.sharedaa.com/$1 [R=301,L]
-|  RewriteCond %{REQUEST\_FILENAME} !-f
-|  RewriteCond %{REQUEST\_FILENAME} !-d
-|  RewriteRule . /index.php [L]
-|  </IfModule>
+  # Use PHP5CGI as default
+  AddHandler application/x-httpd-php5 .php
 
-| # END
-|  [/php]
+  # BEGIN
+  <IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+  RewriteCond %{HTTP_HOST} ^sharedaa\.com$ [NC]
+  RewriteRule ^(.\*)$ http://www.sharedaa.com/$1 [R=301,L]
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule . /index.php [L]
+  </IfModule>
 
-| How to add www to your wordpress blog ..?
-|  Go to Setting --> General setting page and in the Blog Address text
-  box enter your domain name with www . for example
-  htt://www.sharedaa.com
+  # END
+
+**How to add www to your wordpress blog ..?**
+
+Go to Setting --> General setting page and in the Blog Address text box enter your domain name with www . for example http://www.sharedaa.com
 
 |image1|
 

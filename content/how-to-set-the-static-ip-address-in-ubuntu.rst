@@ -6,16 +6,20 @@ How to set the static ip address in ubuntu..?
 :tags: Linux, static ip, ubuntu
 :slug: how-to-set-the-static-ip-address-in-ubuntu
 
-| edit your /etc/network/interfaces file to
-|  [plain]
-|  auto eth0
-|  iface eth0 inet static
-|  address 192.168.0.50
-|  netmask 255.255.255.0
-|  network 192.168.0.0
-|  broadcast 192.168.0.255
-|  gateway 192.168.0.1
-|  [/plain]
-|  after that rebooting your network by excecuting the below command…
+edit your /etc/network/interfaces file to
 
-[root@localhost ~]# /etc/init.d/networking restart
+.. code-block:: text
+
+  auto eth0
+  iface eth0 inet static
+  address 192.168.0.50
+  netmask 255.255.255.0
+  network 192.168.0.0
+  broadcast 192.168.0.255
+  gateway 192.168.0.1
+
+after that rebooting your network by excecuting the below command…
+
+.. code-block:: bash
+
+  [root@localhost ~]# /etc/init.d/networking restart

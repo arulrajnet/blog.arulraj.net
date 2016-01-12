@@ -8,98 +8,101 @@ How to Add FreeSwitch Service
 
 Hello all,
 
-Here how to start
-`freeswitch <http://wiki.freeswitch.org/wiki/Installation_Guide>`__\ when
-machine boots.
+Here how to start `freeswitch <http://wiki.freeswitch.org/wiki/Installation_Guide>`__\ when machine boots.
 
-| [bash]
-|  #!/bin/bash
-|  #
-|  # freeswitch This starts and stops the freeswitch
-|  #
-|  # chkconfig: 345 60 50
-|  # chkconfig: - 60 50
-|  # description: freeswitch.sh - startup script for freeswitch on
-  FreeBSD
-|  # processname: /usr/local/freeswitch/bin/freeswitch
-|  # pidfile: /usr/local/freeswitch/log/freeswitch.pid
+.. code-block:: bash
 
-PATH=/sbin:/bin:/usr/bin:/usr/sbin
+  #!/bin/bash
+  #
+  # freeswitch This starts and stops the freeswitch
+  #
+  # chkconfig: 345 60 50
+  # chkconfig: - 60 50
+  # description: freeswitch.sh - startup script for freeswitch on FreeBSD
+  # processname: /usr/local/freeswitch/bin/freeswitch
+  # pidfile: /usr/local/freeswitch/log/freeswitch.pid
 
-| # Source function library.
-|  . /etc/init.d/functions
+  PATH=/sbin:/bin:/usr/bin:/usr/sbin
 
-| # Get config.
-|  test -f /etc/sysconfig/network && . /etc/sysconfig/network
+  # Source function library.
+  . /etc/init.d/functions
 
-| # Check that we are root ... so non-root users stop here
-|  [ \`id -u\` = 0 ] \|\| exit 1
+  # Get config.
+  test -f /etc/sysconfig/network && . /etc/sysconfig/network
 
-| # Check that networking is up.
-|  [ "${NETWORKING}" = "yes" ] \|\| exit 0
+  # Check that we are root ... so non-root users stop here
+  [ `id -u` = 0 ] || exit 1
 
-| RETVAL=0
-|  prog="Freeswitch"
-|  start() {
-|  if [ -x /usr/local/freeswitch/bin/freeswitch ] ; then
-|  echo -n $"Starting $prog: "
-|  /usr/local/freeswitch/bin/freeswitch -nc &
-|  RETVAL=$?
-|  sleep 1
-|  fi
-|  return $RETVAL
-|  }
+  # Check that networking is up.
+  [ "${NETWORKING}" = "yes" ] \|\| exit 0
 
-| stop() {
-|  if [ -x /usr/local/freeswitch/bin/freeswitch ] ; then
-|  echo -n $"Stopping $prog: "
-|  /usr/local/freeswitch/bin/freeswitch -stop &
-|  RETVAL=$?
-|  sleep 1
-|  fi
-|  return $RETVAL
-|  }
+  RETVAL=0
+  prog="Freeswitch"
 
-| restart(){
-|  stop
-|  sleep 5
-|  start
-|  }
+  start() {
+  if [ -x /usr/local/freeswitch/bin/freeswitch ] ; then
+    echo -n $"Starting $prog: "
+    /usr/local/freeswitch/bin/freeswitch -nc &
+    RETVAL=$?
+    sleep 1
+  fi
+  return $RETVAL
+  }
 
-| # See how we were called.
-|  case "$1" in
+  stop() {
+    if [ -x /usr/local/freeswitch/bin/freeswitch ] ; then
+      echo -n $"Stopping $prog: "
+      /usr/local/freeswitch/bin/freeswitch -stop &
+      RETVAL=$?
+      sleep 1
+    fi
+    return $RETVAL
+  }
 
-| start)
-|  start
-|  ;;
+  restart(){
+    stop
+    sleep 5
+    start
+  }
 
-| stop)
-|  stop
-|  ;;
+  # See how we were called.
+  case "$1" in
 
-| restart)
-|  restart
-|  ;;
-|  \*)
-|  echo "usage: $0 { start \| stop \| restart }"
-|  RETVAL=1
+  start)
+    start
+  ;;
 
-| esac
-|  exit $RETVAL
+  stop)
+    stop
+  ;;
 
-[/bash]
+  restart)
+    restart
+  ;;
 
-save these lines as file name freeswitch and copied to /etc/init.d/
-folder
+  *)
+    echo "usage: $0 { start \| stop \| restart }"
+    RETVAL=1
+
+ esac
+  exit $RETVAL
+
+save these lines as file name freeswitch and copied to /etc/init.d/ folder
 
 then run the below comments
 
-| chkconfig -add /etc/init.d/freeswitch
-|  chkconfig freeswitch on
+.. code-block:: bash
+
+  chkconfig -add /etc/init.d/freeswitch
+  chkconfig freeswitch on
 
 you are done. Now Freeswitch will start when your PC Boots.
 
-| Freeswitch cmds:
-|  Start : /etc/init.d/freeswitch start
-|  Stop : /etc/init.d/freeswitch stop
-|  Restart : /etc/init.d/freeswitch restart
+
+Freeswitch commands:
+
+.. code-block:: bash
+
+  Start : /etc/init.d/freeswitch start
+  Stop : /etc/init.d/freeswitch stop
+  Restart : /etc/init.d/freeswitch restart

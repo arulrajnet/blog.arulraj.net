@@ -5,6 +5,7 @@ Toggle copy email in jQuery
 :category: Browser
 :tags: javascript
 :slug: toggle-copy-email-in-jquery
+:disqus_identifier: toggle_copy_email_in_jquery
 
 In my current project jquery plays a main role. I done some small fixes on the jquery script. At that time i learned something on jquery. Here I am going to explain one of my jquery experience.
 

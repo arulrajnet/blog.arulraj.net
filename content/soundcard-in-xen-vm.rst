@@ -6,47 +6,50 @@ Soundcard in xen vm
 :tags: cloud computing, xen, Linux
 :slug: soundcard-in-xen-vm
 
-| **Enable sound card in xen vm**
-|  |image0|
+**Enable sound card in xen vm**
+
+|image0|
 
 How to enable sound card in the xen based vm..?
 
 The vmware vm have the functionalists for adding sound card to their
 vm's. Then what about xen vm
 
-|image1|\ By adding the below line to your HVM (Hardware Virtual
+|image1|
+
+By adding the below line to your HVM (Hardware Virtual
 Machine) file, You can add the sound card for the virtual machine.
 
-| [text]
-|  audio=1
-|  soundhw='sb16,es1370'
-|  [/text]
+.. code-block:: text
+
+  audio=1
+  soundhw='sb16,es1370'
+
 
 If you play a sound file it you can hear the sound from VMM sound out.
 Then your hvm file is look like
 
-| [text]
-|  name="sound-card"
-|  builder = "hvm"
-|  memory = "1024"
-|  vif = [ 'type=ioemu, mac=00:16:3e:a0:0:8, bridge=xenbr0' ]
-|  device\_model = "/usr/lib/xen/bin/qemu-dm-sync"
-|  kernel = "/usr/lib/xen/boot/hvmloader"
-|  vnc=1
-|  vncunused=0
-|  vnclisten="0.0.0.0"
-|  apic=1
-|  acpi=0
-|  pae=1
-|  vcpus=2
-|  boot='c'
-|  audio=1
-|  soundhw='sb16,es1370'
-|  usb=1
-|  usbdevice='tablet'
-|  disk = ['file:/vm/sound-card/disk,ioemu:hda,w',
-|  'phy:/dev/zero,hdd:cdrom,r']
-|  [/text]
+.. code-block:: text
+
+  name="sound-card"
+  builder = "hvm"
+  memory = "1024"
+  vif = [ 'type=ioemu, mac=00:16:3e:a0:0:8, bridge=xenbr0' ]
+  device_model = "/usr/lib/xen/bin/qemu-dm-sync"
+  kernel = "/usr/lib/xen/boot/hvmloader"
+  vnc=1
+  vncunused=0
+  vnclisten="0.0.0.0"
+  apic=1
+  acpi=0
+  pae=1
+  vcpus=2
+  boot='c'
+  audio=1
+  soundhw='sb16,es1370'
+  usb=1
+  usbdevice='tablet'
+  disk = ['file:/vm/sound-card/disk,ioemu:hda,w','phy:/dev/zero,hdd:cdrom,r']
 
 Now Goto the controlpanel now the sound devices is enabled...
 

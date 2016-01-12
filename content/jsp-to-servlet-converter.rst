@@ -8,7 +8,7 @@ Jsp to Servlet converter
 
 **Jsp to Servlet converter**
 
-**|image0|**
+|image0|
 
 Here is the Ant build file to convert jsp file to servlet file.
 
@@ -19,93 +19,92 @@ The requirements are you need
 -  apache tomcat
 -  ant
 
-| The build.xml is
-|  [xml]
-|  <project name="Test" default="compile" basedir=".">
+.. code-block:: xml
 
-<description>
+  <project name="Test" default="compile" basedir=".">
 
-JSP to Servlet Converter
+  <description>
 
-</description>
+  JSP to Servlet Converter
 
-<property name="name" value="JSP to Servlet" />
+  </description>
 
-<property environment="env" />
+  <property name="name" value="JSP to Servlet" />
 
-<property name="ANT\_HOME" value="${env.ANT\_HOME}" />
+  <property environment="env" />
 
-<property name="TOMCAT\_HOME" value="D:\\server\\Tomcat 5.5" />
+  <property name="ANT_HOME" value="${env.ANT_HOME}" />
 
-<target name="init" description="Initialization" >
+  <property name="TOMCAT_HOME" value="D:\server\Tomcat 5.5" />
 
-<path id="tomcat.classpath">
+  <target name="init" description="Initialization" >
 
-<fileset dir="${TOMCAT\_HOME}\\common\\lib">
+  <path id="tomcat.classpath">
 
-<include name="\*.jar" />
+  <fileset dir="${TOMCAT_HOME}\common\lib">
 
-</fileset>
+  <include name="*.jar" />
 
-</path>
+  </fileset>
 
-<path id="ant.classpath">
+  </path>
 
-<fileset dir="${ANT\_HOME}\\lib">
+  <path id="ant.classpath">
 
-<include name="\*.jar" />
+  <fileset dir="${ANT_HOME}\lib">
 
-</fileset>
+  <include name="*.jar"/>
 
-</path>
+  </fileset>
 
-<path id="webapp.classpath">
+  </path>
 
-<fileset dir=".\\WEB-INF\\lib">
+  <path id="webapp.classpath">
 
-<include name="\*.jar" />
+  <fileset dir=".\WEB-INF\lib">
 
-</fileset>
+  <include name="*.jar" />
 
-</path>
+  </fileset>
 
-</target>
+  </path>
 
-<target name="compile" depends="init" description="compile the source" >
+  </target>
 
-<mkdir dir="./out" />
+  <target name="compile" depends="init" description="compile the source" >
 
-<jspc srcdir="."
+  <mkdir dir="./out" />
 
-destdir="out"
+  <jspc srcdir="."
 
-verbose="9">
+  destdir="out"
 
-<classpath>
+  verbose="9">
 
-<path refid="tomcat.classpath" />
+  <classpath>
 
-<path refid="ant.classpath" />
+  <path refid="tomcat.classpath" />
 
-<path refid="webapp.classpath" />
+  <path refid="ant.classpath" />
 
-</classpath>
+  <path refid="webapp.classpath" />
 
-<include name="\*.jsp" />
+  </classpath>
 
-</jspc>
+  <include name="*.jsp" />
 
-</target>
+  </jspc>
 
-<target name="build" depends="compile"/>
+  </target>
 
-<target name="clean" description="clean the directories">
+  <target name="build" depends="compile"/>
 
-<delete dir="./out" />
+  <target name="clean" description="clean the directories">
 
-</target>
+  <delete dir="./out" />
 
-| </project>
-|  [/xml]
+  </target>
+
+  </project>
 
 .. |image0| image:: http://www.socialbc.com/files/active/1/JSP_LOGO_RGB.jpg
