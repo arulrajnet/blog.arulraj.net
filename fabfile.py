@@ -78,3 +78,8 @@ def publish():
 def s3_upload():
     preview()
     local('s3cmd sync ./output/ s3://www.arulraj.net/ --acl-public --delete-removed --guess-mime-type')
+
+
+def publish_gh():
+    preview()
+    local('./deploy.sh --config-file deploy.conf --message "rebuilding site "')
