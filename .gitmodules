@@ -10,3 +10,6 @@
 [submodule "my-pelican-themes/pelican-vapor-theme"]
   path = my-pelican-themes/pelican-vapor-theme
   url = https://github.com/gperetin/pelican-vapor-theme
+[submodule "my-pelican-themes/pelican-octopress-theme"]
+  path = my-pelican-themes/pelican-octopress-theme
+  url = https://github.com/arulrajnet/pelican-octopress-theme
