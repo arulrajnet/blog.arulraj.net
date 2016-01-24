@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Arul Blog</title>
+  <meta name="author" content="Arul">
+
+  <link href="http://feeds.feedburner.com/ArulBlog" type="application/rss+xml" rel="alternate"
+        title="Arul Blog RSS Feed" />
+
+
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <link href="http://www.arulraj.net/favicon.ico" rel="icon">
+
+  <link href="http://www.arulraj.net/theme/css/main.css" media="screen, projection"
+        rel="stylesheet" type="text/css">
+
+  <link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic"
+        rel="stylesheet" type="text/css">
+  <link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic"
+        rel="stylesheet" type="text/css">
+</head>
+
+<body>
+  <header role="banner"><hgroup>
+  <h1><a href="http://www.arulraj.net/">Arul Blog</a></h1>
+</hgroup></header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="http://feeds.feedburner.com/ArulBlog" rel="subscribe-rss">RSS</a></li>
+</ul>
+
+
+<ul class="main-navigation">
+      <li><a href="http://www.arulraj.net/pages/about/">About</a></li>
+      <li><a href="http://www.arulraj.net/pages/profile/">Profile</a></li>
+</ul></nav>
+  <div id="main">
+    <div id="content">
+<div class="blog-index">
+  		<article>
+<header>
+      <h1 class="entry-title">
+        <a href="http://www.arulraj.net/2016/01/setup-docker-and-tools.html">Setup docker and tools</a>
+      </h1>
+    <p class="meta">
+<time datetime="2016-01-24T06:34:22+05:30" pubdate>Sun 24 January 2016</time>    </p>
+</header>
+
+  <div class="entry-content"><p>Guide to install and configure docker and related tools.</p>
+<div class="section" id="install-docker">
+<h2>Install Docker</h2>
+<p>Installing docker on any bash systems.</p>
+<div class="highlight"><pre>curl -sSL https://get.docker.com/ <span class="p">|</span> sh
+</pre></div>
+<p>Installing bash completions for docker</p>
+<div class="highlight"><pre>curl -ksSL https://raw.githubusercontent.com/docker/docker/<span class="k">$(</span>docker --version <span class="p">|</span> awk <span class="s1">'NR==1{print $NF}'</span><span class="k">)</span>/contrib/completion/bash/docker <span class="p">|</span>sudo tee ...</pre></div></div></div>
+  <footer>
+    <a rel="full-article" href="http://www.arulraj.net/2016/01/setup-docker-and-tools.html">Read On &crarr;</a>
+  </footer>
+  		</article>
+  		<article>
+<header>
+      <h1 class="entry-title">
+        <a href="http://www.arulraj.net/2016/01/bash-completions-for-kubectl.html">Bash completions for kubectl</a>
+      </h1>
+    <p class="meta">
+<time datetime="2016-01-23T12:26:32+05:30" pubdate>Sat 23 January 2016</time>    </p>
+</header>
+
+  <div class="entry-content"><p>To install bash completion for your kubectl</p>
+<p>Get your kubectl client version</p>
+<div class="highlight"><pre>kubectl version -c
+</pre></div>
+<p>Get the completion script for the corresponding to your kubectl version.</p>
+<p><strong>Ubuntu</strong></p>
+<div class="highlight"><pre>curl -sSL https://raw.githubusercontent.com/kubernetes/kubernetes/<span class="k">$(</span>kubectl version -c <span class="p">|</span> grep -o -P <span class="s1">'(?&lt;=GitCommit:").*(?=",)'</span><span class="k">)</span>/contrib/completions/bash/kubectl <span class="p">|</span> sudo tee /etc/bash_completion ...</pre></div></div>
+  <footer>
+    <a rel="full-article" href="http://www.arulraj.net/2016/01/bash-completions-for-kubectl.html">Read On &crarr;</a>
+  </footer>
+  		</article>
+  		<article>
+<header>
+      <h1 class="entry-title">
+        <a href="http://www.arulraj.net/2015/11/download-any-videos-in-android-using-youtube-dl.html">Download any videos in android using youtube-dl</a>
+      </h1>
+    <p class="meta">
+<time datetime="2015-11-21T12:14:38+05:30" pubdate>Sat 21 November 2015</time>    </p>
+</header>
+
+  <div class="entry-content"><p>There are lot of app there in google play store to download video youtube. All are claiming it has all the features and so and so... But the reality is, they are not working in all the times.</p>
+<p>In my laptop I am using <a class="reference external" href="https://rg3.github.io/youtube-dl/">youtube_dl</a> to download videos. Its working ...</p></div>
+  <footer>
+    <a rel="full-article" href="http://www.arulraj.net/2015/11/download-any-videos-in-android-using-youtube-dl.html">Read On &crarr;</a>
+  </footer>
+  		</article>
+  		<article>
+<header>
+      <h1 class="entry-title">
+        <a href="http://www.arulraj.net/2015/11/pixelserv-using-nginx.html">PixelServ using Nginx</a>
+      </h1>
+    <p class="meta">
+<time datetime="2015-11-21T11:31:49+05:30" pubdate>Sat 21 November 2015</time>    </p>
+</header>
+
+  <div class="entry-content"><p>Hope you know about <a class="reference external" href="http://proxytunnel.sourceforge.net/pixelserv.php">pixelserv</a>. It is a webserver which will always response 1x1 transparent gif image for all kind of requests. Mainly used in adblocking and proxy environmental.</p>
+<p>In this setup I am going to serve 1x1 pixel using nginx server.</p>
+<p><strong>Install nginx</strong></p>
+<div class="highlight"><pre>sudo apt-get install nginx -y
+</pre></div>
+<p><strong>Configuration ...</strong></p></div>
+  <footer>
+    <a rel="full-article" href="http://www.arulraj.net/2015/11/pixelserv-using-nginx.html">Read On &crarr;</a>
+  </footer>
+  		</article>
+  		<article>
+<header>
+      <h1 class="entry-title">
+        <a href="http://www.arulraj.net/2015/09/stream-any-video-into-vlc.html">Stream any video into VLC</a>
+      </h1>
+    <p class="meta">
+<time datetime="2015-09-11T22:07:12+05:30" pubdate>Fri 11 September 2015</time>    </p>
+</header>
+
+  <div class="entry-content"><p>You can stream any online like youtube, vimeo, facebook, dailymotion, etc., video into your VLC / mplayer using youtube-dl. Here I will explain how to do that.</p>
+<div class="figure align-center">
+<a class="reference external image-reference" href="http://1.bp.blogspot.com/-oE3JlsHUyPE/VfMISTKA3TI/AAAAAAAAWWY/7oGiGoyFx5Q/s1600/stream-to-vlc.png"><img alt="Streaming in VLC using youtube-dl" src="http://1.bp.blogspot.com/-oE3JlsHUyPE/VfMISTKA3TI/AAAAAAAAWWY/7oGiGoyFx5Q/s320/stream-to-vlc.png"/></a>
+</div>
+<p>First Install latest greatest youtube-dl</p>
+<div class="highlight"><pre>sudo pip install --upgrade youtube-dl
+OR
+sudo apt-get install youtube-dl
+</pre></div>
+<p>As per todoy the version is 2015.09.09 ...</p></div>
+  <footer>
+    <a rel="full-article" href="http://www.arulraj.net/2015/09/stream-any-video-into-vlc.html">Read On &crarr;</a>
+  </footer>
+  		</article>
+  		<article>
+<header>
+      <h1 class="entry-title">
+        <a href="http://www.arulraj.net/2015/09/script-to-get-stock-history-information.html">Script to get Stock History Information</a>
+      </h1>
+    <p class="meta">
+<time datetime="2015-09-06T23:06:45+05:30" pubdate>Sun 06 September 2015</time>    </p>
+</header>
+
+  <div class="entry-content"><p>I wrote a python script to get stock market current and history information based on Google finance API. Here I am going to explain about that.</p>
+<div class="section" id="how-to-setup">
+<h2>How to setup</h2>
+<ul class="simple">
+<li>Download <a class="reference external" href="https://gist.github.com/arulrajnet/cb1476234967717a4d6d">GetStockInfo.py</a> into /usr/local/bin folder as stockinfo</li>
+<li>chmod +x /usr/local/bin/stockinfo</li>
+<li>Run <cite>stockinfo</cite> as command from ...</li></ul></div></div>
+  <footer>
+    <a rel="full-article" href="http://www.arulraj.net/2015/09/script-to-get-stock-history-information.html">Read On &crarr;</a>
+  </footer>
+  		</article>
+  		<article>
+<header>
+      <h1 class="entry-title">
+        <a href="http://www.arulraj.net/2015/09/how-to-get-tneb-service-details-without-capcha.html">How to get TNEB Service Details without capcha</a>
+      </h1>
+    <p class="meta">
+<time datetime="2015-09-06T21:03:28+05:30" pubdate>Sun 06 September 2015</time>    </p>
+</header>
+
+  <div class="entry-content"><p>To get direct link for find your usage from TNEB give your service number in the below form and press submit.</p>
+<p><strong>TNEB Usage permlink Form</strong></p>
+<iframe allowfullscreen="allowfullscreen" frameborder="0" height="400" src="//jsfiddle.net/arulrajnet/0dfht8L2/embedded/result" width="100%"></iframe><div class="section" id="how-its-works">
+<h2>How its works</h2>
+<ul class="simple">
+<li>For example, the service no is 265 / 005 / 1234</li>
+<li>It will take your service no and do base64 of "TANGEDCO||265||005 ...</li></ul></div></div>
+  <footer>
+    <a rel="full-article" href="http://www.arulraj.net/2015/09/how-to-get-tneb-service-details-without-capcha.html">Read On &crarr;</a>
+  </footer>
+  		</article>
+  		<article>
+<header>
+      <h1 class="entry-title">
+        <a href="http://www.arulraj.net/2015/05/prompter4j-released-1-0.html">Prompter4J Released 1.0</a>
+      </h1>
+    <p class="meta">
+<time datetime="2015-05-10T15:34:09+05:30" pubdate>Sun 10 May 2015</time>    </p>
+</header>
+
+  <div class="entry-content"><p>Prompter4J is a library to get the user raw input in an interactive manner.</p>
+<div class="section" id="maven">
+<h2>Maven</h2>
+<p>Add this dependency in your pom.xml and start using.</p>
+<div class="highlight"><pre><span class="nt">&lt;dependency&gt;</span>
+    <span class="nt">&lt;groupId&gt;</span>com.github.arulrajnet<span class="nt">&lt;/groupId&gt;</span>
+    <span class="nt">&lt;artifactId&gt;</span>prompter4j<span class="nt">&lt;/artifactId&gt;</span>
+    <span class="nt">&lt;version&gt;</span>1.0<span class="nt">&lt;/version&gt;</span>
+<span class="nt">&lt;/dependency&gt;</span>
+</pre></div>
+</div>
+<div class="section" id="download-jar">
+<h2>Download JAR</h2>
+<p><a class="reference external" href="http://central.maven.org/maven2/com/github/arulrajnet/prompter4j/1.0/prompter4j-1.0.jar">http://central.maven.org/maven2/com/github/arulrajnet/prompter4j ...</a></p></div></div>
+  <footer>
+    <a rel="full-article" href="http://www.arulraj.net/2015/05/prompter4j-released-1-0.html">Read On &crarr;</a>
+  </footer>
+  		</article>
+  		<article>
+<header>
+      <h1 class="entry-title">
+        <a href="http://www.arulraj.net/2015/05/live-india-stock-market-indices-on-your-terminal.html">Live India Stock Market Indices on your Terminal</a>
+      </h1>
+    <p class="meta">
+<time datetime="2015-05-10T14:18:18+05:30" pubdate>Sun 10 May 2015</time>    </p>
+</header>
+
+  <div class="entry-content"><p><strong>Live BSE and NSE index on your bash terminal</strong></p>
+<p><a class="reference external" href="http://1.bp.blogspot.com/-fDoy3dPAOBQ/VUXc8-MHu3I/AAAAAAAAAus/YhaywsrtU4g/s1600/stockmarketindia.png"><img alt="stockmarketindia" src="http://1.bp.blogspot.com/-fDoy3dPAOBQ/VUXc8-MHu3I/AAAAAAAAAus/YhaywsrtU4g/s640/stockmarketindia.png"/></a></p>
+<p>The script get the live index from BSE and NSE stock market.</p>
+<div class="section" id="how-to-use">
+<h2>How to Use</h2>
+<ul class="simple">
+<li>Download the script from github <a class="reference external" href="https://gist.githubusercontent.com/arulrajnet/21addbacdbdfd6e190f4">stockmarketindia.py</a></li>
+<li>Copy the file into <tt class="docutils literal">/usr/bin</tt> folder.</li>
+<li>Run <tt class="docutils literal">stockmarketindia</tt> anywhere from terminal.</li>
+</ul>
+<div class="highlight"><pre>wget --no-check-certificate https://gist.githubusercontent.com/arulrajnet ...</pre></div></div></div>
+  <footer>
+    <a rel="full-article" href="http://www.arulraj.net/2015/05/live-india-stock-market-indices-on-your-terminal.html">Read On &crarr;</a>
+  </footer>
+  		</article>
+  		<article>
+<header>
+      <h1 class="entry-title">
+        <a href="http://www.arulraj.net/2015/05/live-cricket-score-on-your-terminal.html">Live Cricket Score on your terminal</a>
+      </h1>
+    <p class="meta">
+<time datetime="2015-05-10T13:11:59+05:30" pubdate>Sun 10 May 2015</time>    </p>
+</header>
+
+  <div class="entry-content"><p><strong>Live Cricket Score From CricInfo on your Bash Terminal</strong></p>
+<p><a class="reference external" href="http://1.bp.blogspot.com/-aJzVV1AyHS4/VU4v696M-HI/AAAAAAAAWPc/iWGrzuIGMMc/s1600/livecricketscore.png"><img alt="score_terminal" src="http://1.bp.blogspot.com/-aJzVV1AyHS4/VU4v696M-HI/AAAAAAAAWPc/iWGrzuIGMMc/s640/livecricketscore.png"/></a></p>
+<p>You are a hardcore cricket fan, want to get updated the score while working 😄 😄 . But bored to open a browser ⇒ goto cricinfo ⇒ goto particular cricket match. Welcome, this script for you only.</p>
+<div class="section" id="why-this-script">
+<h2>Why this Script..?</h2>
+<p>I am not the fan of ...</p></div></div>
+  <footer>
+    <a rel="full-article" href="http://www.arulraj.net/2015/05/live-cricket-score-on-your-terminal.html">Read On &crarr;</a>
+  </footer>
+  		</article>
+<div class="pagination">
+    <a class="prev" href="http://www.arulraj.net/index2.html">&larr; Older</a>
+
+  <br />
+</div></div>
+<aside class="sidebar">
+  <section>
+    <h1>Recent Posts</h1>
+    <ul id="recent_posts">
+      <li class="post">
+          <a href="http://www.arulraj.net/2016/01/setup-docker-and-tools.html">Setup docker and tools</a>
+      </li>
+      <li class="post">
+          <a href="http://www.arulraj.net/2016/01/bash-completions-for-kubectl.html">Bash completions for kubectl</a>
+      </li>
+      <li class="post">
+          <a href="http://www.arulraj.net/2015/11/download-any-videos-in-android-using-youtube-dl.html">Download any videos in android using youtube-dl</a>
+      </li>
+      <li class="post">
+          <a href="http://www.arulraj.net/2015/11/pixelserv-using-nginx.html">PixelServ using Nginx</a>
+      </li>
+      <li class="post">
+          <a href="http://www.arulraj.net/2015/09/stream-any-video-into-vlc.html">Stream any video into VLC</a>
+      </li>
+    </ul>
+  </section>
+  <section>
+      
+    <h1>Categories</h1>
+    <ul id="recent_posts">
+        <li><a href="http://www.arulraj.net/category/android">android</a></li>
+        <li><a href="http://www.arulraj.net/category/browser">Browser</a></li>
+        <li><a href="http://www.arulraj.net/category/business-intelligence">Business intelligence</a></li>
+        <li><a href="http://www.arulraj.net/category/database">Database</a></li>
+        <li><a href="http://www.arulraj.net/category/docker">docker</a></li>
+        <li><a href="http://www.arulraj.net/category/flash">Flash</a></li>
+        <li><a href="http://www.arulraj.net/category/kubernetes">kubernetes</a></li>
+        <li><a href="http://www.arulraj.net/category/linux">Linux</a></li>
+        <li><a href="http://www.arulraj.net/category/mobile">Mobile</a></li>
+        <li><a href="http://www.arulraj.net/category/photos">photos</a></li>
+        <li><a href="http://www.arulraj.net/category/php">php</a></li>
+        <li><a href="http://www.arulraj.net/category/programming">Programming</a></li>
+        <li><a href="http://www.arulraj.net/category/prompter4j">Prompter4J</a></li>
+        <li><a href="http://www.arulraj.net/category/proxy">proxy</a></li>
+        <li><a href="http://www.arulraj.net/category/red5">Red5</a></li>
+        <li><a href="http://www.arulraj.net/category/streaming">Streaming</a></li>
+        <li><a href="http://www.arulraj.net/category/tools">Tools</a></li>
+        <li><a href="http://www.arulraj.net/category/virtualization">Virtualization</a></li>
+        <li><a href="http://www.arulraj.net/category/widget">Widget</a></li>
+        <li><a href="http://www.arulraj.net/category/windows">Windows</a></li>
+    </ul>
+  </section>
+ 
+
+  <section>
+  <h1>Tags</h1>
+    <a href="http://www.arulraj.net/tag/gprs">gprs</a>,    <a href="http://www.arulraj.net/tag/tricks-how-to">Tricks, how to</a>,    <a href="http://www.arulraj.net/tag/centos">centos</a>,    <a href="http://www.arulraj.net/tag/bi-tools">BI Tools</a>,    <a href="http://www.arulraj.net/tag/spring">spring</a>,    <a href="http://www.arulraj.net/tag/xen">xen</a>,    <a href="http://www.arulraj.net/tag/widget">Widget</a>,    <a href="http://www.arulraj.net/tag/bash_completions">bash_completions</a>,    <a href="http://www.arulraj.net/tag/hosting">hosting</a>,    <a href="http://www.arulraj.net/tag/streaming">streaming</a>,    <a href="http://www.arulraj.net/tag/broken-bridge">Broken bridge</a>,    <a href="http://www.arulraj.net/tag/design-pattern">Design pattern</a>,    <a href="http://www.arulraj.net/tag/linux">linux</a>,    <a href="http://www.arulraj.net/tag/tools">Tools</a>,    <a href="http://www.arulraj.net/tag/vmware">vmware</a>,    <a href="http://www.arulraj.net/tag/xml">xml</a>,    <a href="http://www.arulraj.net/tag/lg">LG</a>,    <a href="http://www.arulraj.net/tag/share-market">share market</a>,    <a href="http://www.arulraj.net/tag/git">GIT</a>,    <a href="http://www.arulraj.net/tag/java">java</a>,    <a href="http://www.arulraj.net/tag/red5">red5</a>,    <a href="http://www.arulraj.net/tag/how-to">how to</a>,    <a href="http://www.arulraj.net/tag/recent-post">Recent Post</a>,    <a href="http://www.arulraj.net/tag/tor">tor</a>,    <a href="http://www.arulraj.net/tag/fix">fix</a>,    <a href="http://www.arulraj.net/tag/flash">Flash</a>,    <a href="http://www.arulraj.net/tag/animation">Animation</a>,    <a href="http://www.arulraj.net/tag/actionscript">Actionscript</a>,    <a href="http://www.arulraj.net/tag/android">android</a>,    <a href="http://www.arulraj.net/tag/airel">Airel</a>,    <a href="http://www.arulraj.net/tag/tricks-windows">Tricks, windows</a>,    <a href="http://www.arulraj.net/tag/cricket">cricket</a>,    <a href="http://www.arulraj.net/tag/datacard-hacking-mobile-tips-amp">datacard, hacking, Mobile, Tips &amp</a>,    <a href="http://www.arulraj.net/tag/kg-195">KG 195</a>,    <a href="http://www.arulraj.net/tag/video-streaming">video streaming</a>,    <a href="http://www.arulraj.net/tag/youtube-dl">youtube-dl</a>,    <a href="http://www.arulraj.net/tag/offer">offer</a>,    <a href="http://www.arulraj.net/tag/python">python</a>,    <a href="http://www.arulraj.net/tag/vlc">vlc</a>,    <a href="http://www.arulraj.net/tag/javascript">javascript</a>,    <a href="http://www.arulraj.net/tag/bash-completion">bash-completion</a>,    <a href="http://www.arulraj.net/tag/prompter4j">prompter4j</a>,    <a href="http://www.arulraj.net/tag/adblock">adblock</a>,    <a href="http://www.arulraj.net/tag/pentaho">pentaho</a>,    <a href="http://www.arulraj.net/tag/proxy">proxy</a>,    <a href="http://www.arulraj.net/tag/ubuntu">ubuntu</a>,    <a href="http://www.arulraj.net/tag/shellscript">shellscript</a>,    <a href="http://www.arulraj.net/tag/besant-nagar">Besant Nagar</a>,    <a href="http://www.arulraj.net/tag/php">php</a>,    <a href="http://www.arulraj.net/tag/tamil">tamil</a>,    <a href="http://www.arulraj.net/tag/hacking">hacking</a>,    <a href="http://www.arulraj.net/tag/voip">VOIP</a>,    <a href="http://www.arulraj.net/tag/fedora">Fedora</a>,    <a href="http://www.arulraj.net/tag/commands">commands</a>,    <a href="http://www.arulraj.net/tag/gnome">gnome</a>,    <a href="http://www.arulraj.net/tag/nginx">nginx</a>,    <a href="http://www.arulraj.net/tag/mobile">mobile</a>,    <a href="http://www.arulraj.net/tag/samsung">samsung</a>,    <a href="http://www.arulraj.net/tag/programming">programming</a>,    <a href="http://www.arulraj.net/tag/cloud-computing">cloud computing</a>,    <a href="http://www.arulraj.net/tag/photos">photos</a>,    <a href="http://www.arulraj.net/tag/windows">windows</a>,    <a href="http://www.arulraj.net/tag/static-ip">static ip</a>,    <a href="http://www.arulraj.net/tag/mysql-tips-amp">mysql, Tips &amp</a>,    <a href="http://www.arulraj.net/tag/crawling">crawling</a>,    <a href="http://www.arulraj.net/tag/privoxy">privoxy</a>,    <a href="http://www.arulraj.net/tag/docker">docker</a>,    <a href="http://www.arulraj.net/tag/ide">IDE</a>,    <a href="http://www.arulraj.net/tag/scripting">scripting</a>,    <a href="http://www.arulraj.net/tag/browser">Browser</a>  </section>
+
+
+    <section>
+        <h1>Social</h1>
+        <ul>
+            <li><a href="http://facebook.com/arulraj.net" target="_blank">Facebook</a></li>
+            <li><a href="http://twitter.com/arulrajnet" target="_blank">Twitter</a></li>
+            <li><a href="https://plus.google.com/+ArulrajNet" target="_blank">Google Plus</a></li>
+            <li><a href="http://feeds.feedburner.com/ArulBlog" target="_blank">Feed</a></li>
+        </ul>
+    </section>
+    <section>
+        <h1>Blogroll</h1>
+        <ul>
+            <li><a href="http://github.com/arulrajnet" target="_blank">Github</a></li>
+            <li><a href="http://python.org/" target="_blank">Python.org</a></li>
+            <li><a href="http://gist.github.com/arulrajnet" target="_blank">Gist</a></li>
+            <li><a href="http://twitter.com/arulrajnet" target="_blank">Twitter</a></li>
+        </ul>
+    </section>
+
+<section class="googleplus">
+  <h1>
+    <a href="https://plus.google.com/108329785817736505170?rel=author">
+      <img src="//www.google.com/images/icons/ui/gprofile_button-32.png" width="32" height="32">
+      Google+
+    </a>
+  </h1>
+</section>
+</aside>    </div>
+  </div>
+  <footer role="contentinfo"><p>
+    Copyright &copy;  2009&ndash;2016  Arul &mdash;
+  <span class="credit">Powered by <a href="http://getpelican.com">Pelican</a></span>
+</p></footer>
+  <script src="http://www.arulraj.net/theme/js/modernizr-2.0.js"></script>
+  <script src="http://www.arulraj.net/theme/js/ender.js"></script>
+  <script src="http://www.arulraj.net/theme/js/octopress.js" type="text/javascript"></script>
+    <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-3546274-9']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-3546274-9');
+    ga('send', 'pageview');
+</script>
+  <script type="text/javascript">
+    var disqus_shortname = 'arulrajnet';
+    (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = "//" + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+     })();
+  </script>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+</body>
+</html>

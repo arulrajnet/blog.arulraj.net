@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Upgrade Samsung Galaxy 5 and 3 to Froyo &mdash; Arul Blog</title>
+  <meta name="author" content="Arul">
+
+  <link href="http://feeds.feedburner.com/ArulBlog" type="application/rss+xml" rel="alternate"
+        title="Arul Blog RSS Feed" />
+
+
+
+
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <link href="http://www.arulraj.net/favicon.ico" rel="icon">
+
+  <link href="http://www.arulraj.net/theme/css/main.css" media="screen, projection"
+        rel="stylesheet" type="text/css">
+
+  <link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic"
+        rel="stylesheet" type="text/css">
+  <link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic"
+        rel="stylesheet" type="text/css">
+</head>
+
+<body>
+  <header role="banner"><hgroup>
+  <h1><a href="http://www.arulraj.net/">Arul Blog</a></h1>
+</hgroup></header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="http://feeds.feedburner.com/ArulBlog" rel="subscribe-rss">RSS</a></li>
+</ul>
+
+
+<ul class="main-navigation">
+      <li><a href="http://www.arulraj.net/pages/about/">About</a></li>
+      <li><a href="http://www.arulraj.net/pages/profile/">Profile</a></li>
+</ul></nav>
+  <div id="main">
+    <div id="content">
+<div>
+  <article class="hentry" role="article">
+<header>
+      <h1 class="entry-title">Upgrade Samsung Galaxy 5 and 3 to Froyo</h1>
+    <p class="meta">
+<time datetime="2011-08-05T03:55:00+05:30" pubdate>Fri 05 August 2011</time>    </p>
+</header>
+
+  <div class="entry-content"><p><strong>How to Upgrade your android to 2.2</strong></p>
+<p><a class="reference external" href="https://lh3.googleusercontent.com/-8yr0vIMYWGk/TjuxF4bMH5I/AAAAAAAAAqI/b_ar3tGzFeI/s800/Galaxy-5-and-3.jpg"><img alt="image0" src="https://lh3.googleusercontent.com/-8yr0vIMYWGk/TjuxF4bMH5I/AAAAAAAAAqI/b_ar3tGzFeI/s400/Galaxy-5-and-3.jpg"/></a></p>
+<p>Galaxy 5 and 3 with 2.2</p>
+<p>I am going to give steps for how to updagrade your Samsung Galaxy 3 (GT-I5800) and Samsung Galaxy 5 (GT-I5503) phone OS Android 2.1 (Eclair) to Android 2.2 (Froyo). I tested these steps myself. So feel free to use. It will surely work for Asia / India users.</p>
+<p>The Hardware Requirement are:</p>
+<ul class="simple">
+<li>Windows PC.</li>
+<li>Samsung Usb cable</li>
+<li>Absolutely a Mobile either Galaxy 5 or 3</li>
+</ul>
+<p>The Software Requirement are:</p>
+<ul class="simple">
+<li>ODIN Multi Downloader.</li>
+<li>OPS file</li>
+<li>Firmware file</li>
+</ul>
+<p>The OPS file and Firmware are varies depends upon your Handset. First download the required files.</p>
+<p><strong>For Galaxy 5:</strong></p>
+<ul class="simple">
+<li>ODIN - <a class="reference external" href="http://bit.ly/1dTykIG">S5570_Odin_Multi_Downloader_v4.38.exe</a></li>
+<li>OPS file - <a class="reference external" href="http://bit.ly/1HRLlcZ">EUROPA_v1.0.ops</a></li>
+<li>Firmware - <a class="reference external" href="http://bit.ly/1AQYje3">I5503DXJP8_I5503DXJP7_I5503OLBJP7.tar.gz</a></li>
+</ul>
+<p><strong>For Galaxy 3:</strong></p>
+<ul class="simple">
+<li>ODIN - <a class="reference external" href="http://bit.ly/1dTykIG">S5570_Odin_Multi_Downloader_v4.38.exe</a></li>
+<li>OPS File - <a class="reference external" href="http://bit.ly/1Jy3DnL">apollo_0531.zip</a></li>
+<li>Firmware - <a class="reference external" href="http://bit.ly/1F0PVn7">I5801DDJP6_I5801ODDJP6_INU.zip</a></li>
+</ul>
+<p>Before start Backup your contacts and everything. Because Upgrade will delete everything from your mobile not from sd card.</p>
+<p><a class="reference external" href="http://4.bp.blogspot.com/-Xy--_q7QAfI/Tju1Fsh0G8I/AAAAAAAAAqQ/HOsRICq7kHk/s1600/how-to-downloading-mode.png"><img alt="image1" src="http://4.bp.blogspot.com/-Xy--_q7QAfI/Tju1Fsh0G8I/AAAAAAAAAqQ/HOsRICq7kHk/s400/how-to-downloading-mode.png"/></a></p>
+<p>Image of How to start mobile in downloading mode.</p>
+<p><strong>Steps:</strong></p>
+<ul class="simple">
+<li>Clean your existing data. Goto to Settings → Privacy → Factory data Reset</li>
+<li>Remove your SIM and SD card</li>
+<li>Run that ODIN exe. Some times it requires Admin privileges.</li>
+<li>Power off your mobile.</li>
+<li>Start your mobile as Downloading mode. For that Press Volume Down + Home Button [Center Button] + Power Button</li>
+<li>Connect to USB. Now ODIN detected your mobile in COM port.</li>
+<li>Check the "One Package" Check box and Check all boxes in Options.</li>
+<li>Select your OPS File.</li>
+<li>Select your firmware. Extract that rar file and select tar file with in that.</li>
+<li>Click start button.</li>
+</ul>
+<p><a class="reference external" href="http://3.bp.blogspot.com/-ADPkjhCvSks/Tju2uyxStfI/AAAAAAAAAqg/qwvekNHtxc0/s1600/odin.png"><img alt="image2" src="http://3.bp.blogspot.com/-ADPkjhCvSks/Tju2uyxStfI/AAAAAAAAAqg/qwvekNHtxc0/s400/odin.png"/></a>
+How to setup / Settings</p>
+<p><a class="reference external" href="http://1.bp.blogspot.com/-r3VzrjvkG58/Tju2StFZiqI/AAAAAAAAAqY/gS93DB7BPd0/s600/Downloading-Mode.jpg"><img alt="image3" src="http://1.bp.blogspot.com/-r3VzrjvkG58/Tju2StFZiqI/AAAAAAAAAqY/gS93DB7BPd0/s400/Downloading-Mode.jpg"/></a>
+Upgrading</p>
+<p>It will automatically reboot after finish. Rebooting takes 5-10 min don't panic, please be patient. Then unplug your mobile. Yeah you are successfully upgraded to Froyo...!!</p>
+<p><a class="reference external" href="http://1.bp.blogspot.com/-BI0r3a1z9Z8/Tju7vUZ60sI/AAAAAAAAAq4/GPg_gQtKwZ4/s600/Android-Rebooting.jpg"><img alt="image4" src="http://1.bp.blogspot.com/-BI0r3a1z9Z8/Tju7vUZ60sI/AAAAAAAAAq4/GPg_gQtKwZ4/s400/Android-Rebooting.jpg"/></a>
+Rebooting</p>
+<p><a class="reference external" href="http://3.bp.blogspot.com/-g_0juKi1KZU/Tju4M_1CRkI/AAAAAAAAAqw/RhZD479naBU/s600/galaxy-about-phone.png"><img alt="image5" src="http://3.bp.blogspot.com/-g_0juKi1KZU/Tju4M_1CRkI/AAAAAAAAAqw/RhZD479naBU/s400/galaxy-about-phone.png"/></a>
+Success .. Upgraded</p>
+<p>Note: Click on the images for large view.</p>
+<p>My configuration:</p>
+<blockquote>
+<ul class="simple">
+<li>Windows 7 PC</li>
+<li>ODIN v4.38</li>
+<li>Galaxy 5 and Galaxy 3</li>
+<li>I am from India</li>
+</ul>
+</blockquote>
+<p>To find firmware and OPS for your mobile: <a class="reference external" href="http://www.samfirmware.com/fwandroid.htm">http://www.samfirmware.com/fwandroid.htm</a></p>
+<div class="section" id="faq">
+<h2>FAQ:</h2>
+<p><strong>After upgraded gprs is not working..?</strong></p>
+<p>Setup manual APN settings or Delete your APN's and reset. It will 100% work. But I am not facing any wifi problem.</p>
+<p><strong>My Phone is not detected..?</strong></p>
+<p>Before start upgrading install USB driver for samsung. You can download from here <a class="reference external" href="http://goo.gl/223cK">http://goo.gl/223cK</a></p>
+<p><strong>How to root my phone..?</strong></p>
+<ul class="simple">
+<li>Download SuperOneClick latest version from <a class="reference external" href="http://goo.gl/sD1KY">here</a></li>
+<li>Select Exploit as "GingerBreak"</li>
+<li>Make sure you phone is detected</li>
+<li>Press Root button</li>
+</ul>
+<p><strong>Fix for samsung logo only showing..?</strong></p>
+<p>Follow the same process before rebooting a recovery window displaying 3
+options.</p>
+<ul class="simple">
+<li>In that 3 First select "Clear your cache"</li>
+<li>Then "Clear data and reset"</li>
+<li>Finally select the option to reboot.</li>
+</ul>
+<p>Now your phone not struct in samsung logo.</p>
+<p><strong>How to upgraded to 2.3 ..?</strong></p>
+<p>I have upgraded to 2.3.7 (CyanogenMod) by following this link <a class="reference external" href="http://t.co/4wI6FSmk">http://t.co/4wI6FSmk</a></p>
+<p><strong>How to upgraded to 4.0.4 ..?</strong></p>
+<p>I have written a post to upgrade our Galaxy 5 to Android Ice Cream Sandwich <a class="reference external" href="http://www.arulraj.net/2012/07/upgrade-samsung-galaxy-5-to-ice-cream-sandwich.html">http://www.arulraj.net/2012/07/upgrade-samsung-galaxy-5-to-ice-cream-sandwich.html</a></p>
+<p><strong>How to go back to 2.1 ..?</strong></p>
+<p>First you have to find your firmware version</p>
+<p><a class="reference external" href="http://1.bp.blogspot.com/-I4YZL2v3Su8/T035soaNoqI/AAAAAAAANjY/QbvWlwCO5ik/s1600/android+version.PNG"><img alt="image6" src="http://1.bp.blogspot.com/-I4YZL2v3Su8/T035soaNoqI/AAAAAAAANjY/QbvWlwCO5ik/s320/android+version.PNG"/></a></p>
+<p>Firmware version</p>
+<ul class="simple">
+<li>Go to Settings → About phone note down your baseband version</li>
+<li>Try to get your firmware from internet. Or use this
+<a class="reference external" href="http://hotfile.com/dl/123203814/82f0724/I5503DDJG4.rar.html">I5503DDJG4</a> ,
+<a class="reference external" href="http://dl.dropbox.com/u/2710268/I5503DXJG5.rar">I5503DXJG5</a> 2.1
+firmware (Galaxy 5). Password for zip file is “samfirmware.com”</li>
+<li>Use the same ODIN and OPS file and follow the same steps above.</li>
+</ul>
+</div>
+</div>
+    <footer>
+<p class="meta">
+  <span class="byline author vcard">
+    Posted by <span class="fn">
+        arul
+    </span>
+  </span>
+<time datetime="2011-08-05T03:55:00+05:30" pubdate>Fri 05 August 2011</time>  <span class="categories">
+    <a class='category' href='http://www.arulraj.net/category/android'>Android</a>
+  </span>
+  <span class="categories">
+    <a class="category" href="http://www.arulraj.net/tag/android">android</a>,    <a class="category" href="http://www.arulraj.net/tag/mobile">Mobile</a>,    <a class="category" href="http://www.arulraj.net/tag/linux">Linux</a>,    <a class="category" href="http://www.arulraj.net/tag/how-to">how to</a>  </span>
+</p><div class="sharing">
+    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
+</div>    </footer>
+  </article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript></div>
+  </section>
+</div>
+<aside class="sidebar">
+  <section>
+    <h1>Recent Posts</h1>
+    <ul id="recent_posts">
+      <li class="post">
+          <a href="http://www.arulraj.net/2016/01/setup-docker-and-tools.html">Setup docker and tools</a>
+      </li>
+      <li class="post">
+          <a href="http://www.arulraj.net/2016/01/bash-completions-for-kubectl.html">Bash completions for kubectl</a>
+      </li>
+      <li class="post">
+          <a href="http://www.arulraj.net/2015/11/download-any-videos-in-android-using-youtube-dl.html">Download any videos in android using youtube-dl</a>
+      </li>
+      <li class="post">
+          <a href="http://www.arulraj.net/2015/11/pixelserv-using-nginx.html">PixelServ using Nginx</a>
+      </li>
+      <li class="post">
+          <a href="http://www.arulraj.net/2015/09/stream-any-video-into-vlc.html">Stream any video into VLC</a>
+      </li>
+    </ul>
+  </section>
+  <section>
+      
+    <h1>Categories</h1>
+    <ul id="recent_posts">
+        <li><a href="http://www.arulraj.net/category/android">android</a></li>
+        <li><a href="http://www.arulraj.net/category/browser">Browser</a></li>
+        <li><a href="http://www.arulraj.net/category/business-intelligence">Business intelligence</a></li>
+        <li><a href="http://www.arulraj.net/category/database">Database</a></li>
+        <li><a href="http://www.arulraj.net/category/docker">docker</a></li>
+        <li><a href="http://www.arulraj.net/category/flash">Flash</a></li>
+        <li><a href="http://www.arulraj.net/category/kubernetes">kubernetes</a></li>
+        <li><a href="http://www.arulraj.net/category/linux">Linux</a></li>
+        <li><a href="http://www.arulraj.net/category/mobile">Mobile</a></li>
+        <li><a href="http://www.arulraj.net/category/photos">photos</a></li>
+        <li><a href="http://www.arulraj.net/category/php">php</a></li>
+        <li><a href="http://www.arulraj.net/category/programming">Programming</a></li>
+        <li><a href="http://www.arulraj.net/category/prompter4j">Prompter4J</a></li>
+        <li><a href="http://www.arulraj.net/category/proxy">proxy</a></li>
+        <li><a href="http://www.arulraj.net/category/red5">Red5</a></li>
+        <li><a href="http://www.arulraj.net/category/streaming">Streaming</a></li>
+        <li><a href="http://www.arulraj.net/category/tools">Tools</a></li>
+        <li><a href="http://www.arulraj.net/category/virtualization">Virtualization</a></li>
+        <li><a href="http://www.arulraj.net/category/widget">Widget</a></li>
+        <li><a href="http://www.arulraj.net/category/windows">Windows</a></li>
+    </ul>
+  </section>
+ 
+
+  <section>
+  <h1>Tags</h1>
+    <a href="http://www.arulraj.net/tag/gprs">gprs</a>,    <a href="http://www.arulraj.net/tag/tricks-how-to">Tricks, how to</a>,    <a href="http://www.arulraj.net/tag/centos">centos</a>,    <a href="http://www.arulraj.net/tag/bi-tools">BI Tools</a>,    <a href="http://www.arulraj.net/tag/spring">spring</a>,    <a href="http://www.arulraj.net/tag/xen">xen</a>,    <a href="http://www.arulraj.net/tag/widget">Widget</a>,    <a href="http://www.arulraj.net/tag/bash_completions">bash_completions</a>,    <a href="http://www.arulraj.net/tag/hosting">hosting</a>,    <a href="http://www.arulraj.net/tag/streaming">streaming</a>,    <a href="http://www.arulraj.net/tag/broken-bridge">Broken bridge</a>,    <a href="http://www.arulraj.net/tag/design-pattern">Design pattern</a>,    <a href="http://www.arulraj.net/tag/linux">linux</a>,    <a href="http://www.arulraj.net/tag/tools">Tools</a>,    <a href="http://www.arulraj.net/tag/vmware">vmware</a>,    <a href="http://www.arulraj.net/tag/xml">xml</a>,    <a href="http://www.arulraj.net/tag/lg">LG</a>,    <a href="http://www.arulraj.net/tag/share-market">share market</a>,    <a href="http://www.arulraj.net/tag/git">GIT</a>,    <a href="http://www.arulraj.net/tag/java">java</a>,    <a href="http://www.arulraj.net/tag/red5">red5</a>,    <a href="http://www.arulraj.net/tag/how-to">how to</a>,    <a href="http://www.arulraj.net/tag/recent-post">Recent Post</a>,    <a href="http://www.arulraj.net/tag/tor">tor</a>,    <a href="http://www.arulraj.net/tag/fix">fix</a>,    <a href="http://www.arulraj.net/tag/flash">Flash</a>,    <a href="http://www.arulraj.net/tag/animation">Animation</a>,    <a href="http://www.arulraj.net/tag/actionscript">Actionscript</a>,    <a href="http://www.arulraj.net/tag/android">android</a>,    <a href="http://www.arulraj.net/tag/airel">Airel</a>,    <a href="http://www.arulraj.net/tag/tricks-windows">Tricks, windows</a>,    <a href="http://www.arulraj.net/tag/cricket">cricket</a>,    <a href="http://www.arulraj.net/tag/datacard-hacking-mobile-tips-amp">datacard, hacking, Mobile, Tips &amp</a>,    <a href="http://www.arulraj.net/tag/kg-195">KG 195</a>,    <a href="http://www.arulraj.net/tag/video-streaming">video streaming</a>,    <a href="http://www.arulraj.net/tag/youtube-dl">youtube-dl</a>,    <a href="http://www.arulraj.net/tag/offer">offer</a>,    <a href="http://www.arulraj.net/tag/python">python</a>,    <a href="http://www.arulraj.net/tag/vlc">vlc</a>,    <a href="http://www.arulraj.net/tag/javascript">javascript</a>,    <a href="http://www.arulraj.net/tag/bash-completion">bash-completion</a>,    <a href="http://www.arulraj.net/tag/prompter4j">prompter4j</a>,    <a href="http://www.arulraj.net/tag/adblock">adblock</a>,    <a href="http://www.arulraj.net/tag/pentaho">pentaho</a>,    <a href="http://www.arulraj.net/tag/proxy">proxy</a>,    <a href="http://www.arulraj.net/tag/ubuntu">ubuntu</a>,    <a href="http://www.arulraj.net/tag/shellscript">shellscript</a>,    <a href="http://www.arulraj.net/tag/besant-nagar">Besant Nagar</a>,    <a href="http://www.arulraj.net/tag/php">php</a>,    <a href="http://www.arulraj.net/tag/tamil">tamil</a>,    <a href="http://www.arulraj.net/tag/hacking">hacking</a>,    <a href="http://www.arulraj.net/tag/voip">VOIP</a>,    <a href="http://www.arulraj.net/tag/fedora">Fedora</a>,    <a href="http://www.arulraj.net/tag/commands">commands</a>,    <a href="http://www.arulraj.net/tag/gnome">gnome</a>,    <a href="http://www.arulraj.net/tag/nginx">nginx</a>,    <a href="http://www.arulraj.net/tag/mobile">mobile</a>,    <a href="http://www.arulraj.net/tag/samsung">samsung</a>,    <a href="http://www.arulraj.net/tag/programming">programming</a>,    <a href="http://www.arulraj.net/tag/cloud-computing">cloud computing</a>,    <a href="http://www.arulraj.net/tag/photos">photos</a>,    <a href="http://www.arulraj.net/tag/windows">windows</a>,    <a href="http://www.arulraj.net/tag/static-ip">static ip</a>,    <a href="http://www.arulraj.net/tag/mysql-tips-amp">mysql, Tips &amp</a>,    <a href="http://www.arulraj.net/tag/crawling">crawling</a>,    <a href="http://www.arulraj.net/tag/privoxy">privoxy</a>,    <a href="http://www.arulraj.net/tag/docker">docker</a>,    <a href="http://www.arulraj.net/tag/ide">IDE</a>,    <a href="http://www.arulraj.net/tag/scripting">scripting</a>,    <a href="http://www.arulraj.net/tag/browser">Browser</a>  </section>
+
+
+    <section>
+        <h1>Social</h1>
+        <ul>
+            <li><a href="http://facebook.com/arulraj.net" target="_blank">Facebook</a></li>
+            <li><a href="http://twitter.com/arulrajnet" target="_blank">Twitter</a></li>
+            <li><a href="https://plus.google.com/+ArulrajNet" target="_blank">Google Plus</a></li>
+            <li><a href="http://feeds.feedburner.com/ArulBlog" target="_blank">Feed</a></li>
+        </ul>
+    </section>
+    <section>
+        <h1>Blogroll</h1>
+        <ul>
+            <li><a href="http://github.com/arulrajnet" target="_blank">Github</a></li>
+            <li><a href="http://python.org/" target="_blank">Python.org</a></li>
+            <li><a href="http://gist.github.com/arulrajnet" target="_blank">Gist</a></li>
+            <li><a href="http://twitter.com/arulrajnet" target="_blank">Twitter</a></li>
+        </ul>
+    </section>
+
+<section class="googleplus">
+  <h1>
+    <a href="https://plus.google.com/108329785817736505170?rel=author">
+      <img src="//www.google.com/images/icons/ui/gprofile_button-32.png" width="32" height="32">
+      Google+
+    </a>
+  </h1>
+</section>
+</aside>    </div>
+  </div>
+  <footer role="contentinfo"><p>
+    Copyright &copy;  2009&ndash;2016  Arul &mdash;
+  <span class="credit">Powered by <a href="http://getpelican.com">Pelican</a></span>
+</p></footer>
+  <script src="http://www.arulraj.net/theme/js/modernizr-2.0.js"></script>
+  <script src="http://www.arulraj.net/theme/js/ender.js"></script>
+  <script src="http://www.arulraj.net/theme/js/octopress.js" type="text/javascript"></script>
+    <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-3546274-9']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-3546274-9');
+    ga('send', 'pageview');
+</script>
+  <script type="text/javascript">
+    var disqus_shortname = 'arulrajnet';
+          var disqus_identifier = 'upgrade_samsung_galaxy_5_and_3_to_froyo';
+    var disqus_url = 'http://www.arulraj.net/2011/08/upgrade-samsung-galaxy-5-and-3-to-froyo.html';
+    var disqus_title = 'Upgrade Samsung Galaxy 5 and 3 to Froyo';
+    (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = "//" + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+     })();
+  </script>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+</body>
+</html>
