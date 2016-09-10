@@ -6,10 +6,19 @@
   url = https://github.com/getpelican/pelican-themes
 [submodule "my-pelican-themes/ghostly"]
   path = my-pelican-themes/ghostly
-  url = https://github.com/rodms10/ghostly
+  url = https://github.com/kura/ghastly
+[submodule "my-pelican-themes/eevee"]
+  path = my-pelican-themes/eevee
+  url = https://github.com/kura/eevee  
 [submodule "my-pelican-themes/pelican-vapor-theme"]
   path = my-pelican-themes/pelican-vapor-theme
   url = https://github.com/gperetin/pelican-vapor-theme
 [submodule "my-pelican-themes/pelican-octopress-theme"]
   path = my-pelican-themes/pelican-octopress-theme
   url = https://github.com/arulrajnet/pelican-octopress-theme
+[submodule "my-pelican-themes/medius"]
+  path = my-pelican-themes/medius
+  url = https://github.com/onur/medius
+[submodule "my-pelican-themes/pelican-clean-blog-theme"]
+  path = my-pelican-themes/pelican-clean-blog-theme
+  url = https://github.com/mingp/pelican-clean-blog-theme
