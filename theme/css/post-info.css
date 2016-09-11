@@ -1,0 +1,126 @@
+.post-info {
+  margin-top: 6em;
+  overflow: hidden; }
+
+.post-share {
+  max-width: 25%;
+  float: right; }
+
+.post-share a {
+  display: block;
+  width: 2em;
+  height: 2em;
+  margin: 0.333em 0 0.333em 0.666em;
+  padding: 0;
+  float: left;
+  font-size: 0.75em;
+  line-height: 2em;
+  text-align: center;
+  text-decoration: none;
+  color: #ffffff;
+  border-radius: 2px;
+  transition: all ease 0.3s; }
+
+.post-share a:hover,
+.post-share a:focus {
+  background-color: #212226; }
+
+.post-share a i {
+  color: inherit; }
+
+.post-share a i:before {
+  width: auto;
+  height: auto; }
+
+.post-share .twitter {
+  background-color: #3ea9dd; }
+
+.post-share .facebook {
+  background-color: #3c5a98; }
+
+.post-share .googleplus {
+  background-color: #d14836; }
+
+.post-tags {
+  max-width: 75%;
+  float: left;
+  font-family: 'Fira Sans', sans-serif; }
+
+.post-tags a {
+  display: inline-block;
+  margin: 0 0.333em 0.666em 0;
+  padding: 0.575em 1em;
+  background: #ffffff;
+  border: 1px solid #0085a1;
+  font-size: 0.75em;
+  font-weight: 500;
+  line-height: 1.333em;
+  text-align: center;
+  text-decoration: none;
+  color: #0085a1;
+  border-radius: 2em;
+  transition: all ease 0.3s;
+  box-sizing: border-box; }
+
+.post-tags a:hover,
+.post-tags a:focus {
+  background: #0057a2;
+  color: #ffffff; }
+
+.post-author {
+  position: relative;
+  margin: 2em 0 0;
+  padding: 2em 0;
+  z-index: 10;
+  border-top: 1px solid #e5e4e1;
+  border-bottom: 1px solid #e5e4e1;
+  clear: both; }
+
+.post-author-avatar {
+  position: relative;
+  float: left;
+  width: 15%;
+  margin: -0.5em 0 0 5%;
+  overflow: hidden;
+  background: #ffffff;
+  border-radius: 10em;
+  box-sizing: border-box; }
+
+.post-author-avatar img {
+  width: 100%;
+  margin: auto;
+  border-radius: 10em;
+  box-sizing: border-box; }
+
+.post-author-bio {
+  padding-left: 25%;
+  font-family: 'Fira Sans', sans-serif;
+  font-size: 0.75em;
+  line-height: 1.333em; }
+
+.post-author-name {
+  margin: 0;
+  padding: 0;
+  font-size: 1.333em;
+  line-height: 1em;
+  text-indent: inherit; }
+
+.post-author-about {
+  margin: 0.666em 0; }
+
+.post-author-bio span {
+  position: relative;
+  display: inline-block;
+  margin-top: 1.333em;
+  margin-right: 1.333em;
+  font-weight: 400;
+  opacity: 0.5; }
+
+.post-author-bio i {
+  color: inherit; }
+
+.post-author-bio a {
+  color: inherit;
+  text-decoration: none;
+  font-weight: inherit;
+  border-bottom: 1px solid transparent; }

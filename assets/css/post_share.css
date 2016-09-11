@@ -1,0 +1,38 @@
+.post-share {
+  max-width: 25%;
+  float: right; }
+
+.post-share a {
+  display: block;
+  width: 2em;
+  height: 2em;
+  margin: 0.333em 0 0.333em 0.666em;
+  padding: 0;
+  float: left;
+  font-size: 0.75em;
+  line-height: 2em;
+  text-align: center;
+  text-decoration: none;
+  color: #ffffff;
+  border-radius: 2px;
+  transition: all ease 0.3s; }
+
+.post-share a:hover,
+.post-share a:focus {
+  background-color: #212226; }
+
+.post-share a i {
+  color: inherit; }
+
+.post-share a i:before {
+  width: auto;
+  height: auto; }
+
+.post-share .twitter {
+  background-color: #3ea9dd; }
+
+.post-share .facebook {
+  background-color: #3c5a98; }
+
+.post-share .googleplus {
+  background-color: #d14836; }
