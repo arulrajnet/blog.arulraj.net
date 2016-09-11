@@ -19,6 +19,6 @@
 [submodule "my-pelican-themes/medius"]
   path = my-pelican-themes/medius
   url = https://github.com/onur/medius
-[submodule "my-pelican-themes/pelican-clean-blog-theme"]
-  path = my-pelican-themes/pelican-clean-blog-theme
-  url = https://github.com/mingp/pelican-clean-blog-theme
+[submodule "my-pelican-themes/pelican-clean-blog"]
+  path = my-pelican-themes/pelican-clean-blog
+  url = https://github.com/arulrajnet/pelican-clean-blog

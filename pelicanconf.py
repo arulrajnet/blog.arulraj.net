@@ -10,6 +10,8 @@ SITEURL = 'http://localhost:8000'
 
 PATH = 'content'
 
+DEFAULT_DATE_FORMAT = '%d %b %Y'
+
 TIMEZONE = 'Asia/Calcutta'
 
 DEFAULT_LANG = u'en'
@@ -89,6 +91,13 @@ GOOGLE_ANALYTICS = "UA-3546274-9"
 SEARCH_BOX = False
 
 ### Theme specific settings
+
+## Start - pelican-clean-blog - https://github.com/gilsondev/pelican-clean-blog
+COLOR_SCHEME_CSS = 'github_jekyll.css'
+# Copied from https://github.com/mingp/pelican-clean-blog-theme/blob/master/static/css/clean-blog.css
+CSS_OVERRIDE = 'assets/css/myblog.css'
+
+## End - pelican-clean-blog
 
 # Twitter
 TWITTER_USERNAME = "arulrajnet"
