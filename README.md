@@ -13,6 +13,12 @@ git fetch --recurse-submodules
 git pull --recurse-submodules
 ```
 
+Add new submodule
+
+```
+git submodule add --force https://github.com/kura/ghastly my-pelican-themes/ghostly
+```
+
 __Install Dependencies__
 
 ```
