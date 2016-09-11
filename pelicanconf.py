@@ -60,7 +60,8 @@ DEFAULT_METADATA = {
 EXTRA_PATH_METADATA = {
     'assets/robots.txt': {'path': 'robots.txt'},
     'assets/favicon.ico': {'path': 'favicon.ico'},
-    'assets/css/better_responsive_images.css': {'path': 'css/custom.css'},
+    'assets/css/better_responsive_images.css': {'path': 'css/better_responsive_images.css'},
+    'assets/css/myblog.css': {'path': 'css/myblog.css'},
 }
 
 # Post and Pages path 
@@ -95,7 +96,8 @@ SEARCH_BOX = False
 ## Start - pelican-clean-blog - https://github.com/gilsondev/pelican-clean-blog
 COLOR_SCHEME_CSS = 'github_jekyll.css'
 # Copied from https://github.com/mingp/pelican-clean-blog-theme/blob/master/static/css/clean-blog.css
-CSS_OVERRIDE = 'assets/css/myblog.css'
+# CSS_OVERRIDE = ['css/myblog.css', 'css/better_responsive_images.css']
+CSS_OVERRIDE = ['css/myblog.css']
 
 ## End - pelican-clean-blog
 
