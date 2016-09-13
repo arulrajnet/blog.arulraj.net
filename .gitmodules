@@ -25,3 +25,6 @@
 [submodule "my-pelican-themes/ghastly"]
 	path = my-pelican-themes/ghastly
 	url = https://github.com/kura/ghastly
+[submodule "my-pelican-themes/attila"]
+	path = my-pelican-themes/attila
+	url = https://github.com/arulrajnet/attila
