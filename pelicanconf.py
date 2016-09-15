@@ -42,10 +42,10 @@ SOCIAL = (('Facebook', 'http://facebook.com/arulraj.net'),
 
 # Pagination
 DEFAULT_PAGINATION = 10
-# PAGINATION_PATTERNS = (
-#     (1, '{base_name}/', '{base_name}/index.html'),
-#     (2, '{base_name}/page/{number}/', '{base_name}/page/{number}/index.html'),
-# )
+PAGINATION_PATTERNS = (
+    (1, '{base_name}/', '{base_name}/index.html'),
+    (2, '{base_name}/page/{number}/', '{base_name}/page/{number}/index.html'),
+)
 
 # Uncomment following line if you want document-relative URLs when developing
 #RELATIVE_URLS = True
@@ -75,8 +75,15 @@ MONTH_ARCHIVE_SAVE_AS = '{date:%Y}/{date:%m}/index.html'
 # Tags and Category path 
 CATEGORY_URL = 'category/{slug}'
 CATEGORY_SAVE_AS = 'category/{slug}/index.html'
+CATEGORIES_SAVE_AS = 'catgegories.html'
 TAG_URL = 'tag/{slug}'
 TAG_SAVE_AS = 'tag/{slug}/index.html'
+TAGS_SAVE_AS = 'tags.html'
+
+# Author
+AUTHOR_URL = 'author/{slug}'
+AUTHOR_SAVE_AS = 'author/{slug}/index.html'
+AUTHORS_SAVE_AS = 'authors.html'
 
 # Code Block
 
@@ -98,6 +105,19 @@ COLOR_SCHEME_CSS = 'github.css'
 # Copied from https://github.com/mingp/pelican-clean-blog-theme/blob/master/static/css/clean-blog.css
 # CSS_OVERRIDE = ['css/myblog.css', 'css/better_responsive_images.css']
 # CSS_OVERRIDE = ['css/myblog.css']
+
+AUTHORS_BIO = {
+  "arul": {
+    "name": "Arulraj V",
+    "cover": "https://www.gravatar.com/avatar/dead1c3ffb26a27d8b5e30e1c30e46e6?s=600",
+    "image": "https://www.gravatar.com/avatar/dead1c3ffb26a27d8b5e30e1c30e46e6?s=600",
+    "website": "http://arulraj.net",
+    "location": "Chennai",
+    "bio": "• Architect • DevOps • Full Stack Developer • Aspiring Entrepreneur •",
+    "twitter": "arulrajnet",
+    "facebook": "arulraj.net"
+  }
+}
 
 ## End - pelican-clean-blog
 
@@ -141,11 +161,19 @@ PLUGINS = [
 # Sitemap
 SITEMAP = {
     'format': 'xml',
+    'priorities': {
+        'articles': 0.5,
+        'indexes': 0.5,
+        'pages': 0.5
+    },
     'changefreqs': {
-            'pages': 'daily',
-            'posts': 'daily',
+        'articles': 'monthly',
+        'indexes': 'daily',
+        'pages': 'monthly'
     }
 }
+
+JINJA_EXTENSIONS = ['jinja2.ext.loopcontrols', 'jinja2.ext.i18n']
 
 # Read time - Medium like
 X_MIN_READ = False
