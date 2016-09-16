@@ -3,7 +3,7 @@ Unlock huawei datacard e303s
 :date: 2013-10-22 14:02
 :author: arul
 :category: Mobile
-:tags: datacard, hacking, Mobile, Tips &amp; Tricks, how to
+:tags: datacard, hacking, Mobile, Tips & Tricks, how to
 :slug: unlock-huawei-datacard-e303s
 :status: published
 

@@ -6,9 +6,12 @@ from __future__ import unicode_literals
 
 AUTHOR = u'Arul'
 SITENAME = u'Arul Blog'
+# SITESUBTITLE = ''
 SITEURL = 'http://localhost:8000'
 
 PATH = 'content'
+
+DEFAULT_DATE = 'fs'
 
 DEFAULT_DATE_FORMAT = '%d %b %Y'
 
@@ -23,6 +26,7 @@ FAVICON_FILENAME = "favicon.ico"
 # Feed generation is usually not desired when developing
 FEED_ALL_ATOM = None
 CATEGORY_FEED_ATOM = None
+TAG_FEED_ATOM = None
 TRANSLATION_FEED_ATOM = None
 AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
@@ -46,6 +50,8 @@ PAGINATION_PATTERNS = (
     (1, '{base_name}/', '{base_name}/index.html'),
     (2, '{base_name}/page/{number}/', '{base_name}/page/{number}/index.html'),
 )
+
+# TYPOGRIFY = True
 
 # Uncomment following line if you want document-relative URLs when developing
 #RELATIVE_URLS = True
@@ -149,13 +155,13 @@ PLUGIN_PATHS = [
   'pelican-plugins',
 ]
 
+# better_figures_and_images is failed articles which have <object> tag with no "data" attributes.
 PLUGINS = [
   'sitemap', 
   'neighbors', 
   'related_posts', 
   'post_stats',
-  'assets',
-  'better_figures_and_images',
+  'assets'
 ]
 
 # Sitemap
