@@ -1,0 +1,334 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Arul Blog</title><link href="http://www.arulraj.net/" rel="alternate"></link><link href="http://www.arulraj.net/feeds/tag/browser.atom.xml" rel="self"></link><id>http://www.arulraj.net/</id><updated>2012-01-31T02:50:00+05:30</updated><entry><title>How to access irctc mobile site from your computer</title><link href="http://www.arulraj.net/2012/01/how-to-access-irctc-mobile-site-from-your-computer.html" rel="alternate"></link><published>2012-01-31T02:50:00+05:30</published><author><name>arul</name></author><id>tag:www.arulraj.net,2012-01-31:2012/01/how-to-access-irctc-mobile-site-from-your-computer.html</id><summary type="html">&lt;p&gt;&lt;strong&gt;How to access irctc mobile site from your computer&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://1.bp.blogspot.com/-7TGwu0R8Woc/TyecsHLfDiI/AAAAAAAAJIk/k_B8DnwHEew/s1600/irctc_in_android_browser.png"&gt;&lt;img alt="image0" src="http://1.bp.blogspot.com/-7TGwu0R8Woc/TyecsHLfDiI/AAAAAAAAJIk/k_B8DnwHEew/s400/irctc_in_android_browser.png" /&gt;&lt;/a&gt; Taken from android browser&lt;/p&gt;
+&lt;p&gt;Two weeks before irctc launched mobile site for train booking. But when I try to go &lt;a class="reference external" href="https://www.irctc.co.in/mobile"&gt;https://www.irctc.co.in/mobile&lt;/a&gt; from my pc its redirect to usual site.&amp;nbsp;The problem is they are checking the request coming from mobile or computer in server side using user agent and if its from mobile allowed otherwise its redirected to ordinary site.&lt;/p&gt;
+&lt;p&gt;So here is the fix 😄&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Requirement:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;absolutely&amp;nbsp;a pc&lt;/li&gt;
+&lt;li&gt;Mozilla&amp;nbsp;Firefox&lt;/li&gt;
+&lt;li&gt;User Agent&amp;nbsp;switcher add-on&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;How to:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Open Firefox&lt;/li&gt;
+&lt;li&gt;Download and Install the User Agent&amp;nbsp;switcher&amp;nbsp;add-on from &lt;a class="reference external" href="https://addons.mozilla.org/en-US/firefox/addon/user-agent-switcher/"&gt;here&amp;nbsp;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Change the User agent to iPhone 3.0 by Go to Tools&lt;/li&gt;
+&lt;li&gt;Now open the &lt;a class="reference external" href="https://www.irctc.co.in/mobile"&gt;https://www.irctc.co.in/mobile&lt;/a&gt; in&amp;nbsp;Firefox&lt;/li&gt;
+&lt;li&gt;Yeah you are done. cheers...!!!&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;User Agent switcher:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://3.bp.blogspot.com/-Q3dWVraB26g/Tyeo4jLneqI/AAAAAAAAJI0/gIPfMDGJ-y8/s1600/User_agent_firefox.png"&gt;&lt;img alt="image1" src="http://3.bp.blogspot.com/-Q3dWVraB26g/Tyeo4jLneqI/AAAAAAAAJI0/gIPfMDGJ-y8/s400/User_agent_firefox.png" /&gt;&lt;/a&gt; Change to iPhone 3.0&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;How irctc looks in firefox:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://2.bp.blogspot.com/-X3MnnhCcEbU/TyepsS3HEeI/AAAAAAAAJJA/72pM_nkgmKs/s400/irctc_firefox_mobile_login.PNG"&gt;&lt;img alt="image2" src="http://2.bp.blogspot.com/-X3MnnhCcEbU/TyepsS3HEeI/AAAAAAAAJJA/72pM_nkgmKs/s400/irctc_firefox_mobile_login.PNG" /&gt;&lt;/a&gt; Mobile Login page&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://3.bp.blogspot.com/-n75ZOpg1b98/TyeqTnGPxNI/AAAAAAAAJJM/pub05DdyFpI/s1600/irctc_firefox_mobile_home.PNG"&gt;&lt;img alt="image3" src="http://3.bp.blogspot.com/-n75ZOpg1b98/TyeqTnGPxNI/AAAAAAAAJJM/pub05DdyFpI/s400/irctc_firefox_mobile_home.PNG" /&gt;&lt;/a&gt; Mobile Home page&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://3.bp.blogspot.com/-wHuu4TgXKWw/TyeqxQhckVI/AAAAAAAAJJY/kJOQLrX-0N4/s1600/irctc_firefox_mobile_plan_my_travel.PNG"&gt;&lt;img alt="image4" src="http://3.bp.blogspot.com/-wHuu4TgXKWw/TyeqxQhckVI/AAAAAAAAJJY/kJOQLrX-0N4/s400/irctc_firefox_mobile_plan_my_travel.PNG" /&gt;&lt;/a&gt; Mobile plan my travel&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Advantages of mobile agent:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Firstly its very fast.&lt;/li&gt;
+&lt;li&gt;Easy to book. Just three clicks.&lt;/li&gt;
+&lt;li&gt;No more asking password again and again&lt;/li&gt;
+&lt;li&gt;No more session expired / timeout page :D&lt;/li&gt;
+&lt;li&gt;Do remember you can only book &lt;strong&gt;5 transactions per month&lt;/strong&gt; through
+mobile irctc site.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;FAQ:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;I tried in mobile still redirect to ordinary site..?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Use https instead of http and make sure www in that url &lt;a class="reference external" href="https://www.irctc.co.in/mobile"&gt;https://www.irctc.co.in/mobile&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;How can I change the user agent in google chrome..?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;To change user agent in google chrome check this video tutorial &lt;a class="reference external" href="http://www.youtube.com/watch?v=IiT7z8zAbn0"&gt;http://www.youtube.com/watch?v=IiT7z8zAbn0&lt;/a&gt; But for that you need chrome 17 version. To find out which chrome you are using type &amp;quot;&lt;a class="reference external" href="about:version"&gt;about:version&lt;/a&gt;&amp;quot; in address bar then enter. If you have chrome version 16, wait for 17 to be stable otherwise try beta version.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Update:&lt;/em&gt; Now a extension is available for chrome &lt;a class="reference external" href="https://chrome.google.com/webstore/detail/djflhoibgkdhkhhcedjiklpkjnoahfmg"&gt;https://chrome.google.com/webstore/detail/djflhoibgkdhkhhcedjiklpkjnoahfmg&lt;/a&gt; use this.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Is this irctc hack..?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;No. Its just a browser hack..!!! you can see any mobile website using this.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;How to use this mobile site..?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Please find the manual from here. &lt;a class="reference external" href="https://www.irctc.co.in/beta_htmls/index.htm"&gt;View Manual&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Its shows me a blank page..?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Last few days I am also getting blank pages. That website is seems to be down. Even its shows error page when I tried from mobile device. No fix for this 😄 check this &lt;a class="reference external" href="http://www.downforeveryoneorjustme.com/www.irctc.co.in/mobile"&gt;link&lt;/a&gt;&amp;nbsp;for its down or not&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;My Firefox is does not support for this add-on..?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;I think you are using old one. Try to update your firefox browser. OR from here&amp;nbsp;&lt;a class="reference external" href="http://releases.mozilla.org/pub/mozilla.org/addons/59/"&gt;http://releases.mozilla.org/pub/mozilla.org/addons/59/&lt;/a&gt;&amp;nbsp;you can find the different version of that add-on. Download which one is suitable for your firefox.&lt;/p&gt;
+</summary><category term="Browser"></category><category term="hacking"></category><category term="how to"></category><category term="mobile"></category></entry><entry><title>Problem viewing Tamil fonts in chromium on Ubuntu</title><link href="http://www.arulraj.net/2011/08/problem-viewing-tamil-fonts-in-chromium-on-ubuntu.html" rel="alternate"></link><published>2011-08-26T12:41:00+05:30</published><author><name>arul</name></author><id>tag:www.arulraj.net,2011-08-26:2011/08/problem-viewing-tamil-fonts-in-chromium-on-ubuntu.html</id><summary type="html">&lt;p&gt;I am the big fan of tamil love poems.. 😊 Within Google reader all tamil blogs fonts are displayed correctly in chromium which was downloaded from Ubuntu software center. But when I goto that link directly, that page is not rendered properly. It shows some junk character in between.&lt;/p&gt;
+&lt;p&gt;For example Initially this blog&amp;nbsp;&lt;a class="reference external" href="http://bit.ly/ndtgfq"&gt;http://bit.ly/ndtgfq&lt;/a&gt;&amp;nbsp;shown below&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://3.bp.blogspot.com/-rRgxWW7Qfvs/TlfmYG-R55I/AAAAAAAAArc/-I3ojySvirc/s1600/Tamil%2Bfont%2Berror.png"&gt;&lt;img alt="image0" src="http://3.bp.blogspot.com/-rRgxWW7Qfvs/TlfmYG-R55I/AAAAAAAAArc/-I3ojySvirc/s400/Tamil%2Bfont%2Berror.png" /&gt;&lt;/a&gt; Tamil font is not rendered properly&lt;/p&gt;
+&lt;p&gt;But in the firefox its rendered correctly. It shows the fonts correctly. I solved this issue after little bit googling 😜&lt;/p&gt;
+&lt;p&gt;Here is the fix.&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Goto that directory&amp;nbsp;/usr/share/fonts/truetype/freefont/&lt;/li&gt;
+&lt;li&gt;Delete both the&amp;nbsp;FreeSerif.ttf and&amp;nbsp;FreeSans.ttf file.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo rm -f /usr/share/fonts/truetype/freefont/FreeSerif.ttf
+sudo rm -f /usr/share/fonts/truetype/freefont/FreeSans.ttf
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Then restart your browser. Now its shown correctly for me.&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://4.bp.blogspot.com/-b0-zDfWqj5w/Tlfn0iQY8nI/AAAAAAAAArk/CrtbQxkS3gE/s1600/Tamil%2Bfont%2Bsuccess.png"&gt;&lt;img alt="image1" src="http://4.bp.blogspot.com/-b0-zDfWqj5w/Tlfn0iQY8nI/AAAAAAAAArk/CrtbQxkS3gE/s400/Tamil%2Bfont%2Bsuccess.png" /&gt;&lt;/a&gt; Tamil font displayed fine&lt;/p&gt;
+</summary><category term="Browser"></category><category term="tamil"></category><category term="ubuntu"></category><category term="how to"></category><category term="linux"></category></entry><entry><title>Google chrome Download video</title><link href="http://www.arulraj.net/2011/03/google-chrome-download-video.html" rel="alternate"></link><published>2011-03-19T14:06:00+05:30</published><author><name>arul</name></author><id>tag:www.arulraj.net,2011-03-19:2011/03/google-chrome-download-video.html</id><summary type="html">&lt;p&gt;The most video content web sites use flash player as them video player.&amp;nbsp;In Linux you can download streaming videos without any third party tools. Previously the videos which you are watching by default its stored in /tmp directory. You can copy the video from there. But in the google chrome or Chromium browser by default its come with a flash player. If you using that flash player the video is not downloaded in /tmp directory. They are using there own intelligence to prevent this. Here we are going to see a simple hack to download videos in google chrome . Steps are&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Goto installed plugins&amp;nbsp;&lt;tt class="docutils literal"&gt;about:plugins&lt;/tt&gt; in chrome / mozilla&lt;/li&gt;
+&lt;li&gt;Click Details to view with more information. Disable the Flash Plugin. The Location of the plugin would be &amp;quot;/usr/lib/adobe-flashplugin/libflashplayer.so&amp;quot;&lt;/li&gt;
+&lt;li&gt;Download the tar.gz version of flash player from here&amp;nbsp;&lt;a class="reference external" href="http://get.adobe.com/flashplayer/"&gt;http://get.adobe.com/flashplayer/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Extract that file and copy the libflashplayer.so to&amp;nbsp;/usr/lib/chromium-browser/plugins . &amp;nbsp;Then Enable this in plugin page.&lt;/li&gt;
+&lt;li&gt;If you view any video it will download in /home/&amp;lt;USER_NAME&amp;gt;/.cache/chromium/Default/Cache this folder.&lt;/li&gt;
+&lt;li&gt;For Google chrome user cache location will be /home/&amp;lt;USER_NAME&amp;gt;/.cache/google-chrome/Default/Cache&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Make a link for easy access&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;ln -s /home/arul/.cache/chromium/Default/Cache/ /tmp/chrome-cache
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Screenshots:&lt;/p&gt;
+&lt;div class="section" id="details-view-of-the-plugin-page"&gt;
+&lt;h2&gt;Details View of the Plugin page&lt;/h2&gt;
+&lt;div class="separator" style="clear: both; text-align: center;"&gt;&lt;p&gt;&lt;a class="reference external" href="http://1.bp.blogspot.com/-cLF0pmaL9ws/TYULYUaA1oI/AAAAAAAAAns/BrRbE1fbemo/s1600/chrome%2Bplugin%2B-%2BDetails%2Bview.png"&gt;&lt;img alt="image0" src="http://1.bp.blogspot.com/-cLF0pmaL9ws/TYULYUaA1oI/AAAAAAAAAns/BrRbE1fbemo/s400/chrome%2Bplugin%2B-%2BDetails%2Bview.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;div class="section" id="chromium-plugin-folder"&gt;
+&lt;h2&gt;Chromium Plugin folder&lt;/h2&gt;
+&lt;div class="separator" style="clear: both; text-align: center;"&gt;&lt;p&gt;&lt;a class="reference external" href="http://1.bp.blogspot.com/-k8fb-V-sEks/TYUL-qW_N2I/AAAAAAAAAn0/t-R6vmr_-ow/s1600/chrome%2Bplugin%2Bdirectory.png"&gt;&lt;img alt="image1" src="http://1.bp.blogspot.com/-k8fb-V-sEks/TYUL-qW_N2I/AAAAAAAAAn0/t-R6vmr_-ow/s400/chrome%2Bplugin%2Bdirectory.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;div class="section" id="chromium-cache-folder"&gt;
+&lt;h2&gt;Chromium Cache folder&lt;/h2&gt;
+&lt;div class="separator" style="clear: both; text-align: center;"&gt;&lt;p&gt;&lt;a class="reference external" href="http://4.bp.blogspot.com/-RHXSFHAJpCA/TYUMIGQU6_I/AAAAAAAAAn8/M_eTTLo3IKM/s1600/chrome%2Bcache%2Blocation.png"&gt;&lt;img alt="image2" src="http://4.bp.blogspot.com/-RHXSFHAJpCA/TYUMIGQU6_I/AAAAAAAAAn8/M_eTTLo3IKM/s400/chrome%2Bcache%2Blocation.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;My Configuration:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;OS : Ubuntu 10.04&lt;/li&gt;
+&lt;li&gt;Browser : Chromium 10.0.648.133 (Developer Build 77742) Ubuntu 10.04&lt;/li&gt;
+&lt;li&gt;Flash : Shockwave Flash 10.2 r152&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Update on 21th March 2011:&lt;/p&gt;
+&lt;p&gt;After a deep testing the video downloaded is disappear after sometime. I tested against youtube.&lt;/p&gt;
+&lt;p&gt;Otherwise use older version:&lt;/p&gt;
+&lt;p&gt;Download the older version of Flashplayer 10. Then copy that to chromium plugin directory. Enable this plugin now you can get the file in the /tmp directory. I am using Version: 10.0 r45. I get this version from with flex sdk runtime folder.&lt;/p&gt;
+&lt;/div&gt;
+</summary><category term="Browser"></category><category term="hacking"></category><category term="ubuntu"></category><category term="Flash"></category><category term="Linux"></category></entry><entry><title>Small FB hack</title><link href="http://www.arulraj.net/2011/02/small-fb-hack.html" rel="alternate"></link><published>2011-02-25T14:25:00+05:30</published><author><name>arul</name></author><id>tag:www.arulraj.net,2011-02-25:2011/02/small-fb-hack.html</id><summary type="html">&lt;p&gt;Don't think I had broke the security system of facebook and got others personal information. I am not a such a knowledge person 😄 .. Just see the below picture&lt;/p&gt;
+&lt;div class="separator" style="clear: both; text-align: center;"&gt;&lt;p&gt;&lt;a class="reference external" href="http://www.facebook.com/permalink.php?story_fbid=191226034231536&amp;amp;id=100000324222880"&gt;&lt;img alt="image0" src="http://3.bp.blogspot.com/-QCzv73ZG5ZQ/TWgJLMnwG8I/AAAAAAAAAnY/WfoKhXl7jig/s400/fb_hack.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;div class="separator" style="clear: both; text-align: left;"&gt;&lt;p&gt;Is this possible a human can click 2000 mouse click per second. No way... We broke a facebook application Click! Click! Click!... The application for calculate mouse clicking capacity with in 10 seconds and you can share it in your wall.. simple... You can crack this using java robot class...&lt;/p&gt;
+&lt;/div&gt;&lt;div class="separator" style="clear: both; text-align: left;"&gt;&lt;p&gt;A two line of code can do this..&lt;/p&gt;
+&lt;/div&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;rb.mousePress(InputEvent.BUTTON1_MASK);
+rb.mouseRelease(InputEvent.BUTTON1_MASK);
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Using this i can made upto 15,000 clicks. I am using openjdk in ubuntu. I could not break my friend (Ponraj) record. May be bad thread handing mechanism in openjvm.. Or OS dependency i am not go deep with in that... He using some better code than me. I think he used &lt;a class="reference external" href="http://seleniumhq.org/download/"&gt;Selenium&lt;/a&gt; with this. Need to discuss with him and will update here... And i forget to mention your browser also have some limitation... 😌&lt;/p&gt;
+&lt;p&gt;Here is the code I used...&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;java.awt.AWTException&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;java.awt.Robot&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;java.awt.event.InputEvent&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+
+&lt;span class="kd"&gt;public&lt;/span&gt; &lt;span class="kd"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;FBClick&lt;/span&gt; &lt;span class="kd"&gt;implements&lt;/span&gt; &lt;span class="n"&gt;Runnable&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+
+ &lt;span class="kd"&gt;private&lt;/span&gt; &lt;span class="kd"&gt;static&lt;/span&gt; &lt;span class="n"&gt;Boolean&lt;/span&gt; &lt;span class="n"&gt;timeout&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kc"&gt;false&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+
+ &lt;span class="nd"&gt;@SuppressWarnings&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;deprecation&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;
+ &lt;span class="kd"&gt;public&lt;/span&gt; &lt;span class="kd"&gt;static&lt;/span&gt; &lt;span class="kt"&gt;void&lt;/span&gt; &lt;span class="nf"&gt;main&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;String&lt;/span&gt; &lt;span class="n"&gt;d&lt;/span&gt;&lt;span class="o"&gt;[])&lt;/span&gt; &lt;span class="kd"&gt;throws&lt;/span&gt; &lt;span class="n"&gt;InterruptedException&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt;
+ &lt;span class="n"&gt;AWTException&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+   &lt;span class="n"&gt;Runnable&lt;/span&gt; &lt;span class="n"&gt;fb&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="k"&gt;new&lt;/span&gt; &lt;span class="n"&gt;FBClick&lt;/span&gt;&lt;span class="o"&gt;();&lt;/span&gt;
+   &lt;span class="n"&gt;Thread&lt;/span&gt; &lt;span class="n"&gt;th&lt;/span&gt;&lt;span class="o"&gt;[]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="k"&gt;new&lt;/span&gt; &lt;span class="n"&gt;Thread&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="o"&gt;];&lt;/span&gt;
+   &lt;span class="n"&gt;Thread&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;sleep&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;6000&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
+   &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="kt"&gt;int&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt; &lt;span class="n"&gt;th&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;length&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="o"&gt;++)&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+     &lt;span class="n"&gt;th&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="k"&gt;new&lt;/span&gt; &lt;span class="n"&gt;Thread&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;fb&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
+     &lt;span class="n"&gt;th&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="o"&gt;].&lt;/span&gt;&lt;span class="na"&gt;start&lt;/span&gt;&lt;span class="o"&gt;();&lt;/span&gt;
+   &lt;span class="o"&gt;}&lt;/span&gt;
+
+   &lt;span class="n"&gt;Long&lt;/span&gt; &lt;span class="n"&gt;startTime&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;System&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;currentTimeMillis&lt;/span&gt;&lt;span class="o"&gt;();&lt;/span&gt;
+   &lt;span class="k"&gt;while&lt;/span&gt; &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="kc"&gt;true&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+     &lt;span class="n"&gt;Long&lt;/span&gt; &lt;span class="n"&gt;endTime&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;System&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;currentTimeMillis&lt;/span&gt;&lt;span class="o"&gt;();&lt;/span&gt;
+     &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;endTime&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="n"&gt;startTime&lt;/span&gt; &lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="mi"&gt;11000&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+       &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="kt"&gt;int&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt; &lt;span class="n"&gt;th&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;length&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="o"&gt;++)&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+         &lt;span class="n"&gt;th&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="o"&gt;].&lt;/span&gt;&lt;span class="na"&gt;stop&lt;/span&gt;&lt;span class="o"&gt;();&lt;/span&gt;
+       &lt;span class="o"&gt;}&lt;/span&gt;
+       &lt;span class="n"&gt;timeout&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kc"&gt;true&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+       &lt;span class="k"&gt;break&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+     &lt;span class="o"&gt;}&lt;/span&gt;
+     &lt;span class="n"&gt;Thread&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;sleep&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;3000&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
+   &lt;span class="o"&gt;}&lt;/span&gt;
+   &lt;span class="n"&gt;System&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;out&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;println&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;The end&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
+ &lt;span class="o"&gt;}&lt;/span&gt;
+
+ &lt;span class="nd"&gt;@Override&lt;/span&gt;
+ &lt;span class="kd"&gt;public&lt;/span&gt; &lt;span class="kt"&gt;void&lt;/span&gt; &lt;span class="nf"&gt;run&lt;/span&gt;&lt;span class="o"&gt;()&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+   &lt;span class="k"&gt;try&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+     &lt;span class="n"&gt;Robot&lt;/span&gt; &lt;span class="n"&gt;rb&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="k"&gt;new&lt;/span&gt; &lt;span class="n"&gt;Robot&lt;/span&gt;&lt;span class="o"&gt;();&lt;/span&gt;
+     &lt;span class="k"&gt;while&lt;/span&gt; &lt;span class="o"&gt;(!&lt;/span&gt;&lt;span class="n"&gt;timeout&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+       &lt;span class="n"&gt;rb&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;mousePress&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;InputEvent&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;BUTTON1_MASK&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
+       &lt;span class="n"&gt;rb&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;mouseRelease&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;InputEvent&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;BUTTON1_MASK&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
+     &lt;span class="o"&gt;}&lt;/span&gt;
+   &lt;span class="o"&gt;}&lt;/span&gt; &lt;span class="k"&gt;catch&lt;/span&gt; &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;AWTException&lt;/span&gt; &lt;span class="n"&gt;e&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+     &lt;span class="n"&gt;e&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;printStackTrace&lt;/span&gt;&lt;span class="o"&gt;();&lt;/span&gt;
+   &lt;span class="o"&gt;}&lt;/span&gt;
+ &lt;span class="o"&gt;}&lt;/span&gt;
+&lt;span class="o"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;How to use this code..?&lt;/p&gt;
+&lt;p&gt;Compile and Run this java Code and place your mouse on START Button...&lt;/p&gt;
+&lt;div class="separator" style="clear: both; text-align: center;"&gt;&lt;p&gt;&lt;a class="reference external" href="http://apps.facebook.com/swtsubqaslfoptcmo/"&gt;&lt;img alt="image1" src="http://1.bp.blogspot.com/-H8OtXSjTogY/TWgPnMDeg0I/AAAAAAAAAng/24lE9fshwhg/s400/fb_click_apps.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;&lt;em&gt;Think like a programmer..&lt;/em&gt; i copied this quote from him... 😄&lt;/p&gt;
+</summary><category term="Browser"></category><category term="hacking"></category><category term="java"></category></entry><entry><title>Flash Log with date and time</title><link href="http://www.arulraj.net/2010/11/flash-log-with-date-and-time.html" rel="alternate"></link><published>2010-11-16T15:50:00+05:30</published><author><name>arul</name></author><id>tag:www.arulraj.net,2010-11-16:2010/11/flash-log-with-date-and-time.html</id><summary type="html">&lt;p&gt;&lt;strong&gt;Flash trace with Date and Time&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://3.bp.blogspot.com/_X5tq9y9xv2s/TOLw1JAze1I/AAAAAAAAAjY/ht0kfAZ_v5A/s1600/Flex+with+Log.png"&gt;&lt;img alt="image0" src="http://3.bp.blogspot.com/_X5tq9y9xv2s/TOLw1JAze1I/AAAAAAAAAjY/ht0kfAZ_v5A/s320/Flex+with+Log.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;When i am work with a&amp;nbsp;Difficult&amp;nbsp;Flex application its hard to find which log is come first and which one come second in the flashlog trace. I searching for any log4j api like in flex. Yes i got.. Flex have that inbuit. Here i share that how to i use in my project... The Class is &amp;quot;&lt;strong&gt;TraceTarget&lt;/strong&gt;&amp;quot;... Using that class you can trace your log in different way like Debug, Info, Warn and Error.. Here is My example&lt;/p&gt;
+ &lt;!--  TODO : pelican better_figures_and_images is failed because of object data is null --&gt;
+&lt;object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" width="300" height="150" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,40,0"&gt;
+   &lt;embed type="application/x-shockwave-flash" width="300" height="150" src="http://files.arulraj.net/code/flash/example/LogExample/logexample.swf"&gt;
+   &lt;/embed&gt;
+&lt;/object&gt;&lt;p&gt;&lt;strong&gt;sharedaaExample.mxml&lt;/strong&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="cp"&gt;&amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;UTF-8&amp;quot;?&amp;gt;&lt;/span&gt;
+&lt;span class="nt"&gt;&amp;lt;mx:Application&lt;/span&gt; &lt;span class="na"&gt;xmlns:mx=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;http://www.adobe.com/2006/mxml&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;xmlns:sharedaa=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;com.sharedaa.\*&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;creationComplete=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;creationComplete()&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;preinitialize=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;initLogging()&amp;quot;&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class="nt"&gt;&amp;lt;mx:Script&amp;gt;&lt;/span&gt;
+  &lt;span class="s"&gt;&amp;lt;![CDATA[&lt;/span&gt;
+   &lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;mx.logging.Log&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+   &lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;mx.logging.ILogger&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+   &lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;mx.logging.LogEventLevel&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+   &lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;mx.logging.targets.TraceTarget&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+   &lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;flash.ui.ContextMenu&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+   &lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;flash.ui.ContextMenuItem&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+   &lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;flash.net.navigateToURL&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+   &lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;flash.net.URLRequest&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+
+   &lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;flash.events.ContextMenuEvent&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+
+   &lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;flash.display.StageDisplayState&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+
+   &lt;span class="kd"&gt;private&lt;/span&gt; &lt;span class="kd"&gt;var&lt;/span&gt; &lt;span class="n"&gt;chatContextMenu&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="kt"&gt;ContextMenu&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+
+   &lt;span class="kd"&gt;private&lt;/span&gt; &lt;span class="kd"&gt;function &lt;/span&gt;&lt;span class="nf"&gt;initLogging&lt;/span&gt;&lt;span class="o"&gt;():&lt;/span&gt; &lt;span class="kt"&gt;void&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+     &lt;span class="c1"&gt;// Create a target.&lt;/span&gt;
+     &lt;span class="kd"&gt;var&lt;/span&gt; &lt;span class="n"&gt;logTarget&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="kt"&gt;TraceTarget&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="k"&gt;new&lt;/span&gt; &lt;span class="kt"&gt;TraceTarget&lt;/span&gt;&lt;span class="o"&gt;();&lt;/span&gt;
+
+     &lt;span class="c1"&gt;// Log only messages for the following packages&lt;/span&gt;
+     &lt;span class="n"&gt;logTarget&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;filters&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;com.sharedaa.\*&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;];&lt;/span&gt;
+
+     &lt;span class="c1"&gt;// Log all log levels.&lt;/span&gt;
+     &lt;span class="n"&gt;logTarget&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;level&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;LogEventLevel&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;ALL&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+
+     &lt;span class="c1"&gt;// Add date, time, category, and log level to the output.&lt;/span&gt;
+     &lt;span class="n"&gt;logTarget&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;includeDate&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kc"&gt;true&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+     &lt;span class="n"&gt;logTarget&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;includeTime&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kc"&gt;true&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+     &lt;span class="n"&gt;logTarget&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;includeCategory&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kc"&gt;true&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+     &lt;span class="n"&gt;logTarget&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;includeLevel&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kc"&gt;true&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+
+     &lt;span class="c1"&gt;// Begin logging.&lt;/span&gt;
+     &lt;span class="n"&gt;Log&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;addTarget&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;logTarget&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
+   &lt;span class="o"&gt;}&lt;/span&gt;
+
+   &lt;span class="kd"&gt;private&lt;/span&gt; &lt;span class="kd"&gt;function &lt;/span&gt;&lt;span class="nf"&gt;addContextMenu&lt;/span&gt;&lt;span class="o"&gt;():&lt;/span&gt; &lt;span class="kt"&gt;void&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+     &lt;span class="n"&gt;chatContextMenu&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="k"&gt;new&lt;/span&gt; &lt;span class="kt"&gt;ContextMenu&lt;/span&gt;&lt;span class="o"&gt;();&lt;/span&gt;
+     &lt;span class="n"&gt;chatContextMenu&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;hideBuiltInItems&lt;/span&gt;&lt;span class="o"&gt;();&lt;/span&gt;
+     &lt;span class="kd"&gt;var&lt;/span&gt; &lt;span class="n"&gt;item&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="kt"&gt;ContextMenuItem&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="k"&gt;new&lt;/span&gt; &lt;span class="kt"&gt;ContextMenuItem&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;www.arulraj.net&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
+     &lt;span class="n"&gt;item&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;addEventListener&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;menuItemSelect&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="n"&gt;openNewWindow&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
+     &lt;span class="n"&gt;chatContextMenu&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;customItems&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;push&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;item&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
+     &lt;span class="k"&gt;this&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;contextMenu&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;chatContextMenu&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+   &lt;span class="o"&gt;}&lt;/span&gt;
+
+   &lt;span class="kd"&gt;private&lt;/span&gt; &lt;span class="kd"&gt;function &lt;/span&gt;&lt;span class="nf"&gt;openNewWindow&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;event&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="kt"&gt;ContextMenuEvent&lt;/span&gt;&lt;span class="o"&gt;):&lt;/span&gt; &lt;span class="kt"&gt;void&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+     &lt;span class="n"&gt;navigateToURL&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="k"&gt;new&lt;/span&gt; &lt;span class="kt"&gt;URLRequest&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;http://www.arulraj.net&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;),&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;\_blank&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
+   &lt;span class="o"&gt;}&lt;/span&gt;
+
+   &lt;span class="kd"&gt;private&lt;/span&gt; &lt;span class="kd"&gt;function &lt;/span&gt;&lt;span class="nf"&gt;creationComplete&lt;/span&gt;&lt;span class="o"&gt;():&lt;/span&gt; &lt;span class="kt"&gt;void&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+     &lt;span class="n"&gt;addContextMenu&lt;/span&gt;&lt;span class="o"&gt;();&lt;/span&gt;
+     &lt;span class="n"&gt;main&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;initMain&lt;/span&gt;&lt;span class="o"&gt;();&lt;/span&gt;
+     &lt;span class="n"&gt;main&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;printLog&lt;/span&gt;&lt;span class="o"&gt;();&lt;/span&gt;
+   &lt;span class="o"&gt;}&lt;/span&gt;
+   &lt;span class="s"&gt;]]&amp;gt;&lt;/span&gt;
+  &lt;span class="nt"&gt;&amp;lt;/mx:Script&amp;gt;&lt;/span&gt;
+  &lt;span class="nt"&gt;&amp;lt;mx:Canvas&lt;/span&gt; &lt;span class="na"&gt;id=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;sharedaa&amp;quot;&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class="nt"&gt;&amp;lt;mx:Canvas&lt;/span&gt; &lt;span class="na"&gt;id=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;mainCanvas&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;x=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;0&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;y=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;0&amp;quot;&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;
+      &lt;span class="nt"&gt;&amp;lt;sharedaa:Main&lt;/span&gt; &lt;span class="na"&gt;x=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;0&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;y=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;0&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;id=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;main&amp;quot;&lt;/span&gt; &lt;span class="nt"&gt;/&amp;gt;&lt;/span&gt;
+      &lt;span class="nt"&gt;&amp;lt;mx:Label&lt;/span&gt; &lt;span class="na"&gt;text=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;Example for Trace with Time&amp;quot;&lt;/span&gt; &lt;span class="nt"&gt;/&amp;gt;&lt;/span&gt;
+    &lt;span class="nt"&gt;&amp;lt;/mx:Canvas&amp;gt;&lt;/span&gt;
+  &lt;span class="nt"&gt;&amp;lt;/mx:Canvas&amp;gt;&lt;/span&gt;
+&lt;span class="nt"&gt;&amp;lt;/mx:Application&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;And the Actionscript file is&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Main.as&lt;/strong&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;package&lt;/span&gt; &lt;span class="nn"&gt;com.sharedaa&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+
+  &lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;mx.containers.VBox&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+  &lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;mx.logging.Log&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+  &lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;mx.logging.ILogger&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+
+  &lt;span class="kd"&gt;public&lt;/span&gt; &lt;span class="kd"&gt;class&lt;/span&gt; &lt;span class="n"&gt;Main&lt;/span&gt; &lt;span class="kd"&gt;extends&lt;/span&gt; &lt;span class="n"&gt;VBox&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+
+    &lt;span class="kd"&gt;private&lt;/span&gt; &lt;span class="kd"&gt;static&lt;/span&gt; &lt;span class="kd"&gt;var&lt;/span&gt; &lt;span class="n"&gt;LOG&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="kt"&gt;ILogger&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Log&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;getLogger&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;com.sharedaa.Main&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
+
+    &lt;span class="kd"&gt;public&lt;/span&gt; &lt;span class="kd"&gt;function &lt;/span&gt;&lt;span class="nf"&gt;initMain&lt;/span&gt;&lt;span class="o"&gt;():&lt;/span&gt; &lt;span class="kt"&gt;void&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+      &lt;span class="n"&gt;LOG&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;debug&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;intialize main&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
+    &lt;span class="o"&gt;}&lt;/span&gt;
+
+    &lt;span class="kd"&gt;public&lt;/span&gt; &lt;span class="kd"&gt;function &lt;/span&gt;&lt;span class="nf"&gt;printLog&lt;/span&gt;&lt;span class="o"&gt;():&lt;/span&gt; &lt;span class="kt"&gt;void&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+      &lt;span class="n"&gt;LOG&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;info&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;This is a info log&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
+      &lt;span class="n"&gt;LOG&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;debug&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;here is a debug log&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
+      &lt;span class="n"&gt;LOG&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;warn&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;display your warnings here&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
+      &lt;span class="n"&gt;LOG&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;error&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;This is a error&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
+    &lt;span class="o"&gt;}&lt;/span&gt;
+  &lt;span class="o"&gt;}&lt;/span&gt;
+&lt;span class="o"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://4.bp.blogspot.com/_X5tq9y9xv2s/TOL8Ey1125I/AAAAAAAAAjc/BzeYVgfdvfI/s1600/flash+log+with+time.png"&gt;&lt;img alt="image1" src="http://4.bp.blogspot.com/_X5tq9y9xv2s/TOL8Ey1125I/AAAAAAAAAjc/BzeYVgfdvfI/s320/flash+log+with+time.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;If you know better than this reply your ideas in comments...&lt;/p&gt;
+</summary><category term="Browser"></category><category term="Flash"></category><category term="Programming"></category></entry><entry><title>How to add www to your domain name</title><link href="http://www.arulraj.net/2010/03/how-to-add-www-to-your-domain-name.html" rel="alternate"></link><published>2010-03-08T04:36:00+05:30</published><author><name>arul</name></author><id>tag:www.arulraj.net,2010-03-08:2010/03/how-to-add-www-to-your-domain-name.html</id><summary type="html">&lt;p&gt;&lt;strong&gt;How to add www to your domain name&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://3.bp.blogspot.com/_X5tq9y9xv2s/S5TOlrA6HBI/AAAAAAAAAMo/46plgLZv_mw/s1600-h/htaccess.gif"&gt;&lt;img alt="image0" src="http://3.bp.blogspot.com/_X5tq9y9xv2s/S5TOlrA6HBI/AAAAAAAAAMo/46plgLZv_mw/s400/htaccess.gif" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Before going to the htaccess . You need to answer my question, The question is&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Do you think arulraj.net and www.arulraj.net both are different domain name or same ..?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;ya. we (humans) know both are points the same web page. But the search
+engine robots assume this both are different one. As a result duplicate
+results in the search results. To avoid this problem you need to develop
+search engine friendly web pages.&lt;/p&gt;
+&lt;p&gt;Now the topic,&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;How to add www in front of your domain name ..?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;For this you are aware of &lt;a class="reference external" href="http://en.wikipedia.org/wiki/Htaccess"&gt;htaccess&lt;/a&gt; file and where it is located.&lt;/p&gt;
+&lt;p&gt;htaccess - Hypertext Access&lt;/p&gt;
+&lt;p&gt;The file located in root directory of your domain name .&lt;/p&gt;
+&lt;p&gt;For example : &lt;em&gt;/home/&amp;lt;username&amp;gt;/public_html/&amp;lt;domain dir name&amp;gt;/.htaccess&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;That above structure in Bluehost.Now add this line to your .htaccess
+file&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;RewriteEngine On
+RewriteBase /
+RewriteCond %{HTTP\_HOST} ^sharedaa\\.com$ [NC]
+RewriteRule ^(.*)$ http://www.sharedaa.com/$1 [R=301,L]
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Now anyone type sharedaa.com in browser it is automatically redirect to
+www.sharedaa.com&lt;/p&gt;
+&lt;p&gt;How to redirect to index page if the page is not available ..?&lt;/p&gt;
+&lt;p&gt;One of your page is indexed in search engine. You remove the page, at
+this time you want to redirect to home page. how to do this.Add the
+below line to your htaccess file.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.php [L]
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;The final .htaccess file will be&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;# Use PHP5CGI as default
+AddHandler application/x-httpd-php5 .php
+
+# BEGIN
+&amp;lt;IfModule mod_rewrite.c&amp;gt;
+RewriteEngine On
+RewriteBase /
+RewriteCond %{HTTP_HOST} ^sharedaa\.com$ [NC]
+RewriteRule ^(.\*)$ http://www.sharedaa.com/$1 [R=301,L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.php [L]
+&amp;lt;/IfModule&amp;gt;
+
+# END
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;How to add www to your wordpress blog ..?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Go to Setting --&amp;gt; General setting page and in the Blog Address text box enter your domain name with www . for example &lt;a class="reference external" href="http://www.sharedaa.com"&gt;http://www.sharedaa.com&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://1.bp.blogspot.com/_X5tq9y9xv2s/S5TVR_LfRuI/AAAAAAAAAMw/sOJ7-_iVg1Q/s1600-h/wordpress-www.jpg"&gt;&lt;img alt="image1" src="http://1.bp.blogspot.com/_X5tq9y9xv2s/S5TVR_LfRuI/AAAAAAAAAMw/sOJ7-_iVg1Q/s400/wordpress-www.jpg" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Reference : &lt;a class="reference external" href="http://www.thesitewizard.com/apache/index.shtml"&gt;http://www.thesitewizard.com/apache/index.shtml&lt;/a&gt;&lt;/p&gt;
+</summary><category term="Browser"></category><category term="php"></category><category term="how to"></category><category term="hosting"></category></entry><entry><title>Flash Player Debugger</title><link href="http://www.arulraj.net/2010/03/flash-player-debugger.html" rel="alternate"></link><published>2010-03-07T23:27:00+05:30</published><author><name>arul</name></author><id>tag:www.arulraj.net,2010-03-07:2010/03/flash-player-debugger.html</id><summary type="html">&lt;p&gt;&lt;strong&gt;Flash Player Debugger&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://1.bp.blogspot.com/_X5tq9y9xv2s/S5SG-gaYi8I/AAAAAAAAAMg/SXqWMtnCTEk/s1600-h/adobeflashplayer.jpg"&gt;&lt;img alt="image0" src="http://1.bp.blogspot.com/_X5tq9y9xv2s/S5SG-gaYi8I/AAAAAAAAAMg/SXqWMtnCTEk/s400/adobeflashplayer.jpg" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;How to get the flash player debugger version ...?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;You can download the flashplayer debugger version from here &lt;a class="reference external" href="http://www.adobe.com/support/flashplayer/downloads.html"&gt;http://www.adobe.com/support/flashplayer/downloads.html&lt;/a&gt; .&lt;/p&gt;
+&lt;p&gt;The direct download link for windows is For &lt;a class="reference external" href="http://download.macromedia.com/pub/flashplayer/updaters/10/flashplayer_10_ax_debug.exe"&gt;IE&lt;/a&gt; and for &lt;a class="reference external" href="http://download.macromedia.com/pub/flashplayer/updaters/10/flashplayer_10_plugin_debug.exe"&gt;mozilla&lt;/a&gt;. Using the debugger version the trace output will be printed in flashlog.txt .&lt;/p&gt;
+&lt;p&gt;The &lt;tt class="docutils literal"&gt;flashlog.txt&lt;/tt&gt; path&lt;/p&gt;
+&lt;p&gt;For windows xp is&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;C:\Documents and Settings\&amp;lt;username&amp;gt;\Application Data\Macromedia\Flash Player\Logs\flashlog.txt
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;For Windows Vista and windows 7 is&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;C:\Users\&amp;lt;username&amp;gt;\AppData\Roaming\Macromedia\Flash Player\Logs\flashlog.txt
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;Debugging ..?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;If the trace not shown on the log create &lt;tt class="docutils literal"&gt;mm.cfg&lt;/tt&gt; file .&lt;/p&gt;
+&lt;p&gt;Create a file for Windows XP &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;c:\Documents&lt;/span&gt; and &lt;span class="pre"&gt;Settings\&amp;lt;username&amp;gt;\mm.cfg&lt;/span&gt;&lt;/tt&gt; for Vista and Windows 7 &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;C:\Users\&amp;lt;username&amp;gt;\mm.cfg&lt;/span&gt;&lt;/tt&gt; with the following&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;ErrorReportingEnable=0
+TraceOutputFileEnable=1
+MaxWarnings=0
+&lt;/pre&gt;&lt;/div&gt;
+</summary><category term="Browser"></category><category term="Flash"></category><category term="Widget"></category><category term="windows"></category></entry></feed>

@@ -1,0 +1,356 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Arul Blog</title><link href="http://www.arulraj.net/" rel="alternate"></link><link href="http://www.arulraj.net/feeds/tag/red5.atom.xml" rel="self"></link><id>http://www.arulraj.net/</id><updated>2013-11-21T11:09:00+05:30</updated><entry><title>Video On Demand (VOD) for red5 0.8.0 server</title><link href="http://www.arulraj.net/2013/11/video-on-demand-vod-for-red5-0-8-0-server.html" rel="alternate"></link><published>2013-11-21T11:09:00+05:30</published><author><name>arul</name></author><id>tag:www.arulraj.net,2013-11-21:2013/11/video-on-demand-vod-for-red5-0-8-0-server.html</id><summary type="html">&lt;div class="section" id="vod-for-old-red5-servers"&gt;
+&lt;h2&gt;VOD for old red5 servers&lt;/h2&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://1.bp.blogspot.com/-wD-fNduMIIM/Uo4vprkeTvI/AAAAAAAAVdE/5-49LcM-0Vk/s1600/red5-vod.png"&gt;&lt;img alt="VOD app" src="http://1.bp.blogspot.com/-wD-fNduMIIM/Uo4vprkeTvI/AAAAAAAAVdE/5-49LcM-0Vk/s320/red5-vod.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Nowadays video on demand application available in latest red5 servers.
+The vod webapp is not available in &amp;nbsp;old version less than red5-1.0.0.
+Here I will give you the link to download for vod app for older red5.&lt;/p&gt;
+&lt;p&gt;Download vod webapp &lt;a class="reference external" href="http://files.arulraj.net/code/java/red5/vod.zip"&gt;vod.zip&lt;/a&gt;&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Download the above zip file&lt;/li&gt;
+&lt;li&gt;Extract the zip file&lt;/li&gt;
+&lt;li&gt;Copy the vod folder into webapps folder of your red5&lt;/li&gt;
+&lt;li&gt;Start the server&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Note: This app only works with 0.8.0, 0.9.0 and 0.9.1 versions of red5.&lt;/p&gt;
+&lt;/div&gt;
+</summary><category term="red5"></category><category term="video streaming"></category><category term="Flash"></category><category term="Programming"></category></entry><entry><title>Red5 with Spring MVC</title><link href="http://www.arulraj.net/2012/04/red5-with-spring-mvc.html" rel="alternate"></link><published>2012-04-13T15:55:00+05:30</published><author><name>arul</name></author><id>tag:www.arulraj.net,2012-04-13:2012/04/red5-with-spring-mvc.html</id><summary type="html">&lt;p&gt;&lt;strong&gt;Access Red5 context in spring MVC DispatcherServlet&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://2.bp.blogspot.com/--6PGozKYyQY/T4ieL7Dv2KI/AAAAAAAAOjw/rUknwLPrOlY/s1600/Untitled.png"&gt;&lt;img alt="image0" src="http://2.bp.blogspot.com/--6PGozKYyQY/T4ieL7Dv2KI/AAAAAAAAOjw/rUknwLPrOlY/s320/Untitled.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Before we start, some prerequisites for reader.&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;How Spring MVC works. &lt;a class="reference external" href="http://static.springsource.org/spring/docs/3.0.x/spring-framework-reference/html/mvc.html"&gt;tutorial&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Basic knowledge about red5.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Then only you can understand clearly 😄 . If you don't have, no worries. Having knowledge in core java and servlet is enough&lt;/p&gt;
+&lt;p&gt;Day by day I experienced in Red5. I will explain a useful enhancement about red5. Let's start...&lt;/p&gt;
+&lt;p&gt;Red5 is an open source flash media server. If your webapplication is in the same server you can build some&amp;nbsp;interesting&amp;nbsp;streaming&amp;nbsp;apps by binding your webapp and red5app. But you can not use red5 as a web application server, because by default RTMPServlet support macromedia-fcs (application/x-fcs) content type not http. But Internally Red5 uses Tomcat and Spring. By simple tweaks you can add http support for your red5 application.&lt;/p&gt;
+&lt;p&gt;So I add my own Red5DispatcherServlet in red5app web.xml to handle http request.&lt;/p&gt;
+&lt;p&gt;add this in your web.xml&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nt"&gt;&amp;lt;servlet&amp;gt;&lt;/span&gt;
+  &lt;span class="nt"&gt;&amp;lt;servlet-name&amp;gt;&lt;/span&gt;red5Demo-web&lt;span class="nt"&gt;&amp;lt;/servlet-name&amp;gt;&lt;/span&gt;
+  &lt;span class="nt"&gt;&amp;lt;servlet-class&amp;gt;&lt;/span&gt;com.demo.web.servlet.Red5DispatcherServlet&lt;span class="nt"&gt;&amp;lt;/servlet-class&amp;gt;&lt;/span&gt;
+  &lt;span class="nt"&gt;&amp;lt;init-param&amp;gt;&lt;/span&gt;
+    &lt;span class="nt"&gt;&amp;lt;param-name&amp;gt;&lt;/span&gt;contextConfigLocation&lt;span class="nt"&gt;&amp;lt;/param-name&amp;gt;&lt;/span&gt;
+    &lt;span class="nt"&gt;&amp;lt;param-value&amp;gt;&lt;/span&gt;/WEB-INF/red5Demo-dispatcher-servlet.xml&lt;span class="nt"&gt;&amp;lt;/param-value&amp;gt;&lt;/span&gt;
+  &lt;span class="nt"&gt;&amp;lt;/init-param&amp;gt;&lt;/span&gt;
+&lt;span class="nt"&gt;&amp;lt;/servlet&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;All&amp;nbsp;configurations&amp;nbsp;files in&amp;nbsp;&lt;a class="reference external" href="https://github.com/arulrajnet/red5Demo/tree/master/java/webapp/WEB-INF"&gt;https://github.com/arulrajnet/red5Demo/tree/master/java/webapp/WEB-INF&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;You can use the default spring mvc DispatcherServlet. But problem is you can't access the red5 context from your controller. It means all objects loaded by red5 ContextLoggingListener can't be accessble from your web context. Did you understand...?&lt;/p&gt;
+&lt;p&gt;ok. Usually spring DispatcherServlet creates one web context and sets parents as ApplicationContext loaded by spring mvc ContextLoaderListener. Did you notice in red5app web.xml file we are using red5 own context loader listener. So if you use Spring mvc DispatcherServlet there is no parent context.&lt;/p&gt;
+&lt;p&gt;To override this we have to set red5 ApplicationContext as DispatcherServlet parent context. For that only I have some customization&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Red5DispatcherServlet.java&lt;/strong&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;package&lt;/span&gt; &lt;span class="nn"&gt;com.demo.web.servlet&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;org.red5.logging.Red5LoggerFactory&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;org.slf4j.Logger&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;org.springframework.web.context.WebApplicationContext&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;org.springframework.web.context.support.WebApplicationContextUtils&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;org.springframework.web.servlet.DispatcherServlet&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+
+&lt;span class="kd"&gt;public&lt;/span&gt; &lt;span class="kd"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;Red5DispatcherServlet&lt;/span&gt; &lt;span class="kd"&gt;extends&lt;/span&gt; &lt;span class="n"&gt;DispatcherServlet&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+
+  &lt;span class="kd"&gt;private&lt;/span&gt; &lt;span class="kd"&gt;static&lt;/span&gt; &lt;span class="kd"&gt;final&lt;/span&gt; &lt;span class="kt"&gt;long&lt;/span&gt; &lt;span class="n"&gt;serialVersionUID&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;1L&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+
+  &lt;span class="kd"&gt;private&lt;/span&gt; &lt;span class="kd"&gt;static&lt;/span&gt; &lt;span class="kd"&gt;final&lt;/span&gt; &lt;span class="n"&gt;Logger&lt;/span&gt; &lt;span class="n"&gt;LOG&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Red5LoggerFactory&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;getLogger&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;Red5DispatcherServlet&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;class&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;red5Demo&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
+
+  &lt;span class="kd"&gt;private&lt;/span&gt; &lt;span class="n"&gt;WebApplicationContext&lt;/span&gt; &lt;span class="n"&gt;parentContext&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+
+  &lt;span class="nd"&gt;@Override&lt;/span&gt;
+  &lt;span class="kd"&gt;protected&lt;/span&gt; &lt;span class="n"&gt;WebApplicationContext&lt;/span&gt; &lt;span class="nf"&gt;initWebApplicationContext&lt;/span&gt;&lt;span class="o"&gt;()&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+    &lt;span class="n"&gt;WebApplicationContext&lt;/span&gt; &lt;span class="n"&gt;wac&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kc"&gt;null&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+    &lt;span class="n"&gt;parentContext&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;WebApplicationContextUtils&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;getWebApplicationContext&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;getServletContext&lt;/span&gt;&lt;span class="o"&gt;());&lt;/span&gt;
+    &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;parentContext&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="kc"&gt;null&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+      &lt;span class="n"&gt;parentContext&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;WebApplicationContext&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;
+      &lt;span class="n"&gt;getServletContext&lt;/span&gt;&lt;span class="o"&gt;().&lt;/span&gt;&lt;span class="na"&gt;getAttribute&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;
+      &lt;span class="n"&gt;WebApplicationContext&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;ROOT_WEB_APPLICATION_CONTEXT_ATTRIBUTE&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
+    &lt;span class="o"&gt;}&lt;/span&gt;
+    &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;parentContext&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="kc"&gt;null&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+      &lt;span class="n"&gt;LOG&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;error&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;No web application context found.&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
+    &lt;span class="o"&gt;}&lt;/span&gt; &lt;span class="k"&gt;else&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+      &lt;span class="n"&gt;wac&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;createWebApplicationContext&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;parentContext&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
+    &lt;span class="o"&gt;}&lt;/span&gt;
+
+    &lt;span class="n"&gt;setDetectAllHandlerAdapters&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;Boolean&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;TRUE&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
+    &lt;span class="n"&gt;setDetectAllHandlerMappings&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;Boolean&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;TRUE&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
+    &lt;span class="n"&gt;setDetectAllHandlerExceptionResolvers&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;Boolean&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;TRUE&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
+    &lt;span class="n"&gt;setDetectAllViewResolvers&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;Boolean&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;TRUE&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
+
+    &lt;span class="n"&gt;onRefresh&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;wac&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
+
+    &lt;span class="n"&gt;String&lt;/span&gt; &lt;span class="n"&gt;attrName&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;getServletContextAttributeName&lt;/span&gt;&lt;span class="o"&gt;();&lt;/span&gt;
+    &lt;span class="n"&gt;getServletContext&lt;/span&gt;&lt;span class="o"&gt;().&lt;/span&gt;&lt;span class="na"&gt;setAttribute&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;attrName&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="n"&gt;wac&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
+    &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="k"&gt;this&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;logger&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;isDebugEnabled&lt;/span&gt;&lt;span class="o"&gt;())&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+      &lt;span class="k"&gt;this&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;logger&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;debug&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;Published WebApplicationContext of servlet &amp;#39;&amp;quot;&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;getServletName&lt;/span&gt;&lt;span class="o"&gt;()&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;&amp;#39; as ServletContext attribute with name [&amp;quot;&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;attrName&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;]&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
+    &lt;span class="o"&gt;}&lt;/span&gt;
+
+    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;wac&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+  &lt;span class="o"&gt;}&lt;/span&gt;
+
+  &lt;span class="kd"&gt;public&lt;/span&gt; &lt;span class="n"&gt;WebApplicationContext&lt;/span&gt; &lt;span class="nf"&gt;getParentContext&lt;/span&gt;&lt;span class="o"&gt;()&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;parentContext&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+  &lt;span class="o"&gt;}&lt;/span&gt;
+
+  &lt;span class="kd"&gt;public&lt;/span&gt; &lt;span class="kt"&gt;void&lt;/span&gt; &lt;span class="nf"&gt;setParentContext&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;WebApplicationContext&lt;/span&gt; &lt;span class="n"&gt;parentContext&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+    &lt;span class="k"&gt;this&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;parentContext&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;parentContext&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+  &lt;span class="o"&gt;}&lt;/span&gt;
+&lt;span class="o"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Then define your handlers and view resolvers in red5Demo-dispatcher-servlet.xml&lt;/p&gt;
+&lt;p&gt;I have created one demo application for red5 with spring mvc. please refer github red5Demo &lt;a class="reference external" href="https://github.com/arulrajnet/red5Demo"&gt;https://github.com/arulrajnet/red5Demo&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;To Download this code&lt;/p&gt;
+&lt;p&gt;Install Git then run the below command.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;git clone git@github.com:arulrajnet/red5Demo.git
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;I will write a separate post for setup red5 development environment and how to build that app.&lt;/p&gt;
+</summary><category term="java"></category><category term="red5"></category><category term="spring"></category><category term="Flash"></category><category term="Programming"></category></entry><entry><title>How to add Red5 service</title><link href="http://www.arulraj.net/2010/07/how-to-add-red5-service.html" rel="alternate"></link><published>2010-07-27T13:20:00+05:30</published><author><name>arul</name></author><id>tag:www.arulraj.net,2010-07-27:2010/07/how-to-add-red5-service.html</id><summary type="html">&lt;p&gt;&lt;strong&gt;How to add Red5 service&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="image0" src="http://red5.googlecode.com/svn/doc/trunk/FinalLogo.png" /&gt;&lt;/p&gt;
+&lt;p&gt;In this article you are going to add red5 service in your Linux box.&lt;/p&gt;
+&lt;p&gt;Please use the Below script.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt; &lt;span class="c1"&gt;#!/bin/bash&lt;/span&gt;
+ &lt;span class="c1"&gt;# Author www.arulraj.net&lt;/span&gt;
+ &lt;span class="c1"&gt;# red5    This is used to start, stop, restart and status of red5&lt;/span&gt;
+ &lt;span class="c1"&gt;#&lt;/span&gt;
+
+ &lt;span class="nb"&gt;export&lt;/span&gt; &lt;span class="nv"&gt;RED5_HOME&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;/opt/red5
+
+&lt;span class="nv"&gt;PID&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;0
+ &lt;span class="nv"&gt;RTMPPORT&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;1935
+ &lt;span class="nv"&gt;prog&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;red5&amp;quot;&lt;/span&gt;
+
+ start&lt;span class="o"&gt;(){&lt;/span&gt;
+   status
+   &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt; &lt;span class="nv"&gt;$PID&lt;/span&gt; -eq &lt;span class="m"&gt;0&lt;/span&gt; &lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="k"&gt;then&lt;/span&gt;
+     &lt;span class="nb"&gt;echo&lt;/span&gt; $&lt;span class="s2"&gt;&amp;quot;Starting &lt;/span&gt;&lt;span class="nv"&gt;$prog&lt;/span&gt;&lt;span class="s2"&gt;...&amp;quot;&lt;/span&gt;
+     nohup &lt;span class="nv"&gt;$RED5_HOME&lt;/span&gt;/red5.sh 1&amp;gt; &lt;span class="nv"&gt;$RED5_HOME&lt;/span&gt;/log/stdout.log 2&amp;gt;&lt;span class="nv"&gt;$RED5_HOME&lt;/span&gt;/log/stderr.log &amp;lt; /dev/null &lt;span class="p"&gt;&amp;amp;&lt;/span&gt;
+     &lt;span class="nv"&gt;PID&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$!&lt;/span&gt;
+     &lt;span class="nb"&gt;echo&lt;/span&gt; $&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="nv"&gt;$prog&lt;/span&gt;&lt;span class="s2"&gt; started at port &lt;/span&gt;&lt;span class="nv"&gt;$RTMPPORT&lt;/span&gt;&lt;span class="s2"&gt; and PID[&lt;/span&gt;&lt;span class="nv"&gt;$PID&lt;/span&gt;&lt;span class="s2"&gt;].&amp;quot;&lt;/span&gt;
+   &lt;span class="k"&gt;else&lt;/span&gt;
+     &lt;span class="nb"&gt;echo&lt;/span&gt;
+   &lt;span class="k"&gt;fi&lt;/span&gt;
+   &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="nv"&gt;$PID&lt;/span&gt;
+ &lt;span class="o"&gt;}&lt;/span&gt;
+
+ stop&lt;span class="o"&gt;(){&lt;/span&gt;
+   status
+   &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt; &lt;span class="nv"&gt;$PID&lt;/span&gt; -eq &lt;span class="m"&gt;0&lt;/span&gt; &lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="k"&gt;then&lt;/span&gt;
+     &lt;span class="nb"&gt;echo&lt;/span&gt;
+   &lt;span class="k"&gt;else&lt;/span&gt;
+     &lt;span class="nb"&gt;echo&lt;/span&gt; $&lt;span class="s2"&gt;&amp;quot;Stopping &lt;/span&gt;&lt;span class="nv"&gt;$prog&lt;/span&gt;&lt;span class="s2"&gt;...&amp;quot;&lt;/span&gt;
+     &lt;span class="nv"&gt;$RED5_HOME&lt;/span&gt;/red5-shutdown.sh
+     &lt;span class="nb"&gt;echo&lt;/span&gt; $&lt;span class="s2"&gt;&amp;quot;PID[&lt;/span&gt;&lt;span class="nv"&gt;$PID&lt;/span&gt;&lt;span class="s2"&gt;] is killed.&amp;quot;&lt;/span&gt;
+   &lt;span class="k"&gt;fi&lt;/span&gt;
+   &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="nv"&gt;$PID&lt;/span&gt;
+ &lt;span class="o"&gt;}&lt;/span&gt;
+
+ restart&lt;span class="o"&gt;(){&lt;/span&gt;
+   stop
+   sleep 2
+   start
+ &lt;span class="o"&gt;}&lt;/span&gt;
+
+ status&lt;span class="o"&gt;()&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+   &lt;span class="nv"&gt;RTMPPORT&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="sb"&gt;`&lt;/span&gt;cat &lt;span class="nv"&gt;$RED5_HOME&lt;/span&gt;/conf/red5.properties &lt;span class="p"&gt;|&lt;/span&gt; grep -w &lt;span class="s2"&gt;&amp;quot;rtmp.port&amp;quot;&lt;/span&gt; &lt;span class="p"&gt;|&lt;/span&gt; awk -F&lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;{print $2}&amp;#39;&lt;/span&gt;&lt;span class="sb"&gt;`&lt;/span&gt;
+   &lt;span class="c1"&gt;#PID=`lsof -i | grep java | grep *:$RTMPPORT | awk &amp;#39;{print $2}&amp;#39;`&lt;/span&gt;
+   &lt;span class="nv"&gt;PID&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="sb"&gt;`&lt;/span&gt;ps -ef &lt;span class="p"&gt;|&lt;/span&gt; grep red5 &lt;span class="p"&gt;|&lt;/span&gt; grep java &lt;span class="p"&gt;|&lt;/span&gt; awk &lt;span class="s1"&gt;&amp;#39;{print $2}&amp;#39;&lt;/span&gt;&lt;span class="sb"&gt;`&lt;/span&gt;
+   &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt; x&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="nv"&gt;$PID&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;x&amp;quot;&lt;/span&gt; &lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="k"&gt;then&lt;/span&gt;
+     &lt;span class="nv"&gt;PID&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;0
+     &lt;span class="nb"&gt;echo&lt;/span&gt; $&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="nv"&gt;$prog&lt;/span&gt;&lt;span class="s2"&gt; is not running.&amp;quot;&lt;/span&gt;
+   &lt;span class="k"&gt;else&lt;/span&gt;
+     &lt;span class="nb"&gt;echo&lt;/span&gt; $&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="nv"&gt;$prog&lt;/span&gt;&lt;span class="s2"&gt; running on port &lt;/span&gt;&lt;span class="nv"&gt;$RTMPPORT&lt;/span&gt;&lt;span class="s2"&gt; and PID[&lt;/span&gt;&lt;span class="nv"&gt;$PID&lt;/span&gt;&lt;span class="s2"&gt;].&amp;quot;&lt;/span&gt;
+   &lt;span class="k"&gt;fi&lt;/span&gt;
+   &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="nv"&gt;$PID&lt;/span&gt;
+ &lt;span class="o"&gt;}&lt;/span&gt;
+
+ &lt;span class="c1"&gt;# How its called.&lt;/span&gt;
+ &lt;span class="k"&gt;case&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="nv"&gt;$1&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt; in
+   start&lt;span class="o"&gt;)&lt;/span&gt;
+     start
+   &lt;span class="p"&gt;;;&lt;/span&gt;
+   stop&lt;span class="o"&gt;)&lt;/span&gt;
+     stop
+   &lt;span class="p"&gt;;;&lt;/span&gt;
+   status&lt;span class="o"&gt;)&lt;/span&gt;
+     status
+   &lt;span class="p"&gt;;;&lt;/span&gt;
+   restart&lt;span class="o"&gt;)&lt;/span&gt;
+     restart
+   &lt;span class="p"&gt;;;&lt;/span&gt;
+   *&lt;span class="o"&gt;)&lt;/span&gt;
+     &lt;span class="nb"&gt;echo&lt;/span&gt; $&lt;span class="s2"&gt;&amp;quot;Usage: &lt;/span&gt;&lt;span class="nv"&gt;$0&lt;/span&gt;&lt;span class="s2"&gt; {start|stop|status|restart}&amp;quot;&lt;/span&gt;
+     &lt;span class="nv"&gt;PID&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;1
+ &lt;span class="k"&gt;esac&lt;/span&gt;
+
+ &lt;span class="nb"&gt;exit&lt;/span&gt; &lt;span class="nv"&gt;$PID&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Steps:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Save these shell script lines as a file. For mine i saved as file &amp;quot;red5&amp;quot;. OR You can download this file from &lt;a class="reference external" href="http://arulraj.net/labs/script/red5"&gt;Here&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Copy this file to /etc/init.d/&lt;/li&gt;
+&lt;li&gt;Then execute the below commands to start red5 when your system starts&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://3.bp.blogspot.com/_X5tq9y9xv2s/TFB9KfBDYDI/AAAAAAAAAd0/V698BY0k9jA/s1600/red5+chkconfig+not+working.png"&gt;&lt;img alt="image1" src="http://3.bp.blogspot.com/_X5tq9y9xv2s/TFB9KfBDYDI/AAAAAAAAAd0/V698BY0k9jA/s640/red5+chkconfig+not+working.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;I checked with ubuntu 10.04. For chkconfig work on ubuntu you need to install chkconfig&lt;/p&gt;
+&lt;p&gt;This above script Not working in Ubuntu&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;apt-get install chkconfig
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://3.bp.blogspot.com/_X5tq9y9xv2s/TE8s5WDkvGI/AAAAAAAAAds/kPzFBTdJOeo/s1600/Red5+service+script.png"&gt;&lt;img alt="image2" src="http://3.bp.blogspot.com/_X5tq9y9xv2s/TE8s5WDkvGI/AAAAAAAAAds/kPzFBTdJOeo/s320/Red5+service+script.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Add red5 in startup - ubuntu:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Use this command&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo update-rc.d red5 defaults
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Thanks to anonymous for this info.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Usage:&lt;/strong&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;Start : /etc/init.d/red5 start
+Stop : /etc/init.d/red5 stop
+Status : /etc/init.d/red5 status
+Restart : /etc/init.d/red5 restart
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Please Let me know if you have any issues or better ideas...&lt;/p&gt;
+</summary><category term="commands"></category><category term="Linux"></category><category term="red5"></category><category term="scripting"></category><category term="how to"></category></entry><entry><title>My first 3D flash animation</title><link href="http://www.arulraj.net/2010/02/my-first-3d-flash-animation.html" rel="alternate"></link><published>2010-02-04T03:58:00+05:30</published><author><name>arul</name></author><id>tag:www.arulraj.net,2010-02-04:2010/02/my-first-3d-flash-animation.html</id><summary type="html">&lt;p&gt;&lt;strong&gt;3D Animathion&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://1.bp.blogspot.com/_X5tq9y9xv2s/S2sZE9RI5AI/AAAAAAAAALA/sKwq2ehHqto/s1600-h/away3d+example.jpg"&gt;&lt;img alt="image0" src="http://1.bp.blogspot.com/_X5tq9y9xv2s/S2sZE9RI5AI/AAAAAAAAALA/sKwq2ehHqto/s400/away3d+example.jpg" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Adobe support for native 3D only in cs4. There are lot of opensource
+flash &lt;a class="reference external" href="http://flashenabledblog.com/2008/04/17/flash-3d-list-update/"&gt;3d engines&lt;/a&gt; are there. I tried papervision3d and away3d. Both are quite well. There are lot more tutorials for both online for away3d tutorials&amp;nbsp; &lt;a class="reference external" href="http://away3d.com/tutorials"&gt;click here&lt;/a&gt; , for papervision3d download this &lt;a class="reference external" href="http://www.packtpub.com/article/3d-vector-drawing-and-text-papervision3d-part1"&gt;book&lt;/a&gt;. I got the source code of away3d from the google code &lt;a class="reference external" href="http://code.google.com/p/away3d/"&gt;http://code.google.com/p/away3d/&lt;/a&gt; and for papervison3d svn &lt;a class="reference external" href="http://code.google.com/p/papervision3d/"&gt;http://code.google.com/p/papervision3d/&lt;/a&gt;. I generate swc using the command. The red5 says about &lt;a class="reference external" href="http://osflash.org/away3d"&gt;away3d.&lt;/a&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;D:\sdk\Away3D&amp;gt; compc -include-sources ./src -source-path ./src -target-player 10 -output Away3d.swc
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Initially i got this error when compile away3d &amp;quot;Error: Type was not found or was not a compile-time constant: Vector. in away3d&amp;quot;&lt;/p&gt;
+&lt;p&gt;Then i added the -target-player 10 in command line is fix that error. I think away3d is better than papervision3d. Here is my first animation here&lt;/p&gt;
+&lt;p&gt;I'm using away3d here...&lt;/p&gt;
+&lt;embed src="http://files.arulraj.net/code/flash/away3d/away3d.swf" width="600" height="400"&gt;
+&lt;/embed&gt;&lt;p&gt;Source Code:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kd"&gt;package&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+   &lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;away3d.cameras.Camera3D&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+   &lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;away3d.cameras.HoverCamera3D&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+   &lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;away3d.cameras.TargetCamera3D&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+   &lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;away3d.containers.ObjectContainer3D&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+   &lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;away3d.containers.Scene3D&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+   &lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;away3d.containers.View3D&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+   &lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;away3d.core.math.Number3D&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+   &lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;away3d.materials.BitmapMaterial&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+   &lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;away3d.materials.WireColorMaterial&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+   &lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;away3d.primitives.Cube&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+   &lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;away3d.core.render.Renderer&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+   &lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;away3d.primitives.Sphere&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+   &lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;away3d.primitives.WireSphere&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+   &lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;away3d.core.utils.Cast&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+   &lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;away3d.core.utils.CastError&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+   &lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;flash.display.Bitmap&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+   &lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;flash.display.Sprite&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+   &lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;flash.events.Event&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+   &lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;flash.events.MouseEvent&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+   &lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;flash.geom.Point&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+   &lt;span class="cm"&gt;/**&lt;/span&gt;
+&lt;span class="cm"&gt;    *&lt;/span&gt;
+&lt;span class="cm"&gt;    * @author Arul&lt;/span&gt;
+&lt;span class="cm"&gt;    */&lt;/span&gt;
+   &lt;span class="kd"&gt;public&lt;/span&gt; &lt;span class="kd"&gt;class&lt;/span&gt; &lt;span class="n"&gt;FirstApplication&lt;/span&gt; &lt;span class="kd"&gt;extends&lt;/span&gt; &lt;span class="n"&gt;Sprite&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+      &lt;span class="kd"&gt;public&lt;/span&gt; &lt;span class="kd"&gt;var&lt;/span&gt; &lt;span class="n"&gt;viewer&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="kt"&gt;View3D&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+      &lt;span class="kd"&gt;public&lt;/span&gt; &lt;span class="kd"&gt;var&lt;/span&gt; &lt;span class="n"&gt;scene&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="kt"&gt;Scene3D&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+      &lt;span class="kd"&gt;public&lt;/span&gt; &lt;span class="kd"&gt;var&lt;/span&gt; &lt;span class="n"&gt;camera&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="kt"&gt;Camera3D&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+      &lt;span class="kd"&gt;public&lt;/span&gt; &lt;span class="kd"&gt;var&lt;/span&gt; &lt;span class="n"&gt;cube&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="kt"&gt;Cube&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+      &lt;span class="kd"&gt;public&lt;/span&gt; &lt;span class="kd"&gt;var&lt;/span&gt; &lt;span class="n"&gt;sphere&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="kt"&gt;Sphere&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+      &lt;span class="kd"&gt;public&lt;/span&gt; &lt;span class="kd"&gt;var&lt;/span&gt; &lt;span class="n"&gt;wiresphere&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="kt"&gt;WireSphere&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+      &lt;span class="kd"&gt;public&lt;/span&gt; &lt;span class="kd"&gt;var&lt;/span&gt; &lt;span class="n"&gt;group&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="kt"&gt;ObjectContainer3D&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+      &lt;span class="kd"&gt;public&lt;/span&gt; &lt;span class="kd"&gt;var&lt;/span&gt; &lt;span class="n"&gt;material&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="kt"&gt;WireColorMaterial&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+      &lt;span class="kd"&gt;public&lt;/span&gt; &lt;span class="kd"&gt;var&lt;/span&gt; &lt;span class="n"&gt;bitmapMaterial&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="kt"&gt;BitmapMaterial&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+
+      &lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="n"&gt;Embed&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;source&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;assets/favicon.jpg&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;)]&lt;/span&gt;
+      &lt;span class="kd"&gt;private&lt;/span&gt; &lt;span class="kd"&gt;var&lt;/span&gt; &lt;span class="n"&gt;favicon&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="kt"&gt;Class&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+      &lt;span class="kd"&gt;public&lt;/span&gt; &lt;span class="kd"&gt;var&lt;/span&gt; &lt;span class="n"&gt;image&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="kt"&gt;Bitmap&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="k"&gt;new&lt;/span&gt; &lt;span class="kt"&gt;favicon&lt;/span&gt;&lt;span class="o"&gt;();&lt;/span&gt;
+
+      &lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="n"&gt;SWF&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;backgroundColor&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;#EEE8DA&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;)]&lt;/span&gt;
+
+      &lt;span class="kd"&gt;public&lt;/span&gt; &lt;span class="kd"&gt;function &lt;/span&gt;&lt;span class="nf"&gt;FirstApplication&lt;/span&gt;&lt;span class="o"&gt;()&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+         &lt;span class="n"&gt;init3D&lt;/span&gt;&lt;span class="o"&gt;();&lt;/span&gt;
+      &lt;span class="o"&gt;}&lt;/span&gt;
+
+      &lt;span class="kd"&gt;public&lt;/span&gt; &lt;span class="kd"&gt;function &lt;/span&gt;&lt;span class="nf"&gt;init3D&lt;/span&gt;&lt;span class="o"&gt;():&lt;/span&gt; &lt;span class="kt"&gt;void&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+         &lt;span class="n"&gt;stage&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;frameRate&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;30&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+         &lt;span class="n"&gt;camera&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="k"&gt;new&lt;/span&gt; &lt;span class="kt"&gt;Camera3D&lt;/span&gt;&lt;span class="o"&gt;({&lt;/span&gt;
+            &lt;span class="n"&gt;y&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;400&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt;
+            &lt;span class="n"&gt;z&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;1000&lt;/span&gt;
+         &lt;span class="o"&gt;});&lt;/span&gt;
+         &lt;span class="n"&gt;viewer&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="k"&gt;new&lt;/span&gt; &lt;span class="kt"&gt;View3D&lt;/span&gt;&lt;span class="o"&gt;({&lt;/span&gt;
+            &lt;span class="n"&gt;camera&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;camera&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt;
+            &lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;250&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt;
+            &lt;span class="n"&gt;y&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;100&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt;
+            &lt;span class="n"&gt;z&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;100&lt;/span&gt;
+         &lt;span class="o"&gt;});&lt;/span&gt;
+         &lt;span class="n"&gt;scene&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="k"&gt;new&lt;/span&gt; &lt;span class="kt"&gt;Scene3D&lt;/span&gt;&lt;span class="o"&gt;();&lt;/span&gt;
+         &lt;span class="n"&gt;cube&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="k"&gt;new&lt;/span&gt; &lt;span class="kt"&gt;Cube&lt;/span&gt;&lt;span class="o"&gt;();&lt;/span&gt;
+         &lt;span class="n"&gt;sphere&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="k"&gt;new&lt;/span&gt; &lt;span class="kt"&gt;Sphere&lt;/span&gt;&lt;span class="o"&gt;();&lt;/span&gt;
+         &lt;span class="n"&gt;wiresphere&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="k"&gt;new&lt;/span&gt; &lt;span class="kt"&gt;WireSphere&lt;/span&gt;&lt;span class="o"&gt;();&lt;/span&gt;
+         &lt;span class="n"&gt;group&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="k"&gt;new&lt;/span&gt; &lt;span class="kt"&gt;ObjectContainer3D&lt;/span&gt;&lt;span class="o"&gt;();&lt;/span&gt;
+         &lt;span class="n"&gt;material&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="k"&gt;new&lt;/span&gt; &lt;span class="kt"&gt;WireColorMaterial&lt;/span&gt;&lt;span class="o"&gt;();&lt;/span&gt;
+         &lt;span class="n"&gt;bitmapMaterial&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="k"&gt;new&lt;/span&gt; &lt;span class="kt"&gt;BitmapMaterial&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;Cast&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;bitmap&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;image&lt;/span&gt;&lt;span class="o"&gt;));&lt;/span&gt;
+
+         &lt;span class="n"&gt;material&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;color&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="n"&gt;xA6111D&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+
+         &lt;span class="n"&gt;sphere&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;x&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;100&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+         &lt;span class="n"&gt;sphere&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;y&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;50&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+         &lt;span class="n"&gt;sphere&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;z&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;100&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+         &lt;span class="n"&gt;sphere&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;radius&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;75&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+         &lt;span class="n"&gt;sphere&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;bothsides&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kc"&gt;true&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+         &lt;span class="n"&gt;sphere&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;material&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;material&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+         &lt;span class="n"&gt;group&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;addChild&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;sphere&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
+
+         &lt;span class="n"&gt;wiresphere&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;x&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;270&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+         &lt;span class="n"&gt;wiresphere&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;y&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;150&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+         &lt;span class="n"&gt;wiresphere&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;z&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;150&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+         &lt;span class="n"&gt;wiresphere&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;radius&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;75&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+         &lt;span class="n"&gt;wiresphere&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;bothsides&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kc"&gt;true&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+         &lt;span class="n"&gt;wiresphere&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;material&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;material&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+         &lt;span class="n"&gt;group&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;addChild&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;wiresphere&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
+
+         &lt;span class="n"&gt;cube&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;x&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;250&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+         &lt;span class="n"&gt;cube&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;y&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;250&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+         &lt;span class="n"&gt;cube&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;z&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;400&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+         &lt;span class="n"&gt;cube&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;material&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;bitmapMaterial&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+         &lt;span class="n"&gt;group&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;addChild&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;cube&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
+
+         &lt;span class="n"&gt;viewer&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;scene&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;addChild&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;group&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
+         &lt;span class="n"&gt;viewer&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;render&lt;/span&gt;&lt;span class="o"&gt;();&lt;/span&gt;
+
+         &lt;span class="n"&gt;addChild&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;viewer&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
+
+         &lt;span class="n"&gt;addEventListener&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;Event&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;ENTER_FRAME&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="n"&gt;groupRotation&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
+         &lt;span class="n"&gt;group&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;addEventListener&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;Event&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;ENTER_FRAME&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="n"&gt;sphereRotation&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
+         &lt;span class="c1"&gt;//addEventListener(MouseEvent.MOUSE_DOWN, lookThere);&lt;/span&gt;
+      &lt;span class="o"&gt;}&lt;/span&gt;
+
+      &lt;span class="kd"&gt;public&lt;/span&gt; &lt;span class="kd"&gt;function &lt;/span&gt;&lt;span class="nf"&gt;groupRotation&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;e&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="kt"&gt;Event&lt;/span&gt;&lt;span class="o"&gt;):&lt;/span&gt; &lt;span class="kt"&gt;void&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+         &lt;span class="n"&gt;group&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;rotationX&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;group&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;x&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+         &lt;span class="n"&gt;group&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;applyRotations&lt;/span&gt;&lt;span class="o"&gt;();&lt;/span&gt;
+
+         &lt;span class="n"&gt;viewer&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;render&lt;/span&gt;&lt;span class="o"&gt;();&lt;/span&gt;
+      &lt;span class="o"&gt;}&lt;/span&gt;
+
+      &lt;span class="kd"&gt;public&lt;/span&gt; &lt;span class="kd"&gt;function &lt;/span&gt;&lt;span class="nf"&gt;sphereRotation&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;e&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="kt"&gt;Event&lt;/span&gt;&lt;span class="o"&gt;):&lt;/span&gt; &lt;span class="kt"&gt;void&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+         &lt;span class="n"&gt;sphere&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;rotationX&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;sphere&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;x&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+         &lt;span class="n"&gt;sphere&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;applyRotations&lt;/span&gt;&lt;span class="o"&gt;();&lt;/span&gt;
+
+         &lt;span class="n"&gt;wiresphere&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;rotationZ&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;wiresphere&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;z&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+         &lt;span class="n"&gt;wiresphere&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;applyRotations&lt;/span&gt;&lt;span class="o"&gt;();&lt;/span&gt;
+         &lt;span class="n"&gt;viewer&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;render&lt;/span&gt;&lt;span class="o"&gt;();&lt;/span&gt;
+      &lt;span class="o"&gt;}&lt;/span&gt;
+
+      &lt;span class="kd"&gt;public&lt;/span&gt; &lt;span class="kd"&gt;function &lt;/span&gt;&lt;span class="nf"&gt;lookThere&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;e&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="kt"&gt;MouseEvent&lt;/span&gt;&lt;span class="o"&gt;):&lt;/span&gt; &lt;span class="kt"&gt;void&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+         &lt;span class="kd"&gt;var&lt;/span&gt; &lt;span class="n"&gt;clickpoint&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="kt"&gt;Point&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="k"&gt;new&lt;/span&gt; &lt;span class="kt"&gt;Point&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;e&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;stageX&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="n"&gt;e&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;stageY&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
+         &lt;span class="kd"&gt;var&lt;/span&gt; &lt;span class="n"&gt;hypothines&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="kt"&gt;Number&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Point&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;distance&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="k"&gt;new&lt;/span&gt; &lt;span class="kt"&gt;Point&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="o"&gt;),&lt;/span&gt; &lt;span class="n"&gt;clickpoint&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
+         &lt;span class="kd"&gt;var&lt;/span&gt; &lt;span class="n"&gt;sine&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="kt"&gt;Number&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Math&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;asin&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;e&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;stageX&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt; &lt;span class="n"&gt;hypothines&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
+         &lt;span class="kd"&gt;var&lt;/span&gt; &lt;span class="n"&gt;cos&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="kt"&gt;Number&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Math&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;acos&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;e&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;stageY&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt; &lt;span class="n"&gt;hypothines&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
+         &lt;span class="n"&gt;camera&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;lookAt&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="k"&gt;new&lt;/span&gt; &lt;span class="kt"&gt;Number3D&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;e&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;stageX&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="n"&gt;e&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;stageY&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="n"&gt;hypothines&lt;/span&gt;&lt;span class="o"&gt;));&lt;/span&gt;
+         &lt;span class="cm"&gt;/**&lt;/span&gt;
+&lt;span class="cm"&gt;          * Horizontal angle&lt;/span&gt;
+&lt;span class="cm"&gt;          */&lt;/span&gt;
+         &lt;span class="n"&gt;camera&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;pan&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;cos&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
+         &lt;span class="cm"&gt;/**&lt;/span&gt;
+&lt;span class="cm"&gt;          * vertical angle&lt;/span&gt;
+&lt;span class="cm"&gt;          */&lt;/span&gt;
+         &lt;span class="n"&gt;camera&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;tilt&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;sine&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
+         &lt;span class="n"&gt;viewer&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;render&lt;/span&gt;&lt;span class="o"&gt;();&lt;/span&gt;
+      &lt;span class="o"&gt;}&lt;/span&gt;
+   &lt;span class="o"&gt;}&lt;/span&gt;
+&lt;span class="o"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+</summary><category term="Animation"></category><category term="Flash"></category><category term="red5"></category><category term="Programming"></category></entry></feed>

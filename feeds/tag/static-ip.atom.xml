@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Arul Blog</title><link href="http://www.arulraj.net/" rel="alternate"></link><link href="http://www.arulraj.net/feeds/tag/static-ip.atom.xml" rel="self"></link><id>http://www.arulraj.net/</id><updated>2009-07-14T07:57:00+05:30</updated><entry><title>CentOS Networking FAQ</title><link href="http://www.arulraj.net/2009/07/centos-networking-faq.html" rel="alternate"></link><published>2009-07-14T07:57:00+05:30</published><author><name>arul</name></author><id>tag:www.arulraj.net,2009-07-14:2009/07/centos-networking-faq.html</id><summary type="html">&lt;p&gt;&lt;a class="reference external" href="http://3.bp.blogspot.com/_Tq9uaJI0Xww/SlyToWJ_bHI/AAAAAAAAFFM/U3akGuy-MxU/s1600-h/centos-logo.png"&gt;&lt;img alt="image0" class="align-middle" src="http://3.bp.blogspot.com/_Tq9uaJI0Xww/SlyToWJ_bHI/AAAAAAAAFFM/U3akGuy-MxU/s400/centos-logo.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;How to set static ip..?&lt;/strong&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;root@localhost ~&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="c1"&gt;# cat /etc/sysconfig/network-scripts/ifcfg-eth0&lt;/span&gt;
+&lt;span class="nv"&gt;DEVICE&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;eth0
+&lt;span class="nv"&gt;ONBOOT&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;yes
+&lt;span class="nv"&gt;BOOTPROTO&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;static
+&lt;span class="nv"&gt;IPADDR&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;192.168.1.13
+&lt;span class="nv"&gt;NETMASK&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;255.255.255.0
+&lt;span class="nv"&gt;TYPE&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;Ethernet
+&lt;span class="o"&gt;[&lt;/span&gt;root@localhost ~&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="c1"&gt;#&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Edit your &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;/etc/sysconfig/network-scripts/ifcfg-eth0&lt;/span&gt;&lt;/tt&gt; file like this. Then restart your network.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;How to restart the network..?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;The command for stop the network is &lt;tt class="docutils literal"&gt;/etc/init.d/network stop&lt;/tt&gt;&lt;/p&gt;
+&lt;p&gt;To start the network &lt;tt class="docutils literal"&gt;/etc/init.d/network start&lt;/tt&gt;&lt;/p&gt;
+&lt;p&gt;OR&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;root@localhost ~&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="c1"&gt;# /etc/init.d/network restart&lt;/span&gt;
+Shutting down interface eth0:                              &lt;span class="o"&gt;[&lt;/span&gt;  OK  &lt;span class="o"&gt;]&lt;/span&gt;
+Shutting down loopback interface:                          &lt;span class="o"&gt;[&lt;/span&gt;  OK  &lt;span class="o"&gt;]&lt;/span&gt;
+Bringing up loopback interface:                            &lt;span class="o"&gt;[&lt;/span&gt;  OK  &lt;span class="o"&gt;]&lt;/span&gt;
+Bringing up interface eth0:                                &lt;span class="o"&gt;[&lt;/span&gt;  OK  &lt;span class="o"&gt;]&lt;/span&gt;
+&lt;span class="o"&gt;[&lt;/span&gt;root@localhost ~&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="c1"&gt;#&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;How to stop and start the firewall..?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;To stop &lt;tt class="docutils literal"&gt;/etc/init.d/iptables stop&lt;/tt&gt;&lt;/p&gt;
+&lt;p&gt;To start &lt;tt class="docutils literal"&gt;/etc/init.d/iptables start&lt;/tt&gt;&lt;/p&gt;
+&lt;p&gt;OR&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;root@localhost ~&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="c1"&gt;# /etc/init.d/iptables restart&lt;/span&gt;
+Flushing firewall rules:                                   &lt;span class="o"&gt;[&lt;/span&gt;  OK  &lt;span class="o"&gt;]&lt;/span&gt;
+Setting chains to policy ACCEPT: filter                    &lt;span class="o"&gt;[&lt;/span&gt;  OK  &lt;span class="o"&gt;]&lt;/span&gt;
+Unloading iptables modules:                                &lt;span class="o"&gt;[&lt;/span&gt;  OK  &lt;span class="o"&gt;]&lt;/span&gt;
+Applying iptables firewall rules:                          &lt;span class="o"&gt;[&lt;/span&gt;  OK  &lt;span class="o"&gt;]&lt;/span&gt;
+Loading additional iptables modules: ip_conntrack_netbios_n&lt;span class="o"&gt;[&lt;/span&gt;  OK &lt;span class="o"&gt;]&lt;/span&gt;
+&lt;span class="o"&gt;[&lt;/span&gt;root@localhost ~&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="c1"&gt;#&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;How to view my networking information..?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;command for to view all the networking info &amp;quot;ifconfig&amp;quot;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;root@localhost ~&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="c1"&gt;# ifconfig eth0&lt;/span&gt;
+eth0      Link encap:Ethernet  HWaddr 00:16:3E:A0:00:06
+inet addr:192.168.1.13  Bcast:192.168.1.255  Mask:255.255.255.0
+inet6 addr: fe80::216:3eff:fea0:6/64 Scope:Link
+UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+RX packets:1046 errors:0 dropped:0 overruns:0 frame:0
+TX packets:297 errors:0 dropped:0 overruns:0 carrier:0
+collisions:0 txqueuelen:1000
+RX bytes:81732 &lt;span class="o"&gt;(&lt;/span&gt;79.8 KiB&lt;span class="o"&gt;)&lt;/span&gt;  TX bytes:37712 &lt;span class="o"&gt;(&lt;/span&gt;36.8 KiB&lt;span class="o"&gt;)&lt;/span&gt;
+Interrupt:5 Base address:0x2000
+&lt;span class="o"&gt;[&lt;/span&gt;root@localhost ~&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="c1"&gt;#&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;How to add nameserver..?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Add your nameserver (dns) /etc/resolv.conf like this.Here Airtel dns ip is used.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;root@localhost ~&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="c1"&gt;# cat /etc/resolv.conf&lt;/span&gt;
+&lt;span class="p"&gt;;&lt;/span&gt; generated by /sbin/dhclient-script
+nameserver 203.145.184.13
+search localdomain
+&lt;span class="o"&gt;[&lt;/span&gt;root@localhost ~&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="c1"&gt;#&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;How to add Gateway and Hostname..?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;open the file &lt;tt class="docutils literal"&gt;/etc/sysconfig/network&lt;/tt&gt;. Then add your gateway ip. For the hostname change the HOSTNAME line by default this line is localhost.localdomain. Then restart your network.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;root@localhost ~&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="c1"&gt;# cat /etc/sysconfig/network&lt;/span&gt;
+&lt;span class="nv"&gt;NETWORKING&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;yes
+&lt;span class="nv"&gt;NETWORKING_IPV6&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;no
+&lt;span class="nv"&gt;HOSTNAME&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;yourdomain.com
+&lt;span class="nv"&gt;GATEWAY&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;192.168.1.1
+&lt;span class="o"&gt;[&lt;/span&gt;root@localhost ~&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="c1"&gt;#&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;OR&lt;/p&gt;
+&lt;p&gt;&lt;tt class="docutils literal"&gt;route add &lt;span class="pre"&gt;-net&lt;/span&gt; 0.0.0.0 gw 192.168.1.1&lt;/tt&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;How to add a service..?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Copy your service shell script file to /etc/init.d folder. To add a
+service.&lt;/p&gt;
+&lt;p&gt;&lt;tt class="docutils literal"&gt;[root&amp;#64;localhost ~]# chkconfig &lt;span class="pre"&gt;--&lt;/span&gt; add servicename&lt;/tt&gt;&lt;/p&gt;
+&lt;p&gt;To startup the service at the boot time.&lt;/p&gt;
+&lt;p&gt;&lt;tt class="docutils literal"&gt;[root&amp;#64;localhost ~]# chkconfig &lt;span class="pre"&gt;--level&lt;/span&gt; 5 servicename on&lt;/tt&gt;&lt;/p&gt;
+</summary><category term="Linux"></category><category term="static ip"></category></entry><entry><title>How to set the static ip address in ubuntu..?</title><link href="http://www.arulraj.net/2009/03/how-to-set-the-static-ip-address-in-ubuntu.html" rel="alternate"></link><published>2009-03-04T09:35:00+05:30</published><author><name>arul</name></author><id>tag:www.arulraj.net,2009-03-04:2009/03/how-to-set-the-static-ip-address-in-ubuntu.html</id><summary type="html">&lt;p&gt;edit your /etc/network/interfaces file to&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;auto eth0
+iface eth0 inet static
+address 192.168.0.50
+netmask 255.255.255.0
+network 192.168.0.0
+broadcast 192.168.0.255
+gateway 192.168.0.1
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;after that rebooting your network by excecuting the below command…&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;root@localhost ~&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="c1"&gt;# /etc/init.d/networking restart&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+</summary><category term="Linux"></category><category term="static ip"></category><category term="ubuntu"></category></entry></feed>

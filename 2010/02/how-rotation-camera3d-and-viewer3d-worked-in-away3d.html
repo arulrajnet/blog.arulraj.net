@@ -2,39 +2,42 @@
 <html lang="en">
 
 <head>
-            <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
 
-        <title>How rotation camera3d and viewer3d worked in Away3d</title>
-
-        <!-- Bootstrap Core CSS -->
-        <link href="http://www.arulraj.net/theme/css/bootstrap.min.css" rel="stylesheet">
-
-        <!-- Custom CSS -->
-        <link href="http://www.arulraj.net/theme/css/clean-blog.min.css" rel="stylesheet">
-        <link href="http://www.arulraj.net/theme/css/post-info.css" rel="stylesheet">
-
-        <!-- Code highlight color scheme -->
-            <link href="http://www.arulraj.net/theme/css/code_blocks/github_jekyll.css" rel="stylesheet">
-
-            <!-- CSS specified by the user -->
-            <link href="http://www.arulraj.net/css/myblog.css" rel="stylesheet">
-
-        <!-- Custom Fonts -->
-        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-        <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
-        <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
-
-        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-        <!--[if lt IE 9]>
-            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-        <![endif]-->
+  <title>How rotation camera3d and viewer3d worked in Away3d</title>
 
 
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="referrer" content="origin" />
+  <meta name="generator" content="Pelican" />
+  <link href="http://www.arulraj.net" rel="canonical" />
+
+  <!-- Feed -->
+      <link href="http://feeds.feedburner.com/ArulBlog" type="application/atom+xml" rel="alternate" title="Arul Blog Full Atom Feed" />
+
+  <link href="http://www.arulraj.net/theme/css/style.css" type="text/css" rel="stylesheet" />
+
+  <!-- Code highlight color scheme -->
+      <link href="http://www.arulraj.net/theme/css/code_blocks/github.css" rel="stylesheet">
+
+
+  <!-- Custom fonts -->
+  <link href='https://fonts.googleapis.com/css?family=Montserrat:400,300' rel='stylesheet' type='text/css' />
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css" />
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
+
+    <link href="http://www.arulraj.net/2010/02/how-rotation-camera3d-and-viewer3d-worked-in-away3d.html" rel="canonical" />
 
         <meta name="description" content="Rotation in Away3D Flash engine In this blog entry we are going to learn about How the Rotation and camera3d and viewer3d in away3d ...">
 
@@ -45,88 +48,101 @@
         <meta name="tags" content="Programming">
         <meta name="tags" content="how to">
 
-	                <meta property="og:locale" content="">
-		<meta property="og:site_name" content="Arul Blog">
+        <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content="Arul Blog" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Arul Blog" />
+    <meta property="og:description" content="View the blog." />
+    <meta property="og:url" content="http://www.arulraj.net" />
+      <meta name="og:image" content="http://www.arulraj.net/theme/images/post-bg.jpg">
+      <meta property="article:publisher" content="http://facebook.com/arulraj.net" />
 
-	<meta property="og:type" content="article">
-            <meta property="article:author" content="http://www.arulraj.net/author/arul.html">
-	<meta property="og:url" content="http://www.arulraj.net/2010/02/how-rotation-camera3d-and-viewer3d-worked-in-away3d.html">
-	<meta property="og:title" content="How rotation camera3d and viewer3d worked in Away3d">
-	<meta property="article:published_time" content="2010-02-07 06:54:00+05:30">
+  <meta property="og:type" content="article">
+            <meta property="article:author" content="http://www.arulraj.net/author/arul">
+  <meta property="og:url" content="http://www.arulraj.net/2010/02/how-rotation-camera3d-and-viewer3d-worked-in-away3d.html">
+  <meta property="og:title" content="How rotation camera3d and viewer3d worked in Away3d">
+  <meta property="article:published_time" content="2010-02-07 06:54:00+05:30">
             <meta property="og:description" content="Rotation in Away3D Flash engine In this blog entry we are going to learn about How the Rotation and camera3d and viewer3d in away3d ...">
 
             <meta property="og:image" content="http://www.arulraj.net/theme/images/post-bg.jpg">
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:site" content="@arulrajnet">
+        <meta name="twitter:title" content="How rotation camera3d and viewer3d worked in Away3d">
+        <meta name="twitter:url" content="http://www.arulraj.net/2010/02/how-rotation-camera3d-and-viewer3d-worked-in-away3d.html">
+
+            <meta name="twitter:image:src" content="http://www.arulraj.net/theme/images/post-bg.jpg">
+
+            <meta name="twitter:description" content="Rotation in Away3D Flash engine In this blog entry we are going to learn about How the Rotation and camera3d and viewer3d in away3d ...">
 </head>
+<!-- TODO : Body class -->
+<body class="home-template">
 
-<body>
+<nav id="menu">
+  <a class="close-button">Close</a>
+  <div class="nav-wrapper">
+    <p class="nav-label">Menu</p>
+    <ul>
 
-    <!-- Navigation -->
-    <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
-        <div class="container-fluid">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header page-scroll">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="http://www.arulraj.net/">Arul Blog</a>
-            </div>
+              <li role="presentation"><a href="http://www.arulraj.net/pages/about/">About</a></li>
+              <li role="presentation"><a href="http://www.arulraj.net/pages/profile/">Profile</a></li>
 
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav navbar-right">
-
-                            <li><a href="http://www.arulraj.net/pages/about/">About</a></li>
-                            <li><a href="http://www.arulraj.net/pages/profile/">Profile</a></li>
-                </ul>
-            </div>
-            <!-- /.navbar-collapse -->
-        </div>
-        <!-- /.container -->
-    </nav>
+    </ul>
+  </div>
+</nav>
+    <!-- Progressbar -->
+    <div class="progress-container">
+        <span class="progress-bar"></span>
+    </div>
 
     <!-- Page Header -->
-        <header class="intro-header" style="background-image: url('http://www.arulraj.net/theme/images/post-bg.jpg')">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                    <div class="post-heading">
-                        <h1>How rotation camera3d and viewer3d worked in Away3d</h1>
-                        <span class="meta">
-                                <a href="http://www.arulraj.net/author/arul.html">Arul</a>
-                             | 07 Feb 2010
-                        </span>
-                        
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
+    <!-- Set your background image for this header on the line below. -->
+    <header id="post-header" class="has-cover">
+      <div class="inner">
+        <nav id="navigation">
+            <span id="home-button" class="nav-button">
+                <a class="home-button" href="http://www.arulraj.net" title="Home"><i class="ic ic-arrow-left"></i> Home</a>
+            </span>
+          <span id="menu-button" class="nav-button">
+            <a class="menu-button"><i class="ic ic-menu"></i> Menu</a>
+          </span>
+        </nav>
+        <h1 class="post-title">How rotation camera3d and viewer3d worked in Away3d</h1>
+        <!-- TODO : Proper class for headline -->
+        <span class="post-meta">
+                <a href="http://www.arulraj.net/author/arul">Arul</a>
+            | <time datetime="07 Feb 2010">07 Feb 2010</time>
+        </span>
+        <!-- TODO : Modified check -->
+        
+            <div class="post-cover cover" style="background-image: url('http://www.arulraj.net/theme/images/post-bg.jpg')">
+        
+      </div>
+    </header>    
 
-    <!-- Main Content -->
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-    <!-- Post Content -->
-    <article>
-        <p><strong>Rotation in Away3D Flash engine</strong></p>
-<p><a class="reference external" href="http://4.bp.blogspot.com/_X5tq9y9xv2s/S26cXkz167I/AAAAAAAAALs/45u4Luu4aRE/s1600-h/away3d+rotation+example.jpg"><img alt="image0" src="http://4.bp.blogspot.com/_X5tq9y9xv2s/S26cXkz167I/AAAAAAAAALs/45u4Luu4aRE/s400/away3d+rotation+example.jpg"/></a></p>
+  <section id="wrapper">
+    <a class="hidden-close"></a>
+
+    <!-- Post content -->
+    <main class="content" role="main">
+        <article class="post">
+        <div class="inner">
+            <section class="post-content">
+                <p><strong>Rotation in Away3D Flash engine</strong></p>
+<p><a class="reference external" href="http://4.bp.blogspot.com/_X5tq9y9xv2s/S26cXkz167I/AAAAAAAAALs/45u4Luu4aRE/s1600-h/away3d+rotation+example.jpg"><img alt="image0" src="http://4.bp.blogspot.com/_X5tq9y9xv2s/S26cXkz167I/AAAAAAAAALs/45u4Luu4aRE/s400/away3d+rotation+example.jpg" /></a></p>
 <p>In this blog entry we are going to learn about How the Rotation and camera3d and viewer3d in away3d flash engine.</p>
 <p>Red line = x-axis</p>
 <p>Blue line = y-axis</p>
 <p>Green Line = z-axis</p>
 <p><strong>How Rotation works ..?</strong></p>
-<p>Rotation in away3d based on the three axis . Those are x.y and z.  the component is rotated take any one of this axis as a center then rotated. In my <a class="reference external" href="http://arulraj.net/2010/02/my-first-3d-flash-animation.html">last post</a> the sphere is rotated along with x axis. In that example the axis is like that (see below )</p>
-<embed height="400" src="http://files.arulraj.net/code/flash/away3d/singlerotate.swf" width="600">
+<p>Rotation in away3d based on the three axis . Those are x.y and z.&nbsp; the component is rotated take any one of this axis as a center then rotated. In my <a class="reference external" href="http://arulraj.net/2010/02/my-first-3d-flash-animation.html">last post</a> the sphere is rotated along with x axis. In that example the axis is like that (see below )</p>
+<embed src="http://files.arulraj.net/code/flash/away3d/singlerotate.swf" width="600" height="400">
 </embed><div class="highlight"><pre><span></span>sphere.rotationX = sphere.x + 1;
 </pre></div>
 <p>The sphere takes x axis as a center and rotate like above...</p>
 <p>In this example we add two or more components in the ObjectContainer3D then rotate this objects. In this example we are going to learn about how camera3D and Viewer3D works.</p>
-<embed height="400" src="http://files.arulraj.net/code/flash/away3d/away3drotate.swf" width="600">
+<embed src="http://files.arulraj.net/code/flash/away3d/away3drotate.swf" width="600" height="400">
 </embed><p><strong>How Camera3D works ..?</strong></p>
-<p><a class="reference external" href="http://1.bp.blogspot.com/_X5tq9y9xv2s/S260xnBaV8I/AAAAAAAAAL0/sdpPCbRPy28/s1600-h/camera3d.jpg"><img alt="image1" src="http://1.bp.blogspot.com/_X5tq9y9xv2s/S260xnBaV8I/AAAAAAAAAL0/sdpPCbRPy28/s400/camera3d.jpg"/></a></p>
+<p><a class="reference external" href="http://1.bp.blogspot.com/_X5tq9y9xv2s/S260xnBaV8I/AAAAAAAAAL0/sdpPCbRPy28/s1600-h/camera3d.jpg"><img alt="image1" src="http://1.bp.blogspot.com/_X5tq9y9xv2s/S260xnBaV8I/AAAAAAAAAL0/sdpPCbRPy28/s400/camera3d.jpg" /></a></p>
 <blockquote>
 <p>Camera3d = real camera</p>
 <p>view3d = lens the viewr of the camara</p>
@@ -136,111 +152,99 @@
 <p>This diagram explained in <a class="reference external" href="http://books.sharedaa.com/2010/02/papervision3d-essentials.html">Papervision3d Essential</a> book.. In this diagram your clearly understood about camera3d.</p>
 <p>If we assume Camera 3d is like a real camera . we assume it is with in our application in invisible mode.</p>
 <p>The viewerport (view3d) is an lens or what you are view using the camera.</p>
-<p>The render engine is recording engine in the real camera. In the real camera If  we start the record then only we can see the changes otherwise not. Like same as in camera3d we called</p>
+<p>The render engine is recording engine in the real camera. In the real camera If&nbsp; we start the record then only we can see the changes otherwise not. Like same as in camera3d we called</p>
 <div class="highlight"><pre><span></span>viewer.render()
 </pre></div>
-<p>method each time if anything changed in the components. In the real camara If any person is not inside the seen they are not come in the flim. Same as in the scene3d if we not add add any components in the scene 3d objects  it is not visible.</p>
+<p>method each time if anything changed in the components. In the real camara If any person is not inside the seen they are not come in the flim. Same as in the scene3d if we not add add any components in the scene 3d objects&nbsp; it is not visible.</p>
 <p><strong>How Viewer3D Works ..?</strong></p>
 <p>Download the source code <a class="reference external" href="http://sites.google.com/site/arulraj1985/list-of-files/Away3drotate.zip?attredirects=0&amp;d=1">click here</a> (compatible for Flashdevelop IDE)</p>
 
-    </article>
+            </section>
 
-    <div class="post-info">
-        <div class="post-tags">
-<a href="http://www.arulraj.net/tag/animation">Animation</a><a href="http://www.arulraj.net/tag/flash">Flash</a><a href="http://www.arulraj.net/tag/programming">Programming</a><a href="http://www.arulraj.net/tag/how-to">how to</a>        </div>
+            <section class="post-info">
+                <div class="post-share">
+                    <a class="twitter" href="https://twitter.com/share?text=How rotation camera3d and viewer3d worked in Away3d&amp;url=http://www.arulraj.net/2010/02/how-rotation-camera3d-and-viewer3d-worked-in-away3d.html" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                    <i class="ic ic-twitter"></i><span class="hidden">Twitter</span>
+                    </a>
+                    <a class="facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://www.arulraj.net/2010/02/how-rotation-camera3d-and-viewer3d-worked-in-away3d.html" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                    <i class="ic ic-facebook"></i><span class="hidden">Facebook</span>
+                    </a>
+                    <a class="googleplus" href="https://plus.google.com/share?url=http://www.arulraj.net/2010/02/how-rotation-camera3d-and-viewer3d-worked-in-away3d.html" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+                    <i class="ic ic-googleplus"></i><span class="hidden">Google+</span>
+                    </a>
+                    <div class="clear"></div>
+                </div>
 
-<div class="post-share">
-    <a class="twitter" href="https://twitter.com/share?text=How rotation camera3d and viewer3d worked in Away3d&amp;url=http://www.arulraj.net/2010/02/how-rotation-camera3d-and-viewer3d-worked-in-away3d.html" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
-        <i class="fa fa-twitter"></i><span class="hidden">Twitter</span>
-    </a>
-    <a class="facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://www.arulraj.net/2010/02/how-rotation-camera3d-and-viewer3d-worked-in-away3d.html" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
-        <i class="fa fa-facebook"></i><span class="hidden">Facebook</span>
-    </a>
-    <a class="googleplus" href="https://plus.google.com/share?url=http://www.arulraj.net/2010/02/how-rotation-camera3d-and-viewer3d-worked-in-away3d.html" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
-        <i class="fa fa-google-plus"></i><span class="hidden">Google+</span>
-    </a>
-    <div class="clear"></div>
-</div>
-    </div>
-    <hr>
+                <aside class="post-tags">
+<a href="http://www.arulraj.net/tag/animation">Animation</a><a href="http://www.arulraj.net/tag/flash">Flash</a><a href="http://www.arulraj.net/tag/programming">Programming</a><a href="http://www.arulraj.net/tag/how-to">how to</a>                </aside>
 
-        <div class="comments">
-            <h2>Comments !</h2>
-            <div id="disqus_thread"></div>
-            <script type="text/javascript">
-                var disqus_shortname = 'arulrajnet';
-                var disqus_identifier = '/2010/02/how-rotation-camera3d-and-viewer3d-worked-in-away3d.html';
-                var disqus_url = 'http://www.arulraj.net/2010/02/how-rotation-camera3d-and-viewer3d-worked-in-away3d.html';
-                (function() {
-                    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-                    dsq.src = '//arulrajnet.disqus.com/embed.js';
-                    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-                })();
-            </script>
-            <noscript>Please enable JavaScript to view the comments.</noscript>
-        </div>
+                <div class="clear"></div>
+
+                <aside class="post-author">
+                        <figure class="post-author-avatar">
+                            <img src="https://www.gravatar.com/avatar/dead1c3ffb26a27d8b5e30e1c30e46e6?s=600" alt="Arul" />
+                        </figure>
+                    <div class="post-author-bio">
+                        <h4 class="post-author-name"><a href="http://www.arulraj.net/author/arul">Arul</a></h4>
+                            <p class="post-author-about">• Architect • DevOps • Full Stack Developer • Aspiring Entrepreneur •</p>
+                            <span class="post-author-location"><i class="ic ic-location"></i> Chennai</span>
+                            <span class="post-author-website"><a href="http://arulraj.net"><i class="ic ic-link"></i> Website</a></span>
+                            <span class="post-author-twitter"><a target="_blank" href="https://twitter.com/arulrajnet"><i class="ic ic-twitter"></i> Twitter</a></span>
+                            <span class="post-author-facebook"><a target="_blank" href="https://facebook.com/arulraj.net"><i class="ic ic-facebook"></i> Facebook</a></span>
+                    </div>
+                    <div class="clear"></div>
+                </aside>
+ 
+
+                </section>
+
+                <script type="text/javascript">
+                    var disqus = 'arulrajnet';
+                    var disqus_shortname = 'arulrajnet';
+                    var disqus_identifier = '/2010/02/how-rotation-camera3d-and-viewer3d-worked-in-away3d.html';
+                    var disqus_url = 'http://www.arulraj.net/2010/02/how-rotation-camera3d-and-viewer3d-worked-in-away3d.html';
+                </script>
+                <noscript>Please enable JavaScript to view the comments.</noscript>                  
+                <section class="post-comments">
+                        <a id="show-disqus" class="post-comments-activate" data-disqus-identifier="/2010/02/how-rotation-camera3d-and-viewer3d-worked-in-away3d.html" >Show Comments</a>
+                    <div id="disqus_thread"></div>                  
+                </section>
+
+                <aside class="post-nav">
+                    <a class="post-nav-next" href="http://www.arulraj.net/2010/03/flash-player-debugger.html">
+                        <section class="post-nav-teaser">
+                            <i class="ic ic-arrow-left"></i>
+                                <h2 class="post-nav-title">Flash Player Debugger</h2>
+                            <p class="post-nav-excerpt">Flash Player Debugger How to get the flash player debugger version ...? You can ...</p>
+                        </section>
+                    </a>
+                    <a class="post-nav-prev" href="http://www.arulraj.net/2010/02/my-first-3d-flash-animation.html">
+                        <section class="post-nav-teaser">
+                            <i class="ic ic-arrow-right"></i>
+                                <h2 class="post-nav-title">My first 3D flash animation</h2>
+                            <p class="post-nav-excerpt">3D Animathion Adobe support for native 3D only in cs4. There are lot of opensource ...</p>
+                        </section>
+                    </a>
+                    <div class="clear"></div>
+                </aside>
+
             </div>
-        </div>
-    </div>
-
-    <hr>
-
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                    <ul class="list-inline text-center">
-                            <li>
-                                <a href="http://facebook.com/arulraj.net">
-                                    <span class="fa-stack fa-lg">
-                                        <i class="fa fa-circle fa-stack-2x"></i>
-                                        <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
-                                    </span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="http://twitter.com/arulrajnet">
-                                    <span class="fa-stack fa-lg">
-                                        <i class="fa fa-circle fa-stack-2x"></i>
-                                        <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
-                                    </span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="https://plus.google.com/+ArulrajNet">
-                                    <span class="fa-stack fa-lg">
-                                        <i class="fa fa-circle fa-stack-2x"></i>
-                                        <i class="fa fa-google plus fa-stack-1x fa-inverse"></i>
-                                    </span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="http://feeds.feedburner.com/ArulBlog">
-                                    <span class="fa-stack fa-lg">
-                                        <i class="fa fa-circle fa-stack-2x"></i>
-                                        <i class="fa fa-feed fa-stack-1x fa-inverse"></i>
-                                    </span>
-                                </a>
-                            </li>
-                    </ul>
-<p class="copyright text-muted">
-    Blog powered by <a href="http://getpelican.com">Pelican</a>,
-    which takes great advantage of <a href="http://python.org">Python</a>.
-</p>                </div>
-            </div>
-        </div>
+        </article>
+    </main>
+      <!-- TODO : Body class -->
+    <div id="body-class" style="display: none;" class=""></div>
+  
+    <footer id="footer">
+      <div class="inner">
+        <section class="credits">
+          <span class="credits-theme">Theme <a href="https://github.com/arulrajnet/attila" rel="nofollow">Attila</a></span>
+          <span class="credits-software">Published with <a href="https://github.com/getpelican/pelican" rel="nofollow">Pelican</a></span>
+        </section>
+      </div>
     </footer>
+  </section>
 
-    <!-- jQuery -->
-    <script src="http://www.arulraj.net/theme/js/jquery.js"></script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="http://www.arulraj.net/theme/js/bootstrap.min.js"></script>
-
-        <!-- Custom Theme JavaScript -->
-        <script src="http://www.arulraj.net/theme/js/clean-blog.min.js"></script>
-
+  <script type="text/javascript" src="http://www.arulraj.net/theme/js/script.js"></script>
     <script type="text/javascript">
     var _gaq = _gaq || [];
     _gaq.push(['_setAccount', 'UA-3546274-9']);
@@ -261,5 +265,4 @@
     }());
 </script>
 </body>
-
 </html>

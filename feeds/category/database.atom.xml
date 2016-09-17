@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Arul Blog</title><link href="http://www.arulraj.net/" rel="alternate"></link><link href="http://www.arulraj.net/feeds/category/database.atom.xml" rel="self"></link><id>http://www.arulraj.net/</id><updated>2012-05-02T13:39:00+05:30</updated><entry><title>Multiple mysql instances in windows</title><link href="http://www.arulraj.net/2012/05/multiple-mysql-instances-in-windows.html" rel="alternate"></link><published>2012-05-02T13:39:00+05:30</published><author><name>arul</name></author><id>tag:www.arulraj.net,2012-05-02:2012/05/multiple-mysql-instances-in-windows.html</id><summary type="html">&lt;p&gt;Now again windows stuff... I am using windows OS in office 😌... This
+post is about a simple tweaks about running multiple mysql instance in
+one windows machine. Each instance runs in a different port and behaves
+as a dedicated standalone server.&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://1.bp.blogspot.com/-AJSmo9CM1fk/T6Fyl-FmAQI/AAAAAAAAPWg/EnHRjYBPCK0/s1600/Multipleinstances.png"&gt;&lt;img alt="mysql multiple instances" src="http://1.bp.blogspot.com/-AJSmo9CM1fk/T6Fyl-FmAQI/AAAAAAAAPWg/EnHRjYBPCK0/s400/Multipleinstances.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Why multiple instances..?&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+If you are a developer its for you. Sometimes you need to test your
+application with different type of data (like QA, Production) to
+replicate some error and etc., At that time no need to drop your old
+database and put the new one. Just use this and change the db port in
+your application configuration. This will be helpful for system
+administrators also to provide database service to his users.&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Requirement:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;mysql installed windows machine&lt;/li&gt;
+&lt;li&gt;Administrative privileges&amp;nbsp;for that machine&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;For me mysql installed location is e:\softs\mysql\&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Steps:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Create [instances\production] with in mysql installed directory (you can create anywhere). Better do everything in command prompt.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;e:
+cd \softs\mysql\
+md instances\production
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Copy your data and share folder to production folder&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;copy data instances\production\
+copy share instances\production\
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;To create your custom ini file copy my.ini file and edit&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;copy my.ini instances\production.ini
+&lt;/pre&gt;&lt;/div&gt;
+&lt;div class="section" id="edit-production-ini"&gt;
+&lt;h2&gt;Edit Production.ini&lt;/h2&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;change port as 3307 under [client] and [mysqld] section&lt;/li&gt;
+&lt;li&gt;Change basedir and datadir in that ini file&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://files.arulraj.net/code/database/production.ini"&gt;Click Here&lt;/a&gt; for my production.ini file&lt;/p&gt;
+&lt;p&gt;Now add your custom ini in system starup&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;mysqld --install mysqldproduction --defaults-file=&amp;quot;E:\softs\mysql\instances\production.ini&amp;quot;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Now goto Control Panel → Administrative tools → Services. Then search
+for 'mysqldproduction' and start service.&lt;/p&gt;
+&lt;p&gt;OR&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;net start mysqldproduction
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;You may think all is done. But after this only I faced problems.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Cannot find the file specified:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;When I try to start that service &amp;quot;System error has occurred. The system cannot find the file specified.&amp;quot;&lt;/p&gt;
+&lt;p&gt;There is registry changes needed to fix that issue&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;To open registry editor Start → Run&lt;/li&gt;
+&lt;li&gt;Type 'regedit' and enter.&lt;/li&gt;
+&lt;li&gt;Next, browse to the registry key named:&amp;nbsp;HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\mysqldproduction\ImagePath&lt;/li&gt;
+&lt;li&gt;Now you can see there is &lt;em&gt;no double quotes&lt;/em&gt; in that --defaults-file so change ImagePath to&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;E:\softs\mysql\bin\mysqld&amp;quot;&lt;/span&gt; --defaults-file&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;E:\softs\mysql\instances\production.ini&amp;quot;&lt;/span&gt; mysqldproduction
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Now start that service.&lt;/p&gt;
+&lt;p&gt;Keep watching Event Viewer. That is the best place to get debug information. Again I am getting error while starting server&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://3.bp.blogspot.com/-khW4T_J1vso/T6GMNPk7tPI/AAAAAAAAPW4/q29gl6NoL3g/s1600/event-viewer.PNG"&gt;&lt;img alt="Event viewer for mysql" src="http://3.bp.blogspot.com/-khW4T_J1vso/T6GMNPk7tPI/AAAAAAAAPW4/q29gl6NoL3g/s400/event-viewer.PNG" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Can't find messagefile:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;The error is&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;System error 1067 has occurred.
+The process terminated unexpectedly.
+Can&amp;#39;t find messagefile &amp;#39;E:\softs\mysql\instances\production\share\errmsg.sys&amp;#39;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;Fix:&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+Just copy errmsg.sys file from [MYSQL_BASE]shareenglishto that instancesproductionshare folder&lt;/blockquote&gt;
+&lt;p&gt;Now everything is fine. Service will start successfully.&lt;/p&gt;
+&lt;/div&gt;
+</summary><category term="mysql"></category><category term="Tips &amp; Tricks"></category><category term="windows"></category></entry></feed>

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Arul Blog</title><link href="http://www.arulraj.net/" rel="alternate"></link><link href="http://www.arulraj.net/feeds/tag/actionscript.atom.xml" rel="self"></link><id>http://www.arulraj.net/</id><updated>2013-11-21T09:43:00+05:30</updated><entry><title>XML to Actionscript class Turbosqel / ASML example</title><link href="http://www.arulraj.net/2013/11/xml-to-actionscript-class-turbosqel-asml-example.html" rel="alternate"></link><published>2013-11-21T09:43:00+05:30</published><author><name>arul</name></author><id>tag:www.arulraj.net,2013-11-21:2013/11/xml-to-actionscript-class-turbosqel-asml-example.html</id><summary type="html">&lt;p&gt;&lt;strong&gt;Turbosqel / ASML example&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;I found a useful third party actionscript libraris from githup&amp;nbsp;&lt;a class="reference external" href="https://github.com/turbosqel"&gt;https://github.com/turbosqel&lt;/a&gt;. I mostly used these as3SupportLib and ASML lib all of my flex projects. But initially I were struggle to find out the example over the internet. So I am writing here one of the feature of that libraries.&lt;/p&gt;
+&lt;p&gt;I am going to explain how to assign value to some variables from remote xml.&lt;/p&gt;
+&lt;embed src="http://files.arulraj.net/code/flash/example/ASMLExample/ASMLExample.html" width="270" height="250"&gt;
+&lt;/embed&gt;&lt;p&gt;[&lt;a class="reference external" href="http://files.arulraj.net/code/flash/example/ASMLExample/srcview/index.html"&gt;View Source&lt;/a&gt; Enabled]&lt;/p&gt;
+&lt;p&gt;Below code snippet for loading xml from server using as3SupportLib&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kd"&gt;protected&lt;/span&gt; &lt;span class="kd"&gt;var&lt;/span&gt; &lt;span class="n"&gt;configResource&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="kt"&gt;Resource&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+
+&lt;span class="kd"&gt;protected&lt;/span&gt; &lt;span class="kd"&gt;function &lt;/span&gt;&lt;span class="nf"&gt;onLoadAgain&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;event&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="kt"&gt;MouseEvent&lt;/span&gt;&lt;span class="o"&gt;):&lt;/span&gt;&lt;span class="kt"&gt;void&lt;/span&gt;
+&lt;span class="o"&gt;{&lt;/span&gt;
+        &lt;span class="n"&gt;configResource&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;ResourceManage&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;setExternal&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;config.xml&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
+        &lt;span class="n"&gt;DownloadManager&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;addEventListener&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;DownloadManagerEvent&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;COMPLETE&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="n"&gt;onDownloadComplete&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
+&lt;span class="o"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;The below code snippet for XML to Object&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kd"&gt;private&lt;/span&gt; &lt;span class="kd"&gt;function &lt;/span&gt;&lt;span class="nf"&gt;onDownloadComplete&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;event&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="kt"&gt;DownloadManagerEvent&lt;/span&gt;&lt;span class="o"&gt;):&lt;/span&gt;&lt;span class="kt"&gt;void&lt;/span&gt;
+&lt;span class="o"&gt;{&lt;/span&gt;
+        &lt;span class="kd"&gt;var&lt;/span&gt; &lt;span class="n"&gt;configXml&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="kt"&gt;XML&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="k"&gt;new&lt;/span&gt; &lt;span class="kt"&gt;XML&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;configResource&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;loaderInfo&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;source&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
+        &lt;span class="kd"&gt;var&lt;/span&gt; &lt;span class="n"&gt;xmlResult&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="kt"&gt;Array&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;ASMLManager&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;parseXML&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;configXml&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt;&lt;span class="k"&gt;this&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
+&lt;span class="o"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;For that works that config.xml should be written in certain way. Here is the doc for how to write xml &lt;a class="reference external" href="https://github.com/turbosqel/ASML/blob/master/README.textile"&gt;https://github.com/turbosqel/ASML/blob/master/README.textile&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;My XML is here &lt;a class="reference external" href="http://files.arulraj.net/code/flash/example/ASMLExample/config.xml"&gt;http://files.arulraj.net/code/flash/example/ASMLExample/config.xml&lt;/a&gt;&lt;/p&gt;
+</summary><category term="Actionscript"></category><category term="Flash"></category><category term="xml"></category></entry><entry><title>Flex videodisplay fullscreen like youtube</title><link href="http://www.arulraj.net/2013/04/flex-videodisplay-fullscreen-like-youtube.html" rel="alternate"></link><published>2013-04-11T11:29:00+05:30</published><author><name>arul</name></author><id>tag:www.arulraj.net,2013-04-11:2013/04/flex-videodisplay-fullscreen-like-youtube.html</id><summary type="html">&lt;p&gt;&lt;strong&gt;Videodisplay in whole screen / Full screen particular component&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;After a&amp;nbsp;long time&amp;nbsp;I came with a new post in flex. Yes fullscreen in flex..!!! Fullscreening a whole app is very simple. You can full&amp;nbsp;screening&amp;nbsp;by simply changing the display state of your application. But it will be tricky if you are try to fullscreen a particular component in an application. In this post I am taking videodisplay component in a video chat application.&lt;/p&gt;
+&lt;p&gt;Still you can fullscreen a component using &lt;tt class="docutils literal"&gt;fullScreenSourceRect&lt;/tt&gt; property of stage.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;stage&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;fullScreenSourceRect&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="k"&gt;new&lt;/span&gt; &lt;span class="kt"&gt;Rectangle&lt;/span&gt; &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;320&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;240&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;But It is like zooming a component. Its not good such as videodisplay component. So I came up with an idea. Here its&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Get that object of element which you are going to make fullscreen.&lt;/li&gt;
+&lt;li&gt;Remove it from parent object.&lt;/li&gt;
+&lt;li&gt;Add that element into stage.&lt;/li&gt;
+&lt;li&gt;Then resize that element to stage width and height.&lt;/li&gt;
+&lt;li&gt;While existing from fullscreen remove from stage and add back to
+parent component.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kd"&gt;protected&lt;/span&gt; &lt;span class="kd"&gt;function &lt;/span&gt;&lt;span class="nf"&gt;fullScreenButton_clickHandler&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;event&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="kt"&gt;MouseEvent&lt;/span&gt;&lt;span class="o"&gt;):&lt;/span&gt; &lt;span class="kt"&gt;void&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+ &lt;span class="kd"&gt;var&lt;/span&gt; &lt;span class="n"&gt;liveVideo&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="kt"&gt;Object&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;liveVideoDisplay&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;getChildByName&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;liveVideo&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
+ &lt;span class="n"&gt;videoBox&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;removeElement&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;liveVideoDisplay&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
+ &lt;span class="n"&gt;stage&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;addChild&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;liveVideoDisplay&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
+ &lt;span class="n"&gt;stage&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;displayState&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;StageDisplayState&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;FULL_SCREEN&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+ &lt;span class="n"&gt;liveVideo&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;width&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;stage&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;width&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+ &lt;span class="n"&gt;liveVideo&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;height&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;stage&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;height&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+ &lt;span class="n"&gt;stage&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;addEventListener&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;FullScreenEvent&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;FULL_SCREEN&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="n"&gt;fullScreenHandler&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
+&lt;span class="o"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://files.arulraj.net/code/flash/example/fullscreen/srcview/"&gt;View source&lt;/a&gt; is enabled.&lt;/p&gt;
+&lt;iframe src="http://files.arulraj.net/code/flash/example/fullscreen/fullscreen.html"
+width="610" height="300"&gt;
+&lt;/iframe&gt;</summary><category term="Actionscript"></category><category term="Flash"></category></entry><entry><title>Flex runtime spacer</title><link href="http://www.arulraj.net/2011/04/flex-runtime-spacer.html" rel="alternate"></link><published>2011-04-03T06:39:00+05:30</published><author><name>arul</name></author><id>tag:www.arulraj.net,2011-04-03:2011/04/flex-runtime-spacer.html</id><summary type="html">&lt;p&gt;I am using Flex 4 for one of my Flex project. That project needs some dynamic spacing between the components. Here is the example code for the runtime spacer. I am using spark components here.&lt;/p&gt;
+&lt;p&gt;Code:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;utf-8&amp;quot;?&amp;gt;
+
+&amp;lt;s:Application name=&amp;quot;Spark_Spacer_Test&amp;quot;
+        xmlns:fx=&amp;quot;http://ns.adobe.com/mxml/2009&amp;quot;
+        xmlns:s=&amp;quot;library://ns.adobe.com/flex/spark&amp;quot;
+        xmlns:mx=&amp;quot;library://ns.adobe.com/flex/mx&amp;quot; &amp;gt;
+
+&amp;lt;s:controlBarContent&amp;gt;
+        &amp;lt;s:Label text=&amp;quot;Space (px):&amp;quot; /&amp;gt;
+        &amp;lt;s:HSlider id=&amp;quot;sl&amp;quot; minimum=&amp;quot;0&amp;quot; maximum=&amp;quot;600&amp;quot; value=&amp;quot;200&amp;quot; /&amp;gt;
+&amp;lt;/s:controlBarContent&amp;gt;
+
+&amp;lt;s:HGroup top=&amp;quot;20&amp;quot; horizontalCenter=&amp;quot;0&amp;quot;&amp;gt;
+        &amp;lt;s:VGroup&amp;gt;
+                &amp;lt;s:Button id=&amp;quot;button1&amp;quot; label=&amp;quot;Me&amp;quot; /&amp;gt;
+        &amp;lt;/s:VGroup&amp;gt;
+        &amp;lt;s:VGroup id=&amp;quot;vSpacer&amp;quot; width=&amp;quot;{sl.value}&amp;quot; &amp;gt;
+                &amp;lt;s:Rect width=&amp;quot;{sl.value}&amp;quot; height=&amp;quot;0&amp;quot; /&amp;gt;
+        &amp;lt;/s:VGroup&amp;gt;
+        &amp;lt;s:VGroup&amp;gt;
+                &amp;lt;s:Button id=&amp;quot;button2&amp;quot; label=&amp;quot;You&amp;quot; /&amp;gt;
+        &amp;lt;/s:VGroup&amp;gt;
+&amp;lt;/s:HGroup&amp;gt;
+
+&amp;lt;/s:Application&amp;gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Running example:&lt;/p&gt;
+&lt;embed src="https://files.arulraj.net/code/flash/example/RuntimeSpacer.swf" width="500" height="300"&gt;&lt;/embed&gt;</summary><category term="Actionscript"></category><category term="Flash"></category></entry></feed>

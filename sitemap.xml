@@ -5,28 +5,21 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>http://www.arulraj.net/</loc>
-<lastmod>2016-09-11T22:02:26-00:00</lastmod>
+<lastmod>2016-09-18T01:05:43-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://www.arulraj.net/archives.html</loc>
-<lastmod>2016-09-11T22:02:26-00:00</lastmod>
+<lastmod>2016-09-18T01:05:43-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://www.arulraj.net/tags.html</loc>
-<lastmod>2016-09-11T22:02:26-00:00</lastmod>
-<changefreq>daily</changefreq>
-<priority>0.5</priority>
-</url>
-
-<url>
-<loc>http://www.arulraj.net/categories.html</loc>
-<lastmod>2016-09-11T22:02:26-00:00</lastmod>
+<lastmod>2016-09-18T01:05:43-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -34,14 +27,14 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
 <loc>http://www.arulraj.net/pages/about/</loc>
 <lastmod>2009-04-03T13:22:00+05:30</lastmod>
-<changefreq>daily</changefreq>
+<changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://www.arulraj.net/pages/profile/</loc>
 <lastmod>2010-12-21T15:59:00+05:30</lastmod>
-<changefreq>daily</changefreq>
+<changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
@@ -543,6 +536,13 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
+<loc>http://www.arulraj.net/2009/04/server-virtualization.html</loc>
+<lastmod>2009-04-22T06:00:00+05:30</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
 <loc>http://www.arulraj.net/2009/04/visiting-besant-nagar-broken-bridge.html</loc>
 <lastmod>2009-04-15T00:38:00+05:30</lastmod>
 <changefreq>monthly</changefreq>
@@ -718,13 +718,6 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
-<loc>http://www.arulraj.net/tag/tricks-how-to</loc>
-<lastmod>2013-10-22T14:02:00+05:53</lastmod>
-<changefreq>daily</changefreq>
-<priority>0.5</priority>
-</url>
-
-<url>
 <loc>http://www.arulraj.net/tag/centos</loc>
 <lastmod>2014-06-06T13:18:12+05:53</lastmod>
 <changefreq>daily</changefreq>
@@ -739,8 +732,8 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
-<loc>http://www.arulraj.net/tag/spring</loc>
-<lastmod>2012-04-13T15:55:00+05:53</lastmod>
+<loc>http://www.arulraj.net/tag/tips-tricks</loc>
+<lastmod>2013-10-22T14:02:00+05:53</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -748,6 +741,13 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
 <loc>http://www.arulraj.net/tag/xen</loc>
 <lastmod>2010-03-25T11:08:00+05:53</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>http://www.arulraj.net/tag/mysql</loc>
+<lastmod>2012-05-02T13:39:00+05:53</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -797,6 +797,13 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
 <loc>http://www.arulraj.net/tag/linux</loc>
 <lastmod>2015-09-06T23:06:45+05:53</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>http://www.arulraj.net/tag/datacard</loc>
+<lastmod>2013-10-22T14:02:00+05:53</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -893,6 +900,13 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
+<loc>http://www.arulraj.net/tag/spring</loc>
+<lastmod>2012-04-13T15:55:00+05:53</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
 <loc>http://www.arulraj.net/tag/animation</loc>
 <lastmod>2010-02-07T06:54:00+05:53</lastmod>
 <changefreq>daily</changefreq>
@@ -921,22 +935,8 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
-<loc>http://www.arulraj.net/tag/tricks-windows</loc>
-<lastmod>2012-05-02T13:39:00+05:53</lastmod>
-<changefreq>daily</changefreq>
-<priority>0.5</priority>
-</url>
-
-<url>
 <loc>http://www.arulraj.net/tag/cricket</loc>
 <lastmod>2015-05-10T13:11:59+05:53</lastmod>
-<changefreq>daily</changefreq>
-<priority>0.5</priority>
-</url>
-
-<url>
-<loc>http://www.arulraj.net/tag/datacard-hacking-mobile-tips-amp</loc>
-<lastmod>2013-10-22T14:02:00+05:53</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -1062,7 +1062,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>http://www.arulraj.net/tag/hacking</loc>
-<lastmod>2012-07-26T14:54:00+05:53</lastmod>
+<lastmod>2013-10-22T14:02:00+05:53</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -1139,7 +1139,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>http://www.arulraj.net/tag/windows</loc>
-<lastmod>2010-03-24T04:32:00+05:53</lastmod>
+<lastmod>2012-05-02T13:39:00+05:53</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -1147,13 +1147,6 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
 <loc>http://www.arulraj.net/tag/static-ip</loc>
 <lastmod>2009-07-14T07:57:00+05:53</lastmod>
-<changefreq>daily</changefreq>
-<priority>0.5</priority>
-</url>
-
-<url>
-<loc>http://www.arulraj.net/tag/mysql-tips-amp</loc>
-<lastmod>2012-05-02T13:39:00+05:53</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -1201,7 +1194,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
-<loc>http://www.arulraj.net/author/arul.html</loc>
+<loc>http://www.arulraj.net/author/arul</loc>
 <lastmod>2016-01-24T06:34:22+05:53</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>

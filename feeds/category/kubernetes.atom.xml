@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Arul Blog</title><link href="http://www.arulraj.net/" rel="alternate"></link><link href="http://www.arulraj.net/feeds/category/kubernetes.atom.xml" rel="self"></link><id>http://www.arulraj.net/</id><updated>2016-01-23T12:26:32+05:30</updated><entry><title>Bash completions for kubectl</title><link href="http://www.arulraj.net/2016/01/bash-completions-for-kubectl.html" rel="alternate"></link><published>2016-01-23T12:26:32+05:30</published><author><name>Arul</name></author><id>tag:www.arulraj.net,2016-01-23:2016/01/bash-completions-for-kubectl.html</id><summary type="html">&lt;p&gt;To install bash completion for your kubectl&lt;/p&gt;
+&lt;p&gt;Get your kubectl client version&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;kubectl version -c
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Get the completion script for the corresponding to your kubectl version.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Ubuntu&lt;/strong&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;curl -sSL https://raw.githubusercontent.com/kubernetes/kubernetes/&lt;span class="k"&gt;$(&lt;/span&gt;kubectl version -c &lt;span class="p"&gt;|&lt;/span&gt; grep -o -P &lt;span class="s1"&gt;&amp;#39;(?&amp;lt;=GitCommit:&amp;quot;).*(?=&amp;quot;,)&amp;#39;&lt;/span&gt;&lt;span class="k"&gt;)&lt;/span&gt;/contrib/completions/bash/kubectl &lt;span class="p"&gt;|&lt;/span&gt; sudo tee /etc/bash_completion.d/kubectl
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;Mac&lt;/strong&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;brew install bash-completion
+curl -sSL https://raw.githubusercontent.com/kubernetes/kubernetes/&lt;span class="k"&gt;$(&lt;/span&gt;kubectl version -c &lt;span class="p"&gt;|&lt;/span&gt; grep -o -P &lt;span class="s1"&gt;&amp;#39;(?&amp;lt;=GitCommit:&amp;quot;).*(?=&amp;quot;,)&amp;#39;&lt;/span&gt;&lt;span class="k"&gt;)&lt;/span&gt;/contrib/completions/bash/kubectl &amp;gt; /usr/local/etc/bash_completion.d/kubectl
+&lt;/pre&gt;&lt;/div&gt;
+&lt;div class="figure align-center"&gt;
+&lt;img alt="Kubectl Bash completion." src="/assets/images/2016/1/kubectl-bash-completion.png" /&gt;
+&lt;/div&gt;
+</summary><category term="ubuntu"></category><category term="bash-completion"></category></entry></feed>

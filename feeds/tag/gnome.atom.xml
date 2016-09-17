@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Arul Blog</title><link href="http://www.arulraj.net/" rel="alternate"></link><link href="http://www.arulraj.net/feeds/tag/gnome.atom.xml" rel="self"></link><id>http://www.arulraj.net/</id><updated>2012-04-01T02:31:00+05:30</updated><entry><title>Uninstall linuxmint from ubuntu</title><link href="http://www.arulraj.net/2012/04/uninstall-linuxmint-from-ubuntu.html" rel="alternate"></link><published>2012-04-01T02:31:00+05:30</published><author><name>arul</name></author><id>tag:www.arulraj.net,2012-04-01:2012/04/uninstall-linuxmint-from-ubuntu.html</id><summary type="html">&lt;p&gt;&lt;strong&gt;How to uninstall linuxmint from ubuntu 11.10&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://4.bp.blogspot.com/-4YPJxBzfGQY/T3gG3SAYouI/AAAAAAAAOPI/5liEnTA3mfc/s1600/linuxmint.jpg"&gt;&lt;img alt="image0" src="http://4.bp.blogspot.com/-4YPJxBzfGQY/T3gG3SAYouI/AAAAAAAAOPI/5liEnTA3mfc/s400/linuxmint.jpg" /&gt;&lt;/a&gt; Gnome2 Linux mint desktop&lt;/p&gt;
+&lt;p&gt;First I explain the whole story.. 😄&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Why linuxmint in ubuntu...?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;In the latest Ubuntu 11.10 release canonical team upgraded from Gnome2 to Gnome3 and ubuntu unity as a default login shell. But I am not comfortable with unity and gnome3. Here its a good article about why I don't like this &lt;a class="reference external" href="http://t.co/gukVNjKC"&gt;read it&lt;/a&gt;. So I need Gome2 back thats why I installed linuxmint shell a.k.a mate shell.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;How I installed linuxmint in my ubuntu..?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Its simple. I&amp;nbsp;followed&amp;nbsp;this &lt;a class="reference external" href="http://www.noobslab.com/2011/11/install-linux-mint-mate-desktop-on.html"&gt;tutorial&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Now why you want to uninstall..?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Now again, after installed mate shell facing some problems.&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;ubuntu software center is not working.&lt;/li&gt;
+&lt;li&gt;every gnome settings showing in two times.&lt;/li&gt;
+&lt;li&gt;ubuntu gnome2 and mate have lot of&amp;nbsp;difference.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Ok. How to unistall mate shell..?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;For everything you need sudo permission. Login in unity shell and open your terminal. Then run this command&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo apt-get autoremove mint-meta-mate
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;It will uninstall every thing related to linux mint. But still linux mint already changed many things in software repo. So you have to move back to old repo (ubuntu 11.10). For that run these commands&lt;/p&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;Remove linuxmint repo link from software list.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo gedit /etc/apt/sources.list
+&lt;/pre&gt;&lt;/div&gt;
+&lt;ol class="arabic simple" start="2"&gt;
+&lt;li&gt;Remove the old software list. Then move the software list to new directory and create a software list directory. For that follow the below commands.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nb"&gt;cd&lt;/span&gt; /var/lib/apt
+sudo mv lists lists.mate
+sudo mkdir -p lists/partial
+&lt;/pre&gt;&lt;/div&gt;
+&lt;ol class="arabic simple" start="3"&gt;
+&lt;li&gt;Getting the ubuntu 11.10 repo&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo apt-get update
+sudo apt-get check
+sudo apt-get clean
+sudo apt-get autoclean
+sudo apt-get autoremove
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;After that also the ubuntu software center is not working 😞 . The problem is &amp;quot;no module named linuxmint&amp;quot;. The reason for this error is every where the distribution id is linuxmint.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;lsb_release -a
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;it prints&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;Distributor ID: LinuxMint
+Description: Linux Mint 12 Fluxbox
+Release: 12
+Codename: lisa
+&lt;/pre&gt;&lt;/div&gt;
+&lt;ol class="arabic simple" start="4"&gt;
+&lt;li&gt;Remove linuxmint distribution id from everywhere&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo gedit /etc/*release
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;and change everything in the file to:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;DISTRIB_ID=Ubuntu
+DISTRIB_RELEASE=11.10
+DISTRIB_CODENAME=oneiric
+DISTRIB_DESCRIPTION=&amp;quot;Ubuntu oneiric&amp;quot;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Then run&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo gedit /etc/*issue
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;and change to:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;Ubuntu 11.10 &lt;span class="se"&gt;\n&lt;/span&gt; &lt;span class="se"&gt;\l&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;ol class="arabic simple" start="5"&gt;
+&lt;li&gt;Restart your machine. Then restart your machine. Now in the login screen you don't see the mate shell option.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Cheers....!!! 😃 😃 you are done...&lt;/p&gt;
+</summary><category term="gnome"></category><category term="Linux"></category><category term="ubuntu"></category><category term="how to"></category></entry></feed>

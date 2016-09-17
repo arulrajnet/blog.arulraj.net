@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Arul Blog</title><link href="http://www.arulraj.net/" rel="alternate"></link><link href="http://www.arulraj.net/feeds/tag/vmware.atom.xml" rel="self"></link><id>http://www.arulraj.net/</id><updated>2013-09-16T13:19:00+05:30</updated><entry><title>Automount vmware shared folder in ubuntu</title><link href="http://www.arulraj.net/2013/09/automount-vmware-shared-folder-in-ubuntu.html" rel="alternate"></link><published>2013-09-16T13:19:00+05:30</published><author><name>arul</name></author><id>tag:www.arulraj.net,2013-09-16:2013/09/automount-vmware-shared-folder-in-ubuntu.html</id><summary type="html">&lt;p&gt;&lt;strong&gt;How to fix shared folder automount problem in vmware ..?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;I am using vmware player for last several years. But I am not tested their shared folder features. To share your host os folder with vm you have to install &amp;quot;vmware tools&amp;quot; on guest os. Installing vmware tools is very simple.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Checking vmware module :&lt;/strong&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo lsmod &lt;span class="p"&gt;|&lt;/span&gt; grep vmhgfs
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;It should return some values something like shown on image.&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://1.bp.blogspot.com/-scGjIUU5lA4/UjdQ4ODFgPI/AAAAAAAAVYA/M6Dqv5mdewQ/s1600/lsmode.PNG"&gt;&lt;img alt="lsmode" src="http://1.bp.blogspot.com/-scGjIUU5lA4/UjdQ4ODFgPI/AAAAAAAAVYA/M6Dqv5mdewQ/s320/lsmode.PNG" /&gt;&lt;/a&gt; List modules&lt;/p&gt;
+&lt;p&gt;If not you have to install vmware tools.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Installing vmware tools :&lt;/strong&gt;&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Goto Player →&amp;nbsp;Manage →&amp;nbsp;Install vmware Tools . Now Vmware Tools is mounted as CDROM with in VM&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://1.bp.blogspot.com/-ThUF8cYzXf8/UjdSbEfZR8I/AAAAAAAAVYM/FP45AmtYzFk/s1600/install-vmware.png"&gt;&lt;img alt="vmware tools install" src="http://1.bp.blogspot.com/-ThUF8cYzXf8/UjdSbEfZR8I/AAAAAAAAVYM/FP45AmtYzFk/s320/install-vmware.png" /&gt;&lt;/a&gt; Install VMware Tools&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Extract Your&amp;nbsp;VmwareTools-9.2.0-799703.tar.gz file to somewhere.&lt;/li&gt;
+&lt;li&gt;Goto &amp;quot;vmware-tools-distrib&amp;quot; folder path in terminal&lt;/li&gt;
+&lt;li&gt;Then run this command &amp;quot;./vmware-install.pl&amp;quot;&lt;/li&gt;
+&lt;li&gt;Just press enter for all the questions asked while installing&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://4.bp.blogspot.com/-3LuB2o5GXbw/UjdUj2GiMoI/AAAAAAAAVYY/8cVWCD4isVc/s1600/vmware-install.PNG"&gt;&lt;img alt="Install vmware" src="http://4.bp.blogspot.com/-3LuB2o5GXbw/UjdUj2GiMoI/AAAAAAAAVYY/8cVWCD4isVc/s320/vmware-install.PNG" /&gt;&lt;/a&gt; Vmware Install&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Add shared folder for VM:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Goto Player →&amp;nbsp;Manage →&amp;nbsp;Virtual Machine Settings&lt;/li&gt;
+&lt;li&gt;In Options tab you can find the Shared Folders&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://2.bp.blogspot.com/-y4FssiiprlQ/UjdWjo36pyI/AAAAAAAAVYk/7k6y22KWeb4/s1600/vmware-settings.PNG"&gt;&lt;img alt="image3" src="http://2.bp.blogspot.com/-y4FssiiprlQ/UjdWjo36pyI/AAAAAAAAVYk/7k6y22KWeb4/s320/vmware-settings.PNG" /&gt;&lt;/a&gt; Shared Folder&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Then reboot your machine&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Auto mount shared folder on startup:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Finally I came back to point. After restarted the shared folder are not
+shown with in &amp;quot;/mnt/hgfs/&amp;quot; folder. So here is the fix for that.&lt;/p&gt;
+&lt;p&gt;There is a startup script called &amp;quot;open-vm-tools&amp;quot; with in /etc/init.d/
+folder. Just add the below line in the start function.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;mount -t vmhgfs .host:/ /mnt/hgfs
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Then restart the service &amp;quot;sudo service open-vm-tools restart&amp;quot;.&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://2.bp.blogspot.com/-pDdUDIjTvY0/UjdYEkE7QwI/AAAAAAAAVYw/oFb1zARhXrA/s1600/vmware-initd.PNG"&gt;&lt;img alt="image4" src="http://2.bp.blogspot.com/-pDdUDIjTvY0/UjdYEkE7QwI/AAAAAAAAVYw/oFb1zARhXrA/s320/vmware-initd.PNG" /&gt;&lt;/a&gt; open-vm-tools startup&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;My Environmental :&lt;/strong&gt;&lt;/p&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;Product : Vmware Player version 5.0.0 build-812388&lt;/div&gt;
+&lt;div class="line"&gt;Vmware Tools: VmwareTools-9.2.0-799703&lt;/div&gt;
+&lt;div class="line"&gt;Guest OS : Ubuntu 12.04 LTS 32 bit&lt;/div&gt;
+&lt;div class="line"&gt;Host OS : Windows 7 64 bit&lt;/div&gt;
+&lt;/div&gt;
+</summary><category term="fix"></category><category term="ubuntu"></category><category term="vmware"></category><category term="linux"></category><category term="how to"></category></entry></feed>

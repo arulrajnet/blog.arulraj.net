@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Arul Blog</title><link href="http://www.arulraj.net/" rel="alternate"></link><link href="http://www.arulraj.net/feeds/tag/share-market.atom.xml" rel="self"></link><id>http://www.arulraj.net/</id><updated>2015-09-06T23:06:45+05:30</updated><entry><title>Script to get Stock History Information</title><link href="http://www.arulraj.net/2015/09/script-to-get-stock-history-information.html" rel="alternate"></link><published>2015-09-06T23:06:45+05:30</published><author><name>arul</name></author><id>tag:www.arulraj.net,2015-09-06:2015/09/script-to-get-stock-history-information.html</id><summary type="html">&lt;p&gt;I wrote a python script to get stock market current and history information based on Google finance API. Here I am going to explain about that.&lt;/p&gt;
+&lt;div class="section" id="how-to-setup"&gt;
+&lt;h2&gt;How to setup&lt;/h2&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Download &lt;a class="reference external" href="https://gist.github.com/arulrajnet/cb1476234967717a4d6d"&gt;GetStockInfo.py&lt;/a&gt; into /usr/local/bin folder as stockinfo&lt;/li&gt;
+&lt;li&gt;chmod +x /usr/local/bin/stockinfo&lt;/li&gt;
+&lt;li&gt;Run &lt;cite&gt;stockinfo&lt;/cite&gt; as command from anywhere in your terminal&lt;/li&gt;
+&lt;li&gt;I create alias command with different stock list and get info whenever I want&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;wget --no-check-certificate https://gist.github.com/arulrajnet/cb1476234967717a4d6d/raw/GetStockInfo.py
+chmod +x GetStockInfo.py
+sudo cp GetStockInfo.py /usr/local/bin/stockinfo
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;To get given stock current and history information&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;stockinfo -s NASDAQ:AAPL,NASDAQ:GOOG,NASDAQ:MSFT,INDEXBOM:SENSEX -i 7d,1m,1y
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Instead of you can use&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;python GetStockInfo.py -s NASDAQ:AAPL,NASDAQ:GOOG,NASDAQ:MSFT,INDEXBOM:SENSEX -i 7d,1m,1y
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;a class="reference external" href="https://cloud.githubusercontent.com/assets/834529/9387826/f2011440-477f-11e5-94b3-dacf7fd595db.png"&gt;&lt;img alt="Stock Info with Stock and Interval Selection" src="https://cloud.githubusercontent.com/assets/834529/9387826/f2011440-477f-11e5-94b3-dacf7fd595db.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;To get given stock current information&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;stockinfo -s NASDAQ:AAPL,NASDAQ:GOOG,NASDAQ:MSFT,INDEXBOM:SENSEX
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;a class="reference external" href="https://cloud.githubusercontent.com/assets/834529/9387855/16dc856a-4780-11e5-9c28-1af6d3511fb0.png"&gt;&lt;img alt="Stock Info with Stock Selection only" src="https://cloud.githubusercontent.com/assets/834529/9387855/16dc856a-4780-11e5-9c28-1af6d3511fb0.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;To get default stock current information&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;stockinfo
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;a class="reference external" href="https://cloud.githubusercontent.com/assets/834529/9387927/6be8b38a-4780-11e5-9e94-b5189264c9d6.png"&gt;&lt;img alt="Stock Info with default stock" src="https://cloud.githubusercontent.com/assets/834529/9387927/6be8b38a-4780-11e5-9e94-b5189264c9d6.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;To get default stock current and history information&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;stockinfo -i 7d,1m
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;a class="reference external" href="https://cloud.githubusercontent.com/assets/834529/9387975/b09f5254-4780-11e5-853c-efc6ed2f0bd6.png"&gt;&lt;img alt="stock info with interval selection only" src="https://cloud.githubusercontent.com/assets/834529/9387975/b09f5254-4780-11e5-853c-efc6ed2f0bd6.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="license"&gt;
+&lt;h2&gt;License&lt;/h2&gt;
+&lt;p&gt;Free to copy paste. Back-link to this post if you are good coder :wink:&lt;/p&gt;
+&lt;/div&gt;
+</summary><category term="share market"></category><category term="linux"></category><category term="python"></category><category term="shellscript"></category></entry><entry><title>Live India Stock Market Indices on your Terminal</title><link href="http://www.arulraj.net/2015/05/live-india-stock-market-indices-on-your-terminal.html" rel="alternate"></link><published>2015-05-10T14:18:18+05:30</published><author><name>arul</name></author><id>tag:www.arulraj.net,2015-05-10:2015/05/live-india-stock-market-indices-on-your-terminal.html</id><summary type="html">&lt;p&gt;&lt;strong&gt;Live BSE and NSE index on your bash terminal&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://1.bp.blogspot.com/-fDoy3dPAOBQ/VUXc8-MHu3I/AAAAAAAAAus/YhaywsrtU4g/s1600/stockmarketindia.png"&gt;&lt;img alt="stockmarketindia" src="http://1.bp.blogspot.com/-fDoy3dPAOBQ/VUXc8-MHu3I/AAAAAAAAAus/YhaywsrtU4g/s640/stockmarketindia.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;The script get the live index from BSE and NSE stock market.&lt;/p&gt;
+&lt;div class="section" id="how-to-use"&gt;
+&lt;h2&gt;How to Use&lt;/h2&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Download the script from github &lt;a class="reference external" href="https://gist.githubusercontent.com/arulrajnet/21addbacdbdfd6e190f4"&gt;stockmarketindia.py&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Copy the file into &lt;tt class="docutils literal"&gt;/usr/bin&lt;/tt&gt; folder.&lt;/li&gt;
+&lt;li&gt;Run &lt;tt class="docutils literal"&gt;stockmarketindia&lt;/tt&gt; anywhere from terminal.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;wget --no-check-certificate https://gist.githubusercontent.com/arulrajnet/21addbacdbdfd6e190f4/raw/stockmarketindia.py
+chmod +x stockmarketindia.py
+sudo cp stockmarketindia.py /usr/bin/stockmarketindia
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="api-used"&gt;
+&lt;h2&gt;API Used&lt;/h2&gt;
+&lt;p&gt;The python script using google finance API. &lt;a class="reference external" href="http://finance.google.com/finance/info?client=ig&amp;amp;q=INDEXBOM:SENSEX"&gt;http://finance.google.com/finance/info?client=ig&amp;amp;q=INDEXBOM:SENSEX&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="indexes-are-included"&gt;
+&lt;h2&gt;Indexes are Included&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;BSE&lt;/strong&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;INDEXBOM:SENSEX
+INDEXBOM:BSE-100
+INDEXBOM:BSE-200
+INDEXBOM:BSE-500
+INDEXBOM:BSE-SMLCAP
+INDEXBOM:BSE-MIDCAP
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;NSE&lt;/strong&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;NSE:NIFTY
+NSE:NIFTYJR
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+</summary><category term="share market"></category><category term="linux"></category><category term="python"></category><category term="shellscript"></category></entry></feed>

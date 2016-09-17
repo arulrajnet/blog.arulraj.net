@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Arul Blog</title><link href="http://www.arulraj.net/" rel="alternate"></link><link href="http://www.arulraj.net/feeds/tag/centos.atom.xml" rel="self"></link><id>http://www.arulraj.net/</id><updated>2014-06-06T13:18:12+05:30</updated><entry><title>Installing Oracle JDK / JRE in CentOS Ubuntu</title><link href="http://www.arulraj.net/2014/06/installing-oracle-jdk-jre-in-centos-ubuntu.html" rel="alternate"></link><published>2014-06-06T13:18:12+05:30</published><author><name>arul</name></author><id>tag:www.arulraj.net,2014-06-06:2014/06/installing-oracle-jdk-jre-in-centos-ubuntu.html</id><summary type="html">&lt;p&gt;&lt;a class="reference external" href="http://2.bp.blogspot.com/-7e9P9JpkCKg/U5ITbc1zw3I/AAAAAAAAVz8/-NrvH8mXWyU/s1600/download.jpg"&gt;&lt;img alt="image0" src="http://2.bp.blogspot.com/-7e9P9JpkCKg/U5ITbc1zw3I/AAAAAAAAVz8/-NrvH8mXWyU/s320/download.jpg" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;In earlier days (while SUN), Installing JRE / JDK in a VM is very easy
+process just like extracting a file and use it. Now wget-ing the source
+file itself a bit long process. After that you have use few commands to
+set this newly installed Java as default Java. So I have came up with
+list of steps to make installing java easier in CentOS and Ubuntu.&lt;/p&gt;
+&lt;div class="section" id="downloading-jdk"&gt;
+&lt;h2&gt;Downloading JDK...?&lt;/h2&gt;
+&lt;p&gt;In VM's usually you get terminal not GUI. So I followed command way in
+this tutorial. You have to add cookies to download java via wget
+command.&lt;/p&gt;
+&lt;div class="section" id="for-centos"&gt;
+&lt;h3&gt;For CentOS&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;wget --no-cookies --no-check-certificate &lt;span class="se"&gt;\&lt;/span&gt;
+--header &lt;span class="s2"&gt;&amp;quot;Cookie:gpw_e24=http%3A%2F%2Fwww.oracle.com%2F;oraclelicense=accept-securebackup-cookie&amp;quot;&lt;/span&gt; &lt;span class="se"&gt;\&lt;/span&gt;
+http://download.oracle.com/otn-pub/java/jdk/7u55-b13/jdk-7u55-linux-x64.rpm
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="for-ubuntu"&gt;
+&lt;h3&gt;For Ubuntu&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;wget --no-cookies --no-check-certificate &lt;span class="se"&gt;\&lt;/span&gt;
+--header &lt;span class="s2"&gt;&amp;quot;Cookie:gpw_e24=http%3A%2F%2Fwww.oracle.com%2F;oraclelicense=accept-securebackup-cookie&amp;quot;&lt;/span&gt; &lt;span class="se"&gt;\&lt;/span&gt;
+http://download.oracle.com/otn-pub/java/jdk/7u55-b13/jdk-7u55-linux-x64.tar.gz
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;I wrote a python script to download the Oracle Java jdk / jre from terminal.&lt;/p&gt;
+&lt;p&gt;That script in &lt;a class="reference external" href="https://gist.github.com/arulrajnet/7b261203499375bd0759"&gt;https://gist.github.com/arulrajnet/7b261203499375bd0759&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;How to Use&lt;/strong&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;wget --no-check-certificate https://gist.github.com/arulrajnet/7b261203499375bd0759/raw/download_java.py
+chmod +x download_java.py
+python download_java.py
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;It will ask for the type of package you want to download and version of package want to download. Finally the selected file will be downloaded in the current directory&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://1.bp.blogspot.com/-eo7_9M3j3A8/VU4kPpVeykI/AAAAAAAAWPM/ohiVIUXjUHo/s1600/download_java.png"&gt;&lt;img alt="download_java.py" src="http://1.bp.blogspot.com/-eo7_9M3j3A8/VU4kPpVeykI/AAAAAAAAWPM/ohiVIUXjUHo/s640/download_java.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="installing-and-setting"&gt;
+&lt;h2&gt;Installing and Setting...?&lt;/h2&gt;
+&lt;p&gt;In the installation to make this java as default one in the system wide.&lt;/p&gt;
+&lt;div class="section" id="id1"&gt;
+&lt;h3&gt;For CentOS&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;rpm -Uvh jdk-7u55-linux-x64.rpm
+alternatives --install /usr/bin/javaws javaws /usr/java/latest/bin/javaws 2
+alternatives --install /usr/bin/java java /usr/java/latest/bin/java 2
+alternatives --install /usr/bin/javac javac /usr/java/latest/bin/javac 2
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id2"&gt;
+&lt;h3&gt;For Ubuntu&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo mkdir -p /usr/java/jdk1.7.0_55
+sudo tar -xzvf jdk-7u55-linux-x64.tar.gz -C /usr/java/
+sudo ln -s /usr/java/jdk1.7.0_55/usr/java/latest
+sudo ln -s /usr/java/latest /usr/java/default
+sudo update-alternatives --install /usr/bin/javaws javaws /usr/java/latest/bin/javaws 2
+sudo update-alternatives --install /usr/bin/java java /usr/java/latest/bin/java 2
+sudo update-alternatives --install /usr/bin/javac javac /usr/java/latest/bin/javac 2
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;For ubuntu there is a PPA released by webupd8team.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;PPA way&lt;/strong&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo add-apt-repository ppa:webupd8team/java
+sudo apt-get update
+sudo apt-get install oracle-java7-installer
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Note:  But that is not working since 16th March. Hope they fixed now.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="installing-jre"&gt;
+&lt;h2&gt;Installing JRE...?&lt;/h2&gt;
+&lt;p&gt;To install JRE the downloading links only different. The other commands
+are same. Here I had some direct links for different versions of JDK and
+JRE&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;JRE 1.7 ( 64 Bit )&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://download.oracle.com/otn-pub/java/jdk/7u55-b13/server-jre-7u55-linux-x64.tar.gz"&gt;http://download.oracle.com/otn-pub/java/jdk/7u55-b13/server-jre-7u55-linux-x64.tar.gz&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://download.oracle.com/otn-pub/java/jdk/7u51-b13/server-jre-7u51-linux-x64.tar.gz"&gt;http://download.oracle.com/otn-pub/java/jdk/7u51-b13/server-jre-7u51-linux-x64.tar.gz&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://download.oracle.com/otn-pub/java/jdk/7u51-b13/jre-7u51-linux-x64.rpm"&gt;http://download.oracle.com/otn-pub/java/jdk/7u51-b13/jre-7u51-linux-x64.rpm&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://download.oracle.com/otn-pub/java/jdk/7u55-b13/jre-7u55-linux-x64.tar.gz"&gt;http://download.oracle.com/otn-pub/java/jdk/7u55-b13/jre-7u55-linux-x64.tar.gz&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://download.oracle.com/otn-pub/java/jdk/7u55-b13/jre-7u55-linux-x64.rpm"&gt;http://download.oracle.com/otn-pub/java/jdk/7u55-b13/jre-7u55-linux-x64.rpm&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;JDK 1.7 ( 64 Bit )&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://download.oracle.com/otn-pub/java/jdk/7u51-b13/jdk-7u51-linux-x64.rpm"&gt;http://download.oracle.com/otn-pub/java/jdk/7u51-b13/jdk-7u51-linux-x64.rpm&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://download.oracle.com/otn-pub/java/jdk/7u55-b13/jdk-7u55-linux-x64.rpm"&gt;http://download.oracle.com/otn-pub/java/jdk/7u55-b13/jdk-7u55-linux-x64.rpm&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://download.oracle.com/otn-pub/java/jdk/7u51-b13/jdk-7u51-linux-x64.tar.gz"&gt;http://download.oracle.com/otn-pub/java/jdk/7u51-b13/jdk-7u51-linux-x64.tar.gz&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://download.oracle.com/otn-pub/java/jdk/7u55-b13/jdk-7u55-linux-x64.tar.gz"&gt;http://download.oracle.com/otn-pub/java/jdk/7u55-b13/jdk-7u55-linux-x64.tar.gz&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+</summary><category term="centos"></category><category term="java"></category><category term="Linux"></category><category term="ubuntu"></category><category term="how to"></category></entry><entry><title>Upgrade openssl in Ubuntu and CentOS</title><link href="http://www.arulraj.net/2014/04/upgrade-openssl-in-ubuntu-and-centos.html" rel="alternate"></link><published>2014-04-09T20:08:00+05:30</published><author><name>arul</name></author><id>tag:www.arulraj.net,2014-04-09:2014/04/upgrade-openssl-in-ubuntu-and-centos.html</id><summary type="html">&lt;p&gt;&lt;strong&gt;Upgrade OpenSSL in Ubuntu and CentOS&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://4.bp.blogspot.com/-E5NogEilRNs/U0X3gzGooiI/AAAAAAAAVpo/ZZUTzTD_tuk/s1600/openssl-logo-bug.png"&gt;&lt;img alt="OpenSSL Heartbleed" src="http://4.bp.blogspot.com/-E5NogEilRNs/U0X3gzGooiI/AAAAAAAAVpo/ZZUTzTD_tuk/s640/openssl-logo-bug.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Hope you know about openssl heartbleed bug. Don't know about, no problem go through it &lt;a class="reference external" href="http://heartbleed.com"&gt;http://heartbleed.com/&lt;/a&gt; . The point here is you should upgrade your openssl. Because of this bug all linux variants release the patch for openssl. Here the steps for upgrade openssl both ubuntu and centos.&lt;/p&gt;
+&lt;div class="section" id="how-to-find-i-am-using-affected-version"&gt;
+&lt;h2&gt;How to find I am using affected version...?&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;In ubuntu:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Run this command&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;openssl version -a
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;There you can find &amp;quot;built on&amp;quot; date. If that date is older than Apr 7.
+Then you are using older version. You should upgrade your version.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;OpenSSL 1.0.1 14 Mar 2012
+built on: Wed Jan 8 20:45:51 UTC 2014
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;In CentOS:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Same as above.&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://2.bp.blogspot.com/-ee9O8qZXTUA/U0X5haUOlfI/AAAAAAAAVp4/GoiBS0CgO38/s1600/openssl-old-1.png"&gt;&lt;img alt="Open SSL Old Version" src="http://2.bp.blogspot.com/-ee9O8qZXTUA/U0X5haUOlfI/AAAAAAAAVp4/GoiBS0CgO38/s640/openssl-old-1.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="how-to-upgrade-openssl"&gt;
+&lt;h2&gt;How to upgrade openssl..?&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;In Ubuntu:&lt;/strong&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo apt-get update
+sudo apt-get install libssl1.0.0 openssl -y
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;In CentOS:&lt;/strong&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo yum update
+sudo yum update openssl -y
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="how-to-check-am-i-upgarded"&gt;
+&lt;h2&gt;How to check am I upgarded..?&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;openssl version -a &lt;span class="p"&gt;|&lt;/span&gt; grep built
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://3.bp.blogspot.com/-3hnS33ve4JM/U0X5hKOlqGI/AAAAAAAAVp0/ExBE5VMd-a8/s1600/openssl-new-1.png"&gt;&lt;img alt="OpenSSL New Version" src="http://3.bp.blogspot.com/-3hnS33ve4JM/U0X5hKOlqGI/AAAAAAAAVp0/ExBE5VMd-a8/s640/openssl-new-1.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;The date should greater than or equal to Apr 7.&lt;/p&gt;
+&lt;p&gt;Hey..!!! you are done. Happy secure linuxing... 😄&lt;/p&gt;
+&lt;/div&gt;
+</summary><category term="commands"></category><category term="fix"></category><category term="ubuntu"></category><category term="how to"></category><category term="centos"></category></entry></feed>

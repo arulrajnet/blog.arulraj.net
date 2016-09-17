@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Arul Blog</title><link href="http://www.arulraj.net/" rel="alternate"></link><link href="http://www.arulraj.net/feeds/tag/xml.atom.xml" rel="self"></link><id>http://www.arulraj.net/</id><updated>2013-11-21T09:43:00+05:30</updated><entry><title>XML to Actionscript class Turbosqel / ASML example</title><link href="http://www.arulraj.net/2013/11/xml-to-actionscript-class-turbosqel-asml-example.html" rel="alternate"></link><published>2013-11-21T09:43:00+05:30</published><author><name>arul</name></author><id>tag:www.arulraj.net,2013-11-21:2013/11/xml-to-actionscript-class-turbosqel-asml-example.html</id><summary type="html">&lt;p&gt;&lt;strong&gt;Turbosqel / ASML example&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;I found a useful third party actionscript libraris from githup&amp;nbsp;&lt;a class="reference external" href="https://github.com/turbosqel"&gt;https://github.com/turbosqel&lt;/a&gt;. I mostly used these as3SupportLib and ASML lib all of my flex projects. But initially I were struggle to find out the example over the internet. So I am writing here one of the feature of that libraries.&lt;/p&gt;
+&lt;p&gt;I am going to explain how to assign value to some variables from remote xml.&lt;/p&gt;
+&lt;embed src="http://files.arulraj.net/code/flash/example/ASMLExample/ASMLExample.html" width="270" height="250"&gt;
+&lt;/embed&gt;&lt;p&gt;[&lt;a class="reference external" href="http://files.arulraj.net/code/flash/example/ASMLExample/srcview/index.html"&gt;View Source&lt;/a&gt; Enabled]&lt;/p&gt;
+&lt;p&gt;Below code snippet for loading xml from server using as3SupportLib&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kd"&gt;protected&lt;/span&gt; &lt;span class="kd"&gt;var&lt;/span&gt; &lt;span class="n"&gt;configResource&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="kt"&gt;Resource&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+
+&lt;span class="kd"&gt;protected&lt;/span&gt; &lt;span class="kd"&gt;function &lt;/span&gt;&lt;span class="nf"&gt;onLoadAgain&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;event&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="kt"&gt;MouseEvent&lt;/span&gt;&lt;span class="o"&gt;):&lt;/span&gt;&lt;span class="kt"&gt;void&lt;/span&gt;
+&lt;span class="o"&gt;{&lt;/span&gt;
+        &lt;span class="n"&gt;configResource&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;ResourceManage&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;setExternal&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;config.xml&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
+        &lt;span class="n"&gt;DownloadManager&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;addEventListener&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;DownloadManagerEvent&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;COMPLETE&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="n"&gt;onDownloadComplete&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
+&lt;span class="o"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;The below code snippet for XML to Object&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kd"&gt;private&lt;/span&gt; &lt;span class="kd"&gt;function &lt;/span&gt;&lt;span class="nf"&gt;onDownloadComplete&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;event&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="kt"&gt;DownloadManagerEvent&lt;/span&gt;&lt;span class="o"&gt;):&lt;/span&gt;&lt;span class="kt"&gt;void&lt;/span&gt;
+&lt;span class="o"&gt;{&lt;/span&gt;
+        &lt;span class="kd"&gt;var&lt;/span&gt; &lt;span class="n"&gt;configXml&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="kt"&gt;XML&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="k"&gt;new&lt;/span&gt; &lt;span class="kt"&gt;XML&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;configResource&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;loaderInfo&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;source&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
+        &lt;span class="kd"&gt;var&lt;/span&gt; &lt;span class="n"&gt;xmlResult&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="kt"&gt;Array&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;ASMLManager&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;parseXML&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;configXml&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt;&lt;span class="k"&gt;this&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
+&lt;span class="o"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;For that works that config.xml should be written in certain way. Here is the doc for how to write xml &lt;a class="reference external" href="https://github.com/turbosqel/ASML/blob/master/README.textile"&gt;https://github.com/turbosqel/ASML/blob/master/README.textile&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;My XML is here &lt;a class="reference external" href="http://files.arulraj.net/code/flash/example/ASMLExample/config.xml"&gt;http://files.arulraj.net/code/flash/example/ASMLExample/config.xml&lt;/a&gt;&lt;/p&gt;
+</summary><category term="Actionscript"></category><category term="Flash"></category><category term="xml"></category></entry><entry><title>Image to binary data in java</title><link href="http://www.arulraj.net/2010/10/image-to-binary-data-in-java.html" rel="alternate"></link><published>2010-10-27T14:50:00+05:30</published><author><name>arul</name></author><id>tag:www.arulraj.net,2010-10-27:2010/10/image-to-binary-data-in-java.html</id><summary type="html">&lt;p&gt;&lt;strong&gt;Image to binary data in java&lt;/strong&gt;&lt;/p&gt;
+&lt;div class="separator" style="clear: both; text-align: center;"&gt;&lt;p&gt;&lt;a class="reference external" href="http://3.bp.blogspot.com/_X5tq9y9xv2s/TMiAHb-LmaI/AAAAAAAAAjM/sfMeXSo95hY/s1600/logo.png"&gt;&lt;img alt="image0" src="http://3.bp.blogspot.com/_X5tq9y9xv2s/TMiAHb-LmaI/AAAAAAAAAjM/sfMeXSo95hY/s320/logo.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;div class="separator" style="clear: both; text-align: left;"&gt;&lt;p&gt;Today i learn a new thing. That is come across like this way.. I tried
+to install &amp;quot;Bing&amp;quot; search provider to &amp;nbsp;my Mozilla Firefox. But that Bing
+favicon is not shown on the search provider.&lt;/p&gt;
+&lt;div class="separator" style="clear: both; text-align: center;"&gt;&lt;p&gt;&lt;a class="reference external" href="http://4.bp.blogspot.com/_X5tq9y9xv2s/TMiSnHN2BZI/AAAAAAAAAjQ/2nhvag3eIO0/s1600/Bing+search+provider.png"&gt;&lt;img alt="image1" src="http://4.bp.blogspot.com/_X5tq9y9xv2s/TMiSnHN2BZI/AAAAAAAAAjQ/2nhvag3eIO0/s320/Bing+search+provider.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;&lt;p&gt;Download the mozilla firefox addon from here
+&lt;a class="reference external" href="https://addons.mozilla.org/en-US/firefox/addon/10434"&gt;https://addons.mozilla.org/en-US/firefox/addon/10434&lt;/a&gt; . It gave an xml
+file for me.&lt;/p&gt;
+&lt;/div&gt;&lt;div class="separator" style="clear: both; text-align: left;"&gt;&lt;p&gt;My internet connection is not available at that time. so the favicon
+[&lt;a class="reference external" href="http://www.bing.com/favicon.ico"&gt;http://www.bing.com/favicon.ico&lt;/a&gt; not downloaded] for Bing is not shown
+for me. But the favicon for other search provider like google and amazon
+are shown. So i thought this is some thing different. Find the path for
+searchplugin in mozilla. In ubuntu the search provider location is&lt;/p&gt;
+&lt;/div&gt;
+
+ .. raw:: html
+
+    &lt;div class="separator" style="clear: both; text-align: left;"&gt;
+
+ /usr/lib/firefox-addons/searchplugins/en-US
+
+ .. raw:: html
+
+    &lt;/div&gt;&lt;div class="separator" style="clear: both; text-align: left;"&gt;&lt;p&gt;For google and others the image tag is look like the below&lt;/p&gt;
+&lt;/div&gt;&lt;div class="separator" style="clear: both; text-align: left;"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&amp;lt;img alt=&amp;quot;&amp;quot; width=&amp;quot;16&amp;quot; height=&amp;quot;16&amp;quot;
+  /&amp;gt;data:image/png;base64,AAABAAEAEBAAAAEAGABoAw.........
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;&lt;div class="separator" style="clear: both; text-align: left;"&gt;&lt;p&gt;Now i&amp;nbsp;realized we can use the binary data of the image as a src instead
+of image url. Here the wiki page for that
+&lt;a class="reference external" href="http://en.wikipedia.org/wiki/Data_URI_scheme"&gt;http://en.wikipedia.org/wiki/Data_URI_scheme&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;div class="separator" style="clear: both; text-align: left;"&gt;&lt;p&gt;You can use the binary data in &amp;quot;img&amp;quot; tag in html&lt;/p&gt;
+&lt;/div&gt;&lt;div class="separator" style="clear: both; text-align: left;"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&amp;lt;img alt=&amp;quot;Embedded Image&amp;quot;
+  src=&amp;quot;data:image/png;base64,iVBORw0KGgoAAAAN................ /&amp;gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;So i write java program for to convert image to data. Here is the code
+for your reference&lt;/p&gt;
+&lt;/div&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;java.awt.image.BufferedImage&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;java.io.ByteArrayOutputStream&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;java.io.File&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;javax.imageio.ImageIO&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;com.sun.org.apache.xerces.internal.impl.dv.util.Base64&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+
+&lt;span class="kd"&gt;public&lt;/span&gt; &lt;span class="kd"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;Image2Base64&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+
+ &lt;span class="kd"&gt;public&lt;/span&gt; &lt;span class="kd"&gt;static&lt;/span&gt; &lt;span class="kt"&gt;void&lt;/span&gt; &lt;span class="nf"&gt;main&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;String&lt;/span&gt; &lt;span class="n"&gt;args&lt;/span&gt;&lt;span class="o"&gt;[])&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+   &lt;span class="k"&gt;try&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+     &lt;span class="n"&gt;BufferedImage&lt;/span&gt; &lt;span class="n"&gt;image&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;ImageIO&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;read&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="k"&gt;new&lt;/span&gt; &lt;span class="n"&gt;File&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;favicon.png&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;));&lt;/span&gt;
+     &lt;span class="n"&gt;ByteArrayOutputStream&lt;/span&gt; &lt;span class="n"&gt;baos&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="k"&gt;new&lt;/span&gt; &lt;span class="n"&gt;ByteArrayOutputStream&lt;/span&gt;&lt;span class="o"&gt;();&lt;/span&gt;
+     &lt;span class="n"&gt;ImageIO&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;write&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;image&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;png&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="n"&gt;baos&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
+     &lt;span class="n"&gt;String&lt;/span&gt; &lt;span class="n"&gt;encodedImage&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Base64&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;encode&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;baos&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;toByteArray&lt;/span&gt;&lt;span class="o"&gt;());&lt;/span&gt;
+     &lt;span class="n"&gt;System&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;out&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;println&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;encodedImage&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
+   &lt;span class="o"&gt;}&lt;/span&gt; &lt;span class="k"&gt;catch&lt;/span&gt; &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;Exception&lt;/span&gt; &lt;span class="n"&gt;e&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+     &lt;span class="n"&gt;e&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;printStackTrace&lt;/span&gt;&lt;span class="o"&gt;();&lt;/span&gt;
+   &lt;span class="o"&gt;}&lt;/span&gt;
+ &lt;span class="o"&gt;}&lt;/span&gt;
+&lt;span class="o"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;div class="separator" style="clear: both; text-align: left;"&gt;&lt;p&gt;Here is the Bing img in data format&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;&lt;img alt="Embedded Image" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAxklEQVR42mP4v0z0PyWYgToGbHf8/39PAIQmy4CXR/+DAYimmgFrVCCuIuAyVAPeXf7//8bM//+/PPqPFTzeBjEQpwEwADLgchfCBcdzUdXcW47HAJAkyPnYnAwyCAZALsVqAC7NMAyyAAR+fkAyAOQ3mNMJhTzIazAAN+BsNUIQLZBQMMh1sACGWoZIiaAYgDkNZCC6ZpDByGqgUcuAYjooYGAApAgUNiCMHK0gQ5DSBWZe2GgEcQEoXGAGgDAsWmmTmSjAADs5Dn62z9V4AAAAAElFTkSuQmCC" /&gt;&lt;/p&gt;
+&lt;p&gt;Finally i Fix the Bing favicon problem in my Firefox search plugin&lt;/p&gt;
+&lt;p&gt;Steps:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Remove the Bing search plugin first.&lt;/li&gt;
+&lt;li&gt;Goto Manage Search Engine → Select Bing → Remove&lt;/li&gt;
+&lt;li&gt;Copy the below xml and save as bing.xml in
+&amp;quot;/usr/lib/firefox-addons/searchplugins/en-US&amp;quot; for ubuntu OR
+&amp;quot;C:\Program Files\Mozilla\Firefox\searchplugins&amp;quot; for windows&lt;/li&gt;
+&lt;li&gt;Restart your Firefox&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="cp"&gt;&amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;UTF-8&amp;quot;?&amp;gt;&lt;/span&gt;
+&lt;span class="nt"&gt;&amp;lt;OpenSearchDescription&lt;/span&gt; &lt;span class="na"&gt;xmlns=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;http://a9.com/-/spec/opensearch/1.1/&amp;quot;&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;
+&lt;span class="nt"&gt;&amp;lt;ShortName&amp;gt;&lt;/span&gt;Bing&lt;span class="nt"&gt;&amp;lt;/ShortName&amp;gt;&lt;/span&gt;
+&lt;span class="nt"&gt;&amp;lt;Tags&amp;gt;&lt;/span&gt;Bing&lt;span class="nt"&gt;&amp;lt;/Tags&amp;gt;&lt;/span&gt;
+&lt;span class="nt"&gt;&amp;lt;Description&amp;gt;&lt;/span&gt;Bing. Search by Microsoft.&lt;span class="nt"&gt;&amp;lt;/Description&amp;gt;&lt;/span&gt;
+&lt;span class="nt"&gt;&amp;lt;Contact&amp;gt;&lt;/span&gt;msosa@microsoft.com&lt;span class="nt"&gt;&amp;lt;/Contact&amp;gt;&lt;/span&gt;
+&lt;span class="nt"&gt;&amp;lt;InputEncoding&amp;gt;&lt;/span&gt;UTF-8&lt;span class="nt"&gt;&amp;lt;/InputEncoding&amp;gt;&lt;/span&gt;
+&lt;span class="nt"&gt;&amp;lt;SyndicationRight&amp;gt;&lt;/span&gt;limited&lt;span class="nt"&gt;&amp;lt;/SyndicationRight&amp;gt;&lt;/span&gt;
+&lt;span class="nt"&gt;&amp;lt;Image&lt;/span&gt; &lt;span class="na"&gt;width=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;16&amp;quot;&lt;/span&gt;
+  &lt;span class="na"&gt;height=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;16&amp;quot;&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;data:image/x-icon;base64,AAABAAEAEBAAAAEAGABoAwAAFgAAACgAAAAQAAAAIAAAAAEAGAAAAAAAAAAAABMLAAATCwAAAAAAAAAAAAAVpv8Vpv8Vpv8Vpv8Vpv8Vpv8Vpv8Vpv8Vpv8Vpv8Vpv8Vpv8Vpv8Vpv8Vpv8Vpv8Vpv8Vpv8Vpv8Vpv8Vpv8Vpv8Vpv8Vpv8Vpv8Vpv8Vpv8Vpv8Vpv8Vpv8Vpv8Vpv8Vpv8Vpv8Vpv8Vpv8ysf97zf+24%2F%2FF6f%2FF6f%2FF6f+K0%2F9QvP8Vpv8Vpv8Vpv8Vpv8Vpv8Vpv8krP+Z2P%2F%2F%2F%2F%2F%2F%2F%2F%2Fw+f%2FF6f%2FF6f%2Fi9P%2F%2F%2F%2F%2F%2F%2F%2F%2FT7v9Bt%2F8Vpv8Vpv8Vpv8Vpv%2FT7v%2F%2F%2F%2F%2Fw+f97zf8Vpv8Vpv8Vpv8Vpv9QvP%2FT7v%2F%2F%2F%2F%2Fw+f9Bt%2F8Vpv8Vpv97zf%2F%2F%2F%2F%2F%2F%2F%2F9QvP8Vpv8Vpv8Vpv8Vpv8Vpv8Vpv8krP%2Fi9P%2F%2F%2F%2F%2Fi9P8Vpv8Vpv+24%2F%2F%2F%2F%2F%2Fi9P8Vpv8Vpv8Vpv8Vpv8Vpv8Vpv8Vpv8Vpv+K0%2F%2F%2F%2F%2F%2F%2F%2F%2F8Vpv8Vpv%2FF6f%2F%2F%2F%2F%2F%2F%2F%2F8krP8Vpv8Vpv8Vpv8Vpv8Vpv8Vpv8Vpv+n3v%2F%2F%2F%2F%2Fw+f8Vpv8Vpv%2FF6f%2F%2F%2F%2F%2F%2F%2F%2F+n3v8krP8Vpv8Vpv8Vpv8Vpv8Vpv9tx%2F%2F%2F%2F%2F%2F%2F%2F%2F+Z2P8Vpv8Vpv%2FF6f%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2Fi9P+K0%2F9QvP9QvP9tx%2F%2FF6f%2F%2F%2F%2F%2F%2F%2F%2F+n3v8Vpv8Vpv8Vpv%2FF6f%2F%2F%2F%2F%2FT7v+Z2P%2Fi9P%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F+24%2F9QvP8Vpv8Vpv8Vpv8Vpv%2FF6f%2F%2F%2F%2F%2FF6f8Vpv8Vpv8krP9QvP9QvP9Bt%2F8Vpv8Vpv8Vpv8Vpv8Vpv8Vpv8Vpv%2FF6f%2F%2F%2F%2F%2FF6f8Vpv8Vpv8Vpv8Vpv8Vpv8Vpv8Vpv8Vpv8Vpv8Vpv8Vpv8Vpv8Vpv9Bt%2F9QvP9Bt%2F8Vpv8Vpv8Vpv8Vpv8Vpv8Vpv8Vpv8Vpv8Vpv8Vpv8Vpv8Vpv8Vpv8Vpv8Vpv8Vpv8Vpv8Vpv8Vpv8Vpv8Vpv8Vpv8Vpv8Vpv8Vpv8Vpv8Vpv8Vpv8Vpv8Vpv8Vpv8Vpv8Vpv8Vpv8Vpv8Vpv8Vpv8Vpv8Vpv8Vpv8Vpv8Vpv8Vpv8Vpv8AAHBsAABhdAAAbiAAAHJ0AABsaQAAdGkAACBDAABlbgAAUEEAAEVYAAAuQwAAOy4AAEU7AABBVAAAQ00AAC5W&lt;span class="nt"&gt;&amp;lt;/Image&amp;gt;&lt;/span&gt;
+&lt;span class="nt"&gt;&amp;lt;Url&lt;/span&gt; &lt;span class="na"&gt;type=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;text/html&amp;quot;&lt;/span&gt;
+  &lt;span class="na"&gt;template=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;http://www.bing.com/search?q={searchTerms}&amp;amp;amp;form=OSDSRC&amp;quot;&lt;/span&gt;&lt;span class="nt"&gt;/&amp;gt;&lt;/span&gt;
+&lt;span class="nt"&gt;&amp;lt;Url&lt;/span&gt; &lt;span class="na"&gt;type=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;application/x-suggestions+json&amp;quot;&lt;/span&gt;
+  &lt;span class="na"&gt;template=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;http://api.bing.com/osjson.aspx?query={searchTerms}&amp;amp;amp;language={language}&amp;amp;amp;form=OSDJAS&amp;quot;&lt;/span&gt;&lt;span class="nt"&gt;/&amp;gt;&lt;/span&gt;
+&lt;span class="nt"&gt;&amp;lt;/OpenSearchDescription&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;div class="separator" style="clear: both; text-align: center;"&gt;&lt;p&gt;&lt;a class="reference external" href="http://1.bp.blogspot.com/_X5tq9y9xv2s/TOIpP67w5dI/AAAAAAAAAjU/QUdkLjf9X2Q/s1600/bing+favicon+for+seach+plugin.png"&gt;&lt;img alt="image3" src="http://1.bp.blogspot.com/_X5tq9y9xv2s/TOIpP67w5dI/AAAAAAAAAjU/QUdkLjf9X2Q/s1600/bing+favicon+for+seach+plugin.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;Update: Right now this code only supports png and sometimes ico. i don't
+know why it behave like this...&lt;/p&gt;
+</summary><category term="java"></category><category term="xml"></category></entry></feed>

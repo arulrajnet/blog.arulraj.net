@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Arul Blog</title><link href="http://www.arulraj.net/" rel="alternate"></link><link href="http://www.arulraj.net/feeds/tag/design-pattern.atom.xml" rel="self"></link><id>http://www.arulraj.net/</id><updated>2010-03-23T01:00:00+05:30</updated><entry><title>How Singleton pattern in Java</title><link href="http://www.arulraj.net/2010/03/how-singleton-pattern-in-java.html" rel="alternate"></link><published>2010-03-23T01:00:00+05:30</published><author><name>arul</name></author><id>tag:www.arulraj.net,2010-03-23:2010/03/how-singleton-pattern-in-java.html</id><summary type="html">&lt;p&gt;&lt;a class="reference external" href="http://3.bp.blogspot.com/_X5tq9y9xv2s/S6hhueEzyWI/AAAAAAAAANA/MAXSbAXOX1Q/s1600-h/design-is-a-behaviour.jpg"&gt;&lt;img alt="image0" src="http://3.bp.blogspot.com/_X5tq9y9xv2s/S6hhueEzyWI/AAAAAAAAANA/MAXSbAXOX1Q/s400/design-is-a-behaviour.jpg" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;What is singleton ..?&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+It is a Design pattern. At this time what is Design pattern ..? To find
+out the best way to do a thing apart from the various method.
+Documenting a solution for the common problems.&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;The Rule for the Singleton are:&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;restrict the creating the object of the class&lt;/li&gt;
+&lt;li&gt;only one object is created over the application&lt;/li&gt;
+&lt;li&gt;If multiple thread accessed then thread safe&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;How to restrict the creating object..?&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+Define the access modifier of the constructor be &lt;em&gt;Private&lt;/em&gt; and add the
+&lt;em&gt;final&lt;/em&gt; keyword to the class then only the class can't be extended.&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Then How to create a one instance and access ..?&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+Create a instance with in the same class and accessed using the static
+method.&lt;/blockquote&gt;
+&lt;p&gt;&lt;em&gt;Here is the Example code:&lt;/em&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kd"&gt;public&lt;/span&gt; &lt;span class="kd"&gt;final&lt;/span&gt; &lt;span class="kd"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;SingletonExample&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+
+  &lt;span class="kd"&gt;private&lt;/span&gt; &lt;span class="kd"&gt;static&lt;/span&gt; &lt;span class="n"&gt;SingletonExample&lt;/span&gt; &lt;span class="n"&gt;singleton&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="k"&gt;new&lt;/span&gt; &lt;span class="n"&gt;SingletonExample&lt;/span&gt;&lt;span class="o"&gt;();&lt;/span&gt;
+
+  &lt;span class="kd"&gt;private&lt;/span&gt; &lt;span class="nf"&gt;SingletonExample&lt;/span&gt;&lt;span class="o"&gt;()&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+    &lt;span class="c1"&gt;// Write your Functionality Here&lt;/span&gt;
+  &lt;span class="o"&gt;}&lt;/span&gt;
+
+  &lt;span class="kd"&gt;public&lt;/span&gt; &lt;span class="kd"&gt;static&lt;/span&gt; &lt;span class="n"&gt;SingletonExample&lt;/span&gt; &lt;span class="nf"&gt;getInstance&lt;/span&gt;&lt;span class="o"&gt;()&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;singleton&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+  &lt;span class="o"&gt;}&lt;/span&gt;
+&lt;span class="o"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Usage: save the below as Arul.java&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kd"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;Foo&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+  &lt;span class="kd"&gt;public&lt;/span&gt; &lt;span class="kd"&gt;static&lt;/span&gt; &lt;span class="n"&gt;SingletonExample&lt;/span&gt; &lt;span class="n"&gt;obj&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+  &lt;span class="kd"&gt;public&lt;/span&gt; &lt;span class="kd"&gt;static&lt;/span&gt; &lt;span class="kt"&gt;void&lt;/span&gt; &lt;span class="nf"&gt;method&lt;/span&gt;&lt;span class="o"&gt;()&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+    &lt;span class="n"&gt;obj&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;SingletonExample&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;getInstance&lt;/span&gt;&lt;span class="o"&gt;();&lt;/span&gt;
+  &lt;span class="o"&gt;}&lt;/span&gt;
+&lt;span class="o"&gt;}&lt;/span&gt;
+
+&lt;span class="kd"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;Arul&lt;/span&gt;&lt;span class="o"&gt;{&lt;/span&gt;
+  &lt;span class="kd"&gt;public&lt;/span&gt; &lt;span class="kd"&gt;static&lt;/span&gt; &lt;span class="kt"&gt;void&lt;/span&gt; &lt;span class="nf"&gt;main&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;String&lt;/span&gt; &lt;span class="n"&gt;arg&lt;/span&gt;&lt;span class="o"&gt;[])&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+    &lt;span class="n"&gt;SingletonExample&lt;/span&gt; &lt;span class="n"&gt;obj&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;SingletonExample&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;getInstance&lt;/span&gt;&lt;span class="o"&gt;();&lt;/span&gt;
+    &lt;span class="n"&gt;Foo&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;method&lt;/span&gt;&lt;span class="o"&gt;();&lt;/span&gt;
+    &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;Foo&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;obj&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="n"&gt;obj&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+      &lt;span class="n"&gt;System&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;out&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;println&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;Both the objects are same &amp;quot;&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
+    &lt;span class="o"&gt;}&lt;/span&gt; &lt;span class="k"&gt;else&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+      &lt;span class="n"&gt;System&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;out&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;println&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;Not the same &amp;quot;&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
+    &lt;span class="o"&gt;}&lt;/span&gt;
+  &lt;span class="o"&gt;}&lt;/span&gt;
+&lt;span class="o"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;In the Both Foo and Arul class access the same instance.&lt;/p&gt;
+&lt;div class="separator" style="clear: both; text-align: center;"&gt;&lt;p&gt;&lt;a class="reference external" href="http://3.bp.blogspot.com/_X5tq9y9xv2s/TAUe3R-Ca0I/AAAAAAAAAWM/-9WSRFEh-bk/s1600/java+compile.jpg"&gt;&lt;img alt="image1" src="http://3.bp.blogspot.com/_X5tq9y9xv2s/TAUe3R-Ca0I/AAAAAAAAAWM/-9WSRFEh-bk/s320/java+compile.jpg" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;For more :
+&lt;a class="reference external" href="http://en.wikipedia.org/wiki/Design_pattern_%28computer_science%29"&gt;http://en.wikipedia.org/wiki/Design_pattern_%28computer_science%29&lt;/a&gt;&lt;/p&gt;
+</summary><category term="Design pattern"></category><category term="java"></category></entry></feed>

@@ -1,0 +1,1431 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Arul Blog</title><link href="http://www.arulraj.net/" rel="alternate"></link><link href="http://www.arulraj.net/feeds/tag/linux.atom.xml" rel="self"></link><id>http://www.arulraj.net/</id><updated>2015-09-06T23:06:45+05:30</updated><entry><title>Script to get Stock History Information</title><link href="http://www.arulraj.net/2015/09/script-to-get-stock-history-information.html" rel="alternate"></link><published>2015-09-06T23:06:45+05:30</published><author><name>arul</name></author><id>tag:www.arulraj.net,2015-09-06:2015/09/script-to-get-stock-history-information.html</id><summary type="html">&lt;p&gt;I wrote a python script to get stock market current and history information based on Google finance API. Here I am going to explain about that.&lt;/p&gt;
+&lt;div class="section" id="how-to-setup"&gt;
+&lt;h2&gt;How to setup&lt;/h2&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Download &lt;a class="reference external" href="https://gist.github.com/arulrajnet/cb1476234967717a4d6d"&gt;GetStockInfo.py&lt;/a&gt; into /usr/local/bin folder as stockinfo&lt;/li&gt;
+&lt;li&gt;chmod +x /usr/local/bin/stockinfo&lt;/li&gt;
+&lt;li&gt;Run &lt;cite&gt;stockinfo&lt;/cite&gt; as command from anywhere in your terminal&lt;/li&gt;
+&lt;li&gt;I create alias command with different stock list and get info whenever I want&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;wget --no-check-certificate https://gist.github.com/arulrajnet/cb1476234967717a4d6d/raw/GetStockInfo.py
+chmod +x GetStockInfo.py
+sudo cp GetStockInfo.py /usr/local/bin/stockinfo
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;To get given stock current and history information&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;stockinfo -s NASDAQ:AAPL,NASDAQ:GOOG,NASDAQ:MSFT,INDEXBOM:SENSEX -i 7d,1m,1y
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Instead of you can use&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;python GetStockInfo.py -s NASDAQ:AAPL,NASDAQ:GOOG,NASDAQ:MSFT,INDEXBOM:SENSEX -i 7d,1m,1y
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;a class="reference external" href="https://cloud.githubusercontent.com/assets/834529/9387826/f2011440-477f-11e5-94b3-dacf7fd595db.png"&gt;&lt;img alt="Stock Info with Stock and Interval Selection" src="https://cloud.githubusercontent.com/assets/834529/9387826/f2011440-477f-11e5-94b3-dacf7fd595db.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;To get given stock current information&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;stockinfo -s NASDAQ:AAPL,NASDAQ:GOOG,NASDAQ:MSFT,INDEXBOM:SENSEX
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;a class="reference external" href="https://cloud.githubusercontent.com/assets/834529/9387855/16dc856a-4780-11e5-9c28-1af6d3511fb0.png"&gt;&lt;img alt="Stock Info with Stock Selection only" src="https://cloud.githubusercontent.com/assets/834529/9387855/16dc856a-4780-11e5-9c28-1af6d3511fb0.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;To get default stock current information&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;stockinfo
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;a class="reference external" href="https://cloud.githubusercontent.com/assets/834529/9387927/6be8b38a-4780-11e5-9e94-b5189264c9d6.png"&gt;&lt;img alt="Stock Info with default stock" src="https://cloud.githubusercontent.com/assets/834529/9387927/6be8b38a-4780-11e5-9e94-b5189264c9d6.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;To get default stock current and history information&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;stockinfo -i 7d,1m
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;a class="reference external" href="https://cloud.githubusercontent.com/assets/834529/9387975/b09f5254-4780-11e5-853c-efc6ed2f0bd6.png"&gt;&lt;img alt="stock info with interval selection only" src="https://cloud.githubusercontent.com/assets/834529/9387975/b09f5254-4780-11e5-853c-efc6ed2f0bd6.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="license"&gt;
+&lt;h2&gt;License&lt;/h2&gt;
+&lt;p&gt;Free to copy paste. Back-link to this post if you are good coder :wink:&lt;/p&gt;
+&lt;/div&gt;
+</summary><category term="share market"></category><category term="linux"></category><category term="python"></category><category term="shellscript"></category></entry><entry><title>Live India Stock Market Indices on your Terminal</title><link href="http://www.arulraj.net/2015/05/live-india-stock-market-indices-on-your-terminal.html" rel="alternate"></link><published>2015-05-10T14:18:18+05:30</published><author><name>arul</name></author><id>tag:www.arulraj.net,2015-05-10:2015/05/live-india-stock-market-indices-on-your-terminal.html</id><summary type="html">&lt;p&gt;&lt;strong&gt;Live BSE and NSE index on your bash terminal&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://1.bp.blogspot.com/-fDoy3dPAOBQ/VUXc8-MHu3I/AAAAAAAAAus/YhaywsrtU4g/s1600/stockmarketindia.png"&gt;&lt;img alt="stockmarketindia" src="http://1.bp.blogspot.com/-fDoy3dPAOBQ/VUXc8-MHu3I/AAAAAAAAAus/YhaywsrtU4g/s640/stockmarketindia.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;The script get the live index from BSE and NSE stock market.&lt;/p&gt;
+&lt;div class="section" id="how-to-use"&gt;
+&lt;h2&gt;How to Use&lt;/h2&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Download the script from github &lt;a class="reference external" href="https://gist.githubusercontent.com/arulrajnet/21addbacdbdfd6e190f4"&gt;stockmarketindia.py&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Copy the file into &lt;tt class="docutils literal"&gt;/usr/bin&lt;/tt&gt; folder.&lt;/li&gt;
+&lt;li&gt;Run &lt;tt class="docutils literal"&gt;stockmarketindia&lt;/tt&gt; anywhere from terminal.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;wget --no-check-certificate https://gist.githubusercontent.com/arulrajnet/21addbacdbdfd6e190f4/raw/stockmarketindia.py
+chmod +x stockmarketindia.py
+sudo cp stockmarketindia.py /usr/bin/stockmarketindia
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="api-used"&gt;
+&lt;h2&gt;API Used&lt;/h2&gt;
+&lt;p&gt;The python script using google finance API. &lt;a class="reference external" href="http://finance.google.com/finance/info?client=ig&amp;amp;q=INDEXBOM:SENSEX"&gt;http://finance.google.com/finance/info?client=ig&amp;amp;q=INDEXBOM:SENSEX&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="indexes-are-included"&gt;
+&lt;h2&gt;Indexes are Included&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;BSE&lt;/strong&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;INDEXBOM:SENSEX
+INDEXBOM:BSE-100
+INDEXBOM:BSE-200
+INDEXBOM:BSE-500
+INDEXBOM:BSE-SMLCAP
+INDEXBOM:BSE-MIDCAP
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;NSE&lt;/strong&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;NSE:NIFTY
+NSE:NIFTYJR
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+</summary><category term="share market"></category><category term="linux"></category><category term="python"></category><category term="shellscript"></category></entry><entry><title>Live Cricket Score on your terminal</title><link href="http://www.arulraj.net/2015/05/live-cricket-score-on-your-terminal.html" rel="alternate"></link><published>2015-05-10T13:11:59+05:30</published><author><name>arul</name></author><id>tag:www.arulraj.net,2015-05-10:2015/05/live-cricket-score-on-your-terminal.html</id><summary type="html">&lt;p&gt;&lt;strong&gt;Live Cricket Score From CricInfo on your Bash Terminal&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://1.bp.blogspot.com/-aJzVV1AyHS4/VU4v696M-HI/AAAAAAAAWPc/iWGrzuIGMMc/s1600/livecricketscore.png"&gt;&lt;img alt="score_terminal" src="http://1.bp.blogspot.com/-aJzVV1AyHS4/VU4v696M-HI/AAAAAAAAWPc/iWGrzuIGMMc/s640/livecricketscore.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;You are a hardcore cricket fan, want to get updated the score while working 😄 😄 . But bored to open a browser ⇒ goto cricinfo ⇒ goto particular cricket match. Welcome, this script for you only.&lt;/p&gt;
+&lt;div class="section" id="why-this-script"&gt;
+&lt;h2&gt;Why this Script..?&lt;/h2&gt;
+&lt;p&gt;I am not the fan of cricket. But some of friends working as Linux Administrators who is always looking black and white terminal, They want to know the score. So I wrote a shellscript to get score from cricinfo. Now they happily run this script in an another terminal and gets updated about score.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="how-to-use"&gt;
+&lt;h2&gt;How to use..?&lt;/h2&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Download the file from github &lt;a class="reference external" href="https://gist.githubusercontent.com/arulrajnet/fb71169c35180f9d9abd&amp;quot;GistLinkforLiveCricketScore&amp;quot;"&gt;livecricketscore.sh&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Then copy that file in to /usr/bin/ folder&lt;/li&gt;
+&lt;li&gt;Run that &lt;tt class="docutils literal"&gt;livecricketscore&lt;/tt&gt; from anywhere&lt;/li&gt;
+&lt;li&gt;It will ask for the which match score you want to know&lt;/li&gt;
+&lt;li&gt;Select the matcher number&lt;/li&gt;
+&lt;li&gt;It will continuously run untill you kill ( CTRL + C ) that&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;wget --no-check-certificate https://gist.githubusercontent.com/arulrajnet/fb71169c35180f9d9abd/raw/livecricketscore.sh
+chmod +x livecricketscore.sh
+cp livecricketscore.sh /usr/bin/livecricketscore
+sh /usr/bin/livcricketscore
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;You need to install xmllint if its not there already. To install xmllint in ubuntu&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;apt-get update
+apt-get install libxml2-utils
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="credits"&gt;
+&lt;h2&gt;Credits&lt;/h2&gt;
+&lt;p&gt;Thanks to ww.espncricinfo.com . I am using their RSS feed to list the live matches and get the score.&lt;/p&gt;
+&lt;/div&gt;
+</summary><category term="linux"></category><category term="cricket"></category><category term="shellscript"></category></entry><entry><title>Installing Oracle JDK / JRE in CentOS Ubuntu</title><link href="http://www.arulraj.net/2014/06/installing-oracle-jdk-jre-in-centos-ubuntu.html" rel="alternate"></link><published>2014-06-06T13:18:12+05:30</published><author><name>arul</name></author><id>tag:www.arulraj.net,2014-06-06:2014/06/installing-oracle-jdk-jre-in-centos-ubuntu.html</id><summary type="html">&lt;p&gt;&lt;a class="reference external" href="http://2.bp.blogspot.com/-7e9P9JpkCKg/U5ITbc1zw3I/AAAAAAAAVz8/-NrvH8mXWyU/s1600/download.jpg"&gt;&lt;img alt="image0" src="http://2.bp.blogspot.com/-7e9P9JpkCKg/U5ITbc1zw3I/AAAAAAAAVz8/-NrvH8mXWyU/s320/download.jpg" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;In earlier days (while SUN), Installing JRE / JDK in a VM is very easy
+process just like extracting a file and use it. Now wget-ing the source
+file itself a bit long process. After that you have use few commands to
+set this newly installed Java as default Java. So I have came up with
+list of steps to make installing java easier in CentOS and Ubuntu.&lt;/p&gt;
+&lt;div class="section" id="downloading-jdk"&gt;
+&lt;h2&gt;Downloading JDK...?&lt;/h2&gt;
+&lt;p&gt;In VM's usually you get terminal not GUI. So I followed command way in
+this tutorial. You have to add cookies to download java via wget
+command.&lt;/p&gt;
+&lt;div class="section" id="for-centos"&gt;
+&lt;h3&gt;For CentOS&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;wget --no-cookies --no-check-certificate &lt;span class="se"&gt;\&lt;/span&gt;
+--header &lt;span class="s2"&gt;&amp;quot;Cookie:gpw_e24=http%3A%2F%2Fwww.oracle.com%2F;oraclelicense=accept-securebackup-cookie&amp;quot;&lt;/span&gt; &lt;span class="se"&gt;\&lt;/span&gt;
+http://download.oracle.com/otn-pub/java/jdk/7u55-b13/jdk-7u55-linux-x64.rpm
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="for-ubuntu"&gt;
+&lt;h3&gt;For Ubuntu&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;wget --no-cookies --no-check-certificate &lt;span class="se"&gt;\&lt;/span&gt;
+--header &lt;span class="s2"&gt;&amp;quot;Cookie:gpw_e24=http%3A%2F%2Fwww.oracle.com%2F;oraclelicense=accept-securebackup-cookie&amp;quot;&lt;/span&gt; &lt;span class="se"&gt;\&lt;/span&gt;
+http://download.oracle.com/otn-pub/java/jdk/7u55-b13/jdk-7u55-linux-x64.tar.gz
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;I wrote a python script to download the Oracle Java jdk / jre from terminal.&lt;/p&gt;
+&lt;p&gt;That script in &lt;a class="reference external" href="https://gist.github.com/arulrajnet/7b261203499375bd0759"&gt;https://gist.github.com/arulrajnet/7b261203499375bd0759&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;How to Use&lt;/strong&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;wget --no-check-certificate https://gist.github.com/arulrajnet/7b261203499375bd0759/raw/download_java.py
+chmod +x download_java.py
+python download_java.py
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;It will ask for the type of package you want to download and version of package want to download. Finally the selected file will be downloaded in the current directory&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://1.bp.blogspot.com/-eo7_9M3j3A8/VU4kPpVeykI/AAAAAAAAWPM/ohiVIUXjUHo/s1600/download_java.png"&gt;&lt;img alt="download_java.py" src="http://1.bp.blogspot.com/-eo7_9M3j3A8/VU4kPpVeykI/AAAAAAAAWPM/ohiVIUXjUHo/s640/download_java.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="installing-and-setting"&gt;
+&lt;h2&gt;Installing and Setting...?&lt;/h2&gt;
+&lt;p&gt;In the installation to make this java as default one in the system wide.&lt;/p&gt;
+&lt;div class="section" id="id1"&gt;
+&lt;h3&gt;For CentOS&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;rpm -Uvh jdk-7u55-linux-x64.rpm
+alternatives --install /usr/bin/javaws javaws /usr/java/latest/bin/javaws 2
+alternatives --install /usr/bin/java java /usr/java/latest/bin/java 2
+alternatives --install /usr/bin/javac javac /usr/java/latest/bin/javac 2
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id2"&gt;
+&lt;h3&gt;For Ubuntu&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo mkdir -p /usr/java/jdk1.7.0_55
+sudo tar -xzvf jdk-7u55-linux-x64.tar.gz -C /usr/java/
+sudo ln -s /usr/java/jdk1.7.0_55/usr/java/latest
+sudo ln -s /usr/java/latest /usr/java/default
+sudo update-alternatives --install /usr/bin/javaws javaws /usr/java/latest/bin/javaws 2
+sudo update-alternatives --install /usr/bin/java java /usr/java/latest/bin/java 2
+sudo update-alternatives --install /usr/bin/javac javac /usr/java/latest/bin/javac 2
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;For ubuntu there is a PPA released by webupd8team.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;PPA way&lt;/strong&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo add-apt-repository ppa:webupd8team/java
+sudo apt-get update
+sudo apt-get install oracle-java7-installer
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Note:  But that is not working since 16th March. Hope they fixed now.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="installing-jre"&gt;
+&lt;h2&gt;Installing JRE...?&lt;/h2&gt;
+&lt;p&gt;To install JRE the downloading links only different. The other commands
+are same. Here I had some direct links for different versions of JDK and
+JRE&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;JRE 1.7 ( 64 Bit )&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://download.oracle.com/otn-pub/java/jdk/7u55-b13/server-jre-7u55-linux-x64.tar.gz"&gt;http://download.oracle.com/otn-pub/java/jdk/7u55-b13/server-jre-7u55-linux-x64.tar.gz&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://download.oracle.com/otn-pub/java/jdk/7u51-b13/server-jre-7u51-linux-x64.tar.gz"&gt;http://download.oracle.com/otn-pub/java/jdk/7u51-b13/server-jre-7u51-linux-x64.tar.gz&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://download.oracle.com/otn-pub/java/jdk/7u51-b13/jre-7u51-linux-x64.rpm"&gt;http://download.oracle.com/otn-pub/java/jdk/7u51-b13/jre-7u51-linux-x64.rpm&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://download.oracle.com/otn-pub/java/jdk/7u55-b13/jre-7u55-linux-x64.tar.gz"&gt;http://download.oracle.com/otn-pub/java/jdk/7u55-b13/jre-7u55-linux-x64.tar.gz&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://download.oracle.com/otn-pub/java/jdk/7u55-b13/jre-7u55-linux-x64.rpm"&gt;http://download.oracle.com/otn-pub/java/jdk/7u55-b13/jre-7u55-linux-x64.rpm&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;JDK 1.7 ( 64 Bit )&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://download.oracle.com/otn-pub/java/jdk/7u51-b13/jdk-7u51-linux-x64.rpm"&gt;http://download.oracle.com/otn-pub/java/jdk/7u51-b13/jdk-7u51-linux-x64.rpm&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://download.oracle.com/otn-pub/java/jdk/7u55-b13/jdk-7u55-linux-x64.rpm"&gt;http://download.oracle.com/otn-pub/java/jdk/7u55-b13/jdk-7u55-linux-x64.rpm&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://download.oracle.com/otn-pub/java/jdk/7u51-b13/jdk-7u51-linux-x64.tar.gz"&gt;http://download.oracle.com/otn-pub/java/jdk/7u51-b13/jdk-7u51-linux-x64.tar.gz&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://download.oracle.com/otn-pub/java/jdk/7u55-b13/jdk-7u55-linux-x64.tar.gz"&gt;http://download.oracle.com/otn-pub/java/jdk/7u55-b13/jdk-7u55-linux-x64.tar.gz&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+</summary><category term="centos"></category><category term="java"></category><category term="Linux"></category><category term="ubuntu"></category><category term="how to"></category></entry><entry><title>Automount vmware shared folder in ubuntu</title><link href="http://www.arulraj.net/2013/09/automount-vmware-shared-folder-in-ubuntu.html" rel="alternate"></link><published>2013-09-16T13:19:00+05:30</published><author><name>arul</name></author><id>tag:www.arulraj.net,2013-09-16:2013/09/automount-vmware-shared-folder-in-ubuntu.html</id><summary type="html">&lt;p&gt;&lt;strong&gt;How to fix shared folder automount problem in vmware ..?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;I am using vmware player for last several years. But I am not tested their shared folder features. To share your host os folder with vm you have to install &amp;quot;vmware tools&amp;quot; on guest os. Installing vmware tools is very simple.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Checking vmware module :&lt;/strong&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo lsmod &lt;span class="p"&gt;|&lt;/span&gt; grep vmhgfs
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;It should return some values something like shown on image.&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://1.bp.blogspot.com/-scGjIUU5lA4/UjdQ4ODFgPI/AAAAAAAAVYA/M6Dqv5mdewQ/s1600/lsmode.PNG"&gt;&lt;img alt="lsmode" src="http://1.bp.blogspot.com/-scGjIUU5lA4/UjdQ4ODFgPI/AAAAAAAAVYA/M6Dqv5mdewQ/s320/lsmode.PNG" /&gt;&lt;/a&gt; List modules&lt;/p&gt;
+&lt;p&gt;If not you have to install vmware tools.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Installing vmware tools :&lt;/strong&gt;&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Goto Player →&amp;nbsp;Manage →&amp;nbsp;Install vmware Tools . Now Vmware Tools is mounted as CDROM with in VM&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://1.bp.blogspot.com/-ThUF8cYzXf8/UjdSbEfZR8I/AAAAAAAAVYM/FP45AmtYzFk/s1600/install-vmware.png"&gt;&lt;img alt="vmware tools install" src="http://1.bp.blogspot.com/-ThUF8cYzXf8/UjdSbEfZR8I/AAAAAAAAVYM/FP45AmtYzFk/s320/install-vmware.png" /&gt;&lt;/a&gt; Install VMware Tools&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Extract Your&amp;nbsp;VmwareTools-9.2.0-799703.tar.gz file to somewhere.&lt;/li&gt;
+&lt;li&gt;Goto &amp;quot;vmware-tools-distrib&amp;quot; folder path in terminal&lt;/li&gt;
+&lt;li&gt;Then run this command &amp;quot;./vmware-install.pl&amp;quot;&lt;/li&gt;
+&lt;li&gt;Just press enter for all the questions asked while installing&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://4.bp.blogspot.com/-3LuB2o5GXbw/UjdUj2GiMoI/AAAAAAAAVYY/8cVWCD4isVc/s1600/vmware-install.PNG"&gt;&lt;img alt="Install vmware" src="http://4.bp.blogspot.com/-3LuB2o5GXbw/UjdUj2GiMoI/AAAAAAAAVYY/8cVWCD4isVc/s320/vmware-install.PNG" /&gt;&lt;/a&gt; Vmware Install&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Add shared folder for VM:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Goto Player →&amp;nbsp;Manage →&amp;nbsp;Virtual Machine Settings&lt;/li&gt;
+&lt;li&gt;In Options tab you can find the Shared Folders&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://2.bp.blogspot.com/-y4FssiiprlQ/UjdWjo36pyI/AAAAAAAAVYk/7k6y22KWeb4/s1600/vmware-settings.PNG"&gt;&lt;img alt="image3" src="http://2.bp.blogspot.com/-y4FssiiprlQ/UjdWjo36pyI/AAAAAAAAVYk/7k6y22KWeb4/s320/vmware-settings.PNG" /&gt;&lt;/a&gt; Shared Folder&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Then reboot your machine&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Auto mount shared folder on startup:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Finally I came back to point. After restarted the shared folder are not
+shown with in &amp;quot;/mnt/hgfs/&amp;quot; folder. So here is the fix for that.&lt;/p&gt;
+&lt;p&gt;There is a startup script called &amp;quot;open-vm-tools&amp;quot; with in /etc/init.d/
+folder. Just add the below line in the start function.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;mount -t vmhgfs .host:/ /mnt/hgfs
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Then restart the service &amp;quot;sudo service open-vm-tools restart&amp;quot;.&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://2.bp.blogspot.com/-pDdUDIjTvY0/UjdYEkE7QwI/AAAAAAAAVYw/oFb1zARhXrA/s1600/vmware-initd.PNG"&gt;&lt;img alt="image4" src="http://2.bp.blogspot.com/-pDdUDIjTvY0/UjdYEkE7QwI/AAAAAAAAVYw/oFb1zARhXrA/s320/vmware-initd.PNG" /&gt;&lt;/a&gt; open-vm-tools startup&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;My Environmental :&lt;/strong&gt;&lt;/p&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;Product : Vmware Player version 5.0.0 build-812388&lt;/div&gt;
+&lt;div class="line"&gt;Vmware Tools: VmwareTools-9.2.0-799703&lt;/div&gt;
+&lt;div class="line"&gt;Guest OS : Ubuntu 12.04 LTS 32 bit&lt;/div&gt;
+&lt;div class="line"&gt;Host OS : Windows 7 64 bit&lt;/div&gt;
+&lt;/div&gt;
+</summary><category term="fix"></category><category term="ubuntu"></category><category term="vmware"></category><category term="linux"></category><category term="how to"></category></entry><entry><title>Uninstall linuxmint from ubuntu</title><link href="http://www.arulraj.net/2012/04/uninstall-linuxmint-from-ubuntu.html" rel="alternate"></link><published>2012-04-01T02:31:00+05:30</published><author><name>arul</name></author><id>tag:www.arulraj.net,2012-04-01:2012/04/uninstall-linuxmint-from-ubuntu.html</id><summary type="html">&lt;p&gt;&lt;strong&gt;How to uninstall linuxmint from ubuntu 11.10&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://4.bp.blogspot.com/-4YPJxBzfGQY/T3gG3SAYouI/AAAAAAAAOPI/5liEnTA3mfc/s1600/linuxmint.jpg"&gt;&lt;img alt="image0" src="http://4.bp.blogspot.com/-4YPJxBzfGQY/T3gG3SAYouI/AAAAAAAAOPI/5liEnTA3mfc/s400/linuxmint.jpg" /&gt;&lt;/a&gt; Gnome2 Linux mint desktop&lt;/p&gt;
+&lt;p&gt;First I explain the whole story.. 😄&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Why linuxmint in ubuntu...?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;In the latest Ubuntu 11.10 release canonical team upgraded from Gnome2 to Gnome3 and ubuntu unity as a default login shell. But I am not comfortable with unity and gnome3. Here its a good article about why I don't like this &lt;a class="reference external" href="http://t.co/gukVNjKC"&gt;read it&lt;/a&gt;. So I need Gome2 back thats why I installed linuxmint shell a.k.a mate shell.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;How I installed linuxmint in my ubuntu..?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Its simple. I&amp;nbsp;followed&amp;nbsp;this &lt;a class="reference external" href="http://www.noobslab.com/2011/11/install-linux-mint-mate-desktop-on.html"&gt;tutorial&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Now why you want to uninstall..?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Now again, after installed mate shell facing some problems.&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;ubuntu software center is not working.&lt;/li&gt;
+&lt;li&gt;every gnome settings showing in two times.&lt;/li&gt;
+&lt;li&gt;ubuntu gnome2 and mate have lot of&amp;nbsp;difference.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Ok. How to unistall mate shell..?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;For everything you need sudo permission. Login in unity shell and open your terminal. Then run this command&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo apt-get autoremove mint-meta-mate
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;It will uninstall every thing related to linux mint. But still linux mint already changed many things in software repo. So you have to move back to old repo (ubuntu 11.10). For that run these commands&lt;/p&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;Remove linuxmint repo link from software list.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo gedit /etc/apt/sources.list
+&lt;/pre&gt;&lt;/div&gt;
+&lt;ol class="arabic simple" start="2"&gt;
+&lt;li&gt;Remove the old software list. Then move the software list to new directory and create a software list directory. For that follow the below commands.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nb"&gt;cd&lt;/span&gt; /var/lib/apt
+sudo mv lists lists.mate
+sudo mkdir -p lists/partial
+&lt;/pre&gt;&lt;/div&gt;
+&lt;ol class="arabic simple" start="3"&gt;
+&lt;li&gt;Getting the ubuntu 11.10 repo&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo apt-get update
+sudo apt-get check
+sudo apt-get clean
+sudo apt-get autoclean
+sudo apt-get autoremove
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;After that also the ubuntu software center is not working 😞 . The problem is &amp;quot;no module named linuxmint&amp;quot;. The reason for this error is every where the distribution id is linuxmint.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;lsb_release -a
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;it prints&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;Distributor ID: LinuxMint
+Description: Linux Mint 12 Fluxbox
+Release: 12
+Codename: lisa
+&lt;/pre&gt;&lt;/div&gt;
+&lt;ol class="arabic simple" start="4"&gt;
+&lt;li&gt;Remove linuxmint distribution id from everywhere&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo gedit /etc/*release
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;and change everything in the file to:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;DISTRIB_ID=Ubuntu
+DISTRIB_RELEASE=11.10
+DISTRIB_CODENAME=oneiric
+DISTRIB_DESCRIPTION=&amp;quot;Ubuntu oneiric&amp;quot;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Then run&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo gedit /etc/*issue
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;and change to:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;Ubuntu 11.10 &lt;span class="se"&gt;\n&lt;/span&gt; &lt;span class="se"&gt;\l&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;ol class="arabic simple" start="5"&gt;
+&lt;li&gt;Restart your machine. Then restart your machine. Now in the login screen you don't see the mate shell option.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Cheers....!!! 😃 😃 you are done...&lt;/p&gt;
+</summary><category term="gnome"></category><category term="Linux"></category><category term="ubuntu"></category><category term="how to"></category></entry><entry><title>How to copy commits from one branch to another in GIT</title><link href="http://www.arulraj.net/2012/01/how-to-copy-commits-from-one-branch-to-another-in-git.html" rel="alternate"></link><published>2012-01-13T02:16:00+05:30</published><author><name>arul</name></author><id>tag:www.arulraj.net,2012-01-13:2012/01/how-to-copy-commits-from-one-branch-to-another-in-git.html</id><summary type="html">&lt;p&gt;I have GIT version management tool for versioning&amp;nbsp;and using gitolite for user and project management within git. Will tell about this gitolite story in a seperate post.&lt;/p&gt;
+&lt;p&gt;Here we are going to learn how to copy commits from your master to branch.&lt;/p&gt;
+&lt;p&gt;Basically I am a linux enthusiast so I will explain everthing here in commends. Feel free to use git commends 😄&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;First you have to check where you are now.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;git branch -a
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;That &lt;strong&gt;*&lt;/strong&gt; will where you are. Now I am in Master branch.&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://4.bp.blogspot.com/-cOUKcHXwslk/Tw_aT7ePh7I/AAAAAAAAIy8/8XFZMPUOZhg/s1600/git-branch.PNG"&gt;&lt;img alt="image0" src="http://4.bp.blogspot.com/-cOUKcHXwslk/Tw_aT7ePh7I/AAAAAAAAIy8/8XFZMPUOZhg/s400/git-branch.PNG" /&gt;&lt;/a&gt; GIT Branch&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Create a new branch and move to that created branch&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;git branch &amp;lt;branch_name&amp;gt;
+git checkout &amp;lt;branch_name&amp;gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;If you are already created branch. No need create branch just git checkout&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Once again confirm Are you in correct branch.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;git branch -a
+&lt;/pre&gt;&lt;/div&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Pick up the commits to this branch&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;git cherry-pick &amp;lt;first_some_character_of_commit_hash&amp;gt;
+Ex: git cherry-pick d1c4b9a5a21e3d09cae
+&lt;/pre&gt;&lt;/div&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;How to get the hash tag of commits&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;git log&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://1.bp.blogspot.com/-2vSzYrj_sfk/Tw_nLsAJSGI/AAAAAAAAIzU/k_60_quiZbE/s1600/git-log.PNG"&gt;&lt;img alt="image1" src="http://1.bp.blogspot.com/-2vSzYrj_sfk/Tw_nLsAJSGI/AAAAAAAAIzU/k_60_quiZbE/s400/git-log.PNG" /&gt;&lt;/a&gt; GIT Log&lt;/p&gt;
+&lt;p&gt;You can get the has tag from here.&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Then Switch back to master&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;git checkout master
+&lt;/pre&gt;&lt;/div&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;For push this branch to remote server&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;git push origin &amp;lt;branch_name&amp;gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;For delete the locally created branch&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;git branch -D &amp;lt;branch_name&amp;gt;
+&lt;/pre&gt;&lt;/div&gt;
+</summary><category term="GIT"></category><category term="Linux"></category></entry><entry><title>Problem viewing Tamil fonts in chromium on Ubuntu</title><link href="http://www.arulraj.net/2011/08/problem-viewing-tamil-fonts-in-chromium-on-ubuntu.html" rel="alternate"></link><published>2011-08-26T12:41:00+05:30</published><author><name>arul</name></author><id>tag:www.arulraj.net,2011-08-26:2011/08/problem-viewing-tamil-fonts-in-chromium-on-ubuntu.html</id><summary type="html">&lt;p&gt;I am the big fan of tamil love poems.. 😊 Within Google reader all tamil blogs fonts are displayed correctly in chromium which was downloaded from Ubuntu software center. But when I goto that link directly, that page is not rendered properly. It shows some junk character in between.&lt;/p&gt;
+&lt;p&gt;For example Initially this blog&amp;nbsp;&lt;a class="reference external" href="http://bit.ly/ndtgfq"&gt;http://bit.ly/ndtgfq&lt;/a&gt;&amp;nbsp;shown below&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://3.bp.blogspot.com/-rRgxWW7Qfvs/TlfmYG-R55I/AAAAAAAAArc/-I3ojySvirc/s1600/Tamil%2Bfont%2Berror.png"&gt;&lt;img alt="image0" src="http://3.bp.blogspot.com/-rRgxWW7Qfvs/TlfmYG-R55I/AAAAAAAAArc/-I3ojySvirc/s400/Tamil%2Bfont%2Berror.png" /&gt;&lt;/a&gt; Tamil font is not rendered properly&lt;/p&gt;
+&lt;p&gt;But in the firefox its rendered correctly. It shows the fonts correctly. I solved this issue after little bit googling 😜&lt;/p&gt;
+&lt;p&gt;Here is the fix.&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Goto that directory&amp;nbsp;/usr/share/fonts/truetype/freefont/&lt;/li&gt;
+&lt;li&gt;Delete both the&amp;nbsp;FreeSerif.ttf and&amp;nbsp;FreeSans.ttf file.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo rm -f /usr/share/fonts/truetype/freefont/FreeSerif.ttf
+sudo rm -f /usr/share/fonts/truetype/freefont/FreeSans.ttf
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Then restart your browser. Now its shown correctly for me.&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://4.bp.blogspot.com/-b0-zDfWqj5w/Tlfn0iQY8nI/AAAAAAAAArk/CrtbQxkS3gE/s1600/Tamil%2Bfont%2Bsuccess.png"&gt;&lt;img alt="image1" src="http://4.bp.blogspot.com/-b0-zDfWqj5w/Tlfn0iQY8nI/AAAAAAAAArk/CrtbQxkS3gE/s400/Tamil%2Bfont%2Bsuccess.png" /&gt;&lt;/a&gt; Tamil font displayed fine&lt;/p&gt;
+</summary><category term="Browser"></category><category term="tamil"></category><category term="ubuntu"></category><category term="how to"></category><category term="linux"></category></entry><entry><title>Upgrade Samsung Galaxy 5 and 3 to Froyo</title><link href="http://www.arulraj.net/2011/08/upgrade-samsung-galaxy-5-and-3-to-froyo.html" rel="alternate"></link><published>2011-08-05T03:55:00+05:30</published><author><name>arul</name></author><id>tag:www.arulraj.net,2011-08-05:2011/08/upgrade-samsung-galaxy-5-and-3-to-froyo.html</id><summary type="html">&lt;p&gt;&lt;strong&gt;How to Upgrade your android to 2.2&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="https://lh3.googleusercontent.com/-8yr0vIMYWGk/TjuxF4bMH5I/AAAAAAAAAqI/b_ar3tGzFeI/s800/Galaxy-5-and-3.jpg"&gt;&lt;img alt="image0" src="https://lh3.googleusercontent.com/-8yr0vIMYWGk/TjuxF4bMH5I/AAAAAAAAAqI/b_ar3tGzFeI/s400/Galaxy-5-and-3.jpg" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Galaxy 5 and 3 with 2.2&lt;/p&gt;
+&lt;p&gt;I am going to give steps for how to updagrade your Samsung Galaxy 3 (GT-I5800) and Samsung Galaxy 5 (GT-I5503) phone OS Android 2.1 (Eclair) to Android 2.2 (Froyo).&amp;nbsp;I tested these steps myself. So feel free to use. It will surely work for Asia / India users.&lt;/p&gt;
+&lt;p&gt;The Hardware Requirement are:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Windows PC.&lt;/li&gt;
+&lt;li&gt;Samsung Usb cable&lt;/li&gt;
+&lt;li&gt;Absolutely a Mobile either Galaxy 5 or 3&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The Software Requirement are:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;ODIN Multi Downloader.&lt;/li&gt;
+&lt;li&gt;OPS file&lt;/li&gt;
+&lt;li&gt;Firmware file&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The OPS file and Firmware are varies depends upon your Handset. First download the required files.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;For Galaxy 5:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;ODIN - &lt;a class="reference external" href="http://bit.ly/1dTykIG"&gt;S5570_Odin_Multi_Downloader_v4.38.exe&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;OPS file - &lt;a class="reference external" href="http://bit.ly/1HRLlcZ"&gt;EUROPA_v1.0.ops&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Firmware - &lt;a class="reference external" href="http://bit.ly/1AQYje3"&gt;I5503DXJP8_I5503DXJP7_I5503OLBJP7.tar.gz&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;For Galaxy 3:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;ODIN - &lt;a class="reference external" href="http://bit.ly/1dTykIG"&gt;S5570_Odin_Multi_Downloader_v4.38.exe&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;OPS File - &lt;a class="reference external" href="http://bit.ly/1Jy3DnL"&gt;apollo_0531.zip&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Firmware -&amp;nbsp;&lt;a class="reference external" href="http://bit.ly/1F0PVn7"&gt;I5801DDJP6_I5801ODDJP6_INU.zip&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Before start Backup your contacts and everything. Because Upgrade will delete everything from your mobile not from sd card.&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://4.bp.blogspot.com/-Xy--_q7QAfI/Tju1Fsh0G8I/AAAAAAAAAqQ/HOsRICq7kHk/s1600/how-to-downloading-mode.png"&gt;&lt;img alt="image1" src="http://4.bp.blogspot.com/-Xy--_q7QAfI/Tju1Fsh0G8I/AAAAAAAAAqQ/HOsRICq7kHk/s400/how-to-downloading-mode.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Image of How to start mobile in downloading mode.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Steps:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Clean your existing data. Goto to Settings → Privacy → Factory data Reset&lt;/li&gt;
+&lt;li&gt;Remove your SIM and SD card&lt;/li&gt;
+&lt;li&gt;Run that ODIN exe. Some times it requires Admin privileges.&lt;/li&gt;
+&lt;li&gt;Power off your mobile.&lt;/li&gt;
+&lt;li&gt;Start your mobile as Downloading mode. For that Press Volume Down + Home Button [Center Button] + Power Button&lt;/li&gt;
+&lt;li&gt;Connect to USB. Now ODIN detected your mobile in COM port.&lt;/li&gt;
+&lt;li&gt;Check the &amp;quot;One Package&amp;quot; Check box and Check all boxes in Options.&lt;/li&gt;
+&lt;li&gt;Select your OPS File.&lt;/li&gt;
+&lt;li&gt;Select your firmware. Extract that rar file and select tar file with in that.&lt;/li&gt;
+&lt;li&gt;Click start button.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://3.bp.blogspot.com/-ADPkjhCvSks/Tju2uyxStfI/AAAAAAAAAqg/qwvekNHtxc0/s1600/odin.png"&gt;&lt;img alt="image2" src="http://3.bp.blogspot.com/-ADPkjhCvSks/Tju2uyxStfI/AAAAAAAAAqg/qwvekNHtxc0/s400/odin.png" /&gt;&lt;/a&gt;
+How to setup / Settings&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://1.bp.blogspot.com/-r3VzrjvkG58/Tju2StFZiqI/AAAAAAAAAqY/gS93DB7BPd0/s600/Downloading-Mode.jpg"&gt;&lt;img alt="image3" src="http://1.bp.blogspot.com/-r3VzrjvkG58/Tju2StFZiqI/AAAAAAAAAqY/gS93DB7BPd0/s400/Downloading-Mode.jpg" /&gt;&lt;/a&gt;
+Upgrading&lt;/p&gt;
+&lt;p&gt;It will automatically reboot after finish. Rebooting takes 5-10 min don't panic, please be patient. Then unplug your mobile. Yeah you are successfully upgraded to Froyo...!!&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://1.bp.blogspot.com/-BI0r3a1z9Z8/Tju7vUZ60sI/AAAAAAAAAq4/GPg_gQtKwZ4/s600/Android-Rebooting.jpg"&gt;&lt;img alt="image4" src="http://1.bp.blogspot.com/-BI0r3a1z9Z8/Tju7vUZ60sI/AAAAAAAAAq4/GPg_gQtKwZ4/s400/Android-Rebooting.jpg" /&gt;&lt;/a&gt;
+Rebooting&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://3.bp.blogspot.com/-g_0juKi1KZU/Tju4M_1CRkI/AAAAAAAAAqw/RhZD479naBU/s600/galaxy-about-phone.png"&gt;&lt;img alt="image5" src="http://3.bp.blogspot.com/-g_0juKi1KZU/Tju4M_1CRkI/AAAAAAAAAqw/RhZD479naBU/s400/galaxy-about-phone.png" /&gt;&lt;/a&gt;
+Success .. Upgraded&lt;/p&gt;
+&lt;p&gt;Note: Click on the images for large view.&lt;/p&gt;
+&lt;p&gt;My configuration:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Windows 7 PC&lt;/li&gt;
+&lt;li&gt;ODIN v4.38&lt;/li&gt;
+&lt;li&gt;Galaxy 5 and Galaxy 3&lt;/li&gt;
+&lt;li&gt;I am from India&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;To find firmware and OPS for your mobile: &lt;a class="reference external" href="http://www.samfirmware.com/fwandroid.htm"&gt;http://www.samfirmware.com/fwandroid.htm&lt;/a&gt;&lt;/p&gt;
+&lt;div class="section" id="faq"&gt;
+&lt;h2&gt;FAQ:&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;After upgraded gprs is not working..?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Setup manual APN settings or Delete your APN's and reset. It will 100% work. But I am not facing any wifi problem.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;My Phone is not detected..?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Before start upgrading install USB driver for samsung. You can download from here&amp;nbsp;&lt;a class="reference external" href="http://goo.gl/223cK"&gt;http://goo.gl/223cK&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;How to root my phone..?&lt;/strong&gt;&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Download SuperOneClick latest&amp;nbsp;version&amp;nbsp;from &lt;a class="reference external" href="http://goo.gl/sD1KY"&gt;here&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Select Exploit as &amp;quot;GingerBreak&amp;quot;&lt;/li&gt;
+&lt;li&gt;Make sure you phone is detected&lt;/li&gt;
+&lt;li&gt;Press Root button&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Fix for samsung logo only showing..?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Follow the same process before rebooting a recovery window displaying 3
+options.&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;In that 3 First select &amp;quot;Clear your cache&amp;quot;&lt;/li&gt;
+&lt;li&gt;Then &amp;quot;Clear data and reset&amp;quot;&lt;/li&gt;
+&lt;li&gt;Finally select the option to reboot.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Now your phone not struct in samsung logo.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;How to upgraded to 2.3 ..?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;I have upgraded to 2.3.7 (CyanogenMod) by following this link&amp;nbsp;&lt;a class="reference external" href="http://t.co/4wI6FSmk"&gt;http://t.co/4wI6FSmk&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;How to upgraded to 4.0.4 ..?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;I have written a post to upgrade our Galaxy 5 to Android&amp;nbsp;Ice Cream Sandwich&amp;nbsp;&lt;a class="reference external" href="http://www.arulraj.net/2012/07/upgrade-samsung-galaxy-5-to-ice-cream-sandwich.html"&gt;http://www.arulraj.net/2012/07/upgrade-samsung-galaxy-5-to-ice-cream-sandwich.html&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;How to go back to 2.1 ..?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;First you have to find your firmware version&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://1.bp.blogspot.com/-I4YZL2v3Su8/T035soaNoqI/AAAAAAAANjY/QbvWlwCO5ik/s1600/android+version.PNG"&gt;&lt;img alt="image6" src="http://1.bp.blogspot.com/-I4YZL2v3Su8/T035soaNoqI/AAAAAAAANjY/QbvWlwCO5ik/s320/android+version.PNG" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Firmware version&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Go to Settings → About phone note down your baseband version&lt;/li&gt;
+&lt;li&gt;Try to get your firmware from internet. Or use this
+&lt;a class="reference external" href="http://hotfile.com/dl/123203814/82f0724/I5503DDJG4.rar.html"&gt;I5503DDJG4&lt;/a&gt;&amp;nbsp;,
+&lt;a class="reference external" href="http://dl.dropbox.com/u/2710268/I5503DXJG5.rar"&gt;I5503DXJG5&lt;/a&gt; 2.1
+firmware (Galaxy 5). Password for zip file is “samfirmware.com”&lt;/li&gt;
+&lt;li&gt;Use the same ODIN and OPS file and follow the same steps above.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+</summary><category term="android"></category><category term="Mobile"></category><category term="Linux"></category><category term="how to"></category></entry><entry><title>Google chrome Download video</title><link href="http://www.arulraj.net/2011/03/google-chrome-download-video.html" rel="alternate"></link><published>2011-03-19T14:06:00+05:30</published><author><name>arul</name></author><id>tag:www.arulraj.net,2011-03-19:2011/03/google-chrome-download-video.html</id><summary type="html">&lt;p&gt;The most video content web sites use flash player as them video player.&amp;nbsp;In Linux you can download streaming videos without any third party tools. Previously the videos which you are watching by default its stored in /tmp directory. You can copy the video from there. But in the google chrome or Chromium browser by default its come with a flash player. If you using that flash player the video is not downloaded in /tmp directory. They are using there own intelligence to prevent this. Here we are going to see a simple hack to download videos in google chrome . Steps are&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Goto installed plugins&amp;nbsp;&lt;tt class="docutils literal"&gt;about:plugins&lt;/tt&gt; in chrome / mozilla&lt;/li&gt;
+&lt;li&gt;Click Details to view with more information. Disable the Flash Plugin. The Location of the plugin would be &amp;quot;/usr/lib/adobe-flashplugin/libflashplayer.so&amp;quot;&lt;/li&gt;
+&lt;li&gt;Download the tar.gz version of flash player from here&amp;nbsp;&lt;a class="reference external" href="http://get.adobe.com/flashplayer/"&gt;http://get.adobe.com/flashplayer/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Extract that file and copy the libflashplayer.so to&amp;nbsp;/usr/lib/chromium-browser/plugins . &amp;nbsp;Then Enable this in plugin page.&lt;/li&gt;
+&lt;li&gt;If you view any video it will download in /home/&amp;lt;USER_NAME&amp;gt;/.cache/chromium/Default/Cache this folder.&lt;/li&gt;
+&lt;li&gt;For Google chrome user cache location will be /home/&amp;lt;USER_NAME&amp;gt;/.cache/google-chrome/Default/Cache&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Make a link for easy access&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;ln -s /home/arul/.cache/chromium/Default/Cache/ /tmp/chrome-cache
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Screenshots:&lt;/p&gt;
+&lt;div class="section" id="details-view-of-the-plugin-page"&gt;
+&lt;h2&gt;Details View of the Plugin page&lt;/h2&gt;
+&lt;div class="separator" style="clear: both; text-align: center;"&gt;&lt;p&gt;&lt;a class="reference external" href="http://1.bp.blogspot.com/-cLF0pmaL9ws/TYULYUaA1oI/AAAAAAAAAns/BrRbE1fbemo/s1600/chrome%2Bplugin%2B-%2BDetails%2Bview.png"&gt;&lt;img alt="image0" src="http://1.bp.blogspot.com/-cLF0pmaL9ws/TYULYUaA1oI/AAAAAAAAAns/BrRbE1fbemo/s400/chrome%2Bplugin%2B-%2BDetails%2Bview.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;div class="section" id="chromium-plugin-folder"&gt;
+&lt;h2&gt;Chromium Plugin folder&lt;/h2&gt;
+&lt;div class="separator" style="clear: both; text-align: center;"&gt;&lt;p&gt;&lt;a class="reference external" href="http://1.bp.blogspot.com/-k8fb-V-sEks/TYUL-qW_N2I/AAAAAAAAAn0/t-R6vmr_-ow/s1600/chrome%2Bplugin%2Bdirectory.png"&gt;&lt;img alt="image1" src="http://1.bp.blogspot.com/-k8fb-V-sEks/TYUL-qW_N2I/AAAAAAAAAn0/t-R6vmr_-ow/s400/chrome%2Bplugin%2Bdirectory.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;div class="section" id="chromium-cache-folder"&gt;
+&lt;h2&gt;Chromium Cache folder&lt;/h2&gt;
+&lt;div class="separator" style="clear: both; text-align: center;"&gt;&lt;p&gt;&lt;a class="reference external" href="http://4.bp.blogspot.com/-RHXSFHAJpCA/TYUMIGQU6_I/AAAAAAAAAn8/M_eTTLo3IKM/s1600/chrome%2Bcache%2Blocation.png"&gt;&lt;img alt="image2" src="http://4.bp.blogspot.com/-RHXSFHAJpCA/TYUMIGQU6_I/AAAAAAAAAn8/M_eTTLo3IKM/s400/chrome%2Bcache%2Blocation.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;My Configuration:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;OS : Ubuntu 10.04&lt;/li&gt;
+&lt;li&gt;Browser : Chromium 10.0.648.133 (Developer Build 77742) Ubuntu 10.04&lt;/li&gt;
+&lt;li&gt;Flash : Shockwave Flash 10.2 r152&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Update on 21th March 2011:&lt;/p&gt;
+&lt;p&gt;After a deep testing the video downloaded is disappear after sometime. I tested against youtube.&lt;/p&gt;
+&lt;p&gt;Otherwise use older version:&lt;/p&gt;
+&lt;p&gt;Download the older version of Flashplayer 10. Then copy that to chromium plugin directory. Enable this plugin now you can get the file in the /tmp directory. I am using Version: 10.0 r45. I get this version from with flex sdk runtime folder.&lt;/p&gt;
+&lt;/div&gt;
+</summary><category term="Browser"></category><category term="hacking"></category><category term="ubuntu"></category><category term="Flash"></category><category term="Linux"></category></entry><entry><title>Hectic problem in ubuntu - resolved</title><link href="http://www.arulraj.net/2010/12/hectic-problem-in-ubuntu-resolved.html" rel="alternate"></link><published>2010-12-23T14:07:00+05:30</published><author><name>arul</name></author><id>tag:www.arulraj.net,2010-12-23:2010/12/hectic-problem-in-ubuntu-resolved.html</id><summary type="html">&lt;p&gt;&lt;strong&gt;My Hectic problem in Ubuntu&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://3.bp.blogspot.com/_X5tq9y9xv2s/TKjoyGZNheI/AAAAAAAAAi8/5gH6PxD0DtY/s1600/thinking+ubuntu.jpg"&gt;&lt;img alt="image0" src="http://3.bp.blogspot.com/_X5tq9y9xv2s/TKjoyGZNheI/AAAAAAAAAi8/5gH6PxD0DtY/s320/thinking+ubuntu.jpg" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Here I will explain how to resolve hectic problems in ubuntu (that I
+felt were tough). Here is the list of my problems.&lt;/p&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;Number Lock not enabled when booting&lt;/li&gt;
+&lt;li&gt;Brightness adjustment&lt;/li&gt;
+&lt;li&gt;Tata photon+ data card problem&lt;/li&gt;
+&lt;li&gt;Unauthorized resource when update&lt;/li&gt;
+&lt;li&gt;VLC problem&lt;/li&gt;
+&lt;li&gt;GPG error: &lt;a class="reference external" href="http://ppa.launchpad.net"&gt;http://ppa.launchpad.net&lt;/a&gt; lucid Release: The following
+signatures couldn't be verified because the public key is not
+available: NO_PUBKEY D225991A72B194E5Failed&lt;/li&gt;
+&lt;li&gt;Screen lock for root user&lt;/li&gt;
+&lt;li&gt;&amp;quot;P&amp;quot;- Button in Acer 5740&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Enable Numlock when boot..?&lt;/p&gt;
+&lt;p&gt;By default the Number lock is disabled. To enable Numlock when booting.&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Install numlockx from your ubuntu software center&lt;/li&gt;
+&lt;li&gt;add the line shown below, at the End of File (before exit0)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;if [ -x /usr/bin/numlockx ]; then&lt;/div&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;/usr/bin/numlockx on&lt;/div&gt;
+&lt;div class="line"&gt;fi&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;OR&lt;/p&gt;
+&lt;p&gt;You can add numlockx in startup ( System → Preferences → Startup
+Applications).&lt;/p&gt;
+&lt;div class="separator" style="clear: both; text-align: center;"&gt;&lt;p&gt;&lt;a class="reference external" href="http://3.bp.blogspot.com/_X5tq9y9xv2s/TROcpK9B-OI/AAAAAAAAAlI/HsZmcQpuYlM/s1600/numlockx%2Bstartup.png"&gt;&lt;img alt="image1" src="http://3.bp.blogspot.com/_X5tq9y9xv2s/TROcpK9B-OI/AAAAAAAAAlI/HsZmcQpuYlM/s400/numlockx%2Bstartup.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;But in this solution the num lock will turn on only after logged in.&lt;/p&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;Brightness Adjustment ..?&lt;/div&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;In ubuntu there is a option to adjust the brightness. But no luck for
+me&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;Go to → Preferences → There is a option available for brightness
+adjustment.&lt;/p&gt;
+&lt;div class="separator" style="clear: both; text-align: center;"&gt;&lt;p&gt;&lt;a class="reference external" href="http://1.bp.blogspot.com/_X5tq9y9xv2s/TROgOZn2wsI/AAAAAAAAAlQ/ObB8Azl-53E/s1600/brightness%2Bpreference.png"&gt;&lt;img alt="image2" src="http://1.bp.blogspot.com/_X5tq9y9xv2s/TROgOZn2wsI/AAAAAAAAAlQ/ObB8Azl-53E/s400/brightness%2Bpreference.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;Tata Photon problem ..?&lt;/p&gt;
+&lt;p&gt;Tata Photon plus came with my laptop as a vendor compliment. When I
+plugged the data card in my system, it was not detected, it was just
+detected as memory card (as pen drive ). Here are the steps to fix for
+this issue.&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Download usbmodeswith from this
+&lt;a class="reference external" href="https://launchpad.net/ubuntu/+archive/primary/+files/usb-modeswitch_1.1.0-2_i386.deb"&gt;link&lt;/a&gt;
+or you can download from ubuntu software center.&lt;/li&gt;
+&lt;li&gt;Run this &amp;quot;lsusb&amp;quot; and find Product and Vendor id respective to the
+&amp;quot;Huawei Technologies Co., Ltd.&amp;quot; for mine its like 12d1:1446 in that
+vendor id is 12d1 and product id is 1446&lt;/li&gt;
+&lt;li&gt;Goto this folder /etc/usb.modswitch.d/ then find the file with name
+&amp;quot;12d1:1446&amp;quot;&lt;/li&gt;
+&lt;li&gt;Add this 140b in TargetProductList in that file&lt;/li&gt;
+&lt;li&gt;Now run this command. &amp;quot; usb_modeswitch -v VENDOR_ID -p PRODUCT_ID
+-M MESSAGE_CONTENT &amp;quot;. For mine &amp;quot; usb_modeswitch -v 12d1 -p 1446 -M
+55534243123456780000000000000011060000000000000000000000000000 &amp;quot;&lt;/li&gt;
+&lt;li&gt;Now the data card detected as modem.&lt;/li&gt;
+&lt;li&gt;To Check whether its detected as a modem run the lsusb command its
+changed to 12d1:140b&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Ubuntu Software Center:&lt;/p&gt;
+&lt;div class="separator" style="clear: both; text-align: center;"&gt;&lt;p&gt;&lt;a class="reference external" href="http://4.bp.blogspot.com/_X5tq9y9xv2s/TROTxIvOYgI/AAAAAAAAAkg/pJs-ZiTCl5k/s1600/usb%2Bmodeswitch-Ubuntu%2BSoftware%2BCenter.png"&gt;&lt;img alt="image3" src="http://4.bp.blogspot.com/_X5tq9y9xv2s/TROTxIvOYgI/AAAAAAAAAkg/pJs-ZiTCl5k/s400/usb%2Bmodeswitch-Ubuntu%2BSoftware%2BCenter.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;lsusb:&lt;/p&gt;
+&lt;div class="separator" style="clear: both; text-align: center;"&gt;&lt;p&gt;&lt;a class="reference external" href="http://4.bp.blogspot.com/_X5tq9y9xv2s/TROUuPlivVI/AAAAAAAAAko/7-msl5lSre8/s1600/lsusb-terminal.png"&gt;&lt;img alt="image4" src="http://4.bp.blogspot.com/_X5tq9y9xv2s/TROUuPlivVI/AAAAAAAAAko/7-msl5lSre8/s400/lsusb-terminal.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;cat 12d1:1446:&lt;/p&gt;
+&lt;div class="separator" style="clear: both; text-align: center;"&gt;&lt;p&gt;&lt;a class="reference external" href="http://4.bp.blogspot.com/_X5tq9y9xv2s/TROW_nPIlKI/AAAAAAAAAkw/oE0PtAA5fTg/s1600/cat%2B12d1%253A1446.png"&gt;&lt;img alt="image5" src="http://4.bp.blogspot.com/_X5tq9y9xv2s/TROW_nPIlKI/AAAAAAAAAkw/oE0PtAA5fTg/s400/cat%2B12d1%253A1446.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;usb_modeswitch command:&lt;/p&gt;
+&lt;div class="separator" style="clear: both; text-align: center;"&gt;&lt;p&gt;&lt;a class="reference external" href="http://1.bp.blogspot.com/_X5tq9y9xv2s/TROZRYE6aKI/AAAAAAAAAk4/mQvDFEjblc0/s1600/usb_modeswitch.png"&gt;&lt;img alt="image6" src="http://1.bp.blogspot.com/_X5tq9y9xv2s/TROZRYE6aKI/AAAAAAAAAk4/mQvDFEjblc0/s400/usb_modeswitch.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;To check:&lt;/p&gt;
+&lt;div class="separator" style="clear: both; text-align: center;"&gt;&lt;p&gt;&lt;a class="reference external" href="http://1.bp.blogspot.com/_X5tq9y9xv2s/TROaRxmEdkI/AAAAAAAAAlA/EuwPi7sXNZ8/s1600/lsusb-to%2Bcheck.png"&gt;&lt;img alt="image7" src="http://1.bp.blogspot.com/_X5tq9y9xv2s/TROaRxmEdkI/AAAAAAAAAlA/EuwPi7sXNZ8/s400/lsusb-to%2Bcheck.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;The disadvantage is that,&amp;nbsp; you need to run this command every time you
+plug in the card. Guys if you know a better solution comment here.&lt;/p&gt;
+&lt;p&gt;Unauthorized resource when update ...?&lt;/p&gt;
+&lt;p&gt;This error came when i was update my system using &amp;quot;Update Manager&amp;quot;
+(System → Administration → Update Manager). Here are the steps to
+resolve this issue&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Goto System → Administration → Software Sources&lt;/li&gt;
+&lt;li&gt;Change that Download From Select Box to Main Server instead of Local
+Server (For mine Server From India)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="separator" style="clear: both; text-align: center;"&gt;&lt;p&gt;&lt;a class="reference external" href="http://2.bp.blogspot.com/_X5tq9y9xv2s/TROQKMA4AnI/AAAAAAAAAkY/yF7J5SgkNok/s1600/Screenshot-Software%2BSources.png"&gt;&lt;img alt="image8" src="http://2.bp.blogspot.com/_X5tq9y9xv2s/TROQKMA4AnI/AAAAAAAAAkY/yF7J5SgkNok/s400/Screenshot-Software%2BSources.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;div class="separator" style="clear: both; text-align: left;"&gt;&lt;p&gt;VLC root user problem ..?&lt;/p&gt;
+&lt;/div&gt;&lt;div class="separator" style="clear: both; text-align: left;"&gt;&lt;p&gt;VLC is running fine for my other user. The only problem is that it could
+not support for root user. Various forums say by default that VLC is
+disabled for root user. If you want enable this you need to download the
+source code and make a small change then rebuild and install. Too bad
+... :(&lt;/p&gt;
+&lt;/div&gt;&lt;div class="separator" style="clear: both; text-align: left;"&gt;&lt;p&gt;GPG Error ..?&lt;/p&gt;
+&lt;/div&gt;&lt;div class="separator" style="clear: both; text-align: left;"&gt;&lt;p&gt;I got this error when running my update manager. I don't know how this
+error came and why my system is looking for the public key. Here are the
+steps to fix the problem.&lt;/p&gt;
+&lt;/div&gt;&lt;div class="separator" style="clear: both; text-align: left;"&gt;&lt;ul class="simple"&gt;
+&lt;li&gt;Run these commands in terminal&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;&lt;pre class="literal-block"&gt;
+gpg --keyserver keyserver.ubuntu.com --recv 72B194E5
+&lt;/pre&gt;
+&lt;pre class="literal-block"&gt;
+gpg --export --armor 72B194E5 | sudo apt-key add -
+&lt;/pre&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;Use these last 8 digits for any other keys . I referred from
+&lt;a class="reference external" href="http://ubuntuforums.org/showthread.php?t=1046158"&gt;here&lt;/a&gt;&lt;/div&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;Screen lock for root user ..?&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;From my understanding from&amp;nbsp;various forums, the screen lock for root user
+is disabled in the linux kernal itself. But I found a message in the
+screen saver itself. Here it is&lt;/p&gt;
+&lt;div style="clear: both; text-align: center;"&gt;&lt;p&gt;&lt;a class="reference external" href="http://4.bp.blogspot.com/_X5tq9y9xv2s/TROi8zrTKWI/AAAAAAAAAlY/Hrh7D2VwvbU/s1600/root%2Bscreen%2Block.png"&gt;&lt;img alt="image9" src="http://4.bp.blogspot.com/_X5tq9y9xv2s/TROi8zrTKWI/AAAAAAAAAlY/Hrh7D2VwvbU/s400/root%2Bscreen%2Block.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;div&gt;&lt;p&gt;Warning: The screen will not be locked for the root user.&lt;/p&gt;
+&lt;/div&gt;&lt;div&gt;&lt;p&gt;&amp;quot;P&amp;quot;- Button in Acer 5740 ...?&lt;/p&gt;
+&lt;/div&gt;&lt;div&gt;&lt;p&gt;The &amp;quot;P&amp;quot; button in the top right corner of the keyboard. You may think
+that this is the Power button or something else (Initially I&amp;nbsp; thought
+the same .. :(&amp;nbsp; ) But there is no default task assigned for this button.
+You can customize this button as you need. I am using this button as
+Mute Button :) Here is the how to...&lt;/p&gt;
+&lt;/div&gt;&lt;div class="separator" style="clear: both; text-align: center;"&gt;&lt;p&gt;&lt;a class="reference external" href="http://4.bp.blogspot.com/_X5tq9y9xv2s/TROlZQBhmvI/AAAAAAAAAlg/wCAcxLSVdIo/s1600/acer%2B5740%2Bp%2Bbutton.jpg"&gt;&lt;img alt="image10" src="http://4.bp.blogspot.com/_X5tq9y9xv2s/TROlZQBhmvI/AAAAAAAAAlg/wCAcxLSVdIo/s400/acer%2B5740%2Bp%2Bbutton.jpg" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;div&gt;&lt;ul class="simple"&gt;
+&lt;li&gt;Goto System → Preferences → Keyboard shortcuts&lt;/li&gt;
+&lt;li&gt;In the Sound tap you can set the New shortcut for Volume mute&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;&lt;div&gt;&lt;div class="separator" style="clear: both; text-align: center;"&gt;&lt;p&gt;&lt;a class="reference external" href="http://4.bp.blogspot.com/_X5tq9y9xv2s/TROnINJaJ3I/AAAAAAAAAlo/jYaYYMt3Xa0/s1600/mute%2B-%2BKeyboard%2BShortcuts.png"&gt;&lt;img alt="image11" src="http://4.bp.blogspot.com/_X5tq9y9xv2s/TROnINJaJ3I/AAAAAAAAAlo/jYaYYMt3Xa0/s400/mute%2B-%2BKeyboard%2BShortcuts.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;Most of these problems are because of accessing as a &lt;strong&gt;root user&lt;/strong&gt;. If
+I change the user it will be fixed. But most of my docs and software are
+pre-configured with this user. I just want to disable my root account
+and migrate from root to some other user.&lt;/p&gt;
+&lt;p&gt;My Configuration :&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;OS - Ubuntu 10.04&lt;/p&gt;
+&lt;p&gt;Login user - root&lt;/p&gt;
+&lt;p&gt;Machine - &lt;a class="reference external" href="http://www.arulraj.net/2010/06/install-ubuntu-10-04-in-acer-5740.html"&gt;Acer
+5740&lt;/a&gt;&lt;/p&gt;
+</summary><category term="Linux"></category><category term="ubuntu"></category><category term="how to"></category></entry><entry><title>Flash player debugger in ubuntu</title><link href="http://www.arulraj.net/2010/08/flash-player-debugger-in-ubuntu.html" rel="alternate"></link><published>2010-08-02T15:34:00+05:30</published><author><name>arul</name></author><id>tag:www.arulraj.net,2010-08-02:2010/08/flash-player-debugger-in-ubuntu.html</id><summary type="html">&lt;p&gt;&lt;strong&gt;How to flash debug player in Linux&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://4.bp.blogspot.com/_X5tq9y9xv2s/TFc1w8gf4JI/AAAAAAAAAfE/-ysWrI7BnTE/s1600/Flashlog.png"&gt;&lt;img alt="image0" src="http://4.bp.blogspot.com/_X5tq9y9xv2s/TFc1w8gf4JI/AAAAAAAAAfE/-ysWrI7BnTE/s320/Flashlog.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;After a long time i am working on Flex for one of client for his one to one chat application. At this time i need flash debugger for debugging my program. The debug player need for to print trace() output to flashlog.txt.&lt;/p&gt;
+&lt;p&gt;Here the steps for how to install debug flashplayer in ubuntu 10.04 firefox 3.6.&lt;/p&gt;
+&lt;p&gt;Steps:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Download the debugger version from &lt;a class="reference external" href="http://www.adobe.com/support/flashplayer/downloads.html"&gt;here&lt;/a&gt; . Or Download this Zip file for Linux &lt;a class="reference external" href="http://download.macromedia.com/pub/flashplayer/updaters/10/flashplayer_10_plugin_debug.tar.gz"&gt;http://download.macromedia.com/pub/flashplayer/updaters/10/flashplayer_10_plugin_debug.tar.gz&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Extract that zip file and get that &amp;quot;libflashplayer.so&amp;quot;&lt;/li&gt;
+&lt;li&gt;Goto this folder &amp;quot;/usr/lib/mozilla/plugins&amp;quot; then copy and &amp;nbsp;paste that libflashplayer.so here. Then Delete the shortcut named &amp;quot;flashplugin-alternative.so&amp;quot;&lt;/li&gt;
+&lt;li&gt;Create a mm.cfg file in your home directory. For example /home/&amp;lt;username&amp;gt;/mm.cfg&lt;/li&gt;
+&lt;li&gt;The mm.cfg file is look like the below&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;ErrorReportingEnable=0
+TraceOutputFileEnable=1
+MaxWarnings=0
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Then restart your firefox now you can found flashlog.txt file in&lt;/p&gt;
+&lt;p&gt;cd $HOME/.macromedia/Flash_Player/Logs/ folder.&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://2.bp.blogspot.com/_X5tq9y9xv2s/TFc5mvVuXeI/AAAAAAAAAfM/K1ZLN2ivtdE/s1600/Mozilla+plugin+folder.png"&gt;&lt;img alt="image1" src="http://2.bp.blogspot.com/_X5tq9y9xv2s/TFc5mvVuXeI/AAAAAAAAAfM/K1ZLN2ivtdE/s320/Mozilla+plugin+folder.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Update on 19th October 2011:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Download the debugger version from &lt;a class="reference external" href="http://www.adobe.com/support/flashplayer/downloads.html"&gt;here&lt;/a&gt;. Then extract that libflashplayer.so&lt;/li&gt;
+&lt;li&gt;Copy that so file to /usr/lib/mozilla/plugins/ dir&lt;/li&gt;
+&lt;li&gt;Then replace the soft link by the following command&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo ln -fs /usr/lib/mozilla/plugins/libflashplayer.so /usr/lib/mozilla/plugins/flashplugin-alternative.so
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Its works with my Firefox&amp;nbsp;7.0.1 in ubuntu 11.04&lt;/p&gt;
+</summary><category term="Flash"></category><category term="Linux"></category></entry><entry><title>Ubuntu file comparison tool - Bcompare</title><link href="http://www.arulraj.net/2010/07/ubuntu-file-comparison-tool-bcompare.html" rel="alternate"></link><published>2010-07-29T11:39:00+05:30</published><author><name>arul</name></author><id>tag:www.arulraj.net,2010-07-29:2010/07/ubuntu-file-comparison-tool-bcompare.html</id><summary type="html">&lt;p&gt;&lt;strong&gt;Beyond Compare for ubuntu&lt;/strong&gt;&lt;/p&gt;
+&lt;div class="separator" style="clear: both; text-align: center;"&gt;&lt;p&gt;&lt;a class="reference external" href="http://2.bp.blogspot.com/_X5tq9y9xv2s/TFGzRmR8VQI/AAAAAAAAAd8/eDuMSfQbXw4/s1600/File+compare.png"&gt;&lt;img alt="image0" src="http://2.bp.blogspot.com/_X5tq9y9xv2s/TFGzRmR8VQI/AAAAAAAAAd8/eDuMSfQbXw4/s320/File+compare.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;div class="separator" style="clear: both; text-align: left;"&gt;&lt;p&gt;There are some command line tool for compare two files. But i need a
+gnome application. The command line tools are.&lt;/p&gt;
+&lt;/div&gt;&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;a class="reference external" href="http://linux.die.net/man/1/diff"&gt;diff&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="http://www.ifi.uio.no/in219/verktoy/doc/html/doc/sag/sag/adminut6.html"&gt;fcomp&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;For fcomp you need to install fhist.&lt;/p&gt;
+&lt;blockquote&gt;
+apt-get install fhist&lt;/blockquote&gt;
+&lt;p&gt;Then i tried &lt;a class="reference external" href="http://meld.sourceforge.net/"&gt;meld&lt;/a&gt; . This is a Gnome
+based file comparison tool for ubuntu. you can install this using ubuntu
+software center. This is an opensource one. But its not working as
+expected [ May be i am not know the power of meld&amp;nbsp; ]. I just tried some
+files.&lt;/p&gt;
+&lt;div class="separator" style="clear: both; text-align: center;"&gt;&lt;p&gt;&lt;a class="reference external" href="http://4.bp.blogspot.com/_X5tq9y9xv2s/TFG3hufyJ_I/AAAAAAAAAeE/6-wa1EVwrqw/s1600/Meld-compare.png"&gt;&lt;img alt="image1" src="http://4.bp.blogspot.com/_X5tq9y9xv2s/TFG3hufyJ_I/AAAAAAAAAeE/6-wa1EVwrqw/s320/Meld-compare.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;When i was a windows user :) [till using windows in my office] i used
+beyond compare. That is too good for file compare and merge. Now i
+searched that software for ubuntu. Yes they provide software for Linux
+too..&lt;/p&gt;
+&lt;div class="separator" style="clear: both; text-align: center;"&gt;&lt;p&gt;&lt;a class="reference external" href="http://www.scootersoftware.com/download.php"&gt;&lt;img alt="image2" src="http://2.bp.blogspot.com/_X5tq9y9xv2s/TFG4g9fjV4I/AAAAAAAAAeM/2u7-70rPa8c/s320/Download+bcompare+for+ubuntu.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;I installed beyond compare in ubuntu 10.04.&lt;/p&gt;
+&lt;p&gt;steps:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Download deb file from here
+&lt;a class="reference external" href="http://www.scootersoftware.com/bcompare-3.1.11.12238_i386.deb"&gt;http://www.scootersoftware.com/bcompare-3.1.11.12238_i386.deb&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Just open the file &amp;quot;with Debi package installer&amp;quot;&lt;/li&gt;
+&lt;li&gt;Click the button &amp;quot;Install package&amp;quot;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Here some screen shots:&lt;/p&gt;
+&lt;div class="separator" style="clear: both; text-align: center;"&gt;&lt;p&gt;&lt;a class="reference external" href="http://1.bp.blogspot.com/_X5tq9y9xv2s/TFG6Ld-AbcI/AAAAAAAAAeU/L4y7uS4Qu6Q/s1600/Bcompare+Install.png"&gt;&lt;img alt="image3" src="http://1.bp.blogspot.com/_X5tq9y9xv2s/TFG6Ld-AbcI/AAAAAAAAAeU/L4y7uS4Qu6Q/s320/Bcompare+Install.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;div class="separator" style="clear: both; text-align: center;"&gt;&lt;p&gt;&lt;a class="reference external" href="http://3.bp.blogspot.com/_X5tq9y9xv2s/TFG6OgfNi1I/AAAAAAAAAec/ifdzPDuXXHs/s1600/Installing+bcompare.png"&gt;&lt;img alt="image4" src="http://3.bp.blogspot.com/_X5tq9y9xv2s/TFG6OgfNi1I/AAAAAAAAAec/ifdzPDuXXHs/s320/Installing+bcompare.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;After installing you can open bcompare from Application --&amp;gt; Programming
+--&amp;gt; Beyond Compare&lt;/p&gt;
+&lt;div class="separator" style="clear: both; text-align: center;"&gt;&lt;p&gt;&lt;a class="reference external" href="http://1.bp.blogspot.com/_X5tq9y9xv2s/TFG67_2mfDI/AAAAAAAAAek/iBb1TkvlM2Q/s1600/Bcompare+in+Application.png"&gt;&lt;img alt="image5" src="http://1.bp.blogspot.com/_X5tq9y9xv2s/TFG67_2mfDI/AAAAAAAAAek/iBb1TkvlM2Q/s320/Bcompare+in+Application.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;For file comparison you can Right click in a file and choose scripts --&amp;gt;
+Select for compare&lt;/p&gt;
+&lt;div class="separator" style="clear: both; text-align: center;"&gt;&lt;p&gt;&lt;a class="reference external" href="http://4.bp.blogspot.com/_X5tq9y9xv2s/TFG7BdY_hMI/AAAAAAAAAes/lRsskGPzl88/s1600/Bcompare+select+for+compare.png"&gt;&lt;img alt="image6" src="http://4.bp.blogspot.com/_X5tq9y9xv2s/TFG7BdY_hMI/AAAAAAAAAes/lRsskGPzl88/s320/Bcompare+select+for+compare.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;Now the File difference&lt;/p&gt;
+&lt;div class="separator" style="clear: both; text-align: center;"&gt;&lt;p&gt;&lt;a class="reference external" href="http://4.bp.blogspot.com/_X5tq9y9xv2s/TFG7_Aq85oI/AAAAAAAAAe0/6oscenx4hYo/s1600/Beyond+compare+on+ubuntu.png"&gt;&lt;img alt="image7" src="http://4.bp.blogspot.com/_X5tq9y9xv2s/TFG7_Aq85oI/AAAAAAAAAe0/6oscenx4hYo/s320/Beyond+compare+on+ubuntu.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;div class="separator" style="clear: both; text-align: center;"&gt;&lt;/div&gt;&lt;div class="separator" style="clear: both; text-align: left;"&gt;&lt;p&gt;Update:&lt;/p&gt;
+&lt;/div&gt;&lt;div class="separator"
+style="clear: both; text-align: left; padding-left: 30px;"&gt;&lt;p&gt;The winmerge is the best windows Bcompare alternative. For more info
+&lt;a class="reference external" href="http://winmerge.org/"&gt;http://winmerge.org/&lt;/a&gt; . This is a freeware and opensource. But its only
+available for windows not for linux :(&lt;/p&gt;
+&lt;/div&gt;</summary><category term="Linux"></category><category term="ubuntu"></category><category term="how to"></category></entry><entry><title>How to add Red5 service</title><link href="http://www.arulraj.net/2010/07/how-to-add-red5-service.html" rel="alternate"></link><published>2010-07-27T13:20:00+05:30</published><author><name>arul</name></author><id>tag:www.arulraj.net,2010-07-27:2010/07/how-to-add-red5-service.html</id><summary type="html">&lt;p&gt;&lt;strong&gt;How to add Red5 service&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="image0" src="http://red5.googlecode.com/svn/doc/trunk/FinalLogo.png" /&gt;&lt;/p&gt;
+&lt;p&gt;In this article you are going to add red5 service in your Linux box.&lt;/p&gt;
+&lt;p&gt;Please use the Below script.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt; &lt;span class="c1"&gt;#!/bin/bash&lt;/span&gt;
+ &lt;span class="c1"&gt;# Author www.arulraj.net&lt;/span&gt;
+ &lt;span class="c1"&gt;# red5    This is used to start, stop, restart and status of red5&lt;/span&gt;
+ &lt;span class="c1"&gt;#&lt;/span&gt;
+
+ &lt;span class="nb"&gt;export&lt;/span&gt; &lt;span class="nv"&gt;RED5_HOME&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;/opt/red5
+
+&lt;span class="nv"&gt;PID&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;0
+ &lt;span class="nv"&gt;RTMPPORT&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;1935
+ &lt;span class="nv"&gt;prog&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;red5&amp;quot;&lt;/span&gt;
+
+ start&lt;span class="o"&gt;(){&lt;/span&gt;
+   status
+   &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt; &lt;span class="nv"&gt;$PID&lt;/span&gt; -eq &lt;span class="m"&gt;0&lt;/span&gt; &lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="k"&gt;then&lt;/span&gt;
+     &lt;span class="nb"&gt;echo&lt;/span&gt; $&lt;span class="s2"&gt;&amp;quot;Starting &lt;/span&gt;&lt;span class="nv"&gt;$prog&lt;/span&gt;&lt;span class="s2"&gt;...&amp;quot;&lt;/span&gt;
+     nohup &lt;span class="nv"&gt;$RED5_HOME&lt;/span&gt;/red5.sh 1&amp;gt; &lt;span class="nv"&gt;$RED5_HOME&lt;/span&gt;/log/stdout.log 2&amp;gt;&lt;span class="nv"&gt;$RED5_HOME&lt;/span&gt;/log/stderr.log &amp;lt; /dev/null &lt;span class="p"&gt;&amp;amp;&lt;/span&gt;
+     &lt;span class="nv"&gt;PID&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$!&lt;/span&gt;
+     &lt;span class="nb"&gt;echo&lt;/span&gt; $&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="nv"&gt;$prog&lt;/span&gt;&lt;span class="s2"&gt; started at port &lt;/span&gt;&lt;span class="nv"&gt;$RTMPPORT&lt;/span&gt;&lt;span class="s2"&gt; and PID[&lt;/span&gt;&lt;span class="nv"&gt;$PID&lt;/span&gt;&lt;span class="s2"&gt;].&amp;quot;&lt;/span&gt;
+   &lt;span class="k"&gt;else&lt;/span&gt;
+     &lt;span class="nb"&gt;echo&lt;/span&gt;
+   &lt;span class="k"&gt;fi&lt;/span&gt;
+   &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="nv"&gt;$PID&lt;/span&gt;
+ &lt;span class="o"&gt;}&lt;/span&gt;
+
+ stop&lt;span class="o"&gt;(){&lt;/span&gt;
+   status
+   &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt; &lt;span class="nv"&gt;$PID&lt;/span&gt; -eq &lt;span class="m"&gt;0&lt;/span&gt; &lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="k"&gt;then&lt;/span&gt;
+     &lt;span class="nb"&gt;echo&lt;/span&gt;
+   &lt;span class="k"&gt;else&lt;/span&gt;
+     &lt;span class="nb"&gt;echo&lt;/span&gt; $&lt;span class="s2"&gt;&amp;quot;Stopping &lt;/span&gt;&lt;span class="nv"&gt;$prog&lt;/span&gt;&lt;span class="s2"&gt;...&amp;quot;&lt;/span&gt;
+     &lt;span class="nv"&gt;$RED5_HOME&lt;/span&gt;/red5-shutdown.sh
+     &lt;span class="nb"&gt;echo&lt;/span&gt; $&lt;span class="s2"&gt;&amp;quot;PID[&lt;/span&gt;&lt;span class="nv"&gt;$PID&lt;/span&gt;&lt;span class="s2"&gt;] is killed.&amp;quot;&lt;/span&gt;
+   &lt;span class="k"&gt;fi&lt;/span&gt;
+   &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="nv"&gt;$PID&lt;/span&gt;
+ &lt;span class="o"&gt;}&lt;/span&gt;
+
+ restart&lt;span class="o"&gt;(){&lt;/span&gt;
+   stop
+   sleep 2
+   start
+ &lt;span class="o"&gt;}&lt;/span&gt;
+
+ status&lt;span class="o"&gt;()&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+   &lt;span class="nv"&gt;RTMPPORT&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="sb"&gt;`&lt;/span&gt;cat &lt;span class="nv"&gt;$RED5_HOME&lt;/span&gt;/conf/red5.properties &lt;span class="p"&gt;|&lt;/span&gt; grep -w &lt;span class="s2"&gt;&amp;quot;rtmp.port&amp;quot;&lt;/span&gt; &lt;span class="p"&gt;|&lt;/span&gt; awk -F&lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;{print $2}&amp;#39;&lt;/span&gt;&lt;span class="sb"&gt;`&lt;/span&gt;
+   &lt;span class="c1"&gt;#PID=`lsof -i | grep java | grep *:$RTMPPORT | awk &amp;#39;{print $2}&amp;#39;`&lt;/span&gt;
+   &lt;span class="nv"&gt;PID&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="sb"&gt;`&lt;/span&gt;ps -ef &lt;span class="p"&gt;|&lt;/span&gt; grep red5 &lt;span class="p"&gt;|&lt;/span&gt; grep java &lt;span class="p"&gt;|&lt;/span&gt; awk &lt;span class="s1"&gt;&amp;#39;{print $2}&amp;#39;&lt;/span&gt;&lt;span class="sb"&gt;`&lt;/span&gt;
+   &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt; x&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="nv"&gt;$PID&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;x&amp;quot;&lt;/span&gt; &lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="k"&gt;then&lt;/span&gt;
+     &lt;span class="nv"&gt;PID&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;0
+     &lt;span class="nb"&gt;echo&lt;/span&gt; $&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="nv"&gt;$prog&lt;/span&gt;&lt;span class="s2"&gt; is not running.&amp;quot;&lt;/span&gt;
+   &lt;span class="k"&gt;else&lt;/span&gt;
+     &lt;span class="nb"&gt;echo&lt;/span&gt; $&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="nv"&gt;$prog&lt;/span&gt;&lt;span class="s2"&gt; running on port &lt;/span&gt;&lt;span class="nv"&gt;$RTMPPORT&lt;/span&gt;&lt;span class="s2"&gt; and PID[&lt;/span&gt;&lt;span class="nv"&gt;$PID&lt;/span&gt;&lt;span class="s2"&gt;].&amp;quot;&lt;/span&gt;
+   &lt;span class="k"&gt;fi&lt;/span&gt;
+   &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="nv"&gt;$PID&lt;/span&gt;
+ &lt;span class="o"&gt;}&lt;/span&gt;
+
+ &lt;span class="c1"&gt;# How its called.&lt;/span&gt;
+ &lt;span class="k"&gt;case&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="nv"&gt;$1&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt; in
+   start&lt;span class="o"&gt;)&lt;/span&gt;
+     start
+   &lt;span class="p"&gt;;;&lt;/span&gt;
+   stop&lt;span class="o"&gt;)&lt;/span&gt;
+     stop
+   &lt;span class="p"&gt;;;&lt;/span&gt;
+   status&lt;span class="o"&gt;)&lt;/span&gt;
+     status
+   &lt;span class="p"&gt;;;&lt;/span&gt;
+   restart&lt;span class="o"&gt;)&lt;/span&gt;
+     restart
+   &lt;span class="p"&gt;;;&lt;/span&gt;
+   *&lt;span class="o"&gt;)&lt;/span&gt;
+     &lt;span class="nb"&gt;echo&lt;/span&gt; $&lt;span class="s2"&gt;&amp;quot;Usage: &lt;/span&gt;&lt;span class="nv"&gt;$0&lt;/span&gt;&lt;span class="s2"&gt; {start|stop|status|restart}&amp;quot;&lt;/span&gt;
+     &lt;span class="nv"&gt;PID&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;1
+ &lt;span class="k"&gt;esac&lt;/span&gt;
+
+ &lt;span class="nb"&gt;exit&lt;/span&gt; &lt;span class="nv"&gt;$PID&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Steps:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Save these shell script lines as a file. For mine i saved as file &amp;quot;red5&amp;quot;. OR You can download this file from &lt;a class="reference external" href="http://arulraj.net/labs/script/red5"&gt;Here&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Copy this file to /etc/init.d/&lt;/li&gt;
+&lt;li&gt;Then execute the below commands to start red5 when your system starts&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://3.bp.blogspot.com/_X5tq9y9xv2s/TFB9KfBDYDI/AAAAAAAAAd0/V698BY0k9jA/s1600/red5+chkconfig+not+working.png"&gt;&lt;img alt="image1" src="http://3.bp.blogspot.com/_X5tq9y9xv2s/TFB9KfBDYDI/AAAAAAAAAd0/V698BY0k9jA/s640/red5+chkconfig+not+working.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;I checked with ubuntu 10.04. For chkconfig work on ubuntu you need to install chkconfig&lt;/p&gt;
+&lt;p&gt;This above script Not working in Ubuntu&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;apt-get install chkconfig
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://3.bp.blogspot.com/_X5tq9y9xv2s/TE8s5WDkvGI/AAAAAAAAAds/kPzFBTdJOeo/s1600/Red5+service+script.png"&gt;&lt;img alt="image2" src="http://3.bp.blogspot.com/_X5tq9y9xv2s/TE8s5WDkvGI/AAAAAAAAAds/kPzFBTdJOeo/s320/Red5+service+script.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Add red5 in startup - ubuntu:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Use this command&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo update-rc.d red5 defaults
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Thanks to anonymous for this info.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Usage:&lt;/strong&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;Start : /etc/init.d/red5 start
+Stop : /etc/init.d/red5 stop
+Status : /etc/init.d/red5 status
+Restart : /etc/init.d/red5 restart
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Please Let me know if you have any issues or better ideas...&lt;/p&gt;
+</summary><category term="commands"></category><category term="Linux"></category><category term="red5"></category><category term="scripting"></category><category term="how to"></category></entry><entry><title>Tamil FM radio for ubuntu</title><link href="http://www.arulraj.net/2010/07/tamil-fm-radio-for-ubuntu.html" rel="alternate"></link><published>2010-07-06T13:13:00+05:30</published><author><name>arul</name></author><id>tag:www.arulraj.net,2010-07-06:2010/07/tamil-fm-radio-for-ubuntu.html</id><summary type="html">&lt;p&gt;&lt;strong&gt;How to add Tamil FM radio for ubuntu&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://3.bp.blogspot.com/_X5tq9y9xv2s/TDN7EfdMqvI/AAAAAAAAAcs/TdQaG50q98w/s1600/radio+icon.jpg"&gt;&lt;img alt="image0" src="http://3.bp.blogspot.com/_X5tq9y9xv2s/TDN7EfdMqvI/AAAAAAAAAcs/TdQaG50q98w/s320/radio+icon.jpg" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Ubuntu having a superb software for playing media files, podcast, online radio and playlist etc., The software is Rhythmbox / VLC. Using that software you can add any online radio. This post for add tamil FM radios to ubuntu Rhythmbox. How to add Tamil FM to ubuntu 10.04 ..? Goto Application ↣ Sound &amp;amp; Video ↣ Rhythmbox Music Player&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://2.bp.blogspot.com/_X5tq9y9xv2s/TDN-oEeYQvI/AAAAAAAAAdE/aNhBJu8GkiI/s1600/Path+for+ubuntu+Rhythmbox.png"&gt;&lt;img alt="image1" src="http://2.bp.blogspot.com/_X5tq9y9xv2s/TDN-oEeYQvI/AAAAAAAAAdE/aNhBJu8GkiI/s320/Path+for+ubuntu+Rhythmbox.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Then Click the Add Radio button. That button is in Top Right Last button.&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://3.bp.blogspot.com/_X5tq9y9xv2s/TDN9ohWrWNI/AAAAAAAAAc8/2HMvXvvXGVI/s1600/Add+FM+radio+in+ubuntu.png"&gt;&lt;img alt="image2" src="http://3.bp.blogspot.com/_X5tq9y9xv2s/TDN9ohWrWNI/AAAAAAAAAc8/2HMvXvvXGVI/s320/Add+FM+radio+in+ubuntu.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Then Enter this URL for Hello FM [Tamil language]&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;mmsh://bdcast-ind-hellon-enusew3aswepuku.wm.llnwd.net/bdcast\_ind\_hellon\_enusew3aswepuku?MSWMExt=.asf
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Then press Add button. Now you can hear Hello FM at any Time. I will
+update the AAhaa FM and Radio City FM soon...&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://4.bp.blogspot.com/_X5tq9y9xv2s/TDN7LVUFtJI/AAAAAAAAAc0/JJvL_CEgAa4/s1600/Ubuntu+rhythmbox+Radio+Hello+FM.png"&gt;&lt;img alt="image3" src="http://4.bp.blogspot.com/_X5tq9y9xv2s/TDN7LVUFtJI/AAAAAAAAAc0/JJvL_CEgAa4/s320/Ubuntu+rhythmbox+Radio+Hello+FM.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Update:&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Here the some of Tamil FM List. You can add this FM's to your ubuntu rhythmbox using above steps.&lt;/p&gt;
+&lt;p&gt;Download this Tamil FM Playlist and Open in Rhythmbox or VLC -&amp;nbsp;&lt;a class="reference external" href="https://dl.dropboxusercontent.com/u/33817562/download/tamil_online_fm.m3u"&gt;Download Tamil FM Playlist&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Image of Tamil FM List&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://2.bp.blogspot.com/-eIPFFH6F-AU/VXLI51l91TI/AAAAAAAAWRM/-l_vNh0MePI/s1600/Selection_002.png"&gt;&lt;img alt="image4" src="http://2.bp.blogspot.com/-eIPFFH6F-AU/VXLI51l91TI/AAAAAAAAWRM/-l_vNh0MePI/s320/Selection_002.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;There is a online version of same playlist also available...&lt;/p&gt;
+&lt;iframe src="http://tamilfm.arulraj.net" style="width: 100%; height: 400px;"&gt;&lt;/iframe&gt;&lt;p&gt;Online Tamil Radio's playlist from &lt;a class="reference external" href="http://tamilfm.arulraj.net"&gt;tamilfm.arulraj.net&lt;/a&gt;. It's works with mobile and all browsers.&lt;/p&gt;
+&lt;div class="section" id="list-of-tamil-fm-s-for-ubuntu"&gt;
+&lt;h2&gt;List of Tamil FM's for ubuntu:&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;A.R.Rahman - http://listen.radionomy.com/arrahman-radio
+Ilayaraja - http://listen.radionomy.com/ilayaraja-radio
+Hello FM - mmsh://bdcast-indhellon-enusew3aswepuku.wm.llnwd.net/bdcast\_ind\_hellon\_enusew3aswepuku?MSWMExt=.asf
+Chennai Rainbow - http://www.euroshoutcast.com:8000
+TamilStar FM - http://media2.tamilstar.fm:8052/
+Shyam Radio - mms://st.malargal.com/shyamradio
+Cheers FM - mms://st.malargal.com/cheersfm
+City FM - mmsh://203.94.64.10/cityfm\_tamil?MSWMExt=.asf
+Elayaraja FM - mmsh://wm.chennaistream.net/cheersfm.newrelease/ilayaraja.wma?MSWMExt=.asf
+Thalam FM - mms://live.wtrfm.com/thaalamfm
+Canada Tamil FM - mms://ctbc.no-ip.com:8080/
+Geetham FM - http://www.geethamradio.com:8020/lofi.mp3
+STR FM - mms://live.strfm24.com/strfm
+TamilThunder FM - http://cdn.tamilmp3thunder.com/radio/radio.asx
+Australia Tamil - http://s7.viastreaming.net/7920/listen.asx
+Ungal radio - http://www.ungalradio.com/TuneIn/WindowsMedia128.asx
+Tamil Flash FM - http://www.tamilsflashfm.com/wmp.asx
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Check out the comments sections also for more FM radio links...&lt;/p&gt;
+&lt;/div&gt;
+</summary><category term="Linux"></category><category term="tamil"></category><category term="ubuntu"></category><category term="how to"></category></entry><entry><title>Mic problem in ubuntu 10.04</title><link href="http://www.arulraj.net/2010/07/mic-problem-in-ubuntu-10-04.html" rel="alternate"></link><published>2010-07-05T13:35:00+05:30</published><author><name>arul</name></author><id>tag:www.arulraj.net,2010-07-05:2010/07/mic-problem-in-ubuntu-10-04.html</id><summary type="html">&lt;p&gt;&lt;strong&gt;Mic Problem in ubuntu 10.04 for Root user&lt;/strong&gt;&lt;/p&gt;
+&lt;div class="separator" style="clear: both; text-align: center;"&gt;&lt;p&gt;&lt;a class="reference external" href="http://1.bp.blogspot.com/_X5tq9y9xv2s/TDIvaC1A0YI/AAAAAAAAAb8/fg2JNqwg6uE/s1600/Volume+in+ubuntu+10.04.png"&gt;&lt;img alt="image0" src="http://1.bp.blogspot.com/_X5tq9y9xv2s/TDIvaC1A0YI/AAAAAAAAAb8/fg2JNqwg6uE/s320/Volume+in+ubuntu+10.04.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;I am using ubuntu 10.04 in my laptop. I created a user when installing
+ubuntu . The sound and Mic are working fine for that user. I enabled the
+root by using the following command&lt;/p&gt;
+&lt;p&gt;To enable root user. Login with existing user then goto Terminal.&lt;/p&gt;
+&lt;blockquote&gt;
+sudo passwd root&lt;/blockquote&gt;
+&lt;p&gt;Now the root user is enabled. I logged in with root user. I seen the
+sound is not working for me. The volume icon is always in &amp;quot;mute&amp;quot; state&lt;/p&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;What is the Error shown ...?&lt;/div&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;When i click the &amp;quot;Sound Preference&amp;quot; in volume button or System --&amp;gt;
+Preference --&amp;gt; Sound it always shows a Warning message &amp;quot;Waiting for
+Sound system to respond&amp;quot;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="separator" style="clear: both; text-align: center;"&gt;&lt;p&gt;&lt;a class="reference external" href="http://3.bp.blogspot.com/_X5tq9y9xv2s/TEc_0dAcuYI/AAAAAAAAAdc/uRcnI1a_fG0/s1600/waiting+for+response.png"&gt;&lt;img alt="image1" src="http://3.bp.blogspot.com/_X5tq9y9xv2s/TEc_0dAcuYI/AAAAAAAAAdc/uRcnI1a_fG0/s320/waiting+for+response.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;How to fix mic problem for root user ..?&lt;/div&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;Goto System --&amp;gt; Preference --&amp;gt; Startup Applications .&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="separator" style="clear: both; text-align: center;"&gt;&lt;p&gt;&lt;a class="reference external" href="http://1.bp.blogspot.com/_X5tq9y9xv2s/TDIxqUrbzsI/AAAAAAAAAcE/jVA2AakzRC4/s1600/startup+application+-+ubuntu.png"&gt;&lt;img alt="image2" src="http://1.bp.blogspot.com/_X5tq9y9xv2s/TDIxqUrbzsI/AAAAAAAAAcE/jVA2AakzRC4/s320/startup+application+-+ubuntu.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;Now you need add a new startup application. Add &amp;quot;pulseaudio&amp;quot; as a
+startup application&lt;/p&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;Name: pulseaudio&lt;/div&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;Command : /usr/bin/pulseaudio&lt;/div&gt;
+&lt;div class="line"&gt;Comment: To start pulseaudio deamon&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="separator" style="clear: both; text-align: center;"&gt;&lt;p&gt;&lt;a class="reference external" href="http://3.bp.blogspot.com/_X5tq9y9xv2s/TDIyC_EXQrI/AAAAAAAAAcM/JC7uXRAJqvk/s1600/Add+start+up+application+ubuntu.png"&gt;&lt;img alt="image3" src="http://3.bp.blogspot.com/_X5tq9y9xv2s/TDIyC_EXQrI/AAAAAAAAAcM/JC7uXRAJqvk/s320/Add+start+up+application+ubuntu.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;Then logout and login again. For min i restarted my system. Now you can
+see the Volume control icon in unmute state and you can edit your sound
+preference now.&lt;/p&gt;
+&lt;div class="separator" style="clear: both; text-align: center;"&gt;&lt;p&gt;&lt;a class="reference external" href="http://2.bp.blogspot.com/_X5tq9y9xv2s/TDIywdsgklI/AAAAAAAAAcU/htWK_E-B4o4/s1600/working+mic+for+ubuntu.png"&gt;&lt;img alt="image4" src="http://2.bp.blogspot.com/_X5tq9y9xv2s/TDIywdsgklI/AAAAAAAAAcU/htWK_E-B4o4/s320/working+mic+for+ubuntu.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;Editing sound preference:&lt;/p&gt;
+&lt;div class="separator" style="clear: both; text-align: center;"&gt;&lt;p&gt;&lt;a class="reference external" href="http://1.bp.blogspot.com/_X5tq9y9xv2s/TDIz1bMbXWI/AAAAAAAAAck/o55AK7XlmX4/s1600/Sound+Preferences+-+ubuntu+10.04.png"&gt;&lt;img alt="image5" src="http://1.bp.blogspot.com/_X5tq9y9xv2s/TDIz1bMbXWI/AAAAAAAAAck/o55AK7XlmX4/s320/Sound+Preferences+-+ubuntu+10.04.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;</summary><category term="Linux"></category><category term="ubuntu"></category><category term="how to"></category></entry><entry><title>Ubuntu FAQ</title><link href="http://www.arulraj.net/2010/06/ubuntu-faq.html" rel="alternate"></link><published>2010-06-13T13:44:00+05:30</published><author><name>arul</name></author><id>tag:www.arulraj.net,2010-06-13:2010/06/ubuntu-faq.html</id><summary type="html">&lt;p&gt;&lt;a class="reference external" href="http://picasaweb.google.com/lh/photo/H_Aajl3cxrd_q5qtDv82yRRU7417pzdLFPTzvmy2uw8?feat=blogger"&gt;&lt;img alt="image0" src="http://lh6.ggpht.com/_X5tq9y9xv2s/TBE3MO5AjmI/AAAAAAAAAZI/_QfbEoEor1Q/s512/ubuntu-logo.gif" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Hi i am using ubuntu in &lt;a class="reference external" href="http://www.arulraj.net/2010/06/install-ubuntu-10-04-in-acer-5740.html"&gt;my
+laptop&lt;/a&gt;
+. Previously i am using windows os. i face some problems like how to
+open my computer in shorcut, show desktop, Run etc., i search in google
+and resolve here i explain how to do those things. This is not for
+ubuntu/linux guru's only for newbies like me :)&lt;/p&gt;
+&lt;p&gt;How to open My computer (filesystem) in ubuntu ..?&lt;/p&gt;
+&lt;p&gt;There is a command called &amp;quot;nautilus&amp;quot; . This will help you. Open Terminal
+then type &amp;quot;nautilus /&amp;quot; this will open your filesystem. Then create
+Launcher (shortcut) for this.&lt;/p&gt;
+&lt;p&gt;How to Create a shortcut ..?&lt;/p&gt;
+&lt;p&gt;Go to your Desktop. Then Right Click --&amp;gt; Select &amp;quot;Create Launcher&amp;quot;. It
+shows a window Fill up the like the below&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://1.bp.blogspot.com/_X5tq9y9xv2s/TBUfGYQA4oI/AAAAAAAAAZQ/iJRZnOfdDws/s1600/ubuntu+create+shorcut.png"&gt;&lt;img alt="image1" src="http://1.bp.blogspot.com/_X5tq9y9xv2s/TBUfGYQA4oI/AAAAAAAAAZQ/iJRZnOfdDws/s320/ubuntu+create+shorcut.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;In the Create Launcher window Type this Command &amp;quot;nautilus /&amp;quot;. Select
+your own name and own comment. Then click OK. Now the your &amp;quot;My Computer
+&amp;quot; icon is created in the Desktop like the below&lt;/p&gt;
+&lt;div class="separator" style="clear: both; text-align: center;"&gt;&lt;p&gt;&lt;a class="reference external" href="http://3.bp.blogspot.com/_X5tq9y9xv2s/TBUfItPVR2I/AAAAAAAAAZY/rB8CIUT-cNQ/s1600/ubuntu+my+computer.png"&gt;&lt;img alt="image2" src="http://3.bp.blogspot.com/_X5tq9y9xv2s/TBUfItPVR2I/AAAAAAAAAZY/rB8CIUT-cNQ/s320/ubuntu+my+computer.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;Using the nautilus command you can create the shortcut for any folder.
+For Home folder change the command &amp;quot;nautilus /root&amp;quot; .&lt;/p&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;There is a another method to do all the things.&lt;/div&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;Goto terminal then type &amp;quot;gconf-editor&amp;quot; it opens a Configuration
+Editor. Its like a&amp;nbsp;Registry&amp;nbsp;Editor in windows operating system.&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;Its like the below&lt;/p&gt;
+&lt;div class="separator" style="clear: both; text-align: center;"&gt;&lt;p&gt;&lt;a class="reference external" href="http://2.bp.blogspot.com/_X5tq9y9xv2s/TBUm5ktozNI/AAAAAAAAAZg/2pdoXC_fiGU/s1600/ubuntu+Configuration+Editor+-+desktop.png"&gt;&lt;img alt="image3" src="http://2.bp.blogspot.com/_X5tq9y9xv2s/TBUm5ktozNI/AAAAAAAAAZg/2pdoXC_fiGU/s320/ubuntu+Configuration+Editor+-+desktop.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;Goto Configuration Editor --&amp;gt; apps --&amp;gt; nautilus --&amp;gt; Desktop&lt;/div&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;Then Check the checkbox &amp;quot;computer_icon_visible&amp;quot; and
+&amp;quot;home_icon_visible&amp;quot; . Now the your computer and Home icons are shown
+in your desktop.&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://2.bp.blogspot.com/_X5tq9y9xv2s/TBUo0o1QdoI/AAAAAAAAAZo/NTOAbc70qKA/s1600/ubuntu+desktop+icon.png"&gt;&lt;img alt="image4" src="http://2.bp.blogspot.com/_X5tq9y9xv2s/TBUo0o1QdoI/AAAAAAAAAZo/NTOAbc70qKA/s320/ubuntu+desktop+icon.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;How to create custom keyboard shortcut ..?&lt;/p&gt;
+&lt;p&gt;In ubuntu you can create your own custom keyboard shortcut. Goto System
+--&amp;gt; Preference --&amp;gt; keyboard shortcuts.&lt;/p&gt;
+&lt;div class="separator" style="clear: both; text-align: center;"&gt;&lt;p&gt;&lt;a class="reference external" href="http://4.bp.blogspot.com/_X5tq9y9xv2s/TBZqxPcrfUI/AAAAAAAAAaA/ZnNuu2pn8m8/s1600/ubuntu+keyboard+shorcut.png"&gt;&lt;img alt="image5" src="http://4.bp.blogspot.com/_X5tq9y9xv2s/TBZqxPcrfUI/AAAAAAAAAaA/ZnNuu2pn8m8/s320/ubuntu+keyboard+shorcut.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;It opens a new window. Click the Add button then Enter your own name and
+type the command for that. For example if you want to open &amp;quot;System
+Monitor&amp;quot; its like Task manager in windows type this command
+&amp;quot;gnome-system-monitor&amp;quot;. Then press Apply. Now its time to select your
+shortcut keys. Select which one you added then choose your combination
+of keys.&lt;/p&gt;
+&lt;div class="separator" style="clear: both; text-align: center;"&gt;&lt;p&gt;&lt;a class="reference external" href="http://4.bp.blogspot.com/_X5tq9y9xv2s/TBUxbc0bnCI/AAAAAAAAAZw/uyh9gjH6vWE/s1600/Keyboard+shorcut.png"&gt;&lt;img alt="image6" src="http://4.bp.blogspot.com/_X5tq9y9xv2s/TBUxbc0bnCI/AAAAAAAAAZw/uyh9gjH6vWE/s320/Keyboard+shorcut.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;How to set environmental variables ..?&lt;/div&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;Lot of ways available to set the environmental variable. But this is
+the most simple one. You can add your variable in &amp;quot;/etc/environment&amp;quot;
+file&lt;/div&gt;
+&lt;div class="line"&gt;open this file then add your bin folder in the PATH. You can add HOME
+variable like &amp;quot;JAVA_HOME&amp;quot; in the next line.&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://3.bp.blogspot.com/_X5tq9y9xv2s/TBU0yyPQyRI/AAAAAAAAAZ4/RiE8Aiw85dg/s1600/ubuntu+environment+variable.png"&gt;&lt;img alt="image7" src="http://3.bp.blogspot.com/_X5tq9y9xv2s/TBU0yyPQyRI/AAAAAAAAAZ4/RiE8Aiw85dg/s320/ubuntu+environment+variable.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Some Ubuntu shortcuts :&lt;/p&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;To open Terminal window CTRL+ALT+T&lt;/div&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;To open Run window ALT+F2&lt;/div&gt;
+&lt;div class="line"&gt;To Choose the Desktop Windows key + E&lt;/div&gt;
+&lt;div class="line"&gt;Show Desktop CTRL+ALT+D&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</summary><category term="commands"></category><category term="Linux"></category><category term="ubuntu"></category><category term="how to"></category></entry><entry><title>Install Ubuntu 10.04 in Acer 5740</title><link href="http://www.arulraj.net/2010/06/install-ubuntu-10-04-in-acer-5740.html" rel="alternate"></link><published>2010-06-10T14:24:00+05:30</published><author><name>arul</name></author><id>tag:www.arulraj.net,2010-06-10:2010/06/install-ubuntu-10-04-in-acer-5740.html</id><summary type="html">&lt;p&gt;&lt;a class="reference external" href="http://picasaweb.google.com/lh/photo/H_Aajl3cxrd_q5qtDv82yRRU7417pzdLFPTzvmy2uw8?feat=blogger"&gt;&lt;img alt="image0" src="http://lh6.ggpht.com/_X5tq9y9xv2s/TBE3MO5AjmI/AAAAAAAAAZI/_QfbEoEor1Q/s512/ubuntu-logo.gif" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;In this blog post i am going to explain how to install ubuntu 10.04 in
+Acer 5740 laptop. Recently i bought a new Acer 5740 laptop with DOS
+Operating System. The total price is Rs.30,000 in chennai. Before buying
+this laptop i fixed in my mind use only Linux Operating system in my new
+laptop. I have tried many other distros like Linux mint, Fedora and
+opensuse in vmware. Apart from that i like ubuntu, because user
+friendly. ok now let into the topic.&lt;/p&gt;
+&lt;p&gt;Here is my system Configuration:&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://picasaweb.google.com/lh/photo/ZOz4KGlVExEFWymsd2pqvBRU7417pzdLFPTzvmy2uw8?feat=blogger"&gt;&lt;img alt="image1" src="http://lh4.ggpht.com/_X5tq9y9xv2s/TBE14Tfh8zI/AAAAAAAAAY8/K-ABTQwXT-k/s512/Ubuntu-Sysinfo.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;How to install ubuntu ..?&lt;/p&gt;
+&lt;p&gt;Steps:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Download the DVD from &lt;a class="reference external" href="http://cdimage.ubuntu.com/dvd/current/"&gt;http://cdimage.ubuntu.com/dvd/current/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Just Plug the dvd in your 5740 laptop.&lt;/li&gt;
+&lt;li&gt;Select your Language&lt;/li&gt;
+&lt;li&gt;Then select &amp;quot;Install ubuntu&amp;quot;&lt;/li&gt;
+&lt;li&gt;Select your Time Zone&lt;/li&gt;
+&lt;li&gt;Select your Keyboard layout&lt;/li&gt;
+&lt;li&gt;Select your&amp;nbsp;Partition&amp;nbsp;option- i choose the default one&lt;/li&gt;
+&lt;li&gt;Enter the Login user details&lt;/li&gt;
+&lt;li&gt;Now copying files progress bar. This process only take too much off
+times for me, approximately it takes more than 45 min.&lt;/li&gt;
+&lt;li&gt;Yes. you done it. you are successfully installed.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;How to enable root user in ubuntu ..?&lt;/p&gt;
+&lt;p&gt;Go to Terminal. keyboard Shortcut for terminal is press CTRL + ALT + T. Then type the below command&lt;/p&gt;
+&lt;div id="_mcePaste"&gt;&lt;p&gt;&lt;a class="reference external" href="mailto:root&amp;#64;arul-laptop"&gt;root&amp;#64;arul-laptop&lt;/a&gt;:~# sudo passwd root&lt;/p&gt;
+&lt;/div&gt;&lt;div&gt;&lt;p&gt;Enter the new password and confirm the password. You can restrict the
+user&amp;nbsp;privilege by&amp;nbsp;Goto System -&amp;gt; Administration -&amp;gt; User and Groups and
+click the advanced option.&lt;/p&gt;
+&lt;/div&gt;&lt;div&gt;&lt;p&gt;Photo Slide show:&lt;/p&gt;
+&lt;/div&gt;&lt;div id="__ss_4468080" style="width: 425px; text-align: center;"&gt;&lt;object id="__sse4468080" classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" width="425" height="355" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,40,0"&gt;&lt;embed id="__sse4468080" type="application/x-shockwave-flash" width="425" height="355" src="http://static.slidesharecdn.com/swf/ssplayer2.swf?doc=installing-acerodp4691&amp;amp;stripped_title=installing-acerodp" name="__sse4468080" allowscriptaccess="always" allowfullscreen="true"&gt;
+&lt;/embed&gt;
+&lt;/object&gt;&lt;/div&gt;&lt;div&gt;&lt;p&gt;Thanks to my friend Mr.Ponraj natarajan for helping me installing
+ubuntu. Without him it does not happen.&lt;/p&gt;
+&lt;/div&gt;</summary><category term="Linux"></category><category term="ubuntu"></category><category term="how to"></category></entry><entry><title>Soundcard in xen vm</title><link href="http://www.arulraj.net/2010/03/soundcard-in-xen-vm.html" rel="alternate"></link><published>2010-03-25T11:08:00+05:30</published><author><name>arul</name></author><id>tag:www.arulraj.net,2010-03-25:2010/03/soundcard-in-xen-vm.html</id><summary type="html">&lt;p&gt;&lt;strong&gt;Enable sound card in xen vm&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://2.bp.blogspot.com/_X5tq9y9xv2s/S6t1j7HhaTI/AAAAAAAAANI/Tc7vempGBMo/s1600/soundcard.jpg"&gt;&lt;img alt="image0" src="http://2.bp.blogspot.com/_X5tq9y9xv2s/S6t1j7HhaTI/AAAAAAAAANI/Tc7vempGBMo/s400/soundcard.jpg" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;How to enable sound card in the xen based vm..?&lt;/p&gt;
+&lt;p&gt;The vmware vm have the functionalists for adding sound card to their
+vm's. Then what about xen vm&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://3.bp.blogspot.com/_X5tq9y9xv2s/S6t7MxH-nPI/AAAAAAAAANQ/5-HRevzq_tE/s1600/vmware+sound+card.jpg"&gt;&lt;img alt="image1" src="http://3.bp.blogspot.com/_X5tq9y9xv2s/S6t7MxH-nPI/AAAAAAAAANQ/5-HRevzq_tE/s400/vmware+sound+card.jpg" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;By adding the below line to your HVM (Hardware Virtual
+Machine) file, You can add the sound card for the virtual machine.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;audio=1
+soundhw=&amp;#39;sb16,es1370&amp;#39;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;If you play a sound file it you can hear the sound from VMM sound out.
+Then your hvm file is look like&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;name=&amp;quot;sound-card&amp;quot;
+builder = &amp;quot;hvm&amp;quot;
+memory = &amp;quot;1024&amp;quot;
+vif = [ &amp;#39;type=ioemu, mac=00:16:3e:a0:0:8, bridge=xenbr0&amp;#39; ]
+device_model = &amp;quot;/usr/lib/xen/bin/qemu-dm-sync&amp;quot;
+kernel = &amp;quot;/usr/lib/xen/boot/hvmloader&amp;quot;
+vnc=1
+vncunused=0
+vnclisten=&amp;quot;0.0.0.0&amp;quot;
+apic=1
+acpi=0
+pae=1
+vcpus=2
+boot=&amp;#39;c&amp;#39;
+audio=1
+soundhw=&amp;#39;sb16,es1370&amp;#39;
+usb=1
+usbdevice=&amp;#39;tablet&amp;#39;
+disk = [&amp;#39;file:/vm/sound-card/disk,ioemu:hda,w&amp;#39;,&amp;#39;phy:/dev/zero,hdd:cdrom,r&amp;#39;]
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Now Goto the controlpanel now the sound devices is enabled...&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://2.bp.blogspot.com/_X5tq9y9xv2s/S6uXmdFTDbI/AAAAAAAAANY/t5aud9XDQt0/s1600/xen%2Bsound%2Bcard.jpg"&gt;&lt;img alt="image2" src="http://2.bp.blogspot.com/_X5tq9y9xv2s/S6uXmdFTDbI/AAAAAAAAANY/t5aud9XDQt0/s400/xen%2Bsound%2Bcard.jpg" /&gt;&lt;/a&gt;&lt;/p&gt;
+</summary><category term="cloud computing"></category><category term="xen"></category><category term="Linux"></category></entry><entry><title>How to install mplayer on fedora ..?</title><link href="http://www.arulraj.net/2010/01/how-to-install-mplayer-on-fedora.html" rel="alternate"></link><published>2010-01-19T08:48:00+05:30</published><author><name>arul</name></author><id>tag:www.arulraj.net,2010-01-19:2010/01/how-to-install-mplayer-on-fedora.html</id><summary type="html">&lt;p&gt;&lt;strong&gt;How to install mplayer on fedora&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="http://www.haifux.org/lectures/134/lecture/images/mplayer.png" src="http://www.haifux.org/lectures/134/lecture/images/mplayer.png" /&gt;&lt;/p&gt;
+&lt;p&gt;When i try to install mplayer-1.0-0.102.20080903svn.fc10.src.rpm in fedora i got this error. i download this file from &lt;a class="reference external" href="http://download1.rpmfusion.org/free/fedora/releases/10/Everything/source/SRPMS/repoview/index.html"&gt;rpmfusion&lt;/a&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;[root@localhost Media]# rpm -ivh mplayer-1.0-0.102.20080903svn.fc10.src.rpm
+warning: mplayer-1.0-0.102.20080903svn.fc10.src.rpm: Header V3 DSA signature: NOKEY, key ID 49c8885a1:mplayer
+warning: user mockbuild does not exist - using root
+warning: group mockbuild does not exist - using root
+warning: user mockbuild does not exist - using root
+warning: group mockbuild does not exist - using root
+warning: user mockbuild does not exist - using root
+warning: group mockbuild does not exist - using root
+warning: user mockbuild does not exist - using root
+warning: group mockbuild does not exist - using root
+########################################### [100%]
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;I have the same problem when i try to install wine-1.0.1-1.el4.i386.rpm&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;I have not internet connection in my home pc. so what to do..?&lt;/strong&gt;&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Go to &amp;quot;/usr/src/redhat/SOURCES&amp;quot; folder there is a file called mplayer-export-2008-09-03.tar.bz2&lt;/li&gt;
+&lt;li&gt;Extract the file and configure it then make and make install.&lt;/li&gt;
+&lt;li&gt;Now i have mplayer in my home pc&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;[root@localhost Movies]# mplayer 2012.avi
+MPlayer dev-SVN-r27514 (C) 2000-2008 MPlayer Team
+CPU: Intel(R) Pentium(R) 4 CPU 3.00GHz (Family: 15, Model: 4, Stepping: 3)
+CPUflags: MMX: 1 MMX2: 1 3DNow: 0 3DNow2: 0 SSE: 1 SSE2: 1
+Compiled for x86 CPU with extensions: MMX MMX2 SSE SSE2
+Playing 2012.avi.
+AVI file format detected.
+[aviheader] Video stream found, -vid 0
+[aviheader] Audio stream found, -aid 1
+AVI: ODML: Building ODML index (2 superindexchunks).
+VIDEO: [XVID] 608x272 12bpp 29.970 fps 674.6 kbps (82.4 kbyte/s)
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://3.bp.blogspot.com/_X5tq9y9xv2s/S1W9z-cISFI/AAAAAAAAAHg/LW8cMmLo91E/s1600-h/Screenshot-MPlayer.png"&gt;&lt;img alt="image1" src="http://3.bp.blogspot.com/_X5tq9y9xv2s/S1W9z-cISFI/AAAAAAAAAHg/LW8cMmLo91E/s400/Screenshot-MPlayer.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;when i play the avi file using mplayer it does not play the video only
+play the audio&lt;/p&gt;
+&lt;p&gt;Now i changed the command&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;[root@localhost Movies]# mplayer -vo x11 -ao alsa 2012.avi
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Now working fine&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://4.bp.blogspot.com/_X5tq9y9xv2s/S1W90LG8hUI/AAAAAAAAAHo/M8yz1QPT8cs/s1600-h/Screenshot-MPlayer-1.png"&gt;&lt;img alt="image2" src="http://4.bp.blogspot.com/_X5tq9y9xv2s/S1W90LG8hUI/AAAAAAAAAHo/M8yz1QPT8cs/s400/Screenshot-MPlayer-1.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+</summary><category term="Fedora"></category><category term="Linux"></category></entry><entry><title>Why i am moving to Linux in my home pc</title><link href="http://www.arulraj.net/2010/01/why-i-am-moving-to-linux-in-my-home-pc.html" rel="alternate"></link><published>2010-01-19T08:32:00+05:30</published><author><name>arul</name></author><id>tag:www.arulraj.net,2010-01-19:2010/01/why-i-am-moving-to-linux-in-my-home-pc.html</id><summary type="html">&lt;p&gt;&lt;strong&gt;Why i am moving to Linux in my home pc&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://2.bp.blogspot.com/_X5tq9y9xv2s/S1W9zR_h0gI/AAAAAAAAAHY/4OaNP6AamFo/s1600-h/fedora.png"&gt;&lt;img alt="image0" src="http://2.bp.blogspot.com/_X5tq9y9xv2s/S1W9zR_h0gI/AAAAAAAAAHY/4OaNP6AamFo/s400/fedora.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;hr class="docutils" /&gt;
+&lt;p&gt;For the past 3 years i have used pirated windows xp os in my home pc.
+But i have faced lot of problems like system very slow, Blue screen and
+more hectic thing is virus softwars. So i want to move any red-hat
+family, because i have some good experience with red-hat family os's
+like centOS rather then Ubuntu. I have the CentOS 5.0 dvd that was
+downloaded before an year. When install using that dvd Testing Disk is
+not completed some files are corrupted. I have fedora 7 dvd then
+successfully installed on Intel(R) Pentium(R) 4 CPU 3.00GHz 2 cpu
+processor Intel 815 motherborad. I have the softwares for windows os
+only not for redhat rpm files.At that time
+&lt;a class="reference external" href="http://www.winehq.org/"&gt;wine&lt;/a&gt;(run Windows programs on Unix)
+software is help me a lot. I installed Openoffice and vlc using wine
+those are working fine. The &lt;a class="reference external" href="http://www.mplayerhq.hu/"&gt;mplayer&lt;/a&gt;and
+&lt;a class="reference external" href="http://ffmpeg.org/"&gt;ffmpeg&lt;/a&gt; are used for my video and audio
+manipulation and playing. gnome-mplayer gives me the graphical toolbar
+option for mplayer. I used &lt;a class="reference external" href="http://www.gimp.org/"&gt;GIMP&lt;/a&gt;for image
+manipulation. I have the Netbeans distibution dvd it has java6 sdk and
+netbeans it enable me to develop a jsp pages and other things.
+Opensource softwares are rocking then why i used that pirated os's
+(windows).. Till now i am not face any critical problems on
+&lt;a class="reference external" href="http://fedoraproject.org/"&gt;fedora&lt;/a&gt;. Thanks to the fedora team.&lt;/p&gt;
+</summary><category term="Fedora"></category><category term="Linux"></category><category term="ubuntu"></category><category term="windows"></category></entry><entry><title>Adding Remote JMX for Red5</title><link href="http://www.arulraj.net/2009/11/adding-remote-jmx-for-red5.html" rel="alternate"></link><published>2009-11-13T07:24:00+05:30</published><author><name>arul</name></author><id>tag:www.arulraj.net,2009-11-13:2009/11/adding-remote-jmx-for-red5.html</id><summary type="html">&lt;p&gt;&lt;strong&gt;How to Add JMX for Red5 Server&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Here we are going to know, How to managing red5 server remotely using
+JMX.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;what is red5 server ..?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="image0" src="http://red5.googlecode.com/svn/doc/trunk/FinalLogo.png" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://code.google.com/p/red5/"&gt;Red5&lt;/a&gt; is an Open Source Flash
+Server written in Java that supports:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Streaming Video (FLV, F4V, MP4)&lt;/li&gt;
+&lt;li&gt;Streaming Audio (MP3, F4A, M4A)&lt;/li&gt;
+&lt;li&gt;Recording Client Streams (FLV only)&lt;/li&gt;
+&lt;li&gt;Shared Objects&lt;/li&gt;
+&lt;li&gt;Live Stream Publishing&lt;/li&gt;
+&lt;li&gt;Remoting&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;This is developed by Reverse Engineering of &lt;a class="reference external" href="http://www.adobe.com/products/flashmediaserver/"&gt;Adobe Flash Media server&lt;/a&gt;.&amp;nbsp; Red5 under the GNU Lesser General Public License. You can Modify and redistribute this software.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;What is JMX ...?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://en.wikipedia.org/wiki/JMX"&gt;JMX&lt;/a&gt; stands for &lt;strong&gt;J&lt;/strong&gt;ava &lt;strong&gt;M&lt;/strong&gt;anagement e&lt;strong&gt;X&lt;/strong&gt;tension . JMX is written in java technology used to monitor and manage a java application or objects.&lt;/p&gt;
+&lt;p&gt;The configuration of jmx agent in red5.properties file. the properties
+are&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;red5.properties&lt;/strong&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c"&gt;# JMX&lt;/span&gt;
+&lt;span class="na"&gt;jmx.rmi.port.registry&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;9999&lt;/span&gt;
+&lt;span class="na"&gt;jmx.rmi.port.remoteobjects&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;
+&lt;span class="na"&gt;jmx.rmi.host&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;0.0.0.0&lt;/span&gt;
+&lt;span class="na"&gt;jmx.rmi.ssl&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;false&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;tt class="docutils literal"&gt;jmx.rmi.port.registry&lt;/tt&gt; - the RMI registry port&lt;/p&gt;
+&lt;p&gt;&lt;tt class="docutils literal"&gt;jmx.rmi.host&lt;/tt&gt; - the host value by default 0.0.0.0 . if the host is 127.0.0.1 you can't access from remote. Normally this is your machine ip address.&lt;/p&gt;
+&lt;p&gt;you must open the firwall for the port 9999. then only you access from
+remote. For more information&amp;nbsp;&lt;a class="reference external" href="http://bit.ly/1ACRRY"&gt;see&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;you can visualize the jvm by using this software &lt;a class="reference external" href="https://visualvm.dev.java.net"&gt;visualvm&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;After install this Add the remote Host and Add remote JMX connection by adding&lt;/p&gt;
+&lt;p&gt;&lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;service:jmx:rmi://192.168.2.6:9999/jndi/rmi://192.168.2.6:9999/red5&lt;/span&gt;&lt;/tt&gt;&lt;/p&gt;
+&lt;p&gt;192.168.2.6 - ip address of red5&lt;/p&gt;
+&lt;p&gt;the default user name for jmx is &amp;quot;red5user&amp;quot; and password is &amp;quot;changeme&amp;quot;. you can change this bu changing the &lt;em&gt;access.properties&lt;/em&gt; and &lt;em&gt;password.properties&lt;/em&gt; in red5 conf folder.&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://1.bp.blogspot.com/_X5tq9y9xv2s/Sv1dgjLbZBI/AAAAAAAAAGA/PNEjXLK4M_U/s1600-h/visual_vm.jpg"&gt;&lt;img alt="image1" src="http://1.bp.blogspot.com/_X5tq9y9xv2s/Sv1dgjLbZBI/AAAAAAAAAGA/PNEjXLK4M_U/s400/visual_vm.jpg" /&gt;&lt;/a&gt;&lt;/p&gt;
+</summary><category term="Flash"></category><category term="java"></category><category term="Linux"></category><category term="Programming"></category></entry><entry><title>How to create and use private / public keys</title><link href="http://www.arulraj.net/2009/07/how-to-create-and-use-private-public-keys.html" rel="alternate"></link><published>2009-07-23T06:27:00+05:30</published><author><name>arul</name></author><id>tag:www.arulraj.net,2009-07-23:2009/07/how-to-create-and-use-private-public-keys.html</id><summary type="html">&lt;p&gt;&lt;a class="reference external" href="http://2.bp.blogspot.com/_Tq9uaJI0Xww/SmhV6r4dTlI/AAAAAAAAFIM/74M6AzeYa_w/s1600-h/puttygen.jpg"&gt;&lt;img alt="image0" src="http://2.bp.blogspot.com/_Tq9uaJI0Xww/SmhV6r4dTlI/AAAAAAAAFIM/74M6AzeYa_w/s400/puttygen.jpg" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Hi all,&lt;/p&gt;
+&lt;p&gt;Here the document for how to create private and public keys for login. This is more helpful others can login to your machine without disclose the password.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;How to create private key for my machine..?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Go to /home/root/.ssh folder. Then run ssh-keygen command. Answer the questions. Then the key and pub files are created. save this .pub file as authorized_keys.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;root@localhost ~&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="c1"&gt;# cd .ssh/&lt;/span&gt;
+&lt;span class="o"&gt;[&lt;/span&gt;root@localhost .ssh&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="c1"&gt;# ls&lt;/span&gt;
+known_hosts
+&lt;span class="o"&gt;[&lt;/span&gt;root@localhost .ssh&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="c1"&gt;# ssh-key&lt;/span&gt;
+ssh-keygen ssh-keyscan
+&lt;span class="o"&gt;[&lt;/span&gt;root@localhost .ssh&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="c1"&gt;# ssh-keygen&lt;/span&gt;
+Generating public/private rsa key pair.
+Enter file in which to save the key &lt;span class="o"&gt;(&lt;/span&gt;/root/.ssh/id_rsa&lt;span class="o"&gt;)&lt;/span&gt;: example.ppk
+Enter passphrase &lt;span class="o"&gt;(&lt;/span&gt;empty &lt;span class="k"&gt;for&lt;/span&gt; no passphrase&lt;span class="o"&gt;)&lt;/span&gt;:
+Enter same passphrase again:
+Your identification has been saved in example.ppk.
+Your public key has been saved in example.pub.
+The key fingerprint is:
+6e:e4:ff:3b:a6:52:0d:57:ec:d2:f8:dd:e5:08:22:d6 root@localhost
+&lt;span class="o"&gt;[&lt;/span&gt;root@localhost .ssh&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="c1"&gt;# cat example.pub &amp;gt;&amp;gt; authorized_keys&lt;/span&gt;
+&lt;span class="o"&gt;[&lt;/span&gt;root@localhost .ssh&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="c1"&gt;# ls&lt;/span&gt;
+authorized_keys example.ppk example.pub known_hosts
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;How to use the private keys..?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;In putty&lt;/em&gt;&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Open putty and type the 'Host Name' (ie &lt;a class="reference external" href="mailto:root&amp;#64;192.168.1.117"&gt;root&amp;#64;192.168.1.117&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Give a name in 'Saved Session'&lt;/li&gt;
+&lt;li&gt;Select Connection --&amp;gt; SSH --&amp;gt; Auth --&amp;gt; Browse --&amp;gt; Select the corresponding *.ppk file (ie example.ppk)&lt;/li&gt;
+&lt;li&gt;Now go to 'Session' Just click 'Save Button'&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Now you can login to your machine without password in putty. For putty and puttygen &lt;a class="reference external" href="http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html"&gt;download&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;In Win-SCP&lt;/em&gt;&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Start WinSCP. Under Session, enter the Host name(&lt;a class="reference external" href="mailto:root&amp;#64;192.168.1.117"&gt;root&amp;#64;192.168.1.117&lt;/a&gt;), User name(root), and Private key file(*.ppk) and click 'Save'.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Now you can login to your machine without password in WinSCP.&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://1.bp.blogspot.com/_Tq9uaJI0Xww/SmhWF1yTZXI/AAAAAAAAFIU/CEsMmDSIw6U/s1600-h/privatekey.jpg"&gt;&lt;img alt="image1" src="http://1.bp.blogspot.com/_Tq9uaJI0Xww/SmhWF1yTZXI/AAAAAAAAFIU/CEsMmDSIw6U/s400/privatekey.jpg" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;In SCP Command&lt;/em&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;scp -i example.ppk test.jpg root@192.168.1.117:/home/root/
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;em&gt;In SSH Command&lt;/em&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;ssh -i example.ppk root@192.168.1.117
+&lt;/pre&gt;&lt;/div&gt;
+</summary><category term="commands"></category><category term="Linux"></category><category term="Programming"></category><category term="how to"></category></entry><entry><title>CentOS Networking FAQ</title><link href="http://www.arulraj.net/2009/07/centos-networking-faq.html" rel="alternate"></link><published>2009-07-14T07:57:00+05:30</published><author><name>arul</name></author><id>tag:www.arulraj.net,2009-07-14:2009/07/centos-networking-faq.html</id><summary type="html">&lt;p&gt;&lt;a class="reference external" href="http://3.bp.blogspot.com/_Tq9uaJI0Xww/SlyToWJ_bHI/AAAAAAAAFFM/U3akGuy-MxU/s1600-h/centos-logo.png"&gt;&lt;img alt="image0" class="align-middle" src="http://3.bp.blogspot.com/_Tq9uaJI0Xww/SlyToWJ_bHI/AAAAAAAAFFM/U3akGuy-MxU/s400/centos-logo.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;How to set static ip..?&lt;/strong&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;root@localhost ~&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="c1"&gt;# cat /etc/sysconfig/network-scripts/ifcfg-eth0&lt;/span&gt;
+&lt;span class="nv"&gt;DEVICE&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;eth0
+&lt;span class="nv"&gt;ONBOOT&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;yes
+&lt;span class="nv"&gt;BOOTPROTO&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;static
+&lt;span class="nv"&gt;IPADDR&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;192.168.1.13
+&lt;span class="nv"&gt;NETMASK&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;255.255.255.0
+&lt;span class="nv"&gt;TYPE&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;Ethernet
+&lt;span class="o"&gt;[&lt;/span&gt;root@localhost ~&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="c1"&gt;#&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Edit your &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;/etc/sysconfig/network-scripts/ifcfg-eth0&lt;/span&gt;&lt;/tt&gt; file like this. Then restart your network.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;How to restart the network..?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;The command for stop the network is &lt;tt class="docutils literal"&gt;/etc/init.d/network stop&lt;/tt&gt;&lt;/p&gt;
+&lt;p&gt;To start the network &lt;tt class="docutils literal"&gt;/etc/init.d/network start&lt;/tt&gt;&lt;/p&gt;
+&lt;p&gt;OR&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;root@localhost ~&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="c1"&gt;# /etc/init.d/network restart&lt;/span&gt;
+Shutting down interface eth0:                              &lt;span class="o"&gt;[&lt;/span&gt;  OK  &lt;span class="o"&gt;]&lt;/span&gt;
+Shutting down loopback interface:                          &lt;span class="o"&gt;[&lt;/span&gt;  OK  &lt;span class="o"&gt;]&lt;/span&gt;
+Bringing up loopback interface:                            &lt;span class="o"&gt;[&lt;/span&gt;  OK  &lt;span class="o"&gt;]&lt;/span&gt;
+Bringing up interface eth0:                                &lt;span class="o"&gt;[&lt;/span&gt;  OK  &lt;span class="o"&gt;]&lt;/span&gt;
+&lt;span class="o"&gt;[&lt;/span&gt;root@localhost ~&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="c1"&gt;#&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;How to stop and start the firewall..?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;To stop &lt;tt class="docutils literal"&gt;/etc/init.d/iptables stop&lt;/tt&gt;&lt;/p&gt;
+&lt;p&gt;To start &lt;tt class="docutils literal"&gt;/etc/init.d/iptables start&lt;/tt&gt;&lt;/p&gt;
+&lt;p&gt;OR&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;root@localhost ~&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="c1"&gt;# /etc/init.d/iptables restart&lt;/span&gt;
+Flushing firewall rules:                                   &lt;span class="o"&gt;[&lt;/span&gt;  OK  &lt;span class="o"&gt;]&lt;/span&gt;
+Setting chains to policy ACCEPT: filter                    &lt;span class="o"&gt;[&lt;/span&gt;  OK  &lt;span class="o"&gt;]&lt;/span&gt;
+Unloading iptables modules:                                &lt;span class="o"&gt;[&lt;/span&gt;  OK  &lt;span class="o"&gt;]&lt;/span&gt;
+Applying iptables firewall rules:                          &lt;span class="o"&gt;[&lt;/span&gt;  OK  &lt;span class="o"&gt;]&lt;/span&gt;
+Loading additional iptables modules: ip_conntrack_netbios_n&lt;span class="o"&gt;[&lt;/span&gt;  OK &lt;span class="o"&gt;]&lt;/span&gt;
+&lt;span class="o"&gt;[&lt;/span&gt;root@localhost ~&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="c1"&gt;#&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;How to view my networking information..?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;command for to view all the networking info &amp;quot;ifconfig&amp;quot;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;root@localhost ~&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="c1"&gt;# ifconfig eth0&lt;/span&gt;
+eth0      Link encap:Ethernet  HWaddr 00:16:3E:A0:00:06
+inet addr:192.168.1.13  Bcast:192.168.1.255  Mask:255.255.255.0
+inet6 addr: fe80::216:3eff:fea0:6/64 Scope:Link
+UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+RX packets:1046 errors:0 dropped:0 overruns:0 frame:0
+TX packets:297 errors:0 dropped:0 overruns:0 carrier:0
+collisions:0 txqueuelen:1000
+RX bytes:81732 &lt;span class="o"&gt;(&lt;/span&gt;79.8 KiB&lt;span class="o"&gt;)&lt;/span&gt;  TX bytes:37712 &lt;span class="o"&gt;(&lt;/span&gt;36.8 KiB&lt;span class="o"&gt;)&lt;/span&gt;
+Interrupt:5 Base address:0x2000
+&lt;span class="o"&gt;[&lt;/span&gt;root@localhost ~&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="c1"&gt;#&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;How to add nameserver..?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Add your nameserver (dns) /etc/resolv.conf like this.Here Airtel dns ip is used.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;root@localhost ~&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="c1"&gt;# cat /etc/resolv.conf&lt;/span&gt;
+&lt;span class="p"&gt;;&lt;/span&gt; generated by /sbin/dhclient-script
+nameserver 203.145.184.13
+search localdomain
+&lt;span class="o"&gt;[&lt;/span&gt;root@localhost ~&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="c1"&gt;#&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;How to add Gateway and Hostname..?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;open the file &lt;tt class="docutils literal"&gt;/etc/sysconfig/network&lt;/tt&gt;. Then add your gateway ip. For the hostname change the HOSTNAME line by default this line is localhost.localdomain. Then restart your network.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;root@localhost ~&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="c1"&gt;# cat /etc/sysconfig/network&lt;/span&gt;
+&lt;span class="nv"&gt;NETWORKING&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;yes
+&lt;span class="nv"&gt;NETWORKING_IPV6&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;no
+&lt;span class="nv"&gt;HOSTNAME&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;yourdomain.com
+&lt;span class="nv"&gt;GATEWAY&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;192.168.1.1
+&lt;span class="o"&gt;[&lt;/span&gt;root@localhost ~&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="c1"&gt;#&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;OR&lt;/p&gt;
+&lt;p&gt;&lt;tt class="docutils literal"&gt;route add &lt;span class="pre"&gt;-net&lt;/span&gt; 0.0.0.0 gw 192.168.1.1&lt;/tt&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;How to add a service..?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Copy your service shell script file to /etc/init.d folder. To add a
+service.&lt;/p&gt;
+&lt;p&gt;&lt;tt class="docutils literal"&gt;[root&amp;#64;localhost ~]# chkconfig &lt;span class="pre"&gt;--&lt;/span&gt; add servicename&lt;/tt&gt;&lt;/p&gt;
+&lt;p&gt;To startup the service at the boot time.&lt;/p&gt;
+&lt;p&gt;&lt;tt class="docutils literal"&gt;[root&amp;#64;localhost ~]# chkconfig &lt;span class="pre"&gt;--level&lt;/span&gt; 5 servicename on&lt;/tt&gt;&lt;/p&gt;
+</summary><category term="Linux"></category><category term="static ip"></category></entry><entry><title>How to add Return-path in php mail</title><link href="http://www.arulraj.net/2009/07/how-to-add-return-path-in-php-mail.html" rel="alternate"></link><published>2009-07-13T23:19:00+05:30</published><author><name>arul</name></author><id>tag:www.arulraj.net,2009-07-13:2009/07/how-to-add-return-path-in-php-mail.html</id><summary type="html">&lt;p&gt;&lt;a class="reference external" href="http://3.bp.blogspot.com/_Tq9uaJI0Xww/SlyTV7ulT3I/AAAAAAAAFFE/gSyRbeYFT1M/s1600-h/php.png"&gt;&lt;img alt="image0" src="http://3.bp.blogspot.com/_Tq9uaJI0Xww/SlyTV7ulT3I/AAAAAAAAFFE/gSyRbeYFT1M/s320/php.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Here is the code for add Return-path in php mail programmatically.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="x"&gt;$today = date(&amp;quot;F j\t\h Y, g:i a&amp;quot;);&lt;/span&gt;
+&lt;span class="x"&gt;$name = &amp;#39;Yourname&amp;#39;;&lt;/span&gt;
+&lt;span class="x"&gt;$from = &amp;#39;frommail@example.com&amp;#39;;&lt;/span&gt;
+&lt;span class="x"&gt;$to = &amp;#39;tomail@example.com&amp;#39;;&lt;/span&gt;
+&lt;span class="x"&gt;$cc = &amp;#39;ccmail@example.com&amp;#39;;&lt;/span&gt;
+&lt;span class="x"&gt;$bcc = &amp;#39;bccmail@example.com&amp;#39;;&lt;/span&gt;
+&lt;span class="x"&gt;$subject = &amp;#39;Example Subject&amp;#39;;&lt;/span&gt;
+
+&lt;span class="x"&gt;// To send HTML mail&lt;/span&gt;
+&lt;span class="x"&gt;$headers = &amp;quot;MIME-Version: 1.0 \\r\\n&amp;quot;;&lt;/span&gt;
+&lt;span class="x"&gt;$headers .= &amp;quot;Content-type: text/html; charset=ISO-8859-1;&lt;/span&gt;
+&lt;span class="x"&gt;format=flowed \\r\\n&amp;quot;;&lt;/span&gt;
+&lt;span class="x"&gt;$headers .= &amp;quot;ontent-Transfer-Encoding: 8bit \\r\\n&amp;quot;;&lt;/span&gt;
+&lt;span class="x"&gt;$headers .= &amp;quot;X-Mailer: PHP/&amp;quot; . phpversion(). &amp;quot;\\r\\n&amp;quot;;&lt;/span&gt;
+&lt;span class="x"&gt;$headers .= &amp;quot;X-Priority: 1 (Highest) \\r\\n&amp;quot;;&lt;/span&gt;
+&lt;span class="x"&gt;$headers .= &amp;quot;X-MSMail-Priority: High \\r\\n&amp;quot;;&lt;/span&gt;
+&lt;span class="x"&gt;$headers .= &amp;quot;Importance: High \\r\\n&amp;quot;;&lt;/span&gt;
+&lt;span class="x"&gt;// Additional headers&lt;/span&gt;
+&lt;span class="x"&gt;$headers .= &amp;quot;From: $name&amp;lt;$from&amp;gt; \\r\\n&amp;quot;;&lt;/span&gt;
+
+&lt;span class="x"&gt;//This is one option to add the return path&lt;/span&gt;
+
+&lt;span class="x"&gt;$headers .= &amp;quot;Reply-To: $name&amp;lt;$from&amp;gt; \\r\\n&amp;quot;;&lt;/span&gt;
+&lt;span class="x"&gt;$headers .= &amp;quot;Return-Path: $from \\r\\n&amp;quot;;&lt;/span&gt;
+&lt;span class="x"&gt;$headers .= &amp;quot;Cc: $cc \\r\\n&amp;quot;;&lt;/span&gt;
+
+&lt;span class="x"&gt;//See the 5th argument in mail function for Return-path&lt;/span&gt;
+
+&lt;span class="x"&gt;mail(&amp;quot;toname&amp;lt;$to&amp;gt;&amp;quot;,$subject,&amp;quot;This is the test message for How to add return path in the php mail function.&amp;quot;,$headers,&amp;quot;-f $from&amp;quot;);&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;OR&lt;/p&gt;
+&lt;p&gt;add sendmail-path in php.ini file&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nv"&gt;sendmail_path&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; sendmail -t -i -F yourname@yourdomain.com -f  yourname@yourdomain.com
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;How to find php.ini file in Linux system&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;root@localhost:~# find / -name php.ini
+&lt;/pre&gt;&lt;/div&gt;
+</summary><category term="Linux"></category><category term="Programming"></category><category term="how to"></category></entry><entry><title>How to Add FreeSwitch Service</title><link href="http://www.arulraj.net/2009/06/how-to-add-freeswitch-service.html" rel="alternate"></link><published>2009-06-09T05:41:00+05:30</published><author><name>arul</name></author><id>tag:www.arulraj.net,2009-06-09:2009/06/how-to-add-freeswitch-service.html</id><summary type="html">&lt;p&gt;Hello all,&lt;/p&gt;
+&lt;p&gt;Here how to start &lt;a class="reference external" href="http://wiki.freeswitch.org/wiki/Installation_Guide"&gt;freeswitch&lt;/a&gt;when machine boots.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt; &lt;span class="c1"&gt;#!/bin/bash&lt;/span&gt;
+ &lt;span class="c1"&gt;#&lt;/span&gt;
+ &lt;span class="c1"&gt;# freeswitch This starts and stops the freeswitch&lt;/span&gt;
+ &lt;span class="c1"&gt;#&lt;/span&gt;
+ &lt;span class="c1"&gt;# chkconfig: 345 60 50&lt;/span&gt;
+ &lt;span class="c1"&gt;# chkconfig: - 60 50&lt;/span&gt;
+ &lt;span class="c1"&gt;# description: freeswitch.sh - startup script for freeswitch on FreeBSD&lt;/span&gt;
+ &lt;span class="c1"&gt;# processname: /usr/local/freeswitch/bin/freeswitch&lt;/span&gt;
+ &lt;span class="c1"&gt;# pidfile: /usr/local/freeswitch/log/freeswitch.pid&lt;/span&gt;
+
+ &lt;span class="nv"&gt;PATH&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;/sbin:/bin:/usr/bin:/usr/sbin
+
+ &lt;span class="c1"&gt;# Source function library.&lt;/span&gt;
+ . /etc/init.d/functions
+
+ &lt;span class="c1"&gt;# Get config.&lt;/span&gt;
+ &lt;span class="nb"&gt;test&lt;/span&gt; -f /etc/sysconfig/network &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; . /etc/sysconfig/network
+
+ &lt;span class="c1"&gt;# Check that we are root ... so non-root users stop here&lt;/span&gt;
+ &lt;span class="o"&gt;[&lt;/span&gt; &lt;span class="sb"&gt;`&lt;/span&gt;id -u&lt;span class="sb"&gt;`&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="m"&gt;0&lt;/span&gt; &lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;||&lt;/span&gt; &lt;span class="nb"&gt;exit&lt;/span&gt; 1
+
+ &lt;span class="c1"&gt;# Check that networking is up.&lt;/span&gt;
+ &lt;span class="o"&gt;[&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;NETWORKING&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;yes&amp;quot;&lt;/span&gt; &lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="se"&gt;\|\|&lt;/span&gt; &lt;span class="nb"&gt;exit&lt;/span&gt; 0
+
+ &lt;span class="nv"&gt;RETVAL&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;0
+ &lt;span class="nv"&gt;prog&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;Freeswitch&amp;quot;&lt;/span&gt;
+
+ start&lt;span class="o"&gt;()&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+ &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt; -x /usr/local/freeswitch/bin/freeswitch &lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="k"&gt;then&lt;/span&gt;
+   &lt;span class="nb"&gt;echo&lt;/span&gt; -n $&lt;span class="s2"&gt;&amp;quot;Starting &lt;/span&gt;&lt;span class="nv"&gt;$prog&lt;/span&gt;&lt;span class="s2"&gt;: &amp;quot;&lt;/span&gt;
+   /usr/local/freeswitch/bin/freeswitch -nc &lt;span class="p"&gt;&amp;amp;&lt;/span&gt;
+   &lt;span class="nv"&gt;RETVAL&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$?&lt;/span&gt;
+   sleep 1
+ &lt;span class="k"&gt;fi&lt;/span&gt;
+ &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="nv"&gt;$RETVAL&lt;/span&gt;
+ &lt;span class="o"&gt;}&lt;/span&gt;
+
+ stop&lt;span class="o"&gt;()&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+   &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt; -x /usr/local/freeswitch/bin/freeswitch &lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="k"&gt;then&lt;/span&gt;
+     &lt;span class="nb"&gt;echo&lt;/span&gt; -n $&lt;span class="s2"&gt;&amp;quot;Stopping &lt;/span&gt;&lt;span class="nv"&gt;$prog&lt;/span&gt;&lt;span class="s2"&gt;: &amp;quot;&lt;/span&gt;
+     /usr/local/freeswitch/bin/freeswitch -stop &lt;span class="p"&gt;&amp;amp;&lt;/span&gt;
+     &lt;span class="nv"&gt;RETVAL&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$?&lt;/span&gt;
+     sleep 1
+   &lt;span class="k"&gt;fi&lt;/span&gt;
+   &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="nv"&gt;$RETVAL&lt;/span&gt;
+ &lt;span class="o"&gt;}&lt;/span&gt;
+
+ restart&lt;span class="o"&gt;(){&lt;/span&gt;
+   stop
+   sleep 5
+   start
+ &lt;span class="o"&gt;}&lt;/span&gt;
+
+ &lt;span class="c1"&gt;# See how we were called.&lt;/span&gt;
+ &lt;span class="k"&gt;case&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="nv"&gt;$1&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt; in
+
+ start&lt;span class="o"&gt;)&lt;/span&gt;
+   start
+ &lt;span class="p"&gt;;;&lt;/span&gt;
+
+ stop&lt;span class="o"&gt;)&lt;/span&gt;
+   stop
+ &lt;span class="p"&gt;;;&lt;/span&gt;
+
+ restart&lt;span class="o"&gt;)&lt;/span&gt;
+   restart
+ &lt;span class="p"&gt;;;&lt;/span&gt;
+
+ *&lt;span class="o"&gt;)&lt;/span&gt;
+   &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;usage: &lt;/span&gt;&lt;span class="nv"&gt;$0&lt;/span&gt;&lt;span class="s2"&gt; { start \| stop \| restart }&amp;quot;&lt;/span&gt;
+   &lt;span class="nv"&gt;RETVAL&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;1
+
+&lt;span class="k"&gt;esac&lt;/span&gt;
+ &lt;span class="nb"&gt;exit&lt;/span&gt; &lt;span class="nv"&gt;$RETVAL&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;save these lines as file name freeswitch and copied to /etc/init.d/ folder&lt;/p&gt;
+&lt;p&gt;then run the below comments&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;chkconfig -add /etc/init.d/freeswitch
+chkconfig freeswitch on
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;you are done. Now Freeswitch will start when your PC Boots.&lt;/p&gt;
+&lt;p&gt;Freeswitch commands:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;Start : /etc/init.d/freeswitch start
+Stop : /etc/init.d/freeswitch stop
+Restart : /etc/init.d/freeswitch restart
+&lt;/pre&gt;&lt;/div&gt;
+</summary><category term="Linux"></category><category term="VOIP"></category><category term="Flash"></category><category term="how to"></category></entry><entry><title>Server Virtualization</title><link href="http://www.arulraj.net/2009/04/server-virtualization.html" rel="alternate"></link><published>2009-04-22T06:00:00+05:30</published><author><name>arul</name></author><id>tag:www.arulraj.net,2009-04-22:2009/04/server-virtualization.html</id><summary type="html">&lt;p&gt;&lt;strong&gt;Server Virtualization&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;What is Virtualization..?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://en.wikipedia.org/wiki/Virtualization"&gt;Virtualization&lt;/a&gt;is a technique of partitioning or dividing the resources of a single server into multiple segregated execution environments. Each of these environments runs independently of the other, thus allowing multiple operating systems to run on the same hardware. This concept has been widely used in the world of mainframe computers over the years.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;What is VMM (Virtual Machine Monitor)?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Each execution environment is called a guest and the server on which they execute is called the host. The software running on the host that acts as a bridge between the host and the guests, and that enables these multiple execution environments is commonly referred to as the &lt;em&gt;Virtual Machine Monitor&lt;/em&gt; (VMM) or a &lt;em&gt;Hypervisor&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;What are the Methods in Virtualization Technique ?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;System emulation:&lt;/strong&gt; The execution environment is called a virtual machine and it emulates all the hardware resources. This emulation layer in turn uses the real hardware resources from the host.&lt;/p&gt;
+&lt;p&gt;This approach Followed by :&amp;nbsp; &lt;a class="reference external" href="http://www.vmware.com/"&gt;VMware&lt;/a&gt;, &lt;a class="reference external" href="http://www.microsoft.com/Windows/products/winfamily/virtualpc/default.mspx"&gt;Microsoft virtual PC&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Paravirtualization&lt;/strong&gt;: There is no hardware emulation. The operating system that runs on a guest needs to be a modifed version that is aware of the fact that it is running inside a hypervisor.&lt;/p&gt;
+&lt;p&gt;This approach Followed by : &lt;a class="reference external" href="http://www.xen.org/"&gt;Xen&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Operating System level virtualization&lt;/strong&gt;: Each guest instance is isolated and runs in a secure environment. However, you can execute only multiple instances of guests that run the same operating system as the host.&lt;/p&gt;
+&lt;p&gt;This approach Followed by : &lt;a class="reference external" href="http://www.sun.com/software/solaris/virtualization.jsp"&gt;Sun Solaris&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;What is Xen?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Xen is an open-source paravirtualization technology that provides a platform for running multiple operating systems in parallel on one physical hardware resource, while providing close to native performance. Xen supports several operating systems—Linux, FreeBSD and NetBSD. The current version of Xen also supports the new generation of AMD Pacifca and Intel VT-x chipsets and can run an OS on these chips without any modifcations by using a version of the hypervisor called the &lt;em&gt;Hardware Virtual Machine&lt;/em&gt; (HVM)&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;What is HVM (Hardware Virtual Machine) ?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;HVM mediates between the guest operating system and the hardware and passes on the calls made by the guest to the physical hardware.&lt;/p&gt;
+&lt;div class="section" id="xen-architecture"&gt;
+&lt;h2&gt;Xen Architecture&lt;/h2&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://4.bp.blogspot.com/_Tq9uaJI0Xww/Se8KOh04_5I/AAAAAAAAETY/Gkl-Ck_wpNo/s1600-h/Xen+Architecture.jpg"&gt;&lt;img alt="image0" src="http://4.bp.blogspot.com/_Tq9uaJI0Xww/Se8KOh04_5I/AAAAAAAAETY/Gkl-Ck_wpNo/s400/Xen+Architecture.jpg" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Intel Server Virtualization Demo:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Intel® Xeon® processors based on Intel® Core™ microarchitecture integrate hardware for virtualization into all key server components including &lt;a class="reference external" href="http://www.intel.com/technology/virtualization/server/index.htm?iid=tech_vt+server"&gt;Intel® Virtualization Technology&lt;/a&gt; (Intel® VT) helping IT organizations consolidate more applications and heavier workloads on each server to improve flexibility, reliability, and total cost of ownership (TCO).&lt;/p&gt;
+&lt;p&gt;Intel® Virtualization Technology for servers Demo :&lt;/p&gt;
+&lt;div align="center"&gt;&lt;object width="320" height="240" data="http://www.intel.com/technology/virtualization/demos/closer/demo.swf" type="application/x-shockwave-flash"&gt;&lt;/object&gt;&lt;/div&gt;&lt;p&gt;Flexible virtualization&lt;/p&gt;
+&lt;div align="center"&gt;&lt;object width="320" height="240" data="http://www.intel.com/business/resources/demos/xeon5500/virtualization/demo.swf" type="application/x-shockwave-flash"&gt;&lt;/object&gt;&lt;/div&gt;&lt;/div&gt;
+</summary><category term="cloud computing"></category><category term="Linux"></category><category term="xen"></category></entry><entry><title>How to set the static ip address in ubuntu..?</title><link href="http://www.arulraj.net/2009/03/how-to-set-the-static-ip-address-in-ubuntu.html" rel="alternate"></link><published>2009-03-04T09:35:00+05:30</published><author><name>arul</name></author><id>tag:www.arulraj.net,2009-03-04:2009/03/how-to-set-the-static-ip-address-in-ubuntu.html</id><summary type="html">&lt;p&gt;edit your /etc/network/interfaces file to&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;auto eth0
+iface eth0 inet static
+address 192.168.0.50
+netmask 255.255.255.0
+network 192.168.0.0
+broadcast 192.168.0.255
+gateway 192.168.0.1
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;after that rebooting your network by excecuting the below command…&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;root@localhost ~&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="c1"&gt;# /etc/init.d/networking restart&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+</summary><category term="Linux"></category><category term="static ip"></category><category term="ubuntu"></category></entry></feed>

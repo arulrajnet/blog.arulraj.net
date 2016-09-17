@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Arul Blog</title><link href="http://www.arulraj.net/" rel="alternate"></link><link href="http://www.arulraj.net/feeds/category/browser.atom.xml" rel="self"></link><id>http://www.arulraj.net/</id><updated>2012-01-31T02:50:00+05:30</updated><entry><title>How to access irctc mobile site from your computer</title><link href="http://www.arulraj.net/2012/01/how-to-access-irctc-mobile-site-from-your-computer.html" rel="alternate"></link><published>2012-01-31T02:50:00+05:30</published><author><name>arul</name></author><id>tag:www.arulraj.net,2012-01-31:2012/01/how-to-access-irctc-mobile-site-from-your-computer.html</id><summary type="html">&lt;p&gt;&lt;strong&gt;How to access irctc mobile site from your computer&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://1.bp.blogspot.com/-7TGwu0R8Woc/TyecsHLfDiI/AAAAAAAAJIk/k_B8DnwHEew/s1600/irctc_in_android_browser.png"&gt;&lt;img alt="image0" src="http://1.bp.blogspot.com/-7TGwu0R8Woc/TyecsHLfDiI/AAAAAAAAJIk/k_B8DnwHEew/s400/irctc_in_android_browser.png" /&gt;&lt;/a&gt; Taken from android browser&lt;/p&gt;
+&lt;p&gt;Two weeks before irctc launched mobile site for train booking. But when I try to go &lt;a class="reference external" href="https://www.irctc.co.in/mobile"&gt;https://www.irctc.co.in/mobile&lt;/a&gt; from my pc its redirect to usual site.&amp;nbsp;The problem is they are checking the request coming from mobile or computer in server side using user agent and if its from mobile allowed otherwise its redirected to ordinary site.&lt;/p&gt;
+&lt;p&gt;So here is the fix 😄&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Requirement:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;absolutely&amp;nbsp;a pc&lt;/li&gt;
+&lt;li&gt;Mozilla&amp;nbsp;Firefox&lt;/li&gt;
+&lt;li&gt;User Agent&amp;nbsp;switcher add-on&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;How to:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Open Firefox&lt;/li&gt;
+&lt;li&gt;Download and Install the User Agent&amp;nbsp;switcher&amp;nbsp;add-on from &lt;a class="reference external" href="https://addons.mozilla.org/en-US/firefox/addon/user-agent-switcher/"&gt;here&amp;nbsp;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Change the User agent to iPhone 3.0 by Go to Tools&lt;/li&gt;
+&lt;li&gt;Now open the &lt;a class="reference external" href="https://www.irctc.co.in/mobile"&gt;https://www.irctc.co.in/mobile&lt;/a&gt; in&amp;nbsp;Firefox&lt;/li&gt;
+&lt;li&gt;Yeah you are done. cheers...!!!&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;User Agent switcher:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://3.bp.blogspot.com/-Q3dWVraB26g/Tyeo4jLneqI/AAAAAAAAJI0/gIPfMDGJ-y8/s1600/User_agent_firefox.png"&gt;&lt;img alt="image1" src="http://3.bp.blogspot.com/-Q3dWVraB26g/Tyeo4jLneqI/AAAAAAAAJI0/gIPfMDGJ-y8/s400/User_agent_firefox.png" /&gt;&lt;/a&gt; Change to iPhone 3.0&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;How irctc looks in firefox:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://2.bp.blogspot.com/-X3MnnhCcEbU/TyepsS3HEeI/AAAAAAAAJJA/72pM_nkgmKs/s400/irctc_firefox_mobile_login.PNG"&gt;&lt;img alt="image2" src="http://2.bp.blogspot.com/-X3MnnhCcEbU/TyepsS3HEeI/AAAAAAAAJJA/72pM_nkgmKs/s400/irctc_firefox_mobile_login.PNG" /&gt;&lt;/a&gt; Mobile Login page&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://3.bp.blogspot.com/-n75ZOpg1b98/TyeqTnGPxNI/AAAAAAAAJJM/pub05DdyFpI/s1600/irctc_firefox_mobile_home.PNG"&gt;&lt;img alt="image3" src="http://3.bp.blogspot.com/-n75ZOpg1b98/TyeqTnGPxNI/AAAAAAAAJJM/pub05DdyFpI/s400/irctc_firefox_mobile_home.PNG" /&gt;&lt;/a&gt; Mobile Home page&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://3.bp.blogspot.com/-wHuu4TgXKWw/TyeqxQhckVI/AAAAAAAAJJY/kJOQLrX-0N4/s1600/irctc_firefox_mobile_plan_my_travel.PNG"&gt;&lt;img alt="image4" src="http://3.bp.blogspot.com/-wHuu4TgXKWw/TyeqxQhckVI/AAAAAAAAJJY/kJOQLrX-0N4/s400/irctc_firefox_mobile_plan_my_travel.PNG" /&gt;&lt;/a&gt; Mobile plan my travel&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Advantages of mobile agent:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Firstly its very fast.&lt;/li&gt;
+&lt;li&gt;Easy to book. Just three clicks.&lt;/li&gt;
+&lt;li&gt;No more asking password again and again&lt;/li&gt;
+&lt;li&gt;No more session expired / timeout page :D&lt;/li&gt;
+&lt;li&gt;Do remember you can only book &lt;strong&gt;5 transactions per month&lt;/strong&gt; through
+mobile irctc site.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;FAQ:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;I tried in mobile still redirect to ordinary site..?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Use https instead of http and make sure www in that url &lt;a class="reference external" href="https://www.irctc.co.in/mobile"&gt;https://www.irctc.co.in/mobile&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;How can I change the user agent in google chrome..?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;To change user agent in google chrome check this video tutorial &lt;a class="reference external" href="http://www.youtube.com/watch?v=IiT7z8zAbn0"&gt;http://www.youtube.com/watch?v=IiT7z8zAbn0&lt;/a&gt; But for that you need chrome 17 version. To find out which chrome you are using type &amp;quot;&lt;a class="reference external" href="about:version"&gt;about:version&lt;/a&gt;&amp;quot; in address bar then enter. If you have chrome version 16, wait for 17 to be stable otherwise try beta version.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Update:&lt;/em&gt; Now a extension is available for chrome &lt;a class="reference external" href="https://chrome.google.com/webstore/detail/djflhoibgkdhkhhcedjiklpkjnoahfmg"&gt;https://chrome.google.com/webstore/detail/djflhoibgkdhkhhcedjiklpkjnoahfmg&lt;/a&gt; use this.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Is this irctc hack..?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;No. Its just a browser hack..!!! you can see any mobile website using this.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;How to use this mobile site..?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Please find the manual from here. &lt;a class="reference external" href="https://www.irctc.co.in/beta_htmls/index.htm"&gt;View Manual&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Its shows me a blank page..?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Last few days I am also getting blank pages. That website is seems to be down. Even its shows error page when I tried from mobile device. No fix for this 😄 check this &lt;a class="reference external" href="http://www.downforeveryoneorjustme.com/www.irctc.co.in/mobile"&gt;link&lt;/a&gt;&amp;nbsp;for its down or not&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;My Firefox is does not support for this add-on..?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;I think you are using old one. Try to update your firefox browser. OR from here&amp;nbsp;&lt;a class="reference external" href="http://releases.mozilla.org/pub/mozilla.org/addons/59/"&gt;http://releases.mozilla.org/pub/mozilla.org/addons/59/&lt;/a&gt;&amp;nbsp;you can find the different version of that add-on. Download which one is suitable for your firefox.&lt;/p&gt;
+</summary><category term="Browser"></category><category term="hacking"></category><category term="how to"></category><category term="mobile"></category></entry><entry><title>Toggle copy email in jQuery</title><link href="http://www.arulraj.net/2011/05/toggle-copy-email-in-jquery.html" rel="alternate"></link><published>2011-05-15T11:30:00+05:30</published><author><name>arul</name></author><id>tag:www.arulraj.net,2011-05-15:2011/05/toggle-copy-email-in-jquery.html</id><summary type="html">&lt;p&gt;In my current project jquery plays a main role. I done some small fixes on the jquery script. At that time i learned something on jquery. Here I am going to explain one of my jquery experience.&lt;/p&gt;
+&lt;p&gt;To prevent copy and email address from a text box. This is used in most of the sign-up form.&lt;/p&gt;
+&lt;p&gt;Requirment:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Jquery 1.6&lt;/li&gt;
+&lt;li&gt;Jquery Validates plugin (optional)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Here I have used jquery validate plugin for validating email in the form.&lt;/p&gt;
+&lt;p&gt;How to prevent copy and paste in a text input..?&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nx"&gt;$&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;#user.email&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;).&lt;/span&gt;&lt;span class="nx"&gt;bind&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;cut copy paste&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="kd"&gt;function&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;e&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+        &lt;span class="nx"&gt;e&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;preventDefault&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;
+&lt;span class="p"&gt;});&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;tt class="docutils literal"&gt;e.preventDefault()&lt;/tt&gt; —&amp;nbsp;means&amp;nbsp;its return false.&lt;/p&gt;
+&lt;p&gt;if you want to toggle use return statement.&lt;/p&gt;
+&lt;p&gt;return true —&amp;nbsp;means you are allowed to copy and paste content in the text input&lt;/p&gt;
+&lt;p&gt;return false —&amp;nbsp;means its prevent copy and paste in the text input.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Demo Form:&lt;/strong&gt;&lt;/p&gt;
+&lt;iframe src="http://files.arulraj.net/code/html/prevent_email_jquery.html" width="600" height="150"&gt;
+&lt;/iframe&gt;&lt;p&gt;For Toggling copy email depends upon the check box status the following javascript is used in the above demo&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nx"&gt;$&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;#user.email&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;).&lt;/span&gt;&lt;span class="nx"&gt;bind&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;cut copy paste&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="kd"&gt;function&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;e&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+        &lt;span class="c1"&gt;//e.preventDefault();&lt;/span&gt;
+        &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="nx"&gt;$&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;div input[name=&amp;#39;allow.copy&amp;#39;]:checkbox&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;).&lt;/span&gt;&lt;span class="nx"&gt;is&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;:checked&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+        &lt;span class="c1"&gt;// false means not allow to copy.&lt;/span&gt;
+&lt;span class="p"&gt;});&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;For html code &lt;a class="reference external" href="http://files.arulraj.net/code/html/prevent_email_jquery.html"&gt;Click here&lt;/a&gt; and view the source&lt;/p&gt;
+</summary><category term="javascript"></category></entry><entry><title>Google chrome Download video</title><link href="http://www.arulraj.net/2011/03/google-chrome-download-video.html" rel="alternate"></link><published>2011-03-19T14:06:00+05:30</published><author><name>arul</name></author><id>tag:www.arulraj.net,2011-03-19:2011/03/google-chrome-download-video.html</id><summary type="html">&lt;p&gt;The most video content web sites use flash player as them video player.&amp;nbsp;In Linux you can download streaming videos without any third party tools. Previously the videos which you are watching by default its stored in /tmp directory. You can copy the video from there. But in the google chrome or Chromium browser by default its come with a flash player. If you using that flash player the video is not downloaded in /tmp directory. They are using there own intelligence to prevent this. Here we are going to see a simple hack to download videos in google chrome . Steps are&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Goto installed plugins&amp;nbsp;&lt;tt class="docutils literal"&gt;about:plugins&lt;/tt&gt; in chrome / mozilla&lt;/li&gt;
+&lt;li&gt;Click Details to view with more information. Disable the Flash Plugin. The Location of the plugin would be &amp;quot;/usr/lib/adobe-flashplugin/libflashplayer.so&amp;quot;&lt;/li&gt;
+&lt;li&gt;Download the tar.gz version of flash player from here&amp;nbsp;&lt;a class="reference external" href="http://get.adobe.com/flashplayer/"&gt;http://get.adobe.com/flashplayer/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Extract that file and copy the libflashplayer.so to&amp;nbsp;/usr/lib/chromium-browser/plugins . &amp;nbsp;Then Enable this in plugin page.&lt;/li&gt;
+&lt;li&gt;If you view any video it will download in /home/&amp;lt;USER_NAME&amp;gt;/.cache/chromium/Default/Cache this folder.&lt;/li&gt;
+&lt;li&gt;For Google chrome user cache location will be /home/&amp;lt;USER_NAME&amp;gt;/.cache/google-chrome/Default/Cache&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Make a link for easy access&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;ln -s /home/arul/.cache/chromium/Default/Cache/ /tmp/chrome-cache
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Screenshots:&lt;/p&gt;
+&lt;div class="section" id="details-view-of-the-plugin-page"&gt;
+&lt;h2&gt;Details View of the Plugin page&lt;/h2&gt;
+&lt;div class="separator" style="clear: both; text-align: center;"&gt;&lt;p&gt;&lt;a class="reference external" href="http://1.bp.blogspot.com/-cLF0pmaL9ws/TYULYUaA1oI/AAAAAAAAAns/BrRbE1fbemo/s1600/chrome%2Bplugin%2B-%2BDetails%2Bview.png"&gt;&lt;img alt="image0" src="http://1.bp.blogspot.com/-cLF0pmaL9ws/TYULYUaA1oI/AAAAAAAAAns/BrRbE1fbemo/s400/chrome%2Bplugin%2B-%2BDetails%2Bview.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;div class="section" id="chromium-plugin-folder"&gt;
+&lt;h2&gt;Chromium Plugin folder&lt;/h2&gt;
+&lt;div class="separator" style="clear: both; text-align: center;"&gt;&lt;p&gt;&lt;a class="reference external" href="http://1.bp.blogspot.com/-k8fb-V-sEks/TYUL-qW_N2I/AAAAAAAAAn0/t-R6vmr_-ow/s1600/chrome%2Bplugin%2Bdirectory.png"&gt;&lt;img alt="image1" src="http://1.bp.blogspot.com/-k8fb-V-sEks/TYUL-qW_N2I/AAAAAAAAAn0/t-R6vmr_-ow/s400/chrome%2Bplugin%2Bdirectory.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;div class="section" id="chromium-cache-folder"&gt;
+&lt;h2&gt;Chromium Cache folder&lt;/h2&gt;
+&lt;div class="separator" style="clear: both; text-align: center;"&gt;&lt;p&gt;&lt;a class="reference external" href="http://4.bp.blogspot.com/-RHXSFHAJpCA/TYUMIGQU6_I/AAAAAAAAAn8/M_eTTLo3IKM/s1600/chrome%2Bcache%2Blocation.png"&gt;&lt;img alt="image2" src="http://4.bp.blogspot.com/-RHXSFHAJpCA/TYUMIGQU6_I/AAAAAAAAAn8/M_eTTLo3IKM/s400/chrome%2Bcache%2Blocation.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;My Configuration:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;OS : Ubuntu 10.04&lt;/li&gt;
+&lt;li&gt;Browser : Chromium 10.0.648.133 (Developer Build 77742) Ubuntu 10.04&lt;/li&gt;
+&lt;li&gt;Flash : Shockwave Flash 10.2 r152&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Update on 21th March 2011:&lt;/p&gt;
+&lt;p&gt;After a deep testing the video downloaded is disappear after sometime. I tested against youtube.&lt;/p&gt;
+&lt;p&gt;Otherwise use older version:&lt;/p&gt;
+&lt;p&gt;Download the older version of Flashplayer 10. Then copy that to chromium plugin directory. Enable this plugin now you can get the file in the /tmp directory. I am using Version: 10.0 r45. I get this version from with flex sdk runtime folder.&lt;/p&gt;
+&lt;/div&gt;
+</summary><category term="Browser"></category><category term="hacking"></category><category term="ubuntu"></category><category term="Flash"></category><category term="Linux"></category></entry><entry><title>Image to binary data in java</title><link href="http://www.arulraj.net/2010/10/image-to-binary-data-in-java.html" rel="alternate"></link><published>2010-10-27T14:50:00+05:30</published><author><name>arul</name></author><id>tag:www.arulraj.net,2010-10-27:2010/10/image-to-binary-data-in-java.html</id><summary type="html">&lt;p&gt;&lt;strong&gt;Image to binary data in java&lt;/strong&gt;&lt;/p&gt;
+&lt;div class="separator" style="clear: both; text-align: center;"&gt;&lt;p&gt;&lt;a class="reference external" href="http://3.bp.blogspot.com/_X5tq9y9xv2s/TMiAHb-LmaI/AAAAAAAAAjM/sfMeXSo95hY/s1600/logo.png"&gt;&lt;img alt="image0" src="http://3.bp.blogspot.com/_X5tq9y9xv2s/TMiAHb-LmaI/AAAAAAAAAjM/sfMeXSo95hY/s320/logo.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;div class="separator" style="clear: both; text-align: left;"&gt;&lt;p&gt;Today i learn a new thing. That is come across like this way.. I tried
+to install &amp;quot;Bing&amp;quot; search provider to &amp;nbsp;my Mozilla Firefox. But that Bing
+favicon is not shown on the search provider.&lt;/p&gt;
+&lt;div class="separator" style="clear: both; text-align: center;"&gt;&lt;p&gt;&lt;a class="reference external" href="http://4.bp.blogspot.com/_X5tq9y9xv2s/TMiSnHN2BZI/AAAAAAAAAjQ/2nhvag3eIO0/s1600/Bing+search+provider.png"&gt;&lt;img alt="image1" src="http://4.bp.blogspot.com/_X5tq9y9xv2s/TMiSnHN2BZI/AAAAAAAAAjQ/2nhvag3eIO0/s320/Bing+search+provider.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;&lt;p&gt;Download the mozilla firefox addon from here
+&lt;a class="reference external" href="https://addons.mozilla.org/en-US/firefox/addon/10434"&gt;https://addons.mozilla.org/en-US/firefox/addon/10434&lt;/a&gt; . It gave an xml
+file for me.&lt;/p&gt;
+&lt;/div&gt;&lt;div class="separator" style="clear: both; text-align: left;"&gt;&lt;p&gt;My internet connection is not available at that time. so the favicon
+[&lt;a class="reference external" href="http://www.bing.com/favicon.ico"&gt;http://www.bing.com/favicon.ico&lt;/a&gt; not downloaded] for Bing is not shown
+for me. But the favicon for other search provider like google and amazon
+are shown. So i thought this is some thing different. Find the path for
+searchplugin in mozilla. In ubuntu the search provider location is&lt;/p&gt;
+&lt;/div&gt;
+
+ .. raw:: html
+
+    &lt;div class="separator" style="clear: both; text-align: left;"&gt;
+
+ /usr/lib/firefox-addons/searchplugins/en-US
+
+ .. raw:: html
+
+    &lt;/div&gt;&lt;div class="separator" style="clear: both; text-align: left;"&gt;&lt;p&gt;For google and others the image tag is look like the below&lt;/p&gt;
+&lt;/div&gt;&lt;div class="separator" style="clear: both; text-align: left;"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&amp;lt;img alt=&amp;quot;&amp;quot; width=&amp;quot;16&amp;quot; height=&amp;quot;16&amp;quot;
+  /&amp;gt;data:image/png;base64,AAABAAEAEBAAAAEAGABoAw.........
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;&lt;div class="separator" style="clear: both; text-align: left;"&gt;&lt;p&gt;Now i&amp;nbsp;realized we can use the binary data of the image as a src instead
+of image url. Here the wiki page for that
+&lt;a class="reference external" href="http://en.wikipedia.org/wiki/Data_URI_scheme"&gt;http://en.wikipedia.org/wiki/Data_URI_scheme&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;div class="separator" style="clear: both; text-align: left;"&gt;&lt;p&gt;You can use the binary data in &amp;quot;img&amp;quot; tag in html&lt;/p&gt;
+&lt;/div&gt;&lt;div class="separator" style="clear: both; text-align: left;"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&amp;lt;img alt=&amp;quot;Embedded Image&amp;quot;
+  src=&amp;quot;data:image/png;base64,iVBORw0KGgoAAAAN................ /&amp;gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;So i write java program for to convert image to data. Here is the code
+for your reference&lt;/p&gt;
+&lt;/div&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;java.awt.image.BufferedImage&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;java.io.ByteArrayOutputStream&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;java.io.File&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;javax.imageio.ImageIO&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;com.sun.org.apache.xerces.internal.impl.dv.util.Base64&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+
+&lt;span class="kd"&gt;public&lt;/span&gt; &lt;span class="kd"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;Image2Base64&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+
+ &lt;span class="kd"&gt;public&lt;/span&gt; &lt;span class="kd"&gt;static&lt;/span&gt; &lt;span class="kt"&gt;void&lt;/span&gt; &lt;span class="nf"&gt;main&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;String&lt;/span&gt; &lt;span class="n"&gt;args&lt;/span&gt;&lt;span class="o"&gt;[])&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+   &lt;span class="k"&gt;try&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+     &lt;span class="n"&gt;BufferedImage&lt;/span&gt; &lt;span class="n"&gt;image&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;ImageIO&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;read&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="k"&gt;new&lt;/span&gt; &lt;span class="n"&gt;File&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;favicon.png&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;));&lt;/span&gt;
+     &lt;span class="n"&gt;ByteArrayOutputStream&lt;/span&gt; &lt;span class="n"&gt;baos&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="k"&gt;new&lt;/span&gt; &lt;span class="n"&gt;ByteArrayOutputStream&lt;/span&gt;&lt;span class="o"&gt;();&lt;/span&gt;
+     &lt;span class="n"&gt;ImageIO&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;write&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;image&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;png&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="n"&gt;baos&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
+     &lt;span class="n"&gt;String&lt;/span&gt; &lt;span class="n"&gt;encodedImage&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Base64&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;encode&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;baos&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;toByteArray&lt;/span&gt;&lt;span class="o"&gt;());&lt;/span&gt;
+     &lt;span class="n"&gt;System&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;out&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;println&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;encodedImage&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
+   &lt;span class="o"&gt;}&lt;/span&gt; &lt;span class="k"&gt;catch&lt;/span&gt; &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;Exception&lt;/span&gt; &lt;span class="n"&gt;e&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+     &lt;span class="n"&gt;e&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;printStackTrace&lt;/span&gt;&lt;span class="o"&gt;();&lt;/span&gt;
+   &lt;span class="o"&gt;}&lt;/span&gt;
+ &lt;span class="o"&gt;}&lt;/span&gt;
+&lt;span class="o"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;div class="separator" style="clear: both; text-align: left;"&gt;&lt;p&gt;Here is the Bing img in data format&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;&lt;img alt="Embedded Image" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAxklEQVR42mP4v0z0PyWYgToGbHf8/39PAIQmy4CXR/+DAYimmgFrVCCuIuAyVAPeXf7//8bM//+/PPqPFTzeBjEQpwEwADLgchfCBcdzUdXcW47HAJAkyPnYnAwyCAZALsVqAC7NMAyyAAR+fkAyAOQ3mNMJhTzIazAAN+BsNUIQLZBQMMh1sACGWoZIiaAYgDkNZCC6ZpDByGqgUcuAYjooYGAApAgUNiCMHK0gQ5DSBWZe2GgEcQEoXGAGgDAsWmmTmSjAADs5Dn62z9V4AAAAAElFTkSuQmCC" /&gt;&lt;/p&gt;
+&lt;p&gt;Finally i Fix the Bing favicon problem in my Firefox search plugin&lt;/p&gt;
+&lt;p&gt;Steps:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Remove the Bing search plugin first.&lt;/li&gt;
+&lt;li&gt;Goto Manage Search Engine → Select Bing → Remove&lt;/li&gt;
+&lt;li&gt;Copy the below xml and save as bing.xml in
+&amp;quot;/usr/lib/firefox-addons/searchplugins/en-US&amp;quot; for ubuntu OR
+&amp;quot;C:\Program Files\Mozilla\Firefox\searchplugins&amp;quot; for windows&lt;/li&gt;
+&lt;li&gt;Restart your Firefox&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="cp"&gt;&amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;UTF-8&amp;quot;?&amp;gt;&lt;/span&gt;
+&lt;span class="nt"&gt;&amp;lt;OpenSearchDescription&lt;/span&gt; &lt;span class="na"&gt;xmlns=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;http://a9.com/-/spec/opensearch/1.1/&amp;quot;&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;
+&lt;span class="nt"&gt;&amp;lt;ShortName&amp;gt;&lt;/span&gt;Bing&lt;span class="nt"&gt;&amp;lt;/ShortName&amp;gt;&lt;/span&gt;
+&lt;span class="nt"&gt;&amp;lt;Tags&amp;gt;&lt;/span&gt;Bing&lt;span class="nt"&gt;&amp;lt;/Tags&amp;gt;&lt;/span&gt;
+&lt;span class="nt"&gt;&amp;lt;Description&amp;gt;&lt;/span&gt;Bing. Search by Microsoft.&lt;span class="nt"&gt;&amp;lt;/Description&amp;gt;&lt;/span&gt;
+&lt;span class="nt"&gt;&amp;lt;Contact&amp;gt;&lt;/span&gt;msosa@microsoft.com&lt;span class="nt"&gt;&amp;lt;/Contact&amp;gt;&lt;/span&gt;
+&lt;span class="nt"&gt;&amp;lt;InputEncoding&amp;gt;&lt;/span&gt;UTF-8&lt;span class="nt"&gt;&amp;lt;/InputEncoding&amp;gt;&lt;/span&gt;
+&lt;span class="nt"&gt;&amp;lt;SyndicationRight&amp;gt;&lt;/span&gt;limited&lt;span class="nt"&gt;&amp;lt;/SyndicationRight&amp;gt;&lt;/span&gt;
+&lt;span class="nt"&gt;&amp;lt;Image&lt;/span&gt; &lt;span class="na"&gt;width=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;16&amp;quot;&lt;/span&gt;
+  &lt;span class="na"&gt;height=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;16&amp;quot;&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;data:image/x-icon;base64,AAABAAEAEBAAAAEAGABoAwAAFgAAACgAAAAQAAAAIAAAAAEAGAAAAAAAAAAAABMLAAATCwAAAAAAAAAAAAAVpv8Vpv8Vpv8Vpv8Vpv8Vpv8Vpv8Vpv8Vpv8Vpv8Vpv8Vpv8Vpv8Vpv8Vpv8Vpv8Vpv8Vpv8Vpv8Vpv8Vpv8Vpv8Vpv8Vpv8Vpv8Vpv8Vpv8Vpv8Vpv8Vpv8Vpv8Vpv8Vpv8Vpv8Vpv8Vpv8ysf97zf+24%2F%2FF6f%2FF6f%2FF6f+K0%2F9QvP8Vpv8Vpv8Vpv8Vpv8Vpv8Vpv8krP+Z2P%2F%2F%2F%2F%2F%2F%2F%2F%2Fw+f%2FF6f%2FF6f%2Fi9P%2F%2F%2F%2F%2F%2F%2F%2F%2FT7v9Bt%2F8Vpv8Vpv8Vpv8Vpv%2FT7v%2F%2F%2F%2F%2Fw+f97zf8Vpv8Vpv8Vpv8Vpv9QvP%2FT7v%2F%2F%2F%2F%2Fw+f9Bt%2F8Vpv8Vpv97zf%2F%2F%2F%2F%2F%2F%2F%2F9QvP8Vpv8Vpv8Vpv8Vpv8Vpv8Vpv8krP%2Fi9P%2F%2F%2F%2F%2Fi9P8Vpv8Vpv+24%2F%2F%2F%2F%2F%2Fi9P8Vpv8Vpv8Vpv8Vpv8Vpv8Vpv8Vpv8Vpv+K0%2F%2F%2F%2F%2F%2F%2F%2F%2F8Vpv8Vpv%2FF6f%2F%2F%2F%2F%2F%2F%2F%2F8krP8Vpv8Vpv8Vpv8Vpv8Vpv8Vpv8Vpv+n3v%2F%2F%2F%2F%2Fw+f8Vpv8Vpv%2FF6f%2F%2F%2F%2F%2F%2F%2F%2F+n3v8krP8Vpv8Vpv8Vpv8Vpv8Vpv9tx%2F%2F%2F%2F%2F%2F%2F%2F%2F+Z2P8Vpv8Vpv%2FF6f%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2Fi9P+K0%2F9QvP9QvP9tx%2F%2FF6f%2F%2F%2F%2F%2F%2F%2F%2F+n3v8Vpv8Vpv8Vpv%2FF6f%2F%2F%2F%2F%2FT7v+Z2P%2Fi9P%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F+24%2F9QvP8Vpv8Vpv8Vpv8Vpv%2FF6f%2F%2F%2F%2F%2FF6f8Vpv8Vpv8krP9QvP9QvP9Bt%2F8Vpv8Vpv8Vpv8Vpv8Vpv8Vpv8Vpv%2FF6f%2F%2F%2F%2F%2FF6f8Vpv8Vpv8Vpv8Vpv8Vpv8Vpv8Vpv8Vpv8Vpv8Vpv8Vpv8Vpv8Vpv9Bt%2F9QvP9Bt%2F8Vpv8Vpv8Vpv8Vpv8Vpv8Vpv8Vpv8Vpv8Vpv8Vpv8Vpv8Vpv8Vpv8Vpv8Vpv8Vpv8Vpv8Vpv8Vpv8Vpv8Vpv8Vpv8Vpv8Vpv8Vpv8Vpv8Vpv8Vpv8Vpv8Vpv8Vpv8Vpv8Vpv8Vpv8Vpv8Vpv8Vpv8Vpv8Vpv8Vpv8Vpv8Vpv8Vpv8Vpv8AAHBsAABhdAAAbiAAAHJ0AABsaQAAdGkAACBDAABlbgAAUEEAAEVYAAAuQwAAOy4AAEU7AABBVAAAQ00AAC5W&lt;span class="nt"&gt;&amp;lt;/Image&amp;gt;&lt;/span&gt;
+&lt;span class="nt"&gt;&amp;lt;Url&lt;/span&gt; &lt;span class="na"&gt;type=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;text/html&amp;quot;&lt;/span&gt;
+  &lt;span class="na"&gt;template=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;http://www.bing.com/search?q={searchTerms}&amp;amp;amp;form=OSDSRC&amp;quot;&lt;/span&gt;&lt;span class="nt"&gt;/&amp;gt;&lt;/span&gt;
+&lt;span class="nt"&gt;&amp;lt;Url&lt;/span&gt; &lt;span class="na"&gt;type=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;application/x-suggestions+json&amp;quot;&lt;/span&gt;
+  &lt;span class="na"&gt;template=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;http://api.bing.com/osjson.aspx?query={searchTerms}&amp;amp;amp;language={language}&amp;amp;amp;form=OSDJAS&amp;quot;&lt;/span&gt;&lt;span class="nt"&gt;/&amp;gt;&lt;/span&gt;
+&lt;span class="nt"&gt;&amp;lt;/OpenSearchDescription&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;div class="separator" style="clear: both; text-align: center;"&gt;&lt;p&gt;&lt;a class="reference external" href="http://1.bp.blogspot.com/_X5tq9y9xv2s/TOIpP67w5dI/AAAAAAAAAjU/QUdkLjf9X2Q/s1600/bing+favicon+for+seach+plugin.png"&gt;&lt;img alt="image3" src="http://1.bp.blogspot.com/_X5tq9y9xv2s/TOIpP67w5dI/AAAAAAAAAjU/QUdkLjf9X2Q/s1600/bing+favicon+for+seach+plugin.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;Update: Right now this code only supports png and sometimes ico. i don't
+know why it behave like this...&lt;/p&gt;
+</summary><category term="java"></category><category term="xml"></category></entry></feed>

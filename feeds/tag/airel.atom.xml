@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Arul Blog</title><link href="http://www.arulraj.net/" rel="alternate"></link><link href="http://www.arulraj.net/feeds/tag/airel.atom.xml" rel="self"></link><id>http://www.arulraj.net/</id><updated>2009-01-31T09:03:00+05:30</updated><entry><title>AirtelLive Manual Setting for LG KG 195</title><link href="http://www.arulraj.net/2009/01/airtellive-manual-setting-for-lg-kg-195.html" rel="alternate"></link><published>2009-01-31T09:03:00+05:30</published><author><name>arul</name></author><id>tag:www.arulraj.net,2009-01-31:2009/01/airtellive-manual-setting-for-lg-kg-195.html</id><summary type="html">&lt;p&gt;Hello all,&lt;/p&gt;
+&lt;p&gt;Go to the Browser in your mobile&lt;/p&gt;
+&lt;p&gt;DataAccount --&amp;gt; GPRS --&amp;gt; Edit the Existing Account&lt;/p&gt;
+&lt;p&gt;Account Name : Airtel Live (what ever u want)&lt;/p&gt;
+&lt;p&gt;APN : airtelfun.com&lt;/p&gt;
+&lt;p&gt;Username :&amp;nbsp; leave blank&lt;/p&gt;
+&lt;p&gt;Password : leave blank&lt;/p&gt;
+&lt;p&gt;Auth Type : Normal&lt;/p&gt;
+&lt;p&gt;Then Done --&amp;gt; save the setting&lt;/p&gt;
+&lt;p&gt;Browser --&amp;gt; WAP --&amp;gt; Setting --&amp;gt; Edit Profile --&amp;gt; select a profile then
+Edit&lt;/p&gt;
+&lt;p&gt;Rename : GPRS (what ever u want)&lt;/p&gt;
+&lt;p&gt;Homepage : &lt;a class="reference external" href="http://live.airtelworld.com"&gt;http://live.airtelworld.com&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Data Account : Airtel Live (This is the Name of the Previosly we edit)&lt;/p&gt;
+&lt;p&gt;Connection : HTTP&lt;/p&gt;
+&lt;p&gt;proxy address : 100.001.200.099&lt;/p&gt;
+&lt;p&gt;Proxy port :8080&lt;/p&gt;
+&lt;p&gt;Username :&amp;nbsp; leave blank&lt;/p&gt;
+&lt;p&gt;Password : leave blank&lt;/p&gt;
+&lt;p&gt;yeah..! You are done. Go to the Browser it will open the AirtelLive home page&lt;/p&gt;
+&lt;p&gt;Download phone suite for LG KG 195 &lt;a class="reference external" href="http://softwares.sharedaa.com/2010/02/lg-kg195-phone-suite.html"&gt;Click here&lt;/a&gt;&lt;/p&gt;
+</summary><category term="Airel"></category><category term="gprs"></category><category term="KG 195"></category><category term="LG"></category><category term="Mobile"></category></entry></feed>

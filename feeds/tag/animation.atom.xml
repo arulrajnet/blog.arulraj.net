@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Arul Blog</title><link href="http://www.arulraj.net/" rel="alternate"></link><link href="http://www.arulraj.net/feeds/tag/animation.atom.xml" rel="self"></link><id>http://www.arulraj.net/</id><updated>2010-02-07T06:54:00+05:30</updated><entry><title>How rotation camera3d and viewer3d worked in Away3d</title><link href="http://www.arulraj.net/2010/02/how-rotation-camera3d-and-viewer3d-worked-in-away3d.html" rel="alternate"></link><published>2010-02-07T06:54:00+05:30</published><author><name>Arul</name></author><id>tag:www.arulraj.net,2010-02-07:2010/02/how-rotation-camera3d-and-viewer3d-worked-in-away3d.html</id><summary type="html">&lt;p&gt;&lt;strong&gt;Rotation in Away3D Flash engine&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://4.bp.blogspot.com/_X5tq9y9xv2s/S26cXkz167I/AAAAAAAAALs/45u4Luu4aRE/s1600-h/away3d+rotation+example.jpg"&gt;&lt;img alt="image0" src="http://4.bp.blogspot.com/_X5tq9y9xv2s/S26cXkz167I/AAAAAAAAALs/45u4Luu4aRE/s400/away3d+rotation+example.jpg" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;In this blog entry we are going to learn about How the Rotation and camera3d and viewer3d in away3d flash engine.&lt;/p&gt;
+&lt;p&gt;Red line = x-axis&lt;/p&gt;
+&lt;p&gt;Blue line = y-axis&lt;/p&gt;
+&lt;p&gt;Green Line = z-axis&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;How Rotation works ..?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Rotation in away3d based on the three axis . Those are x.y and z.&amp;nbsp; the component is rotated take any one of this axis as a center then rotated. In my &lt;a class="reference external" href="http://arulraj.net/2010/02/my-first-3d-flash-animation.html"&gt;last post&lt;/a&gt; the sphere is rotated along with x axis. In that example the axis is like that (see below )&lt;/p&gt;
+&lt;embed src="http://files.arulraj.net/code/flash/away3d/singlerotate.swf" width="600" height="400"&gt;
+&lt;/embed&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sphere.rotationX = sphere.x + 1;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;The sphere takes x axis as a center and rotate like above...&lt;/p&gt;
+&lt;p&gt;In this example we add two or more components in the ObjectContainer3D then rotate this objects. In this example we are going to learn about how camera3D and Viewer3D works.&lt;/p&gt;
+&lt;embed src="http://files.arulraj.net/code/flash/away3d/away3drotate.swf" width="600" height="400"&gt;
+&lt;/embed&gt;&lt;p&gt;&lt;strong&gt;How Camera3D works ..?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://1.bp.blogspot.com/_X5tq9y9xv2s/S260xnBaV8I/AAAAAAAAAL0/sdpPCbRPy28/s1600-h/camera3d.jpg"&gt;&lt;img alt="image1" src="http://1.bp.blogspot.com/_X5tq9y9xv2s/S260xnBaV8I/AAAAAAAAAL0/sdpPCbRPy28/s400/camera3d.jpg" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Camera3d = real camera&lt;/p&gt;
+&lt;p&gt;view3d = lens the viewr of the camara&lt;/p&gt;
+&lt;p&gt;renderer = recording in real cam&lt;/p&gt;
+&lt;p&gt;scen3d = what we seen&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;This diagram explained in &lt;a class="reference external" href="http://books.sharedaa.com/2010/02/papervision3d-essentials.html"&gt;Papervision3d Essential&lt;/a&gt; book.. In this diagram your clearly understood about camera3d.&lt;/p&gt;
+&lt;p&gt;If we assume Camera 3d is like a real camera . we assume it is with in our application in invisible mode.&lt;/p&gt;
+&lt;p&gt;The viewerport (view3d) is an lens or what you are view using the camera.&lt;/p&gt;
+&lt;p&gt;The render engine is recording engine in the real camera. In the real camera If&amp;nbsp; we start the record then only we can see the changes otherwise not. Like same as in camera3d we called&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;viewer.render()
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;method each time if anything changed in the components. In the real camara If any person is not inside the seen they are not come in the flim. Same as in the scene3d if we not add add any components in the scene 3d objects&amp;nbsp; it is not visible.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;How Viewer3D Works ..?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Download the source code &lt;a class="reference external" href="http://sites.google.com/site/arulraj1985/list-of-files/Away3drotate.zip?attredirects=0&amp;amp;d=1"&gt;click here&lt;/a&gt; (compatible for Flashdevelop IDE)&lt;/p&gt;
+</summary><category term="Animation"></category><category term="Flash"></category><category term="Programming"></category><category term="how to"></category></entry><entry><title>My first 3D flash animation</title><link href="http://www.arulraj.net/2010/02/my-first-3d-flash-animation.html" rel="alternate"></link><published>2010-02-04T03:58:00+05:30</published><author><name>arul</name></author><id>tag:www.arulraj.net,2010-02-04:2010/02/my-first-3d-flash-animation.html</id><summary type="html">&lt;p&gt;&lt;strong&gt;3D Animathion&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://1.bp.blogspot.com/_X5tq9y9xv2s/S2sZE9RI5AI/AAAAAAAAALA/sKwq2ehHqto/s1600-h/away3d+example.jpg"&gt;&lt;img alt="image0" src="http://1.bp.blogspot.com/_X5tq9y9xv2s/S2sZE9RI5AI/AAAAAAAAALA/sKwq2ehHqto/s400/away3d+example.jpg" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Adobe support for native 3D only in cs4. There are lot of opensource
+flash &lt;a class="reference external" href="http://flashenabledblog.com/2008/04/17/flash-3d-list-update/"&gt;3d engines&lt;/a&gt; are there. I tried papervision3d and away3d. Both are quite well. There are lot more tutorials for both online for away3d tutorials&amp;nbsp; &lt;a class="reference external" href="http://away3d.com/tutorials"&gt;click here&lt;/a&gt; , for papervision3d download this &lt;a class="reference external" href="http://www.packtpub.com/article/3d-vector-drawing-and-text-papervision3d-part1"&gt;book&lt;/a&gt;. I got the source code of away3d from the google code &lt;a class="reference external" href="http://code.google.com/p/away3d/"&gt;http://code.google.com/p/away3d/&lt;/a&gt; and for papervison3d svn &lt;a class="reference external" href="http://code.google.com/p/papervision3d/"&gt;http://code.google.com/p/papervision3d/&lt;/a&gt;. I generate swc using the command. The red5 says about &lt;a class="reference external" href="http://osflash.org/away3d"&gt;away3d.&lt;/a&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;D:\sdk\Away3D&amp;gt; compc -include-sources ./src -source-path ./src -target-player 10 -output Away3d.swc
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Initially i got this error when compile away3d &amp;quot;Error: Type was not found or was not a compile-time constant: Vector. in away3d&amp;quot;&lt;/p&gt;
+&lt;p&gt;Then i added the -target-player 10 in command line is fix that error. I think away3d is better than papervision3d. Here is my first animation here&lt;/p&gt;
+&lt;p&gt;I'm using away3d here...&lt;/p&gt;
+&lt;embed src="http://files.arulraj.net/code/flash/away3d/away3d.swf" width="600" height="400"&gt;
+&lt;/embed&gt;&lt;p&gt;Source Code:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kd"&gt;package&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+   &lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;away3d.cameras.Camera3D&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+   &lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;away3d.cameras.HoverCamera3D&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+   &lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;away3d.cameras.TargetCamera3D&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+   &lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;away3d.containers.ObjectContainer3D&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+   &lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;away3d.containers.Scene3D&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+   &lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;away3d.containers.View3D&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+   &lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;away3d.core.math.Number3D&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+   &lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;away3d.materials.BitmapMaterial&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+   &lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;away3d.materials.WireColorMaterial&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+   &lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;away3d.primitives.Cube&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+   &lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;away3d.core.render.Renderer&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+   &lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;away3d.primitives.Sphere&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+   &lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;away3d.primitives.WireSphere&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+   &lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;away3d.core.utils.Cast&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+   &lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;away3d.core.utils.CastError&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+   &lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;flash.display.Bitmap&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+   &lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;flash.display.Sprite&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+   &lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;flash.events.Event&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+   &lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;flash.events.MouseEvent&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+   &lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;flash.geom.Point&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+   &lt;span class="cm"&gt;/**&lt;/span&gt;
+&lt;span class="cm"&gt;    *&lt;/span&gt;
+&lt;span class="cm"&gt;    * @author Arul&lt;/span&gt;
+&lt;span class="cm"&gt;    */&lt;/span&gt;
+   &lt;span class="kd"&gt;public&lt;/span&gt; &lt;span class="kd"&gt;class&lt;/span&gt; &lt;span class="n"&gt;FirstApplication&lt;/span&gt; &lt;span class="kd"&gt;extends&lt;/span&gt; &lt;span class="n"&gt;Sprite&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+      &lt;span class="kd"&gt;public&lt;/span&gt; &lt;span class="kd"&gt;var&lt;/span&gt; &lt;span class="n"&gt;viewer&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="kt"&gt;View3D&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+      &lt;span class="kd"&gt;public&lt;/span&gt; &lt;span class="kd"&gt;var&lt;/span&gt; &lt;span class="n"&gt;scene&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="kt"&gt;Scene3D&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+      &lt;span class="kd"&gt;public&lt;/span&gt; &lt;span class="kd"&gt;var&lt;/span&gt; &lt;span class="n"&gt;camera&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="kt"&gt;Camera3D&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+      &lt;span class="kd"&gt;public&lt;/span&gt; &lt;span class="kd"&gt;var&lt;/span&gt; &lt;span class="n"&gt;cube&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="kt"&gt;Cube&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+      &lt;span class="kd"&gt;public&lt;/span&gt; &lt;span class="kd"&gt;var&lt;/span&gt; &lt;span class="n"&gt;sphere&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="kt"&gt;Sphere&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+      &lt;span class="kd"&gt;public&lt;/span&gt; &lt;span class="kd"&gt;var&lt;/span&gt; &lt;span class="n"&gt;wiresphere&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="kt"&gt;WireSphere&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+      &lt;span class="kd"&gt;public&lt;/span&gt; &lt;span class="kd"&gt;var&lt;/span&gt; &lt;span class="n"&gt;group&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="kt"&gt;ObjectContainer3D&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+      &lt;span class="kd"&gt;public&lt;/span&gt; &lt;span class="kd"&gt;var&lt;/span&gt; &lt;span class="n"&gt;material&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="kt"&gt;WireColorMaterial&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+      &lt;span class="kd"&gt;public&lt;/span&gt; &lt;span class="kd"&gt;var&lt;/span&gt; &lt;span class="n"&gt;bitmapMaterial&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="kt"&gt;BitmapMaterial&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+
+      &lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="n"&gt;Embed&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;source&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;assets/favicon.jpg&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;)]&lt;/span&gt;
+      &lt;span class="kd"&gt;private&lt;/span&gt; &lt;span class="kd"&gt;var&lt;/span&gt; &lt;span class="n"&gt;favicon&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="kt"&gt;Class&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+      &lt;span class="kd"&gt;public&lt;/span&gt; &lt;span class="kd"&gt;var&lt;/span&gt; &lt;span class="n"&gt;image&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="kt"&gt;Bitmap&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="k"&gt;new&lt;/span&gt; &lt;span class="kt"&gt;favicon&lt;/span&gt;&lt;span class="o"&gt;();&lt;/span&gt;
+
+      &lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="n"&gt;SWF&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;backgroundColor&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;#EEE8DA&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;)]&lt;/span&gt;
+
+      &lt;span class="kd"&gt;public&lt;/span&gt; &lt;span class="kd"&gt;function &lt;/span&gt;&lt;span class="nf"&gt;FirstApplication&lt;/span&gt;&lt;span class="o"&gt;()&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+         &lt;span class="n"&gt;init3D&lt;/span&gt;&lt;span class="o"&gt;();&lt;/span&gt;
+      &lt;span class="o"&gt;}&lt;/span&gt;
+
+      &lt;span class="kd"&gt;public&lt;/span&gt; &lt;span class="kd"&gt;function &lt;/span&gt;&lt;span class="nf"&gt;init3D&lt;/span&gt;&lt;span class="o"&gt;():&lt;/span&gt; &lt;span class="kt"&gt;void&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+         &lt;span class="n"&gt;stage&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;frameRate&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;30&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+         &lt;span class="n"&gt;camera&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="k"&gt;new&lt;/span&gt; &lt;span class="kt"&gt;Camera3D&lt;/span&gt;&lt;span class="o"&gt;({&lt;/span&gt;
+            &lt;span class="n"&gt;y&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;400&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt;
+            &lt;span class="n"&gt;z&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;1000&lt;/span&gt;
+         &lt;span class="o"&gt;});&lt;/span&gt;
+         &lt;span class="n"&gt;viewer&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="k"&gt;new&lt;/span&gt; &lt;span class="kt"&gt;View3D&lt;/span&gt;&lt;span class="o"&gt;({&lt;/span&gt;
+            &lt;span class="n"&gt;camera&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;camera&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt;
+            &lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;250&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt;
+            &lt;span class="n"&gt;y&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;100&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt;
+            &lt;span class="n"&gt;z&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;100&lt;/span&gt;
+         &lt;span class="o"&gt;});&lt;/span&gt;
+         &lt;span class="n"&gt;scene&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="k"&gt;new&lt;/span&gt; &lt;span class="kt"&gt;Scene3D&lt;/span&gt;&lt;span class="o"&gt;();&lt;/span&gt;
+         &lt;span class="n"&gt;cube&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="k"&gt;new&lt;/span&gt; &lt;span class="kt"&gt;Cube&lt;/span&gt;&lt;span class="o"&gt;();&lt;/span&gt;
+         &lt;span class="n"&gt;sphere&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="k"&gt;new&lt;/span&gt; &lt;span class="kt"&gt;Sphere&lt;/span&gt;&lt;span class="o"&gt;();&lt;/span&gt;
+         &lt;span class="n"&gt;wiresphere&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="k"&gt;new&lt;/span&gt; &lt;span class="kt"&gt;WireSphere&lt;/span&gt;&lt;span class="o"&gt;();&lt;/span&gt;
+         &lt;span class="n"&gt;group&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="k"&gt;new&lt;/span&gt; &lt;span class="kt"&gt;ObjectContainer3D&lt;/span&gt;&lt;span class="o"&gt;();&lt;/span&gt;
+         &lt;span class="n"&gt;material&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="k"&gt;new&lt;/span&gt; &lt;span class="kt"&gt;WireColorMaterial&lt;/span&gt;&lt;span class="o"&gt;();&lt;/span&gt;
+         &lt;span class="n"&gt;bitmapMaterial&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="k"&gt;new&lt;/span&gt; &lt;span class="kt"&gt;BitmapMaterial&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;Cast&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;bitmap&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;image&lt;/span&gt;&lt;span class="o"&gt;));&lt;/span&gt;
+
+         &lt;span class="n"&gt;material&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;color&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="n"&gt;xA6111D&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+
+         &lt;span class="n"&gt;sphere&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;x&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;100&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+         &lt;span class="n"&gt;sphere&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;y&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;50&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+         &lt;span class="n"&gt;sphere&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;z&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;100&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+         &lt;span class="n"&gt;sphere&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;radius&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;75&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+         &lt;span class="n"&gt;sphere&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;bothsides&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kc"&gt;true&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+         &lt;span class="n"&gt;sphere&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;material&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;material&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+         &lt;span class="n"&gt;group&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;addChild&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;sphere&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
+
+         &lt;span class="n"&gt;wiresphere&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;x&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;270&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+         &lt;span class="n"&gt;wiresphere&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;y&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;150&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+         &lt;span class="n"&gt;wiresphere&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;z&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;150&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+         &lt;span class="n"&gt;wiresphere&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;radius&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;75&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+         &lt;span class="n"&gt;wiresphere&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;bothsides&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kc"&gt;true&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+         &lt;span class="n"&gt;wiresphere&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;material&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;material&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+         &lt;span class="n"&gt;group&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;addChild&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;wiresphere&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
+
+         &lt;span class="n"&gt;cube&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;x&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;250&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+         &lt;span class="n"&gt;cube&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;y&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;250&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+         &lt;span class="n"&gt;cube&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;z&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;400&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+         &lt;span class="n"&gt;cube&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;material&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;bitmapMaterial&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+         &lt;span class="n"&gt;group&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;addChild&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;cube&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
+
+         &lt;span class="n"&gt;viewer&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;scene&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;addChild&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;group&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
+         &lt;span class="n"&gt;viewer&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;render&lt;/span&gt;&lt;span class="o"&gt;();&lt;/span&gt;
+
+         &lt;span class="n"&gt;addChild&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;viewer&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
+
+         &lt;span class="n"&gt;addEventListener&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;Event&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;ENTER_FRAME&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="n"&gt;groupRotation&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
+         &lt;span class="n"&gt;group&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;addEventListener&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;Event&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;ENTER_FRAME&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="n"&gt;sphereRotation&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
+         &lt;span class="c1"&gt;//addEventListener(MouseEvent.MOUSE_DOWN, lookThere);&lt;/span&gt;
+      &lt;span class="o"&gt;}&lt;/span&gt;
+
+      &lt;span class="kd"&gt;public&lt;/span&gt; &lt;span class="kd"&gt;function &lt;/span&gt;&lt;span class="nf"&gt;groupRotation&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;e&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="kt"&gt;Event&lt;/span&gt;&lt;span class="o"&gt;):&lt;/span&gt; &lt;span class="kt"&gt;void&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+         &lt;span class="n"&gt;group&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;rotationX&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;group&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;x&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+         &lt;span class="n"&gt;group&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;applyRotations&lt;/span&gt;&lt;span class="o"&gt;();&lt;/span&gt;
+
+         &lt;span class="n"&gt;viewer&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;render&lt;/span&gt;&lt;span class="o"&gt;();&lt;/span&gt;
+      &lt;span class="o"&gt;}&lt;/span&gt;
+
+      &lt;span class="kd"&gt;public&lt;/span&gt; &lt;span class="kd"&gt;function &lt;/span&gt;&lt;span class="nf"&gt;sphereRotation&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;e&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="kt"&gt;Event&lt;/span&gt;&lt;span class="o"&gt;):&lt;/span&gt; &lt;span class="kt"&gt;void&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+         &lt;span class="n"&gt;sphere&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;rotationX&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;sphere&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;x&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+         &lt;span class="n"&gt;sphere&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;applyRotations&lt;/span&gt;&lt;span class="o"&gt;();&lt;/span&gt;
+
+         &lt;span class="n"&gt;wiresphere&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;rotationZ&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;wiresphere&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;z&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+         &lt;span class="n"&gt;wiresphere&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;applyRotations&lt;/span&gt;&lt;span class="o"&gt;();&lt;/span&gt;
+         &lt;span class="n"&gt;viewer&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;render&lt;/span&gt;&lt;span class="o"&gt;();&lt;/span&gt;
+      &lt;span class="o"&gt;}&lt;/span&gt;
+
+      &lt;span class="kd"&gt;public&lt;/span&gt; &lt;span class="kd"&gt;function &lt;/span&gt;&lt;span class="nf"&gt;lookThere&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;e&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="kt"&gt;MouseEvent&lt;/span&gt;&lt;span class="o"&gt;):&lt;/span&gt; &lt;span class="kt"&gt;void&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+         &lt;span class="kd"&gt;var&lt;/span&gt; &lt;span class="n"&gt;clickpoint&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="kt"&gt;Point&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="k"&gt;new&lt;/span&gt; &lt;span class="kt"&gt;Point&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;e&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;stageX&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="n"&gt;e&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;stageY&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
+         &lt;span class="kd"&gt;var&lt;/span&gt; &lt;span class="n"&gt;hypothines&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="kt"&gt;Number&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Point&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;distance&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="k"&gt;new&lt;/span&gt; &lt;span class="kt"&gt;Point&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="o"&gt;),&lt;/span&gt; &lt;span class="n"&gt;clickpoint&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
+         &lt;span class="kd"&gt;var&lt;/span&gt; &lt;span class="n"&gt;sine&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="kt"&gt;Number&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Math&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;asin&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;e&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;stageX&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt; &lt;span class="n"&gt;hypothines&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
+         &lt;span class="kd"&gt;var&lt;/span&gt; &lt;span class="n"&gt;cos&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="kt"&gt;Number&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Math&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;acos&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;e&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;stageY&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt; &lt;span class="n"&gt;hypothines&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
+         &lt;span class="n"&gt;camera&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;lookAt&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="k"&gt;new&lt;/span&gt; &lt;span class="kt"&gt;Number3D&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;e&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;stageX&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="n"&gt;e&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;stageY&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="n"&gt;hypothines&lt;/span&gt;&lt;span class="o"&gt;));&lt;/span&gt;
+         &lt;span class="cm"&gt;/**&lt;/span&gt;
+&lt;span class="cm"&gt;          * Horizontal angle&lt;/span&gt;
+&lt;span class="cm"&gt;          */&lt;/span&gt;
+         &lt;span class="n"&gt;camera&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;pan&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;cos&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
+         &lt;span class="cm"&gt;/**&lt;/span&gt;
+&lt;span class="cm"&gt;          * vertical angle&lt;/span&gt;
+&lt;span class="cm"&gt;          */&lt;/span&gt;
+         &lt;span class="n"&gt;camera&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;tilt&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;sine&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
+         &lt;span class="n"&gt;viewer&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;render&lt;/span&gt;&lt;span class="o"&gt;();&lt;/span&gt;
+      &lt;span class="o"&gt;}&lt;/span&gt;
+   &lt;span class="o"&gt;}&lt;/span&gt;
+&lt;span class="o"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+</summary><category term="Animation"></category><category term="Flash"></category><category term="red5"></category><category term="Programming"></category></entry></feed>

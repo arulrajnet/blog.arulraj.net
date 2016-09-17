@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Arul Blog</title><link href="http://www.arulraj.net/" rel="alternate"></link><link href="http://www.arulraj.net/feeds/tag/bash_completions.atom.xml" rel="self"></link><id>http://www.arulraj.net/</id><updated>2016-01-24T06:34:22+05:30</updated><entry><title>Setup docker and tools</title><link href="http://www.arulraj.net/2016/01/setup-docker-and-tools.html" rel="alternate"></link><published>2016-01-24T06:34:22+05:30</published><author><name>Arul</name></author><id>tag:www.arulraj.net,2016-01-24:2016/01/setup-docker-and-tools.html</id><summary type="html">&lt;p&gt;Guide to install and configure docker and related tools.&lt;/p&gt;
+&lt;div class="section" id="install-docker"&gt;
+&lt;h2&gt;Install Docker&lt;/h2&gt;
+&lt;p&gt;Installing docker on any bash systems.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;curl -sSL https://get.docker.com/ &lt;span class="p"&gt;|&lt;/span&gt; sh
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Installing bash completions for docker&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;curl -ksSL https://raw.githubusercontent.com/docker/docker/&lt;span class="k"&gt;$(&lt;/span&gt;docker --version &lt;span class="p"&gt;|&lt;/span&gt; awk &lt;span class="s1"&gt;&amp;#39;NR==1{print $NF}&amp;#39;&lt;/span&gt;&lt;span class="k"&gt;)&lt;/span&gt;/contrib/completion/bash/docker &lt;span class="p"&gt;|&lt;/span&gt;sudo tee /etc/bash_completion.d/docker
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="docker-tools"&gt;
+&lt;h2&gt;Docker Tools&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Docker compose&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;To install docker-compose&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo apt-get install python-pip
+sudo pip install -U docker-compose
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;To install bash completions for docker-compose&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;curl -ksSL https://raw.githubusercontent.com/docker/compose/&lt;span class="k"&gt;$(&lt;/span&gt;docker-compose --version &lt;span class="p"&gt;|&lt;/span&gt; awk &lt;span class="s1"&gt;&amp;#39;NR==1{print $NF}&amp;#39;&lt;/span&gt;&lt;span class="k"&gt;)&lt;/span&gt;/contrib/completion/bash/docker-compose &lt;span class="p"&gt;|&lt;/span&gt;sudo tee /etc/bash_completion.d/docker-compose
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;Docker alias&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Add this in your &lt;tt class="docutils literal"&gt;.bashrc&lt;/tt&gt; file.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# ------------------------------------&lt;/span&gt;
+&lt;span class="c1"&gt;# Docker alias and function&lt;/span&gt;
+&lt;span class="c1"&gt;# ------------------------------------&lt;/span&gt;
+
+&lt;span class="c1"&gt;# Get latest container ID&lt;/span&gt;
+&lt;span class="nb"&gt;alias&lt;/span&gt; &lt;span class="nv"&gt;dl&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;docker ps -l -q&amp;quot;&lt;/span&gt;
+
+&lt;span class="c1"&gt;# Get container process&lt;/span&gt;
+&lt;span class="nb"&gt;alias&lt;/span&gt; &lt;span class="nv"&gt;dps&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;docker ps&amp;quot;&lt;/span&gt;
+
+&lt;span class="c1"&gt;# Get process included stop container&lt;/span&gt;
+&lt;span class="nb"&gt;alias&lt;/span&gt; &lt;span class="nv"&gt;dpa&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;docker ps -a&amp;quot;&lt;/span&gt;
+
+&lt;span class="c1"&gt;# Get images&lt;/span&gt;
+&lt;span class="nb"&gt;alias&lt;/span&gt; &lt;span class="nv"&gt;di&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;docker images&amp;quot;&lt;/span&gt;
+
+&lt;span class="c1"&gt;# Get container IP&lt;/span&gt;
+&lt;span class="nb"&gt;alias&lt;/span&gt; &lt;span class="nv"&gt;dip&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;docker inspect --format &amp;#39;{{ .NetworkSettings.IPAddress }}&amp;#39;&amp;quot;&lt;/span&gt;
+
+&lt;span class="c1"&gt;# Run deamonized container, e.g., $dkd base /bin/echo hello&lt;/span&gt;
+&lt;span class="nb"&gt;alias&lt;/span&gt; &lt;span class="nv"&gt;dkd&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;docker run -d -P&amp;quot;&lt;/span&gt;
+
+&lt;span class="c1"&gt;# Run interactive container, e.g., $dki base /bin/bash&lt;/span&gt;
+&lt;span class="nb"&gt;alias&lt;/span&gt; &lt;span class="nv"&gt;dki&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;docker run -i -t -P&amp;quot;&lt;/span&gt;
+
+&lt;span class="c1"&gt;# Execute interactive container, e.g., $dex base /bin/bash&lt;/span&gt;
+&lt;span class="nb"&gt;alias&lt;/span&gt; &lt;span class="nv"&gt;dex&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;docker exec -i -t&amp;quot;&lt;/span&gt;
+
+&lt;span class="c1"&gt;# Stop all containers&lt;/span&gt;
+dstop&lt;span class="o"&gt;()&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt; docker stop &lt;span class="k"&gt;$(&lt;/span&gt;docker ps -a -q&lt;span class="k"&gt;)&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="o"&gt;}&lt;/span&gt;
+
+&lt;span class="c1"&gt;# Remove all containers&lt;/span&gt;
+drm&lt;span class="o"&gt;()&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt; docker rm &lt;span class="k"&gt;$(&lt;/span&gt;docker ps -a -q&lt;span class="k"&gt;)&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="o"&gt;}&lt;/span&gt;
+
+&lt;span class="c1"&gt;# Stop and Remove all containers&lt;/span&gt;
+&lt;span class="nb"&gt;alias&lt;/span&gt; &lt;span class="nv"&gt;drmf&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;docker stop $(docker ps -a -q) &amp;amp;&amp;amp; docker rm $(docker ps -a -q)&amp;#39;&lt;/span&gt;
+
+&lt;span class="c1"&gt;# Remove all images&lt;/span&gt;
+dri&lt;span class="o"&gt;()&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt; docker rmi &lt;span class="k"&gt;$(&lt;/span&gt;docker images -q&lt;span class="k"&gt;)&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="o"&gt;}&lt;/span&gt;
+
+&lt;span class="c1"&gt;# Dockerfile build, e.g., $dbu tcnksm/test&lt;/span&gt;
+dbu&lt;span class="o"&gt;()&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt; docker build -t&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$1&lt;/span&gt; .&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="o"&gt;}&lt;/span&gt;
+
+&lt;span class="c1"&gt;# Show all alias related docker&lt;/span&gt;
+dalias&lt;span class="o"&gt;()&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt; &lt;span class="nb"&gt;alias&lt;/span&gt; &lt;span class="p"&gt;|&lt;/span&gt; grep &lt;span class="s1"&gt;&amp;#39;docker&amp;#39;&lt;/span&gt; &lt;span class="p"&gt;|&lt;/span&gt; sed &lt;span class="s2"&gt;&amp;quot;s/^\([^=]*\)=\(.*\)/\1 =&amp;gt; \2/&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;|&lt;/span&gt; sed &lt;span class="s2"&gt;&amp;quot;s/[&amp;#39;|\&amp;#39;]//g&amp;quot;&lt;/span&gt; &lt;span class="p"&gt;|&lt;/span&gt; sort&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="o"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Refer from &lt;a class="reference external" href="https://github.com/tcnksm/docker-alias/"&gt;https://github.com/tcnksm/docker-alias/&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+</summary><category term="bash_completions"></category><category term="ubuntu"></category></entry></feed>

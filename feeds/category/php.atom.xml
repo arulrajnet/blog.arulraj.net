@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Arul Blog</title><link href="http://www.arulraj.net/" rel="alternate"></link><link href="http://www.arulraj.net/feeds/category/php.atom.xml" rel="self"></link><id>http://www.arulraj.net/</id><updated>2009-07-13T23:19:00+05:30</updated><entry><title>How to add Return-path in php mail</title><link href="http://www.arulraj.net/2009/07/how-to-add-return-path-in-php-mail.html" rel="alternate"></link><published>2009-07-13T23:19:00+05:30</published><author><name>arul</name></author><id>tag:www.arulraj.net,2009-07-13:2009/07/how-to-add-return-path-in-php-mail.html</id><summary type="html">&lt;p&gt;&lt;a class="reference external" href="http://3.bp.blogspot.com/_Tq9uaJI0Xww/SlyTV7ulT3I/AAAAAAAAFFE/gSyRbeYFT1M/s1600-h/php.png"&gt;&lt;img alt="image0" src="http://3.bp.blogspot.com/_Tq9uaJI0Xww/SlyTV7ulT3I/AAAAAAAAFFE/gSyRbeYFT1M/s320/php.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Here is the code for add Return-path in php mail programmatically.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="x"&gt;$today = date(&amp;quot;F j\t\h Y, g:i a&amp;quot;);&lt;/span&gt;
+&lt;span class="x"&gt;$name = &amp;#39;Yourname&amp;#39;;&lt;/span&gt;
+&lt;span class="x"&gt;$from = &amp;#39;frommail@example.com&amp;#39;;&lt;/span&gt;
+&lt;span class="x"&gt;$to = &amp;#39;tomail@example.com&amp;#39;;&lt;/span&gt;
+&lt;span class="x"&gt;$cc = &amp;#39;ccmail@example.com&amp;#39;;&lt;/span&gt;
+&lt;span class="x"&gt;$bcc = &amp;#39;bccmail@example.com&amp;#39;;&lt;/span&gt;
+&lt;span class="x"&gt;$subject = &amp;#39;Example Subject&amp;#39;;&lt;/span&gt;
+
+&lt;span class="x"&gt;// To send HTML mail&lt;/span&gt;
+&lt;span class="x"&gt;$headers = &amp;quot;MIME-Version: 1.0 \\r\\n&amp;quot;;&lt;/span&gt;
+&lt;span class="x"&gt;$headers .= &amp;quot;Content-type: text/html; charset=ISO-8859-1;&lt;/span&gt;
+&lt;span class="x"&gt;format=flowed \\r\\n&amp;quot;;&lt;/span&gt;
+&lt;span class="x"&gt;$headers .= &amp;quot;ontent-Transfer-Encoding: 8bit \\r\\n&amp;quot;;&lt;/span&gt;
+&lt;span class="x"&gt;$headers .= &amp;quot;X-Mailer: PHP/&amp;quot; . phpversion(). &amp;quot;\\r\\n&amp;quot;;&lt;/span&gt;
+&lt;span class="x"&gt;$headers .= &amp;quot;X-Priority: 1 (Highest) \\r\\n&amp;quot;;&lt;/span&gt;
+&lt;span class="x"&gt;$headers .= &amp;quot;X-MSMail-Priority: High \\r\\n&amp;quot;;&lt;/span&gt;
+&lt;span class="x"&gt;$headers .= &amp;quot;Importance: High \\r\\n&amp;quot;;&lt;/span&gt;
+&lt;span class="x"&gt;// Additional headers&lt;/span&gt;
+&lt;span class="x"&gt;$headers .= &amp;quot;From: $name&amp;lt;$from&amp;gt; \\r\\n&amp;quot;;&lt;/span&gt;
+
+&lt;span class="x"&gt;//This is one option to add the return path&lt;/span&gt;
+
+&lt;span class="x"&gt;$headers .= &amp;quot;Reply-To: $name&amp;lt;$from&amp;gt; \\r\\n&amp;quot;;&lt;/span&gt;
+&lt;span class="x"&gt;$headers .= &amp;quot;Return-Path: $from \\r\\n&amp;quot;;&lt;/span&gt;
+&lt;span class="x"&gt;$headers .= &amp;quot;Cc: $cc \\r\\n&amp;quot;;&lt;/span&gt;
+
+&lt;span class="x"&gt;//See the 5th argument in mail function for Return-path&lt;/span&gt;
+
+&lt;span class="x"&gt;mail(&amp;quot;toname&amp;lt;$to&amp;gt;&amp;quot;,$subject,&amp;quot;This is the test message for How to add return path in the php mail function.&amp;quot;,$headers,&amp;quot;-f $from&amp;quot;);&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;OR&lt;/p&gt;
+&lt;p&gt;add sendmail-path in php.ini file&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nv"&gt;sendmail_path&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; sendmail -t -i -F yourname@yourdomain.com -f  yourname@yourdomain.com
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;How to find php.ini file in Linux system&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;root@localhost:~# find / -name php.ini
+&lt;/pre&gt;&lt;/div&gt;
+</summary><category term="Linux"></category><category term="Programming"></category><category term="how to"></category></entry></feed>

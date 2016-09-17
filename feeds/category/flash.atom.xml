@@ -1,0 +1,355 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Arul Blog</title><link href="http://www.arulraj.net/" rel="alternate"></link><link href="http://www.arulraj.net/feeds/category/flash.atom.xml" rel="self"></link><id>http://www.arulraj.net/</id><updated>2013-04-11T11:29:00+05:30</updated><entry><title>Flex videodisplay fullscreen like youtube</title><link href="http://www.arulraj.net/2013/04/flex-videodisplay-fullscreen-like-youtube.html" rel="alternate"></link><published>2013-04-11T11:29:00+05:30</published><author><name>arul</name></author><id>tag:www.arulraj.net,2013-04-11:2013/04/flex-videodisplay-fullscreen-like-youtube.html</id><summary type="html">&lt;p&gt;&lt;strong&gt;Videodisplay in whole screen / Full screen particular component&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;After a&amp;nbsp;long time&amp;nbsp;I came with a new post in flex. Yes fullscreen in flex..!!! Fullscreening a whole app is very simple. You can full&amp;nbsp;screening&amp;nbsp;by simply changing the display state of your application. But it will be tricky if you are try to fullscreen a particular component in an application. In this post I am taking videodisplay component in a video chat application.&lt;/p&gt;
+&lt;p&gt;Still you can fullscreen a component using &lt;tt class="docutils literal"&gt;fullScreenSourceRect&lt;/tt&gt; property of stage.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;stage&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;fullScreenSourceRect&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="k"&gt;new&lt;/span&gt; &lt;span class="kt"&gt;Rectangle&lt;/span&gt; &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;320&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;240&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;But It is like zooming a component. Its not good such as videodisplay component. So I came up with an idea. Here its&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Get that object of element which you are going to make fullscreen.&lt;/li&gt;
+&lt;li&gt;Remove it from parent object.&lt;/li&gt;
+&lt;li&gt;Add that element into stage.&lt;/li&gt;
+&lt;li&gt;Then resize that element to stage width and height.&lt;/li&gt;
+&lt;li&gt;While existing from fullscreen remove from stage and add back to
+parent component.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kd"&gt;protected&lt;/span&gt; &lt;span class="kd"&gt;function &lt;/span&gt;&lt;span class="nf"&gt;fullScreenButton_clickHandler&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;event&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="kt"&gt;MouseEvent&lt;/span&gt;&lt;span class="o"&gt;):&lt;/span&gt; &lt;span class="kt"&gt;void&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+ &lt;span class="kd"&gt;var&lt;/span&gt; &lt;span class="n"&gt;liveVideo&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="kt"&gt;Object&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;liveVideoDisplay&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;getChildByName&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;liveVideo&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
+ &lt;span class="n"&gt;videoBox&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;removeElement&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;liveVideoDisplay&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
+ &lt;span class="n"&gt;stage&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;addChild&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;liveVideoDisplay&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
+ &lt;span class="n"&gt;stage&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;displayState&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;StageDisplayState&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;FULL_SCREEN&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+ &lt;span class="n"&gt;liveVideo&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;width&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;stage&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;width&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+ &lt;span class="n"&gt;liveVideo&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;height&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;stage&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;height&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+ &lt;span class="n"&gt;stage&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;addEventListener&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;FullScreenEvent&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;FULL_SCREEN&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="n"&gt;fullScreenHandler&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
+&lt;span class="o"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://files.arulraj.net/code/flash/example/fullscreen/srcview/"&gt;View source&lt;/a&gt; is enabled.&lt;/p&gt;
+&lt;iframe src="http://files.arulraj.net/code/flash/example/fullscreen/fullscreen.html"
+width="610" height="300"&gt;
+&lt;/iframe&gt;</summary><category term="Actionscript"></category><category term="Flash"></category></entry><entry><title>Flash Log with date and time</title><link href="http://www.arulraj.net/2010/11/flash-log-with-date-and-time.html" rel="alternate"></link><published>2010-11-16T15:50:00+05:30</published><author><name>arul</name></author><id>tag:www.arulraj.net,2010-11-16:2010/11/flash-log-with-date-and-time.html</id><summary type="html">&lt;p&gt;&lt;strong&gt;Flash trace with Date and Time&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://3.bp.blogspot.com/_X5tq9y9xv2s/TOLw1JAze1I/AAAAAAAAAjY/ht0kfAZ_v5A/s1600/Flex+with+Log.png"&gt;&lt;img alt="image0" src="http://3.bp.blogspot.com/_X5tq9y9xv2s/TOLw1JAze1I/AAAAAAAAAjY/ht0kfAZ_v5A/s320/Flex+with+Log.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;When i am work with a&amp;nbsp;Difficult&amp;nbsp;Flex application its hard to find which log is come first and which one come second in the flashlog trace. I searching for any log4j api like in flex. Yes i got.. Flex have that inbuit. Here i share that how to i use in my project... The Class is &amp;quot;&lt;strong&gt;TraceTarget&lt;/strong&gt;&amp;quot;... Using that class you can trace your log in different way like Debug, Info, Warn and Error.. Here is My example&lt;/p&gt;
+ &lt;!--  TODO : pelican better_figures_and_images is failed because of object data is null --&gt;
+&lt;object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" width="300" height="150" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,40,0"&gt;
+   &lt;embed type="application/x-shockwave-flash" width="300" height="150" src="http://files.arulraj.net/code/flash/example/LogExample/logexample.swf"&gt;
+   &lt;/embed&gt;
+&lt;/object&gt;&lt;p&gt;&lt;strong&gt;sharedaaExample.mxml&lt;/strong&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="cp"&gt;&amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;UTF-8&amp;quot;?&amp;gt;&lt;/span&gt;
+&lt;span class="nt"&gt;&amp;lt;mx:Application&lt;/span&gt; &lt;span class="na"&gt;xmlns:mx=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;http://www.adobe.com/2006/mxml&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;xmlns:sharedaa=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;com.sharedaa.\*&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;creationComplete=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;creationComplete()&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;preinitialize=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;initLogging()&amp;quot;&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class="nt"&gt;&amp;lt;mx:Script&amp;gt;&lt;/span&gt;
+  &lt;span class="s"&gt;&amp;lt;![CDATA[&lt;/span&gt;
+   &lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;mx.logging.Log&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+   &lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;mx.logging.ILogger&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+   &lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;mx.logging.LogEventLevel&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+   &lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;mx.logging.targets.TraceTarget&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+   &lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;flash.ui.ContextMenu&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+   &lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;flash.ui.ContextMenuItem&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+   &lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;flash.net.navigateToURL&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+   &lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;flash.net.URLRequest&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+
+   &lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;flash.events.ContextMenuEvent&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+
+   &lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;flash.display.StageDisplayState&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+
+   &lt;span class="kd"&gt;private&lt;/span&gt; &lt;span class="kd"&gt;var&lt;/span&gt; &lt;span class="n"&gt;chatContextMenu&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="kt"&gt;ContextMenu&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+
+   &lt;span class="kd"&gt;private&lt;/span&gt; &lt;span class="kd"&gt;function &lt;/span&gt;&lt;span class="nf"&gt;initLogging&lt;/span&gt;&lt;span class="o"&gt;():&lt;/span&gt; &lt;span class="kt"&gt;void&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+     &lt;span class="c1"&gt;// Create a target.&lt;/span&gt;
+     &lt;span class="kd"&gt;var&lt;/span&gt; &lt;span class="n"&gt;logTarget&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="kt"&gt;TraceTarget&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="k"&gt;new&lt;/span&gt; &lt;span class="kt"&gt;TraceTarget&lt;/span&gt;&lt;span class="o"&gt;();&lt;/span&gt;
+
+     &lt;span class="c1"&gt;// Log only messages for the following packages&lt;/span&gt;
+     &lt;span class="n"&gt;logTarget&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;filters&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;com.sharedaa.\*&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;];&lt;/span&gt;
+
+     &lt;span class="c1"&gt;// Log all log levels.&lt;/span&gt;
+     &lt;span class="n"&gt;logTarget&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;level&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;LogEventLevel&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;ALL&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+
+     &lt;span class="c1"&gt;// Add date, time, category, and log level to the output.&lt;/span&gt;
+     &lt;span class="n"&gt;logTarget&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;includeDate&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kc"&gt;true&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+     &lt;span class="n"&gt;logTarget&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;includeTime&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kc"&gt;true&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+     &lt;span class="n"&gt;logTarget&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;includeCategory&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kc"&gt;true&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+     &lt;span class="n"&gt;logTarget&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;includeLevel&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kc"&gt;true&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+
+     &lt;span class="c1"&gt;// Begin logging.&lt;/span&gt;
+     &lt;span class="n"&gt;Log&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;addTarget&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;logTarget&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
+   &lt;span class="o"&gt;}&lt;/span&gt;
+
+   &lt;span class="kd"&gt;private&lt;/span&gt; &lt;span class="kd"&gt;function &lt;/span&gt;&lt;span class="nf"&gt;addContextMenu&lt;/span&gt;&lt;span class="o"&gt;():&lt;/span&gt; &lt;span class="kt"&gt;void&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+     &lt;span class="n"&gt;chatContextMenu&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="k"&gt;new&lt;/span&gt; &lt;span class="kt"&gt;ContextMenu&lt;/span&gt;&lt;span class="o"&gt;();&lt;/span&gt;
+     &lt;span class="n"&gt;chatContextMenu&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;hideBuiltInItems&lt;/span&gt;&lt;span class="o"&gt;();&lt;/span&gt;
+     &lt;span class="kd"&gt;var&lt;/span&gt; &lt;span class="n"&gt;item&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="kt"&gt;ContextMenuItem&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="k"&gt;new&lt;/span&gt; &lt;span class="kt"&gt;ContextMenuItem&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;www.arulraj.net&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
+     &lt;span class="n"&gt;item&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;addEventListener&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;menuItemSelect&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="n"&gt;openNewWindow&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
+     &lt;span class="n"&gt;chatContextMenu&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;customItems&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;push&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;item&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
+     &lt;span class="k"&gt;this&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;contextMenu&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;chatContextMenu&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+   &lt;span class="o"&gt;}&lt;/span&gt;
+
+   &lt;span class="kd"&gt;private&lt;/span&gt; &lt;span class="kd"&gt;function &lt;/span&gt;&lt;span class="nf"&gt;openNewWindow&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;event&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="kt"&gt;ContextMenuEvent&lt;/span&gt;&lt;span class="o"&gt;):&lt;/span&gt; &lt;span class="kt"&gt;void&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+     &lt;span class="n"&gt;navigateToURL&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="k"&gt;new&lt;/span&gt; &lt;span class="kt"&gt;URLRequest&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;http://www.arulraj.net&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;),&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;\_blank&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
+   &lt;span class="o"&gt;}&lt;/span&gt;
+
+   &lt;span class="kd"&gt;private&lt;/span&gt; &lt;span class="kd"&gt;function &lt;/span&gt;&lt;span class="nf"&gt;creationComplete&lt;/span&gt;&lt;span class="o"&gt;():&lt;/span&gt; &lt;span class="kt"&gt;void&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+     &lt;span class="n"&gt;addContextMenu&lt;/span&gt;&lt;span class="o"&gt;();&lt;/span&gt;
+     &lt;span class="n"&gt;main&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;initMain&lt;/span&gt;&lt;span class="o"&gt;();&lt;/span&gt;
+     &lt;span class="n"&gt;main&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;printLog&lt;/span&gt;&lt;span class="o"&gt;();&lt;/span&gt;
+   &lt;span class="o"&gt;}&lt;/span&gt;
+   &lt;span class="s"&gt;]]&amp;gt;&lt;/span&gt;
+  &lt;span class="nt"&gt;&amp;lt;/mx:Script&amp;gt;&lt;/span&gt;
+  &lt;span class="nt"&gt;&amp;lt;mx:Canvas&lt;/span&gt; &lt;span class="na"&gt;id=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;sharedaa&amp;quot;&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class="nt"&gt;&amp;lt;mx:Canvas&lt;/span&gt; &lt;span class="na"&gt;id=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;mainCanvas&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;x=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;0&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;y=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;0&amp;quot;&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;
+      &lt;span class="nt"&gt;&amp;lt;sharedaa:Main&lt;/span&gt; &lt;span class="na"&gt;x=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;0&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;y=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;0&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;id=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;main&amp;quot;&lt;/span&gt; &lt;span class="nt"&gt;/&amp;gt;&lt;/span&gt;
+      &lt;span class="nt"&gt;&amp;lt;mx:Label&lt;/span&gt; &lt;span class="na"&gt;text=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;Example for Trace with Time&amp;quot;&lt;/span&gt; &lt;span class="nt"&gt;/&amp;gt;&lt;/span&gt;
+    &lt;span class="nt"&gt;&amp;lt;/mx:Canvas&amp;gt;&lt;/span&gt;
+  &lt;span class="nt"&gt;&amp;lt;/mx:Canvas&amp;gt;&lt;/span&gt;
+&lt;span class="nt"&gt;&amp;lt;/mx:Application&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;And the Actionscript file is&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Main.as&lt;/strong&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;package&lt;/span&gt; &lt;span class="nn"&gt;com.sharedaa&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+
+  &lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;mx.containers.VBox&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+  &lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;mx.logging.Log&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+  &lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;mx.logging.ILogger&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+
+  &lt;span class="kd"&gt;public&lt;/span&gt; &lt;span class="kd"&gt;class&lt;/span&gt; &lt;span class="n"&gt;Main&lt;/span&gt; &lt;span class="kd"&gt;extends&lt;/span&gt; &lt;span class="n"&gt;VBox&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+
+    &lt;span class="kd"&gt;private&lt;/span&gt; &lt;span class="kd"&gt;static&lt;/span&gt; &lt;span class="kd"&gt;var&lt;/span&gt; &lt;span class="n"&gt;LOG&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="kt"&gt;ILogger&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Log&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;getLogger&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;com.sharedaa.Main&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
+
+    &lt;span class="kd"&gt;public&lt;/span&gt; &lt;span class="kd"&gt;function &lt;/span&gt;&lt;span class="nf"&gt;initMain&lt;/span&gt;&lt;span class="o"&gt;():&lt;/span&gt; &lt;span class="kt"&gt;void&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+      &lt;span class="n"&gt;LOG&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;debug&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;intialize main&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
+    &lt;span class="o"&gt;}&lt;/span&gt;
+
+    &lt;span class="kd"&gt;public&lt;/span&gt; &lt;span class="kd"&gt;function &lt;/span&gt;&lt;span class="nf"&gt;printLog&lt;/span&gt;&lt;span class="o"&gt;():&lt;/span&gt; &lt;span class="kt"&gt;void&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+      &lt;span class="n"&gt;LOG&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;info&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;This is a info log&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
+      &lt;span class="n"&gt;LOG&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;debug&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;here is a debug log&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
+      &lt;span class="n"&gt;LOG&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;warn&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;display your warnings here&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
+      &lt;span class="n"&gt;LOG&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;error&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;This is a error&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
+    &lt;span class="o"&gt;}&lt;/span&gt;
+  &lt;span class="o"&gt;}&lt;/span&gt;
+&lt;span class="o"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://4.bp.blogspot.com/_X5tq9y9xv2s/TOL8Ey1125I/AAAAAAAAAjc/BzeYVgfdvfI/s1600/flash+log+with+time.png"&gt;&lt;img alt="image1" src="http://4.bp.blogspot.com/_X5tq9y9xv2s/TOL8Ey1125I/AAAAAAAAAjc/BzeYVgfdvfI/s320/flash+log+with+time.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;If you know better than this reply your ideas in comments...&lt;/p&gt;
+</summary><category term="Browser"></category><category term="Flash"></category><category term="Programming"></category></entry><entry><title>Flash player debugger in ubuntu</title><link href="http://www.arulraj.net/2010/08/flash-player-debugger-in-ubuntu.html" rel="alternate"></link><published>2010-08-02T15:34:00+05:30</published><author><name>arul</name></author><id>tag:www.arulraj.net,2010-08-02:2010/08/flash-player-debugger-in-ubuntu.html</id><summary type="html">&lt;p&gt;&lt;strong&gt;How to flash debug player in Linux&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://4.bp.blogspot.com/_X5tq9y9xv2s/TFc1w8gf4JI/AAAAAAAAAfE/-ysWrI7BnTE/s1600/Flashlog.png"&gt;&lt;img alt="image0" src="http://4.bp.blogspot.com/_X5tq9y9xv2s/TFc1w8gf4JI/AAAAAAAAAfE/-ysWrI7BnTE/s320/Flashlog.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;After a long time i am working on Flex for one of client for his one to one chat application. At this time i need flash debugger for debugging my program. The debug player need for to print trace() output to flashlog.txt.&lt;/p&gt;
+&lt;p&gt;Here the steps for how to install debug flashplayer in ubuntu 10.04 firefox 3.6.&lt;/p&gt;
+&lt;p&gt;Steps:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Download the debugger version from &lt;a class="reference external" href="http://www.adobe.com/support/flashplayer/downloads.html"&gt;here&lt;/a&gt; . Or Download this Zip file for Linux &lt;a class="reference external" href="http://download.macromedia.com/pub/flashplayer/updaters/10/flashplayer_10_plugin_debug.tar.gz"&gt;http://download.macromedia.com/pub/flashplayer/updaters/10/flashplayer_10_plugin_debug.tar.gz&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Extract that zip file and get that &amp;quot;libflashplayer.so&amp;quot;&lt;/li&gt;
+&lt;li&gt;Goto this folder &amp;quot;/usr/lib/mozilla/plugins&amp;quot; then copy and &amp;nbsp;paste that libflashplayer.so here. Then Delete the shortcut named &amp;quot;flashplugin-alternative.so&amp;quot;&lt;/li&gt;
+&lt;li&gt;Create a mm.cfg file in your home directory. For example /home/&amp;lt;username&amp;gt;/mm.cfg&lt;/li&gt;
+&lt;li&gt;The mm.cfg file is look like the below&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;ErrorReportingEnable=0
+TraceOutputFileEnable=1
+MaxWarnings=0
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Then restart your firefox now you can found flashlog.txt file in&lt;/p&gt;
+&lt;p&gt;cd $HOME/.macromedia/Flash_Player/Logs/ folder.&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://2.bp.blogspot.com/_X5tq9y9xv2s/TFc5mvVuXeI/AAAAAAAAAfM/K1ZLN2ivtdE/s1600/Mozilla+plugin+folder.png"&gt;&lt;img alt="image1" src="http://2.bp.blogspot.com/_X5tq9y9xv2s/TFc5mvVuXeI/AAAAAAAAAfM/K1ZLN2ivtdE/s320/Mozilla+plugin+folder.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Update on 19th October 2011:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Download the debugger version from &lt;a class="reference external" href="http://www.adobe.com/support/flashplayer/downloads.html"&gt;here&lt;/a&gt;. Then extract that libflashplayer.so&lt;/li&gt;
+&lt;li&gt;Copy that so file to /usr/lib/mozilla/plugins/ dir&lt;/li&gt;
+&lt;li&gt;Then replace the soft link by the following command&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo ln -fs /usr/lib/mozilla/plugins/libflashplayer.so /usr/lib/mozilla/plugins/flashplugin-alternative.so
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Its works with my Firefox&amp;nbsp;7.0.1 in ubuntu 11.04&lt;/p&gt;
+</summary><category term="Flash"></category><category term="Linux"></category></entry><entry><title>Flash Player Debugger</title><link href="http://www.arulraj.net/2010/03/flash-player-debugger.html" rel="alternate"></link><published>2010-03-07T23:27:00+05:30</published><author><name>arul</name></author><id>tag:www.arulraj.net,2010-03-07:2010/03/flash-player-debugger.html</id><summary type="html">&lt;p&gt;&lt;strong&gt;Flash Player Debugger&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://1.bp.blogspot.com/_X5tq9y9xv2s/S5SG-gaYi8I/AAAAAAAAAMg/SXqWMtnCTEk/s1600-h/adobeflashplayer.jpg"&gt;&lt;img alt="image0" src="http://1.bp.blogspot.com/_X5tq9y9xv2s/S5SG-gaYi8I/AAAAAAAAAMg/SXqWMtnCTEk/s400/adobeflashplayer.jpg" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;How to get the flash player debugger version ...?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;You can download the flashplayer debugger version from here &lt;a class="reference external" href="http://www.adobe.com/support/flashplayer/downloads.html"&gt;http://www.adobe.com/support/flashplayer/downloads.html&lt;/a&gt; .&lt;/p&gt;
+&lt;p&gt;The direct download link for windows is For &lt;a class="reference external" href="http://download.macromedia.com/pub/flashplayer/updaters/10/flashplayer_10_ax_debug.exe"&gt;IE&lt;/a&gt; and for &lt;a class="reference external" href="http://download.macromedia.com/pub/flashplayer/updaters/10/flashplayer_10_plugin_debug.exe"&gt;mozilla&lt;/a&gt;. Using the debugger version the trace output will be printed in flashlog.txt .&lt;/p&gt;
+&lt;p&gt;The &lt;tt class="docutils literal"&gt;flashlog.txt&lt;/tt&gt; path&lt;/p&gt;
+&lt;p&gt;For windows xp is&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;C:\Documents and Settings\&amp;lt;username&amp;gt;\Application Data\Macromedia\Flash Player\Logs\flashlog.txt
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;For Windows Vista and windows 7 is&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;C:\Users\&amp;lt;username&amp;gt;\AppData\Roaming\Macromedia\Flash Player\Logs\flashlog.txt
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;Debugging ..?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;If the trace not shown on the log create &lt;tt class="docutils literal"&gt;mm.cfg&lt;/tt&gt; file .&lt;/p&gt;
+&lt;p&gt;Create a file for Windows XP &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;c:\Documents&lt;/span&gt; and &lt;span class="pre"&gt;Settings\&amp;lt;username&amp;gt;\mm.cfg&lt;/span&gt;&lt;/tt&gt; for Vista and Windows 7 &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;C:\Users\&amp;lt;username&amp;gt;\mm.cfg&lt;/span&gt;&lt;/tt&gt; with the following&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;ErrorReportingEnable=0
+TraceOutputFileEnable=1
+MaxWarnings=0
+&lt;/pre&gt;&lt;/div&gt;
+</summary><category term="Browser"></category><category term="Flash"></category><category term="Widget"></category><category term="windows"></category></entry><entry><title>How rotation camera3d and viewer3d worked in Away3d</title><link href="http://www.arulraj.net/2010/02/how-rotation-camera3d-and-viewer3d-worked-in-away3d.html" rel="alternate"></link><published>2010-02-07T06:54:00+05:30</published><author><name>Arul</name></author><id>tag:www.arulraj.net,2010-02-07:2010/02/how-rotation-camera3d-and-viewer3d-worked-in-away3d.html</id><summary type="html">&lt;p&gt;&lt;strong&gt;Rotation in Away3D Flash engine&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://4.bp.blogspot.com/_X5tq9y9xv2s/S26cXkz167I/AAAAAAAAALs/45u4Luu4aRE/s1600-h/away3d+rotation+example.jpg"&gt;&lt;img alt="image0" src="http://4.bp.blogspot.com/_X5tq9y9xv2s/S26cXkz167I/AAAAAAAAALs/45u4Luu4aRE/s400/away3d+rotation+example.jpg" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;In this blog entry we are going to learn about How the Rotation and camera3d and viewer3d in away3d flash engine.&lt;/p&gt;
+&lt;p&gt;Red line = x-axis&lt;/p&gt;
+&lt;p&gt;Blue line = y-axis&lt;/p&gt;
+&lt;p&gt;Green Line = z-axis&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;How Rotation works ..?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Rotation in away3d based on the three axis . Those are x.y and z.&amp;nbsp; the component is rotated take any one of this axis as a center then rotated. In my &lt;a class="reference external" href="http://arulraj.net/2010/02/my-first-3d-flash-animation.html"&gt;last post&lt;/a&gt; the sphere is rotated along with x axis. In that example the axis is like that (see below )&lt;/p&gt;
+&lt;embed src="http://files.arulraj.net/code/flash/away3d/singlerotate.swf" width="600" height="400"&gt;
+&lt;/embed&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sphere.rotationX = sphere.x + 1;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;The sphere takes x axis as a center and rotate like above...&lt;/p&gt;
+&lt;p&gt;In this example we add two or more components in the ObjectContainer3D then rotate this objects. In this example we are going to learn about how camera3D and Viewer3D works.&lt;/p&gt;
+&lt;embed src="http://files.arulraj.net/code/flash/away3d/away3drotate.swf" width="600" height="400"&gt;
+&lt;/embed&gt;&lt;p&gt;&lt;strong&gt;How Camera3D works ..?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://1.bp.blogspot.com/_X5tq9y9xv2s/S260xnBaV8I/AAAAAAAAAL0/sdpPCbRPy28/s1600-h/camera3d.jpg"&gt;&lt;img alt="image1" src="http://1.bp.blogspot.com/_X5tq9y9xv2s/S260xnBaV8I/AAAAAAAAAL0/sdpPCbRPy28/s400/camera3d.jpg" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Camera3d = real camera&lt;/p&gt;
+&lt;p&gt;view3d = lens the viewr of the camara&lt;/p&gt;
+&lt;p&gt;renderer = recording in real cam&lt;/p&gt;
+&lt;p&gt;scen3d = what we seen&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;This diagram explained in &lt;a class="reference external" href="http://books.sharedaa.com/2010/02/papervision3d-essentials.html"&gt;Papervision3d Essential&lt;/a&gt; book.. In this diagram your clearly understood about camera3d.&lt;/p&gt;
+&lt;p&gt;If we assume Camera 3d is like a real camera . we assume it is with in our application in invisible mode.&lt;/p&gt;
+&lt;p&gt;The viewerport (view3d) is an lens or what you are view using the camera.&lt;/p&gt;
+&lt;p&gt;The render engine is recording engine in the real camera. In the real camera If&amp;nbsp; we start the record then only we can see the changes otherwise not. Like same as in camera3d we called&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;viewer.render()
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;method each time if anything changed in the components. In the real camara If any person is not inside the seen they are not come in the flim. Same as in the scene3d if we not add add any components in the scene 3d objects&amp;nbsp; it is not visible.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;How Viewer3D Works ..?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Download the source code &lt;a class="reference external" href="http://sites.google.com/site/arulraj1985/list-of-files/Away3drotate.zip?attredirects=0&amp;amp;d=1"&gt;click here&lt;/a&gt; (compatible for Flashdevelop IDE)&lt;/p&gt;
+</summary><category term="Animation"></category><category term="Flash"></category><category term="Programming"></category><category term="how to"></category></entry><entry><title>My first 3D flash animation</title><link href="http://www.arulraj.net/2010/02/my-first-3d-flash-animation.html" rel="alternate"></link><published>2010-02-04T03:58:00+05:30</published><author><name>arul</name></author><id>tag:www.arulraj.net,2010-02-04:2010/02/my-first-3d-flash-animation.html</id><summary type="html">&lt;p&gt;&lt;strong&gt;3D Animathion&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://1.bp.blogspot.com/_X5tq9y9xv2s/S2sZE9RI5AI/AAAAAAAAALA/sKwq2ehHqto/s1600-h/away3d+example.jpg"&gt;&lt;img alt="image0" src="http://1.bp.blogspot.com/_X5tq9y9xv2s/S2sZE9RI5AI/AAAAAAAAALA/sKwq2ehHqto/s400/away3d+example.jpg" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Adobe support for native 3D only in cs4. There are lot of opensource
+flash &lt;a class="reference external" href="http://flashenabledblog.com/2008/04/17/flash-3d-list-update/"&gt;3d engines&lt;/a&gt; are there. I tried papervision3d and away3d. Both are quite well. There are lot more tutorials for both online for away3d tutorials&amp;nbsp; &lt;a class="reference external" href="http://away3d.com/tutorials"&gt;click here&lt;/a&gt; , for papervision3d download this &lt;a class="reference external" href="http://www.packtpub.com/article/3d-vector-drawing-and-text-papervision3d-part1"&gt;book&lt;/a&gt;. I got the source code of away3d from the google code &lt;a class="reference external" href="http://code.google.com/p/away3d/"&gt;http://code.google.com/p/away3d/&lt;/a&gt; and for papervison3d svn &lt;a class="reference external" href="http://code.google.com/p/papervision3d/"&gt;http://code.google.com/p/papervision3d/&lt;/a&gt;. I generate swc using the command. The red5 says about &lt;a class="reference external" href="http://osflash.org/away3d"&gt;away3d.&lt;/a&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;D:\sdk\Away3D&amp;gt; compc -include-sources ./src -source-path ./src -target-player 10 -output Away3d.swc
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Initially i got this error when compile away3d &amp;quot;Error: Type was not found or was not a compile-time constant: Vector. in away3d&amp;quot;&lt;/p&gt;
+&lt;p&gt;Then i added the -target-player 10 in command line is fix that error. I think away3d is better than papervision3d. Here is my first animation here&lt;/p&gt;
+&lt;p&gt;I'm using away3d here...&lt;/p&gt;
+&lt;embed src="http://files.arulraj.net/code/flash/away3d/away3d.swf" width="600" height="400"&gt;
+&lt;/embed&gt;&lt;p&gt;Source Code:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kd"&gt;package&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+   &lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;away3d.cameras.Camera3D&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+   &lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;away3d.cameras.HoverCamera3D&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+   &lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;away3d.cameras.TargetCamera3D&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+   &lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;away3d.containers.ObjectContainer3D&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+   &lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;away3d.containers.Scene3D&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+   &lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;away3d.containers.View3D&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+   &lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;away3d.core.math.Number3D&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+   &lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;away3d.materials.BitmapMaterial&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+   &lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;away3d.materials.WireColorMaterial&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+   &lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;away3d.primitives.Cube&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+   &lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;away3d.core.render.Renderer&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+   &lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;away3d.primitives.Sphere&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+   &lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;away3d.primitives.WireSphere&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+   &lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;away3d.core.utils.Cast&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+   &lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;away3d.core.utils.CastError&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+   &lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;flash.display.Bitmap&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+   &lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;flash.display.Sprite&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+   &lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;flash.events.Event&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+   &lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;flash.events.MouseEvent&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+   &lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;flash.geom.Point&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+   &lt;span class="cm"&gt;/**&lt;/span&gt;
+&lt;span class="cm"&gt;    *&lt;/span&gt;
+&lt;span class="cm"&gt;    * @author Arul&lt;/span&gt;
+&lt;span class="cm"&gt;    */&lt;/span&gt;
+   &lt;span class="kd"&gt;public&lt;/span&gt; &lt;span class="kd"&gt;class&lt;/span&gt; &lt;span class="n"&gt;FirstApplication&lt;/span&gt; &lt;span class="kd"&gt;extends&lt;/span&gt; &lt;span class="n"&gt;Sprite&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+      &lt;span class="kd"&gt;public&lt;/span&gt; &lt;span class="kd"&gt;var&lt;/span&gt; &lt;span class="n"&gt;viewer&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="kt"&gt;View3D&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+      &lt;span class="kd"&gt;public&lt;/span&gt; &lt;span class="kd"&gt;var&lt;/span&gt; &lt;span class="n"&gt;scene&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="kt"&gt;Scene3D&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+      &lt;span class="kd"&gt;public&lt;/span&gt; &lt;span class="kd"&gt;var&lt;/span&gt; &lt;span class="n"&gt;camera&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="kt"&gt;Camera3D&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+      &lt;span class="kd"&gt;public&lt;/span&gt; &lt;span class="kd"&gt;var&lt;/span&gt; &lt;span class="n"&gt;cube&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="kt"&gt;Cube&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+      &lt;span class="kd"&gt;public&lt;/span&gt; &lt;span class="kd"&gt;var&lt;/span&gt; &lt;span class="n"&gt;sphere&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="kt"&gt;Sphere&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+      &lt;span class="kd"&gt;public&lt;/span&gt; &lt;span class="kd"&gt;var&lt;/span&gt; &lt;span class="n"&gt;wiresphere&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="kt"&gt;WireSphere&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+      &lt;span class="kd"&gt;public&lt;/span&gt; &lt;span class="kd"&gt;var&lt;/span&gt; &lt;span class="n"&gt;group&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="kt"&gt;ObjectContainer3D&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+      &lt;span class="kd"&gt;public&lt;/span&gt; &lt;span class="kd"&gt;var&lt;/span&gt; &lt;span class="n"&gt;material&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="kt"&gt;WireColorMaterial&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+      &lt;span class="kd"&gt;public&lt;/span&gt; &lt;span class="kd"&gt;var&lt;/span&gt; &lt;span class="n"&gt;bitmapMaterial&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="kt"&gt;BitmapMaterial&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+
+      &lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="n"&gt;Embed&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;source&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;assets/favicon.jpg&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;)]&lt;/span&gt;
+      &lt;span class="kd"&gt;private&lt;/span&gt; &lt;span class="kd"&gt;var&lt;/span&gt; &lt;span class="n"&gt;favicon&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="kt"&gt;Class&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+      &lt;span class="kd"&gt;public&lt;/span&gt; &lt;span class="kd"&gt;var&lt;/span&gt; &lt;span class="n"&gt;image&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="kt"&gt;Bitmap&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="k"&gt;new&lt;/span&gt; &lt;span class="kt"&gt;favicon&lt;/span&gt;&lt;span class="o"&gt;();&lt;/span&gt;
+
+      &lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="n"&gt;SWF&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;backgroundColor&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;#EEE8DA&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;)]&lt;/span&gt;
+
+      &lt;span class="kd"&gt;public&lt;/span&gt; &lt;span class="kd"&gt;function &lt;/span&gt;&lt;span class="nf"&gt;FirstApplication&lt;/span&gt;&lt;span class="o"&gt;()&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+         &lt;span class="n"&gt;init3D&lt;/span&gt;&lt;span class="o"&gt;();&lt;/span&gt;
+      &lt;span class="o"&gt;}&lt;/span&gt;
+
+      &lt;span class="kd"&gt;public&lt;/span&gt; &lt;span class="kd"&gt;function &lt;/span&gt;&lt;span class="nf"&gt;init3D&lt;/span&gt;&lt;span class="o"&gt;():&lt;/span&gt; &lt;span class="kt"&gt;void&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+         &lt;span class="n"&gt;stage&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;frameRate&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;30&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+         &lt;span class="n"&gt;camera&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="k"&gt;new&lt;/span&gt; &lt;span class="kt"&gt;Camera3D&lt;/span&gt;&lt;span class="o"&gt;({&lt;/span&gt;
+            &lt;span class="n"&gt;y&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;400&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt;
+            &lt;span class="n"&gt;z&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;1000&lt;/span&gt;
+         &lt;span class="o"&gt;});&lt;/span&gt;
+         &lt;span class="n"&gt;viewer&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="k"&gt;new&lt;/span&gt; &lt;span class="kt"&gt;View3D&lt;/span&gt;&lt;span class="o"&gt;({&lt;/span&gt;
+            &lt;span class="n"&gt;camera&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;camera&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt;
+            &lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;250&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt;
+            &lt;span class="n"&gt;y&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;100&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt;
+            &lt;span class="n"&gt;z&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;100&lt;/span&gt;
+         &lt;span class="o"&gt;});&lt;/span&gt;
+         &lt;span class="n"&gt;scene&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="k"&gt;new&lt;/span&gt; &lt;span class="kt"&gt;Scene3D&lt;/span&gt;&lt;span class="o"&gt;();&lt;/span&gt;
+         &lt;span class="n"&gt;cube&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="k"&gt;new&lt;/span&gt; &lt;span class="kt"&gt;Cube&lt;/span&gt;&lt;span class="o"&gt;();&lt;/span&gt;
+         &lt;span class="n"&gt;sphere&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="k"&gt;new&lt;/span&gt; &lt;span class="kt"&gt;Sphere&lt;/span&gt;&lt;span class="o"&gt;();&lt;/span&gt;
+         &lt;span class="n"&gt;wiresphere&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="k"&gt;new&lt;/span&gt; &lt;span class="kt"&gt;WireSphere&lt;/span&gt;&lt;span class="o"&gt;();&lt;/span&gt;
+         &lt;span class="n"&gt;group&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="k"&gt;new&lt;/span&gt; &lt;span class="kt"&gt;ObjectContainer3D&lt;/span&gt;&lt;span class="o"&gt;();&lt;/span&gt;
+         &lt;span class="n"&gt;material&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="k"&gt;new&lt;/span&gt; &lt;span class="kt"&gt;WireColorMaterial&lt;/span&gt;&lt;span class="o"&gt;();&lt;/span&gt;
+         &lt;span class="n"&gt;bitmapMaterial&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="k"&gt;new&lt;/span&gt; &lt;span class="kt"&gt;BitmapMaterial&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;Cast&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;bitmap&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;image&lt;/span&gt;&lt;span class="o"&gt;));&lt;/span&gt;
+
+         &lt;span class="n"&gt;material&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;color&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="n"&gt;xA6111D&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+
+         &lt;span class="n"&gt;sphere&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;x&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;100&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+         &lt;span class="n"&gt;sphere&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;y&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;50&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+         &lt;span class="n"&gt;sphere&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;z&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;100&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+         &lt;span class="n"&gt;sphere&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;radius&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;75&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+         &lt;span class="n"&gt;sphere&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;bothsides&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kc"&gt;true&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+         &lt;span class="n"&gt;sphere&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;material&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;material&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+         &lt;span class="n"&gt;group&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;addChild&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;sphere&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
+
+         &lt;span class="n"&gt;wiresphere&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;x&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;270&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+         &lt;span class="n"&gt;wiresphere&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;y&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;150&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+         &lt;span class="n"&gt;wiresphere&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;z&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;150&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+         &lt;span class="n"&gt;wiresphere&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;radius&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;75&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+         &lt;span class="n"&gt;wiresphere&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;bothsides&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kc"&gt;true&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+         &lt;span class="n"&gt;wiresphere&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;material&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;material&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+         &lt;span class="n"&gt;group&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;addChild&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;wiresphere&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
+
+         &lt;span class="n"&gt;cube&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;x&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;250&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+         &lt;span class="n"&gt;cube&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;y&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;250&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+         &lt;span class="n"&gt;cube&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;z&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;400&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+         &lt;span class="n"&gt;cube&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;material&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;bitmapMaterial&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+         &lt;span class="n"&gt;group&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;addChild&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;cube&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
+
+         &lt;span class="n"&gt;viewer&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;scene&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;addChild&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;group&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
+         &lt;span class="n"&gt;viewer&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;render&lt;/span&gt;&lt;span class="o"&gt;();&lt;/span&gt;
+
+         &lt;span class="n"&gt;addChild&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;viewer&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
+
+         &lt;span class="n"&gt;addEventListener&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;Event&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;ENTER_FRAME&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="n"&gt;groupRotation&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
+         &lt;span class="n"&gt;group&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;addEventListener&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;Event&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;ENTER_FRAME&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="n"&gt;sphereRotation&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
+         &lt;span class="c1"&gt;//addEventListener(MouseEvent.MOUSE_DOWN, lookThere);&lt;/span&gt;
+      &lt;span class="o"&gt;}&lt;/span&gt;
+
+      &lt;span class="kd"&gt;public&lt;/span&gt; &lt;span class="kd"&gt;function &lt;/span&gt;&lt;span class="nf"&gt;groupRotation&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;e&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="kt"&gt;Event&lt;/span&gt;&lt;span class="o"&gt;):&lt;/span&gt; &lt;span class="kt"&gt;void&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+         &lt;span class="n"&gt;group&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;rotationX&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;group&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;x&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+         &lt;span class="n"&gt;group&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;applyRotations&lt;/span&gt;&lt;span class="o"&gt;();&lt;/span&gt;
+
+         &lt;span class="n"&gt;viewer&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;render&lt;/span&gt;&lt;span class="o"&gt;();&lt;/span&gt;
+      &lt;span class="o"&gt;}&lt;/span&gt;
+
+      &lt;span class="kd"&gt;public&lt;/span&gt; &lt;span class="kd"&gt;function &lt;/span&gt;&lt;span class="nf"&gt;sphereRotation&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;e&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="kt"&gt;Event&lt;/span&gt;&lt;span class="o"&gt;):&lt;/span&gt; &lt;span class="kt"&gt;void&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+         &lt;span class="n"&gt;sphere&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;rotationX&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;sphere&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;x&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+         &lt;span class="n"&gt;sphere&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;applyRotations&lt;/span&gt;&lt;span class="o"&gt;();&lt;/span&gt;
+
+         &lt;span class="n"&gt;wiresphere&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;rotationZ&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;wiresphere&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;z&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+         &lt;span class="n"&gt;wiresphere&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;applyRotations&lt;/span&gt;&lt;span class="o"&gt;();&lt;/span&gt;
+         &lt;span class="n"&gt;viewer&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;render&lt;/span&gt;&lt;span class="o"&gt;();&lt;/span&gt;
+      &lt;span class="o"&gt;}&lt;/span&gt;
+
+      &lt;span class="kd"&gt;public&lt;/span&gt; &lt;span class="kd"&gt;function &lt;/span&gt;&lt;span class="nf"&gt;lookThere&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;e&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="kt"&gt;MouseEvent&lt;/span&gt;&lt;span class="o"&gt;):&lt;/span&gt; &lt;span class="kt"&gt;void&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+         &lt;span class="kd"&gt;var&lt;/span&gt; &lt;span class="n"&gt;clickpoint&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="kt"&gt;Point&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="k"&gt;new&lt;/span&gt; &lt;span class="kt"&gt;Point&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;e&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;stageX&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="n"&gt;e&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;stageY&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
+         &lt;span class="kd"&gt;var&lt;/span&gt; &lt;span class="n"&gt;hypothines&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="kt"&gt;Number&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Point&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;distance&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="k"&gt;new&lt;/span&gt; &lt;span class="kt"&gt;Point&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="o"&gt;),&lt;/span&gt; &lt;span class="n"&gt;clickpoint&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
+         &lt;span class="kd"&gt;var&lt;/span&gt; &lt;span class="n"&gt;sine&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="kt"&gt;Number&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Math&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;asin&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;e&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;stageX&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt; &lt;span class="n"&gt;hypothines&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
+         &lt;span class="kd"&gt;var&lt;/span&gt; &lt;span class="n"&gt;cos&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="kt"&gt;Number&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Math&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;acos&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;e&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;stageY&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt; &lt;span class="n"&gt;hypothines&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
+         &lt;span class="n"&gt;camera&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;lookAt&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="k"&gt;new&lt;/span&gt; &lt;span class="kt"&gt;Number3D&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;e&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;stageX&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="n"&gt;e&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;stageY&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="n"&gt;hypothines&lt;/span&gt;&lt;span class="o"&gt;));&lt;/span&gt;
+         &lt;span class="cm"&gt;/**&lt;/span&gt;
+&lt;span class="cm"&gt;          * Horizontal angle&lt;/span&gt;
+&lt;span class="cm"&gt;          */&lt;/span&gt;
+         &lt;span class="n"&gt;camera&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;pan&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;cos&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
+         &lt;span class="cm"&gt;/**&lt;/span&gt;
+&lt;span class="cm"&gt;          * vertical angle&lt;/span&gt;
+&lt;span class="cm"&gt;          */&lt;/span&gt;
+         &lt;span class="n"&gt;camera&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;tilt&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;sine&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
+         &lt;span class="n"&gt;viewer&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;render&lt;/span&gt;&lt;span class="o"&gt;();&lt;/span&gt;
+      &lt;span class="o"&gt;}&lt;/span&gt;
+   &lt;span class="o"&gt;}&lt;/span&gt;
+&lt;span class="o"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+</summary><category term="Animation"></category><category term="Flash"></category><category term="red5"></category><category term="Programming"></category></entry></feed>

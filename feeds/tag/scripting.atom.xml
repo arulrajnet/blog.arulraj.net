@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Arul Blog</title><link href="http://www.arulraj.net/" rel="alternate"></link><link href="http://www.arulraj.net/feeds/tag/scripting.atom.xml" rel="self"></link><id>http://www.arulraj.net/</id><updated>2010-07-27T13:20:00+05:30</updated><entry><title>How to add Red5 service</title><link href="http://www.arulraj.net/2010/07/how-to-add-red5-service.html" rel="alternate"></link><published>2010-07-27T13:20:00+05:30</published><author><name>arul</name></author><id>tag:www.arulraj.net,2010-07-27:2010/07/how-to-add-red5-service.html</id><summary type="html">&lt;p&gt;&lt;strong&gt;How to add Red5 service&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="image0" src="http://red5.googlecode.com/svn/doc/trunk/FinalLogo.png" /&gt;&lt;/p&gt;
+&lt;p&gt;In this article you are going to add red5 service in your Linux box.&lt;/p&gt;
+&lt;p&gt;Please use the Below script.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt; &lt;span class="c1"&gt;#!/bin/bash&lt;/span&gt;
+ &lt;span class="c1"&gt;# Author www.arulraj.net&lt;/span&gt;
+ &lt;span class="c1"&gt;# red5    This is used to start, stop, restart and status of red5&lt;/span&gt;
+ &lt;span class="c1"&gt;#&lt;/span&gt;
+
+ &lt;span class="nb"&gt;export&lt;/span&gt; &lt;span class="nv"&gt;RED5_HOME&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;/opt/red5
+
+&lt;span class="nv"&gt;PID&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;0
+ &lt;span class="nv"&gt;RTMPPORT&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;1935
+ &lt;span class="nv"&gt;prog&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;red5&amp;quot;&lt;/span&gt;
+
+ start&lt;span class="o"&gt;(){&lt;/span&gt;
+   status
+   &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt; &lt;span class="nv"&gt;$PID&lt;/span&gt; -eq &lt;span class="m"&gt;0&lt;/span&gt; &lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="k"&gt;then&lt;/span&gt;
+     &lt;span class="nb"&gt;echo&lt;/span&gt; $&lt;span class="s2"&gt;&amp;quot;Starting &lt;/span&gt;&lt;span class="nv"&gt;$prog&lt;/span&gt;&lt;span class="s2"&gt;...&amp;quot;&lt;/span&gt;
+     nohup &lt;span class="nv"&gt;$RED5_HOME&lt;/span&gt;/red5.sh 1&amp;gt; &lt;span class="nv"&gt;$RED5_HOME&lt;/span&gt;/log/stdout.log 2&amp;gt;&lt;span class="nv"&gt;$RED5_HOME&lt;/span&gt;/log/stderr.log &amp;lt; /dev/null &lt;span class="p"&gt;&amp;amp;&lt;/span&gt;
+     &lt;span class="nv"&gt;PID&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$!&lt;/span&gt;
+     &lt;span class="nb"&gt;echo&lt;/span&gt; $&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="nv"&gt;$prog&lt;/span&gt;&lt;span class="s2"&gt; started at port &lt;/span&gt;&lt;span class="nv"&gt;$RTMPPORT&lt;/span&gt;&lt;span class="s2"&gt; and PID[&lt;/span&gt;&lt;span class="nv"&gt;$PID&lt;/span&gt;&lt;span class="s2"&gt;].&amp;quot;&lt;/span&gt;
+   &lt;span class="k"&gt;else&lt;/span&gt;
+     &lt;span class="nb"&gt;echo&lt;/span&gt;
+   &lt;span class="k"&gt;fi&lt;/span&gt;
+   &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="nv"&gt;$PID&lt;/span&gt;
+ &lt;span class="o"&gt;}&lt;/span&gt;
+
+ stop&lt;span class="o"&gt;(){&lt;/span&gt;
+   status
+   &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt; &lt;span class="nv"&gt;$PID&lt;/span&gt; -eq &lt;span class="m"&gt;0&lt;/span&gt; &lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="k"&gt;then&lt;/span&gt;
+     &lt;span class="nb"&gt;echo&lt;/span&gt;
+   &lt;span class="k"&gt;else&lt;/span&gt;
+     &lt;span class="nb"&gt;echo&lt;/span&gt; $&lt;span class="s2"&gt;&amp;quot;Stopping &lt;/span&gt;&lt;span class="nv"&gt;$prog&lt;/span&gt;&lt;span class="s2"&gt;...&amp;quot;&lt;/span&gt;
+     &lt;span class="nv"&gt;$RED5_HOME&lt;/span&gt;/red5-shutdown.sh
+     &lt;span class="nb"&gt;echo&lt;/span&gt; $&lt;span class="s2"&gt;&amp;quot;PID[&lt;/span&gt;&lt;span class="nv"&gt;$PID&lt;/span&gt;&lt;span class="s2"&gt;] is killed.&amp;quot;&lt;/span&gt;
+   &lt;span class="k"&gt;fi&lt;/span&gt;
+   &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="nv"&gt;$PID&lt;/span&gt;
+ &lt;span class="o"&gt;}&lt;/span&gt;
+
+ restart&lt;span class="o"&gt;(){&lt;/span&gt;
+   stop
+   sleep 2
+   start
+ &lt;span class="o"&gt;}&lt;/span&gt;
+
+ status&lt;span class="o"&gt;()&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+   &lt;span class="nv"&gt;RTMPPORT&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="sb"&gt;`&lt;/span&gt;cat &lt;span class="nv"&gt;$RED5_HOME&lt;/span&gt;/conf/red5.properties &lt;span class="p"&gt;|&lt;/span&gt; grep -w &lt;span class="s2"&gt;&amp;quot;rtmp.port&amp;quot;&lt;/span&gt; &lt;span class="p"&gt;|&lt;/span&gt; awk -F&lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;{print $2}&amp;#39;&lt;/span&gt;&lt;span class="sb"&gt;`&lt;/span&gt;
+   &lt;span class="c1"&gt;#PID=`lsof -i | grep java | grep *:$RTMPPORT | awk &amp;#39;{print $2}&amp;#39;`&lt;/span&gt;
+   &lt;span class="nv"&gt;PID&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="sb"&gt;`&lt;/span&gt;ps -ef &lt;span class="p"&gt;|&lt;/span&gt; grep red5 &lt;span class="p"&gt;|&lt;/span&gt; grep java &lt;span class="p"&gt;|&lt;/span&gt; awk &lt;span class="s1"&gt;&amp;#39;{print $2}&amp;#39;&lt;/span&gt;&lt;span class="sb"&gt;`&lt;/span&gt;
+   &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt; x&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="nv"&gt;$PID&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;x&amp;quot;&lt;/span&gt; &lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="k"&gt;then&lt;/span&gt;
+     &lt;span class="nv"&gt;PID&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;0
+     &lt;span class="nb"&gt;echo&lt;/span&gt; $&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="nv"&gt;$prog&lt;/span&gt;&lt;span class="s2"&gt; is not running.&amp;quot;&lt;/span&gt;
+   &lt;span class="k"&gt;else&lt;/span&gt;
+     &lt;span class="nb"&gt;echo&lt;/span&gt; $&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="nv"&gt;$prog&lt;/span&gt;&lt;span class="s2"&gt; running on port &lt;/span&gt;&lt;span class="nv"&gt;$RTMPPORT&lt;/span&gt;&lt;span class="s2"&gt; and PID[&lt;/span&gt;&lt;span class="nv"&gt;$PID&lt;/span&gt;&lt;span class="s2"&gt;].&amp;quot;&lt;/span&gt;
+   &lt;span class="k"&gt;fi&lt;/span&gt;
+   &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="nv"&gt;$PID&lt;/span&gt;
+ &lt;span class="o"&gt;}&lt;/span&gt;
+
+ &lt;span class="c1"&gt;# How its called.&lt;/span&gt;
+ &lt;span class="k"&gt;case&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="nv"&gt;$1&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt; in
+   start&lt;span class="o"&gt;)&lt;/span&gt;
+     start
+   &lt;span class="p"&gt;;;&lt;/span&gt;
+   stop&lt;span class="o"&gt;)&lt;/span&gt;
+     stop
+   &lt;span class="p"&gt;;;&lt;/span&gt;
+   status&lt;span class="o"&gt;)&lt;/span&gt;
+     status
+   &lt;span class="p"&gt;;;&lt;/span&gt;
+   restart&lt;span class="o"&gt;)&lt;/span&gt;
+     restart
+   &lt;span class="p"&gt;;;&lt;/span&gt;
+   *&lt;span class="o"&gt;)&lt;/span&gt;
+     &lt;span class="nb"&gt;echo&lt;/span&gt; $&lt;span class="s2"&gt;&amp;quot;Usage: &lt;/span&gt;&lt;span class="nv"&gt;$0&lt;/span&gt;&lt;span class="s2"&gt; {start|stop|status|restart}&amp;quot;&lt;/span&gt;
+     &lt;span class="nv"&gt;PID&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;1
+ &lt;span class="k"&gt;esac&lt;/span&gt;
+
+ &lt;span class="nb"&gt;exit&lt;/span&gt; &lt;span class="nv"&gt;$PID&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Steps:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Save these shell script lines as a file. For mine i saved as file &amp;quot;red5&amp;quot;. OR You can download this file from &lt;a class="reference external" href="http://arulraj.net/labs/script/red5"&gt;Here&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Copy this file to /etc/init.d/&lt;/li&gt;
+&lt;li&gt;Then execute the below commands to start red5 when your system starts&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://3.bp.blogspot.com/_X5tq9y9xv2s/TFB9KfBDYDI/AAAAAAAAAd0/V698BY0k9jA/s1600/red5+chkconfig+not+working.png"&gt;&lt;img alt="image1" src="http://3.bp.blogspot.com/_X5tq9y9xv2s/TFB9KfBDYDI/AAAAAAAAAd0/V698BY0k9jA/s640/red5+chkconfig+not+working.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;I checked with ubuntu 10.04. For chkconfig work on ubuntu you need to install chkconfig&lt;/p&gt;
+&lt;p&gt;This above script Not working in Ubuntu&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;apt-get install chkconfig
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://3.bp.blogspot.com/_X5tq9y9xv2s/TE8s5WDkvGI/AAAAAAAAAds/kPzFBTdJOeo/s1600/Red5+service+script.png"&gt;&lt;img alt="image2" src="http://3.bp.blogspot.com/_X5tq9y9xv2s/TE8s5WDkvGI/AAAAAAAAAds/kPzFBTdJOeo/s320/Red5+service+script.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Add red5 in startup - ubuntu:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Use this command&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo update-rc.d red5 defaults
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Thanks to anonymous for this info.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Usage:&lt;/strong&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;Start : /etc/init.d/red5 start
+Stop : /etc/init.d/red5 stop
+Status : /etc/init.d/red5 status
+Restart : /etc/init.d/red5 restart
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Please Let me know if you have any issues or better ideas...&lt;/p&gt;
+</summary><category term="commands"></category><category term="Linux"></category><category term="red5"></category><category term="scripting"></category><category term="how to"></category></entry><entry><title>Read properties file using Batch</title><link href="http://www.arulraj.net/2010/03/read-properties-file-using-batch.html" rel="alternate"></link><published>2010-03-24T04:32:00+05:30</published><author><name>arul</name></author><id>tag:www.arulraj.net,2010-03-24:2010/03/read-properties-file-using-batch.html</id><summary type="html">&lt;p&gt;&lt;strong&gt;Read a properties file using bat file&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://2.bp.blogspot.com/_X5tq9y9xv2s/Srs4KNLAw0I/AAAAAAAAAFw/YgXxL4EMQe0/s1600-h/MS-DOS-Batch-File.png"&gt;&lt;img alt="image0" src="http://2.bp.blogspot.com/_X5tq9y9xv2s/Srs4KNLAw0I/AAAAAAAAAFw/YgXxL4EMQe0/s400/MS-DOS-Batch-File.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;i want to read a below property file and get the particular key value&lt;/p&gt;
+&lt;p&gt;My properties file look like&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="na"&gt;name&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;arulraj.net&lt;/span&gt;
+&lt;span class="na"&gt;version&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;1.0.2&lt;/span&gt;
+&lt;span class="na"&gt;date&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;24/March/2010&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;I want get the version from the properties file. you can do this by
+various method.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Using Type function:&lt;/strong&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;C:\Users\Arul\Desktop&amp;gt;type test.properties | find &amp;quot;version&amp;quot;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;There is disadvantage with this method you could not store that value in
+a variable.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Using For Loop:&lt;/strong&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;C:\Users\Arul\Desktop&amp;gt;FOR /F %i IN (test.properties) DO echo %i
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;using this command you can read that file by line by line.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;FOR /F &amp;quot;eol=; tokens=2,2 delims==&amp;quot; %i IN (test.properties) DO echo %i
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Using this commend you can get the values only.&lt;/p&gt;
+&lt;p&gt;eol is End of Line&lt;/p&gt;
+&lt;p&gt;tokens is specify the which tokens are displayed - 2,2 means only the
+second token will be displayed&lt;/p&gt;
+&lt;p&gt;delims is the deliminator . this is the separator&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;FOR /F &amp;quot;eol=; tokens=2,2 delims==&amp;quot; %i IN (&amp;#39;findstr /i &amp;quot;version&amp;quot; test.properties&amp;#39;) DO set version=%i
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Using &lt;em&gt;findstr&lt;/em&gt; get the correct string from the properties file and give
+as a input to the for loop. That for loop process the result and set
+that value to the variable version.&lt;/p&gt;
+&lt;p&gt;findstr /i means is not a case sensitive one&lt;/p&gt;
+&lt;p&gt;using echo you can get the value.&lt;/p&gt;
+&lt;p&gt;&lt;tt class="docutils literal"&gt;echo %version%&lt;/tt&gt;&lt;/p&gt;
+&lt;p&gt;When you using in a bat add a % befor %i. That is Look like&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;FOR /F &amp;quot;eol=; tokens=2,2 delims==&amp;quot; %%i IN (&amp;#39;findstr /i &amp;quot;version&amp;quot; test.properties&amp;#39;) DO
+  set version=%%i
+  echo %version%
+&lt;/pre&gt;&lt;/div&gt;
+</summary><category term="scripting"></category><category term="windows"></category></entry></feed>

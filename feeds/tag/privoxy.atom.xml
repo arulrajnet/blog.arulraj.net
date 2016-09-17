@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Arul Blog</title><link href="http://www.arulraj.net/" rel="alternate"></link><link href="http://www.arulraj.net/feeds/tag/privoxy.atom.xml" rel="self"></link><id>http://www.arulraj.net/</id><updated>2015-05-09T16:11:12+05:30</updated><entry><title>Docker container for TOR with Privoxy</title><link href="http://www.arulraj.net/2015/05/docker-container-for-tor-with-privoxy.html" rel="alternate"></link><published>2015-05-09T16:11:12+05:30</published><author><name>arul</name></author><id>tag:www.arulraj.net,2015-05-09:2015/05/docker-container-for-tor-with-privoxy.html</id><summary type="html">&lt;p&gt;I released a docker container for TOR with Privoxy bundled together. Earlier I wrote a script (&lt;a class="reference external" href="https://github.com/arulrajnet/operationalscripts/blob/master/tools/tor_installer.py"&gt;Tor Installer&lt;/a&gt;) to setup the TOR and Privoxy environment in a linux system. But docker is the correct tool to setup these kind of environment.&lt;/p&gt;
+&lt;p&gt;Hope you know what is TOR and Privoxy.&lt;/p&gt;
+&lt;p&gt;Github Repo &lt;a class="reference external" href="https://github.com/arulrajnet/torprivoxy"&gt;https://github.com/arulrajnet/torprivoxy&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Docker Repo &lt;a class="reference external" href="https://registry.hub.docker.com/u/arulrajnet/torprivoxy"&gt;https://registry.hub.docker.com/u/arulrajnet/torprivoxy&lt;/a&gt;&lt;/p&gt;
+&lt;div class="section" id="how-to-use"&gt;
+&lt;h2&gt;How to Use&lt;/h2&gt;
+&lt;p&gt;You have to install docker first. To install in linux &lt;a class="reference external" href="https://docs.docker.com/installation/ubuntulinux/#installing-docker-on-ubuntu"&gt;follow this&lt;/a&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;docker run -d &lt;span class="se"&gt;\&lt;/span&gt;
+-p 8118:8118 -p 9050:9050 -p 9051:9051 &lt;span class="se"&gt;\&lt;/span&gt;
+--name tor -i arulrajnet/torprivoxy:latest
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Binding port 9050 and 9051 are optional. 9051 is the controlport of TOR Network. Using that you can forcefully regenerate the TOR ip. Read more about &lt;a class="reference external" href="https://gist.github.com/arulrajnet/9df385cdb70d8a945686"&gt;tor_ip_renew.py&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="docker-tags"&gt;
+&lt;h2&gt;Docker Tags&lt;/h2&gt;
+&lt;p&gt;There are two flavor of container&lt;/p&gt;
+&lt;table border="1" class="docutils"&gt;
+&lt;colgroup&gt;
+&lt;col width="24%" /&gt;
+&lt;col width="45%" /&gt;
+&lt;col width="30%" /&gt;
+&lt;/colgroup&gt;
+&lt;thead valign="bottom"&gt;
+&lt;tr&gt;&lt;th class="head"&gt;Tag&lt;/th&gt;
+&lt;th class="head"&gt;Base Image&lt;/th&gt;
+&lt;th class="head"&gt;Size&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody valign="top"&gt;
+&lt;tr&gt;&lt;td&gt;latest&lt;/td&gt;
+&lt;td&gt;debian:wheezy&lt;/td&gt;
+&lt;td&gt;180 MB&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;wheezy&lt;/td&gt;
+&lt;td&gt;debian:wheezy&lt;/td&gt;
+&lt;td&gt;180 MB&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;jessie&lt;/td&gt;
+&lt;td&gt;debian:jessie&lt;/td&gt;
+&lt;td&gt;228.1 MB&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;This is the very lean image for TOR with Privoxy currently available in &lt;a class="reference external" href="https://registry.hub.docker.com/u/arulrajnet/torprivoxy"&gt;docker hub&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="verify"&gt;
+&lt;h2&gt;Verify&lt;/h2&gt;
+&lt;p&gt;How to cross check are you getting ip from Tor or not.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Check your IP without TOR&lt;/strong&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;curl http://curlmyip.com
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;Check with TOR&lt;/strong&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;curl -v --socks5-hostname localhost:9050 http://curlmyip.com
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;Check with privoxy&lt;/strong&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nb"&gt;export&lt;/span&gt; &lt;span class="nv"&gt;http_proxy&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;http://localhost:8118/
+curl http://curlmyip.com
+&lt;span class="nb"&gt;unset&lt;/span&gt; http_proxy
+
+or
+
+curl -x http://localhost:8118 -L http://curlmyip.com
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="debug"&gt;
+&lt;h2&gt;Debug&lt;/h2&gt;
+&lt;p&gt;If the above step is not success you have to verify the log files.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;docker &lt;span class="nb"&gt;exec&lt;/span&gt; -it tor /bin/bash
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;All the log files in the &lt;tt class="docutils literal"&gt;/tmp&lt;/tt&gt; folder of container.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;To restart TOR and Provoxy&lt;/strong&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;supervisionctl
+supervisor&amp;gt; status
+supervisor&amp;gt; restart tor
+supervisor&amp;gt; restart privoxy
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="global-proxy"&gt;
+&lt;h2&gt;Global Proxy&lt;/h2&gt;
+&lt;p&gt;You can set privoxy as a global proxy so that all your traffic goes via TOR&lt;/p&gt;
+&lt;div class="section" id="in-ubuntu"&gt;
+&lt;h3&gt;In Ubuntu&lt;/h3&gt;
+&lt;p&gt;Open &lt;tt class="docutils literal"&gt;/etc/environment&lt;/tt&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nv"&gt;http_proxy&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;http://127.0.0.1:8118&amp;quot;&lt;/span&gt;
+&lt;span class="nv"&gt;https_proxy&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;http://127.0.0.1:8118&amp;quot;&lt;/span&gt;
+&lt;span class="nv"&gt;ftp_proxy&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;http://127.0.0.1:8118&amp;quot;&lt;/span&gt;
+&lt;span class="nv"&gt;HTTP_PROXY&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;http://127.0.0.1:8118&amp;quot;&lt;/span&gt;
+&lt;span class="nv"&gt;HTTPS_PROXY&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;http://127.0.0.1:8118&amp;quot;&lt;/span&gt;
+&lt;span class="nv"&gt;FTP_PROXY&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;http://127.0.0.1:8118&amp;quot;&lt;/span&gt;
+&lt;span class="nv"&gt;_JAVA_OPTIONS&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;-Dhttp.proxyHost=localhost -Dhttp.proxyPort=8118&amp;quot;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Add this at the EOF.&lt;/p&gt;
+&lt;p&gt;Then &lt;tt class="docutils literal"&gt;source /etc/environment&lt;/tt&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="in-centos"&gt;
+&lt;h3&gt;In CentOS&lt;/h3&gt;
+&lt;p&gt;Create file &lt;tt class="docutils literal"&gt;/etc/profile.d/proxy.sh&lt;/tt&gt; Then put the below content and save.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nv"&gt;http_proxy&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;http://127.0.0.1:8118&amp;quot;&lt;/span&gt;
+&lt;span class="nv"&gt;https_proxy&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;http://127.0.0.1:8118&amp;quot;&lt;/span&gt;
+&lt;span class="nv"&gt;ftp_proxy&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;http://127.0.0.1:8118&amp;quot;&lt;/span&gt;
+&lt;span class="nv"&gt;HTTP_PROXY&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;http://127.0.0.1:8118&amp;quot;&lt;/span&gt;
+&lt;span class="nv"&gt;HTTPS_PROXY&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;http://127.0.0.1:8118&amp;quot;&lt;/span&gt;
+&lt;span class="nv"&gt;FTP_PROXY&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;http://127.0.0.1:8118&amp;quot;&lt;/span&gt;
+&lt;span class="nv"&gt;_JAVA_OPTIONS&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$_JAVA_OPTIONS&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot; -Dhttp.proxyHost=localhost -Dhttp.proxyPort=8118&amp;quot;&lt;/span&gt;
+
+&lt;span class="nb"&gt;export&lt;/span&gt; http_proxy https_proxy ftp_proxy HTTP_PROXY HTTPS_PROXY FTP_PROXY _JAVA_OPTIONS
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Then &lt;tt class="docutils literal"&gt;source /etc/profile.d/proxy.sh&lt;/tt&gt; OR you can set the same in &lt;tt class="docutils literal"&gt;.bashrc&lt;/tt&gt; or &lt;tt class="docutils literal"&gt;.bash_profile&lt;/tt&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</summary><category term="docker"></category><category term="tor"></category><category term="proxy"></category><category term="privoxy"></category><category term="crawling"></category></entry></feed>

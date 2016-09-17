@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Arul Blog</title><link href="http://www.arulraj.net/" rel="alternate"></link><link href="http://www.arulraj.net/feeds/tag/widget.atom.xml" rel="self"></link><id>http://www.arulraj.net/</id><updated>2010-03-07T23:27:00+05:30</updated><entry><title>Flash Player Debugger</title><link href="http://www.arulraj.net/2010/03/flash-player-debugger.html" rel="alternate"></link><published>2010-03-07T23:27:00+05:30</published><author><name>arul</name></author><id>tag:www.arulraj.net,2010-03-07:2010/03/flash-player-debugger.html</id><summary type="html">&lt;p&gt;&lt;strong&gt;Flash Player Debugger&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://1.bp.blogspot.com/_X5tq9y9xv2s/S5SG-gaYi8I/AAAAAAAAAMg/SXqWMtnCTEk/s1600-h/adobeflashplayer.jpg"&gt;&lt;img alt="image0" src="http://1.bp.blogspot.com/_X5tq9y9xv2s/S5SG-gaYi8I/AAAAAAAAAMg/SXqWMtnCTEk/s400/adobeflashplayer.jpg" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;How to get the flash player debugger version ...?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;You can download the flashplayer debugger version from here &lt;a class="reference external" href="http://www.adobe.com/support/flashplayer/downloads.html"&gt;http://www.adobe.com/support/flashplayer/downloads.html&lt;/a&gt; .&lt;/p&gt;
+&lt;p&gt;The direct download link for windows is For &lt;a class="reference external" href="http://download.macromedia.com/pub/flashplayer/updaters/10/flashplayer_10_ax_debug.exe"&gt;IE&lt;/a&gt; and for &lt;a class="reference external" href="http://download.macromedia.com/pub/flashplayer/updaters/10/flashplayer_10_plugin_debug.exe"&gt;mozilla&lt;/a&gt;. Using the debugger version the trace output will be printed in flashlog.txt .&lt;/p&gt;
+&lt;p&gt;The &lt;tt class="docutils literal"&gt;flashlog.txt&lt;/tt&gt; path&lt;/p&gt;
+&lt;p&gt;For windows xp is&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;C:\Documents and Settings\&amp;lt;username&amp;gt;\Application Data\Macromedia\Flash Player\Logs\flashlog.txt
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;For Windows Vista and windows 7 is&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;C:\Users\&amp;lt;username&amp;gt;\AppData\Roaming\Macromedia\Flash Player\Logs\flashlog.txt
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;Debugging ..?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;If the trace not shown on the log create &lt;tt class="docutils literal"&gt;mm.cfg&lt;/tt&gt; file .&lt;/p&gt;
+&lt;p&gt;Create a file for Windows XP &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;c:\Documents&lt;/span&gt; and &lt;span class="pre"&gt;Settings\&amp;lt;username&amp;gt;\mm.cfg&lt;/span&gt;&lt;/tt&gt; for Vista and Windows 7 &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;C:\Users\&amp;lt;username&amp;gt;\mm.cfg&lt;/span&gt;&lt;/tt&gt; with the following&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;ErrorReportingEnable=0
+TraceOutputFileEnable=1
+MaxWarnings=0
+&lt;/pre&gt;&lt;/div&gt;
+</summary><category term="Browser"></category><category term="Flash"></category><category term="Widget"></category><category term="windows"></category></entry><entry><title>Batch file for building any java application</title><link href="http://www.arulraj.net/2009/09/batch-file-for-building-any-java-application.html" rel="alternate"></link><published>2009-09-24T03:58:00+05:30</published><author><name>arul</name></author><id>tag:www.arulraj.net,2009-09-24:2009/09/batch-file-for-building-any-java-application.html</id><summary type="html">&lt;p&gt;&lt;strong&gt;Batch file for building any java application&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://2.bp.blogspot.com/_X5tq9y9xv2s/Srs4KNLAw0I/AAAAAAAAAFw/YgXxL4EMQe0/s1600-h/MS-DOS-Batch-File.png"&gt;&lt;img alt="image0" src="http://2.bp.blogspot.com/_X5tq9y9xv2s/Srs4KNLAw0I/AAAAAAAAAFw/YgXxL4EMQe0/s400/MS-DOS-Batch-File.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;What is batch file...?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;In DOS, OS/2, and Microsoft Windows, a batch file is a text file
+containing a series of commands intended to be executed by the command
+interpreter. Article on
+&lt;a class="reference external" href="http://en.wikipedia.org/wiki/Batch_file"&gt;wikipedia&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;This batch file contains the set of instruction to build a any java application. To get the good result you follow the below folder structure..&lt;/p&gt;
+&lt;p&gt;For example C:apache-tomcat-6.0.18webapps contains the many java web
+application. place this batch file in webapps folder.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;The java files in webapps&amp;lt;PROJECT_NAME&amp;gt;src&amp;nbsp; folder. With
+in the src folder u can follw the java package structure.&lt;/li&gt;
+&lt;li&gt;The jar files for your application in
+webapps&amp;lt;PROJECT_HOME&amp;gt;lib folder.&lt;/li&gt;
+&lt;li&gt;Then run that batch file like&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;C:apache-tomcat-6.0.18webapps&amp;gt; build.bat Library&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Here the Library is your project Home. you can use this bat file
+anywhere not only for tomcat webapps folder.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Environment Variable Prequisites:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;JAVA_HOME&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; Must point at your Java Development Kit
+installation.&lt;/li&gt;
+&lt;li&gt;JAVA_OPTS&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; (Optional) Java runtime options.&lt;/li&gt;
+&lt;li&gt;CATALINA_HOME&amp;nbsp;&amp;nbsp; &amp;nbsp;&amp;nbsp;&amp;nbsp; &amp;nbsp;(Optional) May point at your Catalina
+&amp;quot;build&amp;quot; directory.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;How to set JAVA_HOME ...?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;JAVA_HOME basically known as Java Environmental Variable.Refers from
+&lt;a class="reference external" href="http://confluence.atlassian.com/display/CONF26/Set+JAVA_HOME+variable+in+Windows"&gt;web&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;If you already know the install path for the Java or Software
+Development Kit,skip this first two steps. Otherwise, find the install
+path by following these instructions:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;Unless you changed the install path for the Java Developement Kit
+during installation, it will be in a directory under
+&lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;C:\Program&lt;/span&gt; Files\Java&lt;/tt&gt;. Using Explorer, open the directory
+&lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;C:\Program&lt;/span&gt; Files\Java&lt;/tt&gt;&lt;/li&gt;
+&lt;li&gt;Inside that path will be one or more subdirectories such as
+&lt;tt class="docutils literal"&gt;jdk1.5.0_08&lt;/tt&gt;. If you just installed the Java Development Kit,
+it will be installed to the newest directory, which you can find
+by sorting by date. For example, it may be installed in
+&lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;C:\Program&lt;/span&gt; Files\Java\jdk1.5.0_08&lt;/tt&gt;. This is the install path.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Once you have identified the JDK install path:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;Right click on the &lt;strong&gt;My Computer&lt;/strong&gt; icon on your desktop and
+select properties&lt;/li&gt;
+&lt;li&gt;Click the &lt;strong&gt;Advanced&lt;/strong&gt; Tab&lt;/li&gt;
+&lt;li&gt;Click the &lt;strong&gt;Environment Variables&lt;/strong&gt; button&lt;/li&gt;
+&lt;li&gt;Under System Variable, click &lt;strong&gt;New&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Enter the variable name as &lt;tt class="docutils literal"&gt;JAVA_HOME&lt;/tt&gt;&lt;/li&gt;
+&lt;li&gt;Enter the variable value as the install path for the Development
+Kit&lt;/li&gt;
+&lt;li&gt;Click OK&lt;/li&gt;
+&lt;li&gt;Click Apply Changes&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://3.bp.blogspot.com/_X5tq9y9xv2s/Srs-dTRgMzI/AAAAAAAAAF4/VzLWmytRU4A/s1600-h/JAVA_HOME.jpg"&gt;&lt;img alt="image1" src="http://3.bp.blogspot.com/_X5tq9y9xv2s/Srs-dTRgMzI/AAAAAAAAAF4/VzLWmytRU4A/s400/JAVA_HOME.jpg" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;What is JAVA_OPTS ...?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;This JAVA_OPTS may increase your server performance. For example&lt;/p&gt;
+&lt;p&gt;&lt;tt class="docutils literal"&gt;set &lt;span class="pre"&gt;JAVA_OPTS=-Xms128&lt;/span&gt; &lt;span class="pre"&gt;-Xmx512&lt;/span&gt;&lt;/tt&gt;&lt;/p&gt;
+&lt;dl class="docutils"&gt;
+&lt;dt&gt;The two extra parameters specified via JAVA_OPTS are as follows:&lt;/dt&gt;
+&lt;dd&gt;-Xms - the amount of memory that the JVM starts with.
+-Xmx - the maximum memory that the JVM may have.&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;p&gt;List of Java Hotspot Option &lt;a class="reference external" href="http://java.sun.com/javase/technologies/hotspot/vmoptions.jsp"&gt;Here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;What is CATALINA_HOME...?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Set an environment variable CATALINA_HOME to the path of the directory
+into which you have installed Tomcat.&lt;/p&gt;
+&lt;p&gt;For example :&lt;/p&gt;
+&lt;p&gt;&lt;tt class="docutils literal"&gt;set CATALINA_HOME = &lt;span class="pre"&gt;C:\apache-tomcat-6.0.18&lt;/span&gt;&lt;/tt&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;How this Batch File works ...?&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Get the all jar files from &amp;lt;PROJECT_HOME&amp;gt;lib folder and set this as classpath.&lt;/p&gt;
+&lt;p&gt;Then compile all java files inside the src folder. and build the
+class files inside the &amp;lt;PROJECT_HOME&amp;gt;WEB-INF Folder.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;How to Download this Batch file ...?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;You can download this batch file from &lt;a class="reference external" href="http://arulraj1985.googlepages.com/build.bat"&gt;Here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://arulraj1985.googlepages.com/build.bat"&gt;http://arulraj1985.googlepages.com/build.bat&lt;/a&gt;&lt;/p&gt;
+</summary><category term="commands"></category><category term="Widget"></category><category term="windows"></category><category term="Programming"></category></entry><entry><title>Recent Post Widget in Flash</title><link href="http://www.arulraj.net/2009/03/recent-post-widget-in-flash.html" rel="alternate"></link><published>2009-03-04T09:47:00+05:30</published><author><name>arul</name></author><id>tag:www.arulraj.net,2009-03-04:2009/03/recent-post-widget-in-flash.html</id><summary type="html">&lt;p&gt;The widget is shows like that... This is the Beta version only.. Unfortunately it supports only for feed burner feed... I will update this soon...&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://sharedaa.com/images/Arul/RssReader.swf?feedUrl=http://feeds2.feedburner.com/blogspot/TLLQ?format=xml&amp;amp;feedItems=12&amp;amp;bgcolor=D8D7CC&amp;amp;border=BDBCB6&amp;amp;title=Recent+Books"&gt;See this Link&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;How to use... Use the Below script...&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;center&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;embed&lt;/span&gt; &lt;span class="na"&gt;pluginspage&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;http://www.macromedia.com/go/getflashplayer&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;quality&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;high&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;align&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;flashvars&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;type&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;application/x-shockwave-flash&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;height&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;400&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;src&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;http://sharedaa.com/images/Arul/RssReader.swf?feedUrl=http://feeds2.feedburner.com/blogspot/TLLQ?format=xml&amp;amp;feedItems=12&amp;amp;bgcolor=D8D7CC&amp;amp;border=BDBCB6&amp;amp;title=Recent+Books&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;bgcolor&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;#FFFFFF&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;width&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;500&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;name&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;RssReader&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;embed&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;center&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;Variabels&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;feedUrl - URL of the Feed&lt;/p&gt;
+&lt;p&gt;feedItems - No of feed you want to display&lt;/p&gt;
+&lt;p&gt;bgcolor - Background color of the widget&lt;/p&gt;
+&lt;p&gt;border - Border and Header color of the widget&lt;/p&gt;
+&lt;p&gt;title - Header name of the widget&lt;/p&gt;
+&lt;p&gt;Here the &lt;a class="reference external" href="http://booksforpeople.blogspot.com"&gt;http://booksforpeople.blogspot.com&lt;/a&gt; feed is used&lt;/p&gt;
+</summary><category term="Flash"></category><category term="Recent Post"></category><category term="Widget"></category></entry></feed>

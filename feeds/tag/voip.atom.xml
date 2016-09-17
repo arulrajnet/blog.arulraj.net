@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Arul Blog</title><link href="http://www.arulraj.net/" rel="alternate"></link><link href="http://www.arulraj.net/feeds/tag/voip.atom.xml" rel="self"></link><id>http://www.arulraj.net/</id><updated>2009-06-09T05:41:00+05:30</updated><entry><title>How to Add FreeSwitch Service</title><link href="http://www.arulraj.net/2009/06/how-to-add-freeswitch-service.html" rel="alternate"></link><published>2009-06-09T05:41:00+05:30</published><author><name>arul</name></author><id>tag:www.arulraj.net,2009-06-09:2009/06/how-to-add-freeswitch-service.html</id><summary type="html">&lt;p&gt;Hello all,&lt;/p&gt;
+&lt;p&gt;Here how to start &lt;a class="reference external" href="http://wiki.freeswitch.org/wiki/Installation_Guide"&gt;freeswitch&lt;/a&gt;when machine boots.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt; &lt;span class="c1"&gt;#!/bin/bash&lt;/span&gt;
+ &lt;span class="c1"&gt;#&lt;/span&gt;
+ &lt;span class="c1"&gt;# freeswitch This starts and stops the freeswitch&lt;/span&gt;
+ &lt;span class="c1"&gt;#&lt;/span&gt;
+ &lt;span class="c1"&gt;# chkconfig: 345 60 50&lt;/span&gt;
+ &lt;span class="c1"&gt;# chkconfig: - 60 50&lt;/span&gt;
+ &lt;span class="c1"&gt;# description: freeswitch.sh - startup script for freeswitch on FreeBSD&lt;/span&gt;
+ &lt;span class="c1"&gt;# processname: /usr/local/freeswitch/bin/freeswitch&lt;/span&gt;
+ &lt;span class="c1"&gt;# pidfile: /usr/local/freeswitch/log/freeswitch.pid&lt;/span&gt;
+
+ &lt;span class="nv"&gt;PATH&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;/sbin:/bin:/usr/bin:/usr/sbin
+
+ &lt;span class="c1"&gt;# Source function library.&lt;/span&gt;
+ . /etc/init.d/functions
+
+ &lt;span class="c1"&gt;# Get config.&lt;/span&gt;
+ &lt;span class="nb"&gt;test&lt;/span&gt; -f /etc/sysconfig/network &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; . /etc/sysconfig/network
+
+ &lt;span class="c1"&gt;# Check that we are root ... so non-root users stop here&lt;/span&gt;
+ &lt;span class="o"&gt;[&lt;/span&gt; &lt;span class="sb"&gt;`&lt;/span&gt;id -u&lt;span class="sb"&gt;`&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="m"&gt;0&lt;/span&gt; &lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;||&lt;/span&gt; &lt;span class="nb"&gt;exit&lt;/span&gt; 1
+
+ &lt;span class="c1"&gt;# Check that networking is up.&lt;/span&gt;
+ &lt;span class="o"&gt;[&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;NETWORKING&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;yes&amp;quot;&lt;/span&gt; &lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="se"&gt;\|\|&lt;/span&gt; &lt;span class="nb"&gt;exit&lt;/span&gt; 0
+
+ &lt;span class="nv"&gt;RETVAL&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;0
+ &lt;span class="nv"&gt;prog&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;Freeswitch&amp;quot;&lt;/span&gt;
+
+ start&lt;span class="o"&gt;()&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+ &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt; -x /usr/local/freeswitch/bin/freeswitch &lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="k"&gt;then&lt;/span&gt;
+   &lt;span class="nb"&gt;echo&lt;/span&gt; -n $&lt;span class="s2"&gt;&amp;quot;Starting &lt;/span&gt;&lt;span class="nv"&gt;$prog&lt;/span&gt;&lt;span class="s2"&gt;: &amp;quot;&lt;/span&gt;
+   /usr/local/freeswitch/bin/freeswitch -nc &lt;span class="p"&gt;&amp;amp;&lt;/span&gt;
+   &lt;span class="nv"&gt;RETVAL&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$?&lt;/span&gt;
+   sleep 1
+ &lt;span class="k"&gt;fi&lt;/span&gt;
+ &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="nv"&gt;$RETVAL&lt;/span&gt;
+ &lt;span class="o"&gt;}&lt;/span&gt;
+
+ stop&lt;span class="o"&gt;()&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+   &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt; -x /usr/local/freeswitch/bin/freeswitch &lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="k"&gt;then&lt;/span&gt;
+     &lt;span class="nb"&gt;echo&lt;/span&gt; -n $&lt;span class="s2"&gt;&amp;quot;Stopping &lt;/span&gt;&lt;span class="nv"&gt;$prog&lt;/span&gt;&lt;span class="s2"&gt;: &amp;quot;&lt;/span&gt;
+     /usr/local/freeswitch/bin/freeswitch -stop &lt;span class="p"&gt;&amp;amp;&lt;/span&gt;
+     &lt;span class="nv"&gt;RETVAL&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$?&lt;/span&gt;
+     sleep 1
+   &lt;span class="k"&gt;fi&lt;/span&gt;
+   &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="nv"&gt;$RETVAL&lt;/span&gt;
+ &lt;span class="o"&gt;}&lt;/span&gt;
+
+ restart&lt;span class="o"&gt;(){&lt;/span&gt;
+   stop
+   sleep 5
+   start
+ &lt;span class="o"&gt;}&lt;/span&gt;
+
+ &lt;span class="c1"&gt;# See how we were called.&lt;/span&gt;
+ &lt;span class="k"&gt;case&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="nv"&gt;$1&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt; in
+
+ start&lt;span class="o"&gt;)&lt;/span&gt;
+   start
+ &lt;span class="p"&gt;;;&lt;/span&gt;
+
+ stop&lt;span class="o"&gt;)&lt;/span&gt;
+   stop
+ &lt;span class="p"&gt;;;&lt;/span&gt;
+
+ restart&lt;span class="o"&gt;)&lt;/span&gt;
+   restart
+ &lt;span class="p"&gt;;;&lt;/span&gt;
+
+ *&lt;span class="o"&gt;)&lt;/span&gt;
+   &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;usage: &lt;/span&gt;&lt;span class="nv"&gt;$0&lt;/span&gt;&lt;span class="s2"&gt; { start \| stop \| restart }&amp;quot;&lt;/span&gt;
+   &lt;span class="nv"&gt;RETVAL&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;1
+
+&lt;span class="k"&gt;esac&lt;/span&gt;
+ &lt;span class="nb"&gt;exit&lt;/span&gt; &lt;span class="nv"&gt;$RETVAL&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;save these lines as file name freeswitch and copied to /etc/init.d/ folder&lt;/p&gt;
+&lt;p&gt;then run the below comments&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;chkconfig -add /etc/init.d/freeswitch
+chkconfig freeswitch on
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;you are done. Now Freeswitch will start when your PC Boots.&lt;/p&gt;
+&lt;p&gt;Freeswitch commands:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;Start : /etc/init.d/freeswitch start
+Stop : /etc/init.d/freeswitch stop
+Restart : /etc/init.d/freeswitch restart
+&lt;/pre&gt;&lt;/div&gt;
+</summary><category term="Linux"></category><category term="VOIP"></category><category term="Flash"></category><category term="how to"></category></entry></feed>

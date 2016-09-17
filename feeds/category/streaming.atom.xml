@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Arul Blog</title><link href="http://www.arulraj.net/" rel="alternate"></link><link href="http://www.arulraj.net/feeds/category/streaming.atom.xml" rel="self"></link><id>http://www.arulraj.net/</id><updated>2015-09-11T22:07:12+05:30</updated><entry><title>Stream any video into VLC</title><link href="http://www.arulraj.net/2015/09/stream-any-video-into-vlc.html" rel="alternate"></link><published>2015-09-11T22:07:12+05:30</published><author><name>arul</name></author><id>tag:www.arulraj.net,2015-09-11:2015/09/stream-any-video-into-vlc.html</id><summary type="html">&lt;p&gt;You can stream any online like youtube, vimeo, facebook, dailymotion, etc., video into your VLC / mplayer using youtube-dl. Here I will explain how to do that.&lt;/p&gt;
+&lt;div class="figure align-center"&gt;
+&lt;a class="reference external image-reference" href="http://1.bp.blogspot.com/-oE3JlsHUyPE/VfMISTKA3TI/AAAAAAAAWWY/7oGiGoyFx5Q/s1600/stream-to-vlc.png"&gt;&lt;img alt="Streaming in VLC using youtube-dl" src="http://1.bp.blogspot.com/-oE3JlsHUyPE/VfMISTKA3TI/AAAAAAAAWWY/7oGiGoyFx5Q/s320/stream-to-vlc.png" /&gt;&lt;/a&gt;
+&lt;/div&gt;
+&lt;p&gt;First Install latest greatest youtube-dl&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo pip install --upgrade youtube-dl
+OR
+sudo apt-get install youtube-dl
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;As per todoy the version is 2015.09.09. To get version &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;youtube-dl&lt;/span&gt; &lt;span class="pre"&gt;--version&lt;/span&gt;&lt;/tt&gt;&lt;/p&gt;
+&lt;p&gt;Here is the command to stream to vlc&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;youtube-dl -o - &lt;span class="s2"&gt;&amp;quot;http://your.media/url&amp;quot;&lt;/span&gt; &lt;span class="p"&gt;|&lt;/span&gt; vlc -
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;You can also set up a function in your ~/.bash_aliases file like&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;function&lt;/span&gt; streamer&lt;span class="o"&gt;()&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+  youtube-dl -o - &lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="nv"&gt;$1&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt; &lt;span class="p"&gt;|&lt;/span&gt; vlc -
+&lt;span class="o"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Referred from &lt;a class="reference external" href="https://github.com/rg3/youtube-dl/issues/2124#issuecomment-32429104"&gt;https://github.com/rg3/youtube-dl/issues/2124#issuecomment-32429104&lt;/a&gt;&lt;/p&gt;
+</summary><category term="streaming"></category><category term="vlc"></category><category term="youtube-dl"></category></entry></feed>

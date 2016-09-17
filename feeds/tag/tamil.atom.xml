@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Arul Blog</title><link href="http://www.arulraj.net/" rel="alternate"></link><link href="http://www.arulraj.net/feeds/tag/tamil.atom.xml" rel="self"></link><id>http://www.arulraj.net/</id><updated>2011-08-26T12:41:00+05:30</updated><entry><title>Problem viewing Tamil fonts in chromium on Ubuntu</title><link href="http://www.arulraj.net/2011/08/problem-viewing-tamil-fonts-in-chromium-on-ubuntu.html" rel="alternate"></link><published>2011-08-26T12:41:00+05:30</published><author><name>arul</name></author><id>tag:www.arulraj.net,2011-08-26:2011/08/problem-viewing-tamil-fonts-in-chromium-on-ubuntu.html</id><summary type="html">&lt;p&gt;I am the big fan of tamil love poems.. 😊 Within Google reader all tamil blogs fonts are displayed correctly in chromium which was downloaded from Ubuntu software center. But when I goto that link directly, that page is not rendered properly. It shows some junk character in between.&lt;/p&gt;
+&lt;p&gt;For example Initially this blog&amp;nbsp;&lt;a class="reference external" href="http://bit.ly/ndtgfq"&gt;http://bit.ly/ndtgfq&lt;/a&gt;&amp;nbsp;shown below&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://3.bp.blogspot.com/-rRgxWW7Qfvs/TlfmYG-R55I/AAAAAAAAArc/-I3ojySvirc/s1600/Tamil%2Bfont%2Berror.png"&gt;&lt;img alt="image0" src="http://3.bp.blogspot.com/-rRgxWW7Qfvs/TlfmYG-R55I/AAAAAAAAArc/-I3ojySvirc/s400/Tamil%2Bfont%2Berror.png" /&gt;&lt;/a&gt; Tamil font is not rendered properly&lt;/p&gt;
+&lt;p&gt;But in the firefox its rendered correctly. It shows the fonts correctly. I solved this issue after little bit googling 😜&lt;/p&gt;
+&lt;p&gt;Here is the fix.&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Goto that directory&amp;nbsp;/usr/share/fonts/truetype/freefont/&lt;/li&gt;
+&lt;li&gt;Delete both the&amp;nbsp;FreeSerif.ttf and&amp;nbsp;FreeSans.ttf file.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo rm -f /usr/share/fonts/truetype/freefont/FreeSerif.ttf
+sudo rm -f /usr/share/fonts/truetype/freefont/FreeSans.ttf
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Then restart your browser. Now its shown correctly for me.&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://4.bp.blogspot.com/-b0-zDfWqj5w/Tlfn0iQY8nI/AAAAAAAAArk/CrtbQxkS3gE/s1600/Tamil%2Bfont%2Bsuccess.png"&gt;&lt;img alt="image1" src="http://4.bp.blogspot.com/-b0-zDfWqj5w/Tlfn0iQY8nI/AAAAAAAAArk/CrtbQxkS3gE/s400/Tamil%2Bfont%2Bsuccess.png" /&gt;&lt;/a&gt; Tamil font displayed fine&lt;/p&gt;
+</summary><category term="Browser"></category><category term="tamil"></category><category term="ubuntu"></category><category term="how to"></category><category term="linux"></category></entry><entry><title>Type tamil in ubuntu</title><link href="http://www.arulraj.net/2011/01/type-tamil-in-ubuntu.html" rel="alternate"></link><published>2011-01-14T12:44:00+05:30</published><author><name>arul</name></author><id>tag:www.arulraj.net,2011-01-14:2011/01/type-tamil-in-ubuntu.html</id><summary type="html">&lt;p&gt;I Just want to post a comment in my friend facebook wall... I feel if
+that comment is in Tamil it will be more expressive.. There are more
+services available for online like
+&lt;a class="reference external" href="http://www.google.com/transliterate/indic/Tamil"&gt;http://www.google.com/transliterate/indic/Tamil&lt;/a&gt; . But in the future if i
+want to type in word or excel offline will be useful.. i just google
+it.. Here the steps for Tamil keyboard for ubuntu..&lt;/p&gt;
+&lt;p&gt;How to type tamil in ubuntu ..?&lt;/p&gt;
+&lt;p&gt;Goto System → Preferences → Keyboard .&lt;/p&gt;
+&lt;div class="separator" style="clear: both; text-align: center;"&gt;&lt;p&gt;&lt;a class="reference external" href="http://1.bp.blogspot.com/_X5tq9y9xv2s/TTCYSZRV3zI/AAAAAAAAAmM/JkbvDM0WT7k/s1600/keyboard.png"&gt;&lt;img alt="image0" src="http://1.bp.blogspot.com/_X5tq9y9xv2s/TTCYSZRV3zI/AAAAAAAAAmM/JkbvDM0WT7k/s400/keyboard.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;Then choose the Layouts tab. Click the &amp;quot;Add&amp;quot; button. Then Change the
+country to India and choose your tamil layouts. For myself i choose
+&amp;quot;India Tamil Unicode&amp;quot;&lt;/p&gt;
+&lt;div class="separator" style="clear: both; text-align: center;"&gt;&lt;p&gt;&lt;a class="reference external" href="http://3.bp.blogspot.com/_X5tq9y9xv2s/TTCYnQfjWaI/AAAAAAAAAmU/_cTT9U7j1sQ/s1600/keyboard-Choose%2Ba%2BLayout.png"&gt;&lt;img alt="image1" src="http://3.bp.blogspot.com/_X5tq9y9xv2s/TTCYnQfjWaI/AAAAAAAAAmU/_cTT9U7j1sQ/s400/keyboard-Choose%2Ba%2BLayout.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;Now you can see your layouts in the window.&lt;/p&gt;
+&lt;div class="separator" style="clear: both; text-align: center;"&gt;&lt;p&gt;&lt;a class="reference external" href="http://3.bp.blogspot.com/_X5tq9y9xv2s/TTCY5i_a8zI/AAAAAAAAAmc/dLpqBbV17EE/s1600/Keyboard%2BPreferences.png"&gt;&lt;img alt="image2" src="http://3.bp.blogspot.com/_X5tq9y9xv2s/TTCY5i_a8zI/AAAAAAAAAmc/dLpqBbV17EE/s400/Keyboard%2BPreferences.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;You can change your typing&amp;nbsp;language using the keyboard layout on the top
+panel. By clicking on this applet you can change the language layout
+what ever you want.&lt;/p&gt;
+&lt;div class="separator" style="clear: both; text-align: center;"&gt;&lt;p&gt;&lt;a class="reference external" href="http://4.bp.blogspot.com/_X5tq9y9xv2s/TTCZN-A-HUI/AAAAAAAAAmk/P5fRGTP1fQQ/s1600/keyboard%2Bapplet.png"&gt;&lt;img alt="image3" src="http://4.bp.blogspot.com/_X5tq9y9xv2s/TTCZN-A-HUI/AAAAAAAAAmk/P5fRGTP1fQQ/s400/keyboard%2Bapplet.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;Now i can type in tamil any where in ubuntu.&lt;/p&gt;
+&lt;p&gt;நன்றி ... அருள்.. :)&lt;/p&gt;
+</summary><category term="tamil"></category><category term="ubuntu"></category><category term="how to"></category></entry><entry><title>Tamil FM radio for ubuntu</title><link href="http://www.arulraj.net/2010/07/tamil-fm-radio-for-ubuntu.html" rel="alternate"></link><published>2010-07-06T13:13:00+05:30</published><author><name>arul</name></author><id>tag:www.arulraj.net,2010-07-06:2010/07/tamil-fm-radio-for-ubuntu.html</id><summary type="html">&lt;p&gt;&lt;strong&gt;How to add Tamil FM radio for ubuntu&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://3.bp.blogspot.com/_X5tq9y9xv2s/TDN7EfdMqvI/AAAAAAAAAcs/TdQaG50q98w/s1600/radio+icon.jpg"&gt;&lt;img alt="image0" src="http://3.bp.blogspot.com/_X5tq9y9xv2s/TDN7EfdMqvI/AAAAAAAAAcs/TdQaG50q98w/s320/radio+icon.jpg" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Ubuntu having a superb software for playing media files, podcast, online radio and playlist etc., The software is Rhythmbox / VLC. Using that software you can add any online radio. This post for add tamil FM radios to ubuntu Rhythmbox. How to add Tamil FM to ubuntu 10.04 ..? Goto Application ↣ Sound &amp;amp; Video ↣ Rhythmbox Music Player&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://2.bp.blogspot.com/_X5tq9y9xv2s/TDN-oEeYQvI/AAAAAAAAAdE/aNhBJu8GkiI/s1600/Path+for+ubuntu+Rhythmbox.png"&gt;&lt;img alt="image1" src="http://2.bp.blogspot.com/_X5tq9y9xv2s/TDN-oEeYQvI/AAAAAAAAAdE/aNhBJu8GkiI/s320/Path+for+ubuntu+Rhythmbox.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Then Click the Add Radio button. That button is in Top Right Last button.&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://3.bp.blogspot.com/_X5tq9y9xv2s/TDN9ohWrWNI/AAAAAAAAAc8/2HMvXvvXGVI/s1600/Add+FM+radio+in+ubuntu.png"&gt;&lt;img alt="image2" src="http://3.bp.blogspot.com/_X5tq9y9xv2s/TDN9ohWrWNI/AAAAAAAAAc8/2HMvXvvXGVI/s320/Add+FM+radio+in+ubuntu.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Then Enter this URL for Hello FM [Tamil language]&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;mmsh://bdcast-ind-hellon-enusew3aswepuku.wm.llnwd.net/bdcast\_ind\_hellon\_enusew3aswepuku?MSWMExt=.asf
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Then press Add button. Now you can hear Hello FM at any Time. I will
+update the AAhaa FM and Radio City FM soon...&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://4.bp.blogspot.com/_X5tq9y9xv2s/TDN7LVUFtJI/AAAAAAAAAc0/JJvL_CEgAa4/s1600/Ubuntu+rhythmbox+Radio+Hello+FM.png"&gt;&lt;img alt="image3" src="http://4.bp.blogspot.com/_X5tq9y9xv2s/TDN7LVUFtJI/AAAAAAAAAc0/JJvL_CEgAa4/s320/Ubuntu+rhythmbox+Radio+Hello+FM.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Update:&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Here the some of Tamil FM List. You can add this FM's to your ubuntu rhythmbox using above steps.&lt;/p&gt;
+&lt;p&gt;Download this Tamil FM Playlist and Open in Rhythmbox or VLC -&amp;nbsp;&lt;a class="reference external" href="https://dl.dropboxusercontent.com/u/33817562/download/tamil_online_fm.m3u"&gt;Download Tamil FM Playlist&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Image of Tamil FM List&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://2.bp.blogspot.com/-eIPFFH6F-AU/VXLI51l91TI/AAAAAAAAWRM/-l_vNh0MePI/s1600/Selection_002.png"&gt;&lt;img alt="image4" src="http://2.bp.blogspot.com/-eIPFFH6F-AU/VXLI51l91TI/AAAAAAAAWRM/-l_vNh0MePI/s320/Selection_002.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;There is a online version of same playlist also available...&lt;/p&gt;
+&lt;iframe src="http://tamilfm.arulraj.net" style="width: 100%; height: 400px;"&gt;&lt;/iframe&gt;&lt;p&gt;Online Tamil Radio's playlist from &lt;a class="reference external" href="http://tamilfm.arulraj.net"&gt;tamilfm.arulraj.net&lt;/a&gt;. It's works with mobile and all browsers.&lt;/p&gt;
+&lt;div class="section" id="list-of-tamil-fm-s-for-ubuntu"&gt;
+&lt;h2&gt;List of Tamil FM's for ubuntu:&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;A.R.Rahman - http://listen.radionomy.com/arrahman-radio
+Ilayaraja - http://listen.radionomy.com/ilayaraja-radio
+Hello FM - mmsh://bdcast-indhellon-enusew3aswepuku.wm.llnwd.net/bdcast\_ind\_hellon\_enusew3aswepuku?MSWMExt=.asf
+Chennai Rainbow - http://www.euroshoutcast.com:8000
+TamilStar FM - http://media2.tamilstar.fm:8052/
+Shyam Radio - mms://st.malargal.com/shyamradio
+Cheers FM - mms://st.malargal.com/cheersfm
+City FM - mmsh://203.94.64.10/cityfm\_tamil?MSWMExt=.asf
+Elayaraja FM - mmsh://wm.chennaistream.net/cheersfm.newrelease/ilayaraja.wma?MSWMExt=.asf
+Thalam FM - mms://live.wtrfm.com/thaalamfm
+Canada Tamil FM - mms://ctbc.no-ip.com:8080/
+Geetham FM - http://www.geethamradio.com:8020/lofi.mp3
+STR FM - mms://live.strfm24.com/strfm
+TamilThunder FM - http://cdn.tamilmp3thunder.com/radio/radio.asx
+Australia Tamil - http://s7.viastreaming.net/7920/listen.asx
+Ungal radio - http://www.ungalradio.com/TuneIn/WindowsMedia128.asx
+Tamil Flash FM - http://www.tamilsflashfm.com/wmp.asx
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Check out the comments sections also for more FM radio links...&lt;/p&gt;
+&lt;/div&gt;
+</summary><category term="Linux"></category><category term="tamil"></category><category term="ubuntu"></category><category term="how to"></category></entry></feed>

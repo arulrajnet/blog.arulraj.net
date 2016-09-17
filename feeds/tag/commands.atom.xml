@@ -1,0 +1,386 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Arul Blog</title><link href="http://www.arulraj.net/" rel="alternate"></link><link href="http://www.arulraj.net/feeds/tag/commands.atom.xml" rel="self"></link><id>http://www.arulraj.net/</id><updated>2014-04-09T20:08:00+05:30</updated><entry><title>Upgrade openssl in Ubuntu and CentOS</title><link href="http://www.arulraj.net/2014/04/upgrade-openssl-in-ubuntu-and-centos.html" rel="alternate"></link><published>2014-04-09T20:08:00+05:30</published><author><name>arul</name></author><id>tag:www.arulraj.net,2014-04-09:2014/04/upgrade-openssl-in-ubuntu-and-centos.html</id><summary type="html">&lt;p&gt;&lt;strong&gt;Upgrade OpenSSL in Ubuntu and CentOS&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://4.bp.blogspot.com/-E5NogEilRNs/U0X3gzGooiI/AAAAAAAAVpo/ZZUTzTD_tuk/s1600/openssl-logo-bug.png"&gt;&lt;img alt="OpenSSL Heartbleed" src="http://4.bp.blogspot.com/-E5NogEilRNs/U0X3gzGooiI/AAAAAAAAVpo/ZZUTzTD_tuk/s640/openssl-logo-bug.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Hope you know about openssl heartbleed bug. Don't know about, no problem go through it &lt;a class="reference external" href="http://heartbleed.com"&gt;http://heartbleed.com/&lt;/a&gt; . The point here is you should upgrade your openssl. Because of this bug all linux variants release the patch for openssl. Here the steps for upgrade openssl both ubuntu and centos.&lt;/p&gt;
+&lt;div class="section" id="how-to-find-i-am-using-affected-version"&gt;
+&lt;h2&gt;How to find I am using affected version...?&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;In ubuntu:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Run this command&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;openssl version -a
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;There you can find &amp;quot;built on&amp;quot; date. If that date is older than Apr 7.
+Then you are using older version. You should upgrade your version.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;OpenSSL 1.0.1 14 Mar 2012
+built on: Wed Jan 8 20:45:51 UTC 2014
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;In CentOS:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Same as above.&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://2.bp.blogspot.com/-ee9O8qZXTUA/U0X5haUOlfI/AAAAAAAAVp4/GoiBS0CgO38/s1600/openssl-old-1.png"&gt;&lt;img alt="Open SSL Old Version" src="http://2.bp.blogspot.com/-ee9O8qZXTUA/U0X5haUOlfI/AAAAAAAAVp4/GoiBS0CgO38/s640/openssl-old-1.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="how-to-upgrade-openssl"&gt;
+&lt;h2&gt;How to upgrade openssl..?&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;In Ubuntu:&lt;/strong&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo apt-get update
+sudo apt-get install libssl1.0.0 openssl -y
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;In CentOS:&lt;/strong&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo yum update
+sudo yum update openssl -y
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="how-to-check-am-i-upgarded"&gt;
+&lt;h2&gt;How to check am I upgarded..?&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;openssl version -a &lt;span class="p"&gt;|&lt;/span&gt; grep built
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://3.bp.blogspot.com/-3hnS33ve4JM/U0X5hKOlqGI/AAAAAAAAVp0/ExBE5VMd-a8/s1600/openssl-new-1.png"&gt;&lt;img alt="OpenSSL New Version" src="http://3.bp.blogspot.com/-3hnS33ve4JM/U0X5hKOlqGI/AAAAAAAAVp0/ExBE5VMd-a8/s640/openssl-new-1.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;The date should greater than or equal to Apr 7.&lt;/p&gt;
+&lt;p&gt;Hey..!!! you are done. Happy secure linuxing... 😄&lt;/p&gt;
+&lt;/div&gt;
+</summary><category term="commands"></category><category term="fix"></category><category term="ubuntu"></category><category term="how to"></category><category term="centos"></category></entry><entry><title>Shared media files with other users in linux</title><link href="http://www.arulraj.net/2011/08/shared-media-files-with-other-users-in-linux.html" rel="alternate"></link><published>2011-08-18T13:00:00+05:30</published><author><name>arul</name></author><id>tag:www.arulraj.net,2011-08-18:2011/08/shared-media-files-with-other-users-in-linux.html</id><summary type="html">&lt;p&gt;I think everyone might come across this problem. How to share your Music and Videos with other users in linux machine..? For mine (username is &lt;em&gt;arul&lt;/em&gt; ) I have all music and videos in my home folder. I want to share those with others ( username is &lt;em&gt;friends&lt;/em&gt; ) in the same machine. You can ask, by changing the permission of all files with in folder can solve this issue.&lt;/p&gt;
+&lt;p&gt;Yes you are correct. But this is a partial solution. When you add / create new files with in that folder it have the old permissions. To solve this issue, create / add file with particular permission in that folder. Here is it how to do that.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;First you have create new group.&amp;nbsp;&lt;/strong&gt; This is an optional one, you can use anyone of your old group. For me I created a new group called &amp;quot;media&amp;quot;. Assign this group to user whom want you share.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo groupadd media
+sudo usermod -a -G media friends
+groups friends
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;In second command option &amp;quot;-a&amp;quot; is important. Then only this group is append to the existing group list otherwise all sub-groups are removed. The final command will display the user is belong to which are the groups. You can also do this using GUI. Goto System → Administration → Users and Groups&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://3.bp.blogspot.com/-pcMtYOBwgNw/Tk1IGvf9TFI/AAAAAAAAArM/aG_-IY2tIoI/s1600/added%2Bnew%2Bgroup.png"&gt;&lt;img alt="image0" src="http://3.bp.blogspot.com/-pcMtYOBwgNw/Tk1IGvf9TFI/AAAAAAAAArM/aG_-IY2tIoI/s400/added%2Bnew%2Bgroup.png" /&gt;&lt;/a&gt; Add new group and assigned to users&lt;/p&gt;
+&lt;p&gt;Change group to &amp;quot;media&amp;quot; for existing files and folder with in which directory you want to share.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo chgrp -R media Music/
+sudo chmod g+s -R Music/
+sudo chmod &lt;span class="m"&gt;755&lt;/span&gt; -R Music/
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;In command &amp;quot;-R&amp;quot; for recursive operations. It will change all folders and subfolders files. Second command for &lt;strong&gt;set group id for Music and sub directory.&lt;/strong&gt; Final command for RWX access for user and RX access for group, others for existing files.&lt;/p&gt;
+&lt;p&gt;Now when you create a new directory with in Music. The &amp;quot;media&amp;quot; group is assigned to that folder. it will look like&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;arul@arul-laptop:~/Music$ mkdir sample
+arul@arul-laptop:~/Music$ ll
+drwxr-sr-x &lt;span class="m"&gt;2&lt;/span&gt; arul media &lt;span class="m"&gt;4096&lt;/span&gt; 2011-08-19 00:06 sample
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://4.bp.blogspot.com/-Kyx5kwFVL-c/Tk1eB3TFRKI/AAAAAAAAArU/4F3lIBkXnnc/s1600/media%2Bfolder.png"&gt;&lt;img alt="image1" src="http://4.bp.blogspot.com/-Kyx5kwFVL-c/Tk1eB3TFRKI/AAAAAAAAArU/4F3lIBkXnnc/s400/media%2Bfolder.png" /&gt;&lt;/a&gt; Music folder list view&lt;/p&gt;
+&lt;p&gt;Now login as other user. create symbolic link for media folder for easy access.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;friends@arul-laptop:~/Music$ ln -s /home/arul/Music ./&lt;span class="s2"&gt;&amp;quot;music on arul&amp;quot;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;To know more about File permission view &lt;a class="reference external" href="https://help.ubuntu.com/community/FilePermissions"&gt;this&lt;/a&gt; ubuntu help page.&lt;/p&gt;
+</summary><category term="commands"></category><category term="ubuntu"></category><category term="how to"></category></entry><entry><title>Dos2Unix / Unix2Dos in ubuntu</title><link href="http://www.arulraj.net/2011/08/dos2unix-unix2dos-in-ubuntu.html" rel="alternate"></link><published>2011-08-09T11:56:00+05:30</published><author><name>arul</name></author><id>tag:www.arulraj.net,2011-08-09:2011/08/dos2unix-unix2dos-in-ubuntu.html</id><summary type="html">&lt;p&gt;By default ubuntu does not have dos2unix and unix2dos commands. But they provide some alternative commands. Those are fromdos and todos. sometimes its hard to switch to new commands. You can solve this issue by creating soft / symbolic links. Here its how to do.&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://2.bp.blogspot.com/-jElTSUvs3NU/TkFvZUAJY6I/AAAAAAAAArE/dPCEYt8KI04/s400/dos2unix.png"&gt;&lt;img alt="image0" src="http://2.bp.blogspot.com/-jElTSUvs3NU/TkFvZUAJY6I/AAAAAAAAArE/dPCEYt8KI04/s400/dos2unix.png" /&gt;&lt;/a&gt; command creation&lt;/p&gt;
+&lt;p&gt;First you have to find the location for &amp;quot;fromdos&amp;quot;. Below command will return the location&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;which fromdos
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Then you have to create a soft/symbolic link for that location with the name &amp;quot;dos2unix&amp;quot;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo ln -s /usr/bin/fromdos /usr/bin/dos2unix
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Follow the same steps for unix2dos.&lt;/p&gt;
+&lt;p&gt;To know more about symbolic/soft and hard links &lt;a class="reference external" href="http://stackoverflow.com/questions/185899/what-is-the-difference-between-a-symbolic-link-and-a-hard-link"&gt;click here&lt;/a&gt;&lt;/p&gt;
+</summary><category term="commands"></category><category term="ubuntu"></category><category term="how to"></category></entry><entry><title>How to add Red5 service</title><link href="http://www.arulraj.net/2010/07/how-to-add-red5-service.html" rel="alternate"></link><published>2010-07-27T13:20:00+05:30</published><author><name>arul</name></author><id>tag:www.arulraj.net,2010-07-27:2010/07/how-to-add-red5-service.html</id><summary type="html">&lt;p&gt;&lt;strong&gt;How to add Red5 service&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="image0" src="http://red5.googlecode.com/svn/doc/trunk/FinalLogo.png" /&gt;&lt;/p&gt;
+&lt;p&gt;In this article you are going to add red5 service in your Linux box.&lt;/p&gt;
+&lt;p&gt;Please use the Below script.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt; &lt;span class="c1"&gt;#!/bin/bash&lt;/span&gt;
+ &lt;span class="c1"&gt;# Author www.arulraj.net&lt;/span&gt;
+ &lt;span class="c1"&gt;# red5    This is used to start, stop, restart and status of red5&lt;/span&gt;
+ &lt;span class="c1"&gt;#&lt;/span&gt;
+
+ &lt;span class="nb"&gt;export&lt;/span&gt; &lt;span class="nv"&gt;RED5_HOME&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;/opt/red5
+
+&lt;span class="nv"&gt;PID&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;0
+ &lt;span class="nv"&gt;RTMPPORT&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;1935
+ &lt;span class="nv"&gt;prog&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;red5&amp;quot;&lt;/span&gt;
+
+ start&lt;span class="o"&gt;(){&lt;/span&gt;
+   status
+   &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt; &lt;span class="nv"&gt;$PID&lt;/span&gt; -eq &lt;span class="m"&gt;0&lt;/span&gt; &lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="k"&gt;then&lt;/span&gt;
+     &lt;span class="nb"&gt;echo&lt;/span&gt; $&lt;span class="s2"&gt;&amp;quot;Starting &lt;/span&gt;&lt;span class="nv"&gt;$prog&lt;/span&gt;&lt;span class="s2"&gt;...&amp;quot;&lt;/span&gt;
+     nohup &lt;span class="nv"&gt;$RED5_HOME&lt;/span&gt;/red5.sh 1&amp;gt; &lt;span class="nv"&gt;$RED5_HOME&lt;/span&gt;/log/stdout.log 2&amp;gt;&lt;span class="nv"&gt;$RED5_HOME&lt;/span&gt;/log/stderr.log &amp;lt; /dev/null &lt;span class="p"&gt;&amp;amp;&lt;/span&gt;
+     &lt;span class="nv"&gt;PID&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$!&lt;/span&gt;
+     &lt;span class="nb"&gt;echo&lt;/span&gt; $&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="nv"&gt;$prog&lt;/span&gt;&lt;span class="s2"&gt; started at port &lt;/span&gt;&lt;span class="nv"&gt;$RTMPPORT&lt;/span&gt;&lt;span class="s2"&gt; and PID[&lt;/span&gt;&lt;span class="nv"&gt;$PID&lt;/span&gt;&lt;span class="s2"&gt;].&amp;quot;&lt;/span&gt;
+   &lt;span class="k"&gt;else&lt;/span&gt;
+     &lt;span class="nb"&gt;echo&lt;/span&gt;
+   &lt;span class="k"&gt;fi&lt;/span&gt;
+   &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="nv"&gt;$PID&lt;/span&gt;
+ &lt;span class="o"&gt;}&lt;/span&gt;
+
+ stop&lt;span class="o"&gt;(){&lt;/span&gt;
+   status
+   &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt; &lt;span class="nv"&gt;$PID&lt;/span&gt; -eq &lt;span class="m"&gt;0&lt;/span&gt; &lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="k"&gt;then&lt;/span&gt;
+     &lt;span class="nb"&gt;echo&lt;/span&gt;
+   &lt;span class="k"&gt;else&lt;/span&gt;
+     &lt;span class="nb"&gt;echo&lt;/span&gt; $&lt;span class="s2"&gt;&amp;quot;Stopping &lt;/span&gt;&lt;span class="nv"&gt;$prog&lt;/span&gt;&lt;span class="s2"&gt;...&amp;quot;&lt;/span&gt;
+     &lt;span class="nv"&gt;$RED5_HOME&lt;/span&gt;/red5-shutdown.sh
+     &lt;span class="nb"&gt;echo&lt;/span&gt; $&lt;span class="s2"&gt;&amp;quot;PID[&lt;/span&gt;&lt;span class="nv"&gt;$PID&lt;/span&gt;&lt;span class="s2"&gt;] is killed.&amp;quot;&lt;/span&gt;
+   &lt;span class="k"&gt;fi&lt;/span&gt;
+   &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="nv"&gt;$PID&lt;/span&gt;
+ &lt;span class="o"&gt;}&lt;/span&gt;
+
+ restart&lt;span class="o"&gt;(){&lt;/span&gt;
+   stop
+   sleep 2
+   start
+ &lt;span class="o"&gt;}&lt;/span&gt;
+
+ status&lt;span class="o"&gt;()&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+   &lt;span class="nv"&gt;RTMPPORT&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="sb"&gt;`&lt;/span&gt;cat &lt;span class="nv"&gt;$RED5_HOME&lt;/span&gt;/conf/red5.properties &lt;span class="p"&gt;|&lt;/span&gt; grep -w &lt;span class="s2"&gt;&amp;quot;rtmp.port&amp;quot;&lt;/span&gt; &lt;span class="p"&gt;|&lt;/span&gt; awk -F&lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;{print $2}&amp;#39;&lt;/span&gt;&lt;span class="sb"&gt;`&lt;/span&gt;
+   &lt;span class="c1"&gt;#PID=`lsof -i | grep java | grep *:$RTMPPORT | awk &amp;#39;{print $2}&amp;#39;`&lt;/span&gt;
+   &lt;span class="nv"&gt;PID&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="sb"&gt;`&lt;/span&gt;ps -ef &lt;span class="p"&gt;|&lt;/span&gt; grep red5 &lt;span class="p"&gt;|&lt;/span&gt; grep java &lt;span class="p"&gt;|&lt;/span&gt; awk &lt;span class="s1"&gt;&amp;#39;{print $2}&amp;#39;&lt;/span&gt;&lt;span class="sb"&gt;`&lt;/span&gt;
+   &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt; x&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="nv"&gt;$PID&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;x&amp;quot;&lt;/span&gt; &lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="k"&gt;then&lt;/span&gt;
+     &lt;span class="nv"&gt;PID&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;0
+     &lt;span class="nb"&gt;echo&lt;/span&gt; $&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="nv"&gt;$prog&lt;/span&gt;&lt;span class="s2"&gt; is not running.&amp;quot;&lt;/span&gt;
+   &lt;span class="k"&gt;else&lt;/span&gt;
+     &lt;span class="nb"&gt;echo&lt;/span&gt; $&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="nv"&gt;$prog&lt;/span&gt;&lt;span class="s2"&gt; running on port &lt;/span&gt;&lt;span class="nv"&gt;$RTMPPORT&lt;/span&gt;&lt;span class="s2"&gt; and PID[&lt;/span&gt;&lt;span class="nv"&gt;$PID&lt;/span&gt;&lt;span class="s2"&gt;].&amp;quot;&lt;/span&gt;
+   &lt;span class="k"&gt;fi&lt;/span&gt;
+   &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="nv"&gt;$PID&lt;/span&gt;
+ &lt;span class="o"&gt;}&lt;/span&gt;
+
+ &lt;span class="c1"&gt;# How its called.&lt;/span&gt;
+ &lt;span class="k"&gt;case&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="nv"&gt;$1&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt; in
+   start&lt;span class="o"&gt;)&lt;/span&gt;
+     start
+   &lt;span class="p"&gt;;;&lt;/span&gt;
+   stop&lt;span class="o"&gt;)&lt;/span&gt;
+     stop
+   &lt;span class="p"&gt;;;&lt;/span&gt;
+   status&lt;span class="o"&gt;)&lt;/span&gt;
+     status
+   &lt;span class="p"&gt;;;&lt;/span&gt;
+   restart&lt;span class="o"&gt;)&lt;/span&gt;
+     restart
+   &lt;span class="p"&gt;;;&lt;/span&gt;
+   *&lt;span class="o"&gt;)&lt;/span&gt;
+     &lt;span class="nb"&gt;echo&lt;/span&gt; $&lt;span class="s2"&gt;&amp;quot;Usage: &lt;/span&gt;&lt;span class="nv"&gt;$0&lt;/span&gt;&lt;span class="s2"&gt; {start|stop|status|restart}&amp;quot;&lt;/span&gt;
+     &lt;span class="nv"&gt;PID&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;1
+ &lt;span class="k"&gt;esac&lt;/span&gt;
+
+ &lt;span class="nb"&gt;exit&lt;/span&gt; &lt;span class="nv"&gt;$PID&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Steps:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Save these shell script lines as a file. For mine i saved as file &amp;quot;red5&amp;quot;. OR You can download this file from &lt;a class="reference external" href="http://arulraj.net/labs/script/red5"&gt;Here&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Copy this file to /etc/init.d/&lt;/li&gt;
+&lt;li&gt;Then execute the below commands to start red5 when your system starts&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://3.bp.blogspot.com/_X5tq9y9xv2s/TFB9KfBDYDI/AAAAAAAAAd0/V698BY0k9jA/s1600/red5+chkconfig+not+working.png"&gt;&lt;img alt="image1" src="http://3.bp.blogspot.com/_X5tq9y9xv2s/TFB9KfBDYDI/AAAAAAAAAd0/V698BY0k9jA/s640/red5+chkconfig+not+working.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;I checked with ubuntu 10.04. For chkconfig work on ubuntu you need to install chkconfig&lt;/p&gt;
+&lt;p&gt;This above script Not working in Ubuntu&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;apt-get install chkconfig
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://3.bp.blogspot.com/_X5tq9y9xv2s/TE8s5WDkvGI/AAAAAAAAAds/kPzFBTdJOeo/s1600/Red5+service+script.png"&gt;&lt;img alt="image2" src="http://3.bp.blogspot.com/_X5tq9y9xv2s/TE8s5WDkvGI/AAAAAAAAAds/kPzFBTdJOeo/s320/Red5+service+script.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Add red5 in startup - ubuntu:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Use this command&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo update-rc.d red5 defaults
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Thanks to anonymous for this info.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Usage:&lt;/strong&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;Start : /etc/init.d/red5 start
+Stop : /etc/init.d/red5 stop
+Status : /etc/init.d/red5 status
+Restart : /etc/init.d/red5 restart
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Please Let me know if you have any issues or better ideas...&lt;/p&gt;
+</summary><category term="commands"></category><category term="Linux"></category><category term="red5"></category><category term="scripting"></category><category term="how to"></category></entry><entry><title>Ubuntu FAQ</title><link href="http://www.arulraj.net/2010/06/ubuntu-faq.html" rel="alternate"></link><published>2010-06-13T13:44:00+05:30</published><author><name>arul</name></author><id>tag:www.arulraj.net,2010-06-13:2010/06/ubuntu-faq.html</id><summary type="html">&lt;p&gt;&lt;a class="reference external" href="http://picasaweb.google.com/lh/photo/H_Aajl3cxrd_q5qtDv82yRRU7417pzdLFPTzvmy2uw8?feat=blogger"&gt;&lt;img alt="image0" src="http://lh6.ggpht.com/_X5tq9y9xv2s/TBE3MO5AjmI/AAAAAAAAAZI/_QfbEoEor1Q/s512/ubuntu-logo.gif" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Hi i am using ubuntu in &lt;a class="reference external" href="http://www.arulraj.net/2010/06/install-ubuntu-10-04-in-acer-5740.html"&gt;my
+laptop&lt;/a&gt;
+. Previously i am using windows os. i face some problems like how to
+open my computer in shorcut, show desktop, Run etc., i search in google
+and resolve here i explain how to do those things. This is not for
+ubuntu/linux guru's only for newbies like me :)&lt;/p&gt;
+&lt;p&gt;How to open My computer (filesystem) in ubuntu ..?&lt;/p&gt;
+&lt;p&gt;There is a command called &amp;quot;nautilus&amp;quot; . This will help you. Open Terminal
+then type &amp;quot;nautilus /&amp;quot; this will open your filesystem. Then create
+Launcher (shortcut) for this.&lt;/p&gt;
+&lt;p&gt;How to Create a shortcut ..?&lt;/p&gt;
+&lt;p&gt;Go to your Desktop. Then Right Click --&amp;gt; Select &amp;quot;Create Launcher&amp;quot;. It
+shows a window Fill up the like the below&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://1.bp.blogspot.com/_X5tq9y9xv2s/TBUfGYQA4oI/AAAAAAAAAZQ/iJRZnOfdDws/s1600/ubuntu+create+shorcut.png"&gt;&lt;img alt="image1" src="http://1.bp.blogspot.com/_X5tq9y9xv2s/TBUfGYQA4oI/AAAAAAAAAZQ/iJRZnOfdDws/s320/ubuntu+create+shorcut.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;In the Create Launcher window Type this Command &amp;quot;nautilus /&amp;quot;. Select
+your own name and own comment. Then click OK. Now the your &amp;quot;My Computer
+&amp;quot; icon is created in the Desktop like the below&lt;/p&gt;
+&lt;div class="separator" style="clear: both; text-align: center;"&gt;&lt;p&gt;&lt;a class="reference external" href="http://3.bp.blogspot.com/_X5tq9y9xv2s/TBUfItPVR2I/AAAAAAAAAZY/rB8CIUT-cNQ/s1600/ubuntu+my+computer.png"&gt;&lt;img alt="image2" src="http://3.bp.blogspot.com/_X5tq9y9xv2s/TBUfItPVR2I/AAAAAAAAAZY/rB8CIUT-cNQ/s320/ubuntu+my+computer.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;Using the nautilus command you can create the shortcut for any folder.
+For Home folder change the command &amp;quot;nautilus /root&amp;quot; .&lt;/p&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;There is a another method to do all the things.&lt;/div&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;Goto terminal then type &amp;quot;gconf-editor&amp;quot; it opens a Configuration
+Editor. Its like a&amp;nbsp;Registry&amp;nbsp;Editor in windows operating system.&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;Its like the below&lt;/p&gt;
+&lt;div class="separator" style="clear: both; text-align: center;"&gt;&lt;p&gt;&lt;a class="reference external" href="http://2.bp.blogspot.com/_X5tq9y9xv2s/TBUm5ktozNI/AAAAAAAAAZg/2pdoXC_fiGU/s1600/ubuntu+Configuration+Editor+-+desktop.png"&gt;&lt;img alt="image3" src="http://2.bp.blogspot.com/_X5tq9y9xv2s/TBUm5ktozNI/AAAAAAAAAZg/2pdoXC_fiGU/s320/ubuntu+Configuration+Editor+-+desktop.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;Goto Configuration Editor --&amp;gt; apps --&amp;gt; nautilus --&amp;gt; Desktop&lt;/div&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;Then Check the checkbox &amp;quot;computer_icon_visible&amp;quot; and
+&amp;quot;home_icon_visible&amp;quot; . Now the your computer and Home icons are shown
+in your desktop.&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://2.bp.blogspot.com/_X5tq9y9xv2s/TBUo0o1QdoI/AAAAAAAAAZo/NTOAbc70qKA/s1600/ubuntu+desktop+icon.png"&gt;&lt;img alt="image4" src="http://2.bp.blogspot.com/_X5tq9y9xv2s/TBUo0o1QdoI/AAAAAAAAAZo/NTOAbc70qKA/s320/ubuntu+desktop+icon.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;How to create custom keyboard shortcut ..?&lt;/p&gt;
+&lt;p&gt;In ubuntu you can create your own custom keyboard shortcut. Goto System
+--&amp;gt; Preference --&amp;gt; keyboard shortcuts.&lt;/p&gt;
+&lt;div class="separator" style="clear: both; text-align: center;"&gt;&lt;p&gt;&lt;a class="reference external" href="http://4.bp.blogspot.com/_X5tq9y9xv2s/TBZqxPcrfUI/AAAAAAAAAaA/ZnNuu2pn8m8/s1600/ubuntu+keyboard+shorcut.png"&gt;&lt;img alt="image5" src="http://4.bp.blogspot.com/_X5tq9y9xv2s/TBZqxPcrfUI/AAAAAAAAAaA/ZnNuu2pn8m8/s320/ubuntu+keyboard+shorcut.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;It opens a new window. Click the Add button then Enter your own name and
+type the command for that. For example if you want to open &amp;quot;System
+Monitor&amp;quot; its like Task manager in windows type this command
+&amp;quot;gnome-system-monitor&amp;quot;. Then press Apply. Now its time to select your
+shortcut keys. Select which one you added then choose your combination
+of keys.&lt;/p&gt;
+&lt;div class="separator" style="clear: both; text-align: center;"&gt;&lt;p&gt;&lt;a class="reference external" href="http://4.bp.blogspot.com/_X5tq9y9xv2s/TBUxbc0bnCI/AAAAAAAAAZw/uyh9gjH6vWE/s1600/Keyboard+shorcut.png"&gt;&lt;img alt="image6" src="http://4.bp.blogspot.com/_X5tq9y9xv2s/TBUxbc0bnCI/AAAAAAAAAZw/uyh9gjH6vWE/s320/Keyboard+shorcut.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;How to set environmental variables ..?&lt;/div&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;Lot of ways available to set the environmental variable. But this is
+the most simple one. You can add your variable in &amp;quot;/etc/environment&amp;quot;
+file&lt;/div&gt;
+&lt;div class="line"&gt;open this file then add your bin folder in the PATH. You can add HOME
+variable like &amp;quot;JAVA_HOME&amp;quot; in the next line.&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://3.bp.blogspot.com/_X5tq9y9xv2s/TBU0yyPQyRI/AAAAAAAAAZ4/RiE8Aiw85dg/s1600/ubuntu+environment+variable.png"&gt;&lt;img alt="image7" src="http://3.bp.blogspot.com/_X5tq9y9xv2s/TBU0yyPQyRI/AAAAAAAAAZ4/RiE8Aiw85dg/s320/ubuntu+environment+variable.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Some Ubuntu shortcuts :&lt;/p&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;To open Terminal window CTRL+ALT+T&lt;/div&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;To open Run window ALT+F2&lt;/div&gt;
+&lt;div class="line"&gt;To Choose the Desktop Windows key + E&lt;/div&gt;
+&lt;div class="line"&gt;Show Desktop CTRL+ALT+D&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</summary><category term="commands"></category><category term="Linux"></category><category term="ubuntu"></category><category term="how to"></category></entry><entry><title>Batch file for building any java application</title><link href="http://www.arulraj.net/2009/09/batch-file-for-building-any-java-application.html" rel="alternate"></link><published>2009-09-24T03:58:00+05:30</published><author><name>arul</name></author><id>tag:www.arulraj.net,2009-09-24:2009/09/batch-file-for-building-any-java-application.html</id><summary type="html">&lt;p&gt;&lt;strong&gt;Batch file for building any java application&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://2.bp.blogspot.com/_X5tq9y9xv2s/Srs4KNLAw0I/AAAAAAAAAFw/YgXxL4EMQe0/s1600-h/MS-DOS-Batch-File.png"&gt;&lt;img alt="image0" src="http://2.bp.blogspot.com/_X5tq9y9xv2s/Srs4KNLAw0I/AAAAAAAAAFw/YgXxL4EMQe0/s400/MS-DOS-Batch-File.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;What is batch file...?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;In DOS, OS/2, and Microsoft Windows, a batch file is a text file
+containing a series of commands intended to be executed by the command
+interpreter. Article on
+&lt;a class="reference external" href="http://en.wikipedia.org/wiki/Batch_file"&gt;wikipedia&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;This batch file contains the set of instruction to build a any java application. To get the good result you follow the below folder structure..&lt;/p&gt;
+&lt;p&gt;For example C:apache-tomcat-6.0.18webapps contains the many java web
+application. place this batch file in webapps folder.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;The java files in webapps&amp;lt;PROJECT_NAME&amp;gt;src&amp;nbsp; folder. With
+in the src folder u can follw the java package structure.&lt;/li&gt;
+&lt;li&gt;The jar files for your application in
+webapps&amp;lt;PROJECT_HOME&amp;gt;lib folder.&lt;/li&gt;
+&lt;li&gt;Then run that batch file like&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;C:apache-tomcat-6.0.18webapps&amp;gt; build.bat Library&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Here the Library is your project Home. you can use this bat file
+anywhere not only for tomcat webapps folder.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Environment Variable Prequisites:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;JAVA_HOME&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; Must point at your Java Development Kit
+installation.&lt;/li&gt;
+&lt;li&gt;JAVA_OPTS&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; (Optional) Java runtime options.&lt;/li&gt;
+&lt;li&gt;CATALINA_HOME&amp;nbsp;&amp;nbsp; &amp;nbsp;&amp;nbsp;&amp;nbsp; &amp;nbsp;(Optional) May point at your Catalina
+&amp;quot;build&amp;quot; directory.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;How to set JAVA_HOME ...?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;JAVA_HOME basically known as Java Environmental Variable.Refers from
+&lt;a class="reference external" href="http://confluence.atlassian.com/display/CONF26/Set+JAVA_HOME+variable+in+Windows"&gt;web&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;If you already know the install path for the Java or Software
+Development Kit,skip this first two steps. Otherwise, find the install
+path by following these instructions:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;Unless you changed the install path for the Java Developement Kit
+during installation, it will be in a directory under
+&lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;C:\Program&lt;/span&gt; Files\Java&lt;/tt&gt;. Using Explorer, open the directory
+&lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;C:\Program&lt;/span&gt; Files\Java&lt;/tt&gt;&lt;/li&gt;
+&lt;li&gt;Inside that path will be one or more subdirectories such as
+&lt;tt class="docutils literal"&gt;jdk1.5.0_08&lt;/tt&gt;. If you just installed the Java Development Kit,
+it will be installed to the newest directory, which you can find
+by sorting by date. For example, it may be installed in
+&lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;C:\Program&lt;/span&gt; Files\Java\jdk1.5.0_08&lt;/tt&gt;. This is the install path.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Once you have identified the JDK install path:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;Right click on the &lt;strong&gt;My Computer&lt;/strong&gt; icon on your desktop and
+select properties&lt;/li&gt;
+&lt;li&gt;Click the &lt;strong&gt;Advanced&lt;/strong&gt; Tab&lt;/li&gt;
+&lt;li&gt;Click the &lt;strong&gt;Environment Variables&lt;/strong&gt; button&lt;/li&gt;
+&lt;li&gt;Under System Variable, click &lt;strong&gt;New&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Enter the variable name as &lt;tt class="docutils literal"&gt;JAVA_HOME&lt;/tt&gt;&lt;/li&gt;
+&lt;li&gt;Enter the variable value as the install path for the Development
+Kit&lt;/li&gt;
+&lt;li&gt;Click OK&lt;/li&gt;
+&lt;li&gt;Click Apply Changes&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://3.bp.blogspot.com/_X5tq9y9xv2s/Srs-dTRgMzI/AAAAAAAAAF4/VzLWmytRU4A/s1600-h/JAVA_HOME.jpg"&gt;&lt;img alt="image1" src="http://3.bp.blogspot.com/_X5tq9y9xv2s/Srs-dTRgMzI/AAAAAAAAAF4/VzLWmytRU4A/s400/JAVA_HOME.jpg" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;What is JAVA_OPTS ...?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;This JAVA_OPTS may increase your server performance. For example&lt;/p&gt;
+&lt;p&gt;&lt;tt class="docutils literal"&gt;set &lt;span class="pre"&gt;JAVA_OPTS=-Xms128&lt;/span&gt; &lt;span class="pre"&gt;-Xmx512&lt;/span&gt;&lt;/tt&gt;&lt;/p&gt;
+&lt;dl class="docutils"&gt;
+&lt;dt&gt;The two extra parameters specified via JAVA_OPTS are as follows:&lt;/dt&gt;
+&lt;dd&gt;-Xms - the amount of memory that the JVM starts with.
+-Xmx - the maximum memory that the JVM may have.&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;p&gt;List of Java Hotspot Option &lt;a class="reference external" href="http://java.sun.com/javase/technologies/hotspot/vmoptions.jsp"&gt;Here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;What is CATALINA_HOME...?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Set an environment variable CATALINA_HOME to the path of the directory
+into which you have installed Tomcat.&lt;/p&gt;
+&lt;p&gt;For example :&lt;/p&gt;
+&lt;p&gt;&lt;tt class="docutils literal"&gt;set CATALINA_HOME = &lt;span class="pre"&gt;C:\apache-tomcat-6.0.18&lt;/span&gt;&lt;/tt&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;How this Batch File works ...?&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Get the all jar files from &amp;lt;PROJECT_HOME&amp;gt;lib folder and set this as classpath.&lt;/p&gt;
+&lt;p&gt;Then compile all java files inside the src folder. and build the
+class files inside the &amp;lt;PROJECT_HOME&amp;gt;WEB-INF Folder.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;How to Download this Batch file ...?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;You can download this batch file from &lt;a class="reference external" href="http://arulraj1985.googlepages.com/build.bat"&gt;Here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://arulraj1985.googlepages.com/build.bat"&gt;http://arulraj1985.googlepages.com/build.bat&lt;/a&gt;&lt;/p&gt;
+</summary><category term="commands"></category><category term="Widget"></category><category term="windows"></category><category term="Programming"></category></entry><entry><title>How to create and use private / public keys</title><link href="http://www.arulraj.net/2009/07/how-to-create-and-use-private-public-keys.html" rel="alternate"></link><published>2009-07-23T06:27:00+05:30</published><author><name>arul</name></author><id>tag:www.arulraj.net,2009-07-23:2009/07/how-to-create-and-use-private-public-keys.html</id><summary type="html">&lt;p&gt;&lt;a class="reference external" href="http://2.bp.blogspot.com/_Tq9uaJI0Xww/SmhV6r4dTlI/AAAAAAAAFIM/74M6AzeYa_w/s1600-h/puttygen.jpg"&gt;&lt;img alt="image0" src="http://2.bp.blogspot.com/_Tq9uaJI0Xww/SmhV6r4dTlI/AAAAAAAAFIM/74M6AzeYa_w/s400/puttygen.jpg" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Hi all,&lt;/p&gt;
+&lt;p&gt;Here the document for how to create private and public keys for login. This is more helpful others can login to your machine without disclose the password.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;How to create private key for my machine..?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Go to /home/root/.ssh folder. Then run ssh-keygen command. Answer the questions. Then the key and pub files are created. save this .pub file as authorized_keys.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;root@localhost ~&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="c1"&gt;# cd .ssh/&lt;/span&gt;
+&lt;span class="o"&gt;[&lt;/span&gt;root@localhost .ssh&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="c1"&gt;# ls&lt;/span&gt;
+known_hosts
+&lt;span class="o"&gt;[&lt;/span&gt;root@localhost .ssh&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="c1"&gt;# ssh-key&lt;/span&gt;
+ssh-keygen ssh-keyscan
+&lt;span class="o"&gt;[&lt;/span&gt;root@localhost .ssh&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="c1"&gt;# ssh-keygen&lt;/span&gt;
+Generating public/private rsa key pair.
+Enter file in which to save the key &lt;span class="o"&gt;(&lt;/span&gt;/root/.ssh/id_rsa&lt;span class="o"&gt;)&lt;/span&gt;: example.ppk
+Enter passphrase &lt;span class="o"&gt;(&lt;/span&gt;empty &lt;span class="k"&gt;for&lt;/span&gt; no passphrase&lt;span class="o"&gt;)&lt;/span&gt;:
+Enter same passphrase again:
+Your identification has been saved in example.ppk.
+Your public key has been saved in example.pub.
+The key fingerprint is:
+6e:e4:ff:3b:a6:52:0d:57:ec:d2:f8:dd:e5:08:22:d6 root@localhost
+&lt;span class="o"&gt;[&lt;/span&gt;root@localhost .ssh&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="c1"&gt;# cat example.pub &amp;gt;&amp;gt; authorized_keys&lt;/span&gt;
+&lt;span class="o"&gt;[&lt;/span&gt;root@localhost .ssh&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="c1"&gt;# ls&lt;/span&gt;
+authorized_keys example.ppk example.pub known_hosts
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;How to use the private keys..?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;In putty&lt;/em&gt;&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Open putty and type the 'Host Name' (ie &lt;a class="reference external" href="mailto:root&amp;#64;192.168.1.117"&gt;root&amp;#64;192.168.1.117&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Give a name in 'Saved Session'&lt;/li&gt;
+&lt;li&gt;Select Connection --&amp;gt; SSH --&amp;gt; Auth --&amp;gt; Browse --&amp;gt; Select the corresponding *.ppk file (ie example.ppk)&lt;/li&gt;
+&lt;li&gt;Now go to 'Session' Just click 'Save Button'&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Now you can login to your machine without password in putty. For putty and puttygen &lt;a class="reference external" href="http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html"&gt;download&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;In Win-SCP&lt;/em&gt;&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Start WinSCP. Under Session, enter the Host name(&lt;a class="reference external" href="mailto:root&amp;#64;192.168.1.117"&gt;root&amp;#64;192.168.1.117&lt;/a&gt;), User name(root), and Private key file(*.ppk) and click 'Save'.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Now you can login to your machine without password in WinSCP.&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://1.bp.blogspot.com/_Tq9uaJI0Xww/SmhWF1yTZXI/AAAAAAAAFIU/CEsMmDSIw6U/s1600-h/privatekey.jpg"&gt;&lt;img alt="image1" src="http://1.bp.blogspot.com/_Tq9uaJI0Xww/SmhWF1yTZXI/AAAAAAAAFIU/CEsMmDSIw6U/s400/privatekey.jpg" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;In SCP Command&lt;/em&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;scp -i example.ppk test.jpg root@192.168.1.117:/home/root/
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;em&gt;In SSH Command&lt;/em&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;ssh -i example.ppk root@192.168.1.117
+&lt;/pre&gt;&lt;/div&gt;
+</summary><category term="commands"></category><category term="Linux"></category><category term="Programming"></category><category term="how to"></category></entry></feed>

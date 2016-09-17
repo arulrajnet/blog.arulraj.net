@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Arul Blog</title><link href="http://www.arulraj.net/" rel="alternate"></link><link href="http://www.arulraj.net/feeds/category/tools.atom.xml" rel="self"></link><id>http://www.arulraj.net/</id><updated>2015-09-06T21:03:28+05:30</updated><entry><title>How to get TNEB Service Details without capcha</title><link href="http://www.arulraj.net/2015/09/how-to-get-tneb-service-details-without-capcha.html" rel="alternate"></link><published>2015-09-06T21:03:28+05:30</published><author><name>Arul</name></author><id>tag:www.arulraj.net,2015-09-06:2015/09/how-to-get-tneb-service-details-without-capcha.html</id><summary type="html">&lt;p&gt;To get direct link for find your usage from TNEB give your service number in the below form and press submit.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;TNEB Usage permlink Form&lt;/strong&gt;&lt;/p&gt;
+&lt;iframe width="100%" height="400" src="//jsfiddle.net/arulrajnet/0dfht8L2/embedded/result" allowfullscreen="allowfullscreen" frameborder="0"&gt;&lt;/iframe&gt;&lt;div class="section" id="how-its-works"&gt;
+&lt;h2&gt;How its works&lt;/h2&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;For example, the service no is 265 / 005 / 1234&lt;/li&gt;
+&lt;li&gt;It will take your service no and do base64 of &amp;quot;TANGEDCO||265||005||1234&amp;quot; is &lt;tt class="docutils literal"&gt;VEFOR0VEQ098fDI2NXx8MDA1fHwxMjM0&lt;/tt&gt;&lt;/li&gt;
+&lt;li&gt;Then base64 of Region(09) is &lt;tt class="docutils literal"&gt;OQ==&lt;/tt&gt;&lt;/li&gt;
+&lt;li&gt;Then finally URL is &lt;a class="reference external" href="http://tneb.tnebnet.org/newlt/consumerwise_gmc_report.php?encserno=VEFOR0VEQ098fDI2NXx8MDA1fHwxMjM0&amp;amp;rsno=OQ=="&gt;http://tneb.tnebnet.org/newlt/consumerwise_gmc_report.php?encserno=VEFOR0VEQ098fDI2NXx8MDA1fHwxMjM0&amp;amp;rsno=OQ==&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;You can find the source code from here &lt;a class="reference external" href="https://jsfiddle.net/arulrajnet/0dfht8L2/"&gt;https://jsfiddle.net/arulrajnet/0dfht8L2/&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+</summary><category term="javascript"></category></entry><entry><title>Fix: Pycharm Failed to create JVM</title><link href="http://www.arulraj.net/2014/10/fix-pycharm-failed-to-create-jvm.html" rel="alternate"></link><published>2014-10-03T12:12:00+05:30</published><author><name>arul</name></author><id>tag:www.arulraj.net,2014-10-03:2014/10/fix-pycharm-failed-to-create-jvm.html</id><summary type="html">&lt;p&gt;&lt;strong&gt;How to Run your Pycharm IDE under 64bit JVM..?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://4.bp.blogspot.com/-llWB2o4A5Ww/VC7ZhgH-j5I/AAAAAAAAWC4/wbtlkiYONLc/s1600/pycharm-error-code.PNG"&gt;&lt;img alt="Pycharm Error Code -4" class="align-middle" src="http://4.bp.blogspot.com/-llWB2o4A5Ww/VC7ZhgH-j5I/AAAAAAAAWC4/wbtlkiYONLc/s320/pycharm-error-code.PNG" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;What is the real issue..?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;First you should to know all jetbrains IDE's are written in Java. The issue because of your pycharm needs more memory to process your projects and files at the backend Java requires memory. But its not able to acquire that much of memory. So its closed obtrubtly.&lt;/p&gt;
+&lt;p&gt;Everyone will say increase the JVM/Java max heap size in &lt;tt class="docutils literal"&gt;pycharm.properties&lt;/tt&gt; file. Then restart the pycharm. But thats not a permanent solution.&lt;/p&gt;
+&lt;p&gt;The real problem is pycharm internally uses 32bit jvm which comes with the installer package. The 32 bit JVM can allocate maximum 2GB of space only.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;What is the solution for it..?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;So the fix is you have to start your pycharm with 64bit JVM. Here we will see how to start with 64bit JVM. Three steps to fix that&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Set the 64bit SDK as environmental variable&lt;/li&gt;
+&lt;li&gt;create properties for 64bit version&lt;/li&gt;
+&lt;li&gt;start the ide from .bat file&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Set 64Bit SDK:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Before setting environmental variable you have to find out which version of java you are using. To find out Open Command Prompt → Then run the below command&lt;/p&gt;
+&lt;blockquote&gt;
+java -version&lt;/blockquote&gt;
+&lt;p&gt;It should have the &amp;quot;Java Hotspot(TM) 64-Bit Server&amp;quot; line in the output.
+If there is no Bit information then its 32bit java. Then proceed furthur
+you have to download and install the 64bit JDK from &lt;a class="reference external" href="http://java.com/"&gt;http://java.com/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://4.bp.blogspot.com/-dQGv7xsG25s/VC7ZizVLThI/AAAAAAAAWDI/55dvR_UwtM0/s1600/pycharm-find-java-version.PNG"&gt;&lt;img alt="Java Version" src="http://4.bp.blogspot.com/-dQGv7xsG25s/VC7ZizVLThI/AAAAAAAAWDI/55dvR_UwtM0/s320/pycharm-find-java-version.PNG" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Then open Control Panel&amp;nbsp;→ Edit Environmental Variable for&amp;nbsp;Your Account&lt;/p&gt;
+&lt;p&gt;In User variables set &lt;tt class="docutils literal"&gt;PYCHARM_SDK&lt;/tt&gt; and path will be your 64 bit java
+version&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://2.bp.blogspot.com/-8K20N9lH9SQ/VC7ZhrcJ7II/AAAAAAAAWC8/Av1sErElf-c/s1600/pycharm-env.PNG"&gt;&lt;img alt="PYCHARM_JDK" src="http://2.bp.blogspot.com/-8K20N9lH9SQ/VC7ZhrcJ7II/AAAAAAAAWC8/Av1sErElf-c/s320/pycharm-env.PNG" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Create properties file:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;For 64bit you have to create separate properties file for that. &amp;nbsp;Create
+file named as &lt;tt class="docutils literal"&gt;pycharm64.exe.vmoptions&lt;/tt&gt; in the root directory of IDE&lt;/p&gt;
+&lt;!-- code-block::text
+-server
+-Xms256m
+-Xmx2048m
+-XX:MaxPermSize=512m
+-XX:ReservedCodeCacheSize=128m
+-ea
+-Dsun.io.useCanonCaches=false
+-Djava.net.preferIPv4Stack=true
+-Djsse.enableSNIExtension=false
+-XX:+UseCodeCacheFlushing
+-XX:+UseConcMarkSweepGC
+-XX:SoftRefLRUPolicyMSPerMB=100 --&gt;
+&lt;p&gt;&lt;strong&gt;To start:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;IDE should start with the pycharm.bat file.&lt;/p&gt;
+&lt;p&gt;This fix will&amp;nbsp;work for&amp;nbsp;other IDE such as WebStrom, PhpStrom, IntelliJ
+and RubyMine from jetbrains also.&lt;/p&gt;
+&lt;p&gt;Basically you have to create &lt;tt class="docutils literal"&gt;&amp;lt;product&amp;gt;64.exe.vmoptions&lt;/tt&gt; file. Set the 64bit Java environmental variable for that IDE. Then start the  &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;&amp;lt;product&amp;gt;.bat&lt;/span&gt;&lt;/tt&gt; file&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Environmental Variable for Different product:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;IDEA_JDK for IntelliJ IDEA&lt;/li&gt;
+&lt;li&gt;WEBIDE_JDK for PhpStorm and WebStorm&lt;/li&gt;
+&lt;li&gt;PYCHARM_JDK for PyCharm&lt;/li&gt;
+&lt;li&gt;RUBYMINE_SDK for RubyMine&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;To know about what environmental variable have to use, open
+&lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;&amp;lt;product&amp;gt;.bat&lt;/span&gt;&lt;/tt&gt; file. Then you will get to know.&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://2.bp.blogspot.com/-iTUeJ174ljc/VC7ZjyPDevI/AAAAAAAAWDQ/XhIp6aO88DY/s1600/pycharm-startup-script.PNG"&gt;&lt;img alt="pycharm.bat" src="http://2.bp.blogspot.com/-iTUeJ174ljc/VC7ZjyPDevI/AAAAAAAAWDQ/XhIp6aO88DY/s320/pycharm-startup-script.PNG" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Read More at &lt;a class="reference external" href="https://intellij-support.jetbrains.com/entries/23393413-The-JVM-could-not-be-started-The-main-method-may-have-thrown-an-exception"&gt;intellij Support&lt;/a&gt;&lt;/p&gt;
+</summary><category term="IDE"></category><category term="java"></category><category term="python"></category><category term="programming"></category></entry></feed>

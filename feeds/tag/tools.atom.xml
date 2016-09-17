@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Arul Blog</title><link href="http://www.arulraj.net/" rel="alternate"></link><link href="http://www.arulraj.net/feeds/tag/tools.atom.xml" rel="self"></link><id>http://www.arulraj.net/</id><updated>2014-09-24T12:38:00+05:30</updated><entry><title>How to access external java libraries with in pentaho</title><link href="http://www.arulraj.net/2014/09/how-to-access-external-java-libraries-with-in-pentaho.html" rel="alternate"></link><published>2014-09-24T12:38:00+05:30</published><author><name>arul</name></author><id>tag:www.arulraj.net,2014-09-24:2014/09/how-to-access-external-java-libraries-with-in-pentaho.html</id><summary type="html">&lt;p&gt;&lt;strong&gt;How to access external libraries with in pentaho..?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://1.bp.blogspot.com/-AuXLtbyvurk/VCMQTRArekI/AAAAAAAAWCk/_qNXoURYSVY/s1600/mongo-read-empty-java-write-csv.PNG"&gt;&lt;img alt="Java Component in ETL Flow" src="http://1.bp.blogspot.com/-AuXLtbyvurk/VCMQTRArekI/AAAAAAAAWCk/_qNXoURYSVY/s480/mongo-read-empty-java-write-csv.PNG" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Pentaho Data Integration Tool (PDI) is mainly used for Extraction, Transformation, Load (ETL). They have their own &lt;a class="reference external" href="http://wiki.pentaho.com/display/EAI/Pentaho+Data+Integration+Steps"&gt;components&lt;/a&gt; to do basic and advanced ETL operations.&lt;/p&gt;
+&lt;div class="section" id="install"&gt;
+&lt;h2&gt;&lt;strong&gt;Install&lt;/strong&gt;&lt;/h2&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Download and Extract of &lt;a class="reference external" href="http://community.pentaho.com/projects/data-integration/"&gt;Community edition&lt;/a&gt; of PDI.&lt;/li&gt;
+&lt;li&gt;Extract the downloaded zip file as data-integration.&lt;/li&gt;
+&lt;li&gt;You need Java in your machine for PDI Tool to run.&lt;/li&gt;
+&lt;li&gt;To run PDI open spoon.bat in windows.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Here PDI / Pentaho Data Integration Tool / Spoon / Kettle all are mean same.&lt;/p&gt;
+&lt;p&gt;You can run your own java code as a component in the ETL flow. For that have the component called &lt;a class="reference external" href="http://wiki.pentaho.com/display/EAI/User+Defined+Java+Class"&gt;User Defined Java Class&lt;/a&gt;. Absolutely you will use external classes or jar's in your java component. In this post will guide you to load those external jar's while pentaho loads.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="configure"&gt;
+&lt;h2&gt;Configure&lt;/h2&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Create &lt;tt class="docutils literal"&gt;libext&lt;/tt&gt; folder with in data-integration.&lt;/li&gt;
+&lt;li&gt;Backup your &lt;tt class="docutils literal"&gt;launcher.properties&lt;/tt&gt; file with in &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;data-integration/launcher&lt;/span&gt;&lt;/tt&gt; folder.&lt;/li&gt;
+&lt;li&gt;Then save below as launcher.properties in that folder&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;main=org.pentaho.di.ui.spoon.Spoon
+libraries=../test:../lib:../libswt:../libext
+classpath=../:../ui:../ui/images:../lib:../libext
+
+system-property.pentaho.installed.licenses.file=${PENTAHO_INSTALLED_LICENSE_PATH}
+&lt;/pre&gt;&lt;/div&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Now copy your external / third party jars into libext folder&lt;/li&gt;
+&lt;li&gt;Now start the spoon.bat&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="section" id="my-setup"&gt;
+&lt;h3&gt;My setup&lt;/h3&gt;
+&lt;p&gt;OS - Windows 7 64 bit&lt;/p&gt;
+&lt;p&gt;Java - Java 1.7.0_45 64 bit&lt;/p&gt;
+&lt;p&gt;PDI - pdi-ce-5.1.0.0-752.zip&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="note"&gt;
+&lt;h3&gt;Note&lt;/h3&gt;
+&lt;p&gt;Before adding any jar into libext have a look into &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;data-integration/lib&lt;/span&gt;&lt;/tt&gt;. If the jar is already there you can directly use that.&lt;/p&gt;
+&lt;p&gt;Using user defined class in your flow leads to increase your process time. So use that if you really need it. Refer &lt;a class="reference external" href="https://twitter.com/arulrajnet/status/514792905127370752"&gt;https://twitter.com/arulrajnet/status/514792905127370752&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</summary><category term="BI Tools"></category><category term="java"></category><category term="pentaho"></category><category term="how to"></category><category term="Tools"></category></entry></feed>

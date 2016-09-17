@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Arul Blog</title><link href="http://www.arulraj.net/" rel="alternate"></link><link href="http://www.arulraj.net/feeds/tag/video-streaming.atom.xml" rel="self"></link><id>http://www.arulraj.net/</id><updated>2013-11-21T11:09:00+05:30</updated><entry><title>Video On Demand (VOD) for red5 0.8.0 server</title><link href="http://www.arulraj.net/2013/11/video-on-demand-vod-for-red5-0-8-0-server.html" rel="alternate"></link><published>2013-11-21T11:09:00+05:30</published><author><name>arul</name></author><id>tag:www.arulraj.net,2013-11-21:2013/11/video-on-demand-vod-for-red5-0-8-0-server.html</id><summary type="html">&lt;div class="section" id="vod-for-old-red5-servers"&gt;
+&lt;h2&gt;VOD for old red5 servers&lt;/h2&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://1.bp.blogspot.com/-wD-fNduMIIM/Uo4vprkeTvI/AAAAAAAAVdE/5-49LcM-0Vk/s1600/red5-vod.png"&gt;&lt;img alt="VOD app" src="http://1.bp.blogspot.com/-wD-fNduMIIM/Uo4vprkeTvI/AAAAAAAAVdE/5-49LcM-0Vk/s320/red5-vod.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Nowadays video on demand application available in latest red5 servers.
+The vod webapp is not available in &amp;nbsp;old version less than red5-1.0.0.
+Here I will give you the link to download for vod app for older red5.&lt;/p&gt;
+&lt;p&gt;Download vod webapp &lt;a class="reference external" href="http://files.arulraj.net/code/java/red5/vod.zip"&gt;vod.zip&lt;/a&gt;&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Download the above zip file&lt;/li&gt;
+&lt;li&gt;Extract the zip file&lt;/li&gt;
+&lt;li&gt;Copy the vod folder into webapps folder of your red5&lt;/li&gt;
+&lt;li&gt;Start the server&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Note: This app only works with 0.8.0, 0.9.0 and 0.9.1 versions of red5.&lt;/p&gt;
+&lt;/div&gt;
+</summary><category term="red5"></category><category term="video streaming"></category><category term="Flash"></category><category term="Programming"></category></entry></feed>

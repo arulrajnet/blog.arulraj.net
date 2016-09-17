@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Arul Blog</title><link href="http://www.arulraj.net/" rel="alternate"></link><link href="http://www.arulraj.net/feeds/category/proxy.atom.xml" rel="self"></link><id>http://www.arulraj.net/</id><updated>2015-11-21T11:31:49+05:30</updated><entry><title>PixelServ using Nginx</title><link href="http://www.arulraj.net/2015/11/pixelserv-using-nginx.html" rel="alternate"></link><published>2015-11-21T11:31:49+05:30</published><author><name>arul</name></author><id>tag:www.arulraj.net,2015-11-21:2015/11/pixelserv-using-nginx.html</id><summary type="html">&lt;p&gt;Hope you know about &lt;a class="reference external" href="http://proxytunnel.sourceforge.net/pixelserv.php"&gt;pixelserv&lt;/a&gt;. It is a webserver which will always response 1x1 transparent gif image for all kind of requests. Mainly used in adblocking and proxy environmental.&lt;/p&gt;
+&lt;p&gt;In this setup I am going to serve 1x1 pixel using nginx server.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Install nginx&lt;/strong&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo apt-get install nginx -y
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;Configuration&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;changing &lt;tt class="docutils literal"&gt;/etc/nginx/nginx.conf&lt;/tt&gt; as below&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="err"&gt;user&lt;/span&gt; &lt;span class="err"&gt;nginx;&lt;/span&gt;
+&lt;span class="err"&gt;worker_processes&lt;/span&gt; &lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="err"&gt;;&lt;/span&gt;
+
+&lt;span class="err"&gt;error_log&lt;/span&gt;  &lt;span class="err"&gt;/dev/stdout;&lt;/span&gt;
+&lt;span class="err"&gt;pid&lt;/span&gt;        &lt;span class="err"&gt;/var/run/nginx.pid;&lt;/span&gt;
+
+&lt;span class="err"&gt;events&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="err"&gt;worker_connections&lt;/span&gt; &lt;span class="err"&gt;1024;&lt;/span&gt; &lt;span class="p"&gt;}&lt;/span&gt;
+
+&lt;span class="err"&gt;http&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+
+    &lt;span class="err"&gt;log_format&lt;/span&gt;  &lt;span class="err"&gt;main&lt;/span&gt;  &lt;span class="err"&gt;&amp;#39;$remote_addr&lt;/span&gt; &lt;span class="err"&gt;-&lt;/span&gt; &lt;span class="err"&gt;$remote_user&lt;/span&gt; &lt;span class="err"&gt;[$time_local]&lt;/span&gt; &lt;span class="nt"&gt;&amp;quot;$request&amp;quot;&lt;/span&gt; &lt;span class="err"&gt;&amp;#39;&lt;/span&gt;
+                      &lt;span class="err"&gt;&amp;#39;$status&lt;/span&gt; &lt;span class="err"&gt;$body_bytes_sent&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;$http_referer&amp;quot;&lt;/span&gt; &lt;span class="err"&gt;&amp;#39;&lt;/span&gt;
+                      &lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;$http_user_agent&amp;quot;&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;$http_x_forwarded_for&amp;quot;&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;;&lt;/span&gt;
+
+      &lt;span class="err"&gt;access_log&lt;/span&gt;  &lt;span class="err"&gt;/dev/stdout;&lt;/span&gt;
+      &lt;span class="err"&gt;sendfile&lt;/span&gt;        &lt;span class="err"&gt;on;&lt;/span&gt;
+      &lt;span class="err"&gt;keepalive_timeout&lt;/span&gt;  &lt;span class="mi"&gt;65&lt;/span&gt;&lt;span class="err"&gt;;&lt;/span&gt;
+
+      &lt;span class="err"&gt;server&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+        &lt;span class="err"&gt;listen&lt;/span&gt; &lt;span class="err"&gt;80&lt;/span&gt; &lt;span class="err"&gt;default_server;&lt;/span&gt;
+        &lt;span class="err"&gt;listen&lt;/span&gt; &lt;span class="err"&gt;[::]:80&lt;/span&gt; &lt;span class="err"&gt;default_server&lt;/span&gt; &lt;span class="err"&gt;ipv6only=on;&lt;/span&gt;
+
+        &lt;span class="err"&gt;#&lt;/span&gt; &lt;span class="err"&gt;Make&lt;/span&gt; &lt;span class="err"&gt;site&lt;/span&gt; &lt;span class="err"&gt;accessible&lt;/span&gt; &lt;span class="err"&gt;from&lt;/span&gt; &lt;span class="err"&gt;http://localhost/&lt;/span&gt;
+        &lt;span class="err"&gt;server_name&lt;/span&gt; &lt;span class="err"&gt;_;&lt;/span&gt;
+
+        &lt;span class="err"&gt;location&lt;/span&gt; &lt;span class="err"&gt;/&lt;/span&gt; &lt;span class="err"&gt;{&lt;/span&gt;
+          &lt;span class="err"&gt;empty_gif;&lt;/span&gt;
+        &lt;span class="p"&gt;}&lt;/span&gt;
+      &lt;span class="p"&gt;}&lt;/span&gt;
+&lt;span class="err"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;Check&lt;/strong&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo service nginx restart
+curl http://localhost/
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;You will get binary GIF blob in terminal.&lt;/p&gt;
+&lt;div class="figure align-center"&gt;
+&lt;img alt="pixelserv using nginx" src="/assets/images/nginx-pixelserv.png" /&gt;
+&lt;/div&gt;
+&lt;!-- NGINX pixelserv --&gt;
+&lt;p&gt;&lt;strong&gt;Using Docker&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;docker-compose.yml for that is&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;pixelserv:
+  image: nginx:1.9.6
+  ports:
+    - 80:80
+  volumes:
+    - ./nginx.conf:/etc/nginx/nginx.conf
+  hostname: pixelserv
+&lt;/pre&gt;&lt;/div&gt;
+</summary><category term="proxy"></category><category term="adblock"></category><category term="nginx"></category></entry></feed>

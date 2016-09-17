@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Arul Blog</title><link href="http://www.arulraj.net/" rel="alternate"></link><link href="http://www.arulraj.net/feeds/tag/fedora.atom.xml" rel="self"></link><id>http://www.arulraj.net/</id><updated>2010-01-19T08:48:00+05:30</updated><entry><title>How to install mplayer on fedora ..?</title><link href="http://www.arulraj.net/2010/01/how-to-install-mplayer-on-fedora.html" rel="alternate"></link><published>2010-01-19T08:48:00+05:30</published><author><name>arul</name></author><id>tag:www.arulraj.net,2010-01-19:2010/01/how-to-install-mplayer-on-fedora.html</id><summary type="html">&lt;p&gt;&lt;strong&gt;How to install mplayer on fedora&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="http://www.haifux.org/lectures/134/lecture/images/mplayer.png" src="http://www.haifux.org/lectures/134/lecture/images/mplayer.png" /&gt;&lt;/p&gt;
+&lt;p&gt;When i try to install mplayer-1.0-0.102.20080903svn.fc10.src.rpm in fedora i got this error. i download this file from &lt;a class="reference external" href="http://download1.rpmfusion.org/free/fedora/releases/10/Everything/source/SRPMS/repoview/index.html"&gt;rpmfusion&lt;/a&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;[root@localhost Media]# rpm -ivh mplayer-1.0-0.102.20080903svn.fc10.src.rpm
+warning: mplayer-1.0-0.102.20080903svn.fc10.src.rpm: Header V3 DSA signature: NOKEY, key ID 49c8885a1:mplayer
+warning: user mockbuild does not exist - using root
+warning: group mockbuild does not exist - using root
+warning: user mockbuild does not exist - using root
+warning: group mockbuild does not exist - using root
+warning: user mockbuild does not exist - using root
+warning: group mockbuild does not exist - using root
+warning: user mockbuild does not exist - using root
+warning: group mockbuild does not exist - using root
+########################################### [100%]
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;I have the same problem when i try to install wine-1.0.1-1.el4.i386.rpm&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;I have not internet connection in my home pc. so what to do..?&lt;/strong&gt;&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Go to &amp;quot;/usr/src/redhat/SOURCES&amp;quot; folder there is a file called mplayer-export-2008-09-03.tar.bz2&lt;/li&gt;
+&lt;li&gt;Extract the file and configure it then make and make install.&lt;/li&gt;
+&lt;li&gt;Now i have mplayer in my home pc&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;[root@localhost Movies]# mplayer 2012.avi
+MPlayer dev-SVN-r27514 (C) 2000-2008 MPlayer Team
+CPU: Intel(R) Pentium(R) 4 CPU 3.00GHz (Family: 15, Model: 4, Stepping: 3)
+CPUflags: MMX: 1 MMX2: 1 3DNow: 0 3DNow2: 0 SSE: 1 SSE2: 1
+Compiled for x86 CPU with extensions: MMX MMX2 SSE SSE2
+Playing 2012.avi.
+AVI file format detected.
+[aviheader] Video stream found, -vid 0
+[aviheader] Audio stream found, -aid 1
+AVI: ODML: Building ODML index (2 superindexchunks).
+VIDEO: [XVID] 608x272 12bpp 29.970 fps 674.6 kbps (82.4 kbyte/s)
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://3.bp.blogspot.com/_X5tq9y9xv2s/S1W9z-cISFI/AAAAAAAAAHg/LW8cMmLo91E/s1600-h/Screenshot-MPlayer.png"&gt;&lt;img alt="image1" src="http://3.bp.blogspot.com/_X5tq9y9xv2s/S1W9z-cISFI/AAAAAAAAAHg/LW8cMmLo91E/s400/Screenshot-MPlayer.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;when i play the avi file using mplayer it does not play the video only
+play the audio&lt;/p&gt;
+&lt;p&gt;Now i changed the command&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;[root@localhost Movies]# mplayer -vo x11 -ao alsa 2012.avi
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Now working fine&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://4.bp.blogspot.com/_X5tq9y9xv2s/S1W90LG8hUI/AAAAAAAAAHo/M8yz1QPT8cs/s1600-h/Screenshot-MPlayer-1.png"&gt;&lt;img alt="image2" src="http://4.bp.blogspot.com/_X5tq9y9xv2s/S1W90LG8hUI/AAAAAAAAAHo/M8yz1QPT8cs/s400/Screenshot-MPlayer-1.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+</summary><category term="Fedora"></category><category term="Linux"></category></entry><entry><title>Why i am moving to Linux in my home pc</title><link href="http://www.arulraj.net/2010/01/why-i-am-moving-to-linux-in-my-home-pc.html" rel="alternate"></link><published>2010-01-19T08:32:00+05:30</published><author><name>arul</name></author><id>tag:www.arulraj.net,2010-01-19:2010/01/why-i-am-moving-to-linux-in-my-home-pc.html</id><summary type="html">&lt;p&gt;&lt;strong&gt;Why i am moving to Linux in my home pc&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://2.bp.blogspot.com/_X5tq9y9xv2s/S1W9zR_h0gI/AAAAAAAAAHY/4OaNP6AamFo/s1600-h/fedora.png"&gt;&lt;img alt="image0" src="http://2.bp.blogspot.com/_X5tq9y9xv2s/S1W9zR_h0gI/AAAAAAAAAHY/4OaNP6AamFo/s400/fedora.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;hr class="docutils" /&gt;
+&lt;p&gt;For the past 3 years i have used pirated windows xp os in my home pc.
+But i have faced lot of problems like system very slow, Blue screen and
+more hectic thing is virus softwars. So i want to move any red-hat
+family, because i have some good experience with red-hat family os's
+like centOS rather then Ubuntu. I have the CentOS 5.0 dvd that was
+downloaded before an year. When install using that dvd Testing Disk is
+not completed some files are corrupted. I have fedora 7 dvd then
+successfully installed on Intel(R) Pentium(R) 4 CPU 3.00GHz 2 cpu
+processor Intel 815 motherborad. I have the softwares for windows os
+only not for redhat rpm files.At that time
+&lt;a class="reference external" href="http://www.winehq.org/"&gt;wine&lt;/a&gt;(run Windows programs on Unix)
+software is help me a lot. I installed Openoffice and vlc using wine
+those are working fine. The &lt;a class="reference external" href="http://www.mplayerhq.hu/"&gt;mplayer&lt;/a&gt;and
+&lt;a class="reference external" href="http://ffmpeg.org/"&gt;ffmpeg&lt;/a&gt; are used for my video and audio
+manipulation and playing. gnome-mplayer gives me the graphical toolbar
+option for mplayer. I used &lt;a class="reference external" href="http://www.gimp.org/"&gt;GIMP&lt;/a&gt;for image
+manipulation. I have the Netbeans distibution dvd it has java6 sdk and
+netbeans it enable me to develop a jsp pages and other things.
+Opensource softwares are rocking then why i used that pirated os's
+(windows).. Till now i am not face any critical problems on
+&lt;a class="reference external" href="http://fedoraproject.org/"&gt;fedora&lt;/a&gt;. Thanks to the fedora team.&lt;/p&gt;
+</summary><category term="Fedora"></category><category term="Linux"></category><category term="ubuntu"></category><category term="windows"></category></entry></feed>

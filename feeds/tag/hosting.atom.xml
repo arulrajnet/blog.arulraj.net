@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Arul Blog</title><link href="http://www.arulraj.net/" rel="alternate"></link><link href="http://www.arulraj.net/feeds/tag/hosting.atom.xml" rel="self"></link><id>http://www.arulraj.net/</id><updated>2010-03-08T04:36:00+05:30</updated><entry><title>How to add www to your domain name</title><link href="http://www.arulraj.net/2010/03/how-to-add-www-to-your-domain-name.html" rel="alternate"></link><published>2010-03-08T04:36:00+05:30</published><author><name>arul</name></author><id>tag:www.arulraj.net,2010-03-08:2010/03/how-to-add-www-to-your-domain-name.html</id><summary type="html">&lt;p&gt;&lt;strong&gt;How to add www to your domain name&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://3.bp.blogspot.com/_X5tq9y9xv2s/S5TOlrA6HBI/AAAAAAAAAMo/46plgLZv_mw/s1600-h/htaccess.gif"&gt;&lt;img alt="image0" src="http://3.bp.blogspot.com/_X5tq9y9xv2s/S5TOlrA6HBI/AAAAAAAAAMo/46plgLZv_mw/s400/htaccess.gif" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Before going to the htaccess . You need to answer my question, The question is&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Do you think arulraj.net and www.arulraj.net both are different domain name or same ..?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;ya. we (humans) know both are points the same web page. But the search
+engine robots assume this both are different one. As a result duplicate
+results in the search results. To avoid this problem you need to develop
+search engine friendly web pages.&lt;/p&gt;
+&lt;p&gt;Now the topic,&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;How to add www in front of your domain name ..?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;For this you are aware of &lt;a class="reference external" href="http://en.wikipedia.org/wiki/Htaccess"&gt;htaccess&lt;/a&gt; file and where it is located.&lt;/p&gt;
+&lt;p&gt;htaccess - Hypertext Access&lt;/p&gt;
+&lt;p&gt;The file located in root directory of your domain name .&lt;/p&gt;
+&lt;p&gt;For example : &lt;em&gt;/home/&amp;lt;username&amp;gt;/public_html/&amp;lt;domain dir name&amp;gt;/.htaccess&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;That above structure in Bluehost.Now add this line to your .htaccess
+file&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;RewriteEngine On
+RewriteBase /
+RewriteCond %{HTTP\_HOST} ^sharedaa\\.com$ [NC]
+RewriteRule ^(.*)$ http://www.sharedaa.com/$1 [R=301,L]
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Now anyone type sharedaa.com in browser it is automatically redirect to
+www.sharedaa.com&lt;/p&gt;
+&lt;p&gt;How to redirect to index page if the page is not available ..?&lt;/p&gt;
+&lt;p&gt;One of your page is indexed in search engine. You remove the page, at
+this time you want to redirect to home page. how to do this.Add the
+below line to your htaccess file.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.php [L]
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;The final .htaccess file will be&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;# Use PHP5CGI as default
+AddHandler application/x-httpd-php5 .php
+
+# BEGIN
+&amp;lt;IfModule mod_rewrite.c&amp;gt;
+RewriteEngine On
+RewriteBase /
+RewriteCond %{HTTP_HOST} ^sharedaa\.com$ [NC]
+RewriteRule ^(.\*)$ http://www.sharedaa.com/$1 [R=301,L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.php [L]
+&amp;lt;/IfModule&amp;gt;
+
+# END
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;How to add www to your wordpress blog ..?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Go to Setting --&amp;gt; General setting page and in the Blog Address text box enter your domain name with www . for example &lt;a class="reference external" href="http://www.sharedaa.com"&gt;http://www.sharedaa.com&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://1.bp.blogspot.com/_X5tq9y9xv2s/S5TVR_LfRuI/AAAAAAAAAMw/sOJ7-_iVg1Q/s1600-h/wordpress-www.jpg"&gt;&lt;img alt="image1" src="http://1.bp.blogspot.com/_X5tq9y9xv2s/S5TVR_LfRuI/AAAAAAAAAMw/sOJ7-_iVg1Q/s400/wordpress-www.jpg" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Reference : &lt;a class="reference external" href="http://www.thesitewizard.com/apache/index.shtml"&gt;http://www.thesitewizard.com/apache/index.shtml&lt;/a&gt;&lt;/p&gt;
+</summary><category term="Browser"></category><category term="php"></category><category term="how to"></category><category term="hosting"></category></entry></feed>

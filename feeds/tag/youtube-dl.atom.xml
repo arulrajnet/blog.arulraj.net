@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Arul Blog</title><link href="http://www.arulraj.net/" rel="alternate"></link><link href="http://www.arulraj.net/feeds/tag/youtube-dl.atom.xml" rel="self"></link><id>http://www.arulraj.net/</id><updated>2015-11-21T12:14:38+05:30</updated><entry><title>Download any videos in android using youtube-dl</title><link href="http://www.arulraj.net/2015/11/download-any-videos-in-android-using-youtube-dl.html" rel="alternate"></link><published>2015-11-21T12:14:38+05:30</published><author><name>Arul</name></author><id>tag:www.arulraj.net,2015-11-21:2015/11/download-any-videos-in-android-using-youtube-dl.html</id><summary type="html">&lt;p&gt;There are lot of app there in google play store to download video youtube. All are claiming it has all the features and so and so... But the reality is, they are not working in all the times.&lt;/p&gt;
+&lt;p&gt;In my laptop I am using &lt;a class="reference external" href="https://rg3.github.io/youtube-dl/"&gt;youtube_dl&lt;/a&gt; to download videos. Its working for most of the video sites including youtube, vimeo and etc., I want setup that in my android mobile. So here is the how to do...&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Steps&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Install python on android&lt;/li&gt;
+&lt;li&gt;Install youtube-dl&lt;/li&gt;
+&lt;li&gt;Download a video using youtube-dl&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;div class="section" id="install-python"&gt;
+&lt;h2&gt;Install Python&lt;/h2&gt;
+&lt;p&gt;Install &lt;a class="reference external" href="https://play.google.com/store/apps/details?id=com.hipipal.qpyplus&amp;amp;hl=en"&gt;QPython&lt;/a&gt; from google app store to use python in android.&lt;/p&gt;
+&lt;div class="figure align-center"&gt;
+&lt;img alt="QPython in Google play store" src="/assets/images/QPython-Google-Play.png" /&gt;
+&lt;/div&gt;
+&lt;!-- Installing QPython from Google play store. --&gt;
+&lt;/div&gt;
+&lt;div class="section" id="install-youtube-dl"&gt;
+&lt;h2&gt;Install youtube-dl&lt;/h2&gt;
+&lt;p&gt;Goto QPython Dashboard. Slide left from home screen to go dashboard.&lt;/p&gt;
+&lt;div class="figure align-center"&gt;
+&lt;img alt="QPython Dashboard" src="/assets/images/QPython-dashboard.png" /&gt;
+&lt;/div&gt;
+&lt;p&gt;Click Libraries and &amp;quot;pip console&amp;quot;&lt;/p&gt;
+&lt;div class="figure align-center"&gt;
+&lt;img alt="QPython pip console" src="/assets/images/QPython-pip-console.png" /&gt;
+&lt;/div&gt;
+&lt;p&gt;In the console &lt;tt class="docutils literal"&gt;pip install &lt;span class="pre"&gt;-U&lt;/span&gt; &lt;span class="pre"&gt;youtube-dl&lt;/span&gt;&lt;/tt&gt;&lt;/p&gt;
+&lt;div class="figure align-center"&gt;
+&lt;img alt="QPython android install youtube-dl" src="/assets/images/QPython-Installing-youtube-dl.png" /&gt;
+&lt;/div&gt;
+&lt;p&gt;To validate the youtube downloader in android &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;youtube-dl&lt;/span&gt; &lt;span class="pre"&gt;--version&lt;/span&gt;&lt;/tt&gt;&lt;/p&gt;
+&lt;div class="figure align-center"&gt;
+&lt;img alt="QPython android install youtube-dl" src="/assets/images/QPython-youtube-dl-version.jpeg" /&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="download-video"&gt;
+&lt;h2&gt;Download Video&lt;/h2&gt;
+&lt;p&gt;To download video, Goto pip console&lt;/p&gt;
+&lt;p&gt;Then &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;youtube-dl&lt;/span&gt; &lt;span class="pre"&gt;-o&lt;/span&gt; Chammak_Challo.mp4 &lt;span class="pre"&gt;https://www.youtube.com/watch?v=yh2K9VlGj9Q&lt;/span&gt;&lt;/tt&gt;&lt;/p&gt;
+&lt;p&gt;The argument &amp;quot;-o NAME_OF_FILE.mp4&amp;quot; is required field.&lt;/p&gt;
+&lt;p&gt;From youtube&lt;/p&gt;
+&lt;div class="figure align-center"&gt;
+&lt;img alt="QPython android install youtube-dl" src="/assets/images/Qpython-downloding-from-youtube.jpeg" /&gt;
+&lt;/div&gt;
+&lt;p&gt;From facebook&lt;/p&gt;
+&lt;div class="figure align-center"&gt;
+&lt;img alt="QPython android install youtube-dl" src="/assets/images/Qpython-downloding-from-facebook.png" /&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</summary><category term="streaming"></category><category term="mobile"></category><category term="youtube-dl"></category><category term="android"></category></entry><entry><title>Stream any video into VLC</title><link href="http://www.arulraj.net/2015/09/stream-any-video-into-vlc.html" rel="alternate"></link><published>2015-09-11T22:07:12+05:30</published><author><name>arul</name></author><id>tag:www.arulraj.net,2015-09-11:2015/09/stream-any-video-into-vlc.html</id><summary type="html">&lt;p&gt;You can stream any online like youtube, vimeo, facebook, dailymotion, etc., video into your VLC / mplayer using youtube-dl. Here I will explain how to do that.&lt;/p&gt;
+&lt;div class="figure align-center"&gt;
+&lt;a class="reference external image-reference" href="http://1.bp.blogspot.com/-oE3JlsHUyPE/VfMISTKA3TI/AAAAAAAAWWY/7oGiGoyFx5Q/s1600/stream-to-vlc.png"&gt;&lt;img alt="Streaming in VLC using youtube-dl" src="http://1.bp.blogspot.com/-oE3JlsHUyPE/VfMISTKA3TI/AAAAAAAAWWY/7oGiGoyFx5Q/s320/stream-to-vlc.png" /&gt;&lt;/a&gt;
+&lt;/div&gt;
+&lt;p&gt;First Install latest greatest youtube-dl&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo pip install --upgrade youtube-dl
+OR
+sudo apt-get install youtube-dl
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;As per todoy the version is 2015.09.09. To get version &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;youtube-dl&lt;/span&gt; &lt;span class="pre"&gt;--version&lt;/span&gt;&lt;/tt&gt;&lt;/p&gt;
+&lt;p&gt;Here is the command to stream to vlc&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;youtube-dl -o - &lt;span class="s2"&gt;&amp;quot;http://your.media/url&amp;quot;&lt;/span&gt; &lt;span class="p"&gt;|&lt;/span&gt; vlc -
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;You can also set up a function in your ~/.bash_aliases file like&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;function&lt;/span&gt; streamer&lt;span class="o"&gt;()&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+  youtube-dl -o - &lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="nv"&gt;$1&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt; &lt;span class="p"&gt;|&lt;/span&gt; vlc -
+&lt;span class="o"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Referred from &lt;a class="reference external" href="https://github.com/rg3/youtube-dl/issues/2124#issuecomment-32429104"&gt;https://github.com/rg3/youtube-dl/issues/2124#issuecomment-32429104&lt;/a&gt;&lt;/p&gt;
+</summary><category term="streaming"></category><category term="vlc"></category><category term="youtube-dl"></category></entry></feed>

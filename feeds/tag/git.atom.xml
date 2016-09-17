@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Arul Blog</title><link href="http://www.arulraj.net/" rel="alternate"></link><link href="http://www.arulraj.net/feeds/tag/git.atom.xml" rel="self"></link><id>http://www.arulraj.net/</id><updated>2012-01-13T02:16:00+05:30</updated><entry><title>How to copy commits from one branch to another in GIT</title><link href="http://www.arulraj.net/2012/01/how-to-copy-commits-from-one-branch-to-another-in-git.html" rel="alternate"></link><published>2012-01-13T02:16:00+05:30</published><author><name>arul</name></author><id>tag:www.arulraj.net,2012-01-13:2012/01/how-to-copy-commits-from-one-branch-to-another-in-git.html</id><summary type="html">&lt;p&gt;I have GIT version management tool for versioning&amp;nbsp;and using gitolite for user and project management within git. Will tell about this gitolite story in a seperate post.&lt;/p&gt;
+&lt;p&gt;Here we are going to learn how to copy commits from your master to branch.&lt;/p&gt;
+&lt;p&gt;Basically I am a linux enthusiast so I will explain everthing here in commends. Feel free to use git commends 😄&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;First you have to check where you are now.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;git branch -a
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;That &lt;strong&gt;*&lt;/strong&gt; will where you are. Now I am in Master branch.&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://4.bp.blogspot.com/-cOUKcHXwslk/Tw_aT7ePh7I/AAAAAAAAIy8/8XFZMPUOZhg/s1600/git-branch.PNG"&gt;&lt;img alt="image0" src="http://4.bp.blogspot.com/-cOUKcHXwslk/Tw_aT7ePh7I/AAAAAAAAIy8/8XFZMPUOZhg/s400/git-branch.PNG" /&gt;&lt;/a&gt; GIT Branch&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Create a new branch and move to that created branch&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;git branch &amp;lt;branch_name&amp;gt;
+git checkout &amp;lt;branch_name&amp;gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;If you are already created branch. No need create branch just git checkout&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Once again confirm Are you in correct branch.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;git branch -a
+&lt;/pre&gt;&lt;/div&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Pick up the commits to this branch&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;git cherry-pick &amp;lt;first_some_character_of_commit_hash&amp;gt;
+Ex: git cherry-pick d1c4b9a5a21e3d09cae
+&lt;/pre&gt;&lt;/div&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;How to get the hash tag of commits&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;git log&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://1.bp.blogspot.com/-2vSzYrj_sfk/Tw_nLsAJSGI/AAAAAAAAIzU/k_60_quiZbE/s1600/git-log.PNG"&gt;&lt;img alt="image1" src="http://1.bp.blogspot.com/-2vSzYrj_sfk/Tw_nLsAJSGI/AAAAAAAAIzU/k_60_quiZbE/s400/git-log.PNG" /&gt;&lt;/a&gt; GIT Log&lt;/p&gt;
+&lt;p&gt;You can get the has tag from here.&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Then Switch back to master&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;git checkout master
+&lt;/pre&gt;&lt;/div&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;For push this branch to remote server&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;git push origin &amp;lt;branch_name&amp;gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;For delete the locally created branch&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;git branch -D &amp;lt;branch_name&amp;gt;
+&lt;/pre&gt;&lt;/div&gt;
+</summary><category term="GIT"></category><category term="Linux"></category></entry></feed>

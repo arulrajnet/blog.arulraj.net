@@ -1,0 +1,656 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Arul Blog</title><link href="http://www.arulraj.net/" rel="alternate"></link><link href="http://www.arulraj.net/feeds/tag/programming.atom.xml" rel="self"></link><id>http://www.arulraj.net/</id><updated>2014-10-03T12:12:00+05:30</updated><entry><title>Fix: Pycharm Failed to create JVM</title><link href="http://www.arulraj.net/2014/10/fix-pycharm-failed-to-create-jvm.html" rel="alternate"></link><published>2014-10-03T12:12:00+05:30</published><author><name>arul</name></author><id>tag:www.arulraj.net,2014-10-03:2014/10/fix-pycharm-failed-to-create-jvm.html</id><summary type="html">&lt;p&gt;&lt;strong&gt;How to Run your Pycharm IDE under 64bit JVM..?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://4.bp.blogspot.com/-llWB2o4A5Ww/VC7ZhgH-j5I/AAAAAAAAWC4/wbtlkiYONLc/s1600/pycharm-error-code.PNG"&gt;&lt;img alt="Pycharm Error Code -4" class="align-middle" src="http://4.bp.blogspot.com/-llWB2o4A5Ww/VC7ZhgH-j5I/AAAAAAAAWC4/wbtlkiYONLc/s320/pycharm-error-code.PNG" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;What is the real issue..?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;First you should to know all jetbrains IDE's are written in Java. The issue because of your pycharm needs more memory to process your projects and files at the backend Java requires memory. But its not able to acquire that much of memory. So its closed obtrubtly.&lt;/p&gt;
+&lt;p&gt;Everyone will say increase the JVM/Java max heap size in &lt;tt class="docutils literal"&gt;pycharm.properties&lt;/tt&gt; file. Then restart the pycharm. But thats not a permanent solution.&lt;/p&gt;
+&lt;p&gt;The real problem is pycharm internally uses 32bit jvm which comes with the installer package. The 32 bit JVM can allocate maximum 2GB of space only.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;What is the solution for it..?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;So the fix is you have to start your pycharm with 64bit JVM. Here we will see how to start with 64bit JVM. Three steps to fix that&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Set the 64bit SDK as environmental variable&lt;/li&gt;
+&lt;li&gt;create properties for 64bit version&lt;/li&gt;
+&lt;li&gt;start the ide from .bat file&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Set 64Bit SDK:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Before setting environmental variable you have to find out which version of java you are using. To find out Open Command Prompt → Then run the below command&lt;/p&gt;
+&lt;blockquote&gt;
+java -version&lt;/blockquote&gt;
+&lt;p&gt;It should have the &amp;quot;Java Hotspot(TM) 64-Bit Server&amp;quot; line in the output.
+If there is no Bit information then its 32bit java. Then proceed furthur
+you have to download and install the 64bit JDK from &lt;a class="reference external" href="http://java.com/"&gt;http://java.com/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://4.bp.blogspot.com/-dQGv7xsG25s/VC7ZizVLThI/AAAAAAAAWDI/55dvR_UwtM0/s1600/pycharm-find-java-version.PNG"&gt;&lt;img alt="Java Version" src="http://4.bp.blogspot.com/-dQGv7xsG25s/VC7ZizVLThI/AAAAAAAAWDI/55dvR_UwtM0/s320/pycharm-find-java-version.PNG" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Then open Control Panel&amp;nbsp;→ Edit Environmental Variable for&amp;nbsp;Your Account&lt;/p&gt;
+&lt;p&gt;In User variables set &lt;tt class="docutils literal"&gt;PYCHARM_SDK&lt;/tt&gt; and path will be your 64 bit java
+version&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://2.bp.blogspot.com/-8K20N9lH9SQ/VC7ZhrcJ7II/AAAAAAAAWC8/Av1sErElf-c/s1600/pycharm-env.PNG"&gt;&lt;img alt="PYCHARM_JDK" src="http://2.bp.blogspot.com/-8K20N9lH9SQ/VC7ZhrcJ7II/AAAAAAAAWC8/Av1sErElf-c/s320/pycharm-env.PNG" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Create properties file:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;For 64bit you have to create separate properties file for that. &amp;nbsp;Create
+file named as &lt;tt class="docutils literal"&gt;pycharm64.exe.vmoptions&lt;/tt&gt; in the root directory of IDE&lt;/p&gt;
+&lt;!-- code-block::text
+-server
+-Xms256m
+-Xmx2048m
+-XX:MaxPermSize=512m
+-XX:ReservedCodeCacheSize=128m
+-ea
+-Dsun.io.useCanonCaches=false
+-Djava.net.preferIPv4Stack=true
+-Djsse.enableSNIExtension=false
+-XX:+UseCodeCacheFlushing
+-XX:+UseConcMarkSweepGC
+-XX:SoftRefLRUPolicyMSPerMB=100 --&gt;
+&lt;p&gt;&lt;strong&gt;To start:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;IDE should start with the pycharm.bat file.&lt;/p&gt;
+&lt;p&gt;This fix will&amp;nbsp;work for&amp;nbsp;other IDE such as WebStrom, PhpStrom, IntelliJ
+and RubyMine from jetbrains also.&lt;/p&gt;
+&lt;p&gt;Basically you have to create &lt;tt class="docutils literal"&gt;&amp;lt;product&amp;gt;64.exe.vmoptions&lt;/tt&gt; file. Set the 64bit Java environmental variable for that IDE. Then start the  &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;&amp;lt;product&amp;gt;.bat&lt;/span&gt;&lt;/tt&gt; file&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Environmental Variable for Different product:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;IDEA_JDK for IntelliJ IDEA&lt;/li&gt;
+&lt;li&gt;WEBIDE_JDK for PhpStorm and WebStorm&lt;/li&gt;
+&lt;li&gt;PYCHARM_JDK for PyCharm&lt;/li&gt;
+&lt;li&gt;RUBYMINE_SDK for RubyMine&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;To know about what environmental variable have to use, open
+&lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;&amp;lt;product&amp;gt;.bat&lt;/span&gt;&lt;/tt&gt; file. Then you will get to know.&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://2.bp.blogspot.com/-iTUeJ174ljc/VC7ZjyPDevI/AAAAAAAAWDQ/XhIp6aO88DY/s1600/pycharm-startup-script.PNG"&gt;&lt;img alt="pycharm.bat" src="http://2.bp.blogspot.com/-iTUeJ174ljc/VC7ZjyPDevI/AAAAAAAAWDQ/XhIp6aO88DY/s320/pycharm-startup-script.PNG" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Read More at &lt;a class="reference external" href="https://intellij-support.jetbrains.com/entries/23393413-The-JVM-could-not-be-started-The-main-method-may-have-thrown-an-exception"&gt;intellij Support&lt;/a&gt;&lt;/p&gt;
+</summary><category term="IDE"></category><category term="java"></category><category term="python"></category><category term="programming"></category></entry><entry><title>Video On Demand (VOD) for red5 0.8.0 server</title><link href="http://www.arulraj.net/2013/11/video-on-demand-vod-for-red5-0-8-0-server.html" rel="alternate"></link><published>2013-11-21T11:09:00+05:30</published><author><name>arul</name></author><id>tag:www.arulraj.net,2013-11-21:2013/11/video-on-demand-vod-for-red5-0-8-0-server.html</id><summary type="html">&lt;div class="section" id="vod-for-old-red5-servers"&gt;
+&lt;h2&gt;VOD for old red5 servers&lt;/h2&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://1.bp.blogspot.com/-wD-fNduMIIM/Uo4vprkeTvI/AAAAAAAAVdE/5-49LcM-0Vk/s1600/red5-vod.png"&gt;&lt;img alt="VOD app" src="http://1.bp.blogspot.com/-wD-fNduMIIM/Uo4vprkeTvI/AAAAAAAAVdE/5-49LcM-0Vk/s320/red5-vod.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Nowadays video on demand application available in latest red5 servers.
+The vod webapp is not available in &amp;nbsp;old version less than red5-1.0.0.
+Here I will give you the link to download for vod app for older red5.&lt;/p&gt;
+&lt;p&gt;Download vod webapp &lt;a class="reference external" href="http://files.arulraj.net/code/java/red5/vod.zip"&gt;vod.zip&lt;/a&gt;&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Download the above zip file&lt;/li&gt;
+&lt;li&gt;Extract the zip file&lt;/li&gt;
+&lt;li&gt;Copy the vod folder into webapps folder of your red5&lt;/li&gt;
+&lt;li&gt;Start the server&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Note: This app only works with 0.8.0, 0.9.0 and 0.9.1 versions of red5.&lt;/p&gt;
+&lt;/div&gt;
+</summary><category term="red5"></category><category term="video streaming"></category><category term="Flash"></category><category term="Programming"></category></entry><entry><title>Red5 with Spring MVC</title><link href="http://www.arulraj.net/2012/04/red5-with-spring-mvc.html" rel="alternate"></link><published>2012-04-13T15:55:00+05:30</published><author><name>arul</name></author><id>tag:www.arulraj.net,2012-04-13:2012/04/red5-with-spring-mvc.html</id><summary type="html">&lt;p&gt;&lt;strong&gt;Access Red5 context in spring MVC DispatcherServlet&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://2.bp.blogspot.com/--6PGozKYyQY/T4ieL7Dv2KI/AAAAAAAAOjw/rUknwLPrOlY/s1600/Untitled.png"&gt;&lt;img alt="image0" src="http://2.bp.blogspot.com/--6PGozKYyQY/T4ieL7Dv2KI/AAAAAAAAOjw/rUknwLPrOlY/s320/Untitled.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Before we start, some prerequisites for reader.&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;How Spring MVC works. &lt;a class="reference external" href="http://static.springsource.org/spring/docs/3.0.x/spring-framework-reference/html/mvc.html"&gt;tutorial&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Basic knowledge about red5.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Then only you can understand clearly 😄 . If you don't have, no worries. Having knowledge in core java and servlet is enough&lt;/p&gt;
+&lt;p&gt;Day by day I experienced in Red5. I will explain a useful enhancement about red5. Let's start...&lt;/p&gt;
+&lt;p&gt;Red5 is an open source flash media server. If your webapplication is in the same server you can build some&amp;nbsp;interesting&amp;nbsp;streaming&amp;nbsp;apps by binding your webapp and red5app. But you can not use red5 as a web application server, because by default RTMPServlet support macromedia-fcs (application/x-fcs) content type not http. But Internally Red5 uses Tomcat and Spring. By simple tweaks you can add http support for your red5 application.&lt;/p&gt;
+&lt;p&gt;So I add my own Red5DispatcherServlet in red5app web.xml to handle http request.&lt;/p&gt;
+&lt;p&gt;add this in your web.xml&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nt"&gt;&amp;lt;servlet&amp;gt;&lt;/span&gt;
+  &lt;span class="nt"&gt;&amp;lt;servlet-name&amp;gt;&lt;/span&gt;red5Demo-web&lt;span class="nt"&gt;&amp;lt;/servlet-name&amp;gt;&lt;/span&gt;
+  &lt;span class="nt"&gt;&amp;lt;servlet-class&amp;gt;&lt;/span&gt;com.demo.web.servlet.Red5DispatcherServlet&lt;span class="nt"&gt;&amp;lt;/servlet-class&amp;gt;&lt;/span&gt;
+  &lt;span class="nt"&gt;&amp;lt;init-param&amp;gt;&lt;/span&gt;
+    &lt;span class="nt"&gt;&amp;lt;param-name&amp;gt;&lt;/span&gt;contextConfigLocation&lt;span class="nt"&gt;&amp;lt;/param-name&amp;gt;&lt;/span&gt;
+    &lt;span class="nt"&gt;&amp;lt;param-value&amp;gt;&lt;/span&gt;/WEB-INF/red5Demo-dispatcher-servlet.xml&lt;span class="nt"&gt;&amp;lt;/param-value&amp;gt;&lt;/span&gt;
+  &lt;span class="nt"&gt;&amp;lt;/init-param&amp;gt;&lt;/span&gt;
+&lt;span class="nt"&gt;&amp;lt;/servlet&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;All&amp;nbsp;configurations&amp;nbsp;files in&amp;nbsp;&lt;a class="reference external" href="https://github.com/arulrajnet/red5Demo/tree/master/java/webapp/WEB-INF"&gt;https://github.com/arulrajnet/red5Demo/tree/master/java/webapp/WEB-INF&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;You can use the default spring mvc DispatcherServlet. But problem is you can't access the red5 context from your controller. It means all objects loaded by red5 ContextLoggingListener can't be accessble from your web context. Did you understand...?&lt;/p&gt;
+&lt;p&gt;ok. Usually spring DispatcherServlet creates one web context and sets parents as ApplicationContext loaded by spring mvc ContextLoaderListener. Did you notice in red5app web.xml file we are using red5 own context loader listener. So if you use Spring mvc DispatcherServlet there is no parent context.&lt;/p&gt;
+&lt;p&gt;To override this we have to set red5 ApplicationContext as DispatcherServlet parent context. For that only I have some customization&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Red5DispatcherServlet.java&lt;/strong&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;package&lt;/span&gt; &lt;span class="nn"&gt;com.demo.web.servlet&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;org.red5.logging.Red5LoggerFactory&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;org.slf4j.Logger&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;org.springframework.web.context.WebApplicationContext&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;org.springframework.web.context.support.WebApplicationContextUtils&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;org.springframework.web.servlet.DispatcherServlet&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+
+&lt;span class="kd"&gt;public&lt;/span&gt; &lt;span class="kd"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;Red5DispatcherServlet&lt;/span&gt; &lt;span class="kd"&gt;extends&lt;/span&gt; &lt;span class="n"&gt;DispatcherServlet&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+
+  &lt;span class="kd"&gt;private&lt;/span&gt; &lt;span class="kd"&gt;static&lt;/span&gt; &lt;span class="kd"&gt;final&lt;/span&gt; &lt;span class="kt"&gt;long&lt;/span&gt; &lt;span class="n"&gt;serialVersionUID&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;1L&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+
+  &lt;span class="kd"&gt;private&lt;/span&gt; &lt;span class="kd"&gt;static&lt;/span&gt; &lt;span class="kd"&gt;final&lt;/span&gt; &lt;span class="n"&gt;Logger&lt;/span&gt; &lt;span class="n"&gt;LOG&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Red5LoggerFactory&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;getLogger&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;Red5DispatcherServlet&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;class&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;red5Demo&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
+
+  &lt;span class="kd"&gt;private&lt;/span&gt; &lt;span class="n"&gt;WebApplicationContext&lt;/span&gt; &lt;span class="n"&gt;parentContext&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+
+  &lt;span class="nd"&gt;@Override&lt;/span&gt;
+  &lt;span class="kd"&gt;protected&lt;/span&gt; &lt;span class="n"&gt;WebApplicationContext&lt;/span&gt; &lt;span class="nf"&gt;initWebApplicationContext&lt;/span&gt;&lt;span class="o"&gt;()&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+    &lt;span class="n"&gt;WebApplicationContext&lt;/span&gt; &lt;span class="n"&gt;wac&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kc"&gt;null&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+    &lt;span class="n"&gt;parentContext&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;WebApplicationContextUtils&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;getWebApplicationContext&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;getServletContext&lt;/span&gt;&lt;span class="o"&gt;());&lt;/span&gt;
+    &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;parentContext&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="kc"&gt;null&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+      &lt;span class="n"&gt;parentContext&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;WebApplicationContext&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;
+      &lt;span class="n"&gt;getServletContext&lt;/span&gt;&lt;span class="o"&gt;().&lt;/span&gt;&lt;span class="na"&gt;getAttribute&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;
+      &lt;span class="n"&gt;WebApplicationContext&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;ROOT_WEB_APPLICATION_CONTEXT_ATTRIBUTE&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
+    &lt;span class="o"&gt;}&lt;/span&gt;
+    &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;parentContext&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="kc"&gt;null&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+      &lt;span class="n"&gt;LOG&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;error&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;No web application context found.&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
+    &lt;span class="o"&gt;}&lt;/span&gt; &lt;span class="k"&gt;else&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+      &lt;span class="n"&gt;wac&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;createWebApplicationContext&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;parentContext&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
+    &lt;span class="o"&gt;}&lt;/span&gt;
+
+    &lt;span class="n"&gt;setDetectAllHandlerAdapters&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;Boolean&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;TRUE&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
+    &lt;span class="n"&gt;setDetectAllHandlerMappings&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;Boolean&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;TRUE&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
+    &lt;span class="n"&gt;setDetectAllHandlerExceptionResolvers&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;Boolean&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;TRUE&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
+    &lt;span class="n"&gt;setDetectAllViewResolvers&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;Boolean&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;TRUE&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
+
+    &lt;span class="n"&gt;onRefresh&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;wac&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
+
+    &lt;span class="n"&gt;String&lt;/span&gt; &lt;span class="n"&gt;attrName&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;getServletContextAttributeName&lt;/span&gt;&lt;span class="o"&gt;();&lt;/span&gt;
+    &lt;span class="n"&gt;getServletContext&lt;/span&gt;&lt;span class="o"&gt;().&lt;/span&gt;&lt;span class="na"&gt;setAttribute&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;attrName&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="n"&gt;wac&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
+    &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="k"&gt;this&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;logger&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;isDebugEnabled&lt;/span&gt;&lt;span class="o"&gt;())&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+      &lt;span class="k"&gt;this&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;logger&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;debug&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;Published WebApplicationContext of servlet &amp;#39;&amp;quot;&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;getServletName&lt;/span&gt;&lt;span class="o"&gt;()&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;&amp;#39; as ServletContext attribute with name [&amp;quot;&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;attrName&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;]&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
+    &lt;span class="o"&gt;}&lt;/span&gt;
+
+    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;wac&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+  &lt;span class="o"&gt;}&lt;/span&gt;
+
+  &lt;span class="kd"&gt;public&lt;/span&gt; &lt;span class="n"&gt;WebApplicationContext&lt;/span&gt; &lt;span class="nf"&gt;getParentContext&lt;/span&gt;&lt;span class="o"&gt;()&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;parentContext&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+  &lt;span class="o"&gt;}&lt;/span&gt;
+
+  &lt;span class="kd"&gt;public&lt;/span&gt; &lt;span class="kt"&gt;void&lt;/span&gt; &lt;span class="nf"&gt;setParentContext&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;WebApplicationContext&lt;/span&gt; &lt;span class="n"&gt;parentContext&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+    &lt;span class="k"&gt;this&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;parentContext&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;parentContext&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+  &lt;span class="o"&gt;}&lt;/span&gt;
+&lt;span class="o"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Then define your handlers and view resolvers in red5Demo-dispatcher-servlet.xml&lt;/p&gt;
+&lt;p&gt;I have created one demo application for red5 with spring mvc. please refer github red5Demo &lt;a class="reference external" href="https://github.com/arulrajnet/red5Demo"&gt;https://github.com/arulrajnet/red5Demo&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;To Download this code&lt;/p&gt;
+&lt;p&gt;Install Git then run the below command.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;git clone git@github.com:arulrajnet/red5Demo.git
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;I will write a separate post for setup red5 development environment and how to build that app.&lt;/p&gt;
+</summary><category term="java"></category><category term="red5"></category><category term="spring"></category><category term="Flash"></category><category term="Programming"></category></entry><entry><title>Flash Log with date and time</title><link href="http://www.arulraj.net/2010/11/flash-log-with-date-and-time.html" rel="alternate"></link><published>2010-11-16T15:50:00+05:30</published><author><name>arul</name></author><id>tag:www.arulraj.net,2010-11-16:2010/11/flash-log-with-date-and-time.html</id><summary type="html">&lt;p&gt;&lt;strong&gt;Flash trace with Date and Time&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://3.bp.blogspot.com/_X5tq9y9xv2s/TOLw1JAze1I/AAAAAAAAAjY/ht0kfAZ_v5A/s1600/Flex+with+Log.png"&gt;&lt;img alt="image0" src="http://3.bp.blogspot.com/_X5tq9y9xv2s/TOLw1JAze1I/AAAAAAAAAjY/ht0kfAZ_v5A/s320/Flex+with+Log.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;When i am work with a&amp;nbsp;Difficult&amp;nbsp;Flex application its hard to find which log is come first and which one come second in the flashlog trace. I searching for any log4j api like in flex. Yes i got.. Flex have that inbuit. Here i share that how to i use in my project... The Class is &amp;quot;&lt;strong&gt;TraceTarget&lt;/strong&gt;&amp;quot;... Using that class you can trace your log in different way like Debug, Info, Warn and Error.. Here is My example&lt;/p&gt;
+ &lt;!--  TODO : pelican better_figures_and_images is failed because of object data is null --&gt;
+&lt;object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" width="300" height="150" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,40,0"&gt;
+   &lt;embed type="application/x-shockwave-flash" width="300" height="150" src="http://files.arulraj.net/code/flash/example/LogExample/logexample.swf"&gt;
+   &lt;/embed&gt;
+&lt;/object&gt;&lt;p&gt;&lt;strong&gt;sharedaaExample.mxml&lt;/strong&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="cp"&gt;&amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;UTF-8&amp;quot;?&amp;gt;&lt;/span&gt;
+&lt;span class="nt"&gt;&amp;lt;mx:Application&lt;/span&gt; &lt;span class="na"&gt;xmlns:mx=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;http://www.adobe.com/2006/mxml&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;xmlns:sharedaa=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;com.sharedaa.\*&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;creationComplete=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;creationComplete()&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;preinitialize=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;initLogging()&amp;quot;&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class="nt"&gt;&amp;lt;mx:Script&amp;gt;&lt;/span&gt;
+  &lt;span class="s"&gt;&amp;lt;![CDATA[&lt;/span&gt;
+   &lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;mx.logging.Log&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+   &lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;mx.logging.ILogger&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+   &lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;mx.logging.LogEventLevel&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+   &lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;mx.logging.targets.TraceTarget&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+   &lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;flash.ui.ContextMenu&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+   &lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;flash.ui.ContextMenuItem&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+   &lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;flash.net.navigateToURL&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+   &lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;flash.net.URLRequest&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+
+   &lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;flash.events.ContextMenuEvent&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+
+   &lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;flash.display.StageDisplayState&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+
+   &lt;span class="kd"&gt;private&lt;/span&gt; &lt;span class="kd"&gt;var&lt;/span&gt; &lt;span class="n"&gt;chatContextMenu&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="kt"&gt;ContextMenu&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+
+   &lt;span class="kd"&gt;private&lt;/span&gt; &lt;span class="kd"&gt;function &lt;/span&gt;&lt;span class="nf"&gt;initLogging&lt;/span&gt;&lt;span class="o"&gt;():&lt;/span&gt; &lt;span class="kt"&gt;void&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+     &lt;span class="c1"&gt;// Create a target.&lt;/span&gt;
+     &lt;span class="kd"&gt;var&lt;/span&gt; &lt;span class="n"&gt;logTarget&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="kt"&gt;TraceTarget&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="k"&gt;new&lt;/span&gt; &lt;span class="kt"&gt;TraceTarget&lt;/span&gt;&lt;span class="o"&gt;();&lt;/span&gt;
+
+     &lt;span class="c1"&gt;// Log only messages for the following packages&lt;/span&gt;
+     &lt;span class="n"&gt;logTarget&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;filters&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;com.sharedaa.\*&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;];&lt;/span&gt;
+
+     &lt;span class="c1"&gt;// Log all log levels.&lt;/span&gt;
+     &lt;span class="n"&gt;logTarget&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;level&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;LogEventLevel&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;ALL&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+
+     &lt;span class="c1"&gt;// Add date, time, category, and log level to the output.&lt;/span&gt;
+     &lt;span class="n"&gt;logTarget&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;includeDate&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kc"&gt;true&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+     &lt;span class="n"&gt;logTarget&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;includeTime&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kc"&gt;true&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+     &lt;span class="n"&gt;logTarget&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;includeCategory&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kc"&gt;true&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+     &lt;span class="n"&gt;logTarget&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;includeLevel&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kc"&gt;true&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+
+     &lt;span class="c1"&gt;// Begin logging.&lt;/span&gt;
+     &lt;span class="n"&gt;Log&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;addTarget&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;logTarget&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
+   &lt;span class="o"&gt;}&lt;/span&gt;
+
+   &lt;span class="kd"&gt;private&lt;/span&gt; &lt;span class="kd"&gt;function &lt;/span&gt;&lt;span class="nf"&gt;addContextMenu&lt;/span&gt;&lt;span class="o"&gt;():&lt;/span&gt; &lt;span class="kt"&gt;void&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+     &lt;span class="n"&gt;chatContextMenu&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="k"&gt;new&lt;/span&gt; &lt;span class="kt"&gt;ContextMenu&lt;/span&gt;&lt;span class="o"&gt;();&lt;/span&gt;
+     &lt;span class="n"&gt;chatContextMenu&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;hideBuiltInItems&lt;/span&gt;&lt;span class="o"&gt;();&lt;/span&gt;
+     &lt;span class="kd"&gt;var&lt;/span&gt; &lt;span class="n"&gt;item&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="kt"&gt;ContextMenuItem&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="k"&gt;new&lt;/span&gt; &lt;span class="kt"&gt;ContextMenuItem&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;www.arulraj.net&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
+     &lt;span class="n"&gt;item&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;addEventListener&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;menuItemSelect&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="n"&gt;openNewWindow&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
+     &lt;span class="n"&gt;chatContextMenu&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;customItems&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;push&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;item&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
+     &lt;span class="k"&gt;this&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;contextMenu&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;chatContextMenu&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+   &lt;span class="o"&gt;}&lt;/span&gt;
+
+   &lt;span class="kd"&gt;private&lt;/span&gt; &lt;span class="kd"&gt;function &lt;/span&gt;&lt;span class="nf"&gt;openNewWindow&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;event&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="kt"&gt;ContextMenuEvent&lt;/span&gt;&lt;span class="o"&gt;):&lt;/span&gt; &lt;span class="kt"&gt;void&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+     &lt;span class="n"&gt;navigateToURL&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="k"&gt;new&lt;/span&gt; &lt;span class="kt"&gt;URLRequest&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;http://www.arulraj.net&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;),&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;\_blank&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
+   &lt;span class="o"&gt;}&lt;/span&gt;
+
+   &lt;span class="kd"&gt;private&lt;/span&gt; &lt;span class="kd"&gt;function &lt;/span&gt;&lt;span class="nf"&gt;creationComplete&lt;/span&gt;&lt;span class="o"&gt;():&lt;/span&gt; &lt;span class="kt"&gt;void&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+     &lt;span class="n"&gt;addContextMenu&lt;/span&gt;&lt;span class="o"&gt;();&lt;/span&gt;
+     &lt;span class="n"&gt;main&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;initMain&lt;/span&gt;&lt;span class="o"&gt;();&lt;/span&gt;
+     &lt;span class="n"&gt;main&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;printLog&lt;/span&gt;&lt;span class="o"&gt;();&lt;/span&gt;
+   &lt;span class="o"&gt;}&lt;/span&gt;
+   &lt;span class="s"&gt;]]&amp;gt;&lt;/span&gt;
+  &lt;span class="nt"&gt;&amp;lt;/mx:Script&amp;gt;&lt;/span&gt;
+  &lt;span class="nt"&gt;&amp;lt;mx:Canvas&lt;/span&gt; &lt;span class="na"&gt;id=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;sharedaa&amp;quot;&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class="nt"&gt;&amp;lt;mx:Canvas&lt;/span&gt; &lt;span class="na"&gt;id=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;mainCanvas&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;x=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;0&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;y=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;0&amp;quot;&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;
+      &lt;span class="nt"&gt;&amp;lt;sharedaa:Main&lt;/span&gt; &lt;span class="na"&gt;x=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;0&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;y=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;0&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;id=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;main&amp;quot;&lt;/span&gt; &lt;span class="nt"&gt;/&amp;gt;&lt;/span&gt;
+      &lt;span class="nt"&gt;&amp;lt;mx:Label&lt;/span&gt; &lt;span class="na"&gt;text=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;Example for Trace with Time&amp;quot;&lt;/span&gt; &lt;span class="nt"&gt;/&amp;gt;&lt;/span&gt;
+    &lt;span class="nt"&gt;&amp;lt;/mx:Canvas&amp;gt;&lt;/span&gt;
+  &lt;span class="nt"&gt;&amp;lt;/mx:Canvas&amp;gt;&lt;/span&gt;
+&lt;span class="nt"&gt;&amp;lt;/mx:Application&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;And the Actionscript file is&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Main.as&lt;/strong&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;package&lt;/span&gt; &lt;span class="nn"&gt;com.sharedaa&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+
+  &lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;mx.containers.VBox&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+  &lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;mx.logging.Log&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+  &lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;mx.logging.ILogger&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+
+  &lt;span class="kd"&gt;public&lt;/span&gt; &lt;span class="kd"&gt;class&lt;/span&gt; &lt;span class="n"&gt;Main&lt;/span&gt; &lt;span class="kd"&gt;extends&lt;/span&gt; &lt;span class="n"&gt;VBox&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+
+    &lt;span class="kd"&gt;private&lt;/span&gt; &lt;span class="kd"&gt;static&lt;/span&gt; &lt;span class="kd"&gt;var&lt;/span&gt; &lt;span class="n"&gt;LOG&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="kt"&gt;ILogger&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Log&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;getLogger&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;com.sharedaa.Main&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
+
+    &lt;span class="kd"&gt;public&lt;/span&gt; &lt;span class="kd"&gt;function &lt;/span&gt;&lt;span class="nf"&gt;initMain&lt;/span&gt;&lt;span class="o"&gt;():&lt;/span&gt; &lt;span class="kt"&gt;void&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+      &lt;span class="n"&gt;LOG&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;debug&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;intialize main&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
+    &lt;span class="o"&gt;}&lt;/span&gt;
+
+    &lt;span class="kd"&gt;public&lt;/span&gt; &lt;span class="kd"&gt;function &lt;/span&gt;&lt;span class="nf"&gt;printLog&lt;/span&gt;&lt;span class="o"&gt;():&lt;/span&gt; &lt;span class="kt"&gt;void&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+      &lt;span class="n"&gt;LOG&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;info&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;This is a info log&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
+      &lt;span class="n"&gt;LOG&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;debug&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;here is a debug log&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
+      &lt;span class="n"&gt;LOG&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;warn&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;display your warnings here&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
+      &lt;span class="n"&gt;LOG&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;error&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;This is a error&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
+    &lt;span class="o"&gt;}&lt;/span&gt;
+  &lt;span class="o"&gt;}&lt;/span&gt;
+&lt;span class="o"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://4.bp.blogspot.com/_X5tq9y9xv2s/TOL8Ey1125I/AAAAAAAAAjc/BzeYVgfdvfI/s1600/flash+log+with+time.png"&gt;&lt;img alt="image1" src="http://4.bp.blogspot.com/_X5tq9y9xv2s/TOL8Ey1125I/AAAAAAAAAjc/BzeYVgfdvfI/s320/flash+log+with+time.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;If you know better than this reply your ideas in comments...&lt;/p&gt;
+</summary><category term="Browser"></category><category term="Flash"></category><category term="Programming"></category></entry><entry><title>How rotation camera3d and viewer3d worked in Away3d</title><link href="http://www.arulraj.net/2010/02/how-rotation-camera3d-and-viewer3d-worked-in-away3d.html" rel="alternate"></link><published>2010-02-07T06:54:00+05:30</published><author><name>Arul</name></author><id>tag:www.arulraj.net,2010-02-07:2010/02/how-rotation-camera3d-and-viewer3d-worked-in-away3d.html</id><summary type="html">&lt;p&gt;&lt;strong&gt;Rotation in Away3D Flash engine&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://4.bp.blogspot.com/_X5tq9y9xv2s/S26cXkz167I/AAAAAAAAALs/45u4Luu4aRE/s1600-h/away3d+rotation+example.jpg"&gt;&lt;img alt="image0" src="http://4.bp.blogspot.com/_X5tq9y9xv2s/S26cXkz167I/AAAAAAAAALs/45u4Luu4aRE/s400/away3d+rotation+example.jpg" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;In this blog entry we are going to learn about How the Rotation and camera3d and viewer3d in away3d flash engine.&lt;/p&gt;
+&lt;p&gt;Red line = x-axis&lt;/p&gt;
+&lt;p&gt;Blue line = y-axis&lt;/p&gt;
+&lt;p&gt;Green Line = z-axis&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;How Rotation works ..?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Rotation in away3d based on the three axis . Those are x.y and z.&amp;nbsp; the component is rotated take any one of this axis as a center then rotated. In my &lt;a class="reference external" href="http://arulraj.net/2010/02/my-first-3d-flash-animation.html"&gt;last post&lt;/a&gt; the sphere is rotated along with x axis. In that example the axis is like that (see below )&lt;/p&gt;
+&lt;embed src="http://files.arulraj.net/code/flash/away3d/singlerotate.swf" width="600" height="400"&gt;
+&lt;/embed&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sphere.rotationX = sphere.x + 1;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;The sphere takes x axis as a center and rotate like above...&lt;/p&gt;
+&lt;p&gt;In this example we add two or more components in the ObjectContainer3D then rotate this objects. In this example we are going to learn about how camera3D and Viewer3D works.&lt;/p&gt;
+&lt;embed src="http://files.arulraj.net/code/flash/away3d/away3drotate.swf" width="600" height="400"&gt;
+&lt;/embed&gt;&lt;p&gt;&lt;strong&gt;How Camera3D works ..?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://1.bp.blogspot.com/_X5tq9y9xv2s/S260xnBaV8I/AAAAAAAAAL0/sdpPCbRPy28/s1600-h/camera3d.jpg"&gt;&lt;img alt="image1" src="http://1.bp.blogspot.com/_X5tq9y9xv2s/S260xnBaV8I/AAAAAAAAAL0/sdpPCbRPy28/s400/camera3d.jpg" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Camera3d = real camera&lt;/p&gt;
+&lt;p&gt;view3d = lens the viewr of the camara&lt;/p&gt;
+&lt;p&gt;renderer = recording in real cam&lt;/p&gt;
+&lt;p&gt;scen3d = what we seen&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;This diagram explained in &lt;a class="reference external" href="http://books.sharedaa.com/2010/02/papervision3d-essentials.html"&gt;Papervision3d Essential&lt;/a&gt; book.. In this diagram your clearly understood about camera3d.&lt;/p&gt;
+&lt;p&gt;If we assume Camera 3d is like a real camera . we assume it is with in our application in invisible mode.&lt;/p&gt;
+&lt;p&gt;The viewerport (view3d) is an lens or what you are view using the camera.&lt;/p&gt;
+&lt;p&gt;The render engine is recording engine in the real camera. In the real camera If&amp;nbsp; we start the record then only we can see the changes otherwise not. Like same as in camera3d we called&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;viewer.render()
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;method each time if anything changed in the components. In the real camara If any person is not inside the seen they are not come in the flim. Same as in the scene3d if we not add add any components in the scene 3d objects&amp;nbsp; it is not visible.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;How Viewer3D Works ..?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Download the source code &lt;a class="reference external" href="http://sites.google.com/site/arulraj1985/list-of-files/Away3drotate.zip?attredirects=0&amp;amp;d=1"&gt;click here&lt;/a&gt; (compatible for Flashdevelop IDE)&lt;/p&gt;
+</summary><category term="Animation"></category><category term="Flash"></category><category term="Programming"></category><category term="how to"></category></entry><entry><title>My first 3D flash animation</title><link href="http://www.arulraj.net/2010/02/my-first-3d-flash-animation.html" rel="alternate"></link><published>2010-02-04T03:58:00+05:30</published><author><name>arul</name></author><id>tag:www.arulraj.net,2010-02-04:2010/02/my-first-3d-flash-animation.html</id><summary type="html">&lt;p&gt;&lt;strong&gt;3D Animathion&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://1.bp.blogspot.com/_X5tq9y9xv2s/S2sZE9RI5AI/AAAAAAAAALA/sKwq2ehHqto/s1600-h/away3d+example.jpg"&gt;&lt;img alt="image0" src="http://1.bp.blogspot.com/_X5tq9y9xv2s/S2sZE9RI5AI/AAAAAAAAALA/sKwq2ehHqto/s400/away3d+example.jpg" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Adobe support for native 3D only in cs4. There are lot of opensource
+flash &lt;a class="reference external" href="http://flashenabledblog.com/2008/04/17/flash-3d-list-update/"&gt;3d engines&lt;/a&gt; are there. I tried papervision3d and away3d. Both are quite well. There are lot more tutorials for both online for away3d tutorials&amp;nbsp; &lt;a class="reference external" href="http://away3d.com/tutorials"&gt;click here&lt;/a&gt; , for papervision3d download this &lt;a class="reference external" href="http://www.packtpub.com/article/3d-vector-drawing-and-text-papervision3d-part1"&gt;book&lt;/a&gt;. I got the source code of away3d from the google code &lt;a class="reference external" href="http://code.google.com/p/away3d/"&gt;http://code.google.com/p/away3d/&lt;/a&gt; and for papervison3d svn &lt;a class="reference external" href="http://code.google.com/p/papervision3d/"&gt;http://code.google.com/p/papervision3d/&lt;/a&gt;. I generate swc using the command. The red5 says about &lt;a class="reference external" href="http://osflash.org/away3d"&gt;away3d.&lt;/a&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;D:\sdk\Away3D&amp;gt; compc -include-sources ./src -source-path ./src -target-player 10 -output Away3d.swc
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Initially i got this error when compile away3d &amp;quot;Error: Type was not found or was not a compile-time constant: Vector. in away3d&amp;quot;&lt;/p&gt;
+&lt;p&gt;Then i added the -target-player 10 in command line is fix that error. I think away3d is better than papervision3d. Here is my first animation here&lt;/p&gt;
+&lt;p&gt;I'm using away3d here...&lt;/p&gt;
+&lt;embed src="http://files.arulraj.net/code/flash/away3d/away3d.swf" width="600" height="400"&gt;
+&lt;/embed&gt;&lt;p&gt;Source Code:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kd"&gt;package&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+   &lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;away3d.cameras.Camera3D&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+   &lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;away3d.cameras.HoverCamera3D&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+   &lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;away3d.cameras.TargetCamera3D&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+   &lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;away3d.containers.ObjectContainer3D&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+   &lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;away3d.containers.Scene3D&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+   &lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;away3d.containers.View3D&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+   &lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;away3d.core.math.Number3D&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+   &lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;away3d.materials.BitmapMaterial&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+   &lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;away3d.materials.WireColorMaterial&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+   &lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;away3d.primitives.Cube&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+   &lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;away3d.core.render.Renderer&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+   &lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;away3d.primitives.Sphere&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+   &lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;away3d.primitives.WireSphere&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+   &lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;away3d.core.utils.Cast&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+   &lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;away3d.core.utils.CastError&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+   &lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;flash.display.Bitmap&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+   &lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;flash.display.Sprite&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+   &lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;flash.events.Event&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+   &lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;flash.events.MouseEvent&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+   &lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;flash.geom.Point&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+   &lt;span class="cm"&gt;/**&lt;/span&gt;
+&lt;span class="cm"&gt;    *&lt;/span&gt;
+&lt;span class="cm"&gt;    * @author Arul&lt;/span&gt;
+&lt;span class="cm"&gt;    */&lt;/span&gt;
+   &lt;span class="kd"&gt;public&lt;/span&gt; &lt;span class="kd"&gt;class&lt;/span&gt; &lt;span class="n"&gt;FirstApplication&lt;/span&gt; &lt;span class="kd"&gt;extends&lt;/span&gt; &lt;span class="n"&gt;Sprite&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+      &lt;span class="kd"&gt;public&lt;/span&gt; &lt;span class="kd"&gt;var&lt;/span&gt; &lt;span class="n"&gt;viewer&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="kt"&gt;View3D&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+      &lt;span class="kd"&gt;public&lt;/span&gt; &lt;span class="kd"&gt;var&lt;/span&gt; &lt;span class="n"&gt;scene&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="kt"&gt;Scene3D&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+      &lt;span class="kd"&gt;public&lt;/span&gt; &lt;span class="kd"&gt;var&lt;/span&gt; &lt;span class="n"&gt;camera&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="kt"&gt;Camera3D&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+      &lt;span class="kd"&gt;public&lt;/span&gt; &lt;span class="kd"&gt;var&lt;/span&gt; &lt;span class="n"&gt;cube&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="kt"&gt;Cube&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+      &lt;span class="kd"&gt;public&lt;/span&gt; &lt;span class="kd"&gt;var&lt;/span&gt; &lt;span class="n"&gt;sphere&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="kt"&gt;Sphere&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+      &lt;span class="kd"&gt;public&lt;/span&gt; &lt;span class="kd"&gt;var&lt;/span&gt; &lt;span class="n"&gt;wiresphere&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="kt"&gt;WireSphere&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+      &lt;span class="kd"&gt;public&lt;/span&gt; &lt;span class="kd"&gt;var&lt;/span&gt; &lt;span class="n"&gt;group&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="kt"&gt;ObjectContainer3D&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+      &lt;span class="kd"&gt;public&lt;/span&gt; &lt;span class="kd"&gt;var&lt;/span&gt; &lt;span class="n"&gt;material&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="kt"&gt;WireColorMaterial&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+      &lt;span class="kd"&gt;public&lt;/span&gt; &lt;span class="kd"&gt;var&lt;/span&gt; &lt;span class="n"&gt;bitmapMaterial&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="kt"&gt;BitmapMaterial&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+
+      &lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="n"&gt;Embed&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;source&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;assets/favicon.jpg&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;)]&lt;/span&gt;
+      &lt;span class="kd"&gt;private&lt;/span&gt; &lt;span class="kd"&gt;var&lt;/span&gt; &lt;span class="n"&gt;favicon&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="kt"&gt;Class&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+      &lt;span class="kd"&gt;public&lt;/span&gt; &lt;span class="kd"&gt;var&lt;/span&gt; &lt;span class="n"&gt;image&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="kt"&gt;Bitmap&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="k"&gt;new&lt;/span&gt; &lt;span class="kt"&gt;favicon&lt;/span&gt;&lt;span class="o"&gt;();&lt;/span&gt;
+
+      &lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="n"&gt;SWF&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;backgroundColor&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;#EEE8DA&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;)]&lt;/span&gt;
+
+      &lt;span class="kd"&gt;public&lt;/span&gt; &lt;span class="kd"&gt;function &lt;/span&gt;&lt;span class="nf"&gt;FirstApplication&lt;/span&gt;&lt;span class="o"&gt;()&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+         &lt;span class="n"&gt;init3D&lt;/span&gt;&lt;span class="o"&gt;();&lt;/span&gt;
+      &lt;span class="o"&gt;}&lt;/span&gt;
+
+      &lt;span class="kd"&gt;public&lt;/span&gt; &lt;span class="kd"&gt;function &lt;/span&gt;&lt;span class="nf"&gt;init3D&lt;/span&gt;&lt;span class="o"&gt;():&lt;/span&gt; &lt;span class="kt"&gt;void&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+         &lt;span class="n"&gt;stage&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;frameRate&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;30&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+         &lt;span class="n"&gt;camera&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="k"&gt;new&lt;/span&gt; &lt;span class="kt"&gt;Camera3D&lt;/span&gt;&lt;span class="o"&gt;({&lt;/span&gt;
+            &lt;span class="n"&gt;y&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;400&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt;
+            &lt;span class="n"&gt;z&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;1000&lt;/span&gt;
+         &lt;span class="o"&gt;});&lt;/span&gt;
+         &lt;span class="n"&gt;viewer&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="k"&gt;new&lt;/span&gt; &lt;span class="kt"&gt;View3D&lt;/span&gt;&lt;span class="o"&gt;({&lt;/span&gt;
+            &lt;span class="n"&gt;camera&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;camera&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt;
+            &lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;250&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt;
+            &lt;span class="n"&gt;y&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;100&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt;
+            &lt;span class="n"&gt;z&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;100&lt;/span&gt;
+         &lt;span class="o"&gt;});&lt;/span&gt;
+         &lt;span class="n"&gt;scene&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="k"&gt;new&lt;/span&gt; &lt;span class="kt"&gt;Scene3D&lt;/span&gt;&lt;span class="o"&gt;();&lt;/span&gt;
+         &lt;span class="n"&gt;cube&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="k"&gt;new&lt;/span&gt; &lt;span class="kt"&gt;Cube&lt;/span&gt;&lt;span class="o"&gt;();&lt;/span&gt;
+         &lt;span class="n"&gt;sphere&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="k"&gt;new&lt;/span&gt; &lt;span class="kt"&gt;Sphere&lt;/span&gt;&lt;span class="o"&gt;();&lt;/span&gt;
+         &lt;span class="n"&gt;wiresphere&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="k"&gt;new&lt;/span&gt; &lt;span class="kt"&gt;WireSphere&lt;/span&gt;&lt;span class="o"&gt;();&lt;/span&gt;
+         &lt;span class="n"&gt;group&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="k"&gt;new&lt;/span&gt; &lt;span class="kt"&gt;ObjectContainer3D&lt;/span&gt;&lt;span class="o"&gt;();&lt;/span&gt;
+         &lt;span class="n"&gt;material&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="k"&gt;new&lt;/span&gt; &lt;span class="kt"&gt;WireColorMaterial&lt;/span&gt;&lt;span class="o"&gt;();&lt;/span&gt;
+         &lt;span class="n"&gt;bitmapMaterial&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="k"&gt;new&lt;/span&gt; &lt;span class="kt"&gt;BitmapMaterial&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;Cast&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;bitmap&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;image&lt;/span&gt;&lt;span class="o"&gt;));&lt;/span&gt;
+
+         &lt;span class="n"&gt;material&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;color&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="n"&gt;xA6111D&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+
+         &lt;span class="n"&gt;sphere&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;x&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;100&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+         &lt;span class="n"&gt;sphere&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;y&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;50&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+         &lt;span class="n"&gt;sphere&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;z&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;100&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+         &lt;span class="n"&gt;sphere&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;radius&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;75&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+         &lt;span class="n"&gt;sphere&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;bothsides&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kc"&gt;true&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+         &lt;span class="n"&gt;sphere&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;material&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;material&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+         &lt;span class="n"&gt;group&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;addChild&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;sphere&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
+
+         &lt;span class="n"&gt;wiresphere&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;x&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;270&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+         &lt;span class="n"&gt;wiresphere&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;y&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;150&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+         &lt;span class="n"&gt;wiresphere&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;z&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;150&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+         &lt;span class="n"&gt;wiresphere&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;radius&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;75&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+         &lt;span class="n"&gt;wiresphere&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;bothsides&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kc"&gt;true&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+         &lt;span class="n"&gt;wiresphere&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;material&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;material&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+         &lt;span class="n"&gt;group&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;addChild&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;wiresphere&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
+
+         &lt;span class="n"&gt;cube&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;x&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;250&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+         &lt;span class="n"&gt;cube&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;y&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;250&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+         &lt;span class="n"&gt;cube&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;z&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;400&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+         &lt;span class="n"&gt;cube&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;material&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;bitmapMaterial&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+         &lt;span class="n"&gt;group&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;addChild&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;cube&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
+
+         &lt;span class="n"&gt;viewer&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;scene&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;addChild&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;group&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
+         &lt;span class="n"&gt;viewer&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;render&lt;/span&gt;&lt;span class="o"&gt;();&lt;/span&gt;
+
+         &lt;span class="n"&gt;addChild&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;viewer&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
+
+         &lt;span class="n"&gt;addEventListener&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;Event&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;ENTER_FRAME&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="n"&gt;groupRotation&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
+         &lt;span class="n"&gt;group&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;addEventListener&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;Event&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;ENTER_FRAME&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="n"&gt;sphereRotation&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
+         &lt;span class="c1"&gt;//addEventListener(MouseEvent.MOUSE_DOWN, lookThere);&lt;/span&gt;
+      &lt;span class="o"&gt;}&lt;/span&gt;
+
+      &lt;span class="kd"&gt;public&lt;/span&gt; &lt;span class="kd"&gt;function &lt;/span&gt;&lt;span class="nf"&gt;groupRotation&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;e&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="kt"&gt;Event&lt;/span&gt;&lt;span class="o"&gt;):&lt;/span&gt; &lt;span class="kt"&gt;void&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+         &lt;span class="n"&gt;group&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;rotationX&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;group&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;x&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+         &lt;span class="n"&gt;group&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;applyRotations&lt;/span&gt;&lt;span class="o"&gt;();&lt;/span&gt;
+
+         &lt;span class="n"&gt;viewer&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;render&lt;/span&gt;&lt;span class="o"&gt;();&lt;/span&gt;
+      &lt;span class="o"&gt;}&lt;/span&gt;
+
+      &lt;span class="kd"&gt;public&lt;/span&gt; &lt;span class="kd"&gt;function &lt;/span&gt;&lt;span class="nf"&gt;sphereRotation&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;e&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="kt"&gt;Event&lt;/span&gt;&lt;span class="o"&gt;):&lt;/span&gt; &lt;span class="kt"&gt;void&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+         &lt;span class="n"&gt;sphere&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;rotationX&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;sphere&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;x&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+         &lt;span class="n"&gt;sphere&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;applyRotations&lt;/span&gt;&lt;span class="o"&gt;();&lt;/span&gt;
+
+         &lt;span class="n"&gt;wiresphere&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;rotationZ&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;wiresphere&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;z&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+         &lt;span class="n"&gt;wiresphere&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;applyRotations&lt;/span&gt;&lt;span class="o"&gt;();&lt;/span&gt;
+         &lt;span class="n"&gt;viewer&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;render&lt;/span&gt;&lt;span class="o"&gt;();&lt;/span&gt;
+      &lt;span class="o"&gt;}&lt;/span&gt;
+
+      &lt;span class="kd"&gt;public&lt;/span&gt; &lt;span class="kd"&gt;function &lt;/span&gt;&lt;span class="nf"&gt;lookThere&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;e&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="kt"&gt;MouseEvent&lt;/span&gt;&lt;span class="o"&gt;):&lt;/span&gt; &lt;span class="kt"&gt;void&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+         &lt;span class="kd"&gt;var&lt;/span&gt; &lt;span class="n"&gt;clickpoint&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="kt"&gt;Point&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="k"&gt;new&lt;/span&gt; &lt;span class="kt"&gt;Point&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;e&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;stageX&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="n"&gt;e&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;stageY&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
+         &lt;span class="kd"&gt;var&lt;/span&gt; &lt;span class="n"&gt;hypothines&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="kt"&gt;Number&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Point&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;distance&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="k"&gt;new&lt;/span&gt; &lt;span class="kt"&gt;Point&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="o"&gt;),&lt;/span&gt; &lt;span class="n"&gt;clickpoint&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
+         &lt;span class="kd"&gt;var&lt;/span&gt; &lt;span class="n"&gt;sine&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="kt"&gt;Number&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Math&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;asin&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;e&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;stageX&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt; &lt;span class="n"&gt;hypothines&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
+         &lt;span class="kd"&gt;var&lt;/span&gt; &lt;span class="n"&gt;cos&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="kt"&gt;Number&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Math&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;acos&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;e&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;stageY&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt; &lt;span class="n"&gt;hypothines&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
+         &lt;span class="n"&gt;camera&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;lookAt&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="k"&gt;new&lt;/span&gt; &lt;span class="kt"&gt;Number3D&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;e&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;stageX&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="n"&gt;e&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;stageY&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="n"&gt;hypothines&lt;/span&gt;&lt;span class="o"&gt;));&lt;/span&gt;
+         &lt;span class="cm"&gt;/**&lt;/span&gt;
+&lt;span class="cm"&gt;          * Horizontal angle&lt;/span&gt;
+&lt;span class="cm"&gt;          */&lt;/span&gt;
+         &lt;span class="n"&gt;camera&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;pan&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;cos&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
+         &lt;span class="cm"&gt;/**&lt;/span&gt;
+&lt;span class="cm"&gt;          * vertical angle&lt;/span&gt;
+&lt;span class="cm"&gt;          */&lt;/span&gt;
+         &lt;span class="n"&gt;camera&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;tilt&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;sine&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
+         &lt;span class="n"&gt;viewer&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;render&lt;/span&gt;&lt;span class="o"&gt;();&lt;/span&gt;
+      &lt;span class="o"&gt;}&lt;/span&gt;
+   &lt;span class="o"&gt;}&lt;/span&gt;
+&lt;span class="o"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+</summary><category term="Animation"></category><category term="Flash"></category><category term="red5"></category><category term="Programming"></category></entry><entry><title>Adding Remote JMX for Red5</title><link href="http://www.arulraj.net/2009/11/adding-remote-jmx-for-red5.html" rel="alternate"></link><published>2009-11-13T07:24:00+05:30</published><author><name>arul</name></author><id>tag:www.arulraj.net,2009-11-13:2009/11/adding-remote-jmx-for-red5.html</id><summary type="html">&lt;p&gt;&lt;strong&gt;How to Add JMX for Red5 Server&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Here we are going to know, How to managing red5 server remotely using
+JMX.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;what is red5 server ..?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="image0" src="http://red5.googlecode.com/svn/doc/trunk/FinalLogo.png" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://code.google.com/p/red5/"&gt;Red5&lt;/a&gt; is an Open Source Flash
+Server written in Java that supports:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Streaming Video (FLV, F4V, MP4)&lt;/li&gt;
+&lt;li&gt;Streaming Audio (MP3, F4A, M4A)&lt;/li&gt;
+&lt;li&gt;Recording Client Streams (FLV only)&lt;/li&gt;
+&lt;li&gt;Shared Objects&lt;/li&gt;
+&lt;li&gt;Live Stream Publishing&lt;/li&gt;
+&lt;li&gt;Remoting&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;This is developed by Reverse Engineering of &lt;a class="reference external" href="http://www.adobe.com/products/flashmediaserver/"&gt;Adobe Flash Media server&lt;/a&gt;.&amp;nbsp; Red5 under the GNU Lesser General Public License. You can Modify and redistribute this software.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;What is JMX ...?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://en.wikipedia.org/wiki/JMX"&gt;JMX&lt;/a&gt; stands for &lt;strong&gt;J&lt;/strong&gt;ava &lt;strong&gt;M&lt;/strong&gt;anagement e&lt;strong&gt;X&lt;/strong&gt;tension . JMX is written in java technology used to monitor and manage a java application or objects.&lt;/p&gt;
+&lt;p&gt;The configuration of jmx agent in red5.properties file. the properties
+are&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;red5.properties&lt;/strong&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c"&gt;# JMX&lt;/span&gt;
+&lt;span class="na"&gt;jmx.rmi.port.registry&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;9999&lt;/span&gt;
+&lt;span class="na"&gt;jmx.rmi.port.remoteobjects&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;
+&lt;span class="na"&gt;jmx.rmi.host&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;0.0.0.0&lt;/span&gt;
+&lt;span class="na"&gt;jmx.rmi.ssl&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;false&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;tt class="docutils literal"&gt;jmx.rmi.port.registry&lt;/tt&gt; - the RMI registry port&lt;/p&gt;
+&lt;p&gt;&lt;tt class="docutils literal"&gt;jmx.rmi.host&lt;/tt&gt; - the host value by default 0.0.0.0 . if the host is 127.0.0.1 you can't access from remote. Normally this is your machine ip address.&lt;/p&gt;
+&lt;p&gt;you must open the firwall for the port 9999. then only you access from
+remote. For more information&amp;nbsp;&lt;a class="reference external" href="http://bit.ly/1ACRRY"&gt;see&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;you can visualize the jvm by using this software &lt;a class="reference external" href="https://visualvm.dev.java.net"&gt;visualvm&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;After install this Add the remote Host and Add remote JMX connection by adding&lt;/p&gt;
+&lt;p&gt;&lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;service:jmx:rmi://192.168.2.6:9999/jndi/rmi://192.168.2.6:9999/red5&lt;/span&gt;&lt;/tt&gt;&lt;/p&gt;
+&lt;p&gt;192.168.2.6 - ip address of red5&lt;/p&gt;
+&lt;p&gt;the default user name for jmx is &amp;quot;red5user&amp;quot; and password is &amp;quot;changeme&amp;quot;. you can change this bu changing the &lt;em&gt;access.properties&lt;/em&gt; and &lt;em&gt;password.properties&lt;/em&gt; in red5 conf folder.&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://1.bp.blogspot.com/_X5tq9y9xv2s/Sv1dgjLbZBI/AAAAAAAAAGA/PNEjXLK4M_U/s1600-h/visual_vm.jpg"&gt;&lt;img alt="image1" src="http://1.bp.blogspot.com/_X5tq9y9xv2s/Sv1dgjLbZBI/AAAAAAAAAGA/PNEjXLK4M_U/s400/visual_vm.jpg" /&gt;&lt;/a&gt;&lt;/p&gt;
+</summary><category term="Flash"></category><category term="java"></category><category term="Linux"></category><category term="Programming"></category></entry><entry><title>Batch file for building any java application</title><link href="http://www.arulraj.net/2009/09/batch-file-for-building-any-java-application.html" rel="alternate"></link><published>2009-09-24T03:58:00+05:30</published><author><name>arul</name></author><id>tag:www.arulraj.net,2009-09-24:2009/09/batch-file-for-building-any-java-application.html</id><summary type="html">&lt;p&gt;&lt;strong&gt;Batch file for building any java application&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://2.bp.blogspot.com/_X5tq9y9xv2s/Srs4KNLAw0I/AAAAAAAAAFw/YgXxL4EMQe0/s1600-h/MS-DOS-Batch-File.png"&gt;&lt;img alt="image0" src="http://2.bp.blogspot.com/_X5tq9y9xv2s/Srs4KNLAw0I/AAAAAAAAAFw/YgXxL4EMQe0/s400/MS-DOS-Batch-File.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;What is batch file...?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;In DOS, OS/2, and Microsoft Windows, a batch file is a text file
+containing a series of commands intended to be executed by the command
+interpreter. Article on
+&lt;a class="reference external" href="http://en.wikipedia.org/wiki/Batch_file"&gt;wikipedia&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;This batch file contains the set of instruction to build a any java application. To get the good result you follow the below folder structure..&lt;/p&gt;
+&lt;p&gt;For example C:apache-tomcat-6.0.18webapps contains the many java web
+application. place this batch file in webapps folder.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;The java files in webapps&amp;lt;PROJECT_NAME&amp;gt;src&amp;nbsp; folder. With
+in the src folder u can follw the java package structure.&lt;/li&gt;
+&lt;li&gt;The jar files for your application in
+webapps&amp;lt;PROJECT_HOME&amp;gt;lib folder.&lt;/li&gt;
+&lt;li&gt;Then run that batch file like&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;C:apache-tomcat-6.0.18webapps&amp;gt; build.bat Library&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Here the Library is your project Home. you can use this bat file
+anywhere not only for tomcat webapps folder.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Environment Variable Prequisites:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;JAVA_HOME&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; Must point at your Java Development Kit
+installation.&lt;/li&gt;
+&lt;li&gt;JAVA_OPTS&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; (Optional) Java runtime options.&lt;/li&gt;
+&lt;li&gt;CATALINA_HOME&amp;nbsp;&amp;nbsp; &amp;nbsp;&amp;nbsp;&amp;nbsp; &amp;nbsp;(Optional) May point at your Catalina
+&amp;quot;build&amp;quot; directory.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;How to set JAVA_HOME ...?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;JAVA_HOME basically known as Java Environmental Variable.Refers from
+&lt;a class="reference external" href="http://confluence.atlassian.com/display/CONF26/Set+JAVA_HOME+variable+in+Windows"&gt;web&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;If you already know the install path for the Java or Software
+Development Kit,skip this first two steps. Otherwise, find the install
+path by following these instructions:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;Unless you changed the install path for the Java Developement Kit
+during installation, it will be in a directory under
+&lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;C:\Program&lt;/span&gt; Files\Java&lt;/tt&gt;. Using Explorer, open the directory
+&lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;C:\Program&lt;/span&gt; Files\Java&lt;/tt&gt;&lt;/li&gt;
+&lt;li&gt;Inside that path will be one or more subdirectories such as
+&lt;tt class="docutils literal"&gt;jdk1.5.0_08&lt;/tt&gt;. If you just installed the Java Development Kit,
+it will be installed to the newest directory, which you can find
+by sorting by date. For example, it may be installed in
+&lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;C:\Program&lt;/span&gt; Files\Java\jdk1.5.0_08&lt;/tt&gt;. This is the install path.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Once you have identified the JDK install path:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;Right click on the &lt;strong&gt;My Computer&lt;/strong&gt; icon on your desktop and
+select properties&lt;/li&gt;
+&lt;li&gt;Click the &lt;strong&gt;Advanced&lt;/strong&gt; Tab&lt;/li&gt;
+&lt;li&gt;Click the &lt;strong&gt;Environment Variables&lt;/strong&gt; button&lt;/li&gt;
+&lt;li&gt;Under System Variable, click &lt;strong&gt;New&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Enter the variable name as &lt;tt class="docutils literal"&gt;JAVA_HOME&lt;/tt&gt;&lt;/li&gt;
+&lt;li&gt;Enter the variable value as the install path for the Development
+Kit&lt;/li&gt;
+&lt;li&gt;Click OK&lt;/li&gt;
+&lt;li&gt;Click Apply Changes&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://3.bp.blogspot.com/_X5tq9y9xv2s/Srs-dTRgMzI/AAAAAAAAAF4/VzLWmytRU4A/s1600-h/JAVA_HOME.jpg"&gt;&lt;img alt="image1" src="http://3.bp.blogspot.com/_X5tq9y9xv2s/Srs-dTRgMzI/AAAAAAAAAF4/VzLWmytRU4A/s400/JAVA_HOME.jpg" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;What is JAVA_OPTS ...?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;This JAVA_OPTS may increase your server performance. For example&lt;/p&gt;
+&lt;p&gt;&lt;tt class="docutils literal"&gt;set &lt;span class="pre"&gt;JAVA_OPTS=-Xms128&lt;/span&gt; &lt;span class="pre"&gt;-Xmx512&lt;/span&gt;&lt;/tt&gt;&lt;/p&gt;
+&lt;dl class="docutils"&gt;
+&lt;dt&gt;The two extra parameters specified via JAVA_OPTS are as follows:&lt;/dt&gt;
+&lt;dd&gt;-Xms - the amount of memory that the JVM starts with.
+-Xmx - the maximum memory that the JVM may have.&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;p&gt;List of Java Hotspot Option &lt;a class="reference external" href="http://java.sun.com/javase/technologies/hotspot/vmoptions.jsp"&gt;Here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;What is CATALINA_HOME...?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Set an environment variable CATALINA_HOME to the path of the directory
+into which you have installed Tomcat.&lt;/p&gt;
+&lt;p&gt;For example :&lt;/p&gt;
+&lt;p&gt;&lt;tt class="docutils literal"&gt;set CATALINA_HOME = &lt;span class="pre"&gt;C:\apache-tomcat-6.0.18&lt;/span&gt;&lt;/tt&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;How this Batch File works ...?&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Get the all jar files from &amp;lt;PROJECT_HOME&amp;gt;lib folder and set this as classpath.&lt;/p&gt;
+&lt;p&gt;Then compile all java files inside the src folder. and build the
+class files inside the &amp;lt;PROJECT_HOME&amp;gt;WEB-INF Folder.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;How to Download this Batch file ...?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;You can download this batch file from &lt;a class="reference external" href="http://arulraj1985.googlepages.com/build.bat"&gt;Here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://arulraj1985.googlepages.com/build.bat"&gt;http://arulraj1985.googlepages.com/build.bat&lt;/a&gt;&lt;/p&gt;
+</summary><category term="commands"></category><category term="Widget"></category><category term="windows"></category><category term="Programming"></category></entry><entry><title>How to create and use private / public keys</title><link href="http://www.arulraj.net/2009/07/how-to-create-and-use-private-public-keys.html" rel="alternate"></link><published>2009-07-23T06:27:00+05:30</published><author><name>arul</name></author><id>tag:www.arulraj.net,2009-07-23:2009/07/how-to-create-and-use-private-public-keys.html</id><summary type="html">&lt;p&gt;&lt;a class="reference external" href="http://2.bp.blogspot.com/_Tq9uaJI0Xww/SmhV6r4dTlI/AAAAAAAAFIM/74M6AzeYa_w/s1600-h/puttygen.jpg"&gt;&lt;img alt="image0" src="http://2.bp.blogspot.com/_Tq9uaJI0Xww/SmhV6r4dTlI/AAAAAAAAFIM/74M6AzeYa_w/s400/puttygen.jpg" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Hi all,&lt;/p&gt;
+&lt;p&gt;Here the document for how to create private and public keys for login. This is more helpful others can login to your machine without disclose the password.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;How to create private key for my machine..?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Go to /home/root/.ssh folder. Then run ssh-keygen command. Answer the questions. Then the key and pub files are created. save this .pub file as authorized_keys.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;root@localhost ~&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="c1"&gt;# cd .ssh/&lt;/span&gt;
+&lt;span class="o"&gt;[&lt;/span&gt;root@localhost .ssh&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="c1"&gt;# ls&lt;/span&gt;
+known_hosts
+&lt;span class="o"&gt;[&lt;/span&gt;root@localhost .ssh&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="c1"&gt;# ssh-key&lt;/span&gt;
+ssh-keygen ssh-keyscan
+&lt;span class="o"&gt;[&lt;/span&gt;root@localhost .ssh&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="c1"&gt;# ssh-keygen&lt;/span&gt;
+Generating public/private rsa key pair.
+Enter file in which to save the key &lt;span class="o"&gt;(&lt;/span&gt;/root/.ssh/id_rsa&lt;span class="o"&gt;)&lt;/span&gt;: example.ppk
+Enter passphrase &lt;span class="o"&gt;(&lt;/span&gt;empty &lt;span class="k"&gt;for&lt;/span&gt; no passphrase&lt;span class="o"&gt;)&lt;/span&gt;:
+Enter same passphrase again:
+Your identification has been saved in example.ppk.
+Your public key has been saved in example.pub.
+The key fingerprint is:
+6e:e4:ff:3b:a6:52:0d:57:ec:d2:f8:dd:e5:08:22:d6 root@localhost
+&lt;span class="o"&gt;[&lt;/span&gt;root@localhost .ssh&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="c1"&gt;# cat example.pub &amp;gt;&amp;gt; authorized_keys&lt;/span&gt;
+&lt;span class="o"&gt;[&lt;/span&gt;root@localhost .ssh&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="c1"&gt;# ls&lt;/span&gt;
+authorized_keys example.ppk example.pub known_hosts
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;How to use the private keys..?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;In putty&lt;/em&gt;&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Open putty and type the 'Host Name' (ie &lt;a class="reference external" href="mailto:root&amp;#64;192.168.1.117"&gt;root&amp;#64;192.168.1.117&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Give a name in 'Saved Session'&lt;/li&gt;
+&lt;li&gt;Select Connection --&amp;gt; SSH --&amp;gt; Auth --&amp;gt; Browse --&amp;gt; Select the corresponding *.ppk file (ie example.ppk)&lt;/li&gt;
+&lt;li&gt;Now go to 'Session' Just click 'Save Button'&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Now you can login to your machine without password in putty. For putty and puttygen &lt;a class="reference external" href="http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html"&gt;download&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;In Win-SCP&lt;/em&gt;&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Start WinSCP. Under Session, enter the Host name(&lt;a class="reference external" href="mailto:root&amp;#64;192.168.1.117"&gt;root&amp;#64;192.168.1.117&lt;/a&gt;), User name(root), and Private key file(*.ppk) and click 'Save'.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Now you can login to your machine without password in WinSCP.&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://1.bp.blogspot.com/_Tq9uaJI0Xww/SmhWF1yTZXI/AAAAAAAAFIU/CEsMmDSIw6U/s1600-h/privatekey.jpg"&gt;&lt;img alt="image1" src="http://1.bp.blogspot.com/_Tq9uaJI0Xww/SmhWF1yTZXI/AAAAAAAAFIU/CEsMmDSIw6U/s400/privatekey.jpg" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;In SCP Command&lt;/em&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;scp -i example.ppk test.jpg root@192.168.1.117:/home/root/
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;em&gt;In SSH Command&lt;/em&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;ssh -i example.ppk root@192.168.1.117
+&lt;/pre&gt;&lt;/div&gt;
+</summary><category term="commands"></category><category term="Linux"></category><category term="Programming"></category><category term="how to"></category></entry><entry><title>How to add Return-path in php mail</title><link href="http://www.arulraj.net/2009/07/how-to-add-return-path-in-php-mail.html" rel="alternate"></link><published>2009-07-13T23:19:00+05:30</published><author><name>arul</name></author><id>tag:www.arulraj.net,2009-07-13:2009/07/how-to-add-return-path-in-php-mail.html</id><summary type="html">&lt;p&gt;&lt;a class="reference external" href="http://3.bp.blogspot.com/_Tq9uaJI0Xww/SlyTV7ulT3I/AAAAAAAAFFE/gSyRbeYFT1M/s1600-h/php.png"&gt;&lt;img alt="image0" src="http://3.bp.blogspot.com/_Tq9uaJI0Xww/SlyTV7ulT3I/AAAAAAAAFFE/gSyRbeYFT1M/s320/php.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Here is the code for add Return-path in php mail programmatically.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="x"&gt;$today = date(&amp;quot;F j\t\h Y, g:i a&amp;quot;);&lt;/span&gt;
+&lt;span class="x"&gt;$name = &amp;#39;Yourname&amp;#39;;&lt;/span&gt;
+&lt;span class="x"&gt;$from = &amp;#39;frommail@example.com&amp;#39;;&lt;/span&gt;
+&lt;span class="x"&gt;$to = &amp;#39;tomail@example.com&amp;#39;;&lt;/span&gt;
+&lt;span class="x"&gt;$cc = &amp;#39;ccmail@example.com&amp;#39;;&lt;/span&gt;
+&lt;span class="x"&gt;$bcc = &amp;#39;bccmail@example.com&amp;#39;;&lt;/span&gt;
+&lt;span class="x"&gt;$subject = &amp;#39;Example Subject&amp;#39;;&lt;/span&gt;
+
+&lt;span class="x"&gt;// To send HTML mail&lt;/span&gt;
+&lt;span class="x"&gt;$headers = &amp;quot;MIME-Version: 1.0 \\r\\n&amp;quot;;&lt;/span&gt;
+&lt;span class="x"&gt;$headers .= &amp;quot;Content-type: text/html; charset=ISO-8859-1;&lt;/span&gt;
+&lt;span class="x"&gt;format=flowed \\r\\n&amp;quot;;&lt;/span&gt;
+&lt;span class="x"&gt;$headers .= &amp;quot;ontent-Transfer-Encoding: 8bit \\r\\n&amp;quot;;&lt;/span&gt;
+&lt;span class="x"&gt;$headers .= &amp;quot;X-Mailer: PHP/&amp;quot; . phpversion(). &amp;quot;\\r\\n&amp;quot;;&lt;/span&gt;
+&lt;span class="x"&gt;$headers .= &amp;quot;X-Priority: 1 (Highest) \\r\\n&amp;quot;;&lt;/span&gt;
+&lt;span class="x"&gt;$headers .= &amp;quot;X-MSMail-Priority: High \\r\\n&amp;quot;;&lt;/span&gt;
+&lt;span class="x"&gt;$headers .= &amp;quot;Importance: High \\r\\n&amp;quot;;&lt;/span&gt;
+&lt;span class="x"&gt;// Additional headers&lt;/span&gt;
+&lt;span class="x"&gt;$headers .= &amp;quot;From: $name&amp;lt;$from&amp;gt; \\r\\n&amp;quot;;&lt;/span&gt;
+
+&lt;span class="x"&gt;//This is one option to add the return path&lt;/span&gt;
+
+&lt;span class="x"&gt;$headers .= &amp;quot;Reply-To: $name&amp;lt;$from&amp;gt; \\r\\n&amp;quot;;&lt;/span&gt;
+&lt;span class="x"&gt;$headers .= &amp;quot;Return-Path: $from \\r\\n&amp;quot;;&lt;/span&gt;
+&lt;span class="x"&gt;$headers .= &amp;quot;Cc: $cc \\r\\n&amp;quot;;&lt;/span&gt;
+
+&lt;span class="x"&gt;//See the 5th argument in mail function for Return-path&lt;/span&gt;
+
+&lt;span class="x"&gt;mail(&amp;quot;toname&amp;lt;$to&amp;gt;&amp;quot;,$subject,&amp;quot;This is the test message for How to add return path in the php mail function.&amp;quot;,$headers,&amp;quot;-f $from&amp;quot;);&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;OR&lt;/p&gt;
+&lt;p&gt;add sendmail-path in php.ini file&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nv"&gt;sendmail_path&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; sendmail -t -i -F yourname@yourdomain.com -f  yourname@yourdomain.com
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;How to find php.ini file in Linux system&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;root@localhost:~# find / -name php.ini
+&lt;/pre&gt;&lt;/div&gt;
+</summary><category term="Linux"></category><category term="Programming"></category><category term="how to"></category></entry></feed>

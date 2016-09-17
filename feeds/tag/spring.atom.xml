@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Arul Blog</title><link href="http://www.arulraj.net/" rel="alternate"></link><link href="http://www.arulraj.net/feeds/tag/spring.atom.xml" rel="self"></link><id>http://www.arulraj.net/</id><updated>2012-04-13T15:55:00+05:30</updated><entry><title>Red5 with Spring MVC</title><link href="http://www.arulraj.net/2012/04/red5-with-spring-mvc.html" rel="alternate"></link><published>2012-04-13T15:55:00+05:30</published><author><name>arul</name></author><id>tag:www.arulraj.net,2012-04-13:2012/04/red5-with-spring-mvc.html</id><summary type="html">&lt;p&gt;&lt;strong&gt;Access Red5 context in spring MVC DispatcherServlet&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://2.bp.blogspot.com/--6PGozKYyQY/T4ieL7Dv2KI/AAAAAAAAOjw/rUknwLPrOlY/s1600/Untitled.png"&gt;&lt;img alt="image0" src="http://2.bp.blogspot.com/--6PGozKYyQY/T4ieL7Dv2KI/AAAAAAAAOjw/rUknwLPrOlY/s320/Untitled.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Before we start, some prerequisites for reader.&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;How Spring MVC works. &lt;a class="reference external" href="http://static.springsource.org/spring/docs/3.0.x/spring-framework-reference/html/mvc.html"&gt;tutorial&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Basic knowledge about red5.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Then only you can understand clearly 😄 . If you don't have, no worries. Having knowledge in core java and servlet is enough&lt;/p&gt;
+&lt;p&gt;Day by day I experienced in Red5. I will explain a useful enhancement about red5. Let's start...&lt;/p&gt;
+&lt;p&gt;Red5 is an open source flash media server. If your webapplication is in the same server you can build some&amp;nbsp;interesting&amp;nbsp;streaming&amp;nbsp;apps by binding your webapp and red5app. But you can not use red5 as a web application server, because by default RTMPServlet support macromedia-fcs (application/x-fcs) content type not http. But Internally Red5 uses Tomcat and Spring. By simple tweaks you can add http support for your red5 application.&lt;/p&gt;
+&lt;p&gt;So I add my own Red5DispatcherServlet in red5app web.xml to handle http request.&lt;/p&gt;
+&lt;p&gt;add this in your web.xml&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nt"&gt;&amp;lt;servlet&amp;gt;&lt;/span&gt;
+  &lt;span class="nt"&gt;&amp;lt;servlet-name&amp;gt;&lt;/span&gt;red5Demo-web&lt;span class="nt"&gt;&amp;lt;/servlet-name&amp;gt;&lt;/span&gt;
+  &lt;span class="nt"&gt;&amp;lt;servlet-class&amp;gt;&lt;/span&gt;com.demo.web.servlet.Red5DispatcherServlet&lt;span class="nt"&gt;&amp;lt;/servlet-class&amp;gt;&lt;/span&gt;
+  &lt;span class="nt"&gt;&amp;lt;init-param&amp;gt;&lt;/span&gt;
+    &lt;span class="nt"&gt;&amp;lt;param-name&amp;gt;&lt;/span&gt;contextConfigLocation&lt;span class="nt"&gt;&amp;lt;/param-name&amp;gt;&lt;/span&gt;
+    &lt;span class="nt"&gt;&amp;lt;param-value&amp;gt;&lt;/span&gt;/WEB-INF/red5Demo-dispatcher-servlet.xml&lt;span class="nt"&gt;&amp;lt;/param-value&amp;gt;&lt;/span&gt;
+  &lt;span class="nt"&gt;&amp;lt;/init-param&amp;gt;&lt;/span&gt;
+&lt;span class="nt"&gt;&amp;lt;/servlet&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;All&amp;nbsp;configurations&amp;nbsp;files in&amp;nbsp;&lt;a class="reference external" href="https://github.com/arulrajnet/red5Demo/tree/master/java/webapp/WEB-INF"&gt;https://github.com/arulrajnet/red5Demo/tree/master/java/webapp/WEB-INF&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;You can use the default spring mvc DispatcherServlet. But problem is you can't access the red5 context from your controller. It means all objects loaded by red5 ContextLoggingListener can't be accessble from your web context. Did you understand...?&lt;/p&gt;
+&lt;p&gt;ok. Usually spring DispatcherServlet creates one web context and sets parents as ApplicationContext loaded by spring mvc ContextLoaderListener. Did you notice in red5app web.xml file we are using red5 own context loader listener. So if you use Spring mvc DispatcherServlet there is no parent context.&lt;/p&gt;
+&lt;p&gt;To override this we have to set red5 ApplicationContext as DispatcherServlet parent context. For that only I have some customization&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Red5DispatcherServlet.java&lt;/strong&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;package&lt;/span&gt; &lt;span class="nn"&gt;com.demo.web.servlet&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;org.red5.logging.Red5LoggerFactory&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;org.slf4j.Logger&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;org.springframework.web.context.WebApplicationContext&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;org.springframework.web.context.support.WebApplicationContextUtils&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;org.springframework.web.servlet.DispatcherServlet&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+
+&lt;span class="kd"&gt;public&lt;/span&gt; &lt;span class="kd"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;Red5DispatcherServlet&lt;/span&gt; &lt;span class="kd"&gt;extends&lt;/span&gt; &lt;span class="n"&gt;DispatcherServlet&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+
+  &lt;span class="kd"&gt;private&lt;/span&gt; &lt;span class="kd"&gt;static&lt;/span&gt; &lt;span class="kd"&gt;final&lt;/span&gt; &lt;span class="kt"&gt;long&lt;/span&gt; &lt;span class="n"&gt;serialVersionUID&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;1L&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+
+  &lt;span class="kd"&gt;private&lt;/span&gt; &lt;span class="kd"&gt;static&lt;/span&gt; &lt;span class="kd"&gt;final&lt;/span&gt; &lt;span class="n"&gt;Logger&lt;/span&gt; &lt;span class="n"&gt;LOG&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Red5LoggerFactory&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;getLogger&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;Red5DispatcherServlet&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;class&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;red5Demo&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
+
+  &lt;span class="kd"&gt;private&lt;/span&gt; &lt;span class="n"&gt;WebApplicationContext&lt;/span&gt; &lt;span class="n"&gt;parentContext&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+
+  &lt;span class="nd"&gt;@Override&lt;/span&gt;
+  &lt;span class="kd"&gt;protected&lt;/span&gt; &lt;span class="n"&gt;WebApplicationContext&lt;/span&gt; &lt;span class="nf"&gt;initWebApplicationContext&lt;/span&gt;&lt;span class="o"&gt;()&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+    &lt;span class="n"&gt;WebApplicationContext&lt;/span&gt; &lt;span class="n"&gt;wac&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kc"&gt;null&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+    &lt;span class="n"&gt;parentContext&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;WebApplicationContextUtils&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;getWebApplicationContext&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;getServletContext&lt;/span&gt;&lt;span class="o"&gt;());&lt;/span&gt;
+    &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;parentContext&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="kc"&gt;null&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+      &lt;span class="n"&gt;parentContext&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;WebApplicationContext&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;
+      &lt;span class="n"&gt;getServletContext&lt;/span&gt;&lt;span class="o"&gt;().&lt;/span&gt;&lt;span class="na"&gt;getAttribute&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;
+      &lt;span class="n"&gt;WebApplicationContext&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;ROOT_WEB_APPLICATION_CONTEXT_ATTRIBUTE&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
+    &lt;span class="o"&gt;}&lt;/span&gt;
+    &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;parentContext&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="kc"&gt;null&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+      &lt;span class="n"&gt;LOG&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;error&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;No web application context found.&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
+    &lt;span class="o"&gt;}&lt;/span&gt; &lt;span class="k"&gt;else&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+      &lt;span class="n"&gt;wac&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;createWebApplicationContext&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;parentContext&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
+    &lt;span class="o"&gt;}&lt;/span&gt;
+
+    &lt;span class="n"&gt;setDetectAllHandlerAdapters&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;Boolean&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;TRUE&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
+    &lt;span class="n"&gt;setDetectAllHandlerMappings&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;Boolean&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;TRUE&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
+    &lt;span class="n"&gt;setDetectAllHandlerExceptionResolvers&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;Boolean&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;TRUE&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
+    &lt;span class="n"&gt;setDetectAllViewResolvers&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;Boolean&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;TRUE&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
+
+    &lt;span class="n"&gt;onRefresh&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;wac&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
+
+    &lt;span class="n"&gt;String&lt;/span&gt; &lt;span class="n"&gt;attrName&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;getServletContextAttributeName&lt;/span&gt;&lt;span class="o"&gt;();&lt;/span&gt;
+    &lt;span class="n"&gt;getServletContext&lt;/span&gt;&lt;span class="o"&gt;().&lt;/span&gt;&lt;span class="na"&gt;setAttribute&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;attrName&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="n"&gt;wac&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
+    &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="k"&gt;this&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;logger&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;isDebugEnabled&lt;/span&gt;&lt;span class="o"&gt;())&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+      &lt;span class="k"&gt;this&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;logger&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;debug&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;Published WebApplicationContext of servlet &amp;#39;&amp;quot;&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;getServletName&lt;/span&gt;&lt;span class="o"&gt;()&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;&amp;#39; as ServletContext attribute with name [&amp;quot;&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;attrName&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;]&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
+    &lt;span class="o"&gt;}&lt;/span&gt;
+
+    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;wac&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+  &lt;span class="o"&gt;}&lt;/span&gt;
+
+  &lt;span class="kd"&gt;public&lt;/span&gt; &lt;span class="n"&gt;WebApplicationContext&lt;/span&gt; &lt;span class="nf"&gt;getParentContext&lt;/span&gt;&lt;span class="o"&gt;()&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;parentContext&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+  &lt;span class="o"&gt;}&lt;/span&gt;
+
+  &lt;span class="kd"&gt;public&lt;/span&gt; &lt;span class="kt"&gt;void&lt;/span&gt; &lt;span class="nf"&gt;setParentContext&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;WebApplicationContext&lt;/span&gt; &lt;span class="n"&gt;parentContext&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+    &lt;span class="k"&gt;this&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;parentContext&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;parentContext&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+  &lt;span class="o"&gt;}&lt;/span&gt;
+&lt;span class="o"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Then define your handlers and view resolvers in red5Demo-dispatcher-servlet.xml&lt;/p&gt;
+&lt;p&gt;I have created one demo application for red5 with spring mvc. please refer github red5Demo &lt;a class="reference external" href="https://github.com/arulrajnet/red5Demo"&gt;https://github.com/arulrajnet/red5Demo&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;To Download this code&lt;/p&gt;
+&lt;p&gt;Install Git then run the below command.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;git clone git@github.com:arulrajnet/red5Demo.git
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;I will write a separate post for setup red5 development environment and how to build that app.&lt;/p&gt;
+</summary><category term="java"></category><category term="red5"></category><category term="spring"></category><category term="Flash"></category><category term="Programming"></category></entry></feed>

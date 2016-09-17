@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Arul Blog</title><link href="http://www.arulraj.net/" rel="alternate"></link><link href="http://www.arulraj.net/feeds/category/windows.atom.xml" rel="self"></link><id>http://www.arulraj.net/</id><updated>2009-09-08T09:20:00+05:30</updated><entry><title>Windows command prompt properties</title><link href="http://www.arulraj.net/2009/09/windows-command-prompt-properties.html" rel="alternate"></link><published>2009-09-08T09:20:00+05:30</published><author><name>arul</name></author><id>tag:www.arulraj.net,2009-09-08:2009/09/windows-command-prompt-properties.html</id><summary type="html">&lt;p&gt;Here the new command prompt window. Here you will know how to change the
+windows command prompt properties.&lt;/p&gt;
+&lt;p&gt;Now the command prompt look like &lt;a class="reference external" href="http://www.microsoft.com/windowsserver2003/technologies/management/powershell/default.mspx"&gt;windows power
+shell.&lt;/a&gt;
+To run the powershell Run --&amp;gt;type &amp;quot;powershell&amp;quot; --&amp;gt; enter&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://2.bp.blogspot.com/_X5tq9y9xv2s/SqZyvr7zEqI/AAAAAAAAAFg/g7qqtOwQSZw/s1600-h/windows_power_shell.jpg"&gt;&lt;img alt="image0" src="http://2.bp.blogspot.com/_X5tq9y9xv2s/SqZyvr7zEqI/AAAAAAAAAFg/g7qqtOwQSZw/s400/windows_power_shell.jpg" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Press windows key + R. Type cmd in the Run command box. Right Click on
+the title bar and select the properties.&lt;/p&gt;
+&lt;p&gt;change the screen buffer size width to 120 and height to 3000.&lt;/p&gt;
+&lt;p&gt;change the window size width to 120 and height to 50.&lt;/p&gt;
+&lt;p&gt;change the widow position left 233 and top 169.&amp;nbsp; That is for 1440 X 900
+resolution monitor.&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://1.bp.blogspot.com/_X5tq9y9xv2s/SqZtQHSQxOI/AAAAAAAAAFA/GPZEWhG4FYw/s1600-h/cmd-layout.jpg"&gt;&lt;img alt="image1" src="http://1.bp.blogspot.com/_X5tq9y9xv2s/SqZtQHSQxOI/AAAAAAAAAFA/GPZEWhG4FYw/s400/cmd-layout.jpg" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;To Change the background color to windows color (blue) . red 1 , green
+36 , yellow 86.&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://1.bp.blogspot.com/_X5tq9y9xv2s/SqZtQYYfXEI/AAAAAAAAAFI/2cFH6bdyhUI/s1600-h/cmd-colors.jpg"&gt;&lt;img alt="image2" src="http://1.bp.blogspot.com/_X5tq9y9xv2s/SqZtQYYfXEI/AAAAAAAAAFI/2cFH6bdyhUI/s400/cmd-colors.jpg" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;The default font setting is.&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://4.bp.blogspot.com/_X5tq9y9xv2s/SqZtQ7y88rI/AAAAAAAAAFQ/4zisnSm3-Y4/s1600-h/cmd-font.jpg"&gt;&lt;img alt="image3" src="http://4.bp.blogspot.com/_X5tq9y9xv2s/SqZtQ7y88rI/AAAAAAAAAFQ/4zisnSm3-Y4/s400/cmd-font.jpg" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;The options Tap is&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://3.bp.blogspot.com/_X5tq9y9xv2s/SqZtRPLiE2I/AAAAAAAAAFY/YUgDEtYE-Qo/s1600-h/cmd-options.jpg"&gt;&lt;img alt="image4" src="http://3.bp.blogspot.com/_X5tq9y9xv2s/SqZtRPLiE2I/AAAAAAAAAFY/YUgDEtYE-Qo/s400/cmd-options.jpg" /&gt;&lt;/a&gt;now your command prompt screen look like powershell screen.&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://3.bp.blogspot.com/_X5tq9y9xv2s/SqZ1_nfEqAI/AAAAAAAAAFo/JF20FI-6AJo/s1600-h/powershell.jpg"&gt;&lt;img alt="image5" src="http://3.bp.blogspot.com/_X5tq9y9xv2s/SqZ1_nfEqAI/AAAAAAAAAFo/JF20FI-6AJo/s400/powershell.jpg" /&gt;&lt;/a&gt;&lt;/p&gt;
+</summary><category term="windows"></category></entry></feed>

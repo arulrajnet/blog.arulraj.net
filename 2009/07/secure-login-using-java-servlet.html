@@ -2,120 +2,136 @@
 <html lang="en">
 
 <head>
-            <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
 
-        <title>Secure login using java servlet</title>
-
-        <!-- Bootstrap Core CSS -->
-        <link href="http://www.arulraj.net/theme/css/bootstrap.min.css" rel="stylesheet">
-
-        <!-- Custom CSS -->
-        <link href="http://www.arulraj.net/theme/css/clean-blog.min.css" rel="stylesheet">
-        <link href="http://www.arulraj.net/theme/css/post-info.css" rel="stylesheet">
-
-        <!-- Code highlight color scheme -->
-            <link href="http://www.arulraj.net/theme/css/code_blocks/github_jekyll.css" rel="stylesheet">
-
-            <!-- CSS specified by the user -->
-            <link href="http://www.arulraj.net/css/myblog.css" rel="stylesheet">
-
-        <!-- Custom Fonts -->
-        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-        <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
-        <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
-
-        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-        <!--[if lt IE 9]>
-            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-        <![endif]-->
+  <title>Secure login using java servlet</title>
 
 
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="referrer" content="origin" />
+  <meta name="generator" content="Pelican" />
+  <link href="http://www.arulraj.net" rel="canonical" />
 
-        <meta name="description" content="The user authentication is the common task when we create a web application.The servlet have j_security_check authentication method.This ...">
+  <!-- Feed -->
+      <link href="http://feeds.feedburner.com/ArulBlog" type="application/atom+xml" rel="alternate" title="Arul Blog Full Atom Feed" />
+
+  <link href="http://www.arulraj.net/theme/css/style.css" type="text/css" rel="stylesheet" />
+
+  <!-- Code highlight color scheme -->
+      <link href="http://www.arulraj.net/theme/css/code_blocks/github.css" rel="stylesheet">
+
+
+  <!-- Custom fonts -->
+  <link href='https://fonts.googleapis.com/css?family=Montserrat:400,300' rel='stylesheet' type='text/css' />
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css" />
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
+
+    <link href="http://www.arulraj.net/2009/07/secure-login-using-java-servlet.html" rel="canonical" />
+
+        <meta name="description" content="The user authentication is the common task when we create a web application.The servlet have j_security_check authentication method.This ...">
 
         <meta name="author" content="arul">
 
         <meta name="tags" content="java">
 
-	                <meta property="og:locale" content="">
-		<meta property="og:site_name" content="Arul Blog">
+        <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content="Arul Blog" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Arul Blog" />
+    <meta property="og:description" content="View the blog." />
+    <meta property="og:url" content="http://www.arulraj.net" />
+      <meta name="og:image" content="http://www.arulraj.net/theme/images/post-bg.jpg">
+      <meta property="article:publisher" content="http://facebook.com/arulraj.net" />
 
-	<meta property="og:type" content="article">
-            <meta property="article:author" content="http://www.arulraj.net/author/arul.html">
-	<meta property="og:url" content="http://www.arulraj.net/2009/07/secure-login-using-java-servlet.html">
-	<meta property="og:title" content="Secure login using java servlet">
-	<meta property="article:published_time" content="2009-07-25 04:57:00+05:30">
-            <meta property="og:description" content="The user authentication is the common task when we create a web application.The servlet have j_security_check authentication method.This ...">
+  <meta property="og:type" content="article">
+            <meta property="article:author" content="http://www.arulraj.net/author/arul">
+  <meta property="og:url" content="http://www.arulraj.net/2009/07/secure-login-using-java-servlet.html">
+  <meta property="og:title" content="Secure login using java servlet">
+  <meta property="article:published_time" content="2009-07-25 04:57:00+05:30">
+            <meta property="og:description" content="The user authentication is the common task when we create a web application.The servlet have j_security_check authentication method.This ...">
 
             <meta property="og:image" content="http://www.arulraj.net/theme/images/post-bg.jpg">
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:site" content="@arulrajnet">
+        <meta name="twitter:title" content="Secure login using java servlet">
+        <meta name="twitter:url" content="http://www.arulraj.net/2009/07/secure-login-using-java-servlet.html">
+
+            <meta name="twitter:image:src" content="http://www.arulraj.net/theme/images/post-bg.jpg">
+
+            <meta name="twitter:description" content="The user authentication is the common task when we create a web application.The servlet have j_security_check authentication method.This ...">
 </head>
+<!-- TODO : Body class -->
+<body class="home-template">
 
-<body>
+<nav id="menu">
+  <a class="close-button">Close</a>
+  <div class="nav-wrapper">
+    <p class="nav-label">Menu</p>
+    <ul>
 
-    <!-- Navigation -->
-    <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
-        <div class="container-fluid">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header page-scroll">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="http://www.arulraj.net/">Arul Blog</a>
-            </div>
+              <li role="presentation"><a href="http://www.arulraj.net/pages/about/">About</a></li>
+              <li role="presentation"><a href="http://www.arulraj.net/pages/profile/">Profile</a></li>
 
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav navbar-right">
-
-                            <li><a href="http://www.arulraj.net/pages/about/">About</a></li>
-                            <li><a href="http://www.arulraj.net/pages/profile/">Profile</a></li>
-                </ul>
-            </div>
-            <!-- /.navbar-collapse -->
-        </div>
-        <!-- /.container -->
-    </nav>
+    </ul>
+  </div>
+</nav>
+    <!-- Progressbar -->
+    <div class="progress-container">
+        <span class="progress-bar"></span>
+    </div>
 
     <!-- Page Header -->
-        <header class="intro-header" style="background-image: url('http://www.arulraj.net/theme/images/post-bg.jpg')">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                    <div class="post-heading">
-                        <h1>Secure login using java servlet</h1>
-                        <span class="meta">
-                                <a href="http://www.arulraj.net/author/arul.html">Arul</a>
-                             | 25 Jul 2009
-                        </span>
-                        
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
+    <!-- Set your background image for this header on the line below. -->
+    <header id="post-header" class="has-cover">
+      <div class="inner">
+        <nav id="navigation">
+            <span id="home-button" class="nav-button">
+                <a class="home-button" href="http://www.arulraj.net" title="Home"><i class="ic ic-arrow-left"></i> Home</a>
+            </span>
+          <span id="menu-button" class="nav-button">
+            <a class="menu-button"><i class="ic ic-menu"></i> Menu</a>
+          </span>
+        </nav>
+        <h1 class="post-title">Secure login using java servlet</h1>
+        <!-- TODO : Proper class for headline -->
+        <span class="post-meta">
+                <a href="http://www.arulraj.net/author/arul">Arul</a>
+            | <time datetime="25 Jul 2009">25 Jul 2009</time>
+        </span>
+        <!-- TODO : Modified check -->
+        
+            <div class="post-cover cover" style="background-image: url('http://www.arulraj.net/theme/images/post-bg.jpg')">
+        
+      </div>
+    </header>    
 
-    <!-- Main Content -->
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-    <!-- Post Content -->
-    <article>
-        <p>The user authentication is the common task when we create a web application.The servlet have j_security_check authentication method.This is commonly called as <strong>form based authentication.</strong></p>
+  <section id="wrapper">
+    <a class="hidden-close"></a>
+
+    <!-- Post content -->
+    <main class="content" role="main">
+        <article class="post">
+        <div class="inner">
+            <section class="post-content">
+                <p>The user authentication is the common task when we create a web application.The servlet have j_security_check&nbsp;authentication method.This is commonly called as <strong>form based authentication.</strong></p>
 <p>Here the steps for this authentication.</p>
-<p><a class="reference external" href="http://2.bp.blogspot.com/_Tq9uaJI0Xww/SmriIO1lnLI/AAAAAAAAFJM/6ru3Sprujzs/s1600-h/tomcat.png"><img alt="image0" src="http://2.bp.blogspot.com/_Tq9uaJI0Xww/SmriIO1lnLI/AAAAAAAAFJM/6ru3Sprujzs/s400/tomcat.png"/></a></p>
+<p><a class="reference external" href="http://2.bp.blogspot.com/_Tq9uaJI0Xww/SmriIO1lnLI/AAAAAAAAFJM/6ru3Sprujzs/s1600-h/tomcat.png"><img alt="image0" src="http://2.bp.blogspot.com/_Tq9uaJI0Xww/SmriIO1lnLI/AAAAAAAAFJM/6ru3Sprujzs/s400/tomcat.png" /></a></p>
 <p>This is in your index.jsp or login page</p>
-<div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">form</span> <span class="na">action</span><span class="o">=</span><span class="s">"j_security_check"</span> <span class="na">method</span><span class="o">=</span><span class="s">"post"</span><span class="p">&gt;</span>
-  Username <span class="p">&lt;</span><span class="nt">input</span> <span class="na">name</span><span class="o">=</span><span class="s">"j_username"</span> <span class="na">type</span><span class="o">=</span><span class="s">"text"</span> <span class="p">/&gt;</span>
-  Password <span class="p">&lt;</span><span class="nt">input</span> <span class="na">name</span><span class="o">=</span><span class="s">"j_password"</span> <span class="na">type</span><span class="o">=</span><span class="s">"password"</span> <span class="p">/&gt;</span>
-  <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">"submit"</span> <span class="na">value</span><span class="o">=</span><span class="s">"Login"</span> <span class="p">/&gt;</span>
+<div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">form</span> <span class="na">action</span><span class="o">=</span><span class="s">&quot;j_security_check&quot;</span> <span class="na">method</span><span class="o">=</span><span class="s">&quot;post&quot;</span><span class="p">&gt;</span>
+  Username <span class="p">&lt;</span><span class="nt">input</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;j_username&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="p">/&gt;</span>
+  Password <span class="p">&lt;</span><span class="nt">input</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;j_password&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;password&quot;</span> <span class="p">/&gt;</span>
+  <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;submit&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;Login&quot;</span> <span class="p">/&gt;</span>
 <span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
 </pre></div>
 <p>Add below code in your web.xml</p>
@@ -147,11 +163,11 @@
  <span class="nt">&lt;/resource-ref&gt;</span>
 </pre></div>
 <p>Add below code in your Tomcat's \conf\server.xml</p>
-<div class="highlight"><pre><span></span><span class="nt">&lt;Realm</span> <span class="na">className=</span><span class="s">"org.apache.catalina.realm.JDBCRealm"</span> <span class="na">debug=</span><span class="s">"99"</span>
-    <span class="na">driverName=</span><span class="s">"com.mysql.jdbc.Driver"</span>
-    <span class="na">connectionURL=</span><span class="s">"jdbc:mysql://localhost/DBNAME?user=DBUSER&amp;amp;password=DBPASS"</span>
-    <span class="na">userTable=</span><span class="s">"USERTABLE"</span> <span class="na">userNameCol=</span><span class="s">"NAMECOLUMN"</span> <span class="na">userCredCol=</span><span class="s">"PASSCOLUMN"</span>
-    <span class="na">userRoleTable=</span><span class="s">"ROLETABLE"</span> <span class="na">roleNameCol=</span><span class="s">"ROLECOLUMN"</span><span class="nt">/&gt;</span>
+<div class="highlight"><pre><span></span><span class="nt">&lt;Realm</span> <span class="na">className=</span><span class="s">&quot;org.apache.catalina.realm.JDBCRealm&quot;</span> <span class="na">debug=</span><span class="s">&quot;99&quot;</span>
+    <span class="na">driverName=</span><span class="s">&quot;com.mysql.jdbc.Driver&quot;</span>
+    <span class="na">connectionURL=</span><span class="s">&quot;jdbc:mysql://localhost/DBNAME?user=DBUSER&amp;amp;password=DBPASS&quot;</span>
+    <span class="na">userTable=</span><span class="s">&quot;USERTABLE&quot;</span> <span class="na">userNameCol=</span><span class="s">&quot;NAMECOLUMN&quot;</span> <span class="na">userCredCol=</span><span class="s">&quot;PASSCOLUMN&quot;</span>
+    <span class="na">userRoleTable=</span><span class="s">&quot;ROLETABLE&quot;</span> <span class="na">roleNameCol=</span><span class="s">&quot;ROLECOLUMN&quot;</span><span class="nt">/&gt;</span>
 </pre></div>
 <p>For this you need two tables in your database. One is username table that contains username and password column. And another one is userrole table that contains username and role column.</p>
 <ul class="simple">
@@ -172,104 +188,92 @@ field from the users table and pass.</li>
 </ul>
 <p>For more info <a class="reference external" href="http://tomcat.apache.org/tomcat-5.5-doc/realm-howto.html">Realm How to</a> ...</p>
 
-    </article>
+            </section>
 
-    <div class="post-info">
-        <div class="post-tags">
-<a href="http://www.arulraj.net/tag/java">java</a>        </div>
+            <section class="post-info">
+                <div class="post-share">
+                    <a class="twitter" href="https://twitter.com/share?text=Secure login using java servlet&amp;url=http://www.arulraj.net/2009/07/secure-login-using-java-servlet.html" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                    <i class="ic ic-twitter"></i><span class="hidden">Twitter</span>
+                    </a>
+                    <a class="facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://www.arulraj.net/2009/07/secure-login-using-java-servlet.html" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                    <i class="ic ic-facebook"></i><span class="hidden">Facebook</span>
+                    </a>
+                    <a class="googleplus" href="https://plus.google.com/share?url=http://www.arulraj.net/2009/07/secure-login-using-java-servlet.html" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+                    <i class="ic ic-googleplus"></i><span class="hidden">Google+</span>
+                    </a>
+                    <div class="clear"></div>
+                </div>
 
-<div class="post-share">
-    <a class="twitter" href="https://twitter.com/share?text=Secure login using java servlet&amp;url=http://www.arulraj.net/2009/07/secure-login-using-java-servlet.html" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
-        <i class="fa fa-twitter"></i><span class="hidden">Twitter</span>
-    </a>
-    <a class="facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://www.arulraj.net/2009/07/secure-login-using-java-servlet.html" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
-        <i class="fa fa-facebook"></i><span class="hidden">Facebook</span>
-    </a>
-    <a class="googleplus" href="https://plus.google.com/share?url=http://www.arulraj.net/2009/07/secure-login-using-java-servlet.html" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
-        <i class="fa fa-google-plus"></i><span class="hidden">Google+</span>
-    </a>
-    <div class="clear"></div>
-</div>
-    </div>
-    <hr>
+                <aside class="post-tags">
+<a href="http://www.arulraj.net/tag/java">java</a>                </aside>
 
-        <div class="comments">
-            <h2>Comments !</h2>
-            <div id="disqus_thread"></div>
-            <script type="text/javascript">
-                var disqus_shortname = 'arulrajnet';
-                var disqus_identifier = '/2009/07/secure-login-using-java-servlet.html';
-                var disqus_url = 'http://www.arulraj.net/2009/07/secure-login-using-java-servlet.html';
-                (function() {
-                    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-                    dsq.src = '//arulrajnet.disqus.com/embed.js';
-                    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-                })();
-            </script>
-            <noscript>Please enable JavaScript to view the comments.</noscript>
-        </div>
+                <div class="clear"></div>
+
+                <aside class="post-author">
+                        <figure class="post-author-avatar">
+                            <img src="https://www.gravatar.com/avatar/dead1c3ffb26a27d8b5e30e1c30e46e6?s=600" alt="Arul" />
+                        </figure>
+                    <div class="post-author-bio">
+                        <h4 class="post-author-name"><a href="http://www.arulraj.net/author/arul">Arul</a></h4>
+                            <p class="post-author-about">• Architect • DevOps • Full Stack Developer • Aspiring Entrepreneur •</p>
+                            <span class="post-author-location"><i class="ic ic-location"></i> Chennai</span>
+                            <span class="post-author-website"><a href="http://arulraj.net"><i class="ic ic-link"></i> Website</a></span>
+                            <span class="post-author-twitter"><a target="_blank" href="https://twitter.com/arulrajnet"><i class="ic ic-twitter"></i> Twitter</a></span>
+                            <span class="post-author-facebook"><a target="_blank" href="https://facebook.com/arulraj.net"><i class="ic ic-facebook"></i> Facebook</a></span>
+                    </div>
+                    <div class="clear"></div>
+                </aside>
+ 
+
+                </section>
+
+                <script type="text/javascript">
+                    var disqus = 'arulrajnet';
+                    var disqus_shortname = 'arulrajnet';
+                    var disqus_identifier = '/2009/07/secure-login-using-java-servlet.html';
+                    var disqus_url = 'http://www.arulraj.net/2009/07/secure-login-using-java-servlet.html';
+                </script>
+                <noscript>Please enable JavaScript to view the comments.</noscript>                  
+                <section class="post-comments">
+                        <a id="show-disqus" class="post-comments-activate" data-disqus-identifier="/2009/07/secure-login-using-java-servlet.html" >Show Comments</a>
+                    <div id="disqus_thread"></div>                  
+                </section>
+
+                <aside class="post-nav">
+                    <a class="post-nav-next" href="http://www.arulraj.net/2009/09/windows-command-prompt-properties.html">
+                        <section class="post-nav-teaser">
+                            <i class="ic ic-arrow-left"></i>
+                                <h2 class="post-nav-title">Windows command prompt properties</h2>
+                            <p class="post-nav-excerpt">Here the new command prompt window. Here you will know how to change the windows ...</p>
+                        </section>
+                    </a>
+                    <a class="post-nav-prev" href="http://www.arulraj.net/2009/07/how-to-create-and-use-private-public-keys.html">
+                        <section class="post-nav-teaser">
+                            <i class="ic ic-arrow-right"></i>
+                                <h2 class="post-nav-title">How to create and use private / public keys</h2>
+                            <p class="post-nav-excerpt">Hi all, Here the document for how to create private and public keys for login. This is ...</p>
+                        </section>
+                    </a>
+                    <div class="clear"></div>
+                </aside>
+
             </div>
-        </div>
-    </div>
-
-    <hr>
-
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                    <ul class="list-inline text-center">
-                            <li>
-                                <a href="http://facebook.com/arulraj.net">
-                                    <span class="fa-stack fa-lg">
-                                        <i class="fa fa-circle fa-stack-2x"></i>
-                                        <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
-                                    </span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="http://twitter.com/arulrajnet">
-                                    <span class="fa-stack fa-lg">
-                                        <i class="fa fa-circle fa-stack-2x"></i>
-                                        <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
-                                    </span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="https://plus.google.com/+ArulrajNet">
-                                    <span class="fa-stack fa-lg">
-                                        <i class="fa fa-circle fa-stack-2x"></i>
-                                        <i class="fa fa-google plus fa-stack-1x fa-inverse"></i>
-                                    </span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="http://feeds.feedburner.com/ArulBlog">
-                                    <span class="fa-stack fa-lg">
-                                        <i class="fa fa-circle fa-stack-2x"></i>
-                                        <i class="fa fa-feed fa-stack-1x fa-inverse"></i>
-                                    </span>
-                                </a>
-                            </li>
-                    </ul>
-<p class="copyright text-muted">
-    Blog powered by <a href="http://getpelican.com">Pelican</a>,
-    which takes great advantage of <a href="http://python.org">Python</a>.
-</p>                </div>
-            </div>
-        </div>
+        </article>
+    </main>
+      <!-- TODO : Body class -->
+    <div id="body-class" style="display: none;" class=""></div>
+  
+    <footer id="footer">
+      <div class="inner">
+        <section class="credits">
+          <span class="credits-theme">Theme <a href="https://github.com/arulrajnet/attila" rel="nofollow">Attila</a></span>
+          <span class="credits-software">Published with <a href="https://github.com/getpelican/pelican" rel="nofollow">Pelican</a></span>
+        </section>
+      </div>
     </footer>
+  </section>
 
-    <!-- jQuery -->
-    <script src="http://www.arulraj.net/theme/js/jquery.js"></script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="http://www.arulraj.net/theme/js/bootstrap.min.js"></script>
-
-        <!-- Custom Theme JavaScript -->
-        <script src="http://www.arulraj.net/theme/js/clean-blog.min.js"></script>
-
+  <script type="text/javascript" src="http://www.arulraj.net/theme/js/script.js"></script>
     <script type="text/javascript">
     var _gaq = _gaq || [];
     _gaq.push(['_setAccount', 'UA-3546274-9']);
@@ -290,5 +294,4 @@ field from the users table and pass.</li>
     }());
 </script>
 </body>
-
 </html>

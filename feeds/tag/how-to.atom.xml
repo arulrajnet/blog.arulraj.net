@@ -1,0 +1,1506 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Arul Blog</title><link href="http://www.arulraj.net/" rel="alternate"></link><link href="http://www.arulraj.net/feeds/tag/how-to.atom.xml" rel="self"></link><id>http://www.arulraj.net/</id><updated>2014-09-24T12:38:00+05:30</updated><entry><title>How to access external java libraries with in pentaho</title><link href="http://www.arulraj.net/2014/09/how-to-access-external-java-libraries-with-in-pentaho.html" rel="alternate"></link><published>2014-09-24T12:38:00+05:30</published><author><name>arul</name></author><id>tag:www.arulraj.net,2014-09-24:2014/09/how-to-access-external-java-libraries-with-in-pentaho.html</id><summary type="html">&lt;p&gt;&lt;strong&gt;How to access external libraries with in pentaho..?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://1.bp.blogspot.com/-AuXLtbyvurk/VCMQTRArekI/AAAAAAAAWCk/_qNXoURYSVY/s1600/mongo-read-empty-java-write-csv.PNG"&gt;&lt;img alt="Java Component in ETL Flow" src="http://1.bp.blogspot.com/-AuXLtbyvurk/VCMQTRArekI/AAAAAAAAWCk/_qNXoURYSVY/s480/mongo-read-empty-java-write-csv.PNG" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Pentaho Data Integration Tool (PDI) is mainly used for Extraction, Transformation, Load (ETL). They have their own &lt;a class="reference external" href="http://wiki.pentaho.com/display/EAI/Pentaho+Data+Integration+Steps"&gt;components&lt;/a&gt; to do basic and advanced ETL operations.&lt;/p&gt;
+&lt;div class="section" id="install"&gt;
+&lt;h2&gt;&lt;strong&gt;Install&lt;/strong&gt;&lt;/h2&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Download and Extract of &lt;a class="reference external" href="http://community.pentaho.com/projects/data-integration/"&gt;Community edition&lt;/a&gt; of PDI.&lt;/li&gt;
+&lt;li&gt;Extract the downloaded zip file as data-integration.&lt;/li&gt;
+&lt;li&gt;You need Java in your machine for PDI Tool to run.&lt;/li&gt;
+&lt;li&gt;To run PDI open spoon.bat in windows.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Here PDI / Pentaho Data Integration Tool / Spoon / Kettle all are mean same.&lt;/p&gt;
+&lt;p&gt;You can run your own java code as a component in the ETL flow. For that have the component called &lt;a class="reference external" href="http://wiki.pentaho.com/display/EAI/User+Defined+Java+Class"&gt;User Defined Java Class&lt;/a&gt;. Absolutely you will use external classes or jar's in your java component. In this post will guide you to load those external jar's while pentaho loads.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="configure"&gt;
+&lt;h2&gt;Configure&lt;/h2&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Create &lt;tt class="docutils literal"&gt;libext&lt;/tt&gt; folder with in data-integration.&lt;/li&gt;
+&lt;li&gt;Backup your &lt;tt class="docutils literal"&gt;launcher.properties&lt;/tt&gt; file with in &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;data-integration/launcher&lt;/span&gt;&lt;/tt&gt; folder.&lt;/li&gt;
+&lt;li&gt;Then save below as launcher.properties in that folder&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;main=org.pentaho.di.ui.spoon.Spoon
+libraries=../test:../lib:../libswt:../libext
+classpath=../:../ui:../ui/images:../lib:../libext
+
+system-property.pentaho.installed.licenses.file=${PENTAHO_INSTALLED_LICENSE_PATH}
+&lt;/pre&gt;&lt;/div&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Now copy your external / third party jars into libext folder&lt;/li&gt;
+&lt;li&gt;Now start the spoon.bat&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="section" id="my-setup"&gt;
+&lt;h3&gt;My setup&lt;/h3&gt;
+&lt;p&gt;OS - Windows 7 64 bit&lt;/p&gt;
+&lt;p&gt;Java - Java 1.7.0_45 64 bit&lt;/p&gt;
+&lt;p&gt;PDI - pdi-ce-5.1.0.0-752.zip&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="note"&gt;
+&lt;h3&gt;Note&lt;/h3&gt;
+&lt;p&gt;Before adding any jar into libext have a look into &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;data-integration/lib&lt;/span&gt;&lt;/tt&gt;. If the jar is already there you can directly use that.&lt;/p&gt;
+&lt;p&gt;Using user defined class in your flow leads to increase your process time. So use that if you really need it. Refer &lt;a class="reference external" href="https://twitter.com/arulrajnet/status/514792905127370752"&gt;https://twitter.com/arulrajnet/status/514792905127370752&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</summary><category term="BI Tools"></category><category term="java"></category><category term="pentaho"></category><category term="how to"></category><category term="Tools"></category></entry><entry><title>Installing Oracle JDK / JRE in CentOS Ubuntu</title><link href="http://www.arulraj.net/2014/06/installing-oracle-jdk-jre-in-centos-ubuntu.html" rel="alternate"></link><published>2014-06-06T13:18:12+05:30</published><author><name>arul</name></author><id>tag:www.arulraj.net,2014-06-06:2014/06/installing-oracle-jdk-jre-in-centos-ubuntu.html</id><summary type="html">&lt;p&gt;&lt;a class="reference external" href="http://2.bp.blogspot.com/-7e9P9JpkCKg/U5ITbc1zw3I/AAAAAAAAVz8/-NrvH8mXWyU/s1600/download.jpg"&gt;&lt;img alt="image0" src="http://2.bp.blogspot.com/-7e9P9JpkCKg/U5ITbc1zw3I/AAAAAAAAVz8/-NrvH8mXWyU/s320/download.jpg" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;In earlier days (while SUN), Installing JRE / JDK in a VM is very easy
+process just like extracting a file and use it. Now wget-ing the source
+file itself a bit long process. After that you have use few commands to
+set this newly installed Java as default Java. So I have came up with
+list of steps to make installing java easier in CentOS and Ubuntu.&lt;/p&gt;
+&lt;div class="section" id="downloading-jdk"&gt;
+&lt;h2&gt;Downloading JDK...?&lt;/h2&gt;
+&lt;p&gt;In VM's usually you get terminal not GUI. So I followed command way in
+this tutorial. You have to add cookies to download java via wget
+command.&lt;/p&gt;
+&lt;div class="section" id="for-centos"&gt;
+&lt;h3&gt;For CentOS&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;wget --no-cookies --no-check-certificate &lt;span class="se"&gt;\&lt;/span&gt;
+--header &lt;span class="s2"&gt;&amp;quot;Cookie:gpw_e24=http%3A%2F%2Fwww.oracle.com%2F;oraclelicense=accept-securebackup-cookie&amp;quot;&lt;/span&gt; &lt;span class="se"&gt;\&lt;/span&gt;
+http://download.oracle.com/otn-pub/java/jdk/7u55-b13/jdk-7u55-linux-x64.rpm
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="for-ubuntu"&gt;
+&lt;h3&gt;For Ubuntu&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;wget --no-cookies --no-check-certificate &lt;span class="se"&gt;\&lt;/span&gt;
+--header &lt;span class="s2"&gt;&amp;quot;Cookie:gpw_e24=http%3A%2F%2Fwww.oracle.com%2F;oraclelicense=accept-securebackup-cookie&amp;quot;&lt;/span&gt; &lt;span class="se"&gt;\&lt;/span&gt;
+http://download.oracle.com/otn-pub/java/jdk/7u55-b13/jdk-7u55-linux-x64.tar.gz
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;I wrote a python script to download the Oracle Java jdk / jre from terminal.&lt;/p&gt;
+&lt;p&gt;That script in &lt;a class="reference external" href="https://gist.github.com/arulrajnet/7b261203499375bd0759"&gt;https://gist.github.com/arulrajnet/7b261203499375bd0759&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;How to Use&lt;/strong&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;wget --no-check-certificate https://gist.github.com/arulrajnet/7b261203499375bd0759/raw/download_java.py
+chmod +x download_java.py
+python download_java.py
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;It will ask for the type of package you want to download and version of package want to download. Finally the selected file will be downloaded in the current directory&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://1.bp.blogspot.com/-eo7_9M3j3A8/VU4kPpVeykI/AAAAAAAAWPM/ohiVIUXjUHo/s1600/download_java.png"&gt;&lt;img alt="download_java.py" src="http://1.bp.blogspot.com/-eo7_9M3j3A8/VU4kPpVeykI/AAAAAAAAWPM/ohiVIUXjUHo/s640/download_java.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="installing-and-setting"&gt;
+&lt;h2&gt;Installing and Setting...?&lt;/h2&gt;
+&lt;p&gt;In the installation to make this java as default one in the system wide.&lt;/p&gt;
+&lt;div class="section" id="id1"&gt;
+&lt;h3&gt;For CentOS&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;rpm -Uvh jdk-7u55-linux-x64.rpm
+alternatives --install /usr/bin/javaws javaws /usr/java/latest/bin/javaws 2
+alternatives --install /usr/bin/java java /usr/java/latest/bin/java 2
+alternatives --install /usr/bin/javac javac /usr/java/latest/bin/javac 2
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id2"&gt;
+&lt;h3&gt;For Ubuntu&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo mkdir -p /usr/java/jdk1.7.0_55
+sudo tar -xzvf jdk-7u55-linux-x64.tar.gz -C /usr/java/
+sudo ln -s /usr/java/jdk1.7.0_55/usr/java/latest
+sudo ln -s /usr/java/latest /usr/java/default
+sudo update-alternatives --install /usr/bin/javaws javaws /usr/java/latest/bin/javaws 2
+sudo update-alternatives --install /usr/bin/java java /usr/java/latest/bin/java 2
+sudo update-alternatives --install /usr/bin/javac javac /usr/java/latest/bin/javac 2
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;For ubuntu there is a PPA released by webupd8team.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;PPA way&lt;/strong&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo add-apt-repository ppa:webupd8team/java
+sudo apt-get update
+sudo apt-get install oracle-java7-installer
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Note:  But that is not working since 16th March. Hope they fixed now.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="installing-jre"&gt;
+&lt;h2&gt;Installing JRE...?&lt;/h2&gt;
+&lt;p&gt;To install JRE the downloading links only different. The other commands
+are same. Here I had some direct links for different versions of JDK and
+JRE&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;JRE 1.7 ( 64 Bit )&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://download.oracle.com/otn-pub/java/jdk/7u55-b13/server-jre-7u55-linux-x64.tar.gz"&gt;http://download.oracle.com/otn-pub/java/jdk/7u55-b13/server-jre-7u55-linux-x64.tar.gz&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://download.oracle.com/otn-pub/java/jdk/7u51-b13/server-jre-7u51-linux-x64.tar.gz"&gt;http://download.oracle.com/otn-pub/java/jdk/7u51-b13/server-jre-7u51-linux-x64.tar.gz&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://download.oracle.com/otn-pub/java/jdk/7u51-b13/jre-7u51-linux-x64.rpm"&gt;http://download.oracle.com/otn-pub/java/jdk/7u51-b13/jre-7u51-linux-x64.rpm&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://download.oracle.com/otn-pub/java/jdk/7u55-b13/jre-7u55-linux-x64.tar.gz"&gt;http://download.oracle.com/otn-pub/java/jdk/7u55-b13/jre-7u55-linux-x64.tar.gz&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://download.oracle.com/otn-pub/java/jdk/7u55-b13/jre-7u55-linux-x64.rpm"&gt;http://download.oracle.com/otn-pub/java/jdk/7u55-b13/jre-7u55-linux-x64.rpm&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;JDK 1.7 ( 64 Bit )&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://download.oracle.com/otn-pub/java/jdk/7u51-b13/jdk-7u51-linux-x64.rpm"&gt;http://download.oracle.com/otn-pub/java/jdk/7u51-b13/jdk-7u51-linux-x64.rpm&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://download.oracle.com/otn-pub/java/jdk/7u55-b13/jdk-7u55-linux-x64.rpm"&gt;http://download.oracle.com/otn-pub/java/jdk/7u55-b13/jdk-7u55-linux-x64.rpm&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://download.oracle.com/otn-pub/java/jdk/7u51-b13/jdk-7u51-linux-x64.tar.gz"&gt;http://download.oracle.com/otn-pub/java/jdk/7u51-b13/jdk-7u51-linux-x64.tar.gz&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://download.oracle.com/otn-pub/java/jdk/7u55-b13/jdk-7u55-linux-x64.tar.gz"&gt;http://download.oracle.com/otn-pub/java/jdk/7u55-b13/jdk-7u55-linux-x64.tar.gz&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+</summary><category term="centos"></category><category term="java"></category><category term="Linux"></category><category term="ubuntu"></category><category term="how to"></category></entry><entry><title>Upgrade openssl in Ubuntu and CentOS</title><link href="http://www.arulraj.net/2014/04/upgrade-openssl-in-ubuntu-and-centos.html" rel="alternate"></link><published>2014-04-09T20:08:00+05:30</published><author><name>arul</name></author><id>tag:www.arulraj.net,2014-04-09:2014/04/upgrade-openssl-in-ubuntu-and-centos.html</id><summary type="html">&lt;p&gt;&lt;strong&gt;Upgrade OpenSSL in Ubuntu and CentOS&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://4.bp.blogspot.com/-E5NogEilRNs/U0X3gzGooiI/AAAAAAAAVpo/ZZUTzTD_tuk/s1600/openssl-logo-bug.png"&gt;&lt;img alt="OpenSSL Heartbleed" src="http://4.bp.blogspot.com/-E5NogEilRNs/U0X3gzGooiI/AAAAAAAAVpo/ZZUTzTD_tuk/s640/openssl-logo-bug.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Hope you know about openssl heartbleed bug. Don't know about, no problem go through it &lt;a class="reference external" href="http://heartbleed.com"&gt;http://heartbleed.com/&lt;/a&gt; . The point here is you should upgrade your openssl. Because of this bug all linux variants release the patch for openssl. Here the steps for upgrade openssl both ubuntu and centos.&lt;/p&gt;
+&lt;div class="section" id="how-to-find-i-am-using-affected-version"&gt;
+&lt;h2&gt;How to find I am using affected version...?&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;In ubuntu:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Run this command&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;openssl version -a
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;There you can find &amp;quot;built on&amp;quot; date. If that date is older than Apr 7.
+Then you are using older version. You should upgrade your version.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;OpenSSL 1.0.1 14 Mar 2012
+built on: Wed Jan 8 20:45:51 UTC 2014
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;In CentOS:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Same as above.&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://2.bp.blogspot.com/-ee9O8qZXTUA/U0X5haUOlfI/AAAAAAAAVp4/GoiBS0CgO38/s1600/openssl-old-1.png"&gt;&lt;img alt="Open SSL Old Version" src="http://2.bp.blogspot.com/-ee9O8qZXTUA/U0X5haUOlfI/AAAAAAAAVp4/GoiBS0CgO38/s640/openssl-old-1.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="how-to-upgrade-openssl"&gt;
+&lt;h2&gt;How to upgrade openssl..?&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;In Ubuntu:&lt;/strong&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo apt-get update
+sudo apt-get install libssl1.0.0 openssl -y
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;In CentOS:&lt;/strong&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo yum update
+sudo yum update openssl -y
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="how-to-check-am-i-upgarded"&gt;
+&lt;h2&gt;How to check am I upgarded..?&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;openssl version -a &lt;span class="p"&gt;|&lt;/span&gt; grep built
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://3.bp.blogspot.com/-3hnS33ve4JM/U0X5hKOlqGI/AAAAAAAAVp0/ExBE5VMd-a8/s1600/openssl-new-1.png"&gt;&lt;img alt="OpenSSL New Version" src="http://3.bp.blogspot.com/-3hnS33ve4JM/U0X5hKOlqGI/AAAAAAAAVp0/ExBE5VMd-a8/s640/openssl-new-1.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;The date should greater than or equal to Apr 7.&lt;/p&gt;
+&lt;p&gt;Hey..!!! you are done. Happy secure linuxing... 😄&lt;/p&gt;
+&lt;/div&gt;
+</summary><category term="commands"></category><category term="fix"></category><category term="ubuntu"></category><category term="how to"></category><category term="centos"></category></entry><entry><title>Unlock huawei datacard e303s</title><link href="http://www.arulraj.net/2013/10/unlock-huawei-datacard-e303s.html" rel="alternate"></link><published>2013-10-22T14:02:00+05:30</published><author><name>arul</name></author><id>tag:www.arulraj.net,2013-10-22:2013/10/unlock-huawei-datacard-e303s.html</id><summary type="html">&lt;p&gt;&lt;strong&gt;How to unlock huawei datacard / dongle e303s&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://3.bp.blogspot.com/-Sl9ORn26sG8/Uma9nJ56iAI/AAAAAAAAVa0/snTjKBMsj74/s1600/2013-06-24+13.04.15.png"&gt;&lt;img alt="Aircel datacard" src="http://3.bp.blogspot.com/-Sl9ORn26sG8/Uma9nJ56iAI/AAAAAAAAVa0/snTjKBMsj74/s320/2013-06-24+13.04.15.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Now we are going to learn about how to unlock huawei datacard / dongle / modem. This is totally free. You are going to unlock by yourself without paying any single penny of yours. Some websites claiming money for this. Do not follow them. You can do by yourself without anyone help. Believe in yours. 😄&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Why we need to unlock..? what is the use of that..?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;If you are bought this device from any internet service provider they locked that device with particular network SIM. So you can't use any other network with this device. If you unlocked that device you can enjoy 3g with any SIM.&lt;/p&gt;
+&lt;p&gt;I bought this device e303s from Aircel in chennai for Rs.1600 - 3 month - 6GB - prepaid&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;What is needed to unlock..? Its hard to get one..?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Basically you need an &lt;strong&gt;unlock code&lt;/strong&gt; for that. Earlier huawei modems are using different algorithm. That is easy to hack. Even some software tools available to find out the code. Now all modems follow new algorithm.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;How can I found my device follows new&amp;nbsp;algorithm or old algorithm..?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;If you modem IMEI starts with &lt;strong&gt;86** .&amp;nbsp;&lt;/strong&gt;Then that is the new algorithm. This tutorial for new algorithm modems only.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;How to get the unlock code of modem..?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;There are two ways to get your unlock code. Be prepared with your IMEI no of device.&lt;/p&gt;
+&lt;div class="section" id="first-one"&gt;
+&lt;h2&gt;First one:&lt;/h2&gt;
+&lt;p&gt;Post your IMEI no in this forum thread
+&lt;a class="reference external" href="http://bit.ly/1fTA4iX"&gt;http://forum.gsmhosting.com/vbb/f88/huawei-unlock-codes-request-only-here-v3-1707247/index100.html&lt;/a&gt;&amp;nbsp;.
+You can get your unlock code instantly. Below is mine.&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://2.bp.blogspot.com/-TKQ_xeu0J6Q/UmbIarxO0UI/AAAAAAAAVbE/_L6ECj3LdiE/s1600/gsm-forumn.PNG"&gt;&lt;img alt="Huawei unlock code forum thread" src="http://2.bp.blogspot.com/-TKQ_xeu0J6Q/UmbIarxO0UI/AAAAAAAAVbE/_L6ECj3LdiE/s320/gsm-forumn.PNG" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="second-one"&gt;
+&lt;h2&gt;Second one:&lt;/h2&gt;
+&lt;p&gt;Follow this link &lt;a class="reference external" href="http://bit.ly/1fTA0zM"&gt;http://huaweicodecalculator.com/new-algo/&lt;/a&gt;&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Login with your Google account&lt;/li&gt;
+&lt;li&gt;Give your IMEI no and model then press calculate button&lt;/li&gt;
+&lt;li&gt;Then G+1 that (similar to like in FB)&lt;/li&gt;
+&lt;li&gt;Then it will show your unlock code. Below is mine&lt;/li&gt;
+&lt;li&gt;Use &lt;strong&gt;NEW ALGO CODE&lt;/strong&gt; if your IMEI start with 86* (For e303s use New
+Algo code)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://1.bp.blogspot.com/-bO3-vgqD3DU/UmbKXkegz3I/AAAAAAAAVbM/GM7tToiqSfE/s1600/unlock-code.PNG"&gt;&lt;img alt="Unlock code using new algorithm" src="http://1.bp.blogspot.com/-bO3-vgqD3DU/UmbKXkegz3I/AAAAAAAAVbM/GM7tToiqSfE/s320/unlock-code.PNG" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;So I got the unlock code what next..?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Download Below files&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Mobile Partner -&amp;nbsp;&lt;a class="reference external" href="http://bit.ly/1crfGWT"&gt;Mobile Partner.zip&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Dashboard Update - &lt;a class="reference external" href="http://bit.ly/1crfYNu"&gt;UTPS23.001.07.04.910_mobile_partner_dashboard_update.zip&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="section" id="steps"&gt;
+&lt;h2&gt;Steps:&lt;/h2&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Extract Mobile Partner and run setup.exe&lt;/li&gt;
+&lt;li&gt;Open Mobile partner&amp;nbsp;Once installation done.&lt;/li&gt;
+&lt;li&gt;Plug the unsupported SIM in your datacard&lt;/li&gt;
+&lt;li&gt;Plug your datacard into PC&lt;/li&gt;
+&lt;li&gt;Now you can see the popup for enter unlock code.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://1.bp.blogspot.com/-ZyN4J1ONsdM/UmbTJ2cMQqI/AAAAAAAAVbc/u_8icceEWXw/s1600/asking+code.PNG"&gt;&lt;img alt="Unlock code popup" src="http://1.bp.blogspot.com/-ZyN4J1ONsdM/UmbTJ2cMQqI/AAAAAAAAVbc/u_8icceEWXw/s320/asking+code.PNG" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Then enter your code and press Ok. wait for sometime. Now it will detect your new network. If not try again.&lt;/p&gt;
+&lt;p&gt;Note: You can attempt only 10 times.&lt;/p&gt;
+&lt;p&gt;Now you can enjoy with any network. I tested with Tata DoCoMo, BSNL, AirTel and Vodafone&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://3.bp.blogspot.com/-K8evpQS6Ric/UmbUlAKwwGI/AAAAAAAAVbk/pcHRU3uyqx0/s1600/aircel-docomo.PNG"&gt;&lt;img alt="Tata DoCoMo in Aircel e303s" src="http://3.bp.blogspot.com/-K8evpQS6Ric/UmbUlAKwwGI/AAAAAAAAVbk/pcHRU3uyqx0/s320/aircel-docomo.PNG" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Yeah you are done...!!!! Congrats Mate...!!!&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Now what next..? (OPTIONAL)&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Yes. If you want to remove the aircel default dashboard with in your data card follow this.&lt;/p&gt;
+&lt;p&gt;You are unlocked your device but still aircel dashboard within your device. So aircel dashboard will be installed while you freshly connected with any machine. Now we are going to change that to Huawei Mobile partner dashboard. This is purely optional.&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Extract
+that&amp;nbsp;UTPS23.001.07.04.910_mobile_partner_dashboard_update.zip&lt;/li&gt;
+&lt;li&gt;Run the extracted exe file.&lt;/li&gt;
+&lt;li&gt;Plug your device.&lt;/li&gt;
+&lt;li&gt;Press start button.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://2.bp.blogspot.com/-1i9t1MOkVg0/UmbW7iUCv8I/AAAAAAAAVb0/K0RA6TiFJDk/s1600/1.PNG"&gt;&lt;img alt="image5" src="http://2.bp.blogspot.com/-1i9t1MOkVg0/UmbW7iUCv8I/AAAAAAAAVb0/K0RA6TiFJDk/s320/1.PNG" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://1.bp.blogspot.com/-o0mv0slVsdw/UmbW7OVxDOI/AAAAAAAAVbs/K5CfuvqYWs0/s1600/2.png"&gt;&lt;img alt="image6" src="http://1.bp.blogspot.com/-o0mv0slVsdw/UmbW7OVxDOI/AAAAAAAAVbs/K5CfuvqYWs0/s320/2.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://3.bp.blogspot.com/-OG3F56vddjM/UmbW7ajY2HI/AAAAAAAAVbw/5HTfSk4WIik/s1600/3.PNG"&gt;&lt;img alt="image7" src="http://3.bp.blogspot.com/-OG3F56vddjM/UmbW7ajY2HI/AAAAAAAAVbw/5HTfSk4WIik/s320/3.PNG" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://1.bp.blogspot.com/-owLRi1fXQZA/UmbW9t_Mw_I/AAAAAAAAVcI/jZsYwSWsEWk/s1600/4.PNG"&gt;&lt;img alt="image8" src="http://1.bp.blogspot.com/-owLRi1fXQZA/UmbW9t_Mw_I/AAAAAAAAVcI/jZsYwSWsEWk/s320/4.PNG" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://2.bp.blogspot.com/-2AcfQ6ErEfk/UmbW9gRl-8I/AAAAAAAAVcE/_N71VZZ7cNQ/s1600/5.PNG"&gt;&lt;img alt="Successfully updated" src="http://2.bp.blogspot.com/-2AcfQ6ErEfk/UmbW9gRl-8I/AAAAAAAAVcE/_N71VZZ7cNQ/s320/5.PNG" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://3.bp.blogspot.com/-fTXTyp-37mw/UmbW-itsyKI/AAAAAAAAVcc/qh0VGmj0k7c/s1600/dvd-mobilepartner.PNG"&gt;&lt;img alt="image10" src="http://3.bp.blogspot.com/-fTXTyp-37mw/UmbW-itsyKI/AAAAAAAAVcc/qh0VGmj0k7c/s320/dvd-mobilepartner.PNG" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://4.bp.blogspot.com/-pBF4gnJoUFw/UmbW9pMGk_I/AAAAAAAAVcM/sLat6IO2Luw/s1600/cd-explorere.PNG"&gt;&lt;img alt="image11" src="http://4.bp.blogspot.com/-pBF4gnJoUFw/UmbW9pMGk_I/AAAAAAAAVcM/sLat6IO2Luw/s320/cd-explorere.PNG" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Now default dashboard of your device changed to Mobile partner.&lt;/p&gt;
+&lt;/div&gt;
+</summary><category term="datacard"></category><category term="hacking"></category><category term="Mobile"></category><category term="Tips &amp; Tricks"></category><category term="how to"></category></entry><entry><title>Automount vmware shared folder in ubuntu</title><link href="http://www.arulraj.net/2013/09/automount-vmware-shared-folder-in-ubuntu.html" rel="alternate"></link><published>2013-09-16T13:19:00+05:30</published><author><name>arul</name></author><id>tag:www.arulraj.net,2013-09-16:2013/09/automount-vmware-shared-folder-in-ubuntu.html</id><summary type="html">&lt;p&gt;&lt;strong&gt;How to fix shared folder automount problem in vmware ..?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;I am using vmware player for last several years. But I am not tested their shared folder features. To share your host os folder with vm you have to install &amp;quot;vmware tools&amp;quot; on guest os. Installing vmware tools is very simple.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Checking vmware module :&lt;/strong&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo lsmod &lt;span class="p"&gt;|&lt;/span&gt; grep vmhgfs
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;It should return some values something like shown on image.&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://1.bp.blogspot.com/-scGjIUU5lA4/UjdQ4ODFgPI/AAAAAAAAVYA/M6Dqv5mdewQ/s1600/lsmode.PNG"&gt;&lt;img alt="lsmode" src="http://1.bp.blogspot.com/-scGjIUU5lA4/UjdQ4ODFgPI/AAAAAAAAVYA/M6Dqv5mdewQ/s320/lsmode.PNG" /&gt;&lt;/a&gt; List modules&lt;/p&gt;
+&lt;p&gt;If not you have to install vmware tools.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Installing vmware tools :&lt;/strong&gt;&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Goto Player →&amp;nbsp;Manage →&amp;nbsp;Install vmware Tools . Now Vmware Tools is mounted as CDROM with in VM&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://1.bp.blogspot.com/-ThUF8cYzXf8/UjdSbEfZR8I/AAAAAAAAVYM/FP45AmtYzFk/s1600/install-vmware.png"&gt;&lt;img alt="vmware tools install" src="http://1.bp.blogspot.com/-ThUF8cYzXf8/UjdSbEfZR8I/AAAAAAAAVYM/FP45AmtYzFk/s320/install-vmware.png" /&gt;&lt;/a&gt; Install VMware Tools&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Extract Your&amp;nbsp;VmwareTools-9.2.0-799703.tar.gz file to somewhere.&lt;/li&gt;
+&lt;li&gt;Goto &amp;quot;vmware-tools-distrib&amp;quot; folder path in terminal&lt;/li&gt;
+&lt;li&gt;Then run this command &amp;quot;./vmware-install.pl&amp;quot;&lt;/li&gt;
+&lt;li&gt;Just press enter for all the questions asked while installing&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://4.bp.blogspot.com/-3LuB2o5GXbw/UjdUj2GiMoI/AAAAAAAAVYY/8cVWCD4isVc/s1600/vmware-install.PNG"&gt;&lt;img alt="Install vmware" src="http://4.bp.blogspot.com/-3LuB2o5GXbw/UjdUj2GiMoI/AAAAAAAAVYY/8cVWCD4isVc/s320/vmware-install.PNG" /&gt;&lt;/a&gt; Vmware Install&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Add shared folder for VM:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Goto Player →&amp;nbsp;Manage →&amp;nbsp;Virtual Machine Settings&lt;/li&gt;
+&lt;li&gt;In Options tab you can find the Shared Folders&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://2.bp.blogspot.com/-y4FssiiprlQ/UjdWjo36pyI/AAAAAAAAVYk/7k6y22KWeb4/s1600/vmware-settings.PNG"&gt;&lt;img alt="image3" src="http://2.bp.blogspot.com/-y4FssiiprlQ/UjdWjo36pyI/AAAAAAAAVYk/7k6y22KWeb4/s320/vmware-settings.PNG" /&gt;&lt;/a&gt; Shared Folder&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Then reboot your machine&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Auto mount shared folder on startup:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Finally I came back to point. After restarted the shared folder are not
+shown with in &amp;quot;/mnt/hgfs/&amp;quot; folder. So here is the fix for that.&lt;/p&gt;
+&lt;p&gt;There is a startup script called &amp;quot;open-vm-tools&amp;quot; with in /etc/init.d/
+folder. Just add the below line in the start function.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;mount -t vmhgfs .host:/ /mnt/hgfs
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Then restart the service &amp;quot;sudo service open-vm-tools restart&amp;quot;.&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://2.bp.blogspot.com/-pDdUDIjTvY0/UjdYEkE7QwI/AAAAAAAAVYw/oFb1zARhXrA/s1600/vmware-initd.PNG"&gt;&lt;img alt="image4" src="http://2.bp.blogspot.com/-pDdUDIjTvY0/UjdYEkE7QwI/AAAAAAAAVYw/oFb1zARhXrA/s320/vmware-initd.PNG" /&gt;&lt;/a&gt; open-vm-tools startup&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;My Environmental :&lt;/strong&gt;&lt;/p&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;Product : Vmware Player version 5.0.0 build-812388&lt;/div&gt;
+&lt;div class="line"&gt;Vmware Tools: VmwareTools-9.2.0-799703&lt;/div&gt;
+&lt;div class="line"&gt;Guest OS : Ubuntu 12.04 LTS 32 bit&lt;/div&gt;
+&lt;div class="line"&gt;Host OS : Windows 7 64 bit&lt;/div&gt;
+&lt;/div&gt;
+</summary><category term="fix"></category><category term="ubuntu"></category><category term="vmware"></category><category term="linux"></category><category term="how to"></category></entry><entry><title>Upgrade Samsung Galaxy 5 to Ice Cream Sandwich</title><link href="http://www.arulraj.net/2012/07/upgrade-samsung-galaxy-5-to-ice-cream-sandwich.html" rel="alternate"></link><published>2012-07-26T14:54:00+05:30</published><author><name>arul</name></author><id>tag:www.arulraj.net,2012-07-26:2012/07/upgrade-samsung-galaxy-5-to-ice-cream-sandwich.html</id><summary type="html">&lt;p&gt;&lt;strong&gt;How to upgrade to Android 4.0.4&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://4.bp.blogspot.com/-ubNe_i_2S3Q/UBGDTVHDS_I/AAAAAAAAS60/WjUA-mBXfbI/s1600/overview.jpg"&gt;&lt;img alt="image0" src="http://4.bp.blogspot.com/-ubNe_i_2S3Q/UBGDTVHDS_I/AAAAAAAAS60/WjUA-mBXfbI/s400/overview.jpg" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;This time I come with Android 4.0.4 (Ice Cream Sandwich). Hope you are all already upgraded your galaxy to Froyo by following my&amp;nbsp;earlier&amp;nbsp;&lt;a class="reference external" href="http://www.arulraj.net/2011/08/upgrade-samsung-galaxy-5-and-3-to-froyo.html"&gt;post&lt;/a&gt;. Others no worries its the time for 4.0.4. The&amp;nbsp;upgradation of 4.0.4 is much easier than earlier and no more complicated steps.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Important:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;This is not a official firmware from samsung like 2.2. Its created by &lt;a class="reference external" href="http://en.wikipedia.org/wiki/CyanogenMod"&gt;CyanogenMod&lt;/a&gt;. I&amp;nbsp;personally tested myself in my mobile most of the things works fine&amp;nbsp;so feel free to use.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Requirements:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;A windows PC&lt;/li&gt;
+&lt;li&gt;USB cable&lt;/li&gt;
+&lt;li&gt;Samsung Galaxy 5 (GT-I5503) mobile 😄&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Download the below files.&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;ODIN –&amp;nbsp;&lt;a class="reference external" href="http://bit.ly/1dTykIG"&gt;S5570_Odin_Multi_Downloader_v4.38.exe&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;OPS file –&amp;nbsp;&lt;a class="reference external" href="http://bit.ly/1HRLlcZ"&gt;EUROPA_v1.0.ops&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;ClockworkMod Recovery –&amp;nbsp;&lt;a class="reference external" href="http://bit.ly/1KLcKR0"&gt;recovery-clockwork-5.5.0.4-galaxy5.tar&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Firmware 4.0.4 –&amp;nbsp;&lt;a class="reference external" href="http://bit.ly/1F0MLQi"&gt;update-cm-9-20120608-MADTEAM-galaxy5-signed.zip&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Google apps&amp;nbsp;–&amp;nbsp;&lt;a class="reference external" href="http://bit.ly/1dTyNuC"&gt;gapps-ics-small-20120429.zip&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Before start Backup your contacts and everything. Because Upgrade will delete everything from your mobile not from sd card.&lt;/p&gt;
+&lt;p&gt;There are two phase&lt;/p&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;Boot your mobile in recovery mode&lt;/li&gt;
+&lt;li&gt;Install firmware and Google Apps&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;Clockworkmod Recovery:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;For this you need ODIN and&amp;nbsp;recovery-clockwork-5.5.0.4-galaxy5.tar.&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://1.bp.blogspot.com/-c_aKPHUAY3M/UBGcZRa8UVI/AAAAAAAAS8k/erOgo5_QBqo/s1600/how-to-downloading-mode_new.png"&gt;&lt;img alt="image1" src="http://1.bp.blogspot.com/-c_aKPHUAY3M/UBGcZRa8UVI/AAAAAAAAS8k/erOgo5_QBqo/s400/how-to-downloading-mode_new.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;div class="section" id="steps"&gt;
+&lt;h2&gt;Steps:&lt;/h2&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Copy Firmware and Google Apps files to your sd card. We will use that in next phase.&lt;/li&gt;
+&lt;li&gt;Power off your mobile and Start your mobile in downloading mode.&amp;nbsp;&amp;nbsp;For that Press Volume Down + Home Button [Center Button] + Power Button.&lt;/li&gt;
+&lt;li&gt;Run that ODIN exe.&lt;/li&gt;
+&lt;li&gt;Connect to USB. Now ODIN detected your mobile in COM port.&lt;/li&gt;
+&lt;li&gt;Check the “One Package” Check box and Check all boxes in Options.&lt;/li&gt;
+&lt;li&gt;Select your OPS File.&lt;/li&gt;
+&lt;li&gt;Select&amp;nbsp;&lt;code&gt;recovery-clockwork-5.5.0.4-galaxy5.tar&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Press Start button&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://3.bp.blogspot.com/-caKtsKjPWQc/UBGPQpLF7WI/AAAAAAAAS74/IFyshkeV2Lw/s1600/odin.jpg"&gt;&lt;img alt="image2" src="http://3.bp.blogspot.com/-caKtsKjPWQc/UBGPQpLF7WI/AAAAAAAAS74/IFyshkeV2Lw/s600/odin.jpg" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Now your mobile is automatically restart. It will show you a recovery screen.&lt;/p&gt;
+&lt;p&gt;Phase 2 starts&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Install Firmware and Google Apps:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://4.bp.blogspot.com/-7bqJGC7any0/UBGfl0ztpLI/AAAAAAAAS80/KUe4L8Y53vg/s1600/recovery_screen.jpg"&gt;&lt;img alt="image3" src="http://4.bp.blogspot.com/-7bqJGC7any0/UBGfl0ztpLI/AAAAAAAAS80/KUe4L8Y53vg/s400/recovery_screen.jpg" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Steps:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Cleanup&lt;ul&gt;
+&lt;li&gt;Center button to select an option. Arrow keys for move up and down&lt;/li&gt;
+&lt;li&gt;Select wipe data/factory reset&lt;/li&gt;
+&lt;li&gt;A new screen will come. Press / Select yes.&lt;/li&gt;
+&lt;li&gt;Back to main menu [press back button]&lt;/li&gt;
+&lt;li&gt;Select Advanced&lt;/li&gt;
+&lt;li&gt;Select Wipe Dalvik Cache&lt;/li&gt;
+&lt;li&gt;Press Yes&lt;/li&gt;
+&lt;li&gt;Select Wipe Battery Stats&lt;/li&gt;
+&lt;li&gt;Press Yes&lt;/li&gt;
+&lt;li&gt;Back to main menu&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Install Firmware&lt;ul&gt;
+&lt;li&gt;Select Install zip from sd card&lt;/li&gt;
+&lt;li&gt;Select Choose a zip file&lt;/li&gt;
+&lt;li&gt;Select&amp;nbsp;&lt;code&gt;update-cm-9-20120608-MADTEAM-galaxy5-signed.zip&lt;/code&gt; from your sd card.&lt;/li&gt;
+&lt;li&gt;Press yes&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Install Google Apps&lt;ul&gt;
+&lt;li&gt;Again&amp;nbsp;Select Install zip from sd card&lt;/li&gt;
+&lt;li&gt;Select Choose a zip file&lt;/li&gt;
+&lt;li&gt;Select&amp;nbsp;&lt;code&gt;gapps-ics-small-20120429.zip&lt;/code&gt; from your sd card&lt;/li&gt;
+&lt;li&gt;Press yes&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Final&lt;ul&gt;
+&lt;li&gt;Important. Select Wipe cache partition&lt;/li&gt;
+&lt;li&gt;Press yes&lt;/li&gt;
+&lt;li&gt;Back to main menu&lt;/li&gt;
+&lt;li&gt;Select reboot system now.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;You are done... First time boot takes more time. So Don't Panic&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Images:&lt;/p&gt;
+&lt;p&gt;Image of Cleanup - Advanced - Wipe Dalvik and Battery stats&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://2.bp.blogspot.com/-6onAhKek8Wg/UBGmADWKzUI/AAAAAAAAS9E/UBRhDZeM9Kw/s1600/advanced_wipe.png"&gt;&lt;img alt="image4" src="http://2.bp.blogspot.com/-6onAhKek8Wg/UBGmADWKzUI/AAAAAAAAS9E/UBRhDZeM9Kw/s400/advanced_wipe.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Install Firmware from zip&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://3.bp.blogspot.com/-2-CX0shKmk0/UBGrVCcnefI/AAAAAAAAS9c/guF7BFQYX5Q/s1600/install_firmware.png"&gt;&lt;img alt="image5" src="http://3.bp.blogspot.com/-2-CX0shKmk0/UBGrVCcnefI/AAAAAAAAS9c/guF7BFQYX5Q/s400/install_firmware.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Install Google apps from zip&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://1.bp.blogspot.com/-qFo9ciN0FY4/UBGt-geXKPI/AAAAAAAAS9w/ANGwNbeOIVo/s1600/install_gapps.png"&gt;&lt;img alt="image6" src="http://1.bp.blogspot.com/-qFo9ciN0FY4/UBGt-geXKPI/AAAAAAAAS9w/ANGwNbeOIVo/s400/install_gapps.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Ice Cream Sandwich in Galaxy 5&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://2.bp.blogspot.com/-LtZJwFaNgQQ/UBGUoKLCc_I/AAAAAAAAS8Q/2pcPHdYuSK0/s1600/android4.png"&gt;&lt;img alt="image7" src="http://2.bp.blogspot.com/-LtZJwFaNgQQ/UBGUoKLCc_I/AAAAAAAAS8Q/2pcPHdYuSK0/s400/android4.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;div class="section" id="faq"&gt;
+&lt;h3&gt;FAQ:&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;Most of the default applications are not&amp;nbsp;available..?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Yes. Most common application like Gmail, Maps, youtube are not there.
+You need to download and install from market.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;I want to root my phone..?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;No need. By default its rooted :)&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;After upgraded FM is not working..?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;This is a bug in this firmware.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;How to revert back to Original..?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Simple. Follow this post &lt;a class="reference external" href="http://www.arulraj.net/2011/08/upgrade-samsung-galaxy-5-and-3-to-froyo.html"&gt;http://www.arulraj.net/2011/08/upgrade-samsung-galaxy-5-and-3-to-froyo.html&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Reference:&amp;nbsp;&lt;a class="reference external" href="http://goo.gl/dZQtg"&gt;http://madteam.co/news/2012/05/guide-cyanogenmod-installation-guide-for-galaxy-5/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;update 11th Sep 2012:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Firmware download links updated&lt;/li&gt;
+&lt;li&gt;For latest Google apps&amp;nbsp;&lt;a class="reference external" href="http://goo.im/gapps/"&gt;http://goo.im/gapps/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</summary><category term="android"></category><category term="hacking"></category><category term="How to"></category><category term="Mobile"></category></entry><entry><title>Uninstall linuxmint from ubuntu</title><link href="http://www.arulraj.net/2012/04/uninstall-linuxmint-from-ubuntu.html" rel="alternate"></link><published>2012-04-01T02:31:00+05:30</published><author><name>arul</name></author><id>tag:www.arulraj.net,2012-04-01:2012/04/uninstall-linuxmint-from-ubuntu.html</id><summary type="html">&lt;p&gt;&lt;strong&gt;How to uninstall linuxmint from ubuntu 11.10&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://4.bp.blogspot.com/-4YPJxBzfGQY/T3gG3SAYouI/AAAAAAAAOPI/5liEnTA3mfc/s1600/linuxmint.jpg"&gt;&lt;img alt="image0" src="http://4.bp.blogspot.com/-4YPJxBzfGQY/T3gG3SAYouI/AAAAAAAAOPI/5liEnTA3mfc/s400/linuxmint.jpg" /&gt;&lt;/a&gt; Gnome2 Linux mint desktop&lt;/p&gt;
+&lt;p&gt;First I explain the whole story.. 😄&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Why linuxmint in ubuntu...?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;In the latest Ubuntu 11.10 release canonical team upgraded from Gnome2 to Gnome3 and ubuntu unity as a default login shell. But I am not comfortable with unity and gnome3. Here its a good article about why I don't like this &lt;a class="reference external" href="http://t.co/gukVNjKC"&gt;read it&lt;/a&gt;. So I need Gome2 back thats why I installed linuxmint shell a.k.a mate shell.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;How I installed linuxmint in my ubuntu..?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Its simple. I&amp;nbsp;followed&amp;nbsp;this &lt;a class="reference external" href="http://www.noobslab.com/2011/11/install-linux-mint-mate-desktop-on.html"&gt;tutorial&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Now why you want to uninstall..?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Now again, after installed mate shell facing some problems.&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;ubuntu software center is not working.&lt;/li&gt;
+&lt;li&gt;every gnome settings showing in two times.&lt;/li&gt;
+&lt;li&gt;ubuntu gnome2 and mate have lot of&amp;nbsp;difference.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Ok. How to unistall mate shell..?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;For everything you need sudo permission. Login in unity shell and open your terminal. Then run this command&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo apt-get autoremove mint-meta-mate
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;It will uninstall every thing related to linux mint. But still linux mint already changed many things in software repo. So you have to move back to old repo (ubuntu 11.10). For that run these commands&lt;/p&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;Remove linuxmint repo link from software list.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo gedit /etc/apt/sources.list
+&lt;/pre&gt;&lt;/div&gt;
+&lt;ol class="arabic simple" start="2"&gt;
+&lt;li&gt;Remove the old software list. Then move the software list to new directory and create a software list directory. For that follow the below commands.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nb"&gt;cd&lt;/span&gt; /var/lib/apt
+sudo mv lists lists.mate
+sudo mkdir -p lists/partial
+&lt;/pre&gt;&lt;/div&gt;
+&lt;ol class="arabic simple" start="3"&gt;
+&lt;li&gt;Getting the ubuntu 11.10 repo&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo apt-get update
+sudo apt-get check
+sudo apt-get clean
+sudo apt-get autoclean
+sudo apt-get autoremove
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;After that also the ubuntu software center is not working 😞 . The problem is &amp;quot;no module named linuxmint&amp;quot;. The reason for this error is every where the distribution id is linuxmint.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;lsb_release -a
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;it prints&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;Distributor ID: LinuxMint
+Description: Linux Mint 12 Fluxbox
+Release: 12
+Codename: lisa
+&lt;/pre&gt;&lt;/div&gt;
+&lt;ol class="arabic simple" start="4"&gt;
+&lt;li&gt;Remove linuxmint distribution id from everywhere&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo gedit /etc/*release
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;and change everything in the file to:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;DISTRIB_ID=Ubuntu
+DISTRIB_RELEASE=11.10
+DISTRIB_CODENAME=oneiric
+DISTRIB_DESCRIPTION=&amp;quot;Ubuntu oneiric&amp;quot;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Then run&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo gedit /etc/*issue
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;and change to:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;Ubuntu 11.10 &lt;span class="se"&gt;\n&lt;/span&gt; &lt;span class="se"&gt;\l&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;ol class="arabic simple" start="5"&gt;
+&lt;li&gt;Restart your machine. Then restart your machine. Now in the login screen you don't see the mate shell option.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Cheers....!!! 😃 😃 you are done...&lt;/p&gt;
+</summary><category term="gnome"></category><category term="Linux"></category><category term="ubuntu"></category><category term="how to"></category></entry><entry><title>How to access irctc mobile site from your computer</title><link href="http://www.arulraj.net/2012/01/how-to-access-irctc-mobile-site-from-your-computer.html" rel="alternate"></link><published>2012-01-31T02:50:00+05:30</published><author><name>arul</name></author><id>tag:www.arulraj.net,2012-01-31:2012/01/how-to-access-irctc-mobile-site-from-your-computer.html</id><summary type="html">&lt;p&gt;&lt;strong&gt;How to access irctc mobile site from your computer&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://1.bp.blogspot.com/-7TGwu0R8Woc/TyecsHLfDiI/AAAAAAAAJIk/k_B8DnwHEew/s1600/irctc_in_android_browser.png"&gt;&lt;img alt="image0" src="http://1.bp.blogspot.com/-7TGwu0R8Woc/TyecsHLfDiI/AAAAAAAAJIk/k_B8DnwHEew/s400/irctc_in_android_browser.png" /&gt;&lt;/a&gt; Taken from android browser&lt;/p&gt;
+&lt;p&gt;Two weeks before irctc launched mobile site for train booking. But when I try to go &lt;a class="reference external" href="https://www.irctc.co.in/mobile"&gt;https://www.irctc.co.in/mobile&lt;/a&gt; from my pc its redirect to usual site.&amp;nbsp;The problem is they are checking the request coming from mobile or computer in server side using user agent and if its from mobile allowed otherwise its redirected to ordinary site.&lt;/p&gt;
+&lt;p&gt;So here is the fix 😄&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Requirement:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;absolutely&amp;nbsp;a pc&lt;/li&gt;
+&lt;li&gt;Mozilla&amp;nbsp;Firefox&lt;/li&gt;
+&lt;li&gt;User Agent&amp;nbsp;switcher add-on&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;How to:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Open Firefox&lt;/li&gt;
+&lt;li&gt;Download and Install the User Agent&amp;nbsp;switcher&amp;nbsp;add-on from &lt;a class="reference external" href="https://addons.mozilla.org/en-US/firefox/addon/user-agent-switcher/"&gt;here&amp;nbsp;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Change the User agent to iPhone 3.0 by Go to Tools&lt;/li&gt;
+&lt;li&gt;Now open the &lt;a class="reference external" href="https://www.irctc.co.in/mobile"&gt;https://www.irctc.co.in/mobile&lt;/a&gt; in&amp;nbsp;Firefox&lt;/li&gt;
+&lt;li&gt;Yeah you are done. cheers...!!!&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;User Agent switcher:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://3.bp.blogspot.com/-Q3dWVraB26g/Tyeo4jLneqI/AAAAAAAAJI0/gIPfMDGJ-y8/s1600/User_agent_firefox.png"&gt;&lt;img alt="image1" src="http://3.bp.blogspot.com/-Q3dWVraB26g/Tyeo4jLneqI/AAAAAAAAJI0/gIPfMDGJ-y8/s400/User_agent_firefox.png" /&gt;&lt;/a&gt; Change to iPhone 3.0&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;How irctc looks in firefox:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://2.bp.blogspot.com/-X3MnnhCcEbU/TyepsS3HEeI/AAAAAAAAJJA/72pM_nkgmKs/s400/irctc_firefox_mobile_login.PNG"&gt;&lt;img alt="image2" src="http://2.bp.blogspot.com/-X3MnnhCcEbU/TyepsS3HEeI/AAAAAAAAJJA/72pM_nkgmKs/s400/irctc_firefox_mobile_login.PNG" /&gt;&lt;/a&gt; Mobile Login page&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://3.bp.blogspot.com/-n75ZOpg1b98/TyeqTnGPxNI/AAAAAAAAJJM/pub05DdyFpI/s1600/irctc_firefox_mobile_home.PNG"&gt;&lt;img alt="image3" src="http://3.bp.blogspot.com/-n75ZOpg1b98/TyeqTnGPxNI/AAAAAAAAJJM/pub05DdyFpI/s400/irctc_firefox_mobile_home.PNG" /&gt;&lt;/a&gt; Mobile Home page&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://3.bp.blogspot.com/-wHuu4TgXKWw/TyeqxQhckVI/AAAAAAAAJJY/kJOQLrX-0N4/s1600/irctc_firefox_mobile_plan_my_travel.PNG"&gt;&lt;img alt="image4" src="http://3.bp.blogspot.com/-wHuu4TgXKWw/TyeqxQhckVI/AAAAAAAAJJY/kJOQLrX-0N4/s400/irctc_firefox_mobile_plan_my_travel.PNG" /&gt;&lt;/a&gt; Mobile plan my travel&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Advantages of mobile agent:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Firstly its very fast.&lt;/li&gt;
+&lt;li&gt;Easy to book. Just three clicks.&lt;/li&gt;
+&lt;li&gt;No more asking password again and again&lt;/li&gt;
+&lt;li&gt;No more session expired / timeout page :D&lt;/li&gt;
+&lt;li&gt;Do remember you can only book &lt;strong&gt;5 transactions per month&lt;/strong&gt; through
+mobile irctc site.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;FAQ:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;I tried in mobile still redirect to ordinary site..?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Use https instead of http and make sure www in that url &lt;a class="reference external" href="https://www.irctc.co.in/mobile"&gt;https://www.irctc.co.in/mobile&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;How can I change the user agent in google chrome..?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;To change user agent in google chrome check this video tutorial &lt;a class="reference external" href="http://www.youtube.com/watch?v=IiT7z8zAbn0"&gt;http://www.youtube.com/watch?v=IiT7z8zAbn0&lt;/a&gt; But for that you need chrome 17 version. To find out which chrome you are using type &amp;quot;&lt;a class="reference external" href="about:version"&gt;about:version&lt;/a&gt;&amp;quot; in address bar then enter. If you have chrome version 16, wait for 17 to be stable otherwise try beta version.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Update:&lt;/em&gt; Now a extension is available for chrome &lt;a class="reference external" href="https://chrome.google.com/webstore/detail/djflhoibgkdhkhhcedjiklpkjnoahfmg"&gt;https://chrome.google.com/webstore/detail/djflhoibgkdhkhhcedjiklpkjnoahfmg&lt;/a&gt; use this.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Is this irctc hack..?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;No. Its just a browser hack..!!! you can see any mobile website using this.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;How to use this mobile site..?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Please find the manual from here. &lt;a class="reference external" href="https://www.irctc.co.in/beta_htmls/index.htm"&gt;View Manual&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Its shows me a blank page..?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Last few days I am also getting blank pages. That website is seems to be down. Even its shows error page when I tried from mobile device. No fix for this 😄 check this &lt;a class="reference external" href="http://www.downforeveryoneorjustme.com/www.irctc.co.in/mobile"&gt;link&lt;/a&gt;&amp;nbsp;for its down or not&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;My Firefox is does not support for this add-on..?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;I think you are using old one. Try to update your firefox browser. OR from here&amp;nbsp;&lt;a class="reference external" href="http://releases.mozilla.org/pub/mozilla.org/addons/59/"&gt;http://releases.mozilla.org/pub/mozilla.org/addons/59/&lt;/a&gt;&amp;nbsp;you can find the different version of that add-on. Download which one is suitable for your firefox.&lt;/p&gt;
+</summary><category term="Browser"></category><category term="hacking"></category><category term="how to"></category><category term="mobile"></category></entry><entry><title>Problem viewing Tamil fonts in chromium on Ubuntu</title><link href="http://www.arulraj.net/2011/08/problem-viewing-tamil-fonts-in-chromium-on-ubuntu.html" rel="alternate"></link><published>2011-08-26T12:41:00+05:30</published><author><name>arul</name></author><id>tag:www.arulraj.net,2011-08-26:2011/08/problem-viewing-tamil-fonts-in-chromium-on-ubuntu.html</id><summary type="html">&lt;p&gt;I am the big fan of tamil love poems.. 😊 Within Google reader all tamil blogs fonts are displayed correctly in chromium which was downloaded from Ubuntu software center. But when I goto that link directly, that page is not rendered properly. It shows some junk character in between.&lt;/p&gt;
+&lt;p&gt;For example Initially this blog&amp;nbsp;&lt;a class="reference external" href="http://bit.ly/ndtgfq"&gt;http://bit.ly/ndtgfq&lt;/a&gt;&amp;nbsp;shown below&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://3.bp.blogspot.com/-rRgxWW7Qfvs/TlfmYG-R55I/AAAAAAAAArc/-I3ojySvirc/s1600/Tamil%2Bfont%2Berror.png"&gt;&lt;img alt="image0" src="http://3.bp.blogspot.com/-rRgxWW7Qfvs/TlfmYG-R55I/AAAAAAAAArc/-I3ojySvirc/s400/Tamil%2Bfont%2Berror.png" /&gt;&lt;/a&gt; Tamil font is not rendered properly&lt;/p&gt;
+&lt;p&gt;But in the firefox its rendered correctly. It shows the fonts correctly. I solved this issue after little bit googling 😜&lt;/p&gt;
+&lt;p&gt;Here is the fix.&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Goto that directory&amp;nbsp;/usr/share/fonts/truetype/freefont/&lt;/li&gt;
+&lt;li&gt;Delete both the&amp;nbsp;FreeSerif.ttf and&amp;nbsp;FreeSans.ttf file.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo rm -f /usr/share/fonts/truetype/freefont/FreeSerif.ttf
+sudo rm -f /usr/share/fonts/truetype/freefont/FreeSans.ttf
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Then restart your browser. Now its shown correctly for me.&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://4.bp.blogspot.com/-b0-zDfWqj5w/Tlfn0iQY8nI/AAAAAAAAArk/CrtbQxkS3gE/s1600/Tamil%2Bfont%2Bsuccess.png"&gt;&lt;img alt="image1" src="http://4.bp.blogspot.com/-b0-zDfWqj5w/Tlfn0iQY8nI/AAAAAAAAArk/CrtbQxkS3gE/s400/Tamil%2Bfont%2Bsuccess.png" /&gt;&lt;/a&gt; Tamil font displayed fine&lt;/p&gt;
+</summary><category term="Browser"></category><category term="tamil"></category><category term="ubuntu"></category><category term="how to"></category><category term="linux"></category></entry><entry><title>Shared media files with other users in linux</title><link href="http://www.arulraj.net/2011/08/shared-media-files-with-other-users-in-linux.html" rel="alternate"></link><published>2011-08-18T13:00:00+05:30</published><author><name>arul</name></author><id>tag:www.arulraj.net,2011-08-18:2011/08/shared-media-files-with-other-users-in-linux.html</id><summary type="html">&lt;p&gt;I think everyone might come across this problem. How to share your Music and Videos with other users in linux machine..? For mine (username is &lt;em&gt;arul&lt;/em&gt; ) I have all music and videos in my home folder. I want to share those with others ( username is &lt;em&gt;friends&lt;/em&gt; ) in the same machine. You can ask, by changing the permission of all files with in folder can solve this issue.&lt;/p&gt;
+&lt;p&gt;Yes you are correct. But this is a partial solution. When you add / create new files with in that folder it have the old permissions. To solve this issue, create / add file with particular permission in that folder. Here is it how to do that.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;First you have create new group.&amp;nbsp;&lt;/strong&gt; This is an optional one, you can use anyone of your old group. For me I created a new group called &amp;quot;media&amp;quot;. Assign this group to user whom want you share.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo groupadd media
+sudo usermod -a -G media friends
+groups friends
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;In second command option &amp;quot;-a&amp;quot; is important. Then only this group is append to the existing group list otherwise all sub-groups are removed. The final command will display the user is belong to which are the groups. You can also do this using GUI. Goto System → Administration → Users and Groups&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://3.bp.blogspot.com/-pcMtYOBwgNw/Tk1IGvf9TFI/AAAAAAAAArM/aG_-IY2tIoI/s1600/added%2Bnew%2Bgroup.png"&gt;&lt;img alt="image0" src="http://3.bp.blogspot.com/-pcMtYOBwgNw/Tk1IGvf9TFI/AAAAAAAAArM/aG_-IY2tIoI/s400/added%2Bnew%2Bgroup.png" /&gt;&lt;/a&gt; Add new group and assigned to users&lt;/p&gt;
+&lt;p&gt;Change group to &amp;quot;media&amp;quot; for existing files and folder with in which directory you want to share.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo chgrp -R media Music/
+sudo chmod g+s -R Music/
+sudo chmod &lt;span class="m"&gt;755&lt;/span&gt; -R Music/
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;In command &amp;quot;-R&amp;quot; for recursive operations. It will change all folders and subfolders files. Second command for &lt;strong&gt;set group id for Music and sub directory.&lt;/strong&gt; Final command for RWX access for user and RX access for group, others for existing files.&lt;/p&gt;
+&lt;p&gt;Now when you create a new directory with in Music. The &amp;quot;media&amp;quot; group is assigned to that folder. it will look like&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;arul@arul-laptop:~/Music$ mkdir sample
+arul@arul-laptop:~/Music$ ll
+drwxr-sr-x &lt;span class="m"&gt;2&lt;/span&gt; arul media &lt;span class="m"&gt;4096&lt;/span&gt; 2011-08-19 00:06 sample
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://4.bp.blogspot.com/-Kyx5kwFVL-c/Tk1eB3TFRKI/AAAAAAAAArU/4F3lIBkXnnc/s1600/media%2Bfolder.png"&gt;&lt;img alt="image1" src="http://4.bp.blogspot.com/-Kyx5kwFVL-c/Tk1eB3TFRKI/AAAAAAAAArU/4F3lIBkXnnc/s400/media%2Bfolder.png" /&gt;&lt;/a&gt; Music folder list view&lt;/p&gt;
+&lt;p&gt;Now login as other user. create symbolic link for media folder for easy access.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;friends@arul-laptop:~/Music$ ln -s /home/arul/Music ./&lt;span class="s2"&gt;&amp;quot;music on arul&amp;quot;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;To know more about File permission view &lt;a class="reference external" href="https://help.ubuntu.com/community/FilePermissions"&gt;this&lt;/a&gt; ubuntu help page.&lt;/p&gt;
+</summary><category term="commands"></category><category term="ubuntu"></category><category term="how to"></category></entry><entry><title>Dos2Unix / Unix2Dos in ubuntu</title><link href="http://www.arulraj.net/2011/08/dos2unix-unix2dos-in-ubuntu.html" rel="alternate"></link><published>2011-08-09T11:56:00+05:30</published><author><name>arul</name></author><id>tag:www.arulraj.net,2011-08-09:2011/08/dos2unix-unix2dos-in-ubuntu.html</id><summary type="html">&lt;p&gt;By default ubuntu does not have dos2unix and unix2dos commands. But they provide some alternative commands. Those are fromdos and todos. sometimes its hard to switch to new commands. You can solve this issue by creating soft / symbolic links. Here its how to do.&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://2.bp.blogspot.com/-jElTSUvs3NU/TkFvZUAJY6I/AAAAAAAAArE/dPCEYt8KI04/s400/dos2unix.png"&gt;&lt;img alt="image0" src="http://2.bp.blogspot.com/-jElTSUvs3NU/TkFvZUAJY6I/AAAAAAAAArE/dPCEYt8KI04/s400/dos2unix.png" /&gt;&lt;/a&gt; command creation&lt;/p&gt;
+&lt;p&gt;First you have to find the location for &amp;quot;fromdos&amp;quot;. Below command will return the location&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;which fromdos
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Then you have to create a soft/symbolic link for that location with the name &amp;quot;dos2unix&amp;quot;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo ln -s /usr/bin/fromdos /usr/bin/dos2unix
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Follow the same steps for unix2dos.&lt;/p&gt;
+&lt;p&gt;To know more about symbolic/soft and hard links &lt;a class="reference external" href="http://stackoverflow.com/questions/185899/what-is-the-difference-between-a-symbolic-link-and-a-hard-link"&gt;click here&lt;/a&gt;&lt;/p&gt;
+</summary><category term="commands"></category><category term="ubuntu"></category><category term="how to"></category></entry><entry><title>Upgrade Samsung Galaxy 5 and 3 to Froyo</title><link href="http://www.arulraj.net/2011/08/upgrade-samsung-galaxy-5-and-3-to-froyo.html" rel="alternate"></link><published>2011-08-05T03:55:00+05:30</published><author><name>arul</name></author><id>tag:www.arulraj.net,2011-08-05:2011/08/upgrade-samsung-galaxy-5-and-3-to-froyo.html</id><summary type="html">&lt;p&gt;&lt;strong&gt;How to Upgrade your android to 2.2&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="https://lh3.googleusercontent.com/-8yr0vIMYWGk/TjuxF4bMH5I/AAAAAAAAAqI/b_ar3tGzFeI/s800/Galaxy-5-and-3.jpg"&gt;&lt;img alt="image0" src="https://lh3.googleusercontent.com/-8yr0vIMYWGk/TjuxF4bMH5I/AAAAAAAAAqI/b_ar3tGzFeI/s400/Galaxy-5-and-3.jpg" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Galaxy 5 and 3 with 2.2&lt;/p&gt;
+&lt;p&gt;I am going to give steps for how to updagrade your Samsung Galaxy 3 (GT-I5800) and Samsung Galaxy 5 (GT-I5503) phone OS Android 2.1 (Eclair) to Android 2.2 (Froyo).&amp;nbsp;I tested these steps myself. So feel free to use. It will surely work for Asia / India users.&lt;/p&gt;
+&lt;p&gt;The Hardware Requirement are:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Windows PC.&lt;/li&gt;
+&lt;li&gt;Samsung Usb cable&lt;/li&gt;
+&lt;li&gt;Absolutely a Mobile either Galaxy 5 or 3&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The Software Requirement are:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;ODIN Multi Downloader.&lt;/li&gt;
+&lt;li&gt;OPS file&lt;/li&gt;
+&lt;li&gt;Firmware file&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The OPS file and Firmware are varies depends upon your Handset. First download the required files.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;For Galaxy 5:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;ODIN - &lt;a class="reference external" href="http://bit.ly/1dTykIG"&gt;S5570_Odin_Multi_Downloader_v4.38.exe&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;OPS file - &lt;a class="reference external" href="http://bit.ly/1HRLlcZ"&gt;EUROPA_v1.0.ops&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Firmware - &lt;a class="reference external" href="http://bit.ly/1AQYje3"&gt;I5503DXJP8_I5503DXJP7_I5503OLBJP7.tar.gz&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;For Galaxy 3:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;ODIN - &lt;a class="reference external" href="http://bit.ly/1dTykIG"&gt;S5570_Odin_Multi_Downloader_v4.38.exe&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;OPS File - &lt;a class="reference external" href="http://bit.ly/1Jy3DnL"&gt;apollo_0531.zip&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Firmware -&amp;nbsp;&lt;a class="reference external" href="http://bit.ly/1F0PVn7"&gt;I5801DDJP6_I5801ODDJP6_INU.zip&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Before start Backup your contacts and everything. Because Upgrade will delete everything from your mobile not from sd card.&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://4.bp.blogspot.com/-Xy--_q7QAfI/Tju1Fsh0G8I/AAAAAAAAAqQ/HOsRICq7kHk/s1600/how-to-downloading-mode.png"&gt;&lt;img alt="image1" src="http://4.bp.blogspot.com/-Xy--_q7QAfI/Tju1Fsh0G8I/AAAAAAAAAqQ/HOsRICq7kHk/s400/how-to-downloading-mode.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Image of How to start mobile in downloading mode.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Steps:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Clean your existing data. Goto to Settings → Privacy → Factory data Reset&lt;/li&gt;
+&lt;li&gt;Remove your SIM and SD card&lt;/li&gt;
+&lt;li&gt;Run that ODIN exe. Some times it requires Admin privileges.&lt;/li&gt;
+&lt;li&gt;Power off your mobile.&lt;/li&gt;
+&lt;li&gt;Start your mobile as Downloading mode. For that Press Volume Down + Home Button [Center Button] + Power Button&lt;/li&gt;
+&lt;li&gt;Connect to USB. Now ODIN detected your mobile in COM port.&lt;/li&gt;
+&lt;li&gt;Check the &amp;quot;One Package&amp;quot; Check box and Check all boxes in Options.&lt;/li&gt;
+&lt;li&gt;Select your OPS File.&lt;/li&gt;
+&lt;li&gt;Select your firmware. Extract that rar file and select tar file with in that.&lt;/li&gt;
+&lt;li&gt;Click start button.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://3.bp.blogspot.com/-ADPkjhCvSks/Tju2uyxStfI/AAAAAAAAAqg/qwvekNHtxc0/s1600/odin.png"&gt;&lt;img alt="image2" src="http://3.bp.blogspot.com/-ADPkjhCvSks/Tju2uyxStfI/AAAAAAAAAqg/qwvekNHtxc0/s400/odin.png" /&gt;&lt;/a&gt;
+How to setup / Settings&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://1.bp.blogspot.com/-r3VzrjvkG58/Tju2StFZiqI/AAAAAAAAAqY/gS93DB7BPd0/s600/Downloading-Mode.jpg"&gt;&lt;img alt="image3" src="http://1.bp.blogspot.com/-r3VzrjvkG58/Tju2StFZiqI/AAAAAAAAAqY/gS93DB7BPd0/s400/Downloading-Mode.jpg" /&gt;&lt;/a&gt;
+Upgrading&lt;/p&gt;
+&lt;p&gt;It will automatically reboot after finish. Rebooting takes 5-10 min don't panic, please be patient. Then unplug your mobile. Yeah you are successfully upgraded to Froyo...!!&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://1.bp.blogspot.com/-BI0r3a1z9Z8/Tju7vUZ60sI/AAAAAAAAAq4/GPg_gQtKwZ4/s600/Android-Rebooting.jpg"&gt;&lt;img alt="image4" src="http://1.bp.blogspot.com/-BI0r3a1z9Z8/Tju7vUZ60sI/AAAAAAAAAq4/GPg_gQtKwZ4/s400/Android-Rebooting.jpg" /&gt;&lt;/a&gt;
+Rebooting&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://3.bp.blogspot.com/-g_0juKi1KZU/Tju4M_1CRkI/AAAAAAAAAqw/RhZD479naBU/s600/galaxy-about-phone.png"&gt;&lt;img alt="image5" src="http://3.bp.blogspot.com/-g_0juKi1KZU/Tju4M_1CRkI/AAAAAAAAAqw/RhZD479naBU/s400/galaxy-about-phone.png" /&gt;&lt;/a&gt;
+Success .. Upgraded&lt;/p&gt;
+&lt;p&gt;Note: Click on the images for large view.&lt;/p&gt;
+&lt;p&gt;My configuration:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Windows 7 PC&lt;/li&gt;
+&lt;li&gt;ODIN v4.38&lt;/li&gt;
+&lt;li&gt;Galaxy 5 and Galaxy 3&lt;/li&gt;
+&lt;li&gt;I am from India&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;To find firmware and OPS for your mobile: &lt;a class="reference external" href="http://www.samfirmware.com/fwandroid.htm"&gt;http://www.samfirmware.com/fwandroid.htm&lt;/a&gt;&lt;/p&gt;
+&lt;div class="section" id="faq"&gt;
+&lt;h2&gt;FAQ:&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;After upgraded gprs is not working..?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Setup manual APN settings or Delete your APN's and reset. It will 100% work. But I am not facing any wifi problem.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;My Phone is not detected..?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Before start upgrading install USB driver for samsung. You can download from here&amp;nbsp;&lt;a class="reference external" href="http://goo.gl/223cK"&gt;http://goo.gl/223cK&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;How to root my phone..?&lt;/strong&gt;&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Download SuperOneClick latest&amp;nbsp;version&amp;nbsp;from &lt;a class="reference external" href="http://goo.gl/sD1KY"&gt;here&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Select Exploit as &amp;quot;GingerBreak&amp;quot;&lt;/li&gt;
+&lt;li&gt;Make sure you phone is detected&lt;/li&gt;
+&lt;li&gt;Press Root button&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Fix for samsung logo only showing..?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Follow the same process before rebooting a recovery window displaying 3
+options.&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;In that 3 First select &amp;quot;Clear your cache&amp;quot;&lt;/li&gt;
+&lt;li&gt;Then &amp;quot;Clear data and reset&amp;quot;&lt;/li&gt;
+&lt;li&gt;Finally select the option to reboot.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Now your phone not struct in samsung logo.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;How to upgraded to 2.3 ..?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;I have upgraded to 2.3.7 (CyanogenMod) by following this link&amp;nbsp;&lt;a class="reference external" href="http://t.co/4wI6FSmk"&gt;http://t.co/4wI6FSmk&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;How to upgraded to 4.0.4 ..?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;I have written a post to upgrade our Galaxy 5 to Android&amp;nbsp;Ice Cream Sandwich&amp;nbsp;&lt;a class="reference external" href="http://www.arulraj.net/2012/07/upgrade-samsung-galaxy-5-to-ice-cream-sandwich.html"&gt;http://www.arulraj.net/2012/07/upgrade-samsung-galaxy-5-to-ice-cream-sandwich.html&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;How to go back to 2.1 ..?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;First you have to find your firmware version&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://1.bp.blogspot.com/-I4YZL2v3Su8/T035soaNoqI/AAAAAAAANjY/QbvWlwCO5ik/s1600/android+version.PNG"&gt;&lt;img alt="image6" src="http://1.bp.blogspot.com/-I4YZL2v3Su8/T035soaNoqI/AAAAAAAANjY/QbvWlwCO5ik/s320/android+version.PNG" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Firmware version&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Go to Settings → About phone note down your baseband version&lt;/li&gt;
+&lt;li&gt;Try to get your firmware from internet. Or use this
+&lt;a class="reference external" href="http://hotfile.com/dl/123203814/82f0724/I5503DDJG4.rar.html"&gt;I5503DDJG4&lt;/a&gt;&amp;nbsp;,
+&lt;a class="reference external" href="http://dl.dropbox.com/u/2710268/I5503DXJG5.rar"&gt;I5503DXJG5&lt;/a&gt; 2.1
+firmware (Galaxy 5). Password for zip file is “samfirmware.com”&lt;/li&gt;
+&lt;li&gt;Use the same ODIN and OPS file and follow the same steps above.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+</summary><category term="android"></category><category term="Mobile"></category><category term="Linux"></category><category term="how to"></category></entry><entry><title>Get Ubuntu Version</title><link href="http://www.arulraj.net/2011/02/get-ubuntu-version.html" rel="alternate"></link><published>2011-02-25T11:02:00+05:30</published><author><name>arul</name></author><id>tag:www.arulraj.net,2011-02-25:2011/02/get-ubuntu-version.html</id><summary type="html">&lt;p&gt;&lt;strong&gt;How to get the ubuntu Version..?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;There are different ways to get the version of ubuntu you are using...
+Here we are going to discuss the all ways...&lt;/p&gt;
+&lt;div class="separator" style="clear: both; text-align: center;"&gt;&lt;p&gt;&lt;a class="reference external" href="http://4.bp.blogspot.com/-VueKP61Jfhs/TWe5k1oPS4I/AAAAAAAAAmw/cQ-BQQeRHz4/s1600/ubuntu-sticker_logo.jpg"&gt;&lt;img alt="image0" src="http://4.bp.blogspot.com/-VueKP61Jfhs/TWe5k1oPS4I/AAAAAAAAAmw/cQ-BQQeRHz4/s400/ubuntu-sticker_logo.jpg" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;This option is common to all linux flavors . it will display the kernal
+and other information too.&lt;/p&gt;
+&lt;blockquote&gt;
+uname -a&lt;/blockquote&gt;
+&lt;div class="separator" style="clear: both; text-align: center;"&gt;&lt;p&gt;&lt;a class="reference external" href="http://4.bp.blogspot.com/--bK3K2EVF70/TWe7iBJO-TI/AAAAAAAAAm4/6e_9TanQElo/s1600/uname-a.png"&gt;&lt;img alt="image1" src="http://4.bp.blogspot.com/--bK3K2EVF70/TWe7iBJO-TI/AAAAAAAAAm4/6e_9TanQElo/s400/uname-a.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+
+ cat /etc/issue&lt;div class="separator" style="clear: both; text-align: center;"&gt;&lt;p&gt;&lt;a class="reference external" href="http://4.bp.blogspot.com/-2yir31hijuw/TWe8hFxuASI/AAAAAAAAAnA/YDLxKKShmS0/s1600/cat%2Bissue.png"&gt;&lt;img alt="image2" src="http://4.bp.blogspot.com/-2yir31hijuw/TWe8hFxuASI/AAAAAAAAAnA/YDLxKKShmS0/s400/cat%2Bissue.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+
+ lsb\_release -a&lt;div class="separator" style="clear: both; text-align: center;"&gt;&lt;p&gt;&lt;a class="reference external" href="http://4.bp.blogspot.com/-f1_2r394gak/TWe9Qmt4QGI/AAAAAAAAAnI/6L8B9Leib9E/s1600/lsb_release.png"&gt;&lt;img alt="image3" src="http://4.bp.blogspot.com/-f1_2r394gak/TWe9Qmt4QGI/AAAAAAAAAnI/6L8B9Leib9E/s400/lsb_release.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+
+ Press CTRL+ALT+F1&lt;p&gt;Then switch back to X11 using CTRL+ALT+F7&lt;/p&gt;
+&lt;blockquote&gt;
+Goto System → About Ubuntu&lt;/blockquote&gt;
+&lt;div class="separator" style="clear: both; text-align: center;"&gt;&lt;p&gt;&lt;a class="reference external" href="http://2.bp.blogspot.com/-UoGMFz3OwWc/TWfgQuKW72I/AAAAAAAAAnQ/TUVyDByv7tY/s1600/about_ubuntu.png"&gt;&lt;img alt="image4" src="http://2.bp.blogspot.com/-UoGMFz3OwWc/TWfgQuKW72I/AAAAAAAAAnQ/TUVyDByv7tY/s400/about_ubuntu.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;</summary><category term="ubuntu"></category><category term="how to"></category></entry><entry><title>Type tamil in ubuntu</title><link href="http://www.arulraj.net/2011/01/type-tamil-in-ubuntu.html" rel="alternate"></link><published>2011-01-14T12:44:00+05:30</published><author><name>arul</name></author><id>tag:www.arulraj.net,2011-01-14:2011/01/type-tamil-in-ubuntu.html</id><summary type="html">&lt;p&gt;I Just want to post a comment in my friend facebook wall... I feel if
+that comment is in Tamil it will be more expressive.. There are more
+services available for online like
+&lt;a class="reference external" href="http://www.google.com/transliterate/indic/Tamil"&gt;http://www.google.com/transliterate/indic/Tamil&lt;/a&gt; . But in the future if i
+want to type in word or excel offline will be useful.. i just google
+it.. Here the steps for Tamil keyboard for ubuntu..&lt;/p&gt;
+&lt;p&gt;How to type tamil in ubuntu ..?&lt;/p&gt;
+&lt;p&gt;Goto System → Preferences → Keyboard .&lt;/p&gt;
+&lt;div class="separator" style="clear: both; text-align: center;"&gt;&lt;p&gt;&lt;a class="reference external" href="http://1.bp.blogspot.com/_X5tq9y9xv2s/TTCYSZRV3zI/AAAAAAAAAmM/JkbvDM0WT7k/s1600/keyboard.png"&gt;&lt;img alt="image0" src="http://1.bp.blogspot.com/_X5tq9y9xv2s/TTCYSZRV3zI/AAAAAAAAAmM/JkbvDM0WT7k/s400/keyboard.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;Then choose the Layouts tab. Click the &amp;quot;Add&amp;quot; button. Then Change the
+country to India and choose your tamil layouts. For myself i choose
+&amp;quot;India Tamil Unicode&amp;quot;&lt;/p&gt;
+&lt;div class="separator" style="clear: both; text-align: center;"&gt;&lt;p&gt;&lt;a class="reference external" href="http://3.bp.blogspot.com/_X5tq9y9xv2s/TTCYnQfjWaI/AAAAAAAAAmU/_cTT9U7j1sQ/s1600/keyboard-Choose%2Ba%2BLayout.png"&gt;&lt;img alt="image1" src="http://3.bp.blogspot.com/_X5tq9y9xv2s/TTCYnQfjWaI/AAAAAAAAAmU/_cTT9U7j1sQ/s400/keyboard-Choose%2Ba%2BLayout.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;Now you can see your layouts in the window.&lt;/p&gt;
+&lt;div class="separator" style="clear: both; text-align: center;"&gt;&lt;p&gt;&lt;a class="reference external" href="http://3.bp.blogspot.com/_X5tq9y9xv2s/TTCY5i_a8zI/AAAAAAAAAmc/dLpqBbV17EE/s1600/Keyboard%2BPreferences.png"&gt;&lt;img alt="image2" src="http://3.bp.blogspot.com/_X5tq9y9xv2s/TTCY5i_a8zI/AAAAAAAAAmc/dLpqBbV17EE/s400/Keyboard%2BPreferences.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;You can change your typing&amp;nbsp;language using the keyboard layout on the top
+panel. By clicking on this applet you can change the language layout
+what ever you want.&lt;/p&gt;
+&lt;div class="separator" style="clear: both; text-align: center;"&gt;&lt;p&gt;&lt;a class="reference external" href="http://4.bp.blogspot.com/_X5tq9y9xv2s/TTCZN-A-HUI/AAAAAAAAAmk/P5fRGTP1fQQ/s1600/keyboard%2Bapplet.png"&gt;&lt;img alt="image3" src="http://4.bp.blogspot.com/_X5tq9y9xv2s/TTCZN-A-HUI/AAAAAAAAAmk/P5fRGTP1fQQ/s400/keyboard%2Bapplet.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;Now i can type in tamil any where in ubuntu.&lt;/p&gt;
+&lt;p&gt;நன்றி ... அருள்.. :)&lt;/p&gt;
+</summary><category term="tamil"></category><category term="ubuntu"></category><category term="how to"></category></entry><entry><title>Hectic problem in ubuntu - resolved</title><link href="http://www.arulraj.net/2010/12/hectic-problem-in-ubuntu-resolved.html" rel="alternate"></link><published>2010-12-23T14:07:00+05:30</published><author><name>arul</name></author><id>tag:www.arulraj.net,2010-12-23:2010/12/hectic-problem-in-ubuntu-resolved.html</id><summary type="html">&lt;p&gt;&lt;strong&gt;My Hectic problem in Ubuntu&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://3.bp.blogspot.com/_X5tq9y9xv2s/TKjoyGZNheI/AAAAAAAAAi8/5gH6PxD0DtY/s1600/thinking+ubuntu.jpg"&gt;&lt;img alt="image0" src="http://3.bp.blogspot.com/_X5tq9y9xv2s/TKjoyGZNheI/AAAAAAAAAi8/5gH6PxD0DtY/s320/thinking+ubuntu.jpg" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Here I will explain how to resolve hectic problems in ubuntu (that I
+felt were tough). Here is the list of my problems.&lt;/p&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;Number Lock not enabled when booting&lt;/li&gt;
+&lt;li&gt;Brightness adjustment&lt;/li&gt;
+&lt;li&gt;Tata photon+ data card problem&lt;/li&gt;
+&lt;li&gt;Unauthorized resource when update&lt;/li&gt;
+&lt;li&gt;VLC problem&lt;/li&gt;
+&lt;li&gt;GPG error: &lt;a class="reference external" href="http://ppa.launchpad.net"&gt;http://ppa.launchpad.net&lt;/a&gt; lucid Release: The following
+signatures couldn't be verified because the public key is not
+available: NO_PUBKEY D225991A72B194E5Failed&lt;/li&gt;
+&lt;li&gt;Screen lock for root user&lt;/li&gt;
+&lt;li&gt;&amp;quot;P&amp;quot;- Button in Acer 5740&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Enable Numlock when boot..?&lt;/p&gt;
+&lt;p&gt;By default the Number lock is disabled. To enable Numlock when booting.&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Install numlockx from your ubuntu software center&lt;/li&gt;
+&lt;li&gt;add the line shown below, at the End of File (before exit0)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;if [ -x /usr/bin/numlockx ]; then&lt;/div&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;/usr/bin/numlockx on&lt;/div&gt;
+&lt;div class="line"&gt;fi&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;OR&lt;/p&gt;
+&lt;p&gt;You can add numlockx in startup ( System → Preferences → Startup
+Applications).&lt;/p&gt;
+&lt;div class="separator" style="clear: both; text-align: center;"&gt;&lt;p&gt;&lt;a class="reference external" href="http://3.bp.blogspot.com/_X5tq9y9xv2s/TROcpK9B-OI/AAAAAAAAAlI/HsZmcQpuYlM/s1600/numlockx%2Bstartup.png"&gt;&lt;img alt="image1" src="http://3.bp.blogspot.com/_X5tq9y9xv2s/TROcpK9B-OI/AAAAAAAAAlI/HsZmcQpuYlM/s400/numlockx%2Bstartup.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;But in this solution the num lock will turn on only after logged in.&lt;/p&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;Brightness Adjustment ..?&lt;/div&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;In ubuntu there is a option to adjust the brightness. But no luck for
+me&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;Go to → Preferences → There is a option available for brightness
+adjustment.&lt;/p&gt;
+&lt;div class="separator" style="clear: both; text-align: center;"&gt;&lt;p&gt;&lt;a class="reference external" href="http://1.bp.blogspot.com/_X5tq9y9xv2s/TROgOZn2wsI/AAAAAAAAAlQ/ObB8Azl-53E/s1600/brightness%2Bpreference.png"&gt;&lt;img alt="image2" src="http://1.bp.blogspot.com/_X5tq9y9xv2s/TROgOZn2wsI/AAAAAAAAAlQ/ObB8Azl-53E/s400/brightness%2Bpreference.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;Tata Photon problem ..?&lt;/p&gt;
+&lt;p&gt;Tata Photon plus came with my laptop as a vendor compliment. When I
+plugged the data card in my system, it was not detected, it was just
+detected as memory card (as pen drive ). Here are the steps to fix for
+this issue.&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Download usbmodeswith from this
+&lt;a class="reference external" href="https://launchpad.net/ubuntu/+archive/primary/+files/usb-modeswitch_1.1.0-2_i386.deb"&gt;link&lt;/a&gt;
+or you can download from ubuntu software center.&lt;/li&gt;
+&lt;li&gt;Run this &amp;quot;lsusb&amp;quot; and find Product and Vendor id respective to the
+&amp;quot;Huawei Technologies Co., Ltd.&amp;quot; for mine its like 12d1:1446 in that
+vendor id is 12d1 and product id is 1446&lt;/li&gt;
+&lt;li&gt;Goto this folder /etc/usb.modswitch.d/ then find the file with name
+&amp;quot;12d1:1446&amp;quot;&lt;/li&gt;
+&lt;li&gt;Add this 140b in TargetProductList in that file&lt;/li&gt;
+&lt;li&gt;Now run this command. &amp;quot; usb_modeswitch -v VENDOR_ID -p PRODUCT_ID
+-M MESSAGE_CONTENT &amp;quot;. For mine &amp;quot; usb_modeswitch -v 12d1 -p 1446 -M
+55534243123456780000000000000011060000000000000000000000000000 &amp;quot;&lt;/li&gt;
+&lt;li&gt;Now the data card detected as modem.&lt;/li&gt;
+&lt;li&gt;To Check whether its detected as a modem run the lsusb command its
+changed to 12d1:140b&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Ubuntu Software Center:&lt;/p&gt;
+&lt;div class="separator" style="clear: both; text-align: center;"&gt;&lt;p&gt;&lt;a class="reference external" href="http://4.bp.blogspot.com/_X5tq9y9xv2s/TROTxIvOYgI/AAAAAAAAAkg/pJs-ZiTCl5k/s1600/usb%2Bmodeswitch-Ubuntu%2BSoftware%2BCenter.png"&gt;&lt;img alt="image3" src="http://4.bp.blogspot.com/_X5tq9y9xv2s/TROTxIvOYgI/AAAAAAAAAkg/pJs-ZiTCl5k/s400/usb%2Bmodeswitch-Ubuntu%2BSoftware%2BCenter.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;lsusb:&lt;/p&gt;
+&lt;div class="separator" style="clear: both; text-align: center;"&gt;&lt;p&gt;&lt;a class="reference external" href="http://4.bp.blogspot.com/_X5tq9y9xv2s/TROUuPlivVI/AAAAAAAAAko/7-msl5lSre8/s1600/lsusb-terminal.png"&gt;&lt;img alt="image4" src="http://4.bp.blogspot.com/_X5tq9y9xv2s/TROUuPlivVI/AAAAAAAAAko/7-msl5lSre8/s400/lsusb-terminal.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;cat 12d1:1446:&lt;/p&gt;
+&lt;div class="separator" style="clear: both; text-align: center;"&gt;&lt;p&gt;&lt;a class="reference external" href="http://4.bp.blogspot.com/_X5tq9y9xv2s/TROW_nPIlKI/AAAAAAAAAkw/oE0PtAA5fTg/s1600/cat%2B12d1%253A1446.png"&gt;&lt;img alt="image5" src="http://4.bp.blogspot.com/_X5tq9y9xv2s/TROW_nPIlKI/AAAAAAAAAkw/oE0PtAA5fTg/s400/cat%2B12d1%253A1446.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;usb_modeswitch command:&lt;/p&gt;
+&lt;div class="separator" style="clear: both; text-align: center;"&gt;&lt;p&gt;&lt;a class="reference external" href="http://1.bp.blogspot.com/_X5tq9y9xv2s/TROZRYE6aKI/AAAAAAAAAk4/mQvDFEjblc0/s1600/usb_modeswitch.png"&gt;&lt;img alt="image6" src="http://1.bp.blogspot.com/_X5tq9y9xv2s/TROZRYE6aKI/AAAAAAAAAk4/mQvDFEjblc0/s400/usb_modeswitch.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;To check:&lt;/p&gt;
+&lt;div class="separator" style="clear: both; text-align: center;"&gt;&lt;p&gt;&lt;a class="reference external" href="http://1.bp.blogspot.com/_X5tq9y9xv2s/TROaRxmEdkI/AAAAAAAAAlA/EuwPi7sXNZ8/s1600/lsusb-to%2Bcheck.png"&gt;&lt;img alt="image7" src="http://1.bp.blogspot.com/_X5tq9y9xv2s/TROaRxmEdkI/AAAAAAAAAlA/EuwPi7sXNZ8/s400/lsusb-to%2Bcheck.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;The disadvantage is that,&amp;nbsp; you need to run this command every time you
+plug in the card. Guys if you know a better solution comment here.&lt;/p&gt;
+&lt;p&gt;Unauthorized resource when update ...?&lt;/p&gt;
+&lt;p&gt;This error came when i was update my system using &amp;quot;Update Manager&amp;quot;
+(System → Administration → Update Manager). Here are the steps to
+resolve this issue&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Goto System → Administration → Software Sources&lt;/li&gt;
+&lt;li&gt;Change that Download From Select Box to Main Server instead of Local
+Server (For mine Server From India)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="separator" style="clear: both; text-align: center;"&gt;&lt;p&gt;&lt;a class="reference external" href="http://2.bp.blogspot.com/_X5tq9y9xv2s/TROQKMA4AnI/AAAAAAAAAkY/yF7J5SgkNok/s1600/Screenshot-Software%2BSources.png"&gt;&lt;img alt="image8" src="http://2.bp.blogspot.com/_X5tq9y9xv2s/TROQKMA4AnI/AAAAAAAAAkY/yF7J5SgkNok/s400/Screenshot-Software%2BSources.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;div class="separator" style="clear: both; text-align: left;"&gt;&lt;p&gt;VLC root user problem ..?&lt;/p&gt;
+&lt;/div&gt;&lt;div class="separator" style="clear: both; text-align: left;"&gt;&lt;p&gt;VLC is running fine for my other user. The only problem is that it could
+not support for root user. Various forums say by default that VLC is
+disabled for root user. If you want enable this you need to download the
+source code and make a small change then rebuild and install. Too bad
+... :(&lt;/p&gt;
+&lt;/div&gt;&lt;div class="separator" style="clear: both; text-align: left;"&gt;&lt;p&gt;GPG Error ..?&lt;/p&gt;
+&lt;/div&gt;&lt;div class="separator" style="clear: both; text-align: left;"&gt;&lt;p&gt;I got this error when running my update manager. I don't know how this
+error came and why my system is looking for the public key. Here are the
+steps to fix the problem.&lt;/p&gt;
+&lt;/div&gt;&lt;div class="separator" style="clear: both; text-align: left;"&gt;&lt;ul class="simple"&gt;
+&lt;li&gt;Run these commands in terminal&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;&lt;pre class="literal-block"&gt;
+gpg --keyserver keyserver.ubuntu.com --recv 72B194E5
+&lt;/pre&gt;
+&lt;pre class="literal-block"&gt;
+gpg --export --armor 72B194E5 | sudo apt-key add -
+&lt;/pre&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;Use these last 8 digits for any other keys . I referred from
+&lt;a class="reference external" href="http://ubuntuforums.org/showthread.php?t=1046158"&gt;here&lt;/a&gt;&lt;/div&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;Screen lock for root user ..?&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;From my understanding from&amp;nbsp;various forums, the screen lock for root user
+is disabled in the linux kernal itself. But I found a message in the
+screen saver itself. Here it is&lt;/p&gt;
+&lt;div style="clear: both; text-align: center;"&gt;&lt;p&gt;&lt;a class="reference external" href="http://4.bp.blogspot.com/_X5tq9y9xv2s/TROi8zrTKWI/AAAAAAAAAlY/Hrh7D2VwvbU/s1600/root%2Bscreen%2Block.png"&gt;&lt;img alt="image9" src="http://4.bp.blogspot.com/_X5tq9y9xv2s/TROi8zrTKWI/AAAAAAAAAlY/Hrh7D2VwvbU/s400/root%2Bscreen%2Block.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;div&gt;&lt;p&gt;Warning: The screen will not be locked for the root user.&lt;/p&gt;
+&lt;/div&gt;&lt;div&gt;&lt;p&gt;&amp;quot;P&amp;quot;- Button in Acer 5740 ...?&lt;/p&gt;
+&lt;/div&gt;&lt;div&gt;&lt;p&gt;The &amp;quot;P&amp;quot; button in the top right corner of the keyboard. You may think
+that this is the Power button or something else (Initially I&amp;nbsp; thought
+the same .. :(&amp;nbsp; ) But there is no default task assigned for this button.
+You can customize this button as you need. I am using this button as
+Mute Button :) Here is the how to...&lt;/p&gt;
+&lt;/div&gt;&lt;div class="separator" style="clear: both; text-align: center;"&gt;&lt;p&gt;&lt;a class="reference external" href="http://4.bp.blogspot.com/_X5tq9y9xv2s/TROlZQBhmvI/AAAAAAAAAlg/wCAcxLSVdIo/s1600/acer%2B5740%2Bp%2Bbutton.jpg"&gt;&lt;img alt="image10" src="http://4.bp.blogspot.com/_X5tq9y9xv2s/TROlZQBhmvI/AAAAAAAAAlg/wCAcxLSVdIo/s400/acer%2B5740%2Bp%2Bbutton.jpg" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;div&gt;&lt;ul class="simple"&gt;
+&lt;li&gt;Goto System → Preferences → Keyboard shortcuts&lt;/li&gt;
+&lt;li&gt;In the Sound tap you can set the New shortcut for Volume mute&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;&lt;div&gt;&lt;div class="separator" style="clear: both; text-align: center;"&gt;&lt;p&gt;&lt;a class="reference external" href="http://4.bp.blogspot.com/_X5tq9y9xv2s/TROnINJaJ3I/AAAAAAAAAlo/jYaYYMt3Xa0/s1600/mute%2B-%2BKeyboard%2BShortcuts.png"&gt;&lt;img alt="image11" src="http://4.bp.blogspot.com/_X5tq9y9xv2s/TROnINJaJ3I/AAAAAAAAAlo/jYaYYMt3Xa0/s400/mute%2B-%2BKeyboard%2BShortcuts.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;Most of these problems are because of accessing as a &lt;strong&gt;root user&lt;/strong&gt;. If
+I change the user it will be fixed. But most of my docs and software are
+pre-configured with this user. I just want to disable my root account
+and migrate from root to some other user.&lt;/p&gt;
+&lt;p&gt;My Configuration :&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;OS - Ubuntu 10.04&lt;/p&gt;
+&lt;p&gt;Login user - root&lt;/p&gt;
+&lt;p&gt;Machine - &lt;a class="reference external" href="http://www.arulraj.net/2010/06/install-ubuntu-10-04-in-acer-5740.html"&gt;Acer
+5740&lt;/a&gt;&lt;/p&gt;
+</summary><category term="Linux"></category><category term="ubuntu"></category><category term="how to"></category></entry><entry><title>Ubuntu file comparison tool - Bcompare</title><link href="http://www.arulraj.net/2010/07/ubuntu-file-comparison-tool-bcompare.html" rel="alternate"></link><published>2010-07-29T11:39:00+05:30</published><author><name>arul</name></author><id>tag:www.arulraj.net,2010-07-29:2010/07/ubuntu-file-comparison-tool-bcompare.html</id><summary type="html">&lt;p&gt;&lt;strong&gt;Beyond Compare for ubuntu&lt;/strong&gt;&lt;/p&gt;
+&lt;div class="separator" style="clear: both; text-align: center;"&gt;&lt;p&gt;&lt;a class="reference external" href="http://2.bp.blogspot.com/_X5tq9y9xv2s/TFGzRmR8VQI/AAAAAAAAAd8/eDuMSfQbXw4/s1600/File+compare.png"&gt;&lt;img alt="image0" src="http://2.bp.blogspot.com/_X5tq9y9xv2s/TFGzRmR8VQI/AAAAAAAAAd8/eDuMSfQbXw4/s320/File+compare.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;div class="separator" style="clear: both; text-align: left;"&gt;&lt;p&gt;There are some command line tool for compare two files. But i need a
+gnome application. The command line tools are.&lt;/p&gt;
+&lt;/div&gt;&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;a class="reference external" href="http://linux.die.net/man/1/diff"&gt;diff&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="http://www.ifi.uio.no/in219/verktoy/doc/html/doc/sag/sag/adminut6.html"&gt;fcomp&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;For fcomp you need to install fhist.&lt;/p&gt;
+&lt;blockquote&gt;
+apt-get install fhist&lt;/blockquote&gt;
+&lt;p&gt;Then i tried &lt;a class="reference external" href="http://meld.sourceforge.net/"&gt;meld&lt;/a&gt; . This is a Gnome
+based file comparison tool for ubuntu. you can install this using ubuntu
+software center. This is an opensource one. But its not working as
+expected [ May be i am not know the power of meld&amp;nbsp; ]. I just tried some
+files.&lt;/p&gt;
+&lt;div class="separator" style="clear: both; text-align: center;"&gt;&lt;p&gt;&lt;a class="reference external" href="http://4.bp.blogspot.com/_X5tq9y9xv2s/TFG3hufyJ_I/AAAAAAAAAeE/6-wa1EVwrqw/s1600/Meld-compare.png"&gt;&lt;img alt="image1" src="http://4.bp.blogspot.com/_X5tq9y9xv2s/TFG3hufyJ_I/AAAAAAAAAeE/6-wa1EVwrqw/s320/Meld-compare.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;When i was a windows user :) [till using windows in my office] i used
+beyond compare. That is too good for file compare and merge. Now i
+searched that software for ubuntu. Yes they provide software for Linux
+too..&lt;/p&gt;
+&lt;div class="separator" style="clear: both; text-align: center;"&gt;&lt;p&gt;&lt;a class="reference external" href="http://www.scootersoftware.com/download.php"&gt;&lt;img alt="image2" src="http://2.bp.blogspot.com/_X5tq9y9xv2s/TFG4g9fjV4I/AAAAAAAAAeM/2u7-70rPa8c/s320/Download+bcompare+for+ubuntu.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;I installed beyond compare in ubuntu 10.04.&lt;/p&gt;
+&lt;p&gt;steps:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Download deb file from here
+&lt;a class="reference external" href="http://www.scootersoftware.com/bcompare-3.1.11.12238_i386.deb"&gt;http://www.scootersoftware.com/bcompare-3.1.11.12238_i386.deb&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Just open the file &amp;quot;with Debi package installer&amp;quot;&lt;/li&gt;
+&lt;li&gt;Click the button &amp;quot;Install package&amp;quot;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Here some screen shots:&lt;/p&gt;
+&lt;div class="separator" style="clear: both; text-align: center;"&gt;&lt;p&gt;&lt;a class="reference external" href="http://1.bp.blogspot.com/_X5tq9y9xv2s/TFG6Ld-AbcI/AAAAAAAAAeU/L4y7uS4Qu6Q/s1600/Bcompare+Install.png"&gt;&lt;img alt="image3" src="http://1.bp.blogspot.com/_X5tq9y9xv2s/TFG6Ld-AbcI/AAAAAAAAAeU/L4y7uS4Qu6Q/s320/Bcompare+Install.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;div class="separator" style="clear: both; text-align: center;"&gt;&lt;p&gt;&lt;a class="reference external" href="http://3.bp.blogspot.com/_X5tq9y9xv2s/TFG6OgfNi1I/AAAAAAAAAec/ifdzPDuXXHs/s1600/Installing+bcompare.png"&gt;&lt;img alt="image4" src="http://3.bp.blogspot.com/_X5tq9y9xv2s/TFG6OgfNi1I/AAAAAAAAAec/ifdzPDuXXHs/s320/Installing+bcompare.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;After installing you can open bcompare from Application --&amp;gt; Programming
+--&amp;gt; Beyond Compare&lt;/p&gt;
+&lt;div class="separator" style="clear: both; text-align: center;"&gt;&lt;p&gt;&lt;a class="reference external" href="http://1.bp.blogspot.com/_X5tq9y9xv2s/TFG67_2mfDI/AAAAAAAAAek/iBb1TkvlM2Q/s1600/Bcompare+in+Application.png"&gt;&lt;img alt="image5" src="http://1.bp.blogspot.com/_X5tq9y9xv2s/TFG67_2mfDI/AAAAAAAAAek/iBb1TkvlM2Q/s320/Bcompare+in+Application.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;For file comparison you can Right click in a file and choose scripts --&amp;gt;
+Select for compare&lt;/p&gt;
+&lt;div class="separator" style="clear: both; text-align: center;"&gt;&lt;p&gt;&lt;a class="reference external" href="http://4.bp.blogspot.com/_X5tq9y9xv2s/TFG7BdY_hMI/AAAAAAAAAes/lRsskGPzl88/s1600/Bcompare+select+for+compare.png"&gt;&lt;img alt="image6" src="http://4.bp.blogspot.com/_X5tq9y9xv2s/TFG7BdY_hMI/AAAAAAAAAes/lRsskGPzl88/s320/Bcompare+select+for+compare.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;Now the File difference&lt;/p&gt;
+&lt;div class="separator" style="clear: both; text-align: center;"&gt;&lt;p&gt;&lt;a class="reference external" href="http://4.bp.blogspot.com/_X5tq9y9xv2s/TFG7_Aq85oI/AAAAAAAAAe0/6oscenx4hYo/s1600/Beyond+compare+on+ubuntu.png"&gt;&lt;img alt="image7" src="http://4.bp.blogspot.com/_X5tq9y9xv2s/TFG7_Aq85oI/AAAAAAAAAe0/6oscenx4hYo/s320/Beyond+compare+on+ubuntu.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;div class="separator" style="clear: both; text-align: center;"&gt;&lt;/div&gt;&lt;div class="separator" style="clear: both; text-align: left;"&gt;&lt;p&gt;Update:&lt;/p&gt;
+&lt;/div&gt;&lt;div class="separator"
+style="clear: both; text-align: left; padding-left: 30px;"&gt;&lt;p&gt;The winmerge is the best windows Bcompare alternative. For more info
+&lt;a class="reference external" href="http://winmerge.org/"&gt;http://winmerge.org/&lt;/a&gt; . This is a freeware and opensource. But its only
+available for windows not for linux :(&lt;/p&gt;
+&lt;/div&gt;</summary><category term="Linux"></category><category term="ubuntu"></category><category term="how to"></category></entry><entry><title>How to add Red5 service</title><link href="http://www.arulraj.net/2010/07/how-to-add-red5-service.html" rel="alternate"></link><published>2010-07-27T13:20:00+05:30</published><author><name>arul</name></author><id>tag:www.arulraj.net,2010-07-27:2010/07/how-to-add-red5-service.html</id><summary type="html">&lt;p&gt;&lt;strong&gt;How to add Red5 service&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="image0" src="http://red5.googlecode.com/svn/doc/trunk/FinalLogo.png" /&gt;&lt;/p&gt;
+&lt;p&gt;In this article you are going to add red5 service in your Linux box.&lt;/p&gt;
+&lt;p&gt;Please use the Below script.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt; &lt;span class="c1"&gt;#!/bin/bash&lt;/span&gt;
+ &lt;span class="c1"&gt;# Author www.arulraj.net&lt;/span&gt;
+ &lt;span class="c1"&gt;# red5    This is used to start, stop, restart and status of red5&lt;/span&gt;
+ &lt;span class="c1"&gt;#&lt;/span&gt;
+
+ &lt;span class="nb"&gt;export&lt;/span&gt; &lt;span class="nv"&gt;RED5_HOME&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;/opt/red5
+
+&lt;span class="nv"&gt;PID&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;0
+ &lt;span class="nv"&gt;RTMPPORT&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;1935
+ &lt;span class="nv"&gt;prog&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;red5&amp;quot;&lt;/span&gt;
+
+ start&lt;span class="o"&gt;(){&lt;/span&gt;
+   status
+   &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt; &lt;span class="nv"&gt;$PID&lt;/span&gt; -eq &lt;span class="m"&gt;0&lt;/span&gt; &lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="k"&gt;then&lt;/span&gt;
+     &lt;span class="nb"&gt;echo&lt;/span&gt; $&lt;span class="s2"&gt;&amp;quot;Starting &lt;/span&gt;&lt;span class="nv"&gt;$prog&lt;/span&gt;&lt;span class="s2"&gt;...&amp;quot;&lt;/span&gt;
+     nohup &lt;span class="nv"&gt;$RED5_HOME&lt;/span&gt;/red5.sh 1&amp;gt; &lt;span class="nv"&gt;$RED5_HOME&lt;/span&gt;/log/stdout.log 2&amp;gt;&lt;span class="nv"&gt;$RED5_HOME&lt;/span&gt;/log/stderr.log &amp;lt; /dev/null &lt;span class="p"&gt;&amp;amp;&lt;/span&gt;
+     &lt;span class="nv"&gt;PID&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$!&lt;/span&gt;
+     &lt;span class="nb"&gt;echo&lt;/span&gt; $&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="nv"&gt;$prog&lt;/span&gt;&lt;span class="s2"&gt; started at port &lt;/span&gt;&lt;span class="nv"&gt;$RTMPPORT&lt;/span&gt;&lt;span class="s2"&gt; and PID[&lt;/span&gt;&lt;span class="nv"&gt;$PID&lt;/span&gt;&lt;span class="s2"&gt;].&amp;quot;&lt;/span&gt;
+   &lt;span class="k"&gt;else&lt;/span&gt;
+     &lt;span class="nb"&gt;echo&lt;/span&gt;
+   &lt;span class="k"&gt;fi&lt;/span&gt;
+   &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="nv"&gt;$PID&lt;/span&gt;
+ &lt;span class="o"&gt;}&lt;/span&gt;
+
+ stop&lt;span class="o"&gt;(){&lt;/span&gt;
+   status
+   &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt; &lt;span class="nv"&gt;$PID&lt;/span&gt; -eq &lt;span class="m"&gt;0&lt;/span&gt; &lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="k"&gt;then&lt;/span&gt;
+     &lt;span class="nb"&gt;echo&lt;/span&gt;
+   &lt;span class="k"&gt;else&lt;/span&gt;
+     &lt;span class="nb"&gt;echo&lt;/span&gt; $&lt;span class="s2"&gt;&amp;quot;Stopping &lt;/span&gt;&lt;span class="nv"&gt;$prog&lt;/span&gt;&lt;span class="s2"&gt;...&amp;quot;&lt;/span&gt;
+     &lt;span class="nv"&gt;$RED5_HOME&lt;/span&gt;/red5-shutdown.sh
+     &lt;span class="nb"&gt;echo&lt;/span&gt; $&lt;span class="s2"&gt;&amp;quot;PID[&lt;/span&gt;&lt;span class="nv"&gt;$PID&lt;/span&gt;&lt;span class="s2"&gt;] is killed.&amp;quot;&lt;/span&gt;
+   &lt;span class="k"&gt;fi&lt;/span&gt;
+   &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="nv"&gt;$PID&lt;/span&gt;
+ &lt;span class="o"&gt;}&lt;/span&gt;
+
+ restart&lt;span class="o"&gt;(){&lt;/span&gt;
+   stop
+   sleep 2
+   start
+ &lt;span class="o"&gt;}&lt;/span&gt;
+
+ status&lt;span class="o"&gt;()&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+   &lt;span class="nv"&gt;RTMPPORT&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="sb"&gt;`&lt;/span&gt;cat &lt;span class="nv"&gt;$RED5_HOME&lt;/span&gt;/conf/red5.properties &lt;span class="p"&gt;|&lt;/span&gt; grep -w &lt;span class="s2"&gt;&amp;quot;rtmp.port&amp;quot;&lt;/span&gt; &lt;span class="p"&gt;|&lt;/span&gt; awk -F&lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;{print $2}&amp;#39;&lt;/span&gt;&lt;span class="sb"&gt;`&lt;/span&gt;
+   &lt;span class="c1"&gt;#PID=`lsof -i | grep java | grep *:$RTMPPORT | awk &amp;#39;{print $2}&amp;#39;`&lt;/span&gt;
+   &lt;span class="nv"&gt;PID&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="sb"&gt;`&lt;/span&gt;ps -ef &lt;span class="p"&gt;|&lt;/span&gt; grep red5 &lt;span class="p"&gt;|&lt;/span&gt; grep java &lt;span class="p"&gt;|&lt;/span&gt; awk &lt;span class="s1"&gt;&amp;#39;{print $2}&amp;#39;&lt;/span&gt;&lt;span class="sb"&gt;`&lt;/span&gt;
+   &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt; x&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="nv"&gt;$PID&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;x&amp;quot;&lt;/span&gt; &lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="k"&gt;then&lt;/span&gt;
+     &lt;span class="nv"&gt;PID&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;0
+     &lt;span class="nb"&gt;echo&lt;/span&gt; $&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="nv"&gt;$prog&lt;/span&gt;&lt;span class="s2"&gt; is not running.&amp;quot;&lt;/span&gt;
+   &lt;span class="k"&gt;else&lt;/span&gt;
+     &lt;span class="nb"&gt;echo&lt;/span&gt; $&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="nv"&gt;$prog&lt;/span&gt;&lt;span class="s2"&gt; running on port &lt;/span&gt;&lt;span class="nv"&gt;$RTMPPORT&lt;/span&gt;&lt;span class="s2"&gt; and PID[&lt;/span&gt;&lt;span class="nv"&gt;$PID&lt;/span&gt;&lt;span class="s2"&gt;].&amp;quot;&lt;/span&gt;
+   &lt;span class="k"&gt;fi&lt;/span&gt;
+   &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="nv"&gt;$PID&lt;/span&gt;
+ &lt;span class="o"&gt;}&lt;/span&gt;
+
+ &lt;span class="c1"&gt;# How its called.&lt;/span&gt;
+ &lt;span class="k"&gt;case&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="nv"&gt;$1&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt; in
+   start&lt;span class="o"&gt;)&lt;/span&gt;
+     start
+   &lt;span class="p"&gt;;;&lt;/span&gt;
+   stop&lt;span class="o"&gt;)&lt;/span&gt;
+     stop
+   &lt;span class="p"&gt;;;&lt;/span&gt;
+   status&lt;span class="o"&gt;)&lt;/span&gt;
+     status
+   &lt;span class="p"&gt;;;&lt;/span&gt;
+   restart&lt;span class="o"&gt;)&lt;/span&gt;
+     restart
+   &lt;span class="p"&gt;;;&lt;/span&gt;
+   *&lt;span class="o"&gt;)&lt;/span&gt;
+     &lt;span class="nb"&gt;echo&lt;/span&gt; $&lt;span class="s2"&gt;&amp;quot;Usage: &lt;/span&gt;&lt;span class="nv"&gt;$0&lt;/span&gt;&lt;span class="s2"&gt; {start|stop|status|restart}&amp;quot;&lt;/span&gt;
+     &lt;span class="nv"&gt;PID&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;1
+ &lt;span class="k"&gt;esac&lt;/span&gt;
+
+ &lt;span class="nb"&gt;exit&lt;/span&gt; &lt;span class="nv"&gt;$PID&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Steps:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Save these shell script lines as a file. For mine i saved as file &amp;quot;red5&amp;quot;. OR You can download this file from &lt;a class="reference external" href="http://arulraj.net/labs/script/red5"&gt;Here&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Copy this file to /etc/init.d/&lt;/li&gt;
+&lt;li&gt;Then execute the below commands to start red5 when your system starts&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://3.bp.blogspot.com/_X5tq9y9xv2s/TFB9KfBDYDI/AAAAAAAAAd0/V698BY0k9jA/s1600/red5+chkconfig+not+working.png"&gt;&lt;img alt="image1" src="http://3.bp.blogspot.com/_X5tq9y9xv2s/TFB9KfBDYDI/AAAAAAAAAd0/V698BY0k9jA/s640/red5+chkconfig+not+working.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;I checked with ubuntu 10.04. For chkconfig work on ubuntu you need to install chkconfig&lt;/p&gt;
+&lt;p&gt;This above script Not working in Ubuntu&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;apt-get install chkconfig
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://3.bp.blogspot.com/_X5tq9y9xv2s/TE8s5WDkvGI/AAAAAAAAAds/kPzFBTdJOeo/s1600/Red5+service+script.png"&gt;&lt;img alt="image2" src="http://3.bp.blogspot.com/_X5tq9y9xv2s/TE8s5WDkvGI/AAAAAAAAAds/kPzFBTdJOeo/s320/Red5+service+script.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Add red5 in startup - ubuntu:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Use this command&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo update-rc.d red5 defaults
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Thanks to anonymous for this info.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Usage:&lt;/strong&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;Start : /etc/init.d/red5 start
+Stop : /etc/init.d/red5 stop
+Status : /etc/init.d/red5 status
+Restart : /etc/init.d/red5 restart
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Please Let me know if you have any issues or better ideas...&lt;/p&gt;
+</summary><category term="commands"></category><category term="Linux"></category><category term="red5"></category><category term="scripting"></category><category term="how to"></category></entry><entry><title>Tamil FM radio for ubuntu</title><link href="http://www.arulraj.net/2010/07/tamil-fm-radio-for-ubuntu.html" rel="alternate"></link><published>2010-07-06T13:13:00+05:30</published><author><name>arul</name></author><id>tag:www.arulraj.net,2010-07-06:2010/07/tamil-fm-radio-for-ubuntu.html</id><summary type="html">&lt;p&gt;&lt;strong&gt;How to add Tamil FM radio for ubuntu&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://3.bp.blogspot.com/_X5tq9y9xv2s/TDN7EfdMqvI/AAAAAAAAAcs/TdQaG50q98w/s1600/radio+icon.jpg"&gt;&lt;img alt="image0" src="http://3.bp.blogspot.com/_X5tq9y9xv2s/TDN7EfdMqvI/AAAAAAAAAcs/TdQaG50q98w/s320/radio+icon.jpg" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Ubuntu having a superb software for playing media files, podcast, online radio and playlist etc., The software is Rhythmbox / VLC. Using that software you can add any online radio. This post for add tamil FM radios to ubuntu Rhythmbox. How to add Tamil FM to ubuntu 10.04 ..? Goto Application ↣ Sound &amp;amp; Video ↣ Rhythmbox Music Player&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://2.bp.blogspot.com/_X5tq9y9xv2s/TDN-oEeYQvI/AAAAAAAAAdE/aNhBJu8GkiI/s1600/Path+for+ubuntu+Rhythmbox.png"&gt;&lt;img alt="image1" src="http://2.bp.blogspot.com/_X5tq9y9xv2s/TDN-oEeYQvI/AAAAAAAAAdE/aNhBJu8GkiI/s320/Path+for+ubuntu+Rhythmbox.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Then Click the Add Radio button. That button is in Top Right Last button.&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://3.bp.blogspot.com/_X5tq9y9xv2s/TDN9ohWrWNI/AAAAAAAAAc8/2HMvXvvXGVI/s1600/Add+FM+radio+in+ubuntu.png"&gt;&lt;img alt="image2" src="http://3.bp.blogspot.com/_X5tq9y9xv2s/TDN9ohWrWNI/AAAAAAAAAc8/2HMvXvvXGVI/s320/Add+FM+radio+in+ubuntu.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Then Enter this URL for Hello FM [Tamil language]&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;mmsh://bdcast-ind-hellon-enusew3aswepuku.wm.llnwd.net/bdcast\_ind\_hellon\_enusew3aswepuku?MSWMExt=.asf
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Then press Add button. Now you can hear Hello FM at any Time. I will
+update the AAhaa FM and Radio City FM soon...&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://4.bp.blogspot.com/_X5tq9y9xv2s/TDN7LVUFtJI/AAAAAAAAAc0/JJvL_CEgAa4/s1600/Ubuntu+rhythmbox+Radio+Hello+FM.png"&gt;&lt;img alt="image3" src="http://4.bp.blogspot.com/_X5tq9y9xv2s/TDN7LVUFtJI/AAAAAAAAAc0/JJvL_CEgAa4/s320/Ubuntu+rhythmbox+Radio+Hello+FM.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Update:&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Here the some of Tamil FM List. You can add this FM's to your ubuntu rhythmbox using above steps.&lt;/p&gt;
+&lt;p&gt;Download this Tamil FM Playlist and Open in Rhythmbox or VLC -&amp;nbsp;&lt;a class="reference external" href="https://dl.dropboxusercontent.com/u/33817562/download/tamil_online_fm.m3u"&gt;Download Tamil FM Playlist&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Image of Tamil FM List&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://2.bp.blogspot.com/-eIPFFH6F-AU/VXLI51l91TI/AAAAAAAAWRM/-l_vNh0MePI/s1600/Selection_002.png"&gt;&lt;img alt="image4" src="http://2.bp.blogspot.com/-eIPFFH6F-AU/VXLI51l91TI/AAAAAAAAWRM/-l_vNh0MePI/s320/Selection_002.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;There is a online version of same playlist also available...&lt;/p&gt;
+&lt;iframe src="http://tamilfm.arulraj.net" style="width: 100%; height: 400px;"&gt;&lt;/iframe&gt;&lt;p&gt;Online Tamil Radio's playlist from &lt;a class="reference external" href="http://tamilfm.arulraj.net"&gt;tamilfm.arulraj.net&lt;/a&gt;. It's works with mobile and all browsers.&lt;/p&gt;
+&lt;div class="section" id="list-of-tamil-fm-s-for-ubuntu"&gt;
+&lt;h2&gt;List of Tamil FM's for ubuntu:&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;A.R.Rahman - http://listen.radionomy.com/arrahman-radio
+Ilayaraja - http://listen.radionomy.com/ilayaraja-radio
+Hello FM - mmsh://bdcast-indhellon-enusew3aswepuku.wm.llnwd.net/bdcast\_ind\_hellon\_enusew3aswepuku?MSWMExt=.asf
+Chennai Rainbow - http://www.euroshoutcast.com:8000
+TamilStar FM - http://media2.tamilstar.fm:8052/
+Shyam Radio - mms://st.malargal.com/shyamradio
+Cheers FM - mms://st.malargal.com/cheersfm
+City FM - mmsh://203.94.64.10/cityfm\_tamil?MSWMExt=.asf
+Elayaraja FM - mmsh://wm.chennaistream.net/cheersfm.newrelease/ilayaraja.wma?MSWMExt=.asf
+Thalam FM - mms://live.wtrfm.com/thaalamfm
+Canada Tamil FM - mms://ctbc.no-ip.com:8080/
+Geetham FM - http://www.geethamradio.com:8020/lofi.mp3
+STR FM - mms://live.strfm24.com/strfm
+TamilThunder FM - http://cdn.tamilmp3thunder.com/radio/radio.asx
+Australia Tamil - http://s7.viastreaming.net/7920/listen.asx
+Ungal radio - http://www.ungalradio.com/TuneIn/WindowsMedia128.asx
+Tamil Flash FM - http://www.tamilsflashfm.com/wmp.asx
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Check out the comments sections also for more FM radio links...&lt;/p&gt;
+&lt;/div&gt;
+</summary><category term="Linux"></category><category term="tamil"></category><category term="ubuntu"></category><category term="how to"></category></entry><entry><title>Mic problem in ubuntu 10.04</title><link href="http://www.arulraj.net/2010/07/mic-problem-in-ubuntu-10-04.html" rel="alternate"></link><published>2010-07-05T13:35:00+05:30</published><author><name>arul</name></author><id>tag:www.arulraj.net,2010-07-05:2010/07/mic-problem-in-ubuntu-10-04.html</id><summary type="html">&lt;p&gt;&lt;strong&gt;Mic Problem in ubuntu 10.04 for Root user&lt;/strong&gt;&lt;/p&gt;
+&lt;div class="separator" style="clear: both; text-align: center;"&gt;&lt;p&gt;&lt;a class="reference external" href="http://1.bp.blogspot.com/_X5tq9y9xv2s/TDIvaC1A0YI/AAAAAAAAAb8/fg2JNqwg6uE/s1600/Volume+in+ubuntu+10.04.png"&gt;&lt;img alt="image0" src="http://1.bp.blogspot.com/_X5tq9y9xv2s/TDIvaC1A0YI/AAAAAAAAAb8/fg2JNqwg6uE/s320/Volume+in+ubuntu+10.04.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;I am using ubuntu 10.04 in my laptop. I created a user when installing
+ubuntu . The sound and Mic are working fine for that user. I enabled the
+root by using the following command&lt;/p&gt;
+&lt;p&gt;To enable root user. Login with existing user then goto Terminal.&lt;/p&gt;
+&lt;blockquote&gt;
+sudo passwd root&lt;/blockquote&gt;
+&lt;p&gt;Now the root user is enabled. I logged in with root user. I seen the
+sound is not working for me. The volume icon is always in &amp;quot;mute&amp;quot; state&lt;/p&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;What is the Error shown ...?&lt;/div&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;When i click the &amp;quot;Sound Preference&amp;quot; in volume button or System --&amp;gt;
+Preference --&amp;gt; Sound it always shows a Warning message &amp;quot;Waiting for
+Sound system to respond&amp;quot;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="separator" style="clear: both; text-align: center;"&gt;&lt;p&gt;&lt;a class="reference external" href="http://3.bp.blogspot.com/_X5tq9y9xv2s/TEc_0dAcuYI/AAAAAAAAAdc/uRcnI1a_fG0/s1600/waiting+for+response.png"&gt;&lt;img alt="image1" src="http://3.bp.blogspot.com/_X5tq9y9xv2s/TEc_0dAcuYI/AAAAAAAAAdc/uRcnI1a_fG0/s320/waiting+for+response.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;How to fix mic problem for root user ..?&lt;/div&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;Goto System --&amp;gt; Preference --&amp;gt; Startup Applications .&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="separator" style="clear: both; text-align: center;"&gt;&lt;p&gt;&lt;a class="reference external" href="http://1.bp.blogspot.com/_X5tq9y9xv2s/TDIxqUrbzsI/AAAAAAAAAcE/jVA2AakzRC4/s1600/startup+application+-+ubuntu.png"&gt;&lt;img alt="image2" src="http://1.bp.blogspot.com/_X5tq9y9xv2s/TDIxqUrbzsI/AAAAAAAAAcE/jVA2AakzRC4/s320/startup+application+-+ubuntu.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;Now you need add a new startup application. Add &amp;quot;pulseaudio&amp;quot; as a
+startup application&lt;/p&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;Name: pulseaudio&lt;/div&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;Command : /usr/bin/pulseaudio&lt;/div&gt;
+&lt;div class="line"&gt;Comment: To start pulseaudio deamon&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="separator" style="clear: both; text-align: center;"&gt;&lt;p&gt;&lt;a class="reference external" href="http://3.bp.blogspot.com/_X5tq9y9xv2s/TDIyC_EXQrI/AAAAAAAAAcM/JC7uXRAJqvk/s1600/Add+start+up+application+ubuntu.png"&gt;&lt;img alt="image3" src="http://3.bp.blogspot.com/_X5tq9y9xv2s/TDIyC_EXQrI/AAAAAAAAAcM/JC7uXRAJqvk/s320/Add+start+up+application+ubuntu.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;Then logout and login again. For min i restarted my system. Now you can
+see the Volume control icon in unmute state and you can edit your sound
+preference now.&lt;/p&gt;
+&lt;div class="separator" style="clear: both; text-align: center;"&gt;&lt;p&gt;&lt;a class="reference external" href="http://2.bp.blogspot.com/_X5tq9y9xv2s/TDIywdsgklI/AAAAAAAAAcU/htWK_E-B4o4/s1600/working+mic+for+ubuntu.png"&gt;&lt;img alt="image4" src="http://2.bp.blogspot.com/_X5tq9y9xv2s/TDIywdsgklI/AAAAAAAAAcU/htWK_E-B4o4/s320/working+mic+for+ubuntu.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;Editing sound preference:&lt;/p&gt;
+&lt;div class="separator" style="clear: both; text-align: center;"&gt;&lt;p&gt;&lt;a class="reference external" href="http://1.bp.blogspot.com/_X5tq9y9xv2s/TDIz1bMbXWI/AAAAAAAAAck/o55AK7XlmX4/s1600/Sound+Preferences+-+ubuntu+10.04.png"&gt;&lt;img alt="image5" src="http://1.bp.blogspot.com/_X5tq9y9xv2s/TDIz1bMbXWI/AAAAAAAAAck/o55AK7XlmX4/s320/Sound+Preferences+-+ubuntu+10.04.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;</summary><category term="Linux"></category><category term="ubuntu"></category><category term="how to"></category></entry><entry><title>Offline dictionary for ubuntu 10.04</title><link href="http://www.arulraj.net/2010/06/offline-dictionary-for-ubuntu-10-04.html" rel="alternate"></link><published>2010-06-28T13:53:00+05:30</published><author><name>arul</name></author><id>tag:www.arulraj.net,2010-06-28:2010/06/offline-dictionary-for-ubuntu-10-04.html</id><summary type="html">&lt;div class="separator" style="clear: both; text-align: center;"&gt;&lt;p&gt;&lt;a class="reference external" href="http://4.bp.blogspot.com/_X5tq9y9xv2s/TCj1u9sK79I/AAAAAAAAAbE/6-RRuRSCn6w/s1600/ubuntu_icon.png"&gt;&lt;img alt="image0" src="http://4.bp.blogspot.com/_X5tq9y9xv2s/TCj1u9sK79I/AAAAAAAAAbE/6-RRuRSCn6w/s320/ubuntu_icon.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;div class="separator" style="clear: both; text-align: left;"&gt;&lt;p&gt;Why offline dictionary ..?&lt;/p&gt;
+&lt;/div&gt;&lt;div class="separator" style="clear: both; text-align: left;"&gt;&lt;p&gt;Anyway ubuntu 10.04 have dictionary by default. You can find the
+dictionary from Application → office → Dictionary. You can find the
+meaning of a english word using this. When you search for meaning of a
+word its communicate with online dictionary server for ex. dict.org then
+get the result. If you not having the Net connection / poor connection
+its useless. In this situation offline dictionary will helpful to you.
+For this you need to install dictionary server in your local ubuntu
+machine. here is how to do this.&lt;/p&gt;
+&lt;/div&gt;&lt;div class="separator" style="clear: both; text-align: center;"&gt;&lt;p&gt;&lt;a class="reference external" href="http://1.bp.blogspot.com/_X5tq9y9xv2s/TCj6wHIa52I/AAAAAAAAAbM/r_06GVCYYNc/s1600/How+to+offline+Dictionery+ubuntu.png"&gt;&lt;img alt="image1" src="http://1.bp.blogspot.com/_X5tq9y9xv2s/TCj6wHIa52I/AAAAAAAAAbM/r_06GVCYYNc/s320/How+to+offline+Dictionery+ubuntu.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;div class="separator" style="clear: both; text-align: left;"&gt;&lt;p&gt;How to install dictionary server in local ..?&lt;/p&gt;
+&lt;/div&gt;&lt;div class="separator" style="clear: both; text-align: left;"&gt;&lt;p&gt;Goto terminal and run the following commands&lt;/p&gt;
+&lt;/div&gt;&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;[bash]&lt;/div&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;sudo apt-get install dictd&lt;/div&gt;
+&lt;div class="line"&gt;sudo apt-get install dict-gcide&lt;/div&gt;
+&lt;div class="line"&gt;sudo apt-get install dict-moby-thesaurus&lt;/div&gt;
+&lt;div class="line"&gt;[/bash]&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;dictd - This is the Dictionary server which supports DICT protocol.&lt;/div&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;dict-gcide - English Dictionary&lt;/div&gt;
+&lt;div class="line"&gt;dict-moby-thesaurus - thesaurus data source in English. This is an
+optional one&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;Yes now you are successfully installed a dictionary server. Now you need
+to add this server with your dictionary client.&lt;/p&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;How to add local dictionary to dictionary client ..?&lt;/div&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;Goto Dictionary then Edit → Preference&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="separator" style="clear: both; text-align: center;"&gt;&lt;p&gt;&lt;a class="reference external" href="http://1.bp.blogspot.com/_X5tq9y9xv2s/TCj7I1bnJXI/AAAAAAAAAbU/9Xf59VIKGzM/s1600/How+to+offline+Dictionery+ubuntu+-+preference.png"&gt;&lt;img alt="image2" src="http://1.bp.blogspot.com/_X5tq9y9xv2s/TCj7I1bnJXI/AAAAAAAAAbU/9Xf59VIKGzM/s320/How+to+offline+Dictionery+ubuntu+-+preference.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;Click the &amp;quot;Add&amp;quot; button to add a new dictionary&lt;/p&gt;
+&lt;div class="separator" style="clear: both; text-align: center;"&gt;&lt;p&gt;&lt;a class="reference external" href="http://4.bp.blogspot.com/_X5tq9y9xv2s/TCj7lwcawGI/AAAAAAAAAbc/kn0Tb2pGQ6M/s1600/How+to+offline+Dictionery+ubuntu-add+dictionary.png"&gt;&lt;img alt="image3" src="http://4.bp.blogspot.com/_X5tq9y9xv2s/TCj7lwcawGI/AAAAAAAAAbc/kn0Tb2pGQ6M/s320/How+to+offline+Dictionery+ubuntu-add+dictionary.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;Enter your local dictionary details.&lt;/div&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;Dictionary name : Default&lt;/div&gt;
+&lt;div class="line"&gt;Transport : Dictionary Server&lt;/div&gt;
+&lt;div class="line"&gt;Hostname : 127.0.0.1&lt;/div&gt;
+&lt;div class="line"&gt;Port : 2628&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="separator" style="clear: both; text-align: center;"&gt;&lt;p&gt;&lt;a class="reference external" href="http://3.bp.blogspot.com/_X5tq9y9xv2s/TCj8O4iRQpI/AAAAAAAAAbk/wsIQHjRkmc0/s1600/How+to+offline+Dictionery+ubuntu-Edit+Dictionary+Source.png"&gt;&lt;img alt="image4" src="http://3.bp.blogspot.com/_X5tq9y9xv2s/TCj8O4iRQpI/AAAAAAAAAbk/wsIQHjRkmc0/s320/How+to+offline+Dictionery+ubuntu-Edit+Dictionary+Source.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;Thats all. Now you can search locally.&lt;/p&gt;
+&lt;div class="separator" style="clear: both; text-align: center;"&gt;&lt;p&gt;&lt;a class="reference external" href="http://1.bp.blogspot.com/_X5tq9y9xv2s/TCj80W9JaTI/AAAAAAAAAbs/RH9BORx27fs/s1600/java+-+ubuntu+Dictionary+search.png"&gt;&lt;img alt="image5" src="http://1.bp.blogspot.com/_X5tq9y9xv2s/TCj80W9JaTI/AAAAAAAAAbs/RH9BORx27fs/s320/java+-+ubuntu+Dictionary+search.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;div class="separator" style="clear: both; text-align: left;"&gt;&lt;p&gt;Update on 6th June 2011:&lt;/p&gt;
+&lt;/div&gt;&lt;div class="separator"
+style="clear: both; text-align: left; padding-left: 30px;"&gt;&lt;p&gt;Now I found an application for offline Dictionary from ubuntu software
+center you can install it from here. Name is
+&lt;a class="reference external" href="http://artha.sourceforge.net/wiki/index.php/Home"&gt;Artha&lt;/a&gt; .&lt;/p&gt;
+&lt;/div&gt;&lt;div class="separator" style="clear: both; text-align: center;"&gt;&lt;p&gt;&lt;a class="reference external" href="http://1.bp.blogspot.com/-UvmfYZPfF-0/TevXeMyrFdI/AAAAAAAAAps/oUuZWdM5oXY/s1600/artha-offlince-dictionary.png"&gt;&lt;img alt="image6" src="http://1.bp.blogspot.com/-UvmfYZPfF-0/TevXeMyrFdI/AAAAAAAAAps/oUuZWdM5oXY/s400/artha-offlince-dictionary.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;Update on 20th November 2011:&lt;/p&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;Here I have given steps for installing dictionary server for a
+dictionary client such as &amp;quot;Gnome Dictionary&amp;quot;. Before Installing
+dictionary server make sure do have any dictionary client.&lt;/div&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;[bash]sudo apt-get install gnome-dictionary[/bash]&lt;/div&gt;
+&lt;div class="line"&gt;this is the command for installing Gnome Dictionary.&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</summary><category term="ubuntu"></category><category term="how to"></category></entry><entry><title>Ubuntu FAQ</title><link href="http://www.arulraj.net/2010/06/ubuntu-faq.html" rel="alternate"></link><published>2010-06-13T13:44:00+05:30</published><author><name>arul</name></author><id>tag:www.arulraj.net,2010-06-13:2010/06/ubuntu-faq.html</id><summary type="html">&lt;p&gt;&lt;a class="reference external" href="http://picasaweb.google.com/lh/photo/H_Aajl3cxrd_q5qtDv82yRRU7417pzdLFPTzvmy2uw8?feat=blogger"&gt;&lt;img alt="image0" src="http://lh6.ggpht.com/_X5tq9y9xv2s/TBE3MO5AjmI/AAAAAAAAAZI/_QfbEoEor1Q/s512/ubuntu-logo.gif" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Hi i am using ubuntu in &lt;a class="reference external" href="http://www.arulraj.net/2010/06/install-ubuntu-10-04-in-acer-5740.html"&gt;my
+laptop&lt;/a&gt;
+. Previously i am using windows os. i face some problems like how to
+open my computer in shorcut, show desktop, Run etc., i search in google
+and resolve here i explain how to do those things. This is not for
+ubuntu/linux guru's only for newbies like me :)&lt;/p&gt;
+&lt;p&gt;How to open My computer (filesystem) in ubuntu ..?&lt;/p&gt;
+&lt;p&gt;There is a command called &amp;quot;nautilus&amp;quot; . This will help you. Open Terminal
+then type &amp;quot;nautilus /&amp;quot; this will open your filesystem. Then create
+Launcher (shortcut) for this.&lt;/p&gt;
+&lt;p&gt;How to Create a shortcut ..?&lt;/p&gt;
+&lt;p&gt;Go to your Desktop. Then Right Click --&amp;gt; Select &amp;quot;Create Launcher&amp;quot;. It
+shows a window Fill up the like the below&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://1.bp.blogspot.com/_X5tq9y9xv2s/TBUfGYQA4oI/AAAAAAAAAZQ/iJRZnOfdDws/s1600/ubuntu+create+shorcut.png"&gt;&lt;img alt="image1" src="http://1.bp.blogspot.com/_X5tq9y9xv2s/TBUfGYQA4oI/AAAAAAAAAZQ/iJRZnOfdDws/s320/ubuntu+create+shorcut.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;In the Create Launcher window Type this Command &amp;quot;nautilus /&amp;quot;. Select
+your own name and own comment. Then click OK. Now the your &amp;quot;My Computer
+&amp;quot; icon is created in the Desktop like the below&lt;/p&gt;
+&lt;div class="separator" style="clear: both; text-align: center;"&gt;&lt;p&gt;&lt;a class="reference external" href="http://3.bp.blogspot.com/_X5tq9y9xv2s/TBUfItPVR2I/AAAAAAAAAZY/rB8CIUT-cNQ/s1600/ubuntu+my+computer.png"&gt;&lt;img alt="image2" src="http://3.bp.blogspot.com/_X5tq9y9xv2s/TBUfItPVR2I/AAAAAAAAAZY/rB8CIUT-cNQ/s320/ubuntu+my+computer.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;Using the nautilus command you can create the shortcut for any folder.
+For Home folder change the command &amp;quot;nautilus /root&amp;quot; .&lt;/p&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;There is a another method to do all the things.&lt;/div&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;Goto terminal then type &amp;quot;gconf-editor&amp;quot; it opens a Configuration
+Editor. Its like a&amp;nbsp;Registry&amp;nbsp;Editor in windows operating system.&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;Its like the below&lt;/p&gt;
+&lt;div class="separator" style="clear: both; text-align: center;"&gt;&lt;p&gt;&lt;a class="reference external" href="http://2.bp.blogspot.com/_X5tq9y9xv2s/TBUm5ktozNI/AAAAAAAAAZg/2pdoXC_fiGU/s1600/ubuntu+Configuration+Editor+-+desktop.png"&gt;&lt;img alt="image3" src="http://2.bp.blogspot.com/_X5tq9y9xv2s/TBUm5ktozNI/AAAAAAAAAZg/2pdoXC_fiGU/s320/ubuntu+Configuration+Editor+-+desktop.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;Goto Configuration Editor --&amp;gt; apps --&amp;gt; nautilus --&amp;gt; Desktop&lt;/div&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;Then Check the checkbox &amp;quot;computer_icon_visible&amp;quot; and
+&amp;quot;home_icon_visible&amp;quot; . Now the your computer and Home icons are shown
+in your desktop.&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://2.bp.blogspot.com/_X5tq9y9xv2s/TBUo0o1QdoI/AAAAAAAAAZo/NTOAbc70qKA/s1600/ubuntu+desktop+icon.png"&gt;&lt;img alt="image4" src="http://2.bp.blogspot.com/_X5tq9y9xv2s/TBUo0o1QdoI/AAAAAAAAAZo/NTOAbc70qKA/s320/ubuntu+desktop+icon.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;How to create custom keyboard shortcut ..?&lt;/p&gt;
+&lt;p&gt;In ubuntu you can create your own custom keyboard shortcut. Goto System
+--&amp;gt; Preference --&amp;gt; keyboard shortcuts.&lt;/p&gt;
+&lt;div class="separator" style="clear: both; text-align: center;"&gt;&lt;p&gt;&lt;a class="reference external" href="http://4.bp.blogspot.com/_X5tq9y9xv2s/TBZqxPcrfUI/AAAAAAAAAaA/ZnNuu2pn8m8/s1600/ubuntu+keyboard+shorcut.png"&gt;&lt;img alt="image5" src="http://4.bp.blogspot.com/_X5tq9y9xv2s/TBZqxPcrfUI/AAAAAAAAAaA/ZnNuu2pn8m8/s320/ubuntu+keyboard+shorcut.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;It opens a new window. Click the Add button then Enter your own name and
+type the command for that. For example if you want to open &amp;quot;System
+Monitor&amp;quot; its like Task manager in windows type this command
+&amp;quot;gnome-system-monitor&amp;quot;. Then press Apply. Now its time to select your
+shortcut keys. Select which one you added then choose your combination
+of keys.&lt;/p&gt;
+&lt;div class="separator" style="clear: both; text-align: center;"&gt;&lt;p&gt;&lt;a class="reference external" href="http://4.bp.blogspot.com/_X5tq9y9xv2s/TBUxbc0bnCI/AAAAAAAAAZw/uyh9gjH6vWE/s1600/Keyboard+shorcut.png"&gt;&lt;img alt="image6" src="http://4.bp.blogspot.com/_X5tq9y9xv2s/TBUxbc0bnCI/AAAAAAAAAZw/uyh9gjH6vWE/s320/Keyboard+shorcut.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;How to set environmental variables ..?&lt;/div&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;Lot of ways available to set the environmental variable. But this is
+the most simple one. You can add your variable in &amp;quot;/etc/environment&amp;quot;
+file&lt;/div&gt;
+&lt;div class="line"&gt;open this file then add your bin folder in the PATH. You can add HOME
+variable like &amp;quot;JAVA_HOME&amp;quot; in the next line.&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://3.bp.blogspot.com/_X5tq9y9xv2s/TBU0yyPQyRI/AAAAAAAAAZ4/RiE8Aiw85dg/s1600/ubuntu+environment+variable.png"&gt;&lt;img alt="image7" src="http://3.bp.blogspot.com/_X5tq9y9xv2s/TBU0yyPQyRI/AAAAAAAAAZ4/RiE8Aiw85dg/s320/ubuntu+environment+variable.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Some Ubuntu shortcuts :&lt;/p&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;To open Terminal window CTRL+ALT+T&lt;/div&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;To open Run window ALT+F2&lt;/div&gt;
+&lt;div class="line"&gt;To Choose the Desktop Windows key + E&lt;/div&gt;
+&lt;div class="line"&gt;Show Desktop CTRL+ALT+D&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</summary><category term="commands"></category><category term="Linux"></category><category term="ubuntu"></category><category term="how to"></category></entry><entry><title>Install Ubuntu 10.04 in Acer 5740</title><link href="http://www.arulraj.net/2010/06/install-ubuntu-10-04-in-acer-5740.html" rel="alternate"></link><published>2010-06-10T14:24:00+05:30</published><author><name>arul</name></author><id>tag:www.arulraj.net,2010-06-10:2010/06/install-ubuntu-10-04-in-acer-5740.html</id><summary type="html">&lt;p&gt;&lt;a class="reference external" href="http://picasaweb.google.com/lh/photo/H_Aajl3cxrd_q5qtDv82yRRU7417pzdLFPTzvmy2uw8?feat=blogger"&gt;&lt;img alt="image0" src="http://lh6.ggpht.com/_X5tq9y9xv2s/TBE3MO5AjmI/AAAAAAAAAZI/_QfbEoEor1Q/s512/ubuntu-logo.gif" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;In this blog post i am going to explain how to install ubuntu 10.04 in
+Acer 5740 laptop. Recently i bought a new Acer 5740 laptop with DOS
+Operating System. The total price is Rs.30,000 in chennai. Before buying
+this laptop i fixed in my mind use only Linux Operating system in my new
+laptop. I have tried many other distros like Linux mint, Fedora and
+opensuse in vmware. Apart from that i like ubuntu, because user
+friendly. ok now let into the topic.&lt;/p&gt;
+&lt;p&gt;Here is my system Configuration:&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://picasaweb.google.com/lh/photo/ZOz4KGlVExEFWymsd2pqvBRU7417pzdLFPTzvmy2uw8?feat=blogger"&gt;&lt;img alt="image1" src="http://lh4.ggpht.com/_X5tq9y9xv2s/TBE14Tfh8zI/AAAAAAAAAY8/K-ABTQwXT-k/s512/Ubuntu-Sysinfo.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;How to install ubuntu ..?&lt;/p&gt;
+&lt;p&gt;Steps:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Download the DVD from &lt;a class="reference external" href="http://cdimage.ubuntu.com/dvd/current/"&gt;http://cdimage.ubuntu.com/dvd/current/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Just Plug the dvd in your 5740 laptop.&lt;/li&gt;
+&lt;li&gt;Select your Language&lt;/li&gt;
+&lt;li&gt;Then select &amp;quot;Install ubuntu&amp;quot;&lt;/li&gt;
+&lt;li&gt;Select your Time Zone&lt;/li&gt;
+&lt;li&gt;Select your Keyboard layout&lt;/li&gt;
+&lt;li&gt;Select your&amp;nbsp;Partition&amp;nbsp;option- i choose the default one&lt;/li&gt;
+&lt;li&gt;Enter the Login user details&lt;/li&gt;
+&lt;li&gt;Now copying files progress bar. This process only take too much off
+times for me, approximately it takes more than 45 min.&lt;/li&gt;
+&lt;li&gt;Yes. you done it. you are successfully installed.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;How to enable root user in ubuntu ..?&lt;/p&gt;
+&lt;p&gt;Go to Terminal. keyboard Shortcut for terminal is press CTRL + ALT + T. Then type the below command&lt;/p&gt;
+&lt;div id="_mcePaste"&gt;&lt;p&gt;&lt;a class="reference external" href="mailto:root&amp;#64;arul-laptop"&gt;root&amp;#64;arul-laptop&lt;/a&gt;:~# sudo passwd root&lt;/p&gt;
+&lt;/div&gt;&lt;div&gt;&lt;p&gt;Enter the new password and confirm the password. You can restrict the
+user&amp;nbsp;privilege by&amp;nbsp;Goto System -&amp;gt; Administration -&amp;gt; User and Groups and
+click the advanced option.&lt;/p&gt;
+&lt;/div&gt;&lt;div&gt;&lt;p&gt;Photo Slide show:&lt;/p&gt;
+&lt;/div&gt;&lt;div id="__ss_4468080" style="width: 425px; text-align: center;"&gt;&lt;object id="__sse4468080" classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" width="425" height="355" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,40,0"&gt;&lt;embed id="__sse4468080" type="application/x-shockwave-flash" width="425" height="355" src="http://static.slidesharecdn.com/swf/ssplayer2.swf?doc=installing-acerodp4691&amp;amp;stripped_title=installing-acerodp" name="__sse4468080" allowscriptaccess="always" allowfullscreen="true"&gt;
+&lt;/embed&gt;
+&lt;/object&gt;&lt;/div&gt;&lt;div&gt;&lt;p&gt;Thanks to my friend Mr.Ponraj natarajan for helping me installing
+ubuntu. Without him it does not happen.&lt;/p&gt;
+&lt;/div&gt;</summary><category term="Linux"></category><category term="ubuntu"></category><category term="how to"></category></entry><entry><title>How to add www to your domain name</title><link href="http://www.arulraj.net/2010/03/how-to-add-www-to-your-domain-name.html" rel="alternate"></link><published>2010-03-08T04:36:00+05:30</published><author><name>arul</name></author><id>tag:www.arulraj.net,2010-03-08:2010/03/how-to-add-www-to-your-domain-name.html</id><summary type="html">&lt;p&gt;&lt;strong&gt;How to add www to your domain name&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://3.bp.blogspot.com/_X5tq9y9xv2s/S5TOlrA6HBI/AAAAAAAAAMo/46plgLZv_mw/s1600-h/htaccess.gif"&gt;&lt;img alt="image0" src="http://3.bp.blogspot.com/_X5tq9y9xv2s/S5TOlrA6HBI/AAAAAAAAAMo/46plgLZv_mw/s400/htaccess.gif" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Before going to the htaccess . You need to answer my question, The question is&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Do you think arulraj.net and www.arulraj.net both are different domain name or same ..?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;ya. we (humans) know both are points the same web page. But the search
+engine robots assume this both are different one. As a result duplicate
+results in the search results. To avoid this problem you need to develop
+search engine friendly web pages.&lt;/p&gt;
+&lt;p&gt;Now the topic,&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;How to add www in front of your domain name ..?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;For this you are aware of &lt;a class="reference external" href="http://en.wikipedia.org/wiki/Htaccess"&gt;htaccess&lt;/a&gt; file and where it is located.&lt;/p&gt;
+&lt;p&gt;htaccess - Hypertext Access&lt;/p&gt;
+&lt;p&gt;The file located in root directory of your domain name .&lt;/p&gt;
+&lt;p&gt;For example : &lt;em&gt;/home/&amp;lt;username&amp;gt;/public_html/&amp;lt;domain dir name&amp;gt;/.htaccess&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;That above structure in Bluehost.Now add this line to your .htaccess
+file&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;RewriteEngine On
+RewriteBase /
+RewriteCond %{HTTP\_HOST} ^sharedaa\\.com$ [NC]
+RewriteRule ^(.*)$ http://www.sharedaa.com/$1 [R=301,L]
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Now anyone type sharedaa.com in browser it is automatically redirect to
+www.sharedaa.com&lt;/p&gt;
+&lt;p&gt;How to redirect to index page if the page is not available ..?&lt;/p&gt;
+&lt;p&gt;One of your page is indexed in search engine. You remove the page, at
+this time you want to redirect to home page. how to do this.Add the
+below line to your htaccess file.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.php [L]
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;The final .htaccess file will be&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;# Use PHP5CGI as default
+AddHandler application/x-httpd-php5 .php
+
+# BEGIN
+&amp;lt;IfModule mod_rewrite.c&amp;gt;
+RewriteEngine On
+RewriteBase /
+RewriteCond %{HTTP_HOST} ^sharedaa\.com$ [NC]
+RewriteRule ^(.\*)$ http://www.sharedaa.com/$1 [R=301,L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.php [L]
+&amp;lt;/IfModule&amp;gt;
+
+# END
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;How to add www to your wordpress blog ..?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Go to Setting --&amp;gt; General setting page and in the Blog Address text box enter your domain name with www . for example &lt;a class="reference external" href="http://www.sharedaa.com"&gt;http://www.sharedaa.com&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://1.bp.blogspot.com/_X5tq9y9xv2s/S5TVR_LfRuI/AAAAAAAAAMw/sOJ7-_iVg1Q/s1600-h/wordpress-www.jpg"&gt;&lt;img alt="image1" src="http://1.bp.blogspot.com/_X5tq9y9xv2s/S5TVR_LfRuI/AAAAAAAAAMw/sOJ7-_iVg1Q/s400/wordpress-www.jpg" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Reference : &lt;a class="reference external" href="http://www.thesitewizard.com/apache/index.shtml"&gt;http://www.thesitewizard.com/apache/index.shtml&lt;/a&gt;&lt;/p&gt;
+</summary><category term="Browser"></category><category term="php"></category><category term="how to"></category><category term="hosting"></category></entry><entry><title>How rotation camera3d and viewer3d worked in Away3d</title><link href="http://www.arulraj.net/2010/02/how-rotation-camera3d-and-viewer3d-worked-in-away3d.html" rel="alternate"></link><published>2010-02-07T06:54:00+05:30</published><author><name>Arul</name></author><id>tag:www.arulraj.net,2010-02-07:2010/02/how-rotation-camera3d-and-viewer3d-worked-in-away3d.html</id><summary type="html">&lt;p&gt;&lt;strong&gt;Rotation in Away3D Flash engine&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://4.bp.blogspot.com/_X5tq9y9xv2s/S26cXkz167I/AAAAAAAAALs/45u4Luu4aRE/s1600-h/away3d+rotation+example.jpg"&gt;&lt;img alt="image0" src="http://4.bp.blogspot.com/_X5tq9y9xv2s/S26cXkz167I/AAAAAAAAALs/45u4Luu4aRE/s400/away3d+rotation+example.jpg" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;In this blog entry we are going to learn about How the Rotation and camera3d and viewer3d in away3d flash engine.&lt;/p&gt;
+&lt;p&gt;Red line = x-axis&lt;/p&gt;
+&lt;p&gt;Blue line = y-axis&lt;/p&gt;
+&lt;p&gt;Green Line = z-axis&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;How Rotation works ..?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Rotation in away3d based on the three axis . Those are x.y and z.&amp;nbsp; the component is rotated take any one of this axis as a center then rotated. In my &lt;a class="reference external" href="http://arulraj.net/2010/02/my-first-3d-flash-animation.html"&gt;last post&lt;/a&gt; the sphere is rotated along with x axis. In that example the axis is like that (see below )&lt;/p&gt;
+&lt;embed src="http://files.arulraj.net/code/flash/away3d/singlerotate.swf" width="600" height="400"&gt;
+&lt;/embed&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sphere.rotationX = sphere.x + 1;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;The sphere takes x axis as a center and rotate like above...&lt;/p&gt;
+&lt;p&gt;In this example we add two or more components in the ObjectContainer3D then rotate this objects. In this example we are going to learn about how camera3D and Viewer3D works.&lt;/p&gt;
+&lt;embed src="http://files.arulraj.net/code/flash/away3d/away3drotate.swf" width="600" height="400"&gt;
+&lt;/embed&gt;&lt;p&gt;&lt;strong&gt;How Camera3D works ..?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://1.bp.blogspot.com/_X5tq9y9xv2s/S260xnBaV8I/AAAAAAAAAL0/sdpPCbRPy28/s1600-h/camera3d.jpg"&gt;&lt;img alt="image1" src="http://1.bp.blogspot.com/_X5tq9y9xv2s/S260xnBaV8I/AAAAAAAAAL0/sdpPCbRPy28/s400/camera3d.jpg" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Camera3d = real camera&lt;/p&gt;
+&lt;p&gt;view3d = lens the viewr of the camara&lt;/p&gt;
+&lt;p&gt;renderer = recording in real cam&lt;/p&gt;
+&lt;p&gt;scen3d = what we seen&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;This diagram explained in &lt;a class="reference external" href="http://books.sharedaa.com/2010/02/papervision3d-essentials.html"&gt;Papervision3d Essential&lt;/a&gt; book.. In this diagram your clearly understood about camera3d.&lt;/p&gt;
+&lt;p&gt;If we assume Camera 3d is like a real camera . we assume it is with in our application in invisible mode.&lt;/p&gt;
+&lt;p&gt;The viewerport (view3d) is an lens or what you are view using the camera.&lt;/p&gt;
+&lt;p&gt;The render engine is recording engine in the real camera. In the real camera If&amp;nbsp; we start the record then only we can see the changes otherwise not. Like same as in camera3d we called&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;viewer.render()
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;method each time if anything changed in the components. In the real camara If any person is not inside the seen they are not come in the flim. Same as in the scene3d if we not add add any components in the scene 3d objects&amp;nbsp; it is not visible.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;How Viewer3D Works ..?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Download the source code &lt;a class="reference external" href="http://sites.google.com/site/arulraj1985/list-of-files/Away3drotate.zip?attredirects=0&amp;amp;d=1"&gt;click here&lt;/a&gt; (compatible for Flashdevelop IDE)&lt;/p&gt;
+</summary><category term="Animation"></category><category term="Flash"></category><category term="Programming"></category><category term="how to"></category></entry><entry><title>How to create and use private / public keys</title><link href="http://www.arulraj.net/2009/07/how-to-create-and-use-private-public-keys.html" rel="alternate"></link><published>2009-07-23T06:27:00+05:30</published><author><name>arul</name></author><id>tag:www.arulraj.net,2009-07-23:2009/07/how-to-create-and-use-private-public-keys.html</id><summary type="html">&lt;p&gt;&lt;a class="reference external" href="http://2.bp.blogspot.com/_Tq9uaJI0Xww/SmhV6r4dTlI/AAAAAAAAFIM/74M6AzeYa_w/s1600-h/puttygen.jpg"&gt;&lt;img alt="image0" src="http://2.bp.blogspot.com/_Tq9uaJI0Xww/SmhV6r4dTlI/AAAAAAAAFIM/74M6AzeYa_w/s400/puttygen.jpg" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Hi all,&lt;/p&gt;
+&lt;p&gt;Here the document for how to create private and public keys for login. This is more helpful others can login to your machine without disclose the password.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;How to create private key for my machine..?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Go to /home/root/.ssh folder. Then run ssh-keygen command. Answer the questions. Then the key and pub files are created. save this .pub file as authorized_keys.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;root@localhost ~&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="c1"&gt;# cd .ssh/&lt;/span&gt;
+&lt;span class="o"&gt;[&lt;/span&gt;root@localhost .ssh&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="c1"&gt;# ls&lt;/span&gt;
+known_hosts
+&lt;span class="o"&gt;[&lt;/span&gt;root@localhost .ssh&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="c1"&gt;# ssh-key&lt;/span&gt;
+ssh-keygen ssh-keyscan
+&lt;span class="o"&gt;[&lt;/span&gt;root@localhost .ssh&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="c1"&gt;# ssh-keygen&lt;/span&gt;
+Generating public/private rsa key pair.
+Enter file in which to save the key &lt;span class="o"&gt;(&lt;/span&gt;/root/.ssh/id_rsa&lt;span class="o"&gt;)&lt;/span&gt;: example.ppk
+Enter passphrase &lt;span class="o"&gt;(&lt;/span&gt;empty &lt;span class="k"&gt;for&lt;/span&gt; no passphrase&lt;span class="o"&gt;)&lt;/span&gt;:
+Enter same passphrase again:
+Your identification has been saved in example.ppk.
+Your public key has been saved in example.pub.
+The key fingerprint is:
+6e:e4:ff:3b:a6:52:0d:57:ec:d2:f8:dd:e5:08:22:d6 root@localhost
+&lt;span class="o"&gt;[&lt;/span&gt;root@localhost .ssh&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="c1"&gt;# cat example.pub &amp;gt;&amp;gt; authorized_keys&lt;/span&gt;
+&lt;span class="o"&gt;[&lt;/span&gt;root@localhost .ssh&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="c1"&gt;# ls&lt;/span&gt;
+authorized_keys example.ppk example.pub known_hosts
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;How to use the private keys..?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;In putty&lt;/em&gt;&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Open putty and type the 'Host Name' (ie &lt;a class="reference external" href="mailto:root&amp;#64;192.168.1.117"&gt;root&amp;#64;192.168.1.117&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Give a name in 'Saved Session'&lt;/li&gt;
+&lt;li&gt;Select Connection --&amp;gt; SSH --&amp;gt; Auth --&amp;gt; Browse --&amp;gt; Select the corresponding *.ppk file (ie example.ppk)&lt;/li&gt;
+&lt;li&gt;Now go to 'Session' Just click 'Save Button'&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Now you can login to your machine without password in putty. For putty and puttygen &lt;a class="reference external" href="http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html"&gt;download&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;In Win-SCP&lt;/em&gt;&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Start WinSCP. Under Session, enter the Host name(&lt;a class="reference external" href="mailto:root&amp;#64;192.168.1.117"&gt;root&amp;#64;192.168.1.117&lt;/a&gt;), User name(root), and Private key file(*.ppk) and click 'Save'.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Now you can login to your machine without password in WinSCP.&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://1.bp.blogspot.com/_Tq9uaJI0Xww/SmhWF1yTZXI/AAAAAAAAFIU/CEsMmDSIw6U/s1600-h/privatekey.jpg"&gt;&lt;img alt="image1" src="http://1.bp.blogspot.com/_Tq9uaJI0Xww/SmhWF1yTZXI/AAAAAAAAFIU/CEsMmDSIw6U/s400/privatekey.jpg" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;In SCP Command&lt;/em&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;scp -i example.ppk test.jpg root@192.168.1.117:/home/root/
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;em&gt;In SSH Command&lt;/em&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;ssh -i example.ppk root@192.168.1.117
+&lt;/pre&gt;&lt;/div&gt;
+</summary><category term="commands"></category><category term="Linux"></category><category term="Programming"></category><category term="how to"></category></entry><entry><title>How to add Return-path in php mail</title><link href="http://www.arulraj.net/2009/07/how-to-add-return-path-in-php-mail.html" rel="alternate"></link><published>2009-07-13T23:19:00+05:30</published><author><name>arul</name></author><id>tag:www.arulraj.net,2009-07-13:2009/07/how-to-add-return-path-in-php-mail.html</id><summary type="html">&lt;p&gt;&lt;a class="reference external" href="http://3.bp.blogspot.com/_Tq9uaJI0Xww/SlyTV7ulT3I/AAAAAAAAFFE/gSyRbeYFT1M/s1600-h/php.png"&gt;&lt;img alt="image0" src="http://3.bp.blogspot.com/_Tq9uaJI0Xww/SlyTV7ulT3I/AAAAAAAAFFE/gSyRbeYFT1M/s320/php.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Here is the code for add Return-path in php mail programmatically.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="x"&gt;$today = date(&amp;quot;F j\t\h Y, g:i a&amp;quot;);&lt;/span&gt;
+&lt;span class="x"&gt;$name = &amp;#39;Yourname&amp;#39;;&lt;/span&gt;
+&lt;span class="x"&gt;$from = &amp;#39;frommail@example.com&amp;#39;;&lt;/span&gt;
+&lt;span class="x"&gt;$to = &amp;#39;tomail@example.com&amp;#39;;&lt;/span&gt;
+&lt;span class="x"&gt;$cc = &amp;#39;ccmail@example.com&amp;#39;;&lt;/span&gt;
+&lt;span class="x"&gt;$bcc = &amp;#39;bccmail@example.com&amp;#39;;&lt;/span&gt;
+&lt;span class="x"&gt;$subject = &amp;#39;Example Subject&amp;#39;;&lt;/span&gt;
+
+&lt;span class="x"&gt;// To send HTML mail&lt;/span&gt;
+&lt;span class="x"&gt;$headers = &amp;quot;MIME-Version: 1.0 \\r\\n&amp;quot;;&lt;/span&gt;
+&lt;span class="x"&gt;$headers .= &amp;quot;Content-type: text/html; charset=ISO-8859-1;&lt;/span&gt;
+&lt;span class="x"&gt;format=flowed \\r\\n&amp;quot;;&lt;/span&gt;
+&lt;span class="x"&gt;$headers .= &amp;quot;ontent-Transfer-Encoding: 8bit \\r\\n&amp;quot;;&lt;/span&gt;
+&lt;span class="x"&gt;$headers .= &amp;quot;X-Mailer: PHP/&amp;quot; . phpversion(). &amp;quot;\\r\\n&amp;quot;;&lt;/span&gt;
+&lt;span class="x"&gt;$headers .= &amp;quot;X-Priority: 1 (Highest) \\r\\n&amp;quot;;&lt;/span&gt;
+&lt;span class="x"&gt;$headers .= &amp;quot;X-MSMail-Priority: High \\r\\n&amp;quot;;&lt;/span&gt;
+&lt;span class="x"&gt;$headers .= &amp;quot;Importance: High \\r\\n&amp;quot;;&lt;/span&gt;
+&lt;span class="x"&gt;// Additional headers&lt;/span&gt;
+&lt;span class="x"&gt;$headers .= &amp;quot;From: $name&amp;lt;$from&amp;gt; \\r\\n&amp;quot;;&lt;/span&gt;
+
+&lt;span class="x"&gt;//This is one option to add the return path&lt;/span&gt;
+
+&lt;span class="x"&gt;$headers .= &amp;quot;Reply-To: $name&amp;lt;$from&amp;gt; \\r\\n&amp;quot;;&lt;/span&gt;
+&lt;span class="x"&gt;$headers .= &amp;quot;Return-Path: $from \\r\\n&amp;quot;;&lt;/span&gt;
+&lt;span class="x"&gt;$headers .= &amp;quot;Cc: $cc \\r\\n&amp;quot;;&lt;/span&gt;
+
+&lt;span class="x"&gt;//See the 5th argument in mail function for Return-path&lt;/span&gt;
+
+&lt;span class="x"&gt;mail(&amp;quot;toname&amp;lt;$to&amp;gt;&amp;quot;,$subject,&amp;quot;This is the test message for How to add return path in the php mail function.&amp;quot;,$headers,&amp;quot;-f $from&amp;quot;);&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;OR&lt;/p&gt;
+&lt;p&gt;add sendmail-path in php.ini file&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nv"&gt;sendmail_path&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; sendmail -t -i -F yourname@yourdomain.com -f  yourname@yourdomain.com
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;How to find php.ini file in Linux system&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;root@localhost:~# find / -name php.ini
+&lt;/pre&gt;&lt;/div&gt;
+</summary><category term="Linux"></category><category term="Programming"></category><category term="how to"></category></entry><entry><title>How to Add FreeSwitch Service</title><link href="http://www.arulraj.net/2009/06/how-to-add-freeswitch-service.html" rel="alternate"></link><published>2009-06-09T05:41:00+05:30</published><author><name>arul</name></author><id>tag:www.arulraj.net,2009-06-09:2009/06/how-to-add-freeswitch-service.html</id><summary type="html">&lt;p&gt;Hello all,&lt;/p&gt;
+&lt;p&gt;Here how to start &lt;a class="reference external" href="http://wiki.freeswitch.org/wiki/Installation_Guide"&gt;freeswitch&lt;/a&gt;when machine boots.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt; &lt;span class="c1"&gt;#!/bin/bash&lt;/span&gt;
+ &lt;span class="c1"&gt;#&lt;/span&gt;
+ &lt;span class="c1"&gt;# freeswitch This starts and stops the freeswitch&lt;/span&gt;
+ &lt;span class="c1"&gt;#&lt;/span&gt;
+ &lt;span class="c1"&gt;# chkconfig: 345 60 50&lt;/span&gt;
+ &lt;span class="c1"&gt;# chkconfig: - 60 50&lt;/span&gt;
+ &lt;span class="c1"&gt;# description: freeswitch.sh - startup script for freeswitch on FreeBSD&lt;/span&gt;
+ &lt;span class="c1"&gt;# processname: /usr/local/freeswitch/bin/freeswitch&lt;/span&gt;
+ &lt;span class="c1"&gt;# pidfile: /usr/local/freeswitch/log/freeswitch.pid&lt;/span&gt;
+
+ &lt;span class="nv"&gt;PATH&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;/sbin:/bin:/usr/bin:/usr/sbin
+
+ &lt;span class="c1"&gt;# Source function library.&lt;/span&gt;
+ . /etc/init.d/functions
+
+ &lt;span class="c1"&gt;# Get config.&lt;/span&gt;
+ &lt;span class="nb"&gt;test&lt;/span&gt; -f /etc/sysconfig/network &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; . /etc/sysconfig/network
+
+ &lt;span class="c1"&gt;# Check that we are root ... so non-root users stop here&lt;/span&gt;
+ &lt;span class="o"&gt;[&lt;/span&gt; &lt;span class="sb"&gt;`&lt;/span&gt;id -u&lt;span class="sb"&gt;`&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="m"&gt;0&lt;/span&gt; &lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;||&lt;/span&gt; &lt;span class="nb"&gt;exit&lt;/span&gt; 1
+
+ &lt;span class="c1"&gt;# Check that networking is up.&lt;/span&gt;
+ &lt;span class="o"&gt;[&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;NETWORKING&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;yes&amp;quot;&lt;/span&gt; &lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="se"&gt;\|\|&lt;/span&gt; &lt;span class="nb"&gt;exit&lt;/span&gt; 0
+
+ &lt;span class="nv"&gt;RETVAL&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;0
+ &lt;span class="nv"&gt;prog&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;Freeswitch&amp;quot;&lt;/span&gt;
+
+ start&lt;span class="o"&gt;()&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+ &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt; -x /usr/local/freeswitch/bin/freeswitch &lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="k"&gt;then&lt;/span&gt;
+   &lt;span class="nb"&gt;echo&lt;/span&gt; -n $&lt;span class="s2"&gt;&amp;quot;Starting &lt;/span&gt;&lt;span class="nv"&gt;$prog&lt;/span&gt;&lt;span class="s2"&gt;: &amp;quot;&lt;/span&gt;
+   /usr/local/freeswitch/bin/freeswitch -nc &lt;span class="p"&gt;&amp;amp;&lt;/span&gt;
+   &lt;span class="nv"&gt;RETVAL&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$?&lt;/span&gt;
+   sleep 1
+ &lt;span class="k"&gt;fi&lt;/span&gt;
+ &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="nv"&gt;$RETVAL&lt;/span&gt;
+ &lt;span class="o"&gt;}&lt;/span&gt;
+
+ stop&lt;span class="o"&gt;()&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+   &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt; -x /usr/local/freeswitch/bin/freeswitch &lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="k"&gt;then&lt;/span&gt;
+     &lt;span class="nb"&gt;echo&lt;/span&gt; -n $&lt;span class="s2"&gt;&amp;quot;Stopping &lt;/span&gt;&lt;span class="nv"&gt;$prog&lt;/span&gt;&lt;span class="s2"&gt;: &amp;quot;&lt;/span&gt;
+     /usr/local/freeswitch/bin/freeswitch -stop &lt;span class="p"&gt;&amp;amp;&lt;/span&gt;
+     &lt;span class="nv"&gt;RETVAL&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$?&lt;/span&gt;
+     sleep 1
+   &lt;span class="k"&gt;fi&lt;/span&gt;
+   &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="nv"&gt;$RETVAL&lt;/span&gt;
+ &lt;span class="o"&gt;}&lt;/span&gt;
+
+ restart&lt;span class="o"&gt;(){&lt;/span&gt;
+   stop
+   sleep 5
+   start
+ &lt;span class="o"&gt;}&lt;/span&gt;
+
+ &lt;span class="c1"&gt;# See how we were called.&lt;/span&gt;
+ &lt;span class="k"&gt;case&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="nv"&gt;$1&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt; in
+
+ start&lt;span class="o"&gt;)&lt;/span&gt;
+   start
+ &lt;span class="p"&gt;;;&lt;/span&gt;
+
+ stop&lt;span class="o"&gt;)&lt;/span&gt;
+   stop
+ &lt;span class="p"&gt;;;&lt;/span&gt;
+
+ restart&lt;span class="o"&gt;)&lt;/span&gt;
+   restart
+ &lt;span class="p"&gt;;;&lt;/span&gt;
+
+ *&lt;span class="o"&gt;)&lt;/span&gt;
+   &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;usage: &lt;/span&gt;&lt;span class="nv"&gt;$0&lt;/span&gt;&lt;span class="s2"&gt; { start \| stop \| restart }&amp;quot;&lt;/span&gt;
+   &lt;span class="nv"&gt;RETVAL&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;1
+
+&lt;span class="k"&gt;esac&lt;/span&gt;
+ &lt;span class="nb"&gt;exit&lt;/span&gt; &lt;span class="nv"&gt;$RETVAL&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;save these lines as file name freeswitch and copied to /etc/init.d/ folder&lt;/p&gt;
+&lt;p&gt;then run the below comments&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;chkconfig -add /etc/init.d/freeswitch
+chkconfig freeswitch on
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;you are done. Now Freeswitch will start when your PC Boots.&lt;/p&gt;
+&lt;p&gt;Freeswitch commands:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;Start : /etc/init.d/freeswitch start
+Stop : /etc/init.d/freeswitch stop
+Restart : /etc/init.d/freeswitch restart
+&lt;/pre&gt;&lt;/div&gt;
+</summary><category term="Linux"></category><category term="VOIP"></category><category term="Flash"></category><category term="how to"></category></entry></feed>

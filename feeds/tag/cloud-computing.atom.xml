@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Arul Blog</title><link href="http://www.arulraj.net/" rel="alternate"></link><link href="http://www.arulraj.net/feeds/tag/cloud-computing.atom.xml" rel="self"></link><id>http://www.arulraj.net/</id><updated>2010-03-25T11:08:00+05:30</updated><entry><title>Soundcard in xen vm</title><link href="http://www.arulraj.net/2010/03/soundcard-in-xen-vm.html" rel="alternate"></link><published>2010-03-25T11:08:00+05:30</published><author><name>arul</name></author><id>tag:www.arulraj.net,2010-03-25:2010/03/soundcard-in-xen-vm.html</id><summary type="html">&lt;p&gt;&lt;strong&gt;Enable sound card in xen vm&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://2.bp.blogspot.com/_X5tq9y9xv2s/S6t1j7HhaTI/AAAAAAAAANI/Tc7vempGBMo/s1600/soundcard.jpg"&gt;&lt;img alt="image0" src="http://2.bp.blogspot.com/_X5tq9y9xv2s/S6t1j7HhaTI/AAAAAAAAANI/Tc7vempGBMo/s400/soundcard.jpg" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;How to enable sound card in the xen based vm..?&lt;/p&gt;
+&lt;p&gt;The vmware vm have the functionalists for adding sound card to their
+vm's. Then what about xen vm&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://3.bp.blogspot.com/_X5tq9y9xv2s/S6t7MxH-nPI/AAAAAAAAANQ/5-HRevzq_tE/s1600/vmware+sound+card.jpg"&gt;&lt;img alt="image1" src="http://3.bp.blogspot.com/_X5tq9y9xv2s/S6t7MxH-nPI/AAAAAAAAANQ/5-HRevzq_tE/s400/vmware+sound+card.jpg" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;By adding the below line to your HVM (Hardware Virtual
+Machine) file, You can add the sound card for the virtual machine.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;audio=1
+soundhw=&amp;#39;sb16,es1370&amp;#39;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;If you play a sound file it you can hear the sound from VMM sound out.
+Then your hvm file is look like&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;name=&amp;quot;sound-card&amp;quot;
+builder = &amp;quot;hvm&amp;quot;
+memory = &amp;quot;1024&amp;quot;
+vif = [ &amp;#39;type=ioemu, mac=00:16:3e:a0:0:8, bridge=xenbr0&amp;#39; ]
+device_model = &amp;quot;/usr/lib/xen/bin/qemu-dm-sync&amp;quot;
+kernel = &amp;quot;/usr/lib/xen/boot/hvmloader&amp;quot;
+vnc=1
+vncunused=0
+vnclisten=&amp;quot;0.0.0.0&amp;quot;
+apic=1
+acpi=0
+pae=1
+vcpus=2
+boot=&amp;#39;c&amp;#39;
+audio=1
+soundhw=&amp;#39;sb16,es1370&amp;#39;
+usb=1
+usbdevice=&amp;#39;tablet&amp;#39;
+disk = [&amp;#39;file:/vm/sound-card/disk,ioemu:hda,w&amp;#39;,&amp;#39;phy:/dev/zero,hdd:cdrom,r&amp;#39;]
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Now Goto the controlpanel now the sound devices is enabled...&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://2.bp.blogspot.com/_X5tq9y9xv2s/S6uXmdFTDbI/AAAAAAAAANY/t5aud9XDQt0/s1600/xen%2Bsound%2Bcard.jpg"&gt;&lt;img alt="image2" src="http://2.bp.blogspot.com/_X5tq9y9xv2s/S6uXmdFTDbI/AAAAAAAAANY/t5aud9XDQt0/s400/xen%2Bsound%2Bcard.jpg" /&gt;&lt;/a&gt;&lt;/p&gt;
+</summary><category term="cloud computing"></category><category term="xen"></category><category term="Linux"></category></entry><entry><title>Server Virtualization</title><link href="http://www.arulraj.net/2009/04/server-virtualization.html" rel="alternate"></link><published>2009-04-22T06:00:00+05:30</published><author><name>arul</name></author><id>tag:www.arulraj.net,2009-04-22:2009/04/server-virtualization.html</id><summary type="html">&lt;p&gt;&lt;strong&gt;Server Virtualization&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;What is Virtualization..?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://en.wikipedia.org/wiki/Virtualization"&gt;Virtualization&lt;/a&gt;is a technique of partitioning or dividing the resources of a single server into multiple segregated execution environments. Each of these environments runs independently of the other, thus allowing multiple operating systems to run on the same hardware. This concept has been widely used in the world of mainframe computers over the years.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;What is VMM (Virtual Machine Monitor)?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Each execution environment is called a guest and the server on which they execute is called the host. The software running on the host that acts as a bridge between the host and the guests, and that enables these multiple execution environments is commonly referred to as the &lt;em&gt;Virtual Machine Monitor&lt;/em&gt; (VMM) or a &lt;em&gt;Hypervisor&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;What are the Methods in Virtualization Technique ?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;System emulation:&lt;/strong&gt; The execution environment is called a virtual machine and it emulates all the hardware resources. This emulation layer in turn uses the real hardware resources from the host.&lt;/p&gt;
+&lt;p&gt;This approach Followed by :&amp;nbsp; &lt;a class="reference external" href="http://www.vmware.com/"&gt;VMware&lt;/a&gt;, &lt;a class="reference external" href="http://www.microsoft.com/Windows/products/winfamily/virtualpc/default.mspx"&gt;Microsoft virtual PC&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Paravirtualization&lt;/strong&gt;: There is no hardware emulation. The operating system that runs on a guest needs to be a modifed version that is aware of the fact that it is running inside a hypervisor.&lt;/p&gt;
+&lt;p&gt;This approach Followed by : &lt;a class="reference external" href="http://www.xen.org/"&gt;Xen&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Operating System level virtualization&lt;/strong&gt;: Each guest instance is isolated and runs in a secure environment. However, you can execute only multiple instances of guests that run the same operating system as the host.&lt;/p&gt;
+&lt;p&gt;This approach Followed by : &lt;a class="reference external" href="http://www.sun.com/software/solaris/virtualization.jsp"&gt;Sun Solaris&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;What is Xen?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Xen is an open-source paravirtualization technology that provides a platform for running multiple operating systems in parallel on one physical hardware resource, while providing close to native performance. Xen supports several operating systems—Linux, FreeBSD and NetBSD. The current version of Xen also supports the new generation of AMD Pacifca and Intel VT-x chipsets and can run an OS on these chips without any modifcations by using a version of the hypervisor called the &lt;em&gt;Hardware Virtual Machine&lt;/em&gt; (HVM)&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;What is HVM (Hardware Virtual Machine) ?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;HVM mediates between the guest operating system and the hardware and passes on the calls made by the guest to the physical hardware.&lt;/p&gt;
+&lt;div class="section" id="xen-architecture"&gt;
+&lt;h2&gt;Xen Architecture&lt;/h2&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://4.bp.blogspot.com/_Tq9uaJI0Xww/Se8KOh04_5I/AAAAAAAAETY/Gkl-Ck_wpNo/s1600-h/Xen+Architecture.jpg"&gt;&lt;img alt="image0" src="http://4.bp.blogspot.com/_Tq9uaJI0Xww/Se8KOh04_5I/AAAAAAAAETY/Gkl-Ck_wpNo/s400/Xen+Architecture.jpg" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Intel Server Virtualization Demo:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Intel® Xeon® processors based on Intel® Core™ microarchitecture integrate hardware for virtualization into all key server components including &lt;a class="reference external" href="http://www.intel.com/technology/virtualization/server/index.htm?iid=tech_vt+server"&gt;Intel® Virtualization Technology&lt;/a&gt; (Intel® VT) helping IT organizations consolidate more applications and heavier workloads on each server to improve flexibility, reliability, and total cost of ownership (TCO).&lt;/p&gt;
+&lt;p&gt;Intel® Virtualization Technology for servers Demo :&lt;/p&gt;
+&lt;div align="center"&gt;&lt;object width="320" height="240" data="http://www.intel.com/technology/virtualization/demos/closer/demo.swf" type="application/x-shockwave-flash"&gt;&lt;/object&gt;&lt;/div&gt;&lt;p&gt;Flexible virtualization&lt;/p&gt;
+&lt;div align="center"&gt;&lt;object width="320" height="240" data="http://www.intel.com/business/resources/demos/xeon5500/virtualization/demo.swf" type="application/x-shockwave-flash"&gt;&lt;/object&gt;&lt;/div&gt;&lt;/div&gt;
+</summary><category term="cloud computing"></category><category term="Linux"></category><category term="xen"></category></entry></feed>
