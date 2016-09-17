@@ -23,7 +23,7 @@ __Install Dependencies__
 
 ```
 sudo apt-get install python-pip
-sudo pip install -U pelican fabric s3cmd pysvg Pygments requests webassets pillow jsmin cssmin BeautifulSoup4 
+sudo pip install -U pelican fabric ghp-import s3cmd pysvg Pygments requests webassets pillow jsmin cssmin BeautifulSoup4 
 ```
 
 __Build__

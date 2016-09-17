@@ -17,6 +17,8 @@ DEFAULT_DATE_FORMAT = '%d %b %Y'
 
 TIMEZONE = 'Asia/Calcutta'
 
+LOCALE = ('en_US')
+
 DEFAULT_LANG = u'en'
 
 DISPLAY_CATEGORIES_ON_MENU = False
@@ -30,6 +32,8 @@ TAG_FEED_ATOM = None
 TRANSLATION_FEED_ATOM = None
 AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
+
+GITHUB_URL = 'http://github.com/arulrajnet/'
 
 # Blogroll
 LINKS = (('Github', 'http://github.com/arulrajnet'),
@@ -103,6 +107,8 @@ GOOGLE_ANALYTICS = "UA-3546274-9"
 
 # Search
 SEARCH_BOX = False
+
+THEME = 'my-pelican-themes/attila'
 
 ### Theme specific settings
 
