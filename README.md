@@ -13,11 +13,17 @@ git fetch --recurse-submodules
 git pull --recurse-submodules
 ```
 
+Add new submodule
+
+```
+git submodule add --force https://github.com/kura/ghastly my-pelican-themes/ghostly
+```
+
 __Install Dependencies__
 
 ```
 sudo apt-get install python-pip
-sudo pip install -U pelican fabric s3cmd Pygments requests BeautifulSoup4 
+sudo pip install -U pelican fabric ghp-import s3cmd pysvg Pygments requests webassets pillow jsmin cssmin BeautifulSoup4 
 ```
 
 __Build__
@@ -27,4 +33,10 @@ fab help
 fab build
 fab serve
 fab s3_upload
+```
+
+To build with specific theme
+
+```
+pelican -s pelicanconf.py -t my-pelican-themes/pelican-clean-blog-theme/
 ```

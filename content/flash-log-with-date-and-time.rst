@@ -1,5 +1,4 @@
-Flash Log with date and time
-############################
+:title: Flash Log with date and time
 :date: 2010-11-16 15:50
 :author: arul
 :category: Flash
@@ -14,6 +13,7 @@ When i am work with a Difficult Flex application its hard to find which log is
 
 .. raw:: html
 
+    <!--  TODO : pelican better_figures_and_images is failed because of object data is null -->
    <object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" width="300" height="150" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,40,0">
       <embed type="application/x-shockwave-flash" width="300" height="150" src="http://files.arulraj.net/code/flash/example/LogExample/logexample.swf">
       </embed>

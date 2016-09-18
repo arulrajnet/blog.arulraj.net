@@ -1,10 +1,10 @@
-Server Virtualization
-#####################
+:title: Server Virtualization
 :date: 2009-04-22 06:00
 :author: arul
 :category: Virtualization
 :tags: cloud computing, Linux, xen
 :slug: server-virtualization
+:status: published
 
 **Server Virtualization**
 

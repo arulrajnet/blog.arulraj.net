@@ -1,9 +1,11 @@
 from fabric.api import *
 import fabric.contrib.project as project
 import os
+import shutil
 import sys
-import SimpleHTTPServer
 import SocketServer
+
+from pelican.server import ComplexHTTPRequestHandler
 
 # Local path configuration (can be absolute or relative to fabfile)
 env.deploy_path = 'output'
@@ -18,54 +20,65 @@ env.cloudfiles_username = 'my_rackspace_username'
 env.cloudfiles_api_key = 'my_rackspace_api_key'
 env.cloudfiles_container = 'my_cloudfiles_container'
 
-# Pelican conf
-theme_path = 'my-pelican-themes/pelican-octopress-theme'
+# Github Pages configuration
+env.github_pages_branch = "gh-pages"
+
+# Port for `serve`
+PORT = 8000
 
 def clean():
+    """Remove generated files"""
     if os.path.isdir(DEPLOY_PATH):
-        local('rm -rf {deploy_path}'.format(**env))
-        local('mkdir {deploy_path}'.format(**env))
+        shutil.rmtree(DEPLOY_PATH)
+        os.makedirs(DEPLOY_PATH)
 
 def build():
-    local('pelican -s pelicanconf.py -t %s' % theme_path)
+    """Build local version of site"""
+    local('pelican -s pelicanconf.py')
 
 def rebuild():
+    """`clean` then `build`"""
     clean()
     build()
 
 def regenerate():
-    local('pelican -r -s pelicanconf.py -t %s' % theme_path)
+    """Automatically regenerate site upon file modification"""
+    local('pelican -r -s pelicanconf.py')
 
 def serve():
+    """Serve site at http://localhost:8000/"""
     os.chdir(env.deploy_path)
 
-    PORT = 8000
     class AddressReuseTCPServer(SocketServer.TCPServer):
         allow_reuse_address = True
 
-    server = AddressReuseTCPServer(('', PORT), SimpleHTTPServer.SimpleHTTPRequestHandler)
+    server = AddressReuseTCPServer(('', PORT), ComplexHTTPRequestHandler)
 
     sys.stderr.write('Serving on port {0} ...\n'.format(PORT))
     server.serve_forever()
 
 def reserve():
+    """`build`, then `serve`"""
     build()
     serve()
 
 def preview():
-    local('pelican -s publishconf.py -t %s' % theme_path)
+    """Build production version of site"""
+    local('pelican -s publishconf.py')
 
 def cf_upload():
+    """Publish to Rackspace Cloud Files"""
     rebuild()
-    local('cd {deploy_path} && '
-          'swift -v -A https://auth.api.rackspacecloud.com/v1.0 '
-          '-U {cloudfiles_username} '
-          '-K {cloudfiles_api_key} '
-          'upload -c {cloudfiles_container} .'.format(**env))
+    with lcd(DEPLOY_PATH):
+        local('swift -v -A https://auth.api.rackspacecloud.com/v1.0 '
+              '-U {cloudfiles_username} '
+              '-K {cloudfiles_api_key} '
+              'upload -c {cloudfiles_container} .'.format(**env))
 
 @hosts(production)
 def publish():
-    preview()
+    """Publish to production via rsync"""
+    local('pelican -s publishconf.py')
     project.rsync_project(
         remote_dir=dest_path,
         exclude=".DS_Store",
@@ -74,12 +87,14 @@ def publish():
         extra_opts='-c',
     )
 
+def gh_pages():
+    """Publish to GitHub Pages"""
+    clean()
+    local('pelican -s publishconf.py')
+    local("ghp-import -b {github_pages_branch} {deploy_path}".format(**env))
+    local("git push origin {github_pages_branch}".format(**env))
 
 def s3_upload():
-    preview()
+    clean()
+    local('pelican -s publishconf.py')
     local('s3cmd sync ./output/ s3://www.arulraj.net/ --acl-public --delete-removed --guess-mime-type')
-
-
-def publish_gh():
-    preview()
-    local('./deploy.sh --config-file deploy.conf --message "rebuilding site "')
