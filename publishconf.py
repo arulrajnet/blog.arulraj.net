@@ -18,5 +18,8 @@ TRANSLATION_FEED_ATOM = None
 AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
 
-SITEURL = 'http://www.arulraj.net'
+#Relative url
+RELATIVE_URLS = False
+
+SITEURL = '//www.arulraj.net'
 S3_BUCKET_NAME = 'www.arulraj.net'
