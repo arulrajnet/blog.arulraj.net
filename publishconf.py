@@ -21,5 +21,5 @@ AUTHOR_FEED_RSS = None
 #Relative url
 RELATIVE_URLS = False
 
-SITEURL = '//www.arulraj.net'
+SITEURL = 'https://www.arulraj.net'
 S3_BUCKET_NAME = 'www.arulraj.net'

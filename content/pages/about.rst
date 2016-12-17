@@ -4,7 +4,7 @@ About
 :author: arul
 :slug: about
 :status: published
-:header_cover: /theme/images/about-bg.jpg
+:og_image: /theme/images/about-bg.jpg
 
 Hi all,
 

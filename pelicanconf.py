@@ -108,7 +108,7 @@ GOOGLE_ANALYTICS = "UA-3546274-9"
 # Search
 SEARCH_BOX = False
 
-THEME = 'my-pelican-themes/attila'
+THEME = 'attila'
 
 ### Theme specific settings
 
