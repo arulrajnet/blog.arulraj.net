@@ -5,6 +5,7 @@ Flash player debugger in ubuntu
 :category: Flash
 :tags: Flash, Linux
 :slug: flash-player-debugger-in-ubuntu
+:disqus_identifier: /2010/08/flash-player-debugger-in-ubuntu.html
 
 **How to flash debug player in Linux**
 

@@ -5,6 +5,7 @@ Adding Remote JMX for Red5
 :category: Red5
 :tags: Flash, java, Linux, Programming
 :slug: adding-remote-jmx-for-red5
+:disqus_identifier: /2009/11/adding-remote-jmx-for-red5.html
 
 **How to Add JMX for Red5 Server**
 

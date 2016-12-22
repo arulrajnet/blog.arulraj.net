@@ -7,7 +7,7 @@
 :status: draft
 :lang: en
 :summary: 
-
+:disqus_identifier: linux-docker-aufs-failed-in-ubuntu-14-04-02
 
 Ubuntu 14.04.02 upgrade to new kernal version 3.18.0-031800-generic
 

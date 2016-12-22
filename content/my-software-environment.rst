@@ -5,6 +5,7 @@ My software environment
 :category: Uncategorized
 :slug: my-software-environment
 :status: draft
+:disqus_identifier: programming-my-software-environment
 
 In My Android:
 

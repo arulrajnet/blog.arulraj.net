@@ -6,6 +6,7 @@ Flex videodisplay fullscreen like youtube
 :tags: Actionscript, Flash
 :slug: flex-videodisplay-fullscreen-like-youtube
 :status: published
+:disqus_identifier: /2013/04/flex-videodisplay-fullscreen-like-youtube.html
 
 **Videodisplay in whole screen / Full screen particular component**
 

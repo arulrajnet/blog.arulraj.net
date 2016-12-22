@@ -5,6 +5,7 @@
 :tags: network, router
 :slug: flash-firmware-in-tp-link-tl-wr841n-tl-wr841nd-to-dd-wrt
 :status: draft
+:disqus_identifier: network-flash-firmware-in-tp-link-tl-wr841n-tl-wr841nd-to-dd-wrt
 
 My Firmware details
 

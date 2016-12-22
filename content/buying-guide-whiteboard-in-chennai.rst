@@ -7,7 +7,7 @@
 :lang: en
 :summary: 
 :status: draft
-
+:disqus_identifier: shopping-buying-guide-whiteboard-in-chennai
 
 http://www.whiteboardsindia.com/ - Shreejee Impact Private Limited
 

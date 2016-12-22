@@ -5,6 +5,7 @@ How rotation camera3d and viewer3d worked in Away3d
 :category: Flash
 :tags: Animation, Flash, Programming, how to
 :slug: how-rotation-camera3d-and-viewer3d-worked-in-away3d
+:disqus_identifier: /2010/02/how-rotation-camera3d-and-viewer3d-worked-in-away3d.html
 
 **Rotation in Away3D Flash engine**
 

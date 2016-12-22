@@ -6,7 +6,7 @@
 :author: arul
 :lang: en
 :status: published
-
+:disqus_identifier: /2015/05/docker-container-for-tor-with-privoxy.html
 
 I released a docker container for TOR with Privoxy bundled together. Earlier I wrote a script (`Tor Installer <tor_installer_>`_) to setup the TOR and Privoxy environment in a linux system. But docker is the correct tool to setup these kind of environment.
 

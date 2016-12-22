@@ -5,6 +5,7 @@ Ubuntu FAQ
 :category: Linux
 :tags: commands, Linux, ubuntu, how to
 :slug: ubuntu-faq
+:disqus_identifier: /2010/06/ubuntu-faq.html
 
 |image0|
 

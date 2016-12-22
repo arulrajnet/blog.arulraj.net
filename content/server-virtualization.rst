@@ -5,6 +5,7 @@
 :tags: cloud computing, Linux, xen
 :slug: server-virtualization
 :status: published
+:disqus_identifier: /2009/04/server-virtualization.html
 
 **Server Virtualization**
 

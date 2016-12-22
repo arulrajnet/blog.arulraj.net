@@ -6,6 +6,7 @@ Upgrade Samsung Galaxy 5 to Ice Cream Sandwich
 :tags: android, hacking, How to, Mobile
 :slug: upgrade-samsung-galaxy-5-to-ice-cream-sandwich
 :status: published
+:disqus_identifier: /2012/07/upgrade-samsung-galaxy-5-to-ice-cream-sandwich.html
 
 **How to upgrade to Android 4.0.4**
 

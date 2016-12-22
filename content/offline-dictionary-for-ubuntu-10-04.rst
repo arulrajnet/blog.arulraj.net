@@ -5,6 +5,7 @@ Offline dictionary for ubuntu 10.04
 :category: Linux
 :tags: ubuntu, how to
 :slug: offline-dictionary-for-ubuntu-10-04
+:disqus_identifier: /2010/06/offline-dictionary-for-ubuntu-10-04.html
 
 .. raw:: html
 

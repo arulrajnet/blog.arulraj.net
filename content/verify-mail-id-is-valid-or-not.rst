@@ -6,7 +6,7 @@
 :author: arul
 :lang: en
 :status: draft
-
+:disqus_identifier: python-verify-mail-id-is-valid-or-not
 
 
 

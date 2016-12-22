@@ -5,6 +5,7 @@
 :category: Linux
 :author: arul
 :lang: en
+:disqus_identifier: /2015/10/live-cricket-score-on-your-terminal.html
 
 **Live Cricket Score From CricInfo on your Bash Terminal**
 

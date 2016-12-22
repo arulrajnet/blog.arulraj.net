@@ -5,6 +5,7 @@ Jsp : Ajax problem
 :category: Uncategorized
 :slug: jsp-ajax-problem
 :status: draft
+:disqus_identifier: java-jsp-ajax-problem
 
 **JSP - Ajax not working**
 

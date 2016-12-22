@@ -6,6 +6,7 @@
 :author: Arul
 :lang: en
 :status: draft
+:disqus_identifier: tamil-learn-tamil-sangam-literature
 
 
 http://writerpaavannan.blogspot.in/2015/12/blog-post_43.html

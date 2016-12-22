@@ -5,6 +5,7 @@ My Windows Hacks
 :category: Uncategorized
 :slug: my-windows-hacks
 :status: draft
+:disqus_identifier: windows-my-windows-hacks
 
 To close any application just double click on the Left icon button on
 the Top.

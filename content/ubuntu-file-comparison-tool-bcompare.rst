@@ -5,6 +5,7 @@ Ubuntu file comparison tool - Bcompare
 :category: Linux
 :tags: Linux, ubuntu, how to
 :slug: ubuntu-file-comparison-tool-bcompare
+:disqus_identifier: /2010/07/ubuntu-file-comparison-tool-bcompare.html
 
 **Beyond Compare for ubuntu**
 

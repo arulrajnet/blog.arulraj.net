@@ -5,6 +5,7 @@
 :category: proxy
 :author: arul
 :lang: en
+:disqus_identifier: /2015/11/pixelserv-using-nginx.html
 
 
 Hope you know about `pixelserv <http://proxytunnel.sourceforge.net/pixelserv.php>`__. It is a webserver which will always response 1x1 transparent gif image for all kind of requests. Mainly used in adblocking and proxy environmental.

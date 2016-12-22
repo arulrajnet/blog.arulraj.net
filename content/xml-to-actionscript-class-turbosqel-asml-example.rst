@@ -6,6 +6,7 @@ XML to Actionscript class Turbosqel / ASML example
 :tags: Actionscript, Flash, xml
 :slug: xml-to-actionscript-class-turbosqel-asml-example
 :status: published
+:disqus_identifier: /2013/11/xml-to-actionscript-class-turbosqel-asml-example.html
 
 **Turbosqel / ASML example**
 

@@ -5,6 +5,7 @@ Flex runtime spacer
 :category: Programming
 :tags: Actionscript, Flash
 :slug: flex-runtime-spacer
+:disqus_identifier: /2011/04/flex-runtime-spacer.html
 
 I am using Flex 4 for one of my Flex project. That project needs some dynamic spacing between the components. Here is the example code for the runtime spacer. I am using spark components here.
 

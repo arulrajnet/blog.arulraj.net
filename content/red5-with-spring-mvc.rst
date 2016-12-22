@@ -6,6 +6,7 @@ Red5 with Spring MVC
 :tags: java, red5, spring, Flash, Programming
 :slug: red5-with-spring-mvc
 :status: published
+:disqus_identifier: /2012/04/red5-with-spring-mvc.html
 
 **Access Red5 context in spring MVC DispatcherServlet**
 

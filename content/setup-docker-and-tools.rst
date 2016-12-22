@@ -5,6 +5,7 @@
 :category: docker
 :author: Arul
 :lang: en
+:disqus_identifier: /2016/01/setup-docker-and-tools.html
 
 
 Guide to install and configure docker and related tools.

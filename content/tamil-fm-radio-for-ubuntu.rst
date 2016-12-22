@@ -5,6 +5,7 @@ Tamil FM radio for ubuntu
 :category: Linux
 :tags: Linux, tamil, ubuntu, how to
 :slug: tamil-fm-radio-for-ubuntu
+:disqus_identifier: /2010/07/tamil-fm-radio-for-ubuntu.html
 
 **How to add Tamil FM radio for ubuntu**
 

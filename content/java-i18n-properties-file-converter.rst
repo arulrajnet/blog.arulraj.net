@@ -5,6 +5,7 @@ Java i18n properties file converter
 :category: Programming
 :tags: java
 :slug: java-i18n-properties-file-converter
+:disqus_identifier: /2010/07/java-i18n-properties-file-converter.html
 
 **Properties File converter**
 

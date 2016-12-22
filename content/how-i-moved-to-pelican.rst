@@ -7,6 +7,7 @@
 :lang: en
 :summary:
 :status: draft
+:disqus_identifier: python-how-i-moved-to-pelican
 
 
 

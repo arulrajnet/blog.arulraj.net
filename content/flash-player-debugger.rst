@@ -5,6 +5,7 @@ Flash Player Debugger
 :category: Flash
 :tags: Browser, Flash, Widget, windows
 :slug: flash-player-debugger
+:disqus_identifier: /2010/03/flash-player-debugger.html
 
 **Flash Player Debugger**
 

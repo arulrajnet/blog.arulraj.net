@@ -5,6 +5,7 @@ Build environment for flex with eclipse
 :category: Uncategorized
 :slug: build-environment-for-flex-with-eclipse
 :status: draft
+:disqus_identifier: flex-build-environment-for-flex-with-eclipse
 
 **Ant Build environment for flex**
 

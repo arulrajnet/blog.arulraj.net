@@ -6,4 +6,4 @@
 :author: Arul
 :lang: en
 :status: draft
-
+:disqus_identifier: shopping-buying-guide-books-offline

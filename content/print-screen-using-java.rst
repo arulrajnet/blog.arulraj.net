@@ -5,6 +5,7 @@ Print screen using java
 :category: Programming
 :tags: java
 :slug: print-screen-using-java
+:disqus_identifier: /2010/06/print-screen-using-java.html
 
 Is there any api for capure my screen ..?
   You don't need any api. Java have the inbuild functionalities for this. Using the Robot class you can

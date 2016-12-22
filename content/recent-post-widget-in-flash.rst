@@ -5,6 +5,7 @@ Recent Post Widget in Flash
 :category: Widget
 :tags: Flash, Recent Post, Widget
 :slug: recent-post-widget-in-flash
+:disqus_identifier: /2009/03/recent-post-widget-in-flash.html
 
 The widget is shows like that... This is the Beta version only.. Unfortunately it supports only for feed burner feed... I will update this soon...
 

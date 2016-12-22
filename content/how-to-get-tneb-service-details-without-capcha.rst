@@ -6,6 +6,7 @@
 :author: Arul
 :lang: en
 :status: published
+:disqus_identifier: /2015/09/how-to-get-tneb-service-details-without-capcha.html
 
 To get direct link for find your usage from TNEB give your service number in the below form and press submit. 
 

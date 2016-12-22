@@ -185,6 +185,31 @@ SITEMAP = {
     }
 }
 
+from markdown import Markdown
+markdown = Markdown(extensions=['markdown.extensions.extra'])
+
+def md(content, *args):
+    return markdown.convert(content)
+
+import urllib
+
+def quote_plus(value, *args):
+  return urllib.quote_plus(value)
+
+import urlparse
+def urlencode(uri, **query):
+   parts = list(urlparse.urlparse(uri))
+   q = urlparse.parse_qs(parts[4])
+   q.update(query)
+   parts[4] = urllib.urlencode(q)
+   return urlparse.urlunparse(parts)
+
+JINJA_FILTERS = {
+    'md': md,
+    'quote_plus': quote_plus,
+    'urlencode': urlencode
+}
+
 JINJA_EXTENSIONS = ['jinja2.ext.loopcontrols', 'jinja2.ext.i18n']
 
 # Read time - Medium like

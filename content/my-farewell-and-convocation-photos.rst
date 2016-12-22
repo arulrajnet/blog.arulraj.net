@@ -5,6 +5,7 @@
 :tags: photos
 :slug: my-farewell-and-convocation-photos
 :status: draft
+:disqus_identifier: photos-my-farewell-and-convocation-photos
 
 .. raw:: html
 

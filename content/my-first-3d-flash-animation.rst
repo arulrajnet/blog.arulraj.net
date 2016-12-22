@@ -5,6 +5,7 @@ My first 3D flash animation
 :category: Flash
 :tags: Animation, Flash, red5, Programming
 :slug: my-first-3d-flash-animation
+:disqus_identifier: /2010/02/my-first-3d-flash-animation.html
 
 **3D Animathion**
 

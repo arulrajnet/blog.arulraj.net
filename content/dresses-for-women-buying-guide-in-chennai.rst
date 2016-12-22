@@ -7,3 +7,4 @@
 :lang: en
 :summary: 
 :status: draft
+:disqus_identifier: shopping-dresses-for-women-buying-guide-in-chennai

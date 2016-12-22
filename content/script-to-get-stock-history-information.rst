@@ -5,6 +5,7 @@
 :category: Linux
 :author: arul
 :lang: en
+:disqus_identifier: /2015/09/script-to-get-stock-history-information.html
 
 I wrote a python script to get stock market current and history information based on Google finance API. Here I am going to explain about that. 
 

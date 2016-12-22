@@ -5,6 +5,7 @@ How to set the static ip address in ubuntu..?
 :category: Linux
 :tags: Linux, static ip, ubuntu
 :slug: how-to-set-the-static-ip-address-in-ubuntu
+:disqus_identifier: /2009/03/how-to-set-the-static-ip-address-in-ubuntu.html
 
 edit your /etc/network/interfaces file to
 

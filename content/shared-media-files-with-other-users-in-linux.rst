@@ -6,6 +6,7 @@ Shared media files with other users in linux
 :tags: commands, ubuntu, how to
 :slug: shared-media-files-with-other-users-in-linux
 :status: published
+:disqus_identifier: /2011/08/shared-media-files-with-other-users-in-linux.html
 
 I think everyone might come across this problem. How to share your Music and Videos with other users in linux machine..? For mine (username is *arul* ) I have all music and videos in my home folder. I want to share those with others ( username is *friends* ) in the same machine. You can ask, by changing the permission of all files with in folder can solve this issue.
 

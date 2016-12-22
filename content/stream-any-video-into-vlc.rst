@@ -5,6 +5,7 @@
 :category: Streaming
 :author: arul
 :lang: en
+:disqus_identifier: /2015/09/stream-any-video-into-vlc.html
 
 
 You can stream any online like youtube, vimeo, facebook, dailymotion, etc., video into your VLC / mplayer using youtube-dl. Here I will explain how to do that.

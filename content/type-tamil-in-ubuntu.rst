@@ -5,6 +5,7 @@ Type tamil in ubuntu
 :category: Linux
 :tags: tamil, ubuntu, how to
 :slug: type-tamil-in-ubuntu
+:disqus_identifier: /2011/01/type-tamil-in-ubuntu.html
 
 I Just want to ﻿post a comment in my friend facebook wall... I feel if
 that comment is in Tamil it will be more expressive.. There are more

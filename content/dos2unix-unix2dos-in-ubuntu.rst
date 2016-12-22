@@ -6,6 +6,7 @@ Dos2Unix / Unix2Dos in ubuntu
 :tags: commands, ubuntu, how to
 :slug: dos2unix-unix2dos-in-ubuntu
 :status: published
+:disqus_identifier: /2011/08/dos2unix-unix2dos-in-ubuntu.html
 
 By default ubuntu does not have dos2unix and unix2dos commands. But they provide some alternative commands. Those are fromdos and todos. sometimes its hard to switch to new commands. You can solve this issue by creating soft / symbolic links. Here its how to do.
 

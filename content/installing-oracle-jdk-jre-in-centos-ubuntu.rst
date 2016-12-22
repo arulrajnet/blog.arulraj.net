@@ -7,6 +7,7 @@
 :lang: en
 :status: published
 :summary: Installing oracle / SUN JDK and JRE in ubuntu and CentOS
+:disqus_identifier: /2014/06/installing-oracle-jdk-jre-in-centos-ubuntu.html
 
 |image0|
 

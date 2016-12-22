@@ -5,7 +5,7 @@ How Singleton pattern in Java
 :category: Programming
 :tags: Design pattern, java
 :slug: how-singleton-pattern-in-java
-
+:disqus_identifier: /2010/03/how-singleton-pattern-in-java.html
 
 |image0|
 

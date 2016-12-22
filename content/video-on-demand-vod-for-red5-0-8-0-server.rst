@@ -6,6 +6,7 @@ Video On Demand (VOD) for red5 0.8.0 server
 :tags: red5, video streaming, Flash, Programming
 :slug: video-on-demand-vod-for-red5-0-8-0-server
 :status: published
+:disqus_identifier: /2013/11/video-on-demand-vod-for-red5-0-8-0-server.html
 
 ************************
 VOD for old red5 servers

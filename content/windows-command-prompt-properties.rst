@@ -5,6 +5,7 @@ Windows command prompt properties
 :category: Windows
 :tags: windows
 :slug: windows-command-prompt-properties
+:disqus_identifier: /2009/09/windows-command-prompt-properties.html
 
 Here the new command prompt window. Here you will know how to change the
 windows command prompt properties.

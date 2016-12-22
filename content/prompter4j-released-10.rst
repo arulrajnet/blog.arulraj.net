@@ -5,6 +5,7 @@
 :category: Prompter4J
 :author: arul
 :lang: en
+:disqus_identifier: /2015/05/prompter4j-released-1-0.html
 
 Prompter4J is a library to get the user raw input in an interactive manner.
 

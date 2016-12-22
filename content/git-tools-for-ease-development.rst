@@ -6,6 +6,7 @@
 :author: Arul
 :lang: en
 :status: draft
+:disqus_identifier: git-git-tools-for-ease-development
 
 
 ###git config

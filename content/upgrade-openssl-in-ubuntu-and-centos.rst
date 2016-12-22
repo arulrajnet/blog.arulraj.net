@@ -6,6 +6,7 @@ Upgrade openssl in Ubuntu and CentOS
 :tags: commands, fix, ubuntu, how to, centos
 :slug: upgrade-openssl-in-ubuntu-and-centos
 :status: published
+:disqus_identifier: /2014/04/upgrade-openssl-in-ubuntu-and-centos.html
 
 **Upgrade OpenSSL in Ubuntu and CentOS**
 

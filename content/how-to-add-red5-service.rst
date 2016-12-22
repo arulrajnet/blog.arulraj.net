@@ -5,6 +5,7 @@ How to add Red5 service
 :category: Red5
 :tags: commands, Linux, red5, scripting, how to
 :slug: how-to-add-red5-service
+:disqus_identifier: /2010/07/how-to-add-red5-service.html
 
 **How to add Red5 service**
 

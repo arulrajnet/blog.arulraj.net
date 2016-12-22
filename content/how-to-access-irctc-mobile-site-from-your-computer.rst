@@ -6,6 +6,7 @@ How to access irctc mobile site from your computer
 :tags: Browser, hacking, how to, mobile
 :slug: how-to-access-irctc-mobile-site-from-your-computer
 :status: published
+:disqus_identifier: /2012/01/how-to-access-irctc-mobile-site-from-your-computer.html
 
 **How to access irctc mobile site from your computer**
 

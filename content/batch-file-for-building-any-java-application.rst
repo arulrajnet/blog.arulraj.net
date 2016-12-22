@@ -5,6 +5,7 @@ Batch file for building any java application
 :category: Widget
 :tags: commands, Widget, windows, Programming
 :slug: batch-file-for-building-any-java-application
+:disqus_identifier: /2009/09/batch-file-for-building-any-java-application.html
 
 **Batch file for building any java application**
 

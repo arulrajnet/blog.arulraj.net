@@ -6,6 +6,7 @@
 :author: Arul
 :lang: en
 :status: draft
+:disqus_identifier: programming-migration-from-bitbucket-to-github
 
 
 git clone from bitbucket

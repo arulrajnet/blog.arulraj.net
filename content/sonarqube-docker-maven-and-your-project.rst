@@ -7,4 +7,4 @@
 :lang: en
 :summary: 
 :status: draft
-
+:disqus_identifier: java-sonarqube-docker-maven-and-your-project

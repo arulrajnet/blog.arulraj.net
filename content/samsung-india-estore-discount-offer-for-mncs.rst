@@ -6,6 +6,7 @@ Samsung India eStore Discount offer for MNC's
 :tags: android, offer, samsung
 :slug: samsung-india-estore-discount-offer-for-mncs
 :status: published
+:disqus_identifier: /2013/10/samsung-india-estore-discount-offer-for-mncs.html
 
 This time I am going to tell my shopping experience of samsung smartphone. Since last two days I was searching for where I can get best price. I checked with online stores and local stores like universel, poorvika, samsung plaza etc., in chennai. Finally I came to know samsung india eStore giving their product for discounted price. Samsung official store giving around 10% of discount for selected smart phones. But this for selected employee of selected MNC's companies. You can check the discount below.
 

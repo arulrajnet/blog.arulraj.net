@@ -6,6 +6,7 @@ How to copy commits from one branch to another in GIT
 :tags: GIT, Linux
 :slug: how-to-copy-commits-from-one-branch-to-another-in-git
 :status: published
+:disqus_identifier: /2012/01/how-to-copy-commits-from-one-branch-to-another-in-git.html
 
 I have GIT version management tool for versioning and using gitolite for user and project management within git. Will tell about this gitolite story in a seperate post.
 

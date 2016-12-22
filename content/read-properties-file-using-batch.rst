@@ -5,6 +5,7 @@ Read properties file using Batch
 :category: Programming
 :tags: scripting, windows
 :slug: read-properties-file-using-batch
+:disqus_identifier: /2010/03/read-properties-file-using-batch.html
 
 **Read a properties file using bat file**
 

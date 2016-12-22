@@ -7,7 +7,7 @@
 :status: draft
 :lang: en
 :summary: 
-
+:disqus_identifier: ubuntu-share-your-external-hdd-over-network-in-ubuntu
 
 https://help.ubuntu.com/community/How%20to%20Create%20a%20Network%20Share%20Via%20Samba%20Via%20CLI%20(Command-line%20interface/Linux%20Terminal)%20-%20Uncomplicated,%20Simple%20and%20Brief%20Way!
 

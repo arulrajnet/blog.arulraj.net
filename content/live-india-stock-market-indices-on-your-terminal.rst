@@ -5,6 +5,7 @@
 :category: Linux
 :author: arul
 :lang: en 
+:disqus_identifier: /2015/05/live-india-stock-market-indices-on-your-terminal.html
 
 **Live BSE and NSE index on your bash terminal**
 

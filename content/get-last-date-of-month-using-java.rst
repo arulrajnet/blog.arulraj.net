@@ -6,6 +6,7 @@ Get last date of month using java
 :tags: java
 :slug: get-last-date-of-month-using-java
 :status: published
+:disqus_identifier: /2011/09/get-last-date-of-month-using-java.html
 
 Using Calendar class in java you get everything. We can get the last date of the month using that. Please have a look of this code snippest to get last date of the passing month.
 Here is the full code `click Here <http://www.arulraj.net/labs/java/misc/DateExample.java>`__

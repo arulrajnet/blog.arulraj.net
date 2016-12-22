@@ -5,6 +5,7 @@ Get Ubuntu Version
 :category: Linux
 :tags: ubuntu, how to
 :slug: get-ubuntu-version
+:disqus_identifier: /2011/02/get-ubuntu-version.html
 
 **How to get the ubuntu Version..?**
 

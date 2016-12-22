@@ -5,6 +5,7 @@ Soundcard in xen vm
 :category: Virtualization
 :tags: cloud computing, xen, Linux
 :slug: soundcard-in-xen-vm
+:disqus_identifier: /2010/03/soundcard-in-xen-vm.html
 
 **Enable sound card in xen vm**
 

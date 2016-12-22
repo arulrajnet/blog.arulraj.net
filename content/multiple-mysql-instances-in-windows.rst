@@ -6,6 +6,7 @@ Multiple mysql instances in windows
 :tags: mysql, Tips & Tricks, windows
 :slug: multiple-mysql-instances-in-windows
 :status: published
+:disqus_identifier: /2012/05/multiple-mysql-instances-in-windows.html
 
 Now again windows stuff... I am using windows OS in office 😌... This
 post is about a simple tweaks about running multiple mysql instance in

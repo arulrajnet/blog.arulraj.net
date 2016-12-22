@@ -5,6 +5,7 @@ How to add www to your domain name
 :category: Programming
 :tags: Browser, php, how to, hosting
 :slug: how-to-add-www-to-your-domain-name
+:disqus_identifier: /2010/03/how-to-add-www-to-your-domain-name.html
 
 **How to add www to your domain name**
 

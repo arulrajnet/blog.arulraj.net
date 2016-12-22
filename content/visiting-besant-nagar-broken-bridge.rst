@@ -5,6 +5,7 @@ Visiting Besant Nagar Broken Bridge
 :category: photos
 :tags: Besant Nagar, Broken bridge, photos
 :slug: visiting-besant-nagar-broken-bridge
+:disqus_identifier: /2009/04/visiting-besant-nagar-broken-bridge.html
 
 `Broken Bridge <http://en.wikipedia.org/wiki/Broken_bridge,_Chennai>`__ in a kilometre and half away from Besant Nagar beach . You have to cross a hamlet of fishermen to get to this place.
 

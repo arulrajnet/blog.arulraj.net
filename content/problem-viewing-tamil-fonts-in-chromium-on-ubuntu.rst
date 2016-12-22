@@ -6,6 +6,7 @@ Problem viewing Tamil fonts in chromium on Ubuntu
 :tags: Browser, tamil, ubuntu, how to, linux
 :slug: problem-viewing-tamil-fonts-in-chromium-on-ubuntu
 :status: published
+:disqus_identifier: /2011/08/problem-viewing-tamil-fonts-in-chromium-on-ubuntu.html
 
 I am the big fan of tamil love poems.. 😊 Within Google reader all tamil blogs fonts are displayed correctly in chromium which was downloaded from Ubuntu software center. But when I goto that link directly, that page is not rendered properly. It shows some junk character in between.
 

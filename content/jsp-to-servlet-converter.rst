@@ -5,6 +5,7 @@ Jsp to Servlet converter
 :category: Programming
 :tags: java
 :slug: jsp-to-servlet-converter
+:disqus_identifier: /2010/04/jsp-to-servlet-converter.html
 
 **Jsp to Servlet converter**
 

@@ -5,6 +5,7 @@ Image to binary data in java
 :category: Browser
 :tags: java, xml
 :slug: image-to-binary-data-in-java
+:disqus_identifier: /2010/10/image-to-binary-data-in-java.html
 
 **Image to binary data in java**
 

@@ -5,6 +5,7 @@ AirtelLive Manual Setting for LG KG 195
 :category: Mobile
 :tags: Airel, gprs, KG 195, LG, Mobile
 :slug: airtellive-manual-setting-for-lg-kg-195
+:disqus_identifier: /2009/01/airtellive-manual-setting-for-lg-kg-195.html
 
 Hello all,
 

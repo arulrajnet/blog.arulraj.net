@@ -5,6 +5,7 @@ How to Add FreeSwitch Service
 :category: Linux
 :tags: Linux, VOIP, Flash, how to
 :slug: how-to-add-freeswitch-service
+:disqus_identifier: /2009/06/how-to-add-freeswitch-service.html
 
 Hello all,
 

@@ -5,6 +5,7 @@ Small FB hack
 :category: Programming
 :tags: Browser, hacking, java
 :slug: small-fb-hack
+:disqus_identifier: /2011/02/small-fb-hack.html
 
 Don't think I had broke the security system of facebook and got others personal information. I am not a such a knowledge person 😄 .. Just see the below picture
 

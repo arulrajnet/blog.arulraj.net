@@ -5,6 +5,7 @@ Hectic problem in ubuntu - resolved
 :category: Linux
 :tags: Linux, ubuntu, how to
 :slug: hectic-problem-in-ubuntu-resolved
+:disqus_identifier: /2010/12/hectic-problem-in-ubuntu-resolved.html
 
 **My Hectic problem in Ubuntu**
 

@@ -6,6 +6,7 @@ Automount vmware shared folder in ubuntu
 :tags: fix, ubuntu, vmware, linux, how to
 :slug: automount-vmware-shared-folder-in-ubuntu
 :status: published
+:disqus_identifier: /2013/09/automount-vmware-shared-folder-in-ubuntu.html
 
 **How to fix shared folder automount problem in vmware ..?**
 

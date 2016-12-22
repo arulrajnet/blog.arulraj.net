@@ -5,6 +5,7 @@ Java offline Documentation
 :category: Programming
 :tags: java
 :slug: java-offline-documentation
+:disqus_identifier: /2010/04/java-offline-documentation.html
 
 |image0|
 

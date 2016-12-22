@@ -4,6 +4,7 @@
 :category: Flash
 :tags: Browser, Flash, Programming
 :slug: flash-log-with-date-and-time
+:disqus_identifier: /2010/11/flash-log-with-date-and-time.html
 
 **Flash trace with Date and Time**
 

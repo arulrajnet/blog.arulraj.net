@@ -5,6 +5,7 @@ Mic problem in ubuntu 10.04
 :category: Linux
 :tags: Linux, ubuntu, how to
 :slug: mic-problem-in-ubuntu-10-04
+:disqus_identifier: /2010/07/mic-problem-in-ubuntu-10-04.html
 
 **Mic Problem in ubuntu 10.04 for Root user**
 

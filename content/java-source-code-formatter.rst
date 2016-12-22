@@ -7,7 +7,7 @@
 :lang: en
 :summary:
 :status: draft
-
+:disqus_identifier: java-java-source-code-formatter
 
 mvn com.googlecode.maven-java-formatter-plugin:maven-java-formatter-plugin:0.4:format -DconfigFile=../iotium-docs/iotium-coding-conventions.xml
 

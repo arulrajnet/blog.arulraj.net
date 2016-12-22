@@ -6,6 +6,7 @@
 :author: arul
 :lang: en
 :status: draft
+:disqus_identifier: ubuntu-ubuntu-hidden-features-you-need
 
 you may refer this is as things to do after ubuntu installation. 
 

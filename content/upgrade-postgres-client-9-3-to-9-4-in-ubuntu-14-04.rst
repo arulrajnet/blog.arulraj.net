@@ -7,6 +7,7 @@
 :lang: en
 :summary: 
 :status: draft
+:disqus_identifier: database-upgrade-samsung-galaxy-5-to-ice-cream-sandwich
 
 sudo apt-get remove postgresql-client-9.3
 sudo apt-get install postgresql-client-9.4

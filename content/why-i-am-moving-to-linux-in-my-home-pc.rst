@@ -5,6 +5,7 @@ Why i am moving to Linux in my home pc
 :category: Linux
 :tags: Fedora, Linux, ubuntu, windows
 :slug: why-i-am-moving-to-linux-in-my-home-pc
+:disqus_identifier: /2010/01/why-i-am-moving-to-linux-in-my-home-pc.html
 
 **Why i am moving to Linux in my home pc**
 
