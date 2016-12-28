@@ -210,7 +210,7 @@ JINJA_FILTERS = {
     'urlencode': urlencode
 }
 
-JINJA_EXTENSIONS = ['jinja2.ext.loopcontrols', 'jinja2.ext.i18n']
+JINJA_EXTENSIONS = ['jinja2.ext.loopcontrols', 'jinja2.ext.i18n', 'jinja2.ext.with_']
 
 # Read time - Medium like
 X_MIN_READ = False
