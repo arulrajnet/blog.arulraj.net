@@ -23,6 +23,9 @@ env.cloudfiles_container = 'my_cloudfiles_container'
 # Github Pages configuration
 env.github_pages_branch = "gh-pages"
 
+# s3 bucket name
+env.s3_bucket_name = "www.arulraj.net"
+
 # Port for `serve`
 PORT = 8000
 
@@ -97,4 +100,11 @@ def gh_pages():
 def s3_upload():
     clean()
     local('pelican -s publishconf.py')
-    local('s3cmd sync ./output/ s3://www.arulraj.net/ --acl-public --delete-removed --guess-mime-type')
+
+    local('s3cmd sync {deploy_path}/ s3://{s3_bucket_name}/ --acl-public --delete-removed --mime-type="application/javascript; charset=utf-8" --add-header "Cache-Control: max-age=86400" --exclude "*" --include "*.js"'.format(**env))
+    local('s3cmd sync {deploy_path}/ s3://{s3_bucket_name}/ --acl-public --delete-removed --mime-type="text/css; charset=utf-8" --add-header "Cache-Control: max-age=86400" --exclude "*" --include "*.css"'.format(**env))
+    local('s3cmd sync {deploy_path}/ s3://{s3_bucket_name}/ --acl-public --delete-removed --mime-type="application/xml; charset=utf-8" --exclude "*" --include "*.xml"'.format(**env))
+    local('s3cmd sync {deploy_path}/ s3://{s3_bucket_name}/ --acl-public --delete-removed --mime-type="text/html; charset=utf-8" --exclude "*" --include "*.html"'.format(**env))
+    local('s3cmd sync {deploy_path}/assets/ s3://{s3_bucket_name}/assets/ --acl-public --delete-removed --add-header "Cache-Control: max-age=86400" --guess-mime-type'.format(**env))
+    local('s3cmd sync {deploy_path}/theme/ s3://{s3_bucket_name}/theme/ --acl-public --delete-removed --add-header "Cache-Control: max-age=86400" --guess-mime-type'.format(**env))
+    local('s3cmd sync {deploy_path}/ s3://{s3_bucket_name}/ --acl-public --delete-removed --guess-mime-type'.format(**env))

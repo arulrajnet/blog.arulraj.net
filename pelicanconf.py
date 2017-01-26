@@ -2,6 +2,11 @@
 # -*- coding: utf-8 -*- #
 from __future__ import unicode_literals
 
+import os
+import sys
+sys.path.append(os.curdir)
+from themeconfig import *
+
 ### Core Pelican Settings
 
 AUTHOR = u'Arul'
@@ -9,7 +14,11 @@ SITENAME = u'Arul Blog'
 # SITESUBTITLE = ''
 SITEURL = 'http://localhost:8000'
 
-PATH = 'content'
+# Where should Pelican look for content?
+PATH = ('content')
+# These are relative to PATH, above
+# ARTICLE_PATHS = ['posts']
+PAGE_PATHS = ['pages']
 
 DEFAULT_DATE = 'fs'
 
@@ -210,7 +219,7 @@ JINJA_FILTERS = {
     'urlencode': urlencode
 }
 
-JINJA_EXTENSIONS = ['jinja2.ext.loopcontrols', 'jinja2.ext.i18n', 'jinja2.ext.with_']
+JINJA_EXTENSIONS = ['jinja2.ext.loopcontrols', 'jinja2.ext.i18n', 'jinja2.ext.with_', 'jinja2.ext.do']
 
 # Read time - Medium like
 X_MIN_READ = False
