@@ -9,6 +9,7 @@ from pelican.server import ComplexHTTPRequestHandler
 
 # Local path configuration (can be absolute or relative to fabfile)
 env.deploy_path = 'output'
+env.deploy_gzip_path = 'outputgzip'
 DEPLOY_PATH = env.deploy_path
 
 # Remote server configuration
@@ -37,7 +38,7 @@ def clean():
 
 def build():
     """Build local version of site"""
-    local('pelican -s pelicanconf.py')
+    local('pelican -s pelicanconf.py -o {deploy_path}'.format(**env))
 
 def rebuild():
     """`clean` then `build`"""
@@ -46,7 +47,7 @@ def rebuild():
 
 def regenerate():
     """Automatically regenerate site upon file modification"""
-    local('pelican -r -s pelicanconf.py')
+    local('pelican -r -s pelicanconf.py -o {deploy_path}'.format(**env))
 
 def serve():
     """Serve site at http://localhost:8000/"""
@@ -67,7 +68,7 @@ def reserve():
 
 def preview():
     """Build production version of site"""
-    local('pelican -s publishconf.py')
+    local('pelican -s publishconf.py -o {deploy_path}'.format(**env))
 
 def cf_upload():
     """Publish to Rackspace Cloud Files"""
@@ -81,7 +82,7 @@ def cf_upload():
 @hosts(production)
 def publish():
     """Publish to production via rsync"""
-    local('pelican -s publishconf.py')
+    local('pelican -s publishconf.py -o {deploy_path}'.format(**env))
     project.rsync_project(
         remote_dir=dest_path,
         exclude=".DS_Store",
@@ -93,18 +94,19 @@ def publish():
 def gh_pages():
     """Publish to GitHub Pages"""
     clean()
-    local('pelican -s publishconf.py')
+    local('pelican -s publishconf.py -o {deploy_path}'.format(**env))
     local("ghp-import -b {github_pages_branch} {deploy_path}".format(**env))
     local("git push origin {github_pages_branch}".format(**env))
 
 def s3_upload():
     clean()
-    local('pelican -s publishconf.py')
+    local('pelican -s publishconf.py -o {deploy_path}'.format(**env))
 
-    local('s3cmd sync {deploy_path}/ s3://{s3_bucket_name}/ --acl-public --delete-removed --mime-type="application/javascript; charset=utf-8" --add-header "Cache-Control: max-age=86400" --exclude "*" --include "*.js"'.format(**env))
-    local('s3cmd sync {deploy_path}/ s3://{s3_bucket_name}/ --acl-public --delete-removed --mime-type="text/css; charset=utf-8" --add-header "Cache-Control: max-age=86400" --exclude "*" --include "*.css"'.format(**env))
-    local('s3cmd sync {deploy_path}/ s3://{s3_bucket_name}/ --acl-public --delete-removed --mime-type="application/xml; charset=utf-8" --exclude "*" --include "*.xml"'.format(**env))
-    local('s3cmd sync {deploy_path}/ s3://{s3_bucket_name}/ --acl-public --delete-removed --mime-type="text/html; charset=utf-8" --exclude "*" --include "*.html"'.format(**env))
-    local('s3cmd sync {deploy_path}/assets/ s3://{s3_bucket_name}/assets/ --acl-public --delete-removed --add-header "Cache-Control: max-age=86400" --guess-mime-type'.format(**env))
-    local('s3cmd sync {deploy_path}/theme/ s3://{s3_bucket_name}/theme/ --acl-public --delete-removed --add-header "Cache-Control: max-age=86400" --guess-mime-type'.format(**env))
-    local('s3cmd sync {deploy_path}/ s3://{s3_bucket_name}/ --acl-public --delete-removed --guess-mime-type'.format(**env))
+    local('python output-gzip-compression.py {deploy_path} {deploy_gzip_path}'.format(**env))
+    local('s3cmd sync {deploy_gzip_path}/ s3://{s3_bucket_name}/ --acl-public --delete-removed --mime-type="application/javascript; charset=utf-8" --add-header "Content-Encoding:gzip" --add-header "Cache-Control: max-age=86400" --exclude "*" --include "*.js"'.format(**env))
+    local('s3cmd sync {deploy_gzip_path}/ s3://{s3_bucket_name}/ --acl-public --delete-removed --mime-type="text/css; charset=utf-8" --add-header "Content-Encoding:gzip" --add-header "Cache-Control: max-age=86400" --exclude "*" --include "*.css"'.format(**env))
+    local('s3cmd sync {deploy_gzip_path}/ s3://{s3_bucket_name}/ --acl-public --delete-removed --mime-type="application/xml; charset=utf-8" --add-header "Content-Encoding:gzip" --exclude "*" --include "*.xml"'.format(**env))
+    local('s3cmd sync {deploy_gzip_path}/ s3://{s3_bucket_name}/ --acl-public --delete-removed --mime-type="text/html; charset=utf-8" --add-header "Content-Encoding:gzip" --exclude "*" --include "*.html"'.format(**env))
+    local('s3cmd sync {deploy_gzip_path}/assets/ s3://{s3_bucket_name}/assets/ --acl-public --delete-removed --add-header "Cache-Control: max-age=86400" --guess-mime-type'.format(**env))
+    local('s3cmd sync {deploy_gzip_path}/theme/ s3://{s3_bucket_name}/theme/ --acl-public --delete-removed --add-header "Cache-Control: max-age=86400" --guess-mime-type'.format(**env))
+    local('s3cmd sync {deploy_gzip_path}/ s3://{s3_bucket_name}/ --acl-public --delete-removed --guess-mime-type'.format(**env))
