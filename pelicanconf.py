@@ -213,10 +213,20 @@ def urlencode(uri, **query):
    parts[4] = urllib.urlencode(q)
    return urlparse.urlunparse(parts)
 
+import random
+def filter_shuffle(seq):
+    try:
+        result = list(seq)
+        random.shuffle(result)
+        return result
+    except:
+        return seq
+
 JINJA_FILTERS = {
     'md': md,
     'quote_plus': quote_plus,
-    'urlencode': urlencode
+    'urlencode': urlencode,
+    'shuffle': filter_shuffle
 }
 
 JINJA_EXTENSIONS = ['jinja2.ext.loopcontrols', 'jinja2.ext.i18n', 'jinja2.ext.with_', 'jinja2.ext.do']
