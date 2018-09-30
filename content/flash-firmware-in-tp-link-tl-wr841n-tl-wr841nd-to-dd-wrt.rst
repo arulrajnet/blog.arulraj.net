@@ -9,9 +9,9 @@
 
 My Firmware details
 
-Firmware Version: 
+Firmware Version:
 3.16.9 Build 150310 Rel.55295n
-Hardware Version: 
+Hardware Version:
 WR841N v10 00000000
 
 
@@ -22,3 +22,8 @@ http://greggborodaty.com/installing-dd-wrt-tp-link-tl-wr841n/
 http://download1.dd-wrt.com/dd-wrtv2/downloads/betas/2016/11-01-2016-r30826/tplink_tl-wr841ndv10/
 
 http://dd-wrt.com/site/support/other-downloads?path=betas/2016/11-01-2016-r30826/tplink_tl-wr841ndv10/
+
+
+This is installed on 7th may 2018
+
+http://download1.dd-wrt.com/dd-wrtv2/downloads/betas/2018/05-04-2018-r35874/tplink_tl-wr841ndv10/

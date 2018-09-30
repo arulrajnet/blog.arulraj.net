@@ -1,0 +1,28 @@
+= AsciiDoctor with pelican
+
+:title: AsciiDoctor with pelican
+:slug: asciidoctor-with-pelican
+:date: 2017-09-17 00:29:02
+:tags: asciidoc
+:category: Pelican
+:author: Arul
+:lang: en
+:status: published
+
+== Articles in asciidoc format with pelican static site generator
+
+Refer by pelicanconf.py file. In the plugins section I have added `asciidoc_reader` plugin
+
+[source,python]
+-----------------
+PLUGINS = [
+  'sitemap',
+  'neighbors',
+  'related_posts',
+  'post_stats',
+  'assets',
+  'asciidoc_reader'
+]
+-----------------
+
+Then write this article with http://asciidoctor.org/docs/user-manual/[asciidoctor] syntax and save this with .adoc extenstion.

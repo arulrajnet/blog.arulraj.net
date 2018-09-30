@@ -83,7 +83,7 @@ EXTRA_PATH_METADATA = {
     'assets/css/myblog.css': {'path': 'css/myblog.css'},
 }
 
-# Post and Pages path 
+# Post and Pages path
 ARTICLE_URL = '{date:%Y}/{date:%m}/{slug}.html'
 ARTICLE_SAVE_AS = '{date:%Y}/{date:%m}/{slug}.html'
 PAGE_URL = 'pages/{slug}/'
@@ -91,7 +91,7 @@ PAGE_SAVE_AS = 'pages/{slug}/index.html'
 YEAR_ARCHIVE_SAVE_AS = '{date:%Y}/index.html'
 MONTH_ARCHIVE_SAVE_AS = '{date:%Y}/{date:%m}/index.html'
 
-# Tags and Category path 
+# Tags and Category path
 CATEGORY_URL = 'category/{slug}'
 CATEGORY_SAVE_AS = 'category/{slug}/index.html'
 CATEGORIES_SAVE_AS = 'catgegories.html'
@@ -172,11 +172,12 @@ PLUGIN_PATHS = [
 
 # better_figures_and_images is failed articles which have <object> tag with no "data" attributes.
 PLUGINS = [
-  'sitemap', 
-  'neighbors', 
-  'related_posts', 
+  'asciidoc_reader'
+  'assets',
+  'neighbors',
   'post_stats',
-  'assets'
+  'related_posts',
+  'sitemap',
 ]
 
 # Sitemap
