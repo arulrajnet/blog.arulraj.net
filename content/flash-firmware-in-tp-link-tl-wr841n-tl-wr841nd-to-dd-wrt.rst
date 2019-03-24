@@ -27,3 +27,11 @@ http://dd-wrt.com/site/support/other-downloads?path=betas/2016/11-01-2016-r30826
 This is installed on 7th may 2018
 
 http://download1.dd-wrt.com/dd-wrtv2/downloads/betas/2018/05-04-2018-r35874/tplink_tl-wr841ndv10/
+
+
+
+Firmware Version:0.9.1 4.16 v0001.0 Build 170622 Rel.64334n
+
+Hardware Version:TL-WR841N v13 00000013
+
+https://crosp.net/blog/hardware/unbrick-tp-link-wifi-router-wr841nd-with-tftp-wireshark/
