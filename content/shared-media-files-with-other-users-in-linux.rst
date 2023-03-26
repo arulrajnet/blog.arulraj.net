@@ -12,7 +12,7 @@ I think everyone might come across this problem. How to share your Music and Vid
 
 Yes you are correct. But this is a partial solution. When you add / create new files with in that folder it have the old permissions. To solve this issue, create / add file with particular permission in that folder. Here is it how to do that.
 
-**First you have create new group. ** This is an optional one, you can use anyone of your old group. For me I created a new group called "media". Assign this group to user whom want you share.
+**First you have create new group.** This is an optional one, you can use anyone of your old group. For me I created a new group called "media". Assign this group to user whom want you share.
 
 .. code-block:: bash
 

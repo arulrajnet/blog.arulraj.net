@@ -111,7 +111,13 @@ ftp_upload: publish
 	lftp ftp://$(FTP_USER)@$(FTP_HOST) -e "mirror -R $(OUTPUTDIR) $(FTP_TARGET_DIR) ; quit"
 
 s3_upload: publish
-	python3 output-gzip-compression.py $(OUTPUTDIR) $(OUTPUTGZIPDIR)
+	python3 output-gzip-compression.py "$(OUTPUTDIR)" "$(OUTPUTGZIPDIR)"
+	aws s3 sync "$(OUTPUTGZIPDIR)"/ s3://$(S3_BUCKET)/ --acl public-read --delete --content-type "application/javascript; charset=utf-8" --content-encoding gzip --cache-control max-age=86400 --exclude "*" --include "*.js"
+	aws s3 sync "$(OUTPUTGZIPDIR)"/ s3://$(S3_BUCKET)/ --acl public-read --delete --content-type "text/css; charset=utf-8" --content-encoding gzip --cache-control max-age=86400 --exclude "*" --include "*.css"
+	aws s3 sync "$(OUTPUTGZIPDIR)"/ s3://$(S3_BUCKET)/ --acl public-read --delete --content-type "application/xml; charset=utf-8" --content-encoding gzip --exclude "*" --include "*.xml"
+	aws s3 sync "$(OUTPUTGZIPDIR)"/ s3://$(S3_BUCKET)/ --acl public-read --delete --content-type "text/html; charset=utf-8" --content-encoding gzip --exclude "*" --include "*.html"
+	aws s3 sync "$(OUTPUTGZIPDIR)"/assets/ s3://$(S3_BUCKET)/assets/ --acl public-read --delete --cache-control max-age=86400 --guess-mime-type
+	aws s3 sync "$(OUTPUTGZIPDIR)"/theme/ s3://$(S3_BUCKET)/theme/ --acl public-read --delete --cache-control max-age=86400 --guess-mime-type
 	aws s3 sync "$(OUTPUTDIR)"/ s3://$(S3_BUCKET) --acl public-read --delete
 
 cf_upload: publish

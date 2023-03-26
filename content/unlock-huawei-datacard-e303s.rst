@@ -26,7 +26,7 @@ Basically you need an **unlock code** for that. Earlier huawei modems are using 
 
 **How can I found my device follows new algorithm or old algorithm..?**
 
-If you modem IMEI starts with **86\*\* . **\ Then that is the new algorithm. This tutorial for new algorithm modems only.
+If you modem IMEI starts with **86\*\* .**\ Then that is the new algorithm. This tutorial for new algorithm modems only.
 
 **How to get the unlock code of modem..?**
 
