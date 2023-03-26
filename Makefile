@@ -19,6 +19,7 @@ SSH_USER=root
 SSH_TARGET_DIR=/var/www
 
 S3_BUCKET=www.arulraj.net
+AWS_PROFILE="arulrajnet"
 
 CLOUDFILES_USERNAME=my_rackspace_username
 CLOUDFILES_API_KEY=my_rackspace_api_key
@@ -112,13 +113,13 @@ ftp_upload: publish
 
 s3_upload: publish
 	python3 output-gzip-compression.py "$(OUTPUTDIR)" "$(OUTPUTGZIPDIR)"
-	aws s3 sync "$(OUTPUTGZIPDIR)"/ s3://$(S3_BUCKET)/ --acl public-read --delete --content-type "application/javascript; charset=utf-8" --content-encoding gzip --cache-control max-age=86400 --exclude "*" --include "*.js"
-	aws s3 sync "$(OUTPUTGZIPDIR)"/ s3://$(S3_BUCKET)/ --acl public-read --delete --content-type "text/css; charset=utf-8" --content-encoding gzip --cache-control max-age=86400 --exclude "*" --include "*.css"
-	aws s3 sync "$(OUTPUTGZIPDIR)"/ s3://$(S3_BUCKET)/ --acl public-read --delete --content-type "application/xml; charset=utf-8" --content-encoding gzip --exclude "*" --include "*.xml"
-	aws s3 sync "$(OUTPUTGZIPDIR)"/ s3://$(S3_BUCKET)/ --acl public-read --delete --content-type "text/html; charset=utf-8" --content-encoding gzip --exclude "*" --include "*.html"
-	aws s3 sync "$(OUTPUTGZIPDIR)"/assets/ s3://$(S3_BUCKET)/assets/ --acl public-read --delete --cache-control max-age=86400 --guess-mime-type
-	aws s3 sync "$(OUTPUTGZIPDIR)"/theme/ s3://$(S3_BUCKET)/theme/ --acl public-read --delete --cache-control max-age=86400 --guess-mime-type
-	aws s3 sync "$(OUTPUTDIR)"/ s3://$(S3_BUCKET) --acl public-read --delete
+	aws s3 sync "$(OUTPUTGZIPDIR)"/ s3://$(S3_BUCKET)/ --acl public-read --delete --content-type "application/javascript; charset=utf-8" --content-encoding gzip --cache-control max-age=86400 --exclude "*" --include "*.js" --profile $(AWS_PROFILE)
+	aws s3 sync "$(OUTPUTGZIPDIR)"/ s3://$(S3_BUCKET)/ --acl public-read --delete --content-type "text/css; charset=utf-8" --content-encoding gzip --cache-control max-age=86400 --exclude "*" --include "*.css" --profile $(AWS_PROFILE)
+	aws s3 sync "$(OUTPUTGZIPDIR)"/ s3://$(S3_BUCKET)/ --acl public-read --delete --content-type "application/xml; charset=utf-8" --content-encoding gzip --exclude "*" --include "*.xml" --profile $(AWS_PROFILE)
+	aws s3 sync "$(OUTPUTGZIPDIR)"/ s3://$(S3_BUCKET)/ --acl public-read --delete --content-type "text/html; charset=utf-8" --content-encoding gzip --exclude "*" --include "*.html" --profile $(AWS_PROFILE)
+	aws s3 sync "$(OUTPUTGZIPDIR)"/assets/ s3://$(S3_BUCKET)/assets/ --acl public-read --delete --cache-control max-age=86400 --profile $(AWS_PROFILE)
+	aws s3 sync "$(OUTPUTGZIPDIR)"/theme/ s3://$(S3_BUCKET)/theme/ --acl public-read --delete --cache-control max-age=86400 --profile $(AWS_PROFILE)
+	aws s3 sync "$(OUTPUTGZIPDIR)"/ s3://$(S3_BUCKET) --acl public-read --delete --profile $(AWS_PROFILE)
 
 cf_upload: publish
 	cd "$(OUTPUTDIR)" && swift -v -A https://auth.api.rackspacecloud.com/v1.0 -U $(CLOUDFILES_USERNAME) -K $(CLOUDFILES_API_KEY) upload -c $(CLOUDFILES_CONTAINER) .
