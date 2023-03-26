@@ -5,7 +5,6 @@ from __future__ import unicode_literals
 import os
 import sys
 sys.path.append(os.curdir)
-from themeconfig import *
 
 ### Core Pelican Settings
 
@@ -42,19 +41,19 @@ TRANSLATION_FEED_ATOM = None
 AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
 
-GITHUB_URL = 'http://github.com/arulrajnet/'
+GITHUB_URL = 'https://github.com/arulrajnet/'
 
 # Blogroll
-LINKS = (('Github', 'http://github.com/arulrajnet'),
-         ('Python.org', 'http://python.org/'),
-         ('Gist', 'http://gist.github.com/arulrajnet'),
-         ('Twitter', 'http://twitter.com/arulrajnet'),)
+LINKS = (('Github', 'https://github.com/arulrajnet'),
+         ('Python.org', 'https://python.org/'),
+         ('Gist', 'https://gist.github.com/arulrajnet'),
+         ('Twitter', 'https://twitter.com/arulrajnet'),)
 
 # Social widget
-SOCIAL = (('Facebook', 'http://facebook.com/arulraj.net'),
-          ('Twitter', 'http://twitter.com/arulrajnet'),
-          ('Google Plus', 'https://plus.google.com/+ArulrajNet'),
-          ('Feed', 'http://feeds.feedburner.com/ArulBlog'),
+SOCIAL = (('Facebook', 'https://facebook.com/arulraj.net'),
+          ('Twitter', 'https://twitter.com/arulrajnet'),
+          ('GitHub', 'https://github.com/arulrajnet'),
+          ('Feed', 'https://feeds.feedburner.com/ArulBlog'),
           )
 
 # Pagination
@@ -121,22 +120,17 @@ THEME = 'attila'
 
 ### Theme specific settings
 
-## Start - pelican-clean-blog - https://github.com/gilsondev/pelican-clean-blog
-COLOR_SCHEME_CSS = 'github.css'
-# Copied from https://github.com/mingp/pelican-clean-blog-theme/blob/master/static/css/clean-blog.css
-# CSS_OVERRIDE = ['css/myblog.css', 'css/better_responsive_images.css']
-# CSS_OVERRIDE = ['css/myblog.css']
-
 AUTHORS_BIO = {
   "arul": {
     "name": "Arulraj V",
-    "cover": "https://www.gravatar.com/avatar/dead1c3ffb26a27d8b5e30e1c30e46e6?s=600",
+    "cover": "https://images.unsplash.com/photo-1519217651866-847339e674d4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
     "image": "https://www.gravatar.com/avatar/dead1c3ffb26a27d8b5e30e1c30e46e6?s=600",
-    "website": "http://arulraj.net",
     "location": "Chennai",
     "bio": "• Architect • DevOps • Full Stack Developer • Aspiring Entrepreneur •",
     "twitter": "arulrajnet",
-    "facebook": "arulraj.net"
+    "facebook": "arulraj.net",
+    "github": "arulrajnet",
+    "linkedin": "arulrajnet"
   }
 }
 
@@ -172,7 +166,7 @@ PLUGIN_PATHS = [
 
 # better_figures_and_images is failed articles which have <object> tag with no "data" attributes.
 PLUGINS = [
-  'asciidoc_reader'
+  'asciidoc_reader',
   'assets',
   'neighbors',
   'post_stats',
@@ -199,44 +193,49 @@ from markdown import Markdown
 markdown = Markdown(extensions=['markdown.extensions.extra'])
 
 def md(content, *args):
-    return markdown.convert(content)
+  return markdown.convert(content)
 
 import urllib
 
 def quote_plus(value, *args):
-  return urllib.quote_plus(value)
+  return urllib.parse.quote_plus(value)
 
-import urlparse
+import urllib.parse
 def urlencode(uri, **query):
-   parts = list(urlparse.urlparse(uri))
-   q = urlparse.parse_qs(parts[4])
-   q.update(query)
-   parts[4] = urllib.urlencode(q)
-   return urlparse.urlunparse(parts)
+  parts = list(urllib.parse.urlparse(uri))
+  q = urllib.parse.parse_qs(parts[4])
+  q.update(query)
+  parts[4] = urllib.parse.urlencode(q)
+  return urllib.parse.urlunparse(parts)
 
 import random
 def filter_shuffle(seq):
-    try:
-        result = list(seq)
-        random.shuffle(result)
-        return result
-    except:
-        return seq
+  try:
+    result = list(seq)
+    random.shuffle(result)
+    return result
+  except:
+    return seq
 
 JINJA_FILTERS = {
-    'md': md,
-    'quote_plus': quote_plus,
-    'urlencode': urlencode,
-    'shuffle': filter_shuffle
+  'md': md,
+  'quote_plus': quote_plus,
+  'urlencode': urlencode,
+  'shuffle': filter_shuffle,
+  'max': max
 }
 
-JINJA_EXTENSIONS = ['jinja2.ext.loopcontrols', 'jinja2.ext.i18n', 'jinja2.ext.with_', 'jinja2.ext.do']
+# Jinja config - Pelican 4
+JINJA_ENVIRONMENT = {
+  'extensions' :[
+    'jinja2.ext.loopcontrols',
+    'jinja2.ext.i18n',
+    'jinja2.ext.do',
+  ]
+}
 
 # Read time - Medium like
 X_MIN_READ = False
 
 # Setting for the better_figures_and_images plugin
 RESPONSIVE_IMAGES = True
-
-# This is not working
-CUSTOM_CSS = '/css/custom.css'

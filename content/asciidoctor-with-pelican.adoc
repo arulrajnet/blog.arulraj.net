@@ -7,7 +7,9 @@
 :category: Pelican
 :author: Arul
 :lang: en
-:status: published
+:status: draft
+
+This article written in asciidoc format. Refer https://github.com/arulrajnet/blog.arulraj.net/blob/master/content/asciidoctor-with-pelican.adoc[this source]
 
 == Articles in asciidoc format with pelican static site generator
 

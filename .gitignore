@@ -9,6 +9,7 @@
 ehthumbs.db
 Thumbs.db
 desktop.ini
+__pycache__
 
 # Project specific
 *.pid
@@ -16,3 +17,5 @@ desktop.ini
 output
 outputgzip
 cache
+attila
+.venv

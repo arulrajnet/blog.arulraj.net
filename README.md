@@ -1,42 +1,61 @@
 blog.arulraj.net
 ================
 
-###Setup Environmental
+### Setup
 
-Clone the blog from bitbucket
+**Requirements**
 
-```
-git clone bitbucket.org:arulrajnet/blog.arulraj.net.git --recursive
-cd blog.arulraj.net
-git submodule update --init --recursive
-git fetch --recurse-submodules
-git pull --recurse-submodules
-```
+Install python3 depends on your OS
 
-Add new submodule
+    sudo apt-get install python3-pip python3-dev
 
-```
-git submodule add --force https://github.com/kura/ghastly my-pelican-themes/ghostly
-```
+Install virtualenv module
 
-__Install Dependencies__
+    sudo pip3 install -U virtualenv
 
-```
-sudo apt-get install python-pip
-sudo pip install -U pelican fabric ghp-import s3cmd pysvg Pygments requests webassets pillow jsmin cssmin BeautifulSoup4 
-```
+### Clone and install theme
 
-__Build__
+Clone the blog
 
-```
-fab help
-fab build
-fab serve
-fab s3_upload
-```
+    git clone https://github.com/arulrajnet/blog.arulraj.net
+    cd blog.arulraj.net
+    git submodule update --init --recursive
+    git fetch --recurse-submodules
+    git pull --recurse-submodules
 
-To build with specific theme
+Install the following module for pelican inside `blog.arulraj.net` folder
 
-```
-pelican -s pelicanconf.py -t my-pelican-themes/pelican-clean-blog-theme/
-```
+    virtualenv .venv
+    source .venv/bin/activate
+    pip3 install -U pelican Markdown ghp-import invoke awscli pysvg Pygments requests webassets pillow jsmin cssmin BeautifulSoup4
+
+To activate virtualenv in windows(git-bash)
+
+    source .venv/Scripts/activate
+
+**Install attila theme**
+
+    git clone --depth=1 https://github.com/arulrajnet/attila
+    pelican-themes -i ${PWD}/attila
+    pelican-themes -l
+
+### Build
+
+invoke commands
+
+    invoke --list
+    invoke build
+    invoke serve
+
+OR make commands
+
+    make help
+    make html
+    make serve
+
+Then visit [http://localhost:8000](http://localhost:8000)
+
+**To publish to S3**
+
+    make publish
+    make s3_upload
