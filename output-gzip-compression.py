@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 # -*- coding: utf-8 -*-
 '''
 AWS S3 Gzip compression utility
@@ -27,9 +27,9 @@ Algorithm:
 import os, sys, gzip, hashlib, shutil
 
 if len(sys.argv) != 3:
-    print 'Command should have 2 arguments: output dir and publication dir'
+    print('Command should have 2 arguments: output dir and publication dir')
     sys.exit(0)
-    
+
 OUTPUT_DIR = sys.argv[1]
 PUBLICATION_DIR = sys.argv[2]
 HASH_SUM_FILE = sys.argv[2] + '/SHA512SUM'
@@ -54,7 +54,7 @@ def update_gzipped_publications(output_dir, publication_dir):
         for f in files:
             filename = os.path.join(root, f)
             relpath = os.path.relpath(filename, output_dir);
-            
+
             if (relpath.endswith(GZIPPED_EXTENSIONS)):
                 # can be a problem if files are big:
                 current_hash = hashlib.sha512(open(filename).read()).hexdigest()
@@ -71,7 +71,7 @@ def update_gzipped_publications(output_dir, publication_dir):
                                 fw.write(buf)
                                 buf = fr.read(blocksize)
                     hashes[relpath] = current_hash
-                    print filename + ' renewed'
+                    print(filename + ' renewed')
             else:
                  publicated_file = os.path.join(publication_dir, relpath);
                  directory_of_file = os.path.dirname(publicated_file)

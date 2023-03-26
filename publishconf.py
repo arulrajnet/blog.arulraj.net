@@ -12,11 +12,10 @@ from pelicanconf import *
 
 # Generate feed while publish
 FEED_ALL_ATOM = 'feeds/all.atom.xml'
-CATEGORY_FEED_ATOM = 'feeds/category/%s.atom.xml'
-TAG_FEED_ATOM = 'feeds/tag/%s.atom.xml'
+CATEGORY_FEED_ATOM = 'feeds/category/{slug}.atom.xml'
+TAG_FEED_ATOM = 'feeds/tag/{slug}.atom.xml'
 TRANSLATION_FEED_ATOM = None
-AUTHOR_FEED_ATOM = None
-AUTHOR_FEED_RSS = None
+AUTHOR_FEED_ATOM = 'feeds/author/{slug}.atom.xml'
 
 #Relative url
 RELATIVE_URLS = False
