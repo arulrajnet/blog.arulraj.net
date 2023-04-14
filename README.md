@@ -9,9 +9,10 @@ Install python3 depends on your OS
 
     sudo apt-get install python3-pip python3-dev
 
-Install virtualenv module
+Install pipenv module
 
     sudo pip3 install -U virtualenv
+    python3 -m pip install --user pipenv
 
 ### Clone and install theme
 
@@ -25,13 +26,8 @@ Clone the blog
 
 Install the following module for pelican inside `blog.arulraj.net` folder
 
-    virtualenv .venv
-    source .venv/bin/activate
-    pip3 install -U pelican Markdown ghp-import invoke awscli pysvg Pygments requests webassets pillow jsmin cssmin BeautifulSoup4
-
-To activate virtualenv in windows(git-bash)
-
-    source .venv/Scripts/activate
+    python3 -m pipenv shell
+    python3 -m pipenv install
 
 **Install attila theme**
 

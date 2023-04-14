@@ -168,10 +168,11 @@ PLUGIN_PATHS = [
 PLUGINS = [
   'asciidoc_reader',
   'assets',
-  'neighbors',
+  'pelican.plugins.neighbors',
+  'pelican.plugins.related_posts',
+  'pelican.plugins.seo',
+  'pelican.plugins.sitemap',
   'post_stats',
-  'related_posts',
-  'sitemap',
 ]
 
 # Sitemap
