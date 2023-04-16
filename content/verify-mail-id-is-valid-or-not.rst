@@ -1,4 +1,7 @@
-:title: Verify Mail ID is valid or not 
+Verify Mail ID is valid or not
+##############################
+
+:title: Verify Mail ID is valid or not
 :slug: verify-mail-id-is-valid-or-not
 :date: 2015-05-10 15:51:37
 :tags: python, mail

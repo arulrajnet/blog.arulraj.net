@@ -1,3 +1,6 @@
+PixelServ using Nginx
+#####################
+
 :title: PixelServ using Nginx
 :slug: pixelserv-using-nginx
 :date: 2015-11-21 11:31:49
@@ -10,7 +13,7 @@
 
 Hope you know about `pixelserv <http://proxytunnel.sourceforge.net/pixelserv.php>`__. It is a webserver which will always response 1x1 transparent gif image for all kind of requests. Mainly used in adblocking and proxy environmental.
 
-In this setup I am going to serve 1x1 pixel using nginx server. 
+In this setup I am going to serve 1x1 pixel using nginx server.
 
 **Install nginx**
 
@@ -58,7 +61,7 @@ changing ``/etc/nginx/nginx.conf`` as below
 **Check**
 
 .. code-block:: bash
-  
+
   sudo service nginx restart
   curl http://localhost/
 
@@ -83,4 +86,3 @@ docker-compose.yml for that is
     volumes:
       - ./nginx.conf:/etc/nginx/nginx.conf
     hostname: pixelserv
-

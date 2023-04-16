@@ -1,3 +1,6 @@
+Ubuntu Hidden Features You Need
+################################
+
 :title: Ubuntu Hidden Features You Need
 :slug: ubuntu-hidden-features-you-need
 :date: 2015-12-23 14:31:16
@@ -8,9 +11,9 @@
 :status: draft
 :disqus_identifier: ubuntu-ubuntu-hidden-features-you-need
 
-you may refer this is as things to do after ubuntu installation. 
+you may refer this is as things to do after ubuntu installation.
 
-After first install to make it more usuable follow the things. 
+After first install to make it more usuable follow the things.
 
 Things you should do after install ubuntu.
 
@@ -38,7 +41,7 @@ OR
 
 **Bluetooth enable receive files**
 
-Personal File Sharing --> Receive Files over Bluetooth --> Check Two check boxes. 
+Personal File Sharing --> Receive Files over Bluetooth --> Check Two check boxes.
 
 **change bluetooth SSID name**
 

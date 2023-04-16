@@ -1,3 +1,6 @@
+Live Cricket Score on your terminal
+###################################
+
 :title: Live Cricket Score on your terminal
 :slug: live-cricket-score-on-your-terminal
 :date: 2015-05-10 13:11:59
@@ -11,15 +14,15 @@
 
 |score_terminal|
 
-You are a hardcore cricket fan, want to get updated the score while working 😄 😄 . But bored to open a browser ⇒ goto cricinfo ⇒ goto particular cricket match. Welcome, this script for you only. 
+You are a hardcore cricket fan, want to get updated the score while working 😄 😄 . But bored to open a browser ⇒ goto cricinfo ⇒ goto particular cricket match. Welcome, this script for you only.
 
 Why this Script..?
-##################
+------------------
 
 I am not the fan of cricket. But some of friends working as Linux Administrators who is always looking black and white terminal, They want to know the score. So I wrote a shellscript to get score from cricinfo. Now they happily run this script in an another terminal and gets updated about score.
 
 How to use..?
-#############
+-------------
 
 - Download the file from github `livecricketscore.sh <gist_livecricketscore_>`_
 - Then copy that file in to /usr/bin/ folder
@@ -43,7 +46,7 @@ You need to install xmllint if its not there already. To install xmllint in ubun
 	apt-get install libxml2-utils
 
 Credits
-#######
+-------
 
 Thanks to ww.espncricinfo.com . I am using their RSS feed to list the live matches and get the score.
 

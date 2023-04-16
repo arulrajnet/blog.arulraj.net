@@ -1,3 +1,6 @@
+Installing Oracle JDK / JRE in CentOS Ubuntu
+############################################
+
 :title: Installing Oracle JDK / JRE in CentOS Ubuntu
 :slug: installing-oracle-jdk-jre-in-centos-ubuntu
 :date: 2014-06-06 13:18:12
@@ -26,7 +29,7 @@ this tutorial. You have to add cookies to download java via wget
 command.
 
 For CentOS
-##########
+----------
 
 .. code-block:: bash
 
@@ -35,7 +38,7 @@ For CentOS
   http://download.oracle.com/otn-pub/java/jdk/7u55-b13/jdk-7u55-linux-x64.rpm
 
 For Ubuntu
-##########
+----------
 
 .. code-block:: bash
 
@@ -71,7 +74,7 @@ Installing and Setting...?
 In the installation to make this java as default one in the system wide.
 
 For CentOS
-##########
+----------
 
 .. code-block:: bash
 
@@ -81,7 +84,7 @@ For CentOS
   alternatives --install /usr/bin/javac javac /usr/java/latest/bin/javac 2
 
 For Ubuntu
-##########
+----------
 
 .. code-block:: bash
 
@@ -140,5 +143,5 @@ http://download.oracle.com/otn-pub/java/jdk/7u55-b13/jdk-7u55-linux-x64.tar.gz
 .. |image0| image:: http://2.bp.blogspot.com/-7e9P9JpkCKg/U5ITbc1zw3I/AAAAAAAAVz8/-NrvH8mXWyU/s320/download.jpg
    :target: http://2.bp.blogspot.com/-7e9P9JpkCKg/U5ITbc1zw3I/AAAAAAAAVz8/-NrvH8mXWyU/s1600/download.jpg
 
-.. |download_java.py| image:: http://1.bp.blogspot.com/-eo7_9M3j3A8/VU4kPpVeykI/AAAAAAAAWPM/ohiVIUXjUHo/s640/download_java.png 
-  :target: http://1.bp.blogspot.com/-eo7_9M3j3A8/VU4kPpVeykI/AAAAAAAAWPM/ohiVIUXjUHo/s1600/download_java.png   
+.. |download_java.py| image:: http://1.bp.blogspot.com/-eo7_9M3j3A8/VU4kPpVeykI/AAAAAAAAWPM/ohiVIUXjUHo/s640/download_java.png
+  :target: http://1.bp.blogspot.com/-eo7_9M3j3A8/VU4kPpVeykI/AAAAAAAAWPM/ohiVIUXjUHo/s1600/download_java.png

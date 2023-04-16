@@ -1,3 +1,6 @@
+Flash Log with date and time
+############################
+
 :title: Flash Log with date and time
 :date: 2010-11-16 15:50
 :author: arul
@@ -81,7 +84,7 @@ When i am work with a Difficult Flex application its hard to find which log is
         addContextMenu();
         main.initMain();
         main.printLog();
-      }      
+      }
       ]]>
      </mx:Script>
      <mx:Canvas id="sharedaa">

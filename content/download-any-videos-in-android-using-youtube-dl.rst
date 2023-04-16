@@ -1,3 +1,6 @@
+Download any videos in android using youtube-dl
+###############################################
+
 :title: Download any videos in android using youtube-dl
 :slug: download-any-videos-in-android-using-youtube-dl
 :date: 2015-11-21 12:14:38
@@ -8,7 +11,7 @@
 :status: published
 :disqus_identifier: /2015/11/download-any-videos-in-android-using-youtube-dl.html
 
-There are lot of app there in google play store to download video youtube. All are claiming it has all the features and so and so... But the reality is, they are not working in all the times. 
+There are lot of app there in google play store to download video youtube. All are claiming it has all the features and so and so... But the reality is, they are not working in all the times.
 
 In my laptop I am using `youtube_dl <https://rg3.github.io/youtube-dl/>`__ to download videos. Its working for most of the video sites including youtube, vimeo and etc., I want setup that in my android mobile. So here is the how to do...
 
@@ -32,7 +35,7 @@ Install `QPython <https://play.google.com/store/apps/details?id=com.hipipal.qpyp
 Install youtube-dl
 ------------------
 
-Goto QPython Dashboard. Slide left from home screen to go dashboard. 
+Goto QPython Dashboard. Slide left from home screen to go dashboard.
 
 .. figure:: /assets/images/QPython-dashboard.png
     :align: center

@@ -1,3 +1,6 @@
+Docker container for TOR with Privoxy
+#####################################
+
 :title: Docker container for TOR with Privoxy
 :slug: docker-container-for-tor-with-privoxy
 :date: 2015-05-09 16:11:12
@@ -17,7 +20,7 @@ Github Repo `https://github.com/arulrajnet/torprivoxy <torprivoxy_repo_>`_
 Docker Repo `https://registry.hub.docker.com/u/arulrajnet/torprivoxy <docker_hub_>`_
 
 How to Use
-##########
+-----------
 
 You have to install docker first. To install in linux `follow this <docker_installation_>`_
 
@@ -28,12 +31,12 @@ You have to install docker first. To install in linux `follow this <docker_insta
 	--name tor -i arulrajnet/torprivoxy:latest
 
 
-Binding port 9050 and 9051 are optional. 9051 is the controlport of TOR Network. Using that you can forcefully regenerate the TOR ip. Read more about `tor_ip_renew.py <tor_ip_renew_>`_ 
+Binding port 9050 and 9051 are optional. 9051 is the controlport of TOR Network. Using that you can forcefully regenerate the TOR ip. Read more about `tor_ip_renew.py <tor_ip_renew_>`_
 
 Docker Tags
-###########
+-----------
 
-There are two flavor of container 
+There are two flavor of container
 
 +--------+---------------+----------+
 | Tag    | Base Image    | Size     |
@@ -48,7 +51,7 @@ There are two flavor of container
 This is the very lean image for TOR with Privoxy currently available in `docker hub <docker_hub_>`_.
 
 Verify
-######
+------
 
 How to cross check are you getting ip from Tor or not.
 
@@ -81,7 +84,7 @@ How to cross check are you getting ip from Tor or not.
 
 
 Debug
-#####
+-----
 
 If the above step is not success you have to verify the log files.
 
@@ -89,7 +92,7 @@ If the above step is not success you have to verify the log files.
 
 	docker exec -it tor /bin/bash
 
-All the log files in the ``/tmp`` folder of container. 
+All the log files in the ``/tmp`` folder of container.
 
 **To restart TOR and Provoxy**
 
@@ -102,7 +105,7 @@ All the log files in the ``/tmp`` folder of container.
 
 
 Global Proxy
-############
+------------
 
 You can set privoxy as a global proxy so that all your traffic goes via TOR
 

@@ -1,11 +1,14 @@
+Upgrade postgres client 9.3 to 9.4 in ubuntu 14.04
+##################################################
+
 :title: Upgrade postgres client 9.3 to 9.4 in ubuntu 14.04
 :slug: upgrade-postgres-client-9-3-to-9-4-in-ubuntu-14-04
 :date: 2015-05-14 22:40:30
 :tags: postgresql, database
-:category: Database 
+:category: Database
 :author: Arul
 :lang: en
-:summary: 
+:summary:
 :status: draft
 :disqus_identifier: database-upgrade-samsung-galaxy-5-to-ice-cream-sandwich
 

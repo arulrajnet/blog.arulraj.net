@@ -1,3 +1,6 @@
+Prompter4J Released 1.0
+########################
+
 :title: Prompter4J Released 1.0
 :slug: prompter4j-released-1-0
 :date: 2015-05-10 15:34:09
@@ -10,7 +13,7 @@
 Prompter4J is a library to get the user raw input in an interactive manner.
 
 Maven
-#####
+------
 
 Add this dependency in your pom.xml and start using.
 
@@ -23,12 +26,12 @@ Add this dependency in your pom.xml and start using.
 	</dependency>
 
 Download JAR
-############
+------------
 
 http://central.maven.org/maven2/com/github/arulrajnet/prompter4j/1.0/prompter4j-1.0.jar
 
 How to Use
-##########
+----------
 
 **Get an integer value**
 
@@ -42,10 +45,10 @@ How to Use
 
 .. code-block:: text
 
-	Enter your age : 
+	Enter your age :
 	> df
 	Give input as Integer
-	Enter your age : 
+	Enter your age :
 	> 12
 
 
@@ -62,13 +65,13 @@ How to Use
 
 .. code-block:: text
 
-	Select Any one : 
+	Select Any one :
 	3
 	4
 	5
 	> 8
 	Select from choices
-	Select Any one : 
+	Select Any one :
 	3
 	4
 	5
@@ -97,6 +100,5 @@ How to Use
 	THURSDAY
 	FRIDAY
 	SATURDAY
-	> 
+	>
 	SUNDAY
-

@@ -1,3 +1,6 @@
+Server Virtualization
+#####################
+
 :title: Server Virtualization
 :date: 2009-04-22 06:00
 :author: arul
@@ -40,7 +43,7 @@ Xen is an open-source paravirtualization technology that provides a platform for
 HVM mediates between the guest operating system and the hardware and passes on the calls made by the guest to the physical hardware.
 
 Xen Architecture
-################
+----------------
 
 |image0|
 

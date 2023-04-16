@@ -1,11 +1,14 @@
+SNI support in older version python
+###################################
+
 :title: SNI support in older version python
 :slug: sni-support-in-older-version-python
 :date: 2016-09-10 22:07:44
-:tags: 
+:tags:
 :category: Python
 :author: arul
 :lang: en
-:summary: 
+:summary:
 :status: draft
 :disqus_identifier: python-sni-support-in-older-version-python
 
@@ -19,7 +22,7 @@
     /usr/local/lib/python2.7/dist-packages/urllib3/util/ssl_.py:334: SNIMissingWarning: An HTTPS request has been made, but the SNI (Subject Name Indication) extension to TLS is not available on this platform. This may cause the server to present an incorrect TLS certificate, which can cause validation failures. You can upgrade to a newer version of Python to solve this. For more information, see https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
 
       SNIMissingWarning
-      
+
 
     python 2.7.9 and newer has support
 

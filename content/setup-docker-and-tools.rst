@@ -1,3 +1,6 @@
+Setup docker and tools
+######################
+
 :title: Setup docker and tools
 :slug: setup-docker-and-tools
 :date: 2016-01-24 06:34:22
@@ -90,7 +93,7 @@ Add this in your ``.bashrc`` file.
   # Remove all images
   dri() { docker rmi $(docker images -q); }
 
-  # Dockerfile build, e.g., $dbu tcnksm/test 
+  # Dockerfile build, e.g., $dbu tcnksm/test
   dbu() { docker build -t=$1 .; }
 
   # Show all alias related docker

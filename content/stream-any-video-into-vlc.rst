@@ -1,3 +1,6 @@
+Stream any video into VLC
+##########################
+
 :title: Stream any video into VLC
 :slug: stream-any-video-into-vlc
 :date: 2015-09-11 22:07:12
@@ -37,7 +40,7 @@ You can also set up a function in your ~/.bash_aliases file like
 .. code-block:: bash
 
   function streamer() {
-    youtube-dl -o - "$1" | vlc - 
+    youtube-dl -o - "$1" | vlc -
   }
 
 Referred from https://github.com/rg3/youtube-dl/issues/2124#issuecomment-32429104

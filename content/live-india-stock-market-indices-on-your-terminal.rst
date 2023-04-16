@@ -1,10 +1,13 @@
+Live India Stock Market Indices on your Terminal
+################################################
+
 :title: Live India Stock Market Indices on your Terminal
 :slug: live-india-stock-market-indices-on-your-terminal
 :date: 2015-05-10 14:18:18
 :tags: share market, linux, python, shellscript
 :category: Linux
 :author: arul
-:lang: en 
+:lang: en
 :disqus_identifier: /2015/05/live-india-stock-market-indices-on-your-terminal.html
 
 **Live BSE and NSE index on your bash terminal**
@@ -14,7 +17,7 @@
 The script get the live index from BSE and NSE stock market.
 
 How to Use
-##########
+----------
 
 - Download the script from github `stockmarketindia.py <stockmarketindiapy_>`_
 - Copy the file into ``/usr/bin`` folder.
@@ -28,13 +31,13 @@ How to Use
 
 
 API Used
-########
+--------
 
-The python script using google finance API. http://finance.google.com/finance/info?client=ig&q=INDEXBOM:SENSEX 
+The python script using google finance API. http://finance.google.com/finance/info?client=ig&q=INDEXBOM:SENSEX
 
 
 Indexes are Included
-####################
+--------------------
 
 **BSE**
 

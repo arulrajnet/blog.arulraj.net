@@ -1,7 +1,10 @@
+Buying guide books offline
+##########################
+
 :title: Buying guide books offline
 :slug: buying-guide-books-offline
 :date: 2015-09-17 12:33:13
-:tags: 
+:tags:
 :category: shopping
 :author: Arul
 :lang: en
