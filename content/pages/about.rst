@@ -4,17 +4,11 @@ About
 :author: arul
 :slug: about
 :status: published
-:og_image: /theme/images/about-bg.jpg
+:og_image: theme/images/about-bg.jpg
 
 Hi all,
 
-This is `Arulraj
-Venni <https://plus.google.com/114138223141026310608/about>`__. Call me
-Arul/AJ . Working in a software concern and i have worked with mixed
-technologies. My interest is to play with open source projects and
-software. This blog is for sharing my past experiences, experiments,
-knowledge, the technical problems that i faced etc., Mostly Linux, Java
-and sometimes flex.
+My name is `Arulraj Venni <https://www.linkedin.com/in/arulrajnet/>`__, but you can call me Arul or AJ. I work at a software company and have experience with various technologies. I enjoy working on open source projects and software. This blog is where I share my past experiences, experiments, knowledge, and the technical problems I've encountered. I mostly focus on topics related to Linux and Java, and occasionally, I discuss general topics as well.
 
 Contact me at **contact AT arulraj.net**
 

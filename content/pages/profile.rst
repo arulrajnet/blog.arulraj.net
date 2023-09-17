@@ -3,6 +3,7 @@ Profile
 :date: 2010-12-21 15:59
 :author: arul
 :slug: profile
+:status: draft
 
 .. raw:: html
 
