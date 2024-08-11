@@ -5,5 +5,5 @@ author: arul
 category: Docker
 tags: 
 slug: install-docker-compose-and-buildx-manually
-status: published
+status: draft
 ---

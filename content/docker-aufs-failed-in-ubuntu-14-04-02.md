@@ -1,6 +1,5 @@
 ---
 title: Docker aufs failed in ubuntu 14.04.02
-
 slug:   docker-aufs-failed-in-ubuntu-14-04-02
 date:   2015-07-08 11:04:32
 tags:   Ubuntu, Docker

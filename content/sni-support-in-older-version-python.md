@@ -1,6 +1,5 @@
 ---
 title: SNI support in older version python
-
 slug:   sni-support-in-older-version-python
 date:   2016-09-10 22:07:44
 tags:

@@ -1,6 +1,5 @@
 ---
 title: SonarQube + Docker + Maven and your project
-
 slug:   sonarqube-docker-maven-and-your-project
 date:   2015-05-25 13:10:55
 tags:   java, docker, maven, sonar

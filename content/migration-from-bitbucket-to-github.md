@@ -1,6 +1,5 @@
 ---
 title: Migration from bitbucket to github
-
 slug:   migration-from-bitbucket-to-github
 date:   2016-01-12 17:19:10
 tags:   blog, git
