@@ -1,12 +1,16 @@
 ---
 title: Live Cricket Score on your terminal
-slug:   live-cricket-score-on-your-terminal
-date:   2015-05-10 13:11:59
-tags:   linux, cricket, shellscript
-category:   Linux
+slug: live-cricket-score-on-your-terminal
+date: 2015-05-10 13:11:59
+tags:
+  - linux
+  - cricket
+  - shellscript
+category: Linux
 author: arul
-lang:   en
-disqus_identifier:    /2015/10/live-cricket-score-on-your-terminal.html
+lang: en
+disqus_identifier: /2015/10/live-cricket-score-on-your-terminal.html
+status: published
 ---
 
 **Live Cricket Score From CricInfo on your Bash Terminal**

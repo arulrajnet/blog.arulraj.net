@@ -1,11 +1,15 @@
 ---
 title: Small FB hack
-date:   2011-02-25 14:25
+date: 2011-02-25 14:25
 author: arul
-category:   Programming
-tags:   Browser, hacking, java
-slug:   small-fb-hack
-disqus_identifier:    /2011/02/small-fb-hack.html
+category: Programming
+tags:
+  - Browser
+  - hacking
+  - java
+slug: small-fb-hack
+disqus_identifier: /2011/02/small-fb-hack.html
+status: published
 ---
 
 Don\'t think I had broke the security system of facebook and got others

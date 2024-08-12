@@ -4,28 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "b06e9af9d2240068",
+        "id": "e78471b7b5edeacc",
         "type": "tabs",
         "children": [
           {
-            "id": "4cd78d48c7b54d3f",
+            "id": "2d549c91212163de",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "✔ Published MOC.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "b2c092bb712e90f1",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "content/build-environment-for-flex-with-eclipse.md",
+                "file": "content/uninstall-linuxmint-from-ubuntu.md",
                 "mode": "source",
                 "source": false
               }
@@ -77,7 +65,8 @@
               "state": {}
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -97,7 +86,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "✔ Published MOC.md",
+                "file": "content/uninstall-linuxmint-from-ubuntu.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -114,7 +103,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "✔ Published MOC.md",
+                "file": "content/uninstall-linuxmint-from-ubuntu.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -137,7 +126,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "✔ Published MOC.md"
+                "file": "content/uninstall-linuxmint-from-ubuntu.md"
               }
             }
           }
@@ -159,51 +148,54 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "4cd78d48c7b54d3f",
+  "active": "2d549c91212163de",
   "lastOpenFiles": [
-    "📝Drafts MOC.md",
-    "✔ Published MOC.md",
-    "content/build-environment-for-flex-with-eclipse.md",
-    "content/automount-vmware-shared-folder-in-ubuntu.md",
-    "content/flash-firmware-in-tp-link-tl-wr841n-tl-wr841nd-to-dd-wrt.md",
-    "output/css/better_responsive_images.css",
-    "output/css/myblog.css",
-    "output/css",
-    "output/theme/js/script.js",
-    "output/theme/js/jquery.fitvids.js",
-    "output/theme/js",
-    "output/theme/font/README.md",
-    "output/theme/font/icon.woff",
-    "output/theme/font/icon.woff2",
-    "output/theme/font/icon.ttf",
-    "output/theme/font/icon.eot",
-    "output/theme/font/icon.svg",
-    "output/theme/font/fira-sans-v8-latin-regular.svg",
-    "output/theme/font/fira-sans-v8-latin-700.svg",
-    "output/theme/font/fira-sans-v8-latin-500.svg",
-    "output/theme/font/cardo-v9-latin-regular.svg",
-    "output/theme/font/cardo-v9-latin-italic.svg",
-    "output/theme/font/cardo-v9-latin-700.svg",
-    "content/install-ubuntu-10-04-in-acer-5740.md",
-    "content/server-virtualization.md",
-    "content/install-docker-and-docker-buildx-manually.md",
-    "content/android-problems-galaxy-5.md",
-    "content/airtellive-manual-setting-for-lg-kg-195.md",
-    "content/adding-remote-jmx-for-red5.md",
-    "content/buying-guide-whiteboard-in-chennai.md",
-    "content/xml-to-actionscript-class-turbosqel-asml-example.md",
-    "content/windows-command-prompt-properties.md",
-    "content/why-i-am-moving-to-linux-in-my-home-pc.md",
-    "content/visiting-besant-nagar-broken-bridge.md",
-    "content/video-on-demand-vod-for-red5-0-8-0-server.md",
-    "content/verify-mail-id-is-valid-or-not.md",
-    "content/upgrade-samsung-galaxy-5-to-ice-cream-sandwich.md",
-    "content/upgrade-samsung-galaxy-5-and-3-to-froyo.md",
-    "content/upgrade-postgres-client-9-3-to-9-4-in-ubuntu-14-04.md",
-    "content/upgrade-openssl-in-ubuntu-and-centos.md",
-    "content/unlock-huawei-datacard-e303s.md",
     "content/uninstall-linuxmint-from-ubuntu.md",
-    "content/ubuntu-hidden-features-you-need.md",
+    "output/drafts/uninstall-linuxmint-from-ubuntu.html",
+    "content/unlock-huawei-datacard-e303s.md",
+    "output/drafts/unlock-huawei-datacard-e303s.html",
+    "✔ Published MOC.md",
+    "output/favicon.ico",
+    "output/assets/images/2016/1/kubectl-bash-completion.png",
+    "output/assets/images/2016/1",
+    "output/assets/images/QPython-Installing-youtube-dl.png",
+    "output/assets/images/QPython-Google-Play.png",
+    "output/assets/images/QPython-youtube-dl-version.jpeg",
+    "output/assets/images/QPython-pip-console.png",
+    "output/assets/images/QPython-dashboard.png",
+    "output/assets/images/Qpython-downloding-from-facebook.png",
+    "output/assets/images/Qpython-downloding-from-youtube.jpeg",
+    "output/assets/images/nginx-pixelserv.png",
+    "output/assets/images/2016",
+    "output/assets/images",
+    "output/assets",
+    "output/css/myblog.css",
+    "output/css/better_responsive_images.css",
+    "output/css",
+    "output/theme/images/post-bg.jpg",
+    "output/theme/font/README.md",
+    "content/dos2unix-unix2dos-in-ubuntu.md",
+    "📝Drafts MOC.md",
+    "content/flash-firmware-in-tp-link-tl-wr841n-tl-wr841nd-to-dd-wrt.md",
+    "content/jsp-ajax-problem.md",
+    "content/fix-pycharm-failed-to-create-jvm.md",
+    "content/airtellive-manual-setting-for-lg-kg-195.md",
+    "content/how-to-set-the-static-ip-address-in-ubuntu.md",
+    "content/recent-post-widget-in-flash.md",
+    "content/visiting-besant-nagar-broken-bridge.md",
+    "content/how-to-add-freeswitch-service.md",
+    "content/how-to-add-return-path-in-php-mail.md",
+    "content/centos-networking-faq.md",
+    "content/how-to-create-and-use-private-public-keys.md",
+    "content/secure-login-using-java-servlet.md",
+    "content/windows-command-prompt-properties.md",
+    "content/batch-file-for-building-any-java-application.md",
+    "content/adding-remote-jmx-for-red5.md",
+    "content/why-i-am-moving-to-linux-in-my-home-pc.md",
+    "content/how-to-install-mplayer-on-fedora.md",
+    "content/my-first-3d-flash-animation.md",
+    "content/how-rotation-camera3d-and-viewer3d-worked-in-away3d.md",
+    "content/how-to-add-www-to-your-domain-name.md",
     "Untitled.canvas"
   ]
 }

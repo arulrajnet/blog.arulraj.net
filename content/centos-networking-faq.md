@@ -1,11 +1,15 @@
 ---
 title: CentOS Networking FAQ
-date:   2009-07-14 07:57
+date: 2009-07-14 07:57
 author: arul
-category:   Linux
-tags:   Linux, static ip
-slug:   centos-networking-faq
-disqus_identifier:    /2009/07/centos-networking-faq.html
+category: Linux
+tags:
+  - Linux
+  - static
+  - ip
+slug: centos-networking-faq
+disqus_identifier: /2009/07/centos-networking-faq.html
+status: published
 ---
 
 [![image0](http://3.bp.blogspot.com/_Tq9uaJI0Xww/SlyToWJ_bHI/AAAAAAAAFFM/U3akGuy-MxU/s400/centos-logo.png){.align-middle}](http://3.bp.blogspot.com/_Tq9uaJI0Xww/SlyToWJ_bHI/AAAAAAAAFFM/U3akGuy-MxU/s1600-h/centos-logo.png)

@@ -1,12 +1,15 @@
 ---
 title: Prompter4J Released 1.0
-slug:   prompter4j-released-1-0
-date:   2015-05-10 15:34:09
-tags:   java, prompter4j
-category:   Prompter4J
+slug: prompter4j-released-1-0
+date: 2015-05-10 15:34:09
+tags:
+  - java
+  - prompter4j
+category: Prompter4J
 author: arul
-lang:   en
-disqus_identifier:    /2015/05/prompter4j-released-1-0.html
+lang: en
+disqus_identifier: /2015/05/prompter4j-released-1-0.html
+status: published
 ---
 
 Prompter4J is a library to get the user raw input in an interactive

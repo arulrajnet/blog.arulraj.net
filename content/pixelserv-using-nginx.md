@@ -1,12 +1,16 @@
 ---
 title: PixelServ using Nginx
-slug:   pixelserv-using-nginx
-date:   2015-11-21 11:31:49
-tags:   proxy, adblock, nginx
-category:   proxy
+slug: pixelserv-using-nginx
+date: 2015-11-21 11:31:49
+tags:
+  - proxy
+  - adblock
+  - nginx
+category: proxy
 author: arul
-lang:   en
-disqus_identifier:    /2015/11/pixelserv-using-nginx.html
+lang: en
+disqus_identifier: /2015/11/pixelserv-using-nginx.html
+status: published
 ---
 
 Hope you know about

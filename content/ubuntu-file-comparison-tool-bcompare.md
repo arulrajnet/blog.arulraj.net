@@ -1,11 +1,16 @@
 ---
 title: Ubuntu file comparison tool - Bcompare
-date:   2010-07-29 11:39
+date: 2010-07-29 11:39
 author: arul
-category:   Linux
-tags:   Linux, ubuntu, how to
-slug:   ubuntu-file-comparison-tool-bcompare
-disqus_identifier:    /2010/07/ubuntu-file-comparison-tool-bcompare.html
+category: Linux
+tags:
+  - Linux
+  - ubuntu
+  - how
+  - to
+slug: ubuntu-file-comparison-tool-bcompare
+disqus_identifier: /2010/07/ubuntu-file-comparison-tool-bcompare.html
+status: published
 ---
 
 **Beyond Compare for ubuntu**

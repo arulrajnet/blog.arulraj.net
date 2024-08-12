@@ -1,11 +1,17 @@
 ---
 title: How to add www to your domain name
-date:   2010-03-08 04:36
+date: 2010-03-08 04:36
 author: arul
-category:   Programming
-tags:   Browser, php, how to, hosting
-slug:   how-to-add-www-to-your-domain-name
-disqus_identifier:    /2010/03/how-to-add-www-to-your-domain-name.html
+category: Programming
+tags:
+  - Browser
+  - php
+  - how
+  - to
+  - hosting
+slug: how-to-add-www-to-your-domain-name
+disqus_identifier: /2010/03/how-to-add-www-to-your-domain-name.html
+status: published
 ---
 
 **How to add www to your domain name**

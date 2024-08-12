@@ -1,11 +1,16 @@
 ---
 title: Batch file for building any java application
-date:   2009-09-24 03:58
+date: 2009-09-24 03:58
 author: arul
-category:   Widget
-tags:   commands, Widget, windows, Programming
-slug:   batch-file-for-building-any-java-application
-disqus_identifier:    /2009/09/batch-file-for-building-any-java-application.html
+category: Widget
+tags:
+  - commands
+  - Widget
+  - windows
+  - Programming
+slug: batch-file-for-building-any-java-application
+disqus_identifier: /2009/09/batch-file-for-building-any-java-application.html
+status: published
 ---
 
 **Batch file for building any java application**

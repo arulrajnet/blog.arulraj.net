@@ -1,11 +1,16 @@
 ---
 title: My first 3D flash animation
-date:   2010-02-04 03:58
+date: 2010-02-04 03:58
 author: arul
-category:   Flash
-tags:   Animation, Flash, red5, Programming
-slug:   my-first-3d-flash-animation
-disqus_identifier:    /2010/02/my-first-3d-flash-animation.html
+category: Flash
+tags:
+  - Animation
+  - Flash
+  - red5
+  - Programming
+slug: my-first-3d-flash-animation
+disqus_identifier: /2010/02/my-first-3d-flash-animation.html
+status: published
 ---
 
 **3D Animathion**

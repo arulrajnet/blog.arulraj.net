@@ -1,12 +1,16 @@
 ---
 title: Stream any video into VLC
-slug:   stream-any-video-into-vlc
-date:   2015-09-11 22:07:12
-tags:   streaming, vlc, youtube-dl
-category:   Streaming
+slug: stream-any-video-into-vlc
+date: 2015-09-11 22:07:12
+tags:
+  - streaming
+  - vlc
+  - youtube-dl
+category: Streaming
 author: arul
-lang:   en
-disqus_identifier:    /2015/09/stream-any-video-into-vlc.html
+lang: en
+disqus_identifier: /2015/09/stream-any-video-into-vlc.html
+status: published
 ---
 
 You can stream any online like youtube, vimeo, facebook, dailymotion,

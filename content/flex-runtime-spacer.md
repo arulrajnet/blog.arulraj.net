@@ -1,11 +1,14 @@
 ---
 title: Flex runtime spacer
-date:   2011-04-03 06:39
+date: 2011-04-03 06:39
 author: arul
-category:   Programming
-tags:   Actionscript, Flash
-slug:   flex-runtime-spacer
-disqus_identifier:    /2011/04/flex-runtime-spacer.html
+category: Programming
+tags:
+  - Actionscript
+  - Flash
+slug: flex-runtime-spacer
+disqus_identifier: /2011/04/flex-runtime-spacer.html
+status: published
 ---
 
 I am using Flex 4 for one of my Flex project. That project needs some

@@ -1,12 +1,15 @@
 ---
 title: Bash completions for kubectl
-slug:   bash-completions-for-kubectl
-date:   2016-01-23 12:26:32
-tags:   ubuntu, bash-completion
-category:   kubernetes
+slug: bash-completions-for-kubectl
+date: 2016-01-23 12:26:32
+tags:
+  - ubuntu
+  - bash-completion
+category: kubernetes
 author: arul
-lang:   en
-disqus_identifier:    /2016/01/bash-completions-for-kubectl.html
+lang: en
+disqus_identifier: /2016/01/bash-completions-for-kubectl.html
+status: published
 ---
 
 To install bash completion for your kubectl

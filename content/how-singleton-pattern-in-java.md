@@ -1,11 +1,15 @@
 ---
 title: How Singleton pattern in Java
-date:   2010-03-23 01:00
+date: 2010-03-23 01:00
 author: arul
-category:   Programming
-tags:   Design pattern, java
-slug:   how-singleton-pattern-in-java
-disqus_identifier:    /2010/03/how-singleton-pattern-in-java.html
+category: Programming
+tags:
+  - Design
+  - pattern
+  - java
+slug: how-singleton-pattern-in-java
+disqus_identifier: /2010/03/how-singleton-pattern-in-java.html
+status: published
 ---
 
 [![image0](http://3.bp.blogspot.com/_X5tq9y9xv2s/S6hhueEzyWI/AAAAAAAAANA/MAXSbAXOX1Q/s400/design-is-a-behaviour.jpg)](http://3.bp.blogspot.com/_X5tq9y9xv2s/S6hhueEzyWI/AAAAAAAAANA/MAXSbAXOX1Q/s1600-h/design-is-a-behaviour.jpg)

@@ -1,12 +1,18 @@
 ---
 title: Live India Stock Market Indices on your Terminal
-slug:   live-india-stock-market-indices-on-your-terminal
-date:   2015-05-10 14:18:18
-tags:   share market, linux, python, shellscript
-category:   Linux
+slug: live-india-stock-market-indices-on-your-terminal
+date: 2015-05-10 14:18:18
+tags:
+  - share
+  - market
+  - linux
+  - python
+  - shellscript
+category: Linux
 author: arul
-lang:   en
-disqus_identifier:    /2015/05/live-india-stock-market-indices-on-your-terminal.html
+lang: en
+disqus_identifier: /2015/05/live-india-stock-market-indices-on-your-terminal.html
+status: published
 ---
 
 **Live BSE and NSE index on your bash terminal**

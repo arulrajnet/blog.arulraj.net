@@ -1,11 +1,17 @@
 ---
 title: How rotation camera3d and viewer3d worked in Away3d
-date:   2010-02-07 06:54
+date: 2010-02-07 06:54
 author: arul
-category:   Flash
-tags:   Animation, Flash, Programming, how to
-slug:   how-rotation-camera3d-and-viewer3d-worked-in-away3d
-disqus_identifier:    /2010/02/how-rotation-camera3d-and-viewer3d-worked-in-away3d.html
+category: Flash
+tags:
+  - Animation
+  - Flash
+  - Programming
+  - how
+  - to
+slug: how-rotation-camera3d-and-viewer3d-worked-in-away3d
+disqus_identifier: /2010/02/how-rotation-camera3d-and-viewer3d-worked-in-away3d.html
+status: published
 ---
 
 **Rotation in Away3D Flash engine**

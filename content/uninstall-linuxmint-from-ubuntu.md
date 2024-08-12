@@ -1,12 +1,16 @@
 ---
 title: Uninstall linuxmint from ubuntu
-date:   2012-04-01 02:31
+date: 2012-04-01 02:31
 author: arul
-category:   Linux
-tags:   gnome, Linux, ubuntu, how to
-slug:   uninstall-linuxmint-from-ubuntu
-status:   published
-disqus_identifier:    /2012/04/uninstall-linuxmint-from-ubuntu.html
+category: Linux
+tags:
+  - gnome
+  - Linux
+  - ubuntu
+  - how-to
+slug: uninstall-linuxmint-from-ubuntu
+status: published
+disqus_identifier: /2012/04/uninstall-linuxmint-from-ubuntu.html
 ---
 
 **How to uninstall linuxmint from ubuntu 11.10**

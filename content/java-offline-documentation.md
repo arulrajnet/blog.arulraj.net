@@ -1,11 +1,13 @@
 ---
 title: Java offline Documentation
-date:   2010-04-21 04:56
+date: 2010-04-21 04:56
 author: arul
-category:   Programming
-tags:   java
-slug:   java-offline-documentation
-disqus_identifier:    /2010/04/java-offline-documentation.html
+category: Programming
+tags:
+  - java
+slug: java-offline-documentation
+disqus_identifier: /2010/04/java-offline-documentation.html
+status: published
 ---
 
 ![image0](http://www.lsdoc.org/webcm/lsdoc_org.nsf/lsdoc_javadoc1.gif)

@@ -1,11 +1,14 @@
 ---
 title: How to install mplayer on fedora ..?
-date:   2010-01-19 08:48
+date: 2010-01-19 08:48
 author: arul
-category:   Linux
-tags:   Fedora, Linux
-slug:   how-to-install-mplayer-on-fedora
-disqus_identifier:    /2010/01/how-to-install-mplayer-on-fedora.html
+category: Linux
+tags:
+  - Fedora
+  - Linux
+slug: how-to-install-mplayer-on-fedora
+disqus_identifier: /2010/01/how-to-install-mplayer-on-fedora.html
+status: published
 ---
 
 **How to install mplayer on fedora**

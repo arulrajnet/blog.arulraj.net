@@ -1,11 +1,14 @@
 ---
 title: Image to binary data in java
-date:   2010-10-27 14:50
+date: 2010-10-27 14:50
 author: arul
-category:   Browser
-tags:   java, xml
-slug:   image-to-binary-data-in-java
-disqus_identifier:    /2010/10/image-to-binary-data-in-java.html
+category: Browser
+tags:
+  - java
+  - xml
+slug: image-to-binary-data-in-java
+disqus_identifier: /2010/10/image-to-binary-data-in-java.html
+status: published
 ---
 
 **Image to binary data in java**

@@ -1,11 +1,17 @@
 ---
 title: Ubuntu FAQ
-date:   2010-06-13 13:44
+date: 2010-06-13 13:44
 author: arul
-category:   Linux
-tags:   commands, Linux, ubuntu, how to
-slug:   ubuntu-faq
-disqus_identifier:    /2010/06/ubuntu-faq.html
+category: Linux
+tags:
+  - commands
+  - Linux
+  - ubuntu
+  - how
+  - to
+slug: ubuntu-faq
+disqus_identifier: /2010/06/ubuntu-faq.html
+status: published
 ---
 
 [![image0](http://lh6.ggpht.com/_X5tq9y9xv2s/TBE3MO5AjmI/AAAAAAAAAZI/_QfbEoEor1Q/s512/ubuntu-logo.gif)](http://picasaweb.google.com/lh/photo/H_Aajl3cxrd_q5qtDv82yRRU7417pzdLFPTzvmy2uw8?feat=blogger)

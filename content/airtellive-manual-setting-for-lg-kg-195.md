@@ -11,6 +11,7 @@ tags:
   - Mobile
 slug: airtellive-manual-setting-for-lg-kg-195
 disqus_identifier: /2009/01/airtellive-manual-setting-for-lg-kg-195.html
+status: published
 ---
 
 Hello all,

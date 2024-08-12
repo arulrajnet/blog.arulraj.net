@@ -1,11 +1,13 @@
 ---
 title: Windows command prompt properties
-date:   2009-09-08 09:20
+date: 2009-09-08 09:20
 author: arul
-category:   Windows
-tags:   windows
-slug:   windows-command-prompt-properties
-disqus_identifier:    /2009/09/windows-command-prompt-properties.html
+category: Windows
+tags:
+  - windows
+slug: windows-command-prompt-properties
+disqus_identifier: /2009/09/windows-command-prompt-properties.html
+status: published
 ---
 
 Here the new command prompt window. Here you will know how to change the

@@ -1,5 +1,5 @@
 ---
-title: Jsp : Ajax problem
+title: Jsp  Ajax problem
 date:   2010-10-30 06:20
 author: arul
 category:   Uncategorized
@@ -7,7 +7,7 @@ slug:   jsp-ajax-problem
 status:   draft
 disqus_identifier:    java-jsp-ajax-problem
 ---
-
+-
 **JSP - Ajax not working**
 
 ------------------------------------------------------------------------

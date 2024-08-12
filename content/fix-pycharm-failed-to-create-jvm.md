@@ -1,14 +1,18 @@
 ---
-title: Fix: Pycharm Failed to create JVM
-date:   2014-10-03 12:12
+title: Fix - Pycharm Failed to create JVM
+date: 2014-10-03 12:12
 author: arul
-category:   Tools
-tags:   IDE, java, python, programming
-slug:   fix-pycharm-failed-to-create-jvm
-status:   published
-disqus_identifier:    /2014/10/fix-pycharm-failed-to-create-jvm.html
+category: Tools
+tags:
+  - IDE
+  - java
+  - python
+  - programming
+slug: fix-pycharm-failed-to-create-jvm
+status: published
+disqus_identifier: /2014/10/fix-pycharm-failed-to-create-jvm.html
 ---
-
+-
 **How to Run your Pycharm IDE under 64bit JVM..?**
 
 [![Pycharm Error Code -4](http://4.bp.blogspot.com/-llWB2o4A5Ww/VC7ZhgH-j5I/AAAAAAAAWC4/wbtlkiYONLc/s320/pycharm-error-code.PNG){.align-middle}](http://4.bp.blogspot.com/-llWB2o4A5Ww/VC7ZhgH-j5I/AAAAAAAAWC4/wbtlkiYONLc/s1600/pycharm-error-code.PNG)

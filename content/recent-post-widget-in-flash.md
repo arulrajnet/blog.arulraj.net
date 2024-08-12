@@ -1,11 +1,16 @@
 ---
 title: Recent Post Widget in Flash
-date:   2009-03-04 09:47
+date: 2009-03-04 09:47
 author: arul
-category:   Widget
-tags:   Flash, Recent Post, Widget
-slug:   recent-post-widget-in-flash
-disqus_identifier:    /2009/03/recent-post-widget-in-flash.html
+category: Widget
+tags:
+  - Flash
+  - Recent
+  - Post
+  - Widget
+slug: recent-post-widget-in-flash
+disqus_identifier: /2009/03/recent-post-widget-in-flash.html
+status: published
 ---
 
 The widget is shows like that\... This is the Beta version only..

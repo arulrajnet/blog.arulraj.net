@@ -1,11 +1,15 @@
 ---
 title: Offline dictionary for ubuntu 10.04
-date:   2010-06-28 13:53
+date: 2010-06-28 13:53
 author: arul
-category:   Linux
-tags:   ubuntu, how to
-slug:   offline-dictionary-for-ubuntu-10-04
-disqus_identifier:    /2010/06/offline-dictionary-for-ubuntu-10-04.html
+category: Linux
+tags:
+  - ubuntu
+  - how
+  - to
+slug: offline-dictionary-for-ubuntu-10-04
+disqus_identifier: /2010/06/offline-dictionary-for-ubuntu-10-04.html
+status: published
 ---
 
 <div class="separator" style="clear: both; text-align: center;">

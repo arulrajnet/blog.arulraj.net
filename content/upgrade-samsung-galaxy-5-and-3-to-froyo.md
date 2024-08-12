@@ -1,11 +1,17 @@
 ---
 title: Upgrade Samsung Galaxy 5 and 3 to Froyo
-date:   2011-08-05 03:55
+date: 2011-08-05 03:55
 author: arul
-category:   Android
-tags:   android, Mobile, Linux, how to
-slug:   upgrade-samsung-galaxy-5-and-3-to-froyo
-disqus_identifier:    upgrade_samsung_galaxy_5_and_3_to_froyo
+category: Android
+tags:
+  - android
+  - Mobile
+  - Linux
+  - how
+  - to
+slug: upgrade-samsung-galaxy-5-and-3-to-froyo
+disqus_identifier: upgrade_samsung_galaxy_5_and_3_to_froyo
+status: published
 ---
 
 **How to Upgrade your android to 2.2**
