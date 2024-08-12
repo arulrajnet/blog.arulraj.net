@@ -4,16 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "e78471b7b5edeacc",
+        "id": "ae333582b57250a9",
         "type": "tabs",
         "children": [
           {
-            "id": "2d549c91212163de",
+            "id": "34cece8acb8d7c3a",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "content/uninstall-linuxmint-from-ubuntu.md",
+                "file": "📝Drafts MOC.md",
                 "mode": "source",
                 "source": false
               }
@@ -65,8 +65,7 @@
               "state": {}
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -86,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "content/uninstall-linuxmint-from-ubuntu.md",
+                "file": "📝Drafts MOC.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -103,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "content/uninstall-linuxmint-from-ubuntu.md",
+                "file": "📝Drafts MOC.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -126,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "content/uninstall-linuxmint-from-ubuntu.md"
+                "file": "📝Drafts MOC.md"
               }
             }
           }
@@ -148,16 +147,25 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "2d549c91212163de",
+  "active": "e57a050fb42be8ab",
   "lastOpenFiles": [
+    "_templates/new-post-template.md",
+    "📝Drafts MOC.md",
+    "content/download-any-videos-in-android-using-youtube-dl.md",
+    "output/author/arul/page/15/index.html",
+    "output/author/arul/page/15",
+    "output/author/arul/page/14/index.html",
+    "output/author/arul/page/14",
+    "output/author/arul/page/13/index.html",
+    "output/author/arul/page/13",
+    "output/author/arul/page/12/index.html",
+    "output/author/arul/page/12",
+    "output/author/arul/page/11/index.html",
+    "output/author/arul/page/11",
     "content/uninstall-linuxmint-from-ubuntu.md",
-    "output/drafts/uninstall-linuxmint-from-ubuntu.html",
     "content/unlock-huawei-datacard-e303s.md",
-    "output/drafts/unlock-huawei-datacard-e303s.html",
     "✔ Published MOC.md",
-    "output/favicon.ico",
     "output/assets/images/2016/1/kubectl-bash-completion.png",
-    "output/assets/images/2016/1",
     "output/assets/images/QPython-Installing-youtube-dl.png",
     "output/assets/images/QPython-Google-Play.png",
     "output/assets/images/QPython-youtube-dl-version.jpeg",
@@ -166,16 +174,9 @@
     "output/assets/images/Qpython-downloding-from-facebook.png",
     "output/assets/images/Qpython-downloding-from-youtube.jpeg",
     "output/assets/images/nginx-pixelserv.png",
-    "output/assets/images/2016",
-    "output/assets/images",
-    "output/assets",
-    "output/css/myblog.css",
-    "output/css/better_responsive_images.css",
-    "output/css",
     "output/theme/images/post-bg.jpg",
     "output/theme/font/README.md",
     "content/dos2unix-unix2dos-in-ubuntu.md",
-    "📝Drafts MOC.md",
     "content/flash-firmware-in-tp-link-tl-wr841n-tl-wr841nd-to-dd-wrt.md",
     "content/jsp-ajax-problem.md",
     "content/fix-pycharm-failed-to-create-jvm.md",
@@ -194,8 +195,6 @@
     "content/why-i-am-moving-to-linux-in-my-home-pc.md",
     "content/how-to-install-mplayer-on-fedora.md",
     "content/my-first-3d-flash-animation.md",
-    "content/how-rotation-camera3d-and-viewer3d-worked-in-away3d.md",
-    "content/how-to-add-www-to-your-domain-name.md",
     "Untitled.canvas"
   ]
 }

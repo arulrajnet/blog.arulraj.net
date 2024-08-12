@@ -73,6 +73,7 @@ help:
 	@echo '                                                                          '
 
 html:
+	bash convert-tags-obsidian-markdown.sh
 	"$(PELICAN)" "$(INPUTDIR)" -o "$(OUTPUTDIR)" -s "$(CONFFILE)" $(PELICANOPTS)
 
 clean:
