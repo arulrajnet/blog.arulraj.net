@@ -1,8 +1,8 @@
 ---
 title: Docker container for TOR with Privoxy
-slug:   docker-container-for-tor-with-privoxy
 date:   2015-05-09 16:11:12
 tags:   docker, tor, proxy, privoxy, crawling
+slug:   docker-container-for-tor-with-privoxy
 category:   docker
 author: arul
 lang:   en

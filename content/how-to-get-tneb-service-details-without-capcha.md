@@ -1,8 +1,8 @@
 ---
 title: How to get TNEB Service Details without capcha
-slug:   how-to-get-tneb-service-details-without-capcha
 date:   2015-09-06 21:03:28
 tags:   javascript
+slug:   how-to-get-tneb-service-details-without-capcha
 category:   Tools
 author: arul
 lang:   en

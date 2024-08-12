@@ -1,10 +1,10 @@
 ---
 title: Prompter4J Released 1.0
-slug: prompter4j-released-1-0
 date: 2015-05-10 15:34:09
 tags:
   - java
   - prompter4j
+slug: prompter4j-released-1-0
 category: Prompter4J
 author: arul
 lang: en

@@ -1,8 +1,8 @@
 ---
 title: Ubuntu Hidden Features You Need
-slug:   ubuntu-hidden-features-you-need
 date:   2015-12-23 14:31:16
 tags:   linux, tips, ubuntu
+slug:   ubuntu-hidden-features-you-need
 category:   ubuntu
 author: arul
 lang:   en

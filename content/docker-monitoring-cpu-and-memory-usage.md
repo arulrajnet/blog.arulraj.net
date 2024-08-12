@@ -1,8 +1,8 @@
 ---
 title: Docker Monitoring CPU and Memory Usage
-slug:   docker-monitoring-cpu-and-memory-usage
 date:   2015-07-08 11:10:20
 tags:
+slug:   docker-monitoring-cpu-and-memory-usage
 category:   Docker
 author: arul
 lang:   en

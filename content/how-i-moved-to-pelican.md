@@ -1,8 +1,8 @@
 ---
 title: How I moved to pelican
-slug:   how-i-moved-to-pelican
 date:   2015-05-29 09:41:20
 tags:   pelican, blog, static hosting
+slug:   how-i-moved-to-pelican
 category:   Python
 author: arul
 lang:   en

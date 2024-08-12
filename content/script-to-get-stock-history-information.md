@@ -1,6 +1,5 @@
 ---
 title: Script to get Stock History Information
-slug: script-to-get-stock-history-information
 date: 2015-09-06 23:06:45
 tags:
   - share
@@ -8,6 +7,7 @@ tags:
   - linux
   - python
   - shellscript
+slug: script-to-get-stock-history-information
 category: Linux
 author: arul
 lang: en

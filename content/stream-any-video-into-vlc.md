@@ -1,11 +1,11 @@
 ---
 title: Stream any video into VLC
-slug: stream-any-video-into-vlc
 date: 2015-09-11 22:07:12
 tags:
   - streaming
   - vlc
   - youtube-dl
+slug: stream-any-video-into-vlc
 category: Streaming
 author: arul
 lang: en
