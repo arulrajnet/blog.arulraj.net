@@ -1,10 +1,7 @@
 ---
 title: PixelServ using Nginx
 date: 2015-11-21 11:31:49
-tags:
-  - proxy
-  - adblock
-  - nginx
+tags: proxy,adblock,nginx
 slug: pixelserv-using-nginx
 category: proxy
 author: arul

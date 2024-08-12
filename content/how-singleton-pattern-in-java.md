@@ -3,10 +3,7 @@ title: How Singleton pattern in Java
 date: 2010-03-23 01:00
 author: arul
 category: Programming
-tags:
-  - Design
-  - pattern
-  - java
+tags: Design,pattern,java
 slug: how-singleton-pattern-in-java
 disqus_identifier: /2010/03/how-singleton-pattern-in-java.html
 status: published

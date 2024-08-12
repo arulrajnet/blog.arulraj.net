@@ -3,11 +3,7 @@ title: Why i am moving to Linux in my home pc
 date: 2010-01-19 08:32
 author: arul
 category: Linux
-tags:
-  - Fedora
-  - Linux
-  - ubuntu
-  - windows
+tags: Fedora,Linux,ubuntu,windows
 slug: why-i-am-moving-to-linux-in-my-home-pc
 disqus_identifier: /2010/01/why-i-am-moving-to-linux-in-my-home-pc.html
 status: published

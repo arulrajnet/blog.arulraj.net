@@ -3,12 +3,7 @@ title: How to create and use private / public keys
 date: 2009-07-23 06:27
 author: arul
 category: Linux
-tags:
-  - commands
-  - Linux
-  - Programming
-  - how
-  - to
+tags: commands,Linux,Programming,how-to
 slug: how-to-create-and-use-private-public-keys
 disqus_identifier: /2009/07/how-to-create-and-use-private-public-keys.html
 status: published

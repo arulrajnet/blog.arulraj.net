@@ -3,11 +3,7 @@ title: Flash Player Debugger
 date: 2010-03-07 23:27
 author: arul
 category: Flash
-tags:
-  - Browser
-  - Flash
-  - Widget
-  - windows
+tags: Browser,Flash,Widget,windows
 slug: flash-player-debugger
 disqus_identifier: /2010/03/flash-player-debugger.html
 status: published

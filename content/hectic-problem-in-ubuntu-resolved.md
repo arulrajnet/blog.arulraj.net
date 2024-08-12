@@ -3,11 +3,7 @@ title: Hectic problem in ubuntu - resolved
 date: 2010-12-23 14:07
 author: arul
 category: Linux
-tags:
-  - Linux
-  - ubuntu
-  - how
-  - to
+tags: Linux,ubuntu,how-to
 slug: hectic-problem-in-ubuntu-resolved
 disqus_identifier: /2010/12/hectic-problem-in-ubuntu-resolved.html
 status: published

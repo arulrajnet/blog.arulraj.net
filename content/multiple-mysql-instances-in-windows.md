@@ -3,7 +3,7 @@ title: Multiple mysql instances in windows
 date:   2012-05-02 13:39
 author: arul
 category:   Database
-tags:   mysql, Tips & Tricks, windows
+tags:   mysql, Tips-and-Tricks, windows
 slug:   multiple-mysql-instances-in-windows
 status:   published
 disqus_identifier:    /2012/05/multiple-mysql-instances-in-windows.html

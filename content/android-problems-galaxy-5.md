@@ -3,8 +3,7 @@ title: Android problems - Galaxy 5
 date: 2011-06-03 02:00
 author: arul
 category: Mobile
-tags:
-  - android
+tags: android
 slug: android-problems-galaxy-5
 disqus_identifier: android_problems_galaxy_5
 status: published

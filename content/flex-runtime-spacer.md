@@ -3,9 +3,7 @@ title: Flex runtime spacer
 date: 2011-04-03 06:39
 author: arul
 category: Programming
-tags:
-  - Actionscript
-  - Flash
+tags: Actionscript,Flash
 slug: flex-runtime-spacer
 disqus_identifier: /2011/04/flex-runtime-spacer.html
 status: published

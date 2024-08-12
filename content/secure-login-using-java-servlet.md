@@ -3,8 +3,7 @@ title: Secure login using java servlet
 date: 2009-07-25 04:57
 author: arul
 category: Programming
-tags:
-  - java
+tags: java
 slug: secure-login-using-java-servlet
 disqus_identifier: /2009/07/secure-login-using-java-servlet.html
 status: published

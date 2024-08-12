@@ -3,11 +3,7 @@ title: Type tamil in ubuntu
 date: 2011-01-14 12:44
 author: arul
 category: Linux
-tags:
-  - tamil
-  - ubuntu
-  - how
-  - to
+tags: tamil,ubuntu,how-to
 slug: type-tamil-in-ubuntu
 disqus_identifier: /2011/01/type-tamil-in-ubuntu.html
 status: published

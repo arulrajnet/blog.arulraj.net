@@ -1,12 +1,7 @@
 ---
 title: Script to get Stock History Information
 date: 2015-09-06 23:06:45
-tags:
-  - share
-  - market
-  - linux
-  - python
-  - shellscript
+tags: share,market,linux,python,shellscript
 slug: script-to-get-stock-history-information
 category: Linux
 author: arul

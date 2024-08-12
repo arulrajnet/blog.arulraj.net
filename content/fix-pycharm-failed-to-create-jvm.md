@@ -3,11 +3,7 @@ title: Fix - Pycharm Failed to create JVM
 date: 2014-10-03 12:12
 author: arul
 category: Tools
-tags:
-  - IDE
-  - java
-  - python
-  - programming
+tags: IDE,java,python,programming
 slug: fix-pycharm-failed-to-create-jvm
 status: published
 disqus_identifier: /2014/10/fix-pycharm-failed-to-create-jvm.html

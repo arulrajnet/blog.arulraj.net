@@ -3,8 +3,7 @@ title: Print screen using java
 date: 2010-06-23 13:20
 author: arul
 category: Programming
-tags:
-  - java
+tags: java
 slug: print-screen-using-java
 disqus_identifier: /2010/06/print-screen-using-java.html
 status: published

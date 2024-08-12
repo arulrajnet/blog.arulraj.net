@@ -3,11 +3,7 @@ title: Install Ubuntu 10.04 in Acer 5740
 date: 2010-06-10 14:24
 author: arul
 category: Linux
-tags:
-  - Linux
-  - ubuntu
-  - how
-  - to
+tags: Linux,ubuntu,how-to
 slug: install-ubuntu-10-04-in-acer-5740
 disqus_identifier: /2010/06/install-ubuntu-10-04-in-acer-5740.html
 status: published

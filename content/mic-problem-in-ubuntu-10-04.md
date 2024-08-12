@@ -3,11 +3,7 @@ title: Mic problem in ubuntu 10.04
 date: 2010-07-05 13:35
 author: arul
 category: Linux
-tags:
-  - Linux
-  - ubuntu
-  - how
-  - to
+tags: Linux,ubuntu,how-to
 slug: mic-problem-in-ubuntu-10-04
 disqus_identifier: /2010/07/mic-problem-in-ubuntu-10-04.html
 status: published

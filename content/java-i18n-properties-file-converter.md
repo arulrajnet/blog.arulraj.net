@@ -3,8 +3,7 @@ title: Java i18n properties file converter
 date: 2010-07-30 15:00
 author: arul
 category: Programming
-tags:
-  - java
+tags: java
 slug: java-i18n-properties-file-converter
 disqus_identifier: /2010/07/java-i18n-properties-file-converter.html
 status: published

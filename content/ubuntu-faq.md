@@ -3,12 +3,7 @@ title: Ubuntu FAQ
 date: 2010-06-13 13:44
 author: arul
 category: Linux
-tags:
-  - commands
-  - Linux
-  - ubuntu
-  - how
-  - to
+tags: commands,Linux,ubuntu,how-to
 slug: ubuntu-faq
 disqus_identifier: /2010/06/ubuntu-faq.html
 status: published

@@ -3,10 +3,7 @@ title: Flash Log with date and time
 date: 2010-11-16 15:50
 author: arul
 category: Flash
-tags:
-  - Browser
-  - Flash
-  - Programming
+tags: Browser,Flash,Programming
 slug: flash-log-with-date-and-time
 disqus_identifier: /2010/11/flash-log-with-date-and-time.html
 status: published

@@ -3,8 +3,7 @@ title: Jsp to Servlet converter
 date: 2010-04-22 09:45
 author: arul
 category: Programming
-tags:
-  - java
+tags: java
 slug: jsp-to-servlet-converter
 disqus_identifier: /2010/04/jsp-to-servlet-converter.html
 status: published

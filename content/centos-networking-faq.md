@@ -3,10 +3,7 @@ title: CentOS Networking FAQ
 date: 2009-07-14 07:57
 author: arul
 category: Linux
-tags:
-  - Linux
-  - static
-  - ip
+tags: Linux,static-ip
 slug: centos-networking-faq
 disqus_identifier: /2009/07/centos-networking-faq.html
 status: published

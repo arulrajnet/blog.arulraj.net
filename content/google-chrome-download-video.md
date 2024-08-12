@@ -3,12 +3,7 @@ title: Google chrome Download video
 date: 2011-03-19 14:06
 author: arul
 category: Browser
-tags:
-  - Browser
-  - hacking
-  - ubuntu
-  - Flash
-  - Linux
+tags: Browser,hacking,ubuntu,Flash,Linux
 slug: google-chrome-download-video
 disqus_identifier: google_chrome_download_video
 status: published

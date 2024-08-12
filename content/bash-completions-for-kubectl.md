@@ -1,9 +1,7 @@
 ---
 title: Bash completions for kubectl
 date: 2016-01-23 12:26:32
-tags:
-  - ubuntu
-  - bash-completion
+tags: ubuntu,bash-completion
 slug: bash-completions-for-kubectl
 category: kubernetes
 author: arul

@@ -1,10 +1,7 @@
 ---
 title: Live Cricket Score on your terminal
 date: 2015-05-10 13:11:59
-tags:
-  - linux
-  - cricket
-  - shellscript
+tags: linux,cricket,shellscript
 slug: live-cricket-score-on-your-terminal
 category: Linux
 author: arul

@@ -3,11 +3,7 @@ title: How to add Return-path in php mail
 date: 2009-07-13 23:19
 author: arul
 category: php
-tags:
-  - Linux
-  - Programming
-  - how
-  - to
+tags: Linux,Programming,how-to
 slug: how-to-add-return-path-in-php-mail
 disqus_identifier: /2009/07/how-to-add-return-path-in-php-mail.html
 status: published

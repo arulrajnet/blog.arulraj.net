@@ -3,8 +3,7 @@ title: Java offline Documentation
 date: 2010-04-21 04:56
 author: arul
 category: Programming
-tags:
-  - java
+tags: java
 slug: java-offline-documentation
 disqus_identifier: /2010/04/java-offline-documentation.html
 status: published

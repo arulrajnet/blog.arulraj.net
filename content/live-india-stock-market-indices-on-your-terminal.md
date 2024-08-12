@@ -1,12 +1,7 @@
 ---
 title: Live India Stock Market Indices on your Terminal
 date: 2015-05-10 14:18:18
-tags:
-  - share
-  - market
-  - linux
-  - python
-  - shellscript
+tags: share,market,linux,python,shellscript
 slug: live-india-stock-market-indices-on-your-terminal
 category: Linux
 author: arul
