@@ -4,16 +4,28 @@
     "type": "split",
     "children": [
       {
-        "id": "2afec880533daf09",
+        "id": "b06e9af9d2240068",
         "type": "tabs",
         "children": [
           {
-            "id": "4f6f780b6050a9ae",
+            "id": "4cd78d48c7b54d3f",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "content/install-docker-and-docker-buildx-manually.md",
+                "file": "✔ Published MOC.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "b2c092bb712e90f1",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "content/build-environment-for-flex-with-eclipse.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +97,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "content/install-docker-and-docker-buildx-manually.md",
+                "file": "✔ Published MOC.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +114,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "content/install-docker-and-docker-buildx-manually.md",
+                "file": "✔ Published MOC.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +137,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "content/install-docker-and-docker-buildx-manually.md"
+                "file": "✔ Published MOC.md"
               }
             }
           }
@@ -147,24 +159,38 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "4f6f780b6050a9ae",
+  "active": "4cd78d48c7b54d3f",
   "lastOpenFiles": [
-    "output/2024/08/index.html",
-    "output/2024/index.html",
-    "output/2024/08/install-docker-compose-and-buildx-manually/index.html",
-    "output/2024/08/install-docker-compose-and-buildx-manually",
-    "output/2024/08",
-    "output/2024",
+    "📝Drafts MOC.md",
+    "✔ Published MOC.md",
+    "content/build-environment-for-flex-with-eclipse.md",
+    "content/automount-vmware-shared-folder-in-ubuntu.md",
+    "content/flash-firmware-in-tp-link-tl-wr841n-tl-wr841nd-to-dd-wrt.md",
+    "output/css/better_responsive_images.css",
+    "output/css/myblog.css",
+    "output/css",
+    "output/theme/js/script.js",
+    "output/theme/js/jquery.fitvids.js",
+    "output/theme/js",
+    "output/theme/font/README.md",
+    "output/theme/font/icon.woff",
+    "output/theme/font/icon.woff2",
+    "output/theme/font/icon.ttf",
+    "output/theme/font/icon.eot",
+    "output/theme/font/icon.svg",
+    "output/theme/font/fira-sans-v8-latin-regular.svg",
+    "output/theme/font/fira-sans-v8-latin-700.svg",
+    "output/theme/font/fira-sans-v8-latin-500.svg",
+    "output/theme/font/cardo-v9-latin-regular.svg",
+    "output/theme/font/cardo-v9-latin-italic.svg",
+    "output/theme/font/cardo-v9-latin-700.svg",
+    "content/install-ubuntu-10-04-in-acer-5740.md",
+    "content/server-virtualization.md",
+    "content/install-docker-and-docker-buildx-manually.md",
     "content/android-problems-galaxy-5.md",
     "content/airtellive-manual-setting-for-lg-kg-195.md",
     "content/adding-remote-jmx-for-red5.md",
-    "oldrst/xml-to-actionscript-class-turbosqel-asml-example.rst",
-    "oldrst/windows-command-prompt-properties.rst",
-    "oldrst/why-i-am-moving-to-linux-in-my-home-pc.rst",
-    "oldrst/visiting-besant-nagar-broken-bridge.rst",
-    "oldrst/video-on-demand-vod-for-red5-0-8-0-server.rst",
     "content/buying-guide-whiteboard-in-chennai.md",
-    "content/install-docker-and-docker-buildx-manually.md",
     "content/xml-to-actionscript-class-turbosqel-asml-example.md",
     "content/windows-command-prompt-properties.md",
     "content/why-i-am-moving-to-linux-in-my-home-pc.md",
@@ -178,13 +204,6 @@
     "content/unlock-huawei-datacard-e303s.md",
     "content/uninstall-linuxmint-from-ubuntu.md",
     "content/ubuntu-hidden-features-you-need.md",
-    "content/ubuntu-file-comparison-tool-bcompare.md",
-    "content/ubuntu-faq.md",
-    "content/type-tamil-in-ubuntu.md",
-    "content/toggle-copy-email-in-jquery.md",
-    "content/tamil-fm-radio-for-ubuntu.md",
-    "content/stream-any-video-into-vlc.md",
-    "content/soundcard-in-xen-vm.md",
     "Untitled.canvas"
   ]
 }
