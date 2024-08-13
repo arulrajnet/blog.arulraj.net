@@ -1,13 +1,12 @@
 ---
 title: My Farewell and Convocation photos
-
-date:   2009-07-14 08:27
+date: 2009-07-14 08:27
 author: arul
-category:   photos
-tags:   photos
-slug:   my-farewell-and-convocation-photos
-status:   draft
-disqus_identifier:    photos-my-farewell-and-convocation-photos
+category: Photos
+tags: photos
+slug: my-farewell-and-convocation-photos
+status: draft
+disqus_identifier: photos-my-farewell-and-convocation-photos
 ---
 
 <div align="center">

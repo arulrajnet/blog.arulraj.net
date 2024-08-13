@@ -1,13 +1,13 @@
 ---
 title: Create p12 from apple developer certificate
-date:   2016-09-28 15:53:41
-tags:   openssl, apple, PKI
-slug:   create-p12-from-apple-developer-certificate
-category:   openssl
+date: 2016-09-28 15:53:41
+tags: openssl,apple,PKI
+slug: create-p12-from-apple-developer-certificate
+category: OpenSSL
 author: arul
-lang:
-status:   draft
-disqus_identifier:    openssl-create-p12-from-apple-developer-certificate
+lang: 
+status: draft
+disqus_identifier: openssl-create-p12-from-apple-developer-certificate
 ---
 
 Login into developer.apple.com

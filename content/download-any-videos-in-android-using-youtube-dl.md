@@ -1,13 +1,13 @@
 ---
 title: Download any videos in android using youtube-dl
-date:   2015-11-21 12:14:38
-tags:   streaming, mobile, youtube-dl, android
-slug:   download-any-videos-in-android-using-youtube-dl
-category:   android
+date: 2015-11-21 12:14:38
+tags: streaming,mobile,youtube-dl,android
+slug: download-any-videos-in-android-using-youtube-dl
+category: Android
 author: arul
-lang:   en
-status:   published
-disqus_identifier:    /2015/11/download-any-videos-in-android-using-youtube-dl.html
+lang: en
+status: published
+disqus_identifier: /2015/11/download-any-videos-in-android-using-youtube-dl.html
 ---
 
 There are lot of app there in google play store to download video

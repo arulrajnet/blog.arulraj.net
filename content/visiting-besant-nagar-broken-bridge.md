@@ -2,7 +2,7 @@
 title: Visiting Besant Nagar Broken Bridge
 date: 2009-04-15 00:38
 author: arul
-category: photos
+category: Photos
 tags: Besant-Nagar,Broken-Bridge,photos
 slug: visiting-besant-nagar-broken-bridge
 disqus_identifier: /2009/04/visiting-besant-nagar-broken-bridge.html

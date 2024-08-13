@@ -3,7 +3,7 @@ title: Setup docker and tools
 date: 2016-01-24 06:34:22
 tags: ubuntu,bash-completion
 slug: setup-docker-and-tools
-category: docker
+category: Docker
 author: arul
 lang: en
 disqus_identifier: /2016/01/setup-docker-and-tools.html

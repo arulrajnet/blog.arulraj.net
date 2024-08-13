@@ -1,13 +1,13 @@
 ---
 title: GIT tools for ease development
-date:   2015-12-07 23:37:41
-tags:   git
-slug:   git-tools-for-ease-development
-category:
+date: 2015-12-07 23:37:41
+tags: git
+slug: git-tools-for-ease-development
+category: Development
 author: arul
-lang:   en
-status:   draft
-disqus_identifier:    git-git-tools-for-ease-development
+lang: en
+status: draft
+disqus_identifier: git-git-tools-for-ease-development
 ---
 
 ###git config

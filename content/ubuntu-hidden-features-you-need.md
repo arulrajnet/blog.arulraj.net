@@ -1,13 +1,13 @@
 ---
 title: Ubuntu Hidden Features You Need
-date:   2015-12-23 14:31:16
-tags:   linux, tips, ubuntu
-slug:   ubuntu-hidden-features-you-need
-category:   ubuntu
+date: 2015-12-23 14:31:16
+tags: linux,tips,ubuntu
+slug: ubuntu-hidden-features-you-need
+category: Ubuntu
 author: arul
-lang:   en
-status:   draft
-disqus_identifier:    ubuntu-ubuntu-hidden-features-you-need
+lang: en
+status: draft
+disqus_identifier: ubuntu-ubuntu-hidden-features-you-need
 ---
 
 you may refer this is as things to do after ubuntu installation.

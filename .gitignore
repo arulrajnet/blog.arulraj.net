@@ -20,3 +20,6 @@ cache
 attila
 .venv
 seo_report.html
+
+# Obsidian
+.obsidian/workspace.json

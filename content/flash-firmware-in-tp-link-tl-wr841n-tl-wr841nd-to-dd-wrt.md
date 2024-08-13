@@ -1,13 +1,12 @@
 ---
 title: Flash firmware in TP-LINK TL-WR841N / TL-WR841ND v10 to dd-wrt
-
-date:   2016-11-06 10:10:14
+date: 2016-11-06 10:10:14
 author: arul
-category:   network
-tags:   network, router
-slug:   flash-firmware-in-tp-link-tl-wr841n-tl-wr841nd-to-dd-wrt
-status:   draft
-disqus_identifier:    network-flash-firmware-in-tp-link-tl-wr841n-tl-wr841nd-to-dd-wrt
+category: Network
+tags: network,router
+slug: flash-firmware-in-tp-link-tl-wr841n-tl-wr841nd-to-dd-wrt
+status: draft
+disqus_identifier: network-flash-firmware-in-tp-link-tl-wr841n-tl-wr841nd-to-dd-wrt
 ---
 
 My Firmware details
