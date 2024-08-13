@@ -3,7 +3,7 @@ title: Dos2Unix / Unix2Dos in ubuntu
 date:   2011-08-09 11:56
 author: arul
 category:   Linux
-tags:   commands, ubuntu, how to
+tags:   commands, ubuntu, how-to
 slug:   dos2unix-unix2dos-in-ubuntu
 status:   published
 disqus_identifier:    /2011/08/dos2unix-unix2dos-in-ubuntu.html

@@ -11,7 +11,7 @@ status: published
 
 **How to Add JMX for Red5 Server**
 
-Here we are going to know, How to managing red5 server remotely using
+Here we are going to know, how-to managing red5 server remotely using
 JMX.
 
 **what is red5 server ..?**

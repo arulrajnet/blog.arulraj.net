@@ -3,7 +3,7 @@ title: Shared media files with other users in linux
 date:   2011-08-18 13:00
 author: arul
 category:   Linux
-tags:   commands, ubuntu, how to
+tags:   commands, ubuntu, how-to
 slug:   shared-media-files-with-other-users-in-linux
 status:   published
 disqus_identifier:    /2011/08/shared-media-files-with-other-users-in-linux.html

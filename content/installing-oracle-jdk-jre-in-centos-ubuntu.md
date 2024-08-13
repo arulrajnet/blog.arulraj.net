@@ -1,7 +1,7 @@
 ---
 title: Installing Oracle JDK / JRE in CentOS Ubuntu
 date:   2014-06-06 13:18:12
-tags:   centos, java, Linux, ubuntu, how to
+tags:   centos, java, Linux, ubuntu, how-to
 slug:   installing-oracle-jdk-jre-in-centos-ubuntu
 category:   Linux
 author: arul

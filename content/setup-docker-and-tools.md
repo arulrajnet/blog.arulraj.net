@@ -1,7 +1,9 @@
 ---
 title: Setup docker and tools
 date: 2016-01-24 06:34:22
-tags: bash_completions,ubuntu
+tags:
+  - ubuntu
+  - bash-completion
 slug: setup-docker-and-tools
 category: docker
 author: arul
@@ -18,12 +20,7 @@ Installing docker on any bash systems.
 
 ``` bash
 curl -sSL https://get.docker.com/ | sh
-```
-
-Installing bash completions for docker
-
-``` bash
-curl -ksSL https://raw.githubusercontent.com/docker/docker/$(docker --version | awk 'NR==1{print $NF}')/contrib/completion/bash/docker |sudo tee /etc/bash_completion.d/docker
+sudo usermod -aG docker ${USER}
 ```
 
 ## Docker Tools
@@ -33,8 +30,9 @@ curl -ksSL https://raw.githubusercontent.com/docker/docker/$(docker --version | 
 To install docker-compose
 
 ``` bash
-sudo apt-get install python-pip
-sudo pip install -U docker-compose
+VERSION="v2.24.6"
+sudo curl -L https://github.com/docker/compose/releases/download/${VERSION}/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
+sudo chmod +x /usr/local/bin/docker-compose
 ```
 
 To install bash completions for docker-compose

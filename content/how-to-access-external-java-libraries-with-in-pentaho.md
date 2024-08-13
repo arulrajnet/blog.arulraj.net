@@ -3,7 +3,7 @@ title: How to access external java libraries with in pentaho
 date:   2014-09-24 12:38
 author: arul
 category:   Business intelligence
-tags:   BI Tools, java, pentaho, how to, Tools
+tags:   BI Tools, java, pentaho, how-to, Tools
 slug:   how-to-access-external-java-libraries-with-in-pentaho
 status:   published
 disqus_identifier:    /2014/09/how-to-access-external-java-libraries-with-in-pentaho.html
