@@ -1,9 +1,7 @@
 ---
 title: Java Source Code Formatter
 date: 2015-05-26 12:33:36
-tags:
-  - Code-Formatter
-  - Formatter
+tags: Code-Formatter,Formatter
 slug: java-source-code-formatter
 category: Java
 author: arul

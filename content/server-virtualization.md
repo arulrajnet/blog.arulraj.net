@@ -3,10 +3,7 @@ title: Server Virtualization
 date: 2009-04-22 06:00
 author: arul
 category: Virtualization
-tags:
-  - cloud-computing
-  - Linux
-  - xen
+tags: cloud-computing,Linux,xen
 slug: server-virtualization
 status: published
 disqus_identifier: /2009/04/server-virtualization.html
