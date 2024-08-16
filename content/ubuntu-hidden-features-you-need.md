@@ -1,7 +1,10 @@
 ---
 title: Ubuntu Hidden Features You Need
 date: 2015-12-23 14:31:16
-tags: linux,tips,ubuntu
+tags:
+  - linux
+  - ubuntu
+  - Tips-and-Tricks
 slug: ubuntu-hidden-features-you-need
 category: Ubuntu
 author: arul
