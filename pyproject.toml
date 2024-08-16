@@ -4,7 +4,6 @@ version = "0.1.0"
 description = "My Blog content"
 authors = ["Arul <me@arulraj.net>"]
 readme = "README.md"
-packages = [{include = "blog"}]
 
 [tool.poetry.dependencies]
 python = "^3.12"

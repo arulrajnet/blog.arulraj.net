@@ -9,10 +9,10 @@ Install python3 depends on your OS
 
     sudo apt-get install python3-pip python3-dev
 
-Install pipenv module
+Install poetry module
 
     sudo pip3 install -U virtualenv
-    python3 -m pip install --user pipenv
+    python3 -m pip install --user poetry
 
 ### Clone and install theme
 
@@ -26,8 +26,10 @@ Clone the blog
 
 Install the following module for pelican inside `blog.arulraj.net` folder
 
-    python3 -m pipenv shell
-    python3 -m pipenv install
+    python3 -m poetry install
+    python3 -m poetry shell
+    pip install awscli==1.33.44
+    pip install docutils==0.21.2
 
 **Install attila theme**
 

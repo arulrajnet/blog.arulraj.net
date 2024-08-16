@@ -10,6 +10,7 @@ ehthumbs.db
 Thumbs.db
 desktop.ini
 __pycache__
+.vscode
 
 # Project specific
 *.pid
@@ -20,6 +21,7 @@ cache
 attila
 .venv
 seo_report.html
+.cache
 
 # Obsidian
 .obsidian/workspace.json

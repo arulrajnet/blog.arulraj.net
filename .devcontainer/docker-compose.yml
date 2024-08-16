@@ -1,0 +1,17 @@
+version: '3.8'
+services:
+  devcontainer:
+    image: arulrajnet/vscode-pelican-devcontainer:latest
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        VARIANT: 3.12
+        POETRY_VERSION": 1.8.3
+    volumes:
+      - ${PWD}/..:/workspace:cached
+      # - ~:/root:cached
+      # - ~/.gitignore_global:/root/.gitignore_global:cached
+      # - ~/.git_commit_template:/root/.git_commit_template:cached
+      # - ~/.aws:/root/.aws:cached
+    command: sleep infinity

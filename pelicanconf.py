@@ -122,6 +122,7 @@ PLUGIN_PATHS = [
 PLUGINS = [
   'asciidoc_reader',
   'assets',
+  'obsidian',
   'pelican.plugins.neighbors',
   'pelican.plugins.related_posts',
   'pelican.plugins.seo',
