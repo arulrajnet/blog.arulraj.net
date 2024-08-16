@@ -1,0 +1,34 @@
+[tool.poetry]
+name = "blog-arulraj-net"
+version = "0.1.0"
+description = "My Blog content"
+authors = ["Arul <me@arulraj.net>"]
+readme = "README.md"
+packages = [{include = "blog"}]
+
+[tool.poetry.dependencies]
+python = "^3.12"
+pelican = "4.9.1"
+markdown = "3.6"
+ghp-import = "2.1.0"
+invoke = "2.2.0"
+pysvg = "0.2.2"
+requests = "2.32.3"
+webassets = "2.0"
+pillow = "10.4.0"
+jsmin = "3.0.1"
+cssmin = "0.2.0"
+beautifulsoup4 = "4.12.3"
+pelican-seo = "1.2.2"
+pelican-neighbors = "1.2.0"
+pelican-related-posts = "1.0.0"
+pelican-sitemap = "1.1.0"
+pelican-obsidian = {git = "https://github.com/jonathan-s/pelican-obsidian.git", rev = "main"}
+
+
+[tool.poetry.group.dev.dependencies]
+pytest = "8.3.2"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

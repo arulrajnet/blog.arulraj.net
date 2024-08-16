@@ -76,6 +76,10 @@ html:
 	bash convert-tags-obsidian-markdown.sh
 	"$(PELICAN)" "$(INPUTDIR)" -o "$(OUTPUTDIR)" -s "$(CONFFILE)" $(PELICANOPTS)
 
+html-debug:
+	bash convert-tags-obsidian-markdown.sh
+	"$(PELICAN)" "$(INPUTDIR)" -o "$(OUTPUTDIR)" -s "$(CONFFILE)" $(PELICANOPTS) -v -D --logs-dedup-min-level DEBUG
+
 clean:
 	[ ! -d "$(OUTPUTDIR)" ] || rm -rf "$(OUTPUTDIR)"
 
