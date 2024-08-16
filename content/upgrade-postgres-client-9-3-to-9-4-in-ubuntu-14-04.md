@@ -6,7 +6,6 @@ slug:   upgrade-postgres-client-9-3-to-9-4-in-ubuntu-14-04
 category:   Database
 author: arul
 lang:   en
-summary:
 status:   draft
 disqus_identifier:    database-upgrade-samsung-galaxy-5-to-ice-cream-sandwich
 ---

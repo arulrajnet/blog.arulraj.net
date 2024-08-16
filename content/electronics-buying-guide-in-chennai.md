@@ -6,7 +6,6 @@ slug:   electronics-buying-guide-in-chennai
 category:   Shopping
 author: arul
 lang:   en
-summary:
 status:   draft
 disqus_identifier:    shopping-electronics-buying-guide-in-chennai
 ---

@@ -6,7 +6,6 @@ slug: java-source-code-formatter
 category: Java
 author: arul
 lang: en
-summary: 
 status: draft
 disqus_identifier: java-java-source-code-formatter
 ---

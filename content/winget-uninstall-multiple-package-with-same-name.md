@@ -3,20 +3,20 @@ title: WinGet Uninstall Multiple Package With Same Name
 date: 2024-08-17 06:27
 author: arul
 category: Windows
-tags:
-  - Tips-and-Tricks
-  - Git-Bash
+tags: Tips-and-Tricks,Git-Bash
 slug: winget-uninstall-multiple-package-with-same-name
 status: draft
 disqus_identifier: winget-uninstall-multiple-package-with-same-name
+cover: /assets/images/winget-unistall-success.png
+headline: Explain about how to uninstall multiple package with same name using winget. Solving the error on uninstall with specific version and Id.
 ---
-We want to remove a package from windows using `winget`. 
+We want to remove a package from windows using `winget`.
 
-Before uninstalling, list the package with the name. 
+Before uninstalling, list the package with the name.
 
 ![[winget-list-package.png]]
 
-There is two packages with the same name "WhatsApp Web". But the Id and Version are different. 
+There is two packages with the same name "WhatsApp Web". But the Id and Version are different.
 
 Use `winget list` to get all the installed packages.
 ## Error on uninstall with specific version
@@ -57,6 +57,6 @@ We have to escape the backslash (\)
 winget uninstall --name "WhatsApp Web" --id MSIX\\web.whatsapp.com-6EC4871F_1.0.0.0_neutral__910631y4v73xw
 ```
 
-Now its uninstalled successfully. 
+Now its uninstalled successfully.
 
 ![[winget-unistall-success.png]]

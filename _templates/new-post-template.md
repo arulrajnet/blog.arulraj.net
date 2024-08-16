@@ -13,5 +13,9 @@ author: arul
 category:
 tags:
 slug: <% slug %>
+disqus_identifier: <% slug %>
+cover:
+color: gray
+headline:
 status: draft
 ---

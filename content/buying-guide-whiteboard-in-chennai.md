@@ -6,7 +6,6 @@ slug:   buying-guide-whiteboard-in-chennai
 category:   Shopping
 author: arul
 lang:   en
-summary:
 status:   draft
 disqus_identifier:    shopping-buying-guide-whiteboard-in-chennai
 ---

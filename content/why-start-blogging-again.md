@@ -1,9 +1,11 @@
 ---
-title: Why I Start Blogging Again
-date: 2024-08-16 10:21
+title: Start Blogging Again
+date: 2024-08-16 11:04
 author: arul
-category: Blog
-tags: pelican
-slug: why-i-start-blogging-again
+category:
+tags:
+slug: start-blogging-again
+disqus_identifier: start-blogging-again
+cover:
 status: draft
 ---

@@ -7,7 +7,6 @@ category:   Linux
 author: arul
 status:   draft
 lang:   en
-summary:
 disqus_identifier:    linux-docker-aufs-failed-in-ubuntu-14-04-02
 ---
 

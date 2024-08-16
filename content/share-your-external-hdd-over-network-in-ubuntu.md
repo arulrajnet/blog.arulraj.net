@@ -7,7 +7,6 @@ category:   Ubuntu
 author: arul
 status:   draft
 lang:   en
-summary:
 disqus_identifier:    ubuntu-share-your-external-hdd-over-network-in-ubuntu
 ---
 

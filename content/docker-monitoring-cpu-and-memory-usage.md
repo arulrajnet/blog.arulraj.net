@@ -7,7 +7,6 @@ category:   Docker
 author: arul
 lang:   en
 status:   draft
-summary:
 disqus_identifier:    docker-docker-monitoring-cpu-and-memory-usage
 ---
 
