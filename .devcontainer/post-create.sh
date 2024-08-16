@@ -18,4 +18,6 @@ poetry install
 pip install awscli==1.33.44
 pip install docutils==0.21.2
 
+source .venv/bin/activate
+
 echo "Done!"
