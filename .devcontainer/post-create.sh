@@ -20,4 +20,6 @@ pip install docutils==0.21.2
 
 source .venv/bin/activate
 
+chmod 600 -R ~/.ssh
+
 echo "Done!"
