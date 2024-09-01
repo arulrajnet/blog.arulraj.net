@@ -1,4 +1,10 @@
 {
   "attachmentFolderPath": "content/assets/images",
-  "alwaysUpdateLinks": true
+  "alwaysUpdateLinks": true,
+  "userIgnoreFilters": [
+    "outputgzip/",
+    "output/",
+    "pelican-plugins/",
+    "attila/"
+  ]
 }

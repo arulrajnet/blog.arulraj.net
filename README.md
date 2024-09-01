@@ -57,3 +57,22 @@ Then visit [http://localhost:8000](http://localhost:8000)
 
     make publish
     make s3_upload
+
+
+### Build using Devcontainer
+
+Install and build devcontainer. This will be one time activity
+
+```bash
+npm install -g @devcontainers/cli
+devcontainer build --workspace-folder ${PWD}
+devcontainer up --workspace-folder ${PWD}
+```
+
+Then exec to run the command. 
+
+In this case, I want to generate html using devcontainer
+
+```bash
+devcontainer exec --workspace-folder ${PWD} make html
+```
