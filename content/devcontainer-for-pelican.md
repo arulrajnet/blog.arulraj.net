@@ -3,10 +3,7 @@ title: DevContainer for Pelican
 date: 2024-08-17 05:30
 author: arul
 category: Blog
-tags:
-  - pelican
-  - Programming
-  - Development
+tags: pelican,Programming,Development
 slug: devcontainer-for-pelican
 disqus_identifier: devcontainer-for-pelican
 cover: 
