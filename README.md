@@ -76,3 +76,9 @@ In this case, I want to generate html using devcontainer
 ```bash
 devcontainer exec --workspace-folder ${PWD} make html
 ```
+
+To upload 
+
+```
+devcontainer exec --workspace-folder ${PWD} make s3_upload
+```
