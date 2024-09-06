@@ -1,0 +1,42 @@
+name: Build and Publish to S3
+
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout and fetch submodule
+      uses: actions/checkout@v4
+      with:
+        submodules: recursive
+    - name: Install poetry
+      run: pipx install poetry==1.8.3
+    - name: Install dependencies
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.12'
+        cache: 'poetry'
+      env:
+        PIP_DISABLE_PIP_VERSION_CHECK: 1
+        PIP_NO_CACHE_DIR: 1
+      run: |
+        python -m poetry install --no-interaction --no-ansi -vvv
+        python -m pip install awscli==1.33.44
+        python -m pip install docutils==0.21.2
+        git clone --depth=1 https://github.com/arulrajnet/attila
+        pelican-themes --install attila/ --verbose
+        pelican-themes -l
+    - name: Configure AWS credentials
+      uses: aws-actions/configure-aws-credentials@v4
+      with:
+        aws-region:  ${{ secrets.AWS_REGION }}
+        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        role-duration-seconds: 1200
+        role-session-name: BlogUploadFromGitHub
+    - name: Copy files to S3 bucket
+      run: |
+        make s3_upload
