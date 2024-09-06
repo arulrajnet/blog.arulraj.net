@@ -148,7 +148,7 @@ After this `gradle build` got success.
 Refer [Github issue](https://github.com/microsoft/appcenter/issues/2341#issuecomment-1314272461) . There is a issue in both 31 and 32 version of tools. 
 ### Cannot install without signing
 
-Initially try to install normal SDK. Its not installed and got error. Debug build solves that problem
+Initially try to install normal APK. Its not installed and got error. Debug build solves that problem
 
 ### Different Notification tone for this app
 
