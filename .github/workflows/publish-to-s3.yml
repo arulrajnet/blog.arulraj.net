@@ -7,36 +7,48 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: [ '3.12' ]
     steps:
     - name: Checkout and fetch submodule
       uses: actions/checkout@v4
       with:
         submodules: recursive
     - name: Install poetry
-      run: pipx install poetry==1.8.3
-    - name: Install dependencies
-      uses: actions/setup-python@v5
-      with:
-        python-version: '3.12'
-        cache: 'poetry'
-      env:
-        PIP_DISABLE_PIP_VERSION_CHECK: 1
-        PIP_NO_CACHE_DIR: 1
       run: |
-        python -m poetry install --no-interaction --no-ansi -vvv
+        pipx install poetry==1.8.3
+        poetry config virtualenvs.create true
+        poetry config virtualenvs.in-project true
+        poetry config virtualenvs.options.always-copy true
+        poetry config virtualenvs.prompt .venv
+    - name: Setup Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v5
+      id: python312
+      with:
+        python-version: ${{ matrix.python-version }}
+        cache: 'poetry'
+        # This set to false to not collide with venv path
+        update-environment: false
+    - name: Install dependencies
+      env:
+        PIP_DISABLE_PIP_VERSION_CHECK: on
+        PIP_NO_CACHE_DIR: off
+      run: |
+        poetry env use ${{ steps.python312.outputs.python-path }}
+        poetry install --no-interaction --no-ansi -vvv
+        POETRY_VENV_PATH=$(poetry env info -p)
+        export PATH="$POETRY_VENV_PATH/bin:$PATH"
         python -m pip install awscli==1.33.44
         python -m pip install docutils==0.21.2
         git clone --depth=1 https://github.com/arulrajnet/attila
         pelican-themes --install attila/ --verbose
         pelican-themes -l
-    - name: Configure AWS credentials
-      uses: aws-actions/configure-aws-credentials@v4
-      with:
-        aws-region:  ${{ secrets.AWS_REGION }}
-        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-        role-duration-seconds: 1200
-        role-session-name: BlogUploadFromGitHub
     - name: Copy files to S3 bucket
       run: |
+        POETRY_VENV_PATH=$(poetry env info -p)
+        export PATH="$POETRY_VENV_PATH/bin:$PATH"
+        aws configure set aws_access_key_id ${{ secrets.AWS_ACCESS_KEY_ID }} --profile ${{ secrets.AWS_PROFILE_NAME }}
+        aws configure set aws_secret_access_key ${{ secrets.AWS_SECRET_ACCESS_KEY }} --profile ${{ secrets.AWS_PROFILE_NAME }}
+        aws configure set region ${{ secrets.AWS_REGION }}
         make s3_upload
