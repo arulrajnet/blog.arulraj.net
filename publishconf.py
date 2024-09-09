@@ -12,14 +12,14 @@ from pelicanconf import *
 
 
 # Generate feed while publish
-FEED_ALL_ATOM = 'feeds/all.atom.xml'
-CATEGORY_FEED_ATOM = 'feeds/category/{slug}.atom.xml'
-TAG_FEED_ATOM = 'feeds/tag/{slug}.atom.xml'
+FEED_ALL_ATOM = "feeds/all.atom.xml"
+CATEGORY_FEED_ATOM = "feeds/category/{slug}.atom.xml"
+TAG_FEED_ATOM = "feeds/tag/{slug}.atom.xml"
 TRANSLATION_FEED_ATOM = None
-AUTHOR_FEED_ATOM = 'feeds/author/{slug}.atom.xml'
+AUTHOR_FEED_ATOM = "feeds/author/{slug}.atom.xml"
 
-#Relative url
+# Relative url
 RELATIVE_URLS = False
 
-SITEURL = 'https://www.arulraj.net'
-S3_BUCKET_NAME = 'www.arulraj.net'
+SITEURL = "https://www.arulraj.net"
+S3_BUCKET_NAME = "www.arulraj.net"
