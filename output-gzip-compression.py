@@ -5,6 +5,7 @@ import sys
 import gzip
 import shutil
 import hashlib
+import logging
 
 
 """
@@ -32,7 +33,7 @@ Algorithm:
 """
 
 if len(sys.argv) != 3:
-    print("Command should have 2 arguments: output dir and publication dir")
+    logging.error(f"Usage: {sys.argv[0]} <output_dir> <publication_dir>")
     sys.exit(0)
 
 OUTPUT_DIR = sys.argv[1]
@@ -57,7 +58,7 @@ def read_hash_codes(filename):
 
 
 def update_gzipped_publications(output_dir, publication_dir):
-    for root, subs, files in os.walk(output_dir):
+    for root, _subs, files in os.walk(output_dir):
         for f in files:
             filename = os.path.join(root, f)
             relpath = os.path.relpath(filename, output_dir)
@@ -80,7 +81,7 @@ def update_gzipped_publications(output_dir, publication_dir):
                                 fw.write(buf)
                                 buf = fr.read(blocksize)
                     hashes[relpath] = current_hash
-                    print(filename + " renewed")
+                    logging.info(f"Gzipped: {filename}")
             else:
                 publicated_file = os.path.join(publication_dir, relpath)
                 directory_of_file = os.path.dirname(publicated_file)
