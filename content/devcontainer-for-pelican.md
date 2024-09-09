@@ -6,7 +6,7 @@ category: Blog
 tags: pelican,Programming,Development
 slug: devcontainer-for-pelican
 disqus_identifier: devcontainer-for-pelican
-cover: 
+cover:
 color: gray
 headline: Detailed explanation about how the devcontainer is useful for your static blogging with python pelican. So that don't worry about the host machine whether its PC / Linux / MacOS
 status: draft

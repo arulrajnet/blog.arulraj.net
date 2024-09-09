@@ -19,6 +19,7 @@ pip install awscli==1.33.44
 pip install docutils==0.21.2
 
 source .venv/bin/activate
+pre-commit install --install-hooks
 
 chmod 600 -R ~/.ssh
 

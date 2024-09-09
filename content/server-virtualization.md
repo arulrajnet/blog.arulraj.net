@@ -9,7 +9,7 @@ status: published
 disqus_identifier: /2009/04/server-virtualization.html
 ---
 
-**Server Virtualization** 
+**Server Virtualization**
 
 **What is Virtualization..?**
 
