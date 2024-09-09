@@ -22,6 +22,7 @@ attila
 .venv
 seo_report.html
 .cache
+.ruff_cache
 
 # Obsidian
 .obsidian/workspace.json
