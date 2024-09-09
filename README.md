@@ -69,7 +69,7 @@ devcontainer build --workspace-folder ${PWD}
 devcontainer up --workspace-folder ${PWD}
 ```
 
-Then exec to run the command. 
+Then exec to run the command.
 
 In this case, I want to generate html using devcontainer
 
@@ -77,8 +77,8 @@ In this case, I want to generate html using devcontainer
 devcontainer exec --workspace-folder ${PWD} make html
 ```
 
-To upload 
+To upload
 
-```
+```bash
 devcontainer exec --workspace-folder ${PWD} make s3_upload
 ```

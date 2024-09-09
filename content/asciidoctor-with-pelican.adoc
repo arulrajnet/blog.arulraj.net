@@ -9,7 +9,7 @@
 :lang: en
 :status: draft
 
-This article written in asciidoc format. Refer https://github.com/arulrajnet/blog.arulraj.net/blob/master/content/asciidoctor-with-pelican.adoc[this source]
+This article written in asciidoc format. Refer https://github.com/arulrajnet/blog.arulraj.net/blob/master/content/asciidoctor-with-pelican.adoc?plain=1[this source]
 
 == Articles in asciidoc format with pelican static site generator
 

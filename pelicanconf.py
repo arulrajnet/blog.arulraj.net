@@ -187,7 +187,22 @@ SHOW_TAGS_IN_ARTICLE_SUMMARY = False
 ### Attila : theme specific settings
 
 from markdown import Markdown
-markdown = Markdown(extensions=['markdown.extensions.extra'])
+markdown = Markdown(extensions=[
+    'markdown.extensions.extra',
+    'markdown.extensions.meta',
+    'markdown.extensions.smarty',
+    'markdown.extensions.toc',
+  ], extension_configs={
+    'markdown.extensions.extra': {},
+    'markdown.extensions.meta': {},
+    'markdown.extensions.smarty': {},
+    'markdown.extensions.toc': {
+      'title': 'Table of Contents',
+      'permalink': 'true'
+    },
+  },
+  output_format='html5',
+)
 
 def md(content, *args):
   return markdown.convert(content)
