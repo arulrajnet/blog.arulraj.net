@@ -118,7 +118,7 @@ PLUGIN_PATHS = [
 PLUGINS = [
     "asciidoc_reader",
     "assets",
-    # "obsidian",
+    "obsidian",
     "pelican.plugins.neighbors",
     "pelican.plugins.related_posts",
     "pelican.plugins.seo",
@@ -131,6 +131,21 @@ SITEMAP = {
     "format": "xml",
     "priorities": {"articles": 0.5, "indexes": 0.5, "pages": 0.5},
     "changefreqs": {"articles": "monthly", "indexes": "daily", "pages": "monthly"},
+}
+
+# Markdown settings
+MARKDOWN = {
+    'extension_configs': {
+        'markdown.extensions.extra': {},
+        'markdown.extensions.meta': {},
+        "markdown.extensions.smarty": {},
+        # This is for enabling the TOC generation
+        'markdown.extensions.toc': {
+            'title': 'Table of Contents',
+            'permalink': 'true',
+        },
+    },
+    'output_format': 'html5',
 }
 
 # Comments
@@ -176,7 +191,7 @@ SHOW_TAGS_IN_ARTICLE_SUMMARY = False
 
 from markdown import Markdown
 
-
+# TODO: This is not working. Need to check
 markdown = Markdown(
     extensions=[
         "markdown.extensions.extra",
