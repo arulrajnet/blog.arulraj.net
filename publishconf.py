@@ -1,7 +1,6 @@
 #!/usr/bin/env python
 
-# This file is only used if you use `make publish` or
-# explicitly specify it as your config file.
+"""This file is only used if you use `make publish`."""
 
 import os
 import sys

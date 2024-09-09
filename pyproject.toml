@@ -98,6 +98,14 @@ select = [
     "UP",   # pyupgrade
 ]
 
+ignore = [
+    "E402",
+    "E722",
+    "F403",
+    "SIM115",
+    "SIM117",
+]
+
 # Allow fix for all enabled rules (when `--fix`) is provided.
 fixable = ["ALL"]
 unfixable = []

@@ -1,3 +1,4 @@
+"""Tasks."""
 import os
 import sys
 import shlex
@@ -182,5 +183,6 @@ def gh_pages(c):
 
 
 def pelican_run(cmd):
+    """Wrapper for pelican."""
     cmd += " " + program.core.remainder  # allows to pass-through args to pelican
     pelican_main(shlex.split(cmd))

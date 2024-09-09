@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+"""AWS S3 Gzip compression utility."""
 
 import os
 import sys
@@ -43,6 +44,7 @@ GZIPPED_EXTENSIONS = ("html", "js", "css", "xml")
 
 
 def read_hash_codes(filename):
+    """Read Hash Codes."""
     hashes_dict = {}
     try:
         with open(filename, encoding="utf-8") as file:
@@ -58,6 +60,7 @@ def read_hash_codes(filename):
 
 
 def update_gzipped_publications(output_dir, publication_dir):
+    """Update Gzipped Publications."""
     for root, _subs, files in os.walk(output_dir):
         for f in files:
             filename = os.path.join(root, f)
@@ -69,11 +72,11 @@ def update_gzipped_publications(output_dir, publication_dir):
                     open(filename, encoding="utf-8").read().encode("utf-8")
                 ).hexdigest()
                 if not (relpath in hashes and hashes[relpath] == current_hash):
-                    publicatedFile = os.path.join(publication_dir, relpath)
-                    directoryOfFile = os.path.dirname(publicatedFile)
-                    if not os.path.exists(directoryOfFile):
-                        os.makedirs(directoryOfFile)
-                    with gzip.open(publicatedFile, "w") as fw:
+                    publicated_file = os.path.join(publication_dir, relpath)
+                    directory_of_file = os.path.dirname(publicated_file)
+                    if not os.path.exists(directory_of_file):
+                        os.makedirs(directory_of_file)
+                    with gzip.open(publicated_file, "w") as fw:
                         with open(filename, mode="rb") as fr:
                             blocksize = 65536
                             buf = fr.read(blocksize)
@@ -91,6 +94,7 @@ def update_gzipped_publications(output_dir, publication_dir):
 
 
 def rewrite_hash_codes(hash_sum_file, given_hashes):
+    """Rewrite Hash Codes."""
     with open(hash_sum_file, "w", encoding="utf-8") as fw:
         for key in given_hashes:
             fw.write(given_hashes[key] + "  " + key + "\n")

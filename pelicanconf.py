@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+"""Pelican settings."""
 
 import os
 import sys
@@ -16,7 +17,6 @@ SITEURL = "http://localhost:8000"
 # Where should Pelican look for content?
 PATH = "content"
 # These are relative to PATH, above
-# ARTICLE_PATHS = ['posts']
 PAGE_PATHS = ["pages"]
 
 DEFAULT_DATE = "fs"
@@ -64,9 +64,6 @@ PAGINATION_PATTERNS = (
     (2, "{base_name}/page/{number}/", "{base_name}/page/{number}/index.html"),
 )
 
-# Uncomment following line if you want document-relative URLs when developing
-# RELATIVE_URLS = True
-
 # Static Path
 STATIC_PATHS = ["assets"]
 
@@ -111,17 +108,13 @@ AUTHORS_SAVE_AS = "author/index.html"
 ARCHIVES_URL = "archive/"
 ARCHIVES_SAVE_AS = "archive/index.html"
 
-# Code Block
-
-# PYGMENTS_RST_OPTIONS = {'classprefix': 'pgcss', 'linenos': 'table'}
-
 ### Plugins
 
 PLUGIN_PATHS = [
     "pelican-plugins",
 ]
 
-# better_figures_and_images is failed articles which have <object> tag with no "data" attributes.
+# better_figures_and_images is failed articles which have <object> tag with no "data" attributes. # noqa: E501
 PLUGINS = [
     "asciidoc_reader",
     "assets",
@@ -202,6 +195,7 @@ markdown = Markdown(
 
 
 def md(content, *args):
+    """Markdown filter."""
     return markdown.convert(content)
 
 
@@ -209,6 +203,7 @@ import urllib
 
 
 def quote_plus(value, *args):
+    """URL encode filter."""
     return urllib.parse.quote_plus(value)
 
 
@@ -216,6 +211,7 @@ import urllib.parse
 
 
 def urlencode(uri, **query):
+    """URL encode filter."""
     parts = list(urllib.parse.urlparse(uri))
     q = urllib.parse.parse_qs(parts[4])
     q.update(query)
@@ -227,6 +223,7 @@ import random
 
 
 def filter_shuffle(seq):
+    """Shuffle filter."""
     try:
         result = list(seq)
         random.shuffle(result)
