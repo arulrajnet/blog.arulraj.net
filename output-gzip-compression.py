@@ -1,11 +1,11 @@
 #!/usr/bin/python3
-# -*- coding: utf-8 -*-
 
 import os
 import sys
 import gzip
-import hashlib
 import shutil
+import hashlib
+
 
 '''
 AWS S3 Gzip compression utility

@@ -1,16 +1,16 @@
 #!/usr/bin/env python
-# -*- coding: utf-8 -*- #
-from __future__ import unicode_literals
 
 import os
 import sys
+
+
 sys.path.append(os.curdir)
 
 ### Core Pelican Settings
 
-AUTHOR = u'Arul'
-SITENAME = u'Arul Blog'
-SITESUBTITLE = u'Thoughts, Stories and Ideas'
+AUTHOR = 'Arul'
+SITENAME = 'Arul Blog'
+SITESUBTITLE = 'Thoughts, Stories and Ideas'
 SITEURL = 'http://localhost:8000'
 
 # Where should Pelican look for content?
@@ -27,7 +27,7 @@ TIMEZONE = 'Asia/Calcutta'
 
 LOCALE = ('en_US')
 
-DEFAULT_LANG = u'en'
+DEFAULT_LANG = 'en'
 
 # Feed generation is usually not desired when developing
 FEED_ATOM = None
@@ -187,6 +187,8 @@ SHOW_TAGS_IN_ARTICLE_SUMMARY = False
 ### Attila : theme specific settings
 
 from markdown import Markdown
+
+
 markdown = Markdown(extensions=[
     'markdown.extensions.extra',
     'markdown.extensions.meta',
@@ -209,10 +211,13 @@ def md(content, *args):
 
 import urllib
 
+
 def quote_plus(value, *args):
   return urllib.parse.quote_plus(value)
 
 import urllib.parse
+
+
 def urlencode(uri, **query):
   parts = list(urllib.parse.urlparse(uri))
   q = urllib.parse.parse_qs(parts[4])
@@ -221,6 +226,8 @@ def urlencode(uri, **query):
   return urllib.parse.urlunparse(parts)
 
 import random
+
+
 def filter_shuffle(seq):
   try:
     result = list(seq)

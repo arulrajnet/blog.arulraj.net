@@ -1,17 +1,17 @@
-# -*- coding: utf-8 -*-
 
 import os
+import sys
 import shlex
 import shutil
-import sys
 import datetime
 
 from invoke import task
+from pelican import main as pelican_main
 from invoke.main import program
 from invoke.util import cd
-from pelican import main as pelican_main
-from pelican.server import ComplexHTTPRequestHandler, RootedHTTPServer
+from pelican.server import RootedHTTPServer, ComplexHTTPRequestHandler
 from pelican.settings import DEFAULT_CONFIG, get_settings_from_file
+
 
 OPEN_BROWSER_ON_SERVE = True
 SETTINGS_FILE_BASE = 'pelicanconf.py'
@@ -37,7 +37,7 @@ CONFIG = {
     'cloudfiles_container': 'my_cloudfiles_container',
     # Github Pages configuration
     'github_pages_branch': 'gh-pages',
-    'commit_message': "'Publish site on {}'".format(datetime.date.today().isoformat()),
+    'commit_message': f"'Publish site on {datetime.date.today().isoformat()}'",
     # Host and port for `serve`
     'host': 'localhost',
     'port': 8000,
@@ -110,7 +110,7 @@ def livereload(c):
     theme_path = SETTINGS['THEME']
     watched_globs = [
         CONFIG['settings_base'],
-        '{}/templates/**/*.html'.format(theme_path),
+        f'{theme_path}/templates/**/*.html',
     ]
 
     content_file_extensions = ['.md', '.rst']
@@ -120,7 +120,7 @@ def livereload(c):
 
     static_file_extensions = ['.css', '.js']
     for extension in static_file_extensions:
-        static_file_glob = '{0}/static/**/*{1}'.format(theme_path, extension)
+        static_file_glob = f'{theme_path}/static/**/*{extension}'
         watched_globs.append(static_file_glob)
 
     for glob in watched_globs:
