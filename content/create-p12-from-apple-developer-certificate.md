@@ -5,7 +5,7 @@ tags: openssl,apple,PKI
 slug: create-p12-from-apple-developer-certificate
 category: OpenSSL
 author: arul
-lang: 
+lang:
 status: draft
 disqus_identifier: openssl-create-p12-from-apple-developer-certificate
 ---

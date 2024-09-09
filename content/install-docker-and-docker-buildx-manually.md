@@ -9,7 +9,7 @@ status: published
 headline: Install docker, docker buildx and docker compose manually. This steps can be used to setup docker with in docker.
 cover: assets/images/install-docker-manually-cover.png
 ---
-In this article, Install the docker binary manually. The setup `compose` and `buildx`. So that `docker buildx` or `docker compose` (There is a space after docker) command will work as like any other installation. 
+In this article, Install the docker binary manually. The setup `compose` and `buildx`. So that `docker buildx` or `docker compose` (There is a space after docker) command will work as like any other installation.
 
 These can be used install `docker with in docker.`
 ## Docker
@@ -69,7 +69,7 @@ EOF
 
 The docker-compose project was originally named `fig` as an open-source initiative. After Docker acquired it, the project was renamed to `docker-compose`.
 
-Just a history. 
+Just a history.
 
 <blockquote class="twitter-tweet"><p lang="en" dir="ltr">I wanted to call it &quot;Plum&quot; but thankfully <a href="https://twitter.com/AanandPrasad?ref_src=twsrc%5Etfw">@AanandPrasad</a> had better taste in names. <a href="https://t.co/V45MyfvYyG">https://t.co/V45MyfvYyG</a></p>&mdash; Ben Firshman (@bfirsh) <a href="https://twitter.com/bfirsh/status/1737641556386132396?ref_src=twsrc%5Etfw">December 21, 2023</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 

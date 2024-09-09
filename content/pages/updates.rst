@@ -13,7 +13,7 @@ Updates
 
    <div style="text-align: left;">
 
-`|image0| <http://feedburner.google.com/fb/a/mailverify?uri=ArulBlog>`__ 
+`|image0| <http://feedburner.google.com/fb/a/mailverify?uri=ArulBlog>`__
 `Get daily email updates from our site..! <http://feedburner.google.com/fb/a/mailverify?uri=ArulBlog>`__
 
 .. raw:: html
@@ -29,7 +29,7 @@ publicize, or market your email address in any way, shape, or form.
 
    <div style="text-align: left;">
 
-`|image1| <http://feeds.feedburner.com/ArulBlog>`__ 
+`|image1| <http://feeds.feedburner.com/ArulBlog>`__
 `Get book updates as soon as they happen..! <http://feeds.feedburner.com/ArulBlog>`__
 
 .. raw:: html
@@ -40,7 +40,7 @@ publicize, or market your email address in any way, shape, or form.
 
    <div style="text-align: left;">
 
-`|image2| <http://labs.google.co.in/smschannels/subscribe/ArulBlog>`__ 
+`|image2| <http://labs.google.co.in/smschannels/subscribe/ArulBlog>`__
 `Get books sms updates from our site..! <http://labs.google.co.in/smschannels/subscribe/ArulBlog>`__
 
 .. raw:: html
