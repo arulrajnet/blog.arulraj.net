@@ -134,18 +134,22 @@ SITEMAP = {
 }
 
 # Markdown settings
+# Refer - https://github.com/DataDog/Python-Markdown/tree/master/markdown/extensions
 MARKDOWN = {
-    'extension_configs': {
-        'markdown.extensions.extra': {},
-        'markdown.extensions.meta': {},
+    "extension_configs": {
+        "markdown.extensions.extra": {},
+        "markdown.extensions.meta": {},
         "markdown.extensions.smarty": {},
+        "markdown.extensions.tables": {},
         # This is for enabling the TOC generation
-        'markdown.extensions.toc': {
-            'title': 'Table of Contents',
-            'permalink': 'true',
+        "markdown.extensions.toc": {
+            "title": "Table of Contents",
+            # empty marker to generate only header ids
+            "marker": "",
+            "permalink": "false",
         },
     },
-    'output_format': 'html5',
+    "output_format": "html5",
 }
 
 # Comments
@@ -191,19 +195,26 @@ SHOW_TAGS_IN_ARTICLE_SUMMARY = False
 
 from markdown import Markdown
 
-# TODO: This is not working. Need to check
+
+# This is used in jinja2 filters
 markdown = Markdown(
     extensions=[
         "markdown.extensions.extra",
         "markdown.extensions.meta",
         "markdown.extensions.smarty",
+        "markdown.extensions.tables",
         "markdown.extensions.toc",
     ],
     extension_configs={
         "markdown.extensions.extra": {},
         "markdown.extensions.meta": {},
         "markdown.extensions.smarty": {},
-        "markdown.extensions.toc": {"title": "Table of Contents", "permalink": "true"},
+        "markdown.extensions.tables": {},
+        "markdown.extensions.toc": {
+            "title": "Table of Contents",
+            "marker": "",
+            "permalink": "false",
+        },
     },
     output_format="html5",
 )

@@ -17,9 +17,9 @@ jobs:
         submodules: recursive
     - name: Install asciidoctor
       run: |
-        apt-get update
+        sudo apt-get update
         export DEBIAN_FRONTEND=noninteractive
-        apt-get -y install --no-install-recommends asciidoctor
+        sudo apt-get -y install --no-install-recommends asciidoctor
     - name: Install poetry
       run: |
         pipx install poetry==1.8.3
