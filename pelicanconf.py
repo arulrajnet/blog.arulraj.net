@@ -137,6 +137,7 @@ SITEMAP = {
 # Refer - https://github.com/DataDog/Python-Markdown/tree/master/markdown/extensions
 MARKDOWN = {
     "extension_configs": {
+        "markdown.extensions.codehilite": {"css_class": "highlight"},
         "markdown.extensions.extra": {},
         "markdown.extensions.meta": {},
         "markdown.extensions.smarty": {},
@@ -145,7 +146,7 @@ MARKDOWN = {
         "markdown.extensions.toc": {
             "title": "Table of Contents",
             # empty marker to generate only header ids
-            "marker": "",
+            "marker": "[TOC]",
             "permalink": "false",
         },
     },
@@ -199,6 +200,7 @@ from markdown import Markdown
 # This is used in jinja2 filters
 markdown = Markdown(
     extensions=[
+        "markdown.extensions.codehilite",
         "markdown.extensions.extra",
         "markdown.extensions.meta",
         "markdown.extensions.smarty",
@@ -206,13 +208,14 @@ markdown = Markdown(
         "markdown.extensions.toc",
     ],
     extension_configs={
+        "markdown.extensions.codehilite": {"css_class": "highlight"},
         "markdown.extensions.extra": {},
         "markdown.extensions.meta": {},
         "markdown.extensions.smarty": {},
         "markdown.extensions.tables": {},
         "markdown.extensions.toc": {
             "title": "Table of Contents",
-            "marker": "",
+            "marker": "[TOC]",
             "permalink": "false",
         },
     },
