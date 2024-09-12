@@ -18,7 +18,16 @@
     "vscode": {
       "settings": {
         "python.defaultInterpreterPath": "${workspaceFolder}/.venv/bin/python",
-        "pasteImage.basePath": "${projectRoot}/content/assets/images/"
+        "pasteImage.basePath": "${projectRoot}/content/assets/images/",
+        "search.exclude": {
+          "**/node_modules/**": true,
+          "**/pelican-plugins": true,
+          "**/.git": true,
+          "**/output": true,
+          "**/outputzip": true,
+          "**/.venv": true,
+          "**/attila": true
+        }
       },
       "extensions": [
         "EditorConfig.EditorConfig",
@@ -28,7 +37,10 @@
         "streetsidesoftware.code-spell-checker",
         "svsool.markdown-memo",
         "Tyriar.sort-lines",
-        "yzhang.markdown-all-in-one"
+        "yzhang.markdown-all-in-one",
+        "asciidoctor.asciidoctor-vscode",
+        "charliermarsh.ruff",
+        "GitHub.vscode-github-actions"
       ]
     }
   },
