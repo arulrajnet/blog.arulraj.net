@@ -7,7 +7,7 @@ tags: Tips-and-Tricks
 slug: how-i-copy-and-paste-text-from-my-pc-to-phone
 status: draft
 ---
-There are many ways to do this.
+There are many ways to do this. I am following these two ways
 
 * WhatsApp Web Way
 * QR Code Way

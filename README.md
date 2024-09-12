@@ -66,7 +66,7 @@ Install and build devcontainer. This will be one time activity
 ```bash
 npm install -g @devcontainers/cli
 devcontainer build --workspace-folder ${PWD}
-devcontainer up --workspace-folder ${PWD}
+devcontainer up --id-label devcontainer_for=blog.arulraj.net --workspace-folder ${PWD}
 ```
 
 Then exec to run the command.
@@ -74,11 +74,11 @@ Then exec to run the command.
 In this case, I want to generate html using devcontainer
 
 ```bash
-devcontainer exec --workspace-folder ${PWD} make html
+devcontainer exec --id-label devcontainer_for=blog.arulraj.net --workspace-folder ${PWD} make html
 ```
 
 To upload
 
 ```bash
-devcontainer exec --workspace-folder ${PWD} make s3_upload
+devcontainer exec --id-label devcontainer_for=blog.arulraj.net --workspace-folder ${PWD} make s3_upload
 ```
