@@ -1,15 +1,33 @@
-= AsciiDoctor with pelican
-
 :title: AsciiDoctor with pelican
 :slug: asciidoctor-with-pelican
-:date: 2017-09-17 00:29:02
+:date: 2024-09-13 00:29:02
 :tags: asciidoc
 :category: Pelican
 :author: Arul
 :lang: en
-:status: draft
+:status: published
+:headline: AsciiDoctor with pelican in Attila theme. Need lot of improvements. This is very basic support.
+:toc: left
+:toc-title: Table of Contents
+:hardbreaks:
+:toclevels: 4
+:sectnums:
+:sectnumlevels: 1
+:last-update-label!:
+:experimental:
+:icons: font
+:stem: latexmath
+:source-highlighter: highlight.js
+:nofooter:
+:linkattrs:
+:linkcss:
+
+
+= AsciiDoctor with pelican
 
 This article written in asciidoc format. Refer https://github.com/arulrajnet/blog.arulraj.net/blob/master/content/asciidoctor-with-pelican.adoc?plain=1[this source]
+
+Asciidoc integration with Attila theme in pelican static site generator is in progress. So most of text formatting and syntax highlighting is not supported in this theme.
 
 == Articles in asciidoc format with pelican static site generator
 
@@ -28,3 +46,394 @@ PLUGINS = [
 -----------------
 
 Then write this article with http://asciidoctor.org/docs/user-manual/[asciidoctor] syntax and save this with .adoc extenstion.
+
+
+== Examples
+
+Here is the example about different components in asciidoc format.
+
+
+=== Formatting
+
+A bold *word*, and a bold *phrase of text*.
+
+Bold c**hara**cter**s** within a word.
+
+
+An italic _word_, and an italic _phrase of text_.
+
+Italic c__hara__cter__s__ within a word.
+
+
+"`Wait!`" Indigo plucked a small vial from her desk's top drawer
+and held it toward us.
+The vial's label read: `E=mc^2^`; the `E` represents _energy_,
+but also pure _genius!_
+
+The text [.underline]#underline me# is underlined.
+
+Mark my words, #automation is essential#.
+
+"`Well the H~2~O formula written on their whiteboard could be part
+of a shopping list, but I don't think the local bodega sells
+E=mc^2^,`" Lazarus replied.
+
+The deepest body of water is Deep Creek Lake.^[citation{sp}needed]^
+
+Do werewolves believe in [.small]#small print#?
+
+[.big]##O##nce upon an infinite loop.
+
+Type the word [.userinput]#asciidoctor# into the search bar.
+
+=== List
+
+A paragraph followed by an unordered list{empty}footnote:[AsciiDoc supports unordered, ordered, and description lists.] with square bullets.footnote:[You may choose from square, disc, and circle for the bullet style.]
+
+[square]
+* item 1
+* item 2
+* item 3
+
+==== Ordered list
+
+. Protons
+. Electrons
+. Neutrons
+
+==== Nested
+
+. Step 1
+. Step 2
+.. Step 2a
+.. Step 2b
+. Step 3
+
+==== Nested unordered with in ordered
+
+. Linux
+* Fedora
+* Ubuntu
+* Slackware
+. BSD
+* FreeBSD
+* NetBSD
+
+==== Reversed
+
+[%reversed]
+.Parts of an atom
+. Protons
+. Electrons
+. Neutrons
+
+==== Start with different Number
+
+[start=4]
+. Step four
+. Step five
+. Step six
+
+
+==== Description list
+
+CPU:: The brain of the computer.
+Hard drive:: Permanent storage for operating system and/or user files.
+RAM:: Temporarily stores information the CPU uses during operation.
+Keyboard:: Used to enter text or control items on the screen.
+Mouse:: Used to point to and select items on your computer screen.
+Monitor:: Displays information in visual form using text and graphics.
+
+=== Checkbox
+
+What is there to do?
+
+* [x] Done
+* [ ] Next
+* Who's counting?
+
+=== Links
+
+:hide-uri-scheme:
+
+https://asciidoctor.org
+
+Ask questions in the https://chat.asciidoc.org[*community chat*].
+
+mailto:join@discuss.example.org[Subscribe]
+
+
+=== Keyboard macro
+
+|===
+|Shortcut |Purpose
+
+|kbd:[F11]
+|Toggle fullscreen
+
+|kbd:[Ctrl+T]
+|Open a new tab
+
+|kbd:[Ctrl+Shift+N]
+|New incognito window
+
+|kbd:[\ ]
+|Used to escape characters
+
+|kbd:[Ctrl+\]]
+|Jump to keyword
+
+|kbd:[Ctrl + +]
+|Increase zoom
+|===
+
+
+
+
+To save the file, select menu:File[Save].
+
+Select menu:View[Zoom > Reset] to reset the zoom level to the default setting.
+
+
+=== Image
+
+.A mountain sunset
+[#img-sunset,link=https://www.flickr.com/photos/javh/5448336655]
+image::https://live.staticflickr.com/5293/5448336655_ea8e647de2_h.jpg[Sunset,200,100]
+
+You can find image:https://upload.wikimedia.org/wikipedia/commons/3/35/Tux.svg[Linux,25,35] everywhere these days.
+
+=== Video
+
+Vimeo Video
+
+video::336812686[vimeo]
+
+Youtube Video
+
+video::jNQXAC9IVRw[youtube]
+
+
+=== Admonitions
+
+icon:heart[2x,role=red]
+
+WARNING: Wolpertingers are known to nest in server racks.
+Enter at your own risk.
+
+NOTE: Remember the milk!
+
+[CAUTION]
+====
+The Wolpertingers can smell your procrastination.
+It's not their fault you can't find your boots.
+====
+
+
+=== Block
+
+.Optional title
+[example]
+This is an example of an example block.
+
+.Onomatopoeia
+====
+The book hit the floor with a *thud*.
+
+He could hear doves *cooing* in the pine trees`' branches.
+====
+
+.After landing the cloaked Klingon bird of prey in Golden Gate park:
+[quote,Captain James T. Kirk,Star Trek IV: The Voyage Home]
+Everybody remember where we parked.
+
+[verse,The documentation attorneys]
+____
+No bark was harmed in the making of this potion.
+    We're not so sure about a couple ants though.
+
+        Nor those worlds...
+
+     Crap, I smell an injunction.
+____
+
+
+[quote,Monty Python and the Holy Grail]
+____
+Dennis: Come and see the violence inherent in the system. Help! Help! I'm being repressed!
+
+King Arthur: Bloody peasant!
+
+Dennis: Oh, what a giveaway! Did you hear that? Did you hear that, eh? That's what I'm on about! Did you see him repressing me? You saw him, Didn't you?
+____
+
+
+[verse,Carl Sandburg,Fog]
+____
+The fog comes
+on little cat feet.
+
+It sits looking
+over harbor and city
+on silent haunches
+and then moves on.
+____
+
+
+=== collapsible Block
+
+.Show stacktrace
+[%collapsible]
+====
+....
+Error: Content repository not found (url: https://git.example.org/repo.git)
+    at transformGitCloneError
+    at git.clone.then.then.catch
+Caused by: HttpError: HTTP Error: 401 HTTP Basic: Access Denied
+    at GitCredentialManagerStore.rejected
+    at fill.then
+....
+====
+
+=== Source code
+
+[,shell]
+----
+#!/bin/sh
+
+fail () {
+    echo
+    echo "$*"
+    echo
+    exit 1
+} >&2
+
+JAVACMD=java
+which java >/dev/null 2>&1 || fail "ERROR: no 'java' command could be found in your PATH.
+
+exec "$JAVACMD" "$@"
+----
+
+[,ruby,linenums]
+----
+puts 1
+puts 2
+puts 3
+----
+
+
+:source-highlighter: rouge
+:docinfo: shared
+
+[,ruby,highlight=2..5]
+----
+ORDERED_LIST_KEYWORDS = {
+  'loweralpha' => 'a',
+  'lowerroman' => 'i',
+  'upperalpha' => 'A',
+  'upperroman' => 'I',
+}
+----
+
+
+[source,ruby]
+----
+require 'sinatra' <1>
+
+get '/hi' do <2> <3>
+  "Hello World!"
+end
+----
+<1> Library import
+<2> URL mapping
+<3> Response block
+
+
+=== Table
+
+[cols="1,1"]
+|===
+|Cell in column 1, row 1
+|Cell in column 2, row 1
+
+|Cell in column 1, row 2
+|Cell in column 2, row 2
+
+|Cell in column 1, row 3
+|Cell in column 2, row 3
+|===
+
+.A table with a title
+[%autowidth]
+|===
+|Column 1, header row |Column 2, header row
+
+|Cell in column 1, row 2
+|Cell in column 2, row 2
+|===
+
+
+[grid=rows]
+|===
+|Column 1, header row |Column 2, header row |Column 3, header row
+
+|Cell in column 1, row 2
+|Cell in column 2, row 2
+|Cell in column 3, row 2
+
+|Cell in column 1, row 3
+|Cell in column 2, row 3
+|Cell in column 3, row 3
+|===
+
+=== Formulas
+
+stem:[sqrt(4) = 2]
+
+Water (stem:[H_2O]) is a critical component.
+
+
+A matrix can be written as stem:[[[a,b\],[c,d\]\]((n),(k))].
+
+
+[stem]
+++++
+sqrt(4) = 2
+++++
+
+
+latexmath:[C = \alpha + \beta Y^{\gamma} + \epsilon]
+
+
+
+My Diabolical Mathematical Opus
+
+
+.An e-xciting limit with LaTeX!
+[stem]
+++++
+\lim_{n \to \infty}\frac{n}{\sqrt[n]{n!}} = {\large e}
+++++
+
+.A basic square root with AsciiMath
+[asciimath]
+++++
+sqrt(4) = 2
+++++
+
+
+== Conclustion
+
+I am not happy with the output.
+
+* Code block is not well formatted.
+* MathJax is not supported.
+* Table is not well formatted.
+
+Made few changes on the attila theme to support code highlight in asciidoc and added MathJax support.
+
+But require lot of styling changes to make it better OR use asciidoctor.js to render the asciidoc content in the browser.
+
+Need to support in my base theme. Lot of work.
+
+Will add more features in the future in attila theme. Stay tuned.
