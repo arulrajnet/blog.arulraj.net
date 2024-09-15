@@ -1,7 +1,7 @@
 :title: AsciiDoctor with pelican
 :slug: asciidoctor-with-pelican
 :date: 2024-09-13 00:29:02
-:tags: asciidoc
+:tags: AsciiDoc
 :category: Pelican
 :author: Arul
 :lang: en
@@ -28,6 +28,8 @@
 This article written in asciidoc format. Refer https://github.com/arulrajnet/blog.arulraj.net/blob/master/content/asciidoctor-with-pelican.adoc?plain=1[this source]
 
 Asciidoc integration with Attila theme in pelican static site generator is in progress. So most of text formatting and syntax highlighting is not supported in this theme.
+
+The same article hosted using pure asciidoctor in https://arulrajnet.github.io/asciidoctor-tocbot/toc-without-tocbot.html[here]
 
 == Articles in asciidoc format with pelican static site generator
 
