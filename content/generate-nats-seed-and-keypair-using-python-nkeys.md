@@ -11,7 +11,7 @@ color: gray
 headline: Python nkeys example for create user, account, server, cluster and operator
 status: published
 ---
-This blog post about generate a seed, private_key and public key using Python [nkeys.py](https://github.com/nats-io/nkeys.py)
+This blog post about generate a seed, private key and public key using Python [nkeys.py](https://github.com/nats-io/nkeys.py)
 
 I couldn't find any direct example to create seed for user, account or cluster as like Golang or Java. 
 
@@ -71,10 +71,10 @@ Create seed for User
 import nkeys
 from nacl.signing import SigningKey
 
-signing_key = SigningKey.generate()
+signing_key = SigningKey.generate().encode()
 
 # Nats encoded seed for user
-src = nkeys.encode_seed(signing_key._seed, prefix=nkeys.PREFIX_BYTE_USER)
+src = nkeys.encode_seed(signing_key, prefix=nkeys.PREFIX_BYTE_USER)
 
 # Seed
 seed = nkeys.from_seed(src).seed
@@ -93,10 +93,10 @@ Create seed for Account
 import nkeys
 from nacl.signing import SigningKey
 
-signing_key = SigningKey.generate()
+signing_key = SigningKey.generate().encode()
 
 # Nats encoded seed for account
-src = nkeys.encode_seed(signing_key._seed, prefix=nkeys.PREFIX_BYTE_ACCOUNT)
+src = nkeys.encode_seed(signing_key, prefix=nkeys.PREFIX_BYTE_ACCOUNT)
 
 # Seed
 seed = nkeys.from_seed(src).seed
@@ -115,7 +115,7 @@ Create seed for Cluster
 
 ```python
 # Nats encoded seed for cluster
-src = nkeys.encode_seed(signing_key._seed, prefix=nkeys.PREFIX_BYTE_CLUSTER)
+src = nkeys.encode_seed(signing_key, prefix=nkeys.PREFIX_BYTE_CLUSTER)
 ```
 ### Create Server
 
@@ -123,7 +123,7 @@ Create seed for Server
 
 ```python
 # Nats encoded seed for server
-src = nkeys.encode_seed(signing_key._seed, prefix=nkeys.PREFIX_BYTE_SERVER)
+src = nkeys.encode_seed(signing_key, prefix=nkeys.PREFIX_BYTE_SERVER)
 ```
 ### Create Operator
 
@@ -131,7 +131,7 @@ Create seed for Operator
 
 ```python
 # Nats encoded seed for server
-src = nkeys.encode_seed(signing_key._seed, nkeys.PREFIX_BYTE_OPERATOR)
+src = nkeys.encode_seed(signing_key, prefix=nkeys.PREFIX_BYTE_OPERATOR)
 ```
 
 You can find all the [prefix](https://github.com/nats-io/nkeys.py/blob/main/nkeys/__init__.py#L24) in their source code.
@@ -151,8 +151,8 @@ In this [code](https://github.com/nats-io/nkeys.py/blob/main/nkeys/__init__.py#L
 
 | Type     | Seed | Private Key | Public Key |
 | -------- | ---- | ----------- | ---------- |
-| User     | SU   | PC          | UD         |
-| Account  | SA   | PC          | AD         |
-| Server   | SN   | PC          | ND         |
-| Cluster  | SC   | PC          | CD         |
-| Operator | SO   | PC          | PO         |
+| User     | SU   | P           | U          |
+| Account  | SA   | P           | A          |
+| Server   | SN   | P           | N          |
+| Cluster  | SC   | P           | C          |
+| Operator | SO   | P           | O          |
