@@ -1,5 +1,5 @@
 ---
-title: Apisix Without etcd and SSL in Docker Compose
+title: Apisix Without etcd in Docker Compose
 date: 2024-10-05 07:14
 author: arul
 category: APISix
@@ -11,7 +11,7 @@ color: gray
 headline: Docker compose example for running APISix without ETCD as standalone mode.
 status: published
 ---
-This  blog post for running apisix without ETCD. 
+This  blog post for running apisix without ETCD.
 ## Why❓
 
 By default, apisix depends on etcd for storing configuration.
@@ -22,7 +22,7 @@ Here is the [standalone mode](https://apisix.apache.org/docs/apisix/deployment-m
 
 ## 🤔How ?
 
-If you are geek, here is the [Github repo](https://github.com/arulrajnet/apisix_without_etcd) for docker-compose example with full source code. Go there. 
+If you are geek, here is the [Github repo](https://github.com/arulrajnet/apisix_without_etcd) for docker-compose example with full source code. Go there.
 
 ### config.yaml
 
@@ -37,7 +37,7 @@ deployment:
 #END
 ```
 
-Here the `config_provider` as yaml. 
+Here the `config_provider` as yaml.
 
 This has to be mounted as `/usr/local/apisix/conf/config.yaml`
 ### apisix.yaml
@@ -68,7 +68,7 @@ This has to be mounted as `/usr/local/apisix/conf/apisix.yaml`
 ### docker-compose.yml
 
 ```yaml
-services: 
+services:
   apisix:
     image: apache/apisix:3.10.0-debian
     environment:
@@ -84,17 +84,17 @@ services:
 
 The common areas where manual errors occur
 
-* The mounting path of the files. 
+* The mounting path of the files.
 * The content of the files. The different content for different files.
 * The `#END` line at the end of file.
 * The environmental variable for apisix `APISIX_STAND_ALONE: "true"`
 ## What is on the Repo?
 
-There are two upstreams behind the APISix. 
+There are two upstreams behind the APISix.
 
-The URI `/` and `/web1` forwards to the web1. 
+The URI `/` and `/web1` forwards to the web1.
 
-The URI `/web2` forwards to the web2. 
+The URI `/web2` forwards to the web2.
 
 These routes, services and upstreams configured in [apisix.yaml](https://github.com/arulrajnet/apisix_without_etcd/blob/main/apisix.yaml)
 
