@@ -27,7 +27,7 @@ In WhatsApp, you can chat against your own profile. You can use that for text co
 
 Use any online QR code generator to copy text. Then scan it using your camera app. My personal favorite is [zxing](https://zxing.appspot.com/generator/)
 
-
+![[zxing-qr-code-generate-for-copy-text.png]]
 
 Personally I don't want to install any extra software/app in my pc or phone. That is the reason I am following this.
 
