@@ -1,7 +1,7 @@
 ---
 title: Whiteboard buying guide in chennai
 date:   2015-05-17 22:29:16
-tags:
+tags: others
 slug:   buying-guide-whiteboard-in-chennai
 category:   Shopping
 author: arul

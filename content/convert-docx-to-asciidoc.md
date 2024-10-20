@@ -6,8 +6,8 @@ category: Documentation
 tags: AsciiDoc
 slug: convert-docx-to-asciidoc
 disqus_identifier: convert-docx-to-asciidoc
-cover:
+cover: default.png
 color: gray
-headline:
+headline: default headline
 status: draft
 ---

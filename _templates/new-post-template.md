@@ -10,12 +10,12 @@
 title: <%* tR += title %>
 date: <% tp.date.now("yyyy-MM-DD HH:mm:ss") %>
 author: arul
-category:
-tags:
+category: others
+tags: others
 slug: <% slug %>
 disqus_identifier: <% slug %>
-cover:
+cover: default.png
 color: gray
-headline:
+headline: <% title %>
 status: draft
 ---

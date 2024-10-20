@@ -2,13 +2,13 @@
 title: Jetty Server Doesn't honor X-Forwarded-Host
 date: 2024-09-28 11:28:00
 author: arul
-category:
-tags:
+category: others
+tags: others
 slug: jetty-server-doesnt-honor-x-forwarded-host
 disqus_identifier: jetty-server-doesnt-honor-x-forwarded-host
-cover:
+cover: default.png
 color: gray
-headline:
+headline: default headline
 status: draft
 ---
 

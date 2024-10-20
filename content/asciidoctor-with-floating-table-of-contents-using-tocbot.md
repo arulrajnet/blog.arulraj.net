@@ -6,9 +6,9 @@ category: Documentation
 tags: AsciiDoc
 slug: asciidoctor-with-floating-table-of-contents-using-tocbot
 disqus_identifier: asciidoctor-with-floating-table-of-contents-using-tocbot
-cover:
+cover: default.png
 color: gray
-headline:
+headline: default headline
 status: draft
 ---
 I want to talk about different tools for documentation in this series of articles. Taking asciidoc / asciidoctor as the first tool to talks about.

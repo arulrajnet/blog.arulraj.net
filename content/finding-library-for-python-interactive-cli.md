@@ -6,7 +6,7 @@ category: Python
 tags: CLI
 slug: finding-library-for-python-interactive-clishell
 disqus_identifier: finding-library-for-python-interactive-clishell
-cover:
+cover: default.png
 color: gray
 headline: Journey to find the interactive CLI library in python.
 status: published

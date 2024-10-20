@@ -6,9 +6,9 @@ category: APISix
 tags: proxy
 slug: apisix-series-proxy-rewrite
 disqus_identifier: apisix-series-proxy-rewrite
-cover:
+cover: default.png
 color: gray
-headline:
+headline: default headline
 status: draft
 ---
 ![[apisix-equivalent-for-spring-gateway-2.png]]
