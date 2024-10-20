@@ -1,6 +1,6 @@
 ---
 title: How I copy and paste text from my PC to Phone
-date: 2024-10-18 07:56
+date: 2024-10-18 07:56:00
 author: arul
 category: Android
 tags:
@@ -17,7 +17,7 @@ There are many ways to do this. I am following these two ways
 
 ## WhatsApp Web
 
-I am from Chennai, India. Here WhatsApp messenger app is widely used. So this app is installed by default. 
+I am from Chennai, India. Here WhatsApp messenger app is widely used. So this app is installed by default.
 
 We can access the messenger from PC via browser. [web.whatsapp.com](https://web.whatsapp.com)
 

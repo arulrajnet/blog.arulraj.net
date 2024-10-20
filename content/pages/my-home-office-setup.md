@@ -1,6 +1,6 @@
 ---
 title: My Home Office Setup
-date: 2024-09-06 10:22
+date: 2024-09-06 10:22:00
 author: arul
 category:
 tags:

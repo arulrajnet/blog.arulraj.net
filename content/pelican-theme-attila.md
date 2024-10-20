@@ -1,6 +1,6 @@
 ---
 title: Pelican Theme Attila
-date: 2023-04-14 08:00
+date: 2023-04-14 08:00:00
 author: arul
 category: Pelican
 tags: Theme, Attila

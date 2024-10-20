@@ -1,6 +1,6 @@
 ---
 title: Small FB hack
-date: 2011-02-25 14:25
+date: 2011-02-25 14:25:00
 author: arul
 category: Programming
 tags: Browser,hacking,java

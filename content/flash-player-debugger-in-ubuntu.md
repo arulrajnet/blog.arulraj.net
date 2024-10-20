@@ -1,6 +1,6 @@
 ---
 title: Flash player debugger in ubuntu
-date: 2010-08-02 15:34
+date: 2010-08-02 15:34:00
 author: arul
 category: Flash
 tags: Flash,Linux

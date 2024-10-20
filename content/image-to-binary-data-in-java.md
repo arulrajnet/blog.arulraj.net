@@ -1,6 +1,6 @@
 ---
 title: Image to binary data in java
-date: 2010-10-27 14:50
+date: 2010-10-27 14:50:00
 author: arul
 category: Browser
 tags: java,xml

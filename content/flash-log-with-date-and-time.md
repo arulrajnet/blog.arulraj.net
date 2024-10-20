@@ -1,6 +1,6 @@
 ---
 title: Flash Log with date and time
-date: 2010-11-16 15:50
+date: 2010-11-16 15:50:00
 author: arul
 category: Flash
 tags: Browser,Flash,Programming

@@ -1,6 +1,6 @@
 ---
 title: How Singleton pattern in Java
-date: 2010-03-23 01:00
+date: 2010-03-23 01:00:00
 author: arul
 category: Programming
 tags: Design,pattern,java

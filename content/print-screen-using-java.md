@@ -1,6 +1,6 @@
 ---
 title: Print screen using java
-date: 2010-06-23 13:20
+date: 2010-06-23 13:20:00
 author: arul
 category: Programming
 tags: java

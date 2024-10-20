@@ -1,6 +1,6 @@
 ---
 title: Install Docker, Compose and Buildx Manually
-date: 2024-08-19 07:06
+date: 2024-08-19 07:06:00
 author: arul
 category: Docker
 tags: Tips-and-Tricks

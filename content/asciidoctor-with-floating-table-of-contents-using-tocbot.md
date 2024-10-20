@@ -1,19 +1,19 @@
 ---
 title: AsciiDoctor with Floating Table of contents Using Tocbot
-date: 2024-09-14 21:42
+date: 2024-09-14 21:42:00
 author: arul
 category: Documentation
 tags: AsciiDoc
 slug: asciidoctor-with-floating-table-of-contents-using-tocbot
 disqus_identifier: asciidoctor-with-floating-table-of-contents-using-tocbot
-cover: 
+cover:
 color: gray
-headline: 
+headline:
 status: draft
 ---
-I want to talk about different tools for documentation in this series of articles. Taking asciidoc / asciidoctor as the first tool to talks about. 
+I want to talk about different tools for documentation in this series of articles. Taking asciidoc / asciidoctor as the first tool to talks about.
 
-The first-time I heard about asciidoc in the [Spring Docs](https://github.com/spring-io/spring-doc-resources/tree/master). Yes, I am a Java Guy. 
+The first-time I heard about asciidoc in the [Spring Docs](https://github.com/spring-io/spring-doc-resources/tree/master). Yes, I am a Java Guy.
 
 ## What is AsciiDoctor?
 
@@ -53,7 +53,7 @@ Interestingly, there are different version manager for different programing lang
 * Pyenv for Python
 * Jenv for Java
 
-Will discuss in a separate blog post and my dev setup. 
+Will discuss in a separate blog post and my dev setup.
 ### Windows
 
 Download and install the ruby from [Ruby Installer](https://github.com/oneclick/rubyinstaller2/releases/download/RubyInstaller-3.3.5-1/rubyinstaller-3.3.5-1-x64.exe)
@@ -66,7 +66,7 @@ gem install asciidoctor
 
 ## Adding Table of contents
 
-Here is my adoc file. Pushed into this github repository. 
+Here is my adoc file. Pushed into this github repository.
 
 To add table of contents to a page
 
@@ -82,7 +82,7 @@ Refer the output [here](https://arulrajnet.github.io/asciidoctor-tocbot/toc-with
 
 ## Floating TOC
 
-Its just a CSS trick. 
+Its just a CSS trick.
 
 
 ## Who are all using AsciiDoc ?
@@ -101,8 +101,8 @@ Its just a CSS trick.
 	* Docusaurus
 	* GitBook
 * restructuredText Based
-	* Sphinx 
+	* Sphinx
 * Asciidoc based
 	* antora
 * Pandoc
-* 
+*

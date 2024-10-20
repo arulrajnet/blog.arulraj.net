@@ -1,6 +1,6 @@
 ---
 title: Type tamil in ubuntu
-date: 2011-01-14 12:44
+date: 2011-01-14 12:44:00
 author: arul
 category: Linux
 tags: tamil,ubuntu,how-to

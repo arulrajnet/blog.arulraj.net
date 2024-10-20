@@ -1,6 +1,6 @@
 ---
 title: CentOS Networking FAQ
-date: 2009-07-14 07:57
+date: 2009-07-14 07:57:00
 author: arul
 category: Linux
 tags: Linux,static-ip

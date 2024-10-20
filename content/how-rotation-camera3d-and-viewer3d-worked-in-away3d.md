@@ -1,6 +1,6 @@
 ---
 title: How rotation camera3d and viewer3d worked in Away3d
-date: 2010-02-07 06:54
+date: 2010-02-07 06:54:00
 author: arul
 category: Flash
 tags: Animation,Flash,Programming,how-to

@@ -1,6 +1,6 @@
 ---
 title: Jetty Server Doesn't honor X-Forwarded-Host
-date: 2024-09-28 11:28
+date: 2024-09-28 11:28:00
 author: arul
 category:
 tags:
@@ -19,7 +19,7 @@ status: draft
  Host: shanssonew.secureedge.view.com:9443
 ```
 
-The code 
+The code
 
 ```
 Response.status(302).location(uri).build()

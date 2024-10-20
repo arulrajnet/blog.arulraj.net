@@ -1,6 +1,6 @@
 ---
 title: Java i18n properties file converter
-date: 2010-07-30 15:00
+date: 2010-07-30 15:00:00
 author: arul
 category: Programming
 tags: java

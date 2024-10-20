@@ -1,6 +1,6 @@
 ---
 title: DevContainer for Pelican
-date: 2024-08-17 05:30
+date: 2024-08-17 05:30:00
 author: arul
 category: Blog
 tags: pelican,Programming,Development

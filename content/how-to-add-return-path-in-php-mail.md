@@ -1,6 +1,6 @@
 ---
 title: How to add Return-path in php mail
-date: 2009-07-13 23:19
+date: 2009-07-13 23:19:00
 author: arul
 category: PHP
 tags: Linux,Programming,how-to

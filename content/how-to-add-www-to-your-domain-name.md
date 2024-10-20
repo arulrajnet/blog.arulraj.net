@@ -1,6 +1,6 @@
 ---
 title: How to add www to your domain name
-date: 2010-03-08 04:36
+date: 2010-03-08 04:36:00
 author: arul
 category: Programming
 tags: Browser,php,how-to,hosting

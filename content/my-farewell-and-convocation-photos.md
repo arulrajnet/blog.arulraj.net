@@ -1,6 +1,6 @@
 ---
 title: My Farewell and Convocation photos
-date: 2009-07-14 08:27
+date: 2009-07-14 08:27:00
 author: arul
 category: Photos
 tags: photos

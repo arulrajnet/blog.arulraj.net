@@ -1,6 +1,6 @@
 ---
 title: Toggle copy email in jQuery
-date: 2011-05-15 11:30
+date: 2011-05-15 11:30:00
 author: arul
 category: Browser
 tags: javascript

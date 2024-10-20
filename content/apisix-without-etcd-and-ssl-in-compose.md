@@ -1,6 +1,6 @@
 ---
 title: Apisix Without etcd in Docker Compose
-date: 2024-10-05 07:14
+date: 2024-10-05 07:14:00
 author: arul
 category: APISix
 tags: proxy,etcd,APISix

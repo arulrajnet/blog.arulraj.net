@@ -1,6 +1,6 @@
 ---
 title: Server Virtualization
-date: 2009-04-22 06:00
+date: 2009-04-22 06:00:00
 author: arul
 category: Virtualization
 tags: cloud-computing,Linux,xen

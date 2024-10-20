@@ -1,6 +1,6 @@
 ---
 title: Offline dictionary for ubuntu 10.04
-date: 2010-06-28 13:53
+date: 2010-06-28 13:53:00
 author: arul
 category: Linux
 tags: ubuntu,how-to

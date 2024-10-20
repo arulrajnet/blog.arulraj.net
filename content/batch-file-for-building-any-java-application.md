@@ -1,6 +1,6 @@
 ---
 title: Batch file for building any java application
-date: 2009-09-24 03:58
+date: 2009-09-24 03:58:00
 author: arul
 category: Widget
 tags: commands,Widget,windows,Programming

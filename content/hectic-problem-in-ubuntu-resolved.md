@@ -1,6 +1,6 @@
 ---
 title: Hectic problem in ubuntu - resolved
-date: 2010-12-23 14:07
+date: 2010-12-23 14:07:00
 author: arul
 category: Linux
 tags: Linux,ubuntu,how-to

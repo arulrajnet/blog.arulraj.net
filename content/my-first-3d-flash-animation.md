@@ -1,6 +1,6 @@
 ---
 title: My first 3D flash animation
-date: 2010-02-04 03:58
+date: 2010-02-04 03:58:00
 author: arul
 category: Flash
 tags: Animation,Flash,red5,Programming

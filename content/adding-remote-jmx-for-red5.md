@@ -1,6 +1,6 @@
 ---
 title: Adding Remote JMX for Red5
-date: 2009-11-13 07:24
+date: 2009-11-13 07:24:00
 author: arul
 category: Red5
 tags: Flash,java,Linux,Programming

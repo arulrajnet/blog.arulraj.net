@@ -1,6 +1,6 @@
 ---
 title: Ubuntu FAQ
-date: 2010-06-13 13:44
+date: 2010-06-13 13:44:00
 author: arul
 category: Linux
 tags: commands,Linux,ubuntu,how-to

@@ -1,6 +1,6 @@
 ---
 title: My Dev Setup
-date: 2024-09-06 10:23
+date: 2024-09-06 10:23:00
 author: arul
 category:
 tags:

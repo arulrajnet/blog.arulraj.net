@@ -1,6 +1,6 @@
 ---
 title: Why i am moving to Linux in my home pc
-date: 2010-01-19 08:32
+date: 2010-01-19 08:32:00
 author: arul
 category: Linux
 tags: Fedora,Linux,ubuntu,windows

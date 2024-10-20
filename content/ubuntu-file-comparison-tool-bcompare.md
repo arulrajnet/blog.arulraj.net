@@ -1,6 +1,6 @@
 ---
 title: Ubuntu file comparison tool - Bcompare
-date: 2010-07-29 11:39
+date: 2010-07-29 11:39:00
 author: arul
 category: Linux
 tags: Linux,ubuntu,how-to

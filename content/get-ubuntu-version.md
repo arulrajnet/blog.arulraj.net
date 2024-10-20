@@ -1,6 +1,6 @@
 ---
 title: Get Ubuntu Version
-date: 2011-02-25 11:02
+date: 2011-02-25 11:02:00
 author: arul
 category: Linux
 tags: ubuntu,how-to

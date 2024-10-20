@@ -1,6 +1,6 @@
 ---
 title: Mic problem in ubuntu 10.04
-date: 2010-07-05 13:35
+date: 2010-07-05 13:35:00
 author: arul
 category: Linux
 tags: Linux,ubuntu,how-to

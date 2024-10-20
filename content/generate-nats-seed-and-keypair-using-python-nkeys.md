@@ -1,6 +1,6 @@
 ---
 title: Generate NATS seed and Keypair using Python nkeys
-date: 2024-09-28 09:32
+date: 2024-09-28 09:32:00
 author: arul
 category: Python
 tags: NATS,Cryptography,PyNacl
@@ -13,7 +13,7 @@ status: published
 ---
 This blog post about generate a seed, private key and public key using Python [nkeys.py](https://github.com/nats-io/nkeys.py)
 
-I couldn't find any direct example to create seed for user, account or cluster as like Golang or Java. 
+I couldn't find any direct example to create seed for user, account or cluster as like Golang or Java.
 
 ## 🐎Golang Example
 
@@ -50,13 +50,13 @@ The source code is in [here](https://github.com/nats-io/nkeys.java)
 
 ## 🐍Python Example
 
-The source code is in [here](https://github.com/nats-io/nkeys.py) . But there is no reference to create user, account or cluster. 
+The source code is in [here](https://github.com/nats-io/nkeys.py) . But there is no reference to create user, account or cluster.
 
 ![[nats-nkey-python-example-on-their-repo.png]]
 
-Their documentation talks about from a seed file how we can decode user. Doesn't talks about create new one in anywhere. 
+Their documentation talks about from a seed file how we can decode user. Doesn't talks about create new one in anywhere.
 
-So I have create an example for creating seed for different purposes. 
+So I have create an example for creating seed for different purposes.
 
 First of all you have to install nkeys
 
@@ -137,16 +137,16 @@ src = nkeys.encode_seed(signing_key, prefix=nkeys.PREFIX_BYTE_OPERATOR)
 You can find all the [prefix](https://github.com/nats-io/nkeys.py/blob/main/nkeys/__init__.py#L24) in their source code.
 ## 💡How I found
 
-I am always a believer of the show me the code principle. Also we learn more by seeing others code. 
+I am always a believer of the show me the code principle. Also we learn more by seeing others code.
 
-In this [code](https://github.com/nats-io/nkeys.py/blob/main/nkeys/__init__.py#L59) they do padding with given binary array. Also they check the first byte against the predefined byte. Its all start from there. 
+In this [code](https://github.com/nats-io/nkeys.py/blob/main/nkeys/__init__.py#L59) they do padding with given binary array. Also they check the first byte against the predefined byte. Its all start from there.
 
 ## 📖 Learnings in the process
 
 * As you know the keys used by NATS are `ED25519`. There is an python [lib](https://pypi.org/project/ed25519/) for that
-* Python Nkeys earlier used that only and they [switch over](https://github.com/nats-io/nkeys.py/pull/4/files) to PyNacl. Since the above lib is not working with latest Python. 
+* Python Nkeys earlier used that only and they [switch over](https://github.com/nats-io/nkeys.py/pull/4/files) to PyNacl. Since the above lib is not working with latest Python.
 * Lot of the things get from their PyNacl [doc](https://pynacl.readthedocs.io/en/latest/signing/)
-* Got to know about [nats-box](https://github.com/nats-io/nats-box) docker and [nsc](https://github.com/nats-io/nsc) command line binary tool available to create creds file and other stuff. 
+* Got to know about [nats-box](https://github.com/nats-io/nats-box) docker and [nsc](https://github.com/nats-io/nsc) command line binary tool available to create creds file and other stuff.
 * The output of seed, private and public key starts with specific prefixes
 
 | Type     | Seed | Private Key | Public Key |

@@ -1,6 +1,6 @@
 ---
 title: AirtelLive Manual Setting for LG KG 195
-date: 2009-01-31 09:03
+date: 2009-01-31 09:03:00
 author: arul
 category: Mobile
 tags: Airel,gprs,KG-195,LG,Mobile

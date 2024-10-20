@@ -1,6 +1,6 @@
 ---
 title: Upgrade Samsung Galaxy 5 and 3 to Froyo
-date: 2011-08-05 03:55
+date: 2011-08-05 03:55:00
 author: arul
 category: Android
 tags: android,Mobile,Linux,how-to

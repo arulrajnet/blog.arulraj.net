@@ -1,6 +1,6 @@
 ---
 title: Android problems - Galaxy 5
-date: 2011-06-03 02:00
+date: 2011-06-03 02:00:00
 author: arul
 category: Mobile
 tags: android

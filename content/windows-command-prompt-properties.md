@@ -1,6 +1,6 @@
 ---
 title: Windows command prompt properties
-date: 2009-09-08 09:20
+date: 2009-09-08 09:20:00
 author: arul
 category: Windows
 tags: windows

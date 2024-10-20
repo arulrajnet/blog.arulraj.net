@@ -1,6 +1,6 @@
 ---
 title: Pi-Hole as Internet Parental Control
-date: 2024-10-06 07:54
+date: 2024-10-06 07:54:00
 author: arul
 category:
 tags:

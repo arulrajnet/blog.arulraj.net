@@ -8,7 +8,7 @@
   tR += "---"
 %>
 title: <%* tR += title %>
-date: <% tp.date.now("yyyy-MM-DD HH:mm") %>
+date: <% tp.date.now("yyyy-MM-DD HH:mm:ss") %>
 author: arul
 category:
 tags:

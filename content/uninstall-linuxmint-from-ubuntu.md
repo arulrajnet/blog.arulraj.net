@@ -1,6 +1,6 @@
 ---
 title: Uninstall linuxmint from ubuntu
-date: 2012-04-01 02:31
+date: 2012-04-01 02:31:00
 author: arul
 category: Linux
 tags: gnome,Linux,ubuntu,how-to

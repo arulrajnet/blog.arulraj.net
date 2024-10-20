@@ -1,6 +1,6 @@
 ---
 title: Install Android SDK Without Android Studio
-date: 2024-08-18 10:57
+date: 2024-08-18 10:57:00
 author: arul
 category: Android
 tags: Mobile,Git-Bash,windows

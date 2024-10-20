@@ -1,6 +1,6 @@
 ---
 title: WinGet Uninstall Multiple Package With Same Name
-date: 2024-08-17 06:27
+date: 2024-08-17 06:27:00
 author: arul
 category: Windows
 tags: Tips-and-Tricks,Git-Bash
