@@ -6,7 +6,7 @@ category: others
 tags: others
 slug: jetty-server-doesnt-honor-x-forwarded-host
 disqus_identifier: jetty-server-doesnt-honor-x-forwarded-host
-cover: default.png
+cover: /default.png
 color: gray
 headline: default headline
 status: draft

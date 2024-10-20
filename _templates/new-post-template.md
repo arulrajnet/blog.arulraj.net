@@ -14,7 +14,7 @@ category: others
 tags: others
 slug: <% slug %>
 disqus_identifier: <% slug %>
-cover: default.png
+cover: /default.png
 color: gray
 headline: <% title %>
 status: draft
