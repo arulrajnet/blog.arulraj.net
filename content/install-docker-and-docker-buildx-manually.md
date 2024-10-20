@@ -7,7 +7,7 @@ tags: Tips-and-Tricks
 slug: install-docker-compose-and-buildx-manually
 status: published
 headline: Install docker, docker buildx and docker compose manually. This steps can be used to setup docker with in docker.
-cover: assets/images/install-docker-manually-cover.png
+cover: /assets/images/install-docker-manually-cover.png
 ---
 In this article, Install the docker binary manually. The setup `compose` and `buildx`. So that `docker buildx` or `docker compose` (There is a space after docker) command will work as like any other installation.
 

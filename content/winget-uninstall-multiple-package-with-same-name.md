@@ -7,7 +7,7 @@ tags: Tips-and-Tricks,Git-Bash
 slug: winget-uninstall-multiple-package-with-same-name
 status: published
 disqus_identifier: winget-uninstall-multiple-package-with-same-name
-cover: assets/images/winget-unistall-success.png
+cover: /assets/images/winget-unistall-success.png
 headline: Explain about how to uninstall multiple package with same name using winget. Solving the error on uninstall with specific version and Id.
 ---
 We want to remove a package from windows using `winget`.

@@ -6,7 +6,7 @@ category: Blog
 tags: others
 slug: start-blogging-again
 disqus_identifier: start-blogging-again
-cover: assets/images/start-blogging-cover-1.png
+cover: /assets/images/start-blogging-cover-1.png
 status: published
 ---
 It has been ~10 years since my last post. Every time I am thinking of writing back again, these are the questions in front of me

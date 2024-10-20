@@ -6,7 +6,7 @@ category: APISix
 tags: proxy,etcd,APISix
 slug: apisix-without-etcd-and-ssl-in-compose
 disqus_identifier: apisix-without-etcd-and-ssl-in-compose
-cover: assets/images/apisix-without-etcd-cover.png
+cover: /assets/images/apisix-without-etcd-cover.png
 color: gray
 headline: Docker compose example for running APISix without ETCD as standalone mode.
 status: published

@@ -3,8 +3,7 @@ title: How I copy and paste text from my PC to Phone
 date: 2024-10-18 07:56:00
 author: arul
 category: Android
-tags: others
-  - Tips-and-Tricks
+tags: Tips-and-Tricks
 slug: how-i-copy-and-paste-text-from-my-pc-to-phone
 status: published
 color: gray

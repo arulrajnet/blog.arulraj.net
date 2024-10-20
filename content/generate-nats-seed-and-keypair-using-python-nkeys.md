@@ -6,7 +6,7 @@ category: Python
 tags: NATS,Cryptography,PyNacl
 slug: generate-nats-seed-and-keypair-using-python-nkeys
 disqus_identifier: generate-nats-seed-and-keypair-using-python-nkeys
-cover: assets/images/cover-image-nats-python-nkeys.png
+cover: /assets/images/cover-image-nats-python-nkeys.png
 color: gray
 headline: Python nkeys example for create user, account, server, cluster and operator
 status: published

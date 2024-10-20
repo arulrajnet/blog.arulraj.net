@@ -7,7 +7,7 @@ tags: Mobile,Git-Bash,windows
 slug: install-android-sdk-without-android-studio
 status: published
 disqus_identifier: install-android-sdk-without-android-studio
-cover: assets/images/install-android-sdk-cover.png
+cover: /assets/images/install-android-sdk-cover.png
 headline: Install Android SDK without android Studio. In this article explain about how to build and android application using gradle command. To do that setup android sdk is required. Handled everything on Git Bash windows.
 ---
 Recently I have found opensource [water reminder](https://github.com/KeyurDiwan/Water-Reminder) application. But they don't provide APK file in their releases. So I want to build the APK file from the source.

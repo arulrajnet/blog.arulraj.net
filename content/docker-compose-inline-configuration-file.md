@@ -6,7 +6,7 @@ category: Docker
 tags: docker-compose
 slug: docker-compose-inline-configuration-file
 disqus_identifier: docker-compose-inline-configuration-file
-cover: assets/images/cover-image-for-inline-compose-config.png
+cover: /assets/images/cover-image-for-inline-compose-config.png
 color: gray
 headline: How to use single yaml file for your docker application stack. No need to mount your configuration as volume or folder. Support for environmental interpolation. Support for binary file. One file, so easy to maintain.
 status: published
