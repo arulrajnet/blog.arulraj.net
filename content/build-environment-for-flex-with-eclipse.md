@@ -1,6 +1,6 @@
 ---
 title: Build environment for flex with eclipse
-date:   2010-10-03 04:16
+date: 2010-10-03 04:16:00
 author: arul
 category:   Uncategorized
 slug:   build-environment-for-flex-with-eclipse

@@ -1,6 +1,6 @@
 ---
 title: XML to Actionscript class Turbosqel / ASML example
-date:   2013-11-21 09:43
+date: 2013-11-21 09:43:00
 author: arul
 category:   Programming
 tags:   Actionscript, Flash, xml

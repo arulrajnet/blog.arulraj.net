@@ -1,6 +1,6 @@
 ---
 title: Upgrade Samsung Galaxy 5 to Ice Cream Sandwich
-date:   2012-07-26 14:54
+date: 2012-07-26 14:54:00
 author: arul
 category:   Android
 tags:   android, hacking, how-to, Mobile

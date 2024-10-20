@@ -1,6 +1,6 @@
 ---
 title: Problem viewing Tamil fonts in chromium on Ubuntu
-date:   2011-08-26 12:41
+date: 2011-08-26 12:41:00
 author: arul
 category:   Linux
 tags:   Browser, tamil, ubuntu, how-to, linux

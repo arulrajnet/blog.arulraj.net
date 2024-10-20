@@ -1,6 +1,6 @@
 ---
 title: My software environment
-date:   2010-11-28 12:00
+date: 2010-11-28 12:00:00
 author: arul
 category:   Uncategorized
 slug:   my-software-environment

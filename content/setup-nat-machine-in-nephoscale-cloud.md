@@ -1,6 +1,6 @@
 ---
 title: Setup NAT machine in NephoScale Cloud
-date:   2014-06-06 12:26
+date: 2014-06-06 12:26:00
 author: arul
 category:   Uncategorized
 slug:   setup-nat-machine-in-nephoscale-cloud

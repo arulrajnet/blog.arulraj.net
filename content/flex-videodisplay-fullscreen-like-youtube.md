@@ -1,6 +1,6 @@
 ---
 title: Flex videodisplay fullscreen like youtube
-date:   2013-04-11 11:29
+date: 2013-04-11 11:29:00
 author: arul
 category:   Flash
 tags:   Actionscript, Flash

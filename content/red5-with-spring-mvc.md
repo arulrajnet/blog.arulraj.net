@@ -1,6 +1,6 @@
 ---
 title: Red5 with Spring MVC
-date:   2012-04-13 15:55
+date: 2012-04-13 15:55:00
 author: arul
 category:   Red5
 tags:   java, red5, spring, Flash, Programming

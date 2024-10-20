@@ -1,6 +1,6 @@
 ---
 title: Jsp  Ajax problem
-date:   2010-10-30 06:20
+date: 2010-10-30 06:20:00
 author: arul
 category:   Uncategorized
 slug:   jsp-ajax-problem

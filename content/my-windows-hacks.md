@@ -1,6 +1,6 @@
 ---
 title: My Windows Hacks
-date:   2010-07-23 15:43
+date: 2010-07-23 15:43:00
 author: arul
 category:   Uncategorized
 slug:   my-windows-hacks

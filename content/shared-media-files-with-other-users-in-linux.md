@@ -1,6 +1,6 @@
 ---
 title: Shared media files with other users in linux
-date:   2011-08-18 13:00
+date: 2011-08-18 13:00:00
 author: arul
 category:   Linux
 tags:   commands, ubuntu, how-to

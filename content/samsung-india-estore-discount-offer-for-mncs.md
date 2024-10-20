@@ -1,6 +1,6 @@
 ---
 title: Samsung India eStore Discount offer for MNC\'s
-date:   2013-10-02 04:05
+date: 2013-10-02 04:05:00
 author: arul
 category:   Mobile
 tags:   android, offer, samsung

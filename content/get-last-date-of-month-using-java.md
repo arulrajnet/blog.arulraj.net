@@ -1,6 +1,6 @@
 ---
 title: Get last date of month using java
-date:   2011-09-08 00:24
+date: 2011-09-08 00:24:00
 author: arul
 category:   Programming
 tags:   java

@@ -1,6 +1,6 @@
 ---
 title: How to copy commits from one branch to another in GIT
-date:   2012-01-13 02:16
+date: 2012-01-13 02:16:00
 author: arul
 category:   Programming
 tags:   GIT, Linux

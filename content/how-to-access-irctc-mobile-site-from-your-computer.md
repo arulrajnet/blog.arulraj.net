@@ -1,6 +1,6 @@
 ---
 title: How to access irctc mobile site from your computer
-date:   2012-01-31 02:50
+date: 2012-01-31 02:50:00
 author: arul
 category:   Browser
 tags:   Browser, hacking, how-to, mobile
