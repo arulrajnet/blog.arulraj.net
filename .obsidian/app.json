@@ -6,5 +6,8 @@
     "output/",
     "pelican-plugins/",
     "attila/"
-  ]
+  ],
+  "newFileLocation": "folder",
+  "newFileFolderPath": "content",
+  "newLinkFormat": "shortest"
 }
