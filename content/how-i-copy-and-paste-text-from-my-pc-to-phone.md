@@ -3,10 +3,11 @@ title: How I copy and paste text from my PC to Phone
 date: 2024-10-18 07:56
 author: arul
 category: Android
-tags: Tips-and-Tricks
+tags:
+  - Tips-and-Tricks
 slug: how-i-copy-and-paste-text-from-my-pc-to-phone
 status: published
-cover: gray
+color: gray
 headline: Copy the text to your mobile clipboard without installing any new app.
 ---
 There are many ways to do this. I am following these two ways

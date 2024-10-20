@@ -2,7 +2,7 @@
   let title = await tp.system.prompt("Title", tp.file.title);
   slug = title.toLowerCase()
     .trim()
-    .replace(/[^\w\s-]/g, '')
+    .replace(/[^\w\s-]/g, '-')
     .replace(/[\s_-]+/g, '-')
     .replace(/^-+|-+$/g, '');
   tR += "---"
