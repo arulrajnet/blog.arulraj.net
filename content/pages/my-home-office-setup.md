@@ -6,7 +6,7 @@ category: others
 tags: others
 slug: my-home-office-setup
 disqus_identifier: my-home-office-setup
-cover: /default.png
+cover: /assets/images/default.png
 color: gray
 headline: default headline
 status: draft

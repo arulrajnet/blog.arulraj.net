@@ -6,7 +6,7 @@ category: APISix
 tags: proxy
 slug: apisix-series-proxy-rewrite
 disqus_identifier: apisix-series-proxy-rewrite
-cover: /default.png
+cover: /assets/images/default.png
 color: gray
 headline: default headline
 status: draft

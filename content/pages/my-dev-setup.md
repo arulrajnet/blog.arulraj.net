@@ -6,7 +6,7 @@ category: others
 tags: others
 slug: my-dev-setup
 disqus_identifier: my-dev-setup
-cover: /default.png
+cover: /assets/images/default.png
 color: gray
 headline: default headline
 status: draft

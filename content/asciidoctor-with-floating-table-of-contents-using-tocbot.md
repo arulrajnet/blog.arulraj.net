@@ -6,7 +6,7 @@ category: Documentation
 tags: AsciiDoc
 slug: asciidoctor-with-floating-table-of-contents-using-tocbot
 disqus_identifier: asciidoctor-with-floating-table-of-contents-using-tocbot
-cover: /default.png
+cover: /assets/images/default.png
 color: gray
 headline: default headline
 status: draft

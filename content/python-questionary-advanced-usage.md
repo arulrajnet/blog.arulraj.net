@@ -6,7 +6,7 @@ category: Python
 tags: CLI
 slug: python-questionary-advanced-usage
 disqus_identifier: python-questionary-advanced-usage
-cover: /default.png
+cover: /assets/images/default.png
 color: gray
 headline: default headline
 status: draft

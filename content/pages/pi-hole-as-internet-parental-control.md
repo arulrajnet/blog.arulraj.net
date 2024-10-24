@@ -6,7 +6,7 @@ category: others
 tags: others
 slug: pi-hole-as-internet-parental-control
 disqus_identifier: pi-hole-as-internet-parental-control
-cover: /default.png
+cover: /assets/images/default.png
 color: gray
 headline: default headline
 status: draft
