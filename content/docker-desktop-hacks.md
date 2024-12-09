@@ -19,7 +19,7 @@ https://open.docker.com/dashboard/dev-envs?url=https://github.com/docker/awesome
 
 
 ```
-Installing credential helpers... 
+Installing credential helpers...
 done
 Cloning into '/com.docker.devenvironments.code'...
 Detecting main repo language...
@@ -40,7 +40,6 @@ what is `config.json` and `.docker/docker-compose.yaml`
 
 
 
-Docker CLI 
+Docker CLI
 
 docker desktop 4.34.3
-
