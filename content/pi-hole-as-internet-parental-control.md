@@ -29,7 +29,7 @@ Now, I have reused it to block the internet for a specific device or domain.
 * Extender is to widen the coverage
 
 
-![[output/assets/images/my-home-network-pihole.drawio.png]]
+![[my-home-network-pihole.drawio.png]]
 ## Use case
 
 At our home, TV time for the kids is mostly reserved for weekends. But once they start watching, getting them to stop can feel like a never-ending struggle. Forget asking for the remote; that’s practically impossible!
