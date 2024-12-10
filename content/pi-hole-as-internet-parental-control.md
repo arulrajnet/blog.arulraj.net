@@ -45,7 +45,7 @@ A little bit background on Pi-Hole.
 * Whenever a device try to resolve those domains, it returns as `0.0.0.0`
 * Its also acts as DHCP server
 
-![[output/assets/images/nslookup-output-of-tracking-domain-with-pi-hole.png]]
+![[nslookup-output-of-tracking-domain-with-pi-hole.png]]
 
 We are going to use the following resources to block internet.
 
@@ -61,7 +61,7 @@ These are the steps we are going to do
 
 Create a Group. This will used to add the blocklist client.
 
-![[output/assets/images/pi-hole-create-group.png]]
+![[pi-hole-create-group.png]]
 Here I have created group called `Block_Internet`
 ## To block all internet for the particular device
 
@@ -73,17 +73,17 @@ Regular Expression: `.*`
 Comment: `Block All`
 Click Add to Blacklist
 
-![[output/assets/images/pi-hole-regex-filter-for-block-all.png]]
+![[pi-hole-regex-filter-for-block-all.png]]
 
 Once added, change the group to `Block_Internet`
 
-![[output/assets/images/pi-hole-add-the-black-list-to-group.png]]
+![[pi-hole-add-the-black-list-to-group.png]]
 
 Now add the client to the group.
 
 In my case whenever the TV time got over, I will add the `TV` client into the list.
 
-![[output/assets/images/pi-hole-add-client-to-block-group.png]]
+![[pi-hole-add-client-to-block-group.png]]
 
 ## To block youtube
 
