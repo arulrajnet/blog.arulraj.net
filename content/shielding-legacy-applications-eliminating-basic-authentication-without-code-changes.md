@@ -14,4 +14,3 @@ status: draft
 ---
 
 scanner for basic auth
-
