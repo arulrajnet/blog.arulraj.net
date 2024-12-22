@@ -8,7 +8,7 @@ slug: no-more-basic-auth-htpasswd-with-oauth2-proxy
 disqus_identifier: no-more-basic-auth-htpasswd-with-oauth2-proxy
 cover: /assets/images/basic-auth-oauth2-proxy-cover.png
 color: gray
-headline: "No More Basic Auth: htpasswd with OAuth2 Proxy"
+headline: Create cookie session store for htpasswd based authentication using oauth2-proxy. This will eliminate the insecure basic authentication.
 status: published
 ---
 
@@ -21,7 +21,7 @@ Before that, let's discuss the problems with htpasswd + Basic Authentication.
 
 An `htpasswd` file contains a finite number of usernames and passwords encrypted using the highly secure bcrypt algorithm. The file looks like the following:
 
-```
+```txt
 admin@mycompany.com:$2y$05$Npda/wcHOGrBKYgr9sNJo./O8KZbXQqwTrF0BcRxiS5Vr.P37zDJC
 user@mycompany.com:$2y$05$crIQ3pU/dJi2T6c8IM1UNOXV6KlgxjvFBvJH2ZfmmhgRSS8qObZVu
 another-user@mycompany.com:$2y$05$tQrvnJQgeroRwi8FJgHsUufUZpU3lrmoMMXC9xYZ9XA9Kno0iwDWy
@@ -70,7 +70,7 @@ While there are various ways to replace Basic Authentication, we’ve chosen to 
 - **Focus on OIDC/OAuth2-Based Authentication**
     - As the name suggests, OAuth2-Proxy primarily focuses on OpenID Connect (OIDC) and OAuth2 authentication methods.
     - By default, the application requires **at least one OIDC provider to be configured**.
-    - There is no official support for disable provider https://github.com/oauth2-proxy/oauth2-proxy/issues/1725#issuecomment-1195865190
+    - There is no official support for disable provider [https://github.com/oauth2-proxy/oauth2-proxy/issues/1725#issuecomment-1195865190](https://github.com/oauth2-proxy/oauth2-proxy/issues/1725#issuecomment-1195865190)
     - The `htpasswd` file-based authentication is optional and secondary.
 - **No Support for External Standalone Login Pages**
     - OAuth2-Proxy includes a built-in login page, which can be customized. However, it is pure HTML and lacks advanced design capabilities.
@@ -136,9 +136,9 @@ In some cases, the login page also serve from the application. This is for, how 
 Remove the middleware for the `/login` and `/static` URL for app.
 
 ```
-      - traefik.http.routers.app-noauth.rule=PathPrefix(`/login`) || PathPrefix(`/static`)
-      - traefik.http.routers.app-noauth.entrypoints=web
-      - traefik.http.routers.app-noauth.priority=200
+- traefik.http.routers.app-noauth.rule=PathPrefix(`/login`) || PathPrefix(`/static`)
+- traefik.http.routers.app-noauth.entrypoints=web
+- traefik.http.routers.app-noauth.priority=200
 ```
 
 Added errors middleware to handle errors.
