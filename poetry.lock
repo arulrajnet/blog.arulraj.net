@@ -545,7 +545,7 @@ markdown = ["markdown (>=3.2,<4.0)"]
 
 [[package]]
 name = "pelican-obsidian"
-version = "0.1.dev22+g0180f42"
+version = "0.1.dev25+gebe40ce"
 description = "Makes pelican markdown files more compatible with Obsidian"
 optional = false
 python-versions = ">=3.7"
