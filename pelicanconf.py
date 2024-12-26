@@ -120,11 +120,18 @@ PLUGINS = [
     "assets",
     "obsidian",
     "pelican.plugins.neighbors",
+    "pelican.plugins.minify",
     "pelican.plugins.related_posts",
     "pelican.plugins.seo",
     "pelican.plugins.sitemap",
     "post_stats",
 ]
+
+# Minify
+CSS_MIN = True
+HTML_MIN = True
+INLINE_CSS_MIN = True
+INLINE_JS_MIN = True
 
 # Sitemap
 SITEMAP = {
