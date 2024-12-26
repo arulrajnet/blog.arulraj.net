@@ -73,9 +73,11 @@ help:
 	@echo '                                                                          '
 
 html:
+	bash convert-tags-obsidian-markdown.sh
 	"$(PELICAN)" "$(INPUTDIR)" -o "$(OUTPUTDIR)" -s "$(CONFFILE)" $(PELICANOPTS)
 
 html-debug:
+	bash convert-tags-obsidian-markdown.sh
 	"$(PELICAN)" "$(INPUTDIR)" -o "$(OUTPUTDIR)" -s "$(CONFFILE)" $(PELICANOPTS) -v -D --logs-dedup-min-level DEBUG
 
 clean:
@@ -97,6 +99,7 @@ devserver-global:
 	$(PELICAN) -lr $(INPUTDIR) -o $(OUTPUTDIR) -s $(CONFFILE) $(PELICANOPTS) -b 0.0.0.0
 
 publish:
+	bash convert-tags-obsidian-markdown.sh
 	"$(PELICAN)" "$(INPUTDIR)" -o "$(OUTPUTDIR)" -s "$(PUBLISHCONF)" $(PELICANOPTS)
 
 ssh_upload: publish

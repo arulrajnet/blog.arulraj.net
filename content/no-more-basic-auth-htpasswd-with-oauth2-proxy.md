@@ -3,11 +3,7 @@ title: No More Basic Auth &#58; htpasswd with OAuth2 Proxy
 date: 2024-12-15 20:44:14
 author: arul
 category: Security
-tags:
-  - proxy
-  - Traefik
-  - APISix
-  - nginx
+tags: proxy,Traefik,APISix,nginx
 slug: no-more-basic-auth-htpasswd-with-oauth2-proxy
 disqus_identifier: no-more-basic-auth-htpasswd-with-oauth2-proxy
 cover: /assets/images/basic-auth-oauth2-proxy-cover.png
