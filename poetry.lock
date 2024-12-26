@@ -188,16 +188,6 @@ files = [
 ]
 
 [[package]]
-name = "cssmin"
-version = "0.2.0"
-description = "A Python port of the YUI CSS compression algorithm."
-optional = false
-python-versions = "*"
-files = [
-    {file = "cssmin-0.2.0.tar.gz", hash = "sha256:e012f0cc8401efcf2620332339011564738ae32be8c84b2e43ce8beaec1067b6"},
-]
-
-[[package]]
 name = "distlib"
 version = "0.3.9"
 description = "Distribution utilities"
@@ -332,16 +322,6 @@ MarkupSafe = ">=2.0"
 
 [package.extras]
 i18n = ["Babel (>=2.7)"]
-
-[[package]]
-name = "jsmin"
-version = "3.0.1"
-description = "JavaScript minifier."
-optional = false
-python-versions = "*"
-files = [
-    {file = "jsmin-3.0.1.tar.gz", hash = "sha256:c0959a121ef94542e807a674142606f7e90214a2b3d1eb17300244bbb5cc2bfc"},
-]
 
 [[package]]
 name = "markdown"
@@ -598,7 +578,7 @@ markdown = ["markdown (>=3.2,<4.0)"]
 
 [[package]]
 name = "pelican-obsidian"
-version = "0.1.dev25+gebe40ce"
+version = "0.1.dev24+gebe40ce"
 description = "Makes pelican markdown files more compatible with Obsidian"
 optional = false
 python-versions = ">=3.7"
@@ -1195,18 +1175,7 @@ files = [
 [package.dependencies]
 anyio = ">=3.0.0"
 
-[[package]]
-name = "webassets"
-version = "2.0"
-description = "Media asset management for Python, with glue code for various web frameworks"
-optional = false
-python-versions = "*"
-files = [
-    {file = "webassets-2.0-py3-none-any.whl", hash = "sha256:a31a55147752ba1b3dc07dee0ad8c8efff274464e08bbdb88c1fd59ffd552724"},
-    {file = "webassets-2.0.tar.gz", hash = "sha256:167132337677c8cedc9705090f6d48da3fb262c8e0b2773b29f3352f050181cd"},
-]
-
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.12"
-content-hash = "24e2df60950d91085f9fcb5a1f14acc4766448b061a806f8255949e78749da61"
+content-hash = "b3d39f9eea9e57ef6b1d46fd2c7716031c0844a065d5fac1047abbe807f01616"
