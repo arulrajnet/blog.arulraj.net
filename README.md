@@ -33,9 +33,15 @@ Install the following module for pelican inside `blog.arulraj.net` folder
 
 **Install attila theme**
 
+    pip install git+https://github.com/arulrajnet/attila.git@master
+
+OR
+
     git clone --depth=1 https://github.com/arulrajnet/attila
     pelican-themes -i ${PWD}/attila
     pelican-themes -l
+
+Install using pip is recommended
 
 ### Build
 

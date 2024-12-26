@@ -5,6 +5,7 @@
     .replace(/[^\w\s-]/g, '-')
     .replace(/[\s_-]+/g, '-')
     .replace(/^-+|-+$/g, '');
+  await tp.file.rename(slug);
   tR += "---"
 %>
 title: <%* tR += title %>

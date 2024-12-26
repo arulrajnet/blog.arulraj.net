@@ -3,7 +3,11 @@ title: No More Basic Auth &#58; htpasswd with OAuth2 Proxy
 date: 2024-12-15 20:44:14
 author: arul
 category: Security
-tags: proxy,Traefik,APISix,nginx
+tags:
+  - proxy
+  - Traefik
+  - APISix
+  - nginx
 slug: no-more-basic-auth-htpasswd-with-oauth2-proxy
 disqus_identifier: no-more-basic-auth-htpasswd-with-oauth2-proxy
 cover: /assets/images/basic-auth-oauth2-proxy-cover.png
@@ -29,7 +33,7 @@ another-user@mycompany.com:$2y$05$tQrvnJQgeroRwi8FJgHsUufUZpU3lrmoMMXC9xYZ9XA9Kn
 
 Most of the time, the htpasswd file is used in conjunction with Basic Authentication. Basic Authentication works by sending a Base64-encoded username and password as an `Authorization` header in every request. On the server side, these credentials are validated against the htpasswd file.
 
-### Proxies That Support This Authentication Method
+<!-- ### Proxies That Support This Authentication Method
 
 The following proxies support this method of authentication:
 
@@ -38,7 +42,7 @@ The following proxies support this method of authentication:
 * [Traefik](https://doc.traefik.io/traefik/middlewares/http/basicauth/)
 * [APISix](https://apisix.apache.org/docs/apisix/plugins/basic-auth/)
 * [Caddy](https://caddyserver.com/docs/caddyfile/directives/basic_auth)
-* [Envoy](https://www.envoyproxy.io/docs/envoy/latest/configuration/http/http_filters/basic_auth_filter.html)
+* [Envoy](https://www.envoyproxy.io/docs/envoy/latest/configuration/http/http_filters/basic_auth_filter.html) -->
 ### Why Is This the Most Insecure Way to Handle Authentication?
 
 Using htpasswd with Basic Authentication is considered highly insecure for the following reasons:

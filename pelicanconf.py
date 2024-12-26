@@ -75,7 +75,7 @@ EXTRA_PATH_METADATA = {
     "assets/css/better_responsive_images.css": {
         "path": "css/better_responsive_images.css"
     },
-    "assets/css/myblog.css": {"path": "css/myblog.css"},
+    "assets/css/custom.css": {"path": "css/custom.css"},
 }
 
 # Post and Pages path
@@ -162,7 +162,12 @@ GOOGLE_ANALYTICS = "UA-3546274-9"
 # Setting for the better_figures_and_images plugin
 RESPONSIVE_IMAGES = True
 
-THEME = "attila"
+try:
+    import attila
+
+    THEME = attila.get_path()
+except ImportError:
+    THEME = "attila"
 
 ### Attila : Theme specific settings
 
@@ -180,12 +185,14 @@ AUTHOR_META = {
     }
 }
 
+CSS_OVERRIDE = ["css/custom.css"]
+
 MENUITEMS = (("Home", "/"),)
 
 SHOW_ARTICLE_MODIFIED_TIME = False
 SHOW_AUTHOR_BIO_IN_ARTICLE = False
 SHOW_CATEGORIES_ON_MENU = False
-SHOW_COMMENTS_COUNT_IN_ARTICLE_SUMMARY = True
+SHOW_COMMENTS_COUNT_IN_ARTICLE_SUMMARY = False
 SHOW_CREDITS = True
 SHOW_FULL_ARTICLE_IN_SUMMARY = False
 SHOW_PAGES_ON_MENU = True
