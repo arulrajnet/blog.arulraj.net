@@ -15,13 +15,14 @@ pysvg = "0.2.2"
 requests = "2.32.3"
 pillow = "10.4.0"
 beautifulsoup4 = "4.12.3"
-pelican-seo = "1.2.2"
-pelican-neighbors = "1.2.0"
-pelican-related-posts = "1.0.0"
-pelican-sitemap = "1.1.0"
-pelican-obsidian = {git = "https://github.com/jonathan-s/pelican-obsidian.git", rev = "main"}
+pelican-image-process = "3.0.4"
 pelican-minify = "2.0.0"
-
+pelican-neighbors = "1.2.0"
+pelican-obsidian = {git = "https://github.com/jonathan-s/pelican-obsidian.git", rev = "main"}
+pelican-related-posts = "1.0.0"
+pelican-seo = "1.2.2"
+pelican-sitemap = "1.2.0"
+pelican-webassets = "2.1.0"
 
 [tool.poetry.group.dev.dependencies]
 ruff = "0.6.1"

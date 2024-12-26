@@ -117,18 +117,20 @@ PLUGIN_PATHS = [
 # better_figures_and_images is failed articles which have <object> tag with no "data" attributes. # noqa: E501
 PLUGINS = [
     "asciidoc_reader",
-    "assets",
-    "obsidian",
-    "pelican.plugins.neighbors",
+    "pelican.plugins.image_process",
     "pelican.plugins.minify",
+    "pelican.plugins.neighbors",
+    "pelican.plugins.obsidian",
     "pelican.plugins.related_posts",
     "pelican.plugins.seo",
     "pelican.plugins.sitemap",
+    "pelican.plugins.webassets",
     "post_stats",
 ]
 
-# Minify
+# Minify settings
 CSS_MIN = True
+JS_MIN = True
 HTML_MIN = True
 INLINE_CSS_MIN = True
 INLINE_JS_MIN = True
@@ -168,6 +170,33 @@ GOOGLE_ANALYTICS = "UA-3546274-9"
 
 # Setting for the better_figures_and_images plugin
 RESPONSIVE_IMAGES = True
+
+IMAGE_PROCESS = {
+    "crisp": {
+        "type": "responsive-image",
+        "srcset": [
+            ("1x", ["scale_in 800 600 True"]),
+            ("2x", ["scale_in 1600 1200 True"]),
+            ("4x", ["scale_in 3200 2400 True"]),
+        ],
+        "default": "1x",
+    },
+    "large-photo": {
+        "type": "responsive-image",
+        "sizes": (
+            "(min-width: 1200px) 800px, "
+            "(min-width: 992px) 650px, "
+            "(min-width: 768px) 718px, "
+            "100vw"
+        ),
+        "srcset": [
+            ("600w", ["scale_in 600 450 True"]),
+            ("800w", ["scale_in 800 600 True"]),
+            ("1600w", ["scale_in 1600 1200 True"]),
+        ],
+        "default": "800w",
+    },
+}
 
 try:
     import attila
@@ -275,12 +304,27 @@ def filter_shuffle(seq):
         return seq
 
 
+import os
+
+
+def basename(path):
+    """Basename filter."""
+    return os.path.basename(path)
+
+
+def dirname(path):
+    """Dirname filter."""
+    return os.path.dirname(path)
+
+
 JINJA_FILTERS = {
+    "basename": basename,
+    "dirname": dirname,
+    "max": max,
     "md": md,
     "quote_plus": quote_plus,
-    "urlencode": urlencode,
     "shuffle": filter_shuffle,
-    "max": max,
+    "urlencode": urlencode,
 }
 
 # Jinja config - Pelican 4
