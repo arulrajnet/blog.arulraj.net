@@ -752,7 +752,7 @@ markdown = ["markdown (>=3.2,<4.0)"]
 
 [[package]]
 name = "pelican-obsidian"
-version = "0.1.dev25+gcd87634"
+version = "0.1.dev29+g4e9ba40"
 description = "Makes pelican markdown files more compatible with Obsidian"
 optional = false
 python-versions = ">=3.7"
@@ -761,12 +761,14 @@ develop = false
 
 [package.dependencies]
 pelican = "*"
+pelican-yaml-metadata = "*"
+pyyaml = "*"
 
 [package.source]
 type = "git"
 url = "https://github.com/jonathan-s/pelican-obsidian.git"
 reference = "main"
-resolved_reference = "cd87634e4be12fc26a84444cf76e7200e6aca808"
+resolved_reference = "4e9ba40bde3d469c2bcc4989058b631e92064127"
 
 [[package]]
 name = "pelican-related-posts"
@@ -834,6 +836,22 @@ files = [
 
 [package.dependencies]
 pelican = ">=4.5"
+
+[[package]]
+name = "pelican-yaml-metadata"
+version = "2.1.2"
+description = "Pelican plugin for YAML-formatted Markdown metadata headers"
+optional = false
+python-versions = ">=3.8.1"
+files = [
+    {file = "pelican_yaml_metadata-2.1.2-py3-none-any.whl", hash = "sha256:12282f85b68d12783d10e67c3066e5e3a1ec8daeaced889274168f1daf137a93"},
+    {file = "pelican_yaml_metadata-2.1.2.tar.gz", hash = "sha256:11018c3aead96e92731eeca61cdabdeafe880ece8f639b0463177e031ae361d7"},
+]
+
+[package.dependencies]
+markdown = ">=3.3.4"
+pelican = ">=4.8.0"
+pyyaml = ">=5.4.1"
 
 [[package]]
 name = "pillow"
