@@ -752,7 +752,7 @@ markdown = ["markdown (>=3.2,<4.0)"]
 
 [[package]]
 name = "pelican-obsidian"
-version = "0.1.dev24+gebe40ce"
+version = "0.1.dev25+gcd87634"
 description = "Makes pelican markdown files more compatible with Obsidian"
 optional = false
 python-versions = ">=3.7"
@@ -766,7 +766,7 @@ pelican = "*"
 type = "git"
 url = "https://github.com/jonathan-s/pelican-obsidian.git"
 reference = "main"
-resolved_reference = "ebe40ce020132578ae6f84e022e9171cf26fc358"
+resolved_reference = "cd87634e4be12fc26a84444cf76e7200e6aca808"
 
 [[package]]
 name = "pelican-related-posts"
