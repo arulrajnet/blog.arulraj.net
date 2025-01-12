@@ -22,6 +22,7 @@ pelican-obsidian = {git = "https://github.com/jonathan-s/pelican-obsidian.git", 
 pelican-related-posts = "1.0.0"
 pelican-seo = "1.2.2"
 pelican-sitemap = "1.2.0"
+pelican-statistics = "1.0.0"
 pelican-webassets = "2.1.0"
 
 [tool.poetry.group.dev.dependencies]

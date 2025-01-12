@@ -19,10 +19,6 @@ Install poetry module
 Clone the blog
 
     git clone https://github.com/arulrajnet/blog.arulraj.net
-    cd blog.arulraj.net
-    git submodule update --init --recursive
-    git fetch --recurse-submodules
-    git pull --recurse-submodules
 
 Install the following module for pelican inside `blog.arulraj.net` folder
 

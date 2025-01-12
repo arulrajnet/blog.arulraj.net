@@ -110,10 +110,6 @@ ARCHIVES_SAVE_AS = "archive/index.html"
 
 ### Plugins
 
-PLUGIN_PATHS = [
-    "pelican-plugins",
-]
-
 # better_figures_and_images is failed articles which have <object> tag with no "data" attributes. # noqa: E501
 PLUGINS = [
     "asciidoc_reader",
@@ -124,8 +120,8 @@ PLUGINS = [
     "pelican.plugins.related_posts",
     "pelican.plugins.seo",
     "pelican.plugins.sitemap",
+    "pelican.plugins.statistics",
     "pelican.plugins.webassets",
-    "post_stats",
 ]
 
 # Minify settings
